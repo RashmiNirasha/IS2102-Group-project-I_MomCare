@@ -3,23 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css\style1.css"> 
+    <link rel="stylesheet" href="/css/style_table.css"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Vaccination Details</title>
+    <script>   
+        function viewdate() {   
+        var x = document.getElementById("Date").value;   
+        document.getElementById("demo").innerHTML = x; }  
+        </script> 
 </head>
 <body>
-    <div class = "container">
+    <div class = "container1">
         <nav>Navbar</nav>
         <main>
             <div class="Name"> <h2>Vaccination Details </h2> 
         </div>
         <div class="notification"><i class="material-icons" style="font-size:60px;color:red;">notification_important</i></div></main>
 
+        <div class="container2">
+    <div id="tab">
+        <table class="vaccine">
+            <tr>
+                <td colspan="6"><h1>Immunization</h1></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>Type of Vaccine</td>
+                <td>Date</td>
+                <td>Batch no</td>
+                <td>Adverse events</td>
+                <td>B.C.G scar</td>
+            </tr>
+            <tr >
+                <td>At birth</td>
+                <td>BCG first dose</td>
+                <td> <input type="date" id="Date" name="Date"> <br> <button onclick="viewdate()"> Submit   
+                </button>  <h4 id="demo"> </h4> </td>
+                <td contenteditable="true">  </td> 
+                <td contenteditable="true"> </td>
+                <td><label for="cars">Select Status:</label>
+                    <select name="status" id="status">
+                      <option value="Present">Present</option>
+                      <option value="Absent">Absent</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td colspan="2">BCG second dose (if no scar even at 6 months)</td>
+                <td contenteditable="true">  </td>
+                <td contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td>
+            </tr>
+    
+            <tr>
+                <td rowspan="3">2 Months Completed</td>
+                <td >Pentavalent 1</td>
+                <td contenteditable="true">  </td>
+                <td  contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td>
+            </tr>        
+            <tr>
+                <td >OPV 1</td>
+                <td  contenteditable="true">  </td>
+                <td  contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td>
+            </tr> 
+            <tr>
+                <td >fIPV 1</td>
+                <td  contenteditable="true">  </td>
+                <td contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td>
+            </tr> 
+            <tr>
+                <td rowspan="3">4 Months Completed</td>
+                <td >Pentavalent 2</td>
+                <td  contenteditable="true">  </td>
+                <td  contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td>
+            </tr> 
+            <tr>
+                <td >OPV 2</td>
+                <td  contenteditable="true">  </td>
+                <td  contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td>
+            </tr> 
+            <tr>
+                <td >fIPV 2</td>
+                <td  contenteditable="true">  </td>
+                <td  contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td>
+            </tr> 
+            <tr><td rowspan="2">6 Months Completed</td>
+                <td>Pentavalent 3 </td>
+                <td  contenteditable="true">  </td>
+                <td  contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td>
+            </tr> 
+            <tr><td >OPV 3</td>
+                <td  contenteditable="true">  </td>
+                <td  contenteditable="true">  </td>
+                <td colspan="2"  contenteditable="true">  </td>
+            </tr> 
+    
+            <tr>
+                <td >9 Months Completed</td>
+                <td> Measles,Mumps,Rubella 1 (MMR 1) </td>
+                <td  contenteditable="true">  </td>
+                <td  contenteditable="true">  </td>
+                <td colspan="2"  contenteditable="true">  </td>
+            </tr> 
+            <tr>
+                <td >12 Months Completed</td>
+                <td> Live JE </td>
+                <td  contenteditable="true">  </td>
+                <td  contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td>
+            </tr> 
+            <tr>
+                <td rowspan="2">18 Months Completed</td>
+                <td>DPT </td>
+                <td contenteditable="true">  </td>
+                <td contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td>
+            </tr> 
+            <tr>
+                <td >OPV 4</td>
+                <td contenteditable="true">  </td>
+                <td contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td>
+            </tr>
+            <tr>
+                <td >3 Years Completed</td>
+                <td>Measles,Mumps,Rubella 2 (MMR 2) </td>
+                <td contenteditable="true">  </td>
+                <td contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td>
+            </tr>  
+            <tr>
+                <td rowspan="2">5 Years Completed</td>
+                <td>D.T </td>
+                <td contenteditable="true">  </td>
+                <td contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td>
+            </tr> 
+            <tr>
+                <td>OPV 5 </td>
+                <td contenteditable="true">  </td>
+                <td contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td>
+            </tr> 
+            <tr><td rowspan="2">10 Years Completed</td>
+                <td>HPV Vaccine 1 </td>
+                <td contenteditable="true">  </td>
+                <td contenteditable="true">  </td>
+                <td colspan="2" contenteditable="true">  </td></tr>
+            
+                <tr> 
+                    <td>HPV Vaccine 2(6 months after first dose) </td>
+                    <td contenteditable="true">  </td>
+                    <td contenteditable="true">  </td>
+                    <td colspan="2" contenteditable="true">  </td>
+                </tr>
+                    <tr>
+                        <td >11 Years Completed</td>
+                        <td>adult Tetanus & Diphtheria(aTd)</td>
+                        <td contenteditable="true">  </td>
+                        <td contenteditable="true">  </td>
+                        <td colspan="2" contenteditable="true">  </td>
+                    </tr> 
+                    <tr>
+                        <td >Other</td>
+                        <td contenteditable="true">  </td>
+                        <td contenteditable="true">  </td>
+                        <td contenteditable="true">  </td>
+                        <td colspan="2" contenteditable="true">  </td>
+                    </tr>   
+            </table>
+            <input type="button" value="Create PDF" id="btPrint" onclick="createPDF()" />
+  <input type="button" value="Save" id="btsave" onclick="save()" />
+      </div>
+</div>
         <button type="button button1" onclick="alert('Do you want to log out?')"> Log out? <img src="images\Logout 2.png" /> </button>
 
         <footer>footer</footer>
 
     </div>
 </body>
+<script>
+    function createPDF() {
+        var sTable = document.getElementById('tab').innerHTML;
+        var style = "<style>";
+        style = style + "table {width: 100%;font: 17px Calibri;}";
+        style = style + "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
+        style = style + "padding: 2px 3px;text-align: center;}";
+        style = style + "</style>";
+
+        // CREATE A WINDOW OBJECT.
+        var win = window.open('', '', 'height=700,width=700');
+        win.document.write('<html><head>');
+        win.document.write('<title>Profile</title>');   // <title> FOR PDF HEADER.
+        win.document.write(style);          // ADD STYLE INSIDE THE HEAD TAG.
+        win.document.write('</head>');
+        win.document.write('<body>');
+        win.document.write(sTable);         // THE TABLE CONTENTS INSIDE THE BODY TAG.
+        win.document.write('</body></html>');
+        win.document.close(); 	// CLOSE THE CURRENT WINDOW.
+        win.print();    // PRINT THE CONTENTS.
+    }
+</script>
 </html>
