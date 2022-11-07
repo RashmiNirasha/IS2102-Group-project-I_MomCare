@@ -32,4 +32,34 @@
     width: 40px;
     height: 40px;
     cursor: pointer;
+    border-radius: 5px;
+    padding-right: 20px;
+    stroke-width: 5px;
+    stroke: #111C43;
+}
+
+.Side-nav {
+    background-color: #029EE4;
+    width: 300px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    margin-top: 100px;
+    margin-left: 80px;
+    height: 845px;
+    border-radius: 25px;
+    position: absolute;
+}
+
+.side-nav-table tr td {
+    padding-left: 20px;
+    padding-bottom: 30px;
+}
+
+.side-nav-table td a{
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: #F3F4F5;
+    text-decoration: none;
 }
