@@ -1,2 +1,106 @@
 @import url(https://fonts.googleapis.com/css?family=roboto);
 
+
+.logo img{
+    position: absolute;
+    width: 180px;
+    height: 144px;
+    left: 0px;
+    top: 0px;
+
+    background: url(Project Logo-01);
+}
+
+.topic{
+position: absolute;
+width: 456px;
+height: 56px;
+left: 414px;
+top: 50px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 56px;
+
+color: #111832;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.login_details{
+    position: absolute;
+    width: 409.05px;
+    height: 229.89px;
+    left: 705px;
+    top: 328px;
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    display: flex;
+
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.login{
+    position: absolute;
+    width: 540px;
+    height: 450px;
+    left: 640px;
+    top: 170px;
+    
+    background: #0070F3;
+    box-shadow: 0px 10px 10px rgba(0, 16, 35, 0.28);
+    border-radius: 25px;
+    }
+
+    .vl_1{
+        position: absolute;
+        width: 517px;
+        height: 0px;
+        left: 300px;
+        top: 400px;
+
+        border: 1px solid #AFBCCD;
+        transform: rotate(90deg);
+    }
+
+    .side_pic img{
+        position: absolute;
+        width: 480px;
+        height: 720px;
+        left: 1px;
+        top: 0px;
+    }
+
+    .f_psw{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 10px;
+        text-align: right;
+    }
+
+    .login-form .login-form .login_details login-type{
+        position: absolute;
+        width: 240.65px;
+        height: 27.22px;
+        left: 870px;
+        top: 276px;
+    }
+
+    .login-form .login-form .login_details input login-username{
+        position: absolute;
+        width: 240.65px;
+        height: 38.11px;
+        left: 873px;
+        top: 328px;
+
+        background: #FFFFFF;
+        border-radius: 5px;
+    }
