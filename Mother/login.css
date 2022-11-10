@@ -5,6 +5,9 @@
     margin: 0px;
     padding: 0px;
 }
+body{
+    background-color: #f4f5f6;
+}
 .logo img{
     position: absolute;
     width: 180px;
