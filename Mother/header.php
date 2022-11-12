@@ -64,7 +64,9 @@
 <body>
     <div class="nav-bar">
         <div class="logo">
-            <img src="../Assets/Project Logo - landscape" alt="Logo">
+            <a href="">
+                <img src="../Assets/Project Logo - landscape" alt="Logo">
+            </a>
         </div>
         <span></span>
         <div class="nav-bar-items">
