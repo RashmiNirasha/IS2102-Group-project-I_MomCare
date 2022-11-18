@@ -4,7 +4,7 @@ $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
-    $mysqli = require __DIR__ . "/database.php";
+    $mysqli = require __DIR__ . "\control\database.php";
     
     $sql = sprintf("SELECT * FROM user
                     WHERE email = '%s'",

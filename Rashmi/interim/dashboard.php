@@ -21,8 +21,6 @@
 </nav>
 </header>
 
-
-
 <!-- header section ends -->
 <!-- body section starts -->
 
@@ -34,7 +32,7 @@
 
             <div class="cards">
                
-               <a href="manage_doctor.html"><div class="card">
+               <a href="control\user.php"><div class="card">
                 <div class="Icon">
                     <img src="images\doctor.png" alt="mother icon">
                 </div>
@@ -43,7 +41,7 @@
                  </div>
                </div></a>
 
-               <a href="manage_doctor.html"><div class="card">
+               <a href="control\user.php"><div class="card">
                 <div class="Icon">
                     <img src="images\doctor.png" alt="mother icon">
                 </div>
@@ -52,7 +50,7 @@
                  </div>
                </div></a>
 
-               <a href="manage_doctor.html"><div class="card">
+               <a href="control\user.php"><div class="card">
                 <div class="Icon">
                     <img src="images\doctor.png" alt="mother icon">
                 </div>
