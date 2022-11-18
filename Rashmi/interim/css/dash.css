@@ -1,0 +1,63 @@
+.container{
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+.container .main{
+    position: relative;
+    margin-top: 10rem;
+    margin-left: 10rem;
+    padding-top: 40px;
+    margin-right: 10rem;
+    display: flex;
+    justify-content: space-between;
+}
+.container .main .img{
+    margin-right: 5%;
+    width: 34px;
+    height: 32px;
+}
+
+h1 {
+    text-indent: 0.8rem;
+    font-weight: 700;
+    font-size: 40px;
+    margin-left: 5%;
+}
+.container .cards{
+    margin-left: 15%;
+    padding-top: 35px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 25px;
+}
+.container .cards .card{
+    border-radius: 10px;
+    padding: 20px 15px;
+    width: 250px;
+    height: 150px;
+    background-color: rgb(5, 169, 245);
+    margin: 20px 10px;
+    display: grid;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container .cards .card:hover{
+    background-color: rgb(5, 169, 245);
+}
+
+.container .cards .card .Icon img{
+    width: 40px;
+    height: 40px;
+}
+
+h3 {
+    font-size: 17px;
+    color: white;
+    font-weight: 200;
+}

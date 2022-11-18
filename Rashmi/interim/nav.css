@@ -1,0 +1,34 @@
+header{
+    padding:1rem 5%;
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+}
+.header .logo{
+    font-size: 1rem;
+    color: #444;
+}
+
+.header .logo i{
+    color: #029EE4;
+}
+
+.header .navbar a{
+    font-size: 1.4rem;
+    color: #777;
+    margin-left: 2rem;
+}
+
+.header .navbar a:hover{
+    color: #029EE4;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+    text-decoration: none;
+}

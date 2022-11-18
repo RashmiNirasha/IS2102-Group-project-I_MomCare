@@ -1,0 +1,83 @@
+
+body{
+    background-color: #f5f5f5;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    margin: 0px;
+
+}
+.container{
+    max-width: 1200px;
+    padding: 0 2rem;
+    margin: 10px 15px 200px 50px;
+}
+
+.container h1{
+    text-align: center;
+    padding-bottom: 1rem;
+    text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
+    text-transform: uppercase;
+    color:#444;
+    margin-top: 10rem;
+    font-size: 3.5rem;
+}
+.container .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: calc(100% / 3 - 1rem);
+    margin-bottom: 2rem;
+    margin-left: 10rem;
+}
+
+.container h3{
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.container .content a.btn{
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #029EE4;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-align: center;
+    margin-left: 23rem;
+    
+}
+
+h1 span{
+    text-transform: uppercase;
+    color:#029EE4;
+}
+
+p{
+    margin: 1rem 5rem;
+   font-size: 1.5rem;
+   text-align: center;
+   margin-bottom: 50px;
+   margin-bottom: 50px;
+
+}
+
+p a{
+    color: #029EE4;
+    text-decoration: none;
+}
+
+.box-container{
+    background-color: #029EE4;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.box-container .credit{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
