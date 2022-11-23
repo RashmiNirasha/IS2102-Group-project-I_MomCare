@@ -64,7 +64,7 @@
              <div class="lower-button">
                 <span></span>
                 <button>
-                    <div class="button-text"><p>Log out</p></div>
+                    <div class="button-text"><p><a href="logout.php">Log out</a></p></div>
                     <div class="Button-icon"><img src="images\logout.png"></div>
                 </button>
             </div>

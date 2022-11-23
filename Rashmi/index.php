@@ -19,7 +19,7 @@ if (isset($_SESSION["user_id"])) {
 <head>
     <title>Home</title>
     <link rel="stylesheet" href="css\body.css">
-    <link rel="stylesheet" href="css\nav.css">
+    <link rel="stylesheet" href="nav.css">
 </head>
 <body>
 <!-- header section starts  -->
