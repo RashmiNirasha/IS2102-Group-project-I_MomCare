@@ -33,47 +33,49 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Login</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css\nav.css">
-    <link rel="stylesheet" href="css\login.css">
+    
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
 <header class="header">
 
-        <a href="#" class="logo"> <img src="Project Logo.png" alt="" class="img" /> </a>
+        <a href="#" class="logo"> <img src="Assets\Project Logo.png" alt="" class="img" /> </a>
         <nav class="navbar">
             <a href="#home">Help</a>
             <a href="index.php">About</a>
         </nav>
     </header>
 
-    <div class="container3">
-        <div class="form">
-            <h1>Login</h1>
-
-            <?php if ($is_invalid): ?>
+<!-- login form container -->
+<div id="login-form-wrap">
+  <h2>Login</h2>
+  <form id="login-form" method="Post" action="login.php">
+  <?php if ($is_invalid): ?>
         <em>Invalid login</em>
     <?php endif; ?>
+    <p>
+    <input type="email" id="email" name="email" placeholder="Enter email address" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="password" required id="password" name="password" placeholder="Enter Password" required></p>
+    <p>
+    <input type="submit" id="login" value="Login">
+    </p>
+  </form>
+  <div id="create-account-wrap">
+    <p>Not a member? <a href="#">Create Account</a><p>
+  </div><!--create-account-wrap-->
+</div><!--login-form-wrap-->
+<!-- login -->
 
-            <form action="login.php" method="post">
-                <div class="inputBox">
-                    <input type="email" id="email" name="email">
-                    <label>email</label>
-                </div>
-                <div class="inputBox">
-                    <input type="password" name="password" required id="password">
-                    <label>Password</label>
-                </div>
-                <input type="submit" value="Login">
-                <p>Don't have an account? <a href="signup.html">Sign up</a></p>
-            </form>
-        </div>
-    </div>
 </body>
 </html>
 
