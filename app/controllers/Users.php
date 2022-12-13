@@ -1,8 +1,17 @@
 <?php
-  class Users extends Controller {
+  class Users extends BaseController {
     public function __construct(){
       $this->userModel = $this->model('User');
     }
+    public function index()
+  {
+    // $this->view('home');
+    $this->view('users/addNotes');
+  }
+  public function admin(){
+    //load view
+    $this->view('users/login');
+  }
 
     public function register(){
       // Check for POST
@@ -57,7 +66,7 @@
 
           // Register User
           if($this->userModel->register($data)){
-            redirect('users/login');
+            redirect('login');
           } else {
             die('Something went wrong');
           }
@@ -154,17 +163,15 @@
     public function createUserSession($user){
       $_SESSION['user_id'] = $user->id;
       $_SESSION['user_email'] = $user->email;
-      redirect('pages/admin');
+      redirect('admin');
     }
 
     public function logout(){
       unset($_SESSION['user_id']);
       unset($_SESSION['user_email']);
       session_destroy();
-      redirect('users/login');
+      redirect('login');
     }
 
-    public function categories(){
-      redirect('pages/categories');
-    }
+    
   }

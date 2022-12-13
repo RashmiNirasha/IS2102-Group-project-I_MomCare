@@ -40,7 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
    
     <title>PHM Login </title>
 
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>css/style.css">
+
     <script type="text/javascript">
             function validate() {
                 if (document.email.value == "") {
@@ -73,18 +74,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </nav>
 </header>
 
-<!-- <form action="phpSearch.php" method="post">
-    Search <input type="text" name="search"><br>
-    <input type ="submit">
-    </form> -->
-<!-- header section ends -->
-
-<!-- home section starts  -->
-
 <section class="home" id="home">
     <div class="main">
         <div class="image">
-            <img src="Assets\Black Illustrated Simple Mental Health Presentation.svg" alt="">
+        <img src="<?php echo URLROOT . 'img/Black Illustrated Simple Mental Health Presentation.svg' ?>">
         </div>
 
   <div class = "main2">

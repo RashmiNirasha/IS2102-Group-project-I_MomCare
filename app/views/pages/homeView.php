@@ -53,7 +53,7 @@ if (isset($_SESSION["user_id"])) {
         
     <?php else: ?>
         
-        <p><a href="<?php echo URLROOT; ?>/users/login">Log in</a> or <a href="<?php echo URLROOT; ?>/users/Register">Sign up</a></p>
+        <p><a href="<?php echo URLROOT; ?>users/admin">Log in</a> or <a href="<?php echo URLROOT; ?>users/Register">Sign up</a></p>
         
     <?php endif; ?>
 

@@ -1,5 +1,5 @@
 <?php
-  class User {
+  class UserModel extends Database {
     private $db;
 
     public function __construct(){
