@@ -1,0 +1,218 @@
+@import url(https://fonts.googleapis.com/css?family=roboto);
+
+*{
+    font-family: 'Roboto';
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #f4f5f6;
+}
+.logo img{
+    position: absolute;
+    width: 180px;
+    height: 144px;
+    left: 0px;
+    top: 0px;
+}
+.bg-image img{
+    position: absolute;
+    width: 464px;
+    height: 720px;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+h1{
+    position: absolute;
+    width: 500px;
+    height: 56px;
+    left: 414px;
+    top: 50px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+
+    color: #111832;
+}
+.vline{
+    position: absolute;
+    width: 517px;
+    height: 0px;
+    left: 400px;
+    top: 400px;
+
+    fill: #111832;
+    border: 1px solid #111832;
+    transform: rotate(90deg);
+}
+.login{
+
+    position: absolute;
+    width: 600px;
+    height: 450px;
+    left: 800px;
+    top: 165px;
+
+    background: #029EE4;
+    box-shadow: 0px 10px 10px rgba(0, 16, 35, 0.28);
+    border-radius: 25px;
+}
+.login .login-form{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+h2{
+    position: relative;
+    width: 180px;
+    height: 25px;
+    padding: 50px 210px 0px 210px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    color: #FFFFFF;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.login .login-details{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+
+    color: #f4f5f6;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.login-details td{
+    width: 50%;
+    padding: 10px 40px 10px 40px;
+
+}
+.login .login-form label{
+    position: relative;
+    display: grid;
+}
+.login .login-details .input-fields input{
+    position: relative;
+    width: 200px;
+    height: 40px;
+    background: none;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+.forgot-pass{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    align-items: center;
+    text-align: right;
+
+    color: #FFFFFF;
+
+}
+.forgot-pass a{
+    text-decoration: none;
+}
+.btn{
+    float: right;
+    padding-top: 20px;
+}
+.btn input[type]:hover{
+    color: #111832;
+}
+.btn input[type]{
+    box-sizing: border-box;
+
+    position: relative;
+    width: 80px;
+    height: 40px;
+    background: none;
+    border: none;
+    outline: none;
+    float: right;
+    margin-left: 10px;
+    margin-top: 20px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #029EE4;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+/* Sign Up Page */
+
+.signup{
+    display: flex;
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    left: 250px;
+    top: 165px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    background: #029EE4;
+    box-shadow: 0px 10px 10px rgba(0, 16, 35, 0.28);
+    border-radius: 25px;
+}
+.register-form{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.reg-details{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+
+    color: #F3F4F5;
+}
+.reg-details td{
+    width: 50%;
+    padding: 10px 40px 10px 40px;
+}
+.reg-details .input-fields input{
+    position: relative;
+    width: 500px;
+    height: 30px;
+    background: none;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+.reg-details .input-fields select{
+    position: relative;
+    width: 500px;
+    height: 30px;
+    background: none;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
