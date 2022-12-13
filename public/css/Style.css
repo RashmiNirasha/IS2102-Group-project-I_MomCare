@@ -1,0 +1,346 @@
+header{
+	font-family: Arial, Helvetica, sans-serif;
+	padding:1rem 5%;
+	position: fixed;
+	top:0; left: 0; right: 0;
+	z-index: 1000;
+	box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: #fff;
+  }
+  
+  .header .logo{
+	font-size: 1rem;
+	color: #444;
+  }
+  
+  .header .logo i{
+	color: #029EE4;
+  }
+  
+  .header .navbar a{
+	font-size: 1.4rem;
+	color: #777;
+	margin-left: 2rem;
+  }
+  
+  .header .navbar a:hover{
+	color: #029EE4;
+  }
+  
+  a:-webkit-any-link {
+	cursor: pointer;
+	text-decoration: none;
+  }
+  
+/* Signup page start */
+.tblSize{width:500px;}
+.Three{width:198px;}
+.Two{width:298px;}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+	color: white;
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.formcenter{     /*Form Center*/
+	background-color: #A3BAD9;
+	max-width: 700px;
+	width: 100%;
+	border-radius: 10px;
+	height: 75vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	position:absolute;
+	
+	right:0;
+	left:0;
+	top: 100px;;
+	bottom:80px;
+	margin:auto; 
+}
+
+/* .logo{
+	width:150px;
+	height:40px;
+	position:relative;
+	top:85px;
+	left:55px;
+	} */
+
+	/* add css to button */
+.btn {
+		background-color: #029EE4; /* Green */
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+		border-radius: 10px;
+	}
+/* apply css only to input file button */
+input[type="file"] {
+		background-color: #029EE4; /* Green */
+		border: none;
+		color: white;
+		padding: 15px 20px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+		border-radius: 10px;
+	}
+	
+	/* add css to span */
+	span {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 14px;
+	}
+
+	/* position title right above the form */
+	.title {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 25px;
+		position: relative;
+		top: 100px;
+		left: 55px;
+	}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #029EE4; 
+	color: white;
+	text-align: center;
+	font-size: 15px;	
+	font-family: Arial, Helvetica, sans-serif;
+	}
+
+	.btn-1{
+padding: 10px 20px;
+		background-color: #029EE4; 
+		border: none;
+		color: white;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		cursor: pointer;
+		border-radius: 10px;
+	}
+/* Signup page end */
+
+.container{
+	position: absolute;
+	width: 521px;
+	height: 445px;
+	left: 450px;
+	top: 164px;
+	justify-content: center;
+}
+.container .content .h3{
+	font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-align: center;
+}
+.container .content .p{
+	text-align: center;
+}
+.main-dash h1{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 25px;
+	position: relative;
+	top: 100px;
+	left: 55px;
+}
+
+.main-dash img{
+	position: relative;
+	top: 100px;
+	left: 1200px;
+}
+
+.cards{
+	margin-left: 15%;
+	padding-top: 75px;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	padding-bottom: 25px;
+  }
+
+.cards .card{
+	border-radius: 10px;
+	padding: 20px 15px;
+	width: 250px;
+	height: 150px;
+	background-color: rgb(5, 169, 245);
+	margin: 20px 10px;
+	display: grid;
+	align-items: center;
+	justify-content: space-around;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+ .cards .card:hover{
+	background-color: rgb(99, 124, 135);
+  }
+  
+.cards .card .Icon img{
+	width: 40px;
+	height: 40px;
+  }
+  
+  .button-text{
+	margin-left: 80%;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 10px 20px;
+		background-color: #029EE4; 
+		border: none;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		cursor: pointer;
+		border-radius: 10px;
+
+  }
+
+  .button-text:hover{
+	background-color: #e40260;
+  }
+
+  h3{
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+
+  }
+
+  .button-text a{
+	color: white;
+  }
+
+
+  h2{
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* login */
+
+  .home{
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline;
+  }
+
+  .home .main{
+    width:100vw;
+     height:100vh;
+     display:grid;
+     grid-template-columns: repeat(2, 1fr);
+     grid-gap: 7rem;
+     padding:0 2rem;
+  }
+
+  .home .main .image img{
+
+	position: absolute;
+width: 457px;
+height: 457px;
+left: 150px;
+top: 117px;
+
+  }
+
+  .home .main .main2{
+	position: absolute;
+width: 521px;
+height: 445px;
+left: 650px;
+top: 164px;
+  }
+
+  .home .main .main2 .form{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  }
+
+  .home .main .main2 .form table td{
+	padding: 10px;
+	color: black;
+  }
+
+  .home .main .main2 .form table td input{
+	width: 100%;	
+	height: 40px;
+	border-radius: 10px;
+	border: 1px solid #029EE4;
+	width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  .home .main .main2 .form table td input:focus{
+	outline: none;
+  }
+
+  .home .main .main2 .form table td input[type="submit"]{
+	background-color: #029EE4;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+  }
+
+  .home .main .main2 .form table td input[type="submit"]:hover{
+	background-color: #e40260;
+  }
+
+  .home .main .main2 .form table td a{
+	text-decoration: none;
+	color: #029EE4;
+  }
+
+  .home .main .main2 .form table td a:hover{
+	color: #e40260;
+  }
+
+  /* login end */
+
+  .notes-dash{
+	display: inline;
+	padding: 100px 100px;
+	
+  }
+
+ .notes-dash .button-text{
+	margin:0 10px;
+	margin-top: 150px;
+	padding: 10px 20px;
+	background-color: #029EE4; 
+    display: inline-block;
+	cursor: pointer;
+	border-radius: 10px;	
+  }
+
+  .notes-dash .button-text:hover{
+	background-color: #e40260;
+  }
+
+  
