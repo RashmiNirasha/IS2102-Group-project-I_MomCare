@@ -15,14 +15,14 @@ include('header.php');
 
 </head>
 <body>
-    <div class="profile-content">
+    <div class="profile content">
         <!-- pro pic -->
         <div class="profile-content">
             <div class="pro-pic">
                 <img src="../Assets/Profile_pic_mother" alt="">
             </div>
             <div class="profile-name">
-                <h3>Hansika Prashani Weerasinghe</h3>
+                <h4>Hansika Prashani Weerasinghe</h4>
             </div>
             <div class="profile-address">
                 <span class="material-icons">fmd_good</span>
@@ -31,7 +31,7 @@ include('header.php');
         </div>
         <div class="vline"></div>
         <!-- profile details -->
-        <div class="profiles-data">
+        <div class="profile-data">
             <table class="profile-details">
                 <tr>
                     <td><p>Mother ID</p></td>
@@ -60,11 +60,11 @@ include('header.php');
                 <tr>
                     <td><p>Children Details</p></td>
                     <td>
-                        <li>
-                            <label for="mother-child1">Child 1</label>
-                            <label for="mother-child2">Child 2</label>
-                            <label for="mother-child3">Child 3</label>
-                        </li>
+                        <ul>
+                            <li><label for="mother-child1">Child 1</label></li>
+                            <li><label for="mother-child2">Child 2</label></li>
+                            <li><label for="mother-child3">Child 3</label></li>
+                        </ul>
                     </td>
                 </tr>
             </table>
