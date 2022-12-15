@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation bar</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
     <style>
         @import url(https://fonts.googleapis.com/css?family=roboto);
@@ -52,12 +54,9 @@
         .nav-bar span{
             margin-left: 50%
         }
-        .profile-pic img{
+        .profile-pic{
             padding: 10px 20px;
-
-            border-radius: 10px;
-            height: 50px;
-            width: 50px;
+            font-size: 50px;
         }
     </style>
 </head>
@@ -65,17 +64,16 @@
     <div class="nav-bar">
         <div class="logo">
             <a href="">
-                <img src="../../Assets/Images/Project Logo - landscape" alt="Logo">
+                <img src="Assets\Images\Project Logo - landscape.png" alt="Logo">
             </a>
         </div>
         <span></span>
         <div class="nav-bar-items">
             <a href="http://">Home</a>
             <a href="http://">About</a>
-            <a href="http://">Dashboard</a>
         </div>
         <div class="profile-pic">
-            <img src="../../Assets/Images/Profile_pic_mother" alt="">
+            <span class="material-icons-outlined">account_circle</span>
         </div>
     </div>
 </body>

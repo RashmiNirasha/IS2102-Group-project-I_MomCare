@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login_Mother</title>
     
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../../Assets/css/mother-login.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
     <div class="logo">
-        <img src="../Assets/Project Logo-01.png" alt="logo">
+        <img src="../../Assets/Images/Project Logo-01.png" alt="logo">
     </div>
     <div class="bg-image">
-        <img src="../Assets/jonathan-borba--W1-1nSZJw8-unsplash.jpg" alt="bg image">
+        <img src="../../Assets/Images/jonathan-borba--W1-1nSZJw8-unsplash.jpg" alt="bg image">
     </div>
     <h1 class="heading">Hello there!</h1>
     <div class="vline"></div>
