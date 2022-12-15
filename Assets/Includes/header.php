@@ -37,28 +37,79 @@
         }
         .nav-bar-items{
             padding-top:25px;
+            padding-right: 20px;
+            display: flex;
         }
         .nav-bar-items a{
-            font-style: normal;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 20px;
-            display: flex;
-            text-align: center;
-            padding-left: 30px;
             text-decoration: none;
-            display:inline;
+            color: black;
+            padding: 0px 20px;
+            font-size: 18px;
+            font-weight: 400px;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
 
-            color: #111832;
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 18px;  
+            font-weight: 400px;
+            border: none;
+            outline: none;
+            color: black;
+            padding: 0px 20px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
         }
-        .nav-bar span{
-            margin-left: 50%
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 60px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
         }
-        .profile-pic{
-            padding: 10px 20px;
-            font-size: 50px;
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            font-size:14px;
+            padding: 12px 10px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #029EE4;
+        }
+
+        .show {
+            display: block;
         }
     </style>
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                    if (myDropdown.classList.contains('show')) {
+                        myDropdown.classList.remove('show');
+                    }
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="nav-bar">
@@ -69,12 +120,24 @@
         </div>
         <span></span>
         <div class="nav-bar-items">
-            <a href="http://">Home</a>
-            <a href="http://">About</a>
+            <a href="#home">Home</a>
+            <a href="#news">About</a>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="myFunction()">Log In
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="#">Admin</a>
+                    <a href="#">Mother</a>
+                    <a href="#">PHM</a>
+                    <a href="#">VOG</a>
+                    <a href="#">Pediatrician</a>
+                </div> 
+            </div>
         </div>
-        <div class="profile-pic">
+        <!-- <div class="profile-pic">
             <span class="material-icons-outlined">account_circle</span>
-        </div>
+        </div> -->
     </div>
 </body>
 </html>

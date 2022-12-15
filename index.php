@@ -24,6 +24,7 @@
             <div class="logo-middle">
                 <img src="Assets\Images\Project Logo - landscape.png" alt="">
             </div>
+            <h4>New user? <a href="">Register</a> here</h4>
         </div>
     </div>
 </body>
