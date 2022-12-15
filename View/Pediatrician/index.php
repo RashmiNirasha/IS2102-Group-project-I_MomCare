@@ -1,68 +1,43 @@
 <?php
-
-session_start();
-
-if (isset($_SESSION["user_id"])) {
-    
-    $mysqli = require __DIR__ . "/database.php";
-    
-    $sql = "SELECT * FROM user
-            WHERE id = {$_SESSION["user_id"]}";
-            
-    $result = $mysqli->query($sql);
-    
-    $user = $result->fetch_assoc();
-}
-
+   include_once 'pediatrician-loginView.php';
 ?>
+
+
+<!-- 
 <!DOCTYPE html>
 <head>
     <title>Home</title>
-    <link rel="stylesheet" href="css\body.css">
-    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
 </head>
 <body>
-<!-- header section starts  -->
-
-<header class="header">
-
-    <a href="#" class="logo"> <img src="Project Logo.png" alt="" class="img" /> </a>
-    <nav class="navbar">
-        <a href="#home">Help</a>
-        <a href="index.php">About</a>
-    </nav>
-</header>
 
 <div class="container">
-<h1>Home</h1>
 <div class="content">
+<img src="Assets\About MOM CARE.png" alt="" class="img" />
+<img src="Assets\Project Logo - landscape-01 1 (2).png" alt="" class="img" />
                 <h3>What is MomCare?</h3>
-                <p>MomCare is a platform that helps mothers and medical personals to connect with each other and keep medical records in one place. It also helps mothers to access their mother card and child card easily anytime and from anywhere. </p>
-                <a href="#" class="btn">Read More</a>
-            </div>
+                <p>As the youth striving for the betterment of the world, we are concerned about Sri Lanka's maternal healthcare well-being, since its quality has a significant bearing on the fundamental growth of the future to be born. </p></br>
 
-    <?php if (isset($user)): ?>
-        
-        <p>Hello <?= htmlspecialchars($user["name"]) ?></p>
-        
-        <p><a href="logout.php">Log out</a></p>
-        
-    <?php else: ?>
-        
-        <p><a href="login.php">Log in</a> or <a href="signup.html">sign up</a></p>
-        
-    <?php endif; ?>
-
-    </div>
-    </div>
-</body>
-<footer>
-    <div class="box-container">
-        <div class="credit"> Created by <span>Rashmi Gunawardana</span> | all rights reserved </div>
-    </div>
-    </footer>
-</html>
+                <p>Through our platform, we intend to facilitate our consumers with an easy and effective means of raising the standard of both maternal healthcare and early childhood health and development services across the nation.</p>
+                
+         
+        <div class="notes-dash">
+                <div class="button-text"><p><a href="login.php">login<span class="material-symbols-outlined">login</span></a></p></div>
+                <div class="button-text"><p><a href="signup.php">Sign up<span class="material-symbols-outlined">how_to_reg</span></a></p></div>
     
+            </div>
+   
+            </div>
+    </div>
+    </div>
+
+    
+</body>
+
+</html>
+     -->
     
     
     
