@@ -24,8 +24,8 @@ if($result){
         <td>' . $note_date .'</td>
         <td>' . $note_records .'</td>
         <td>
-        <button class="btn-1"><a href="update.php?updateid='.$ped_note_id.'></a>Update</button>
-        <button class="btn-1>"<a href="delete.php?deleteid='.$ped_note_id.'"></a>Delete</button>
+        <a href="update.php?updateid='.$ped_note_id.'>Update</a>
+        <a href="delete.php?deleteid='.$ped_note_id.'">Delete</a>
         </td>
         </tr> ';
     }
