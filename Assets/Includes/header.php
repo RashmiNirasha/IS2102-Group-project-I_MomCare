@@ -120,15 +120,15 @@
         </div>
         <span></span>
         <div class="nav-bar-items">
-            <a href="#home">Home</a>
-            <a href="#news">About</a>
+            <a href="index.php">Home</a>
+            <a href="About.php">About</a>
             <div class="dropdown">
                 <button class="dropbtn" onclick="myFunction()">Log In
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content" id="myDropdown">
                     <a href="#">Admin</a>
-                    <a href="#">Mother</a>
+                    <a href="View\Mother\mother-login.php">Mother</a>
                     <a href="#">PHM</a>
                     <a href="#">VOG</a>
                     <a href="#">Pediatrician</a>

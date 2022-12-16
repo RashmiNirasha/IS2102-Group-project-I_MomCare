@@ -1,5 +1,5 @@
 <?php
-   include_once("Config/dbConnection.php");
+   include_once("Config/db.php");
    include('Assets/Includes/header.php');
 ?>
 
@@ -19,12 +19,16 @@
         </div>
         <div class="details">
             <div class="heading">
-                <h1>Welcome to <br> MOM CARE</h1>
+                <h1>About<br> MOM CARE</h1>
             </div>
             <div class="logo-middle">
                 <img src="Assets\Images\Project Logo - landscape.png" alt="">
             </div>
-            <h4>New user? <a href="View\Mother\mother-signup.php">Register</a> here</h4>
+            <p>
+            As the youth striving for the betterment of the world, we are concerned about Sri Lanka's maternal healthcare well-being, since its quality has a significant bearing on the fundamental growth of the future to be born. 
+
+            Through our platform, we intend to facilitate our consumers with an easy and effective means of raising the standard of both maternal healthcare and early childhood health and development services across the nation.
+            </p>
         </div>
     </div>
 </body>

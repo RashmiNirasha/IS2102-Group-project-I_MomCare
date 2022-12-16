@@ -14,7 +14,7 @@
         <img src="../../Assets/Images/Project Logo-01.png" alt="logo">
     </div>
     <div class="bg-image">
-        <img src="../../Assets/Images/jonathan-borba--W1-1nSZJw8-unsplash.jpg" alt="bg image">
+        <img src="../../Assets/Images/login-bg.jpg" alt="">
     </div>
     <h1 class="heading">Hello there!</h1>
     <div class="vline"></div>
