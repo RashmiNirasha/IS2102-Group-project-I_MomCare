@@ -131,7 +131,7 @@
                     <a href="View\Mother\mother-login.php">Mother</a>
                     <a href="#">PHM</a>
                     <a href="#">VOG</a>
-                    <a href="#">Pediatrician</a>
+                    <a href="View/Pediatrician/pediatrician-loginView.php">Pediatrician</a>
                 </div> 
             </div>
         </div>
@@ -140,4 +140,4 @@
         </div> -->
     </div>
 </body>
-</html>
+</html>../../View/Pediatrician/login_ped.php
