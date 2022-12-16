@@ -27,9 +27,9 @@
             <div class="msg">
                         <?php 
                             if (isset($_GET['status']) && $_GET['status']=='1'){
-                                echo "<p class='nor-message'>Record Added Successfully</p>";
+                                echo "<p class='nor-message'>Record Added Successfully.</p>";
                             }elseif (isset($_GET['status']) && $_GET['status']=='error'){
-                                echo "<p class='imp-message'>All the fields are required</p>";
+                                echo "<p class='imp-message'>All the fields are required.</p>";
                             }
                         ?>
                     </div>
@@ -69,7 +69,7 @@
                         </div>
                         <div class="btn">
                             <span></span>
-                            <button class="add-user-btn" type = "submit" name = "insert">Add User</button>
+                            <button class="add-user-btn" type = "submit" name = "insert" value="1">Add User</button>
                         </div>
                         
                     </div>
