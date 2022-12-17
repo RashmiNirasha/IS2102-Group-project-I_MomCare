@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION['s_email'])){
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +22,7 @@
                <div class="nav-text">
                 <a href="#">Home</a>
                 <a href="#">About</a>
-                <a href="admin_panel.html">Dashboard</a>
+                <a href="admin_panel.php">Dashboard</a>
                </div>
                <div class="image-user"><img src="..\..\Assets\Images\images-Sachini\people.png" alt="user profile picture"></div> 
             </div>
@@ -26,10 +32,12 @@
             <h1>Add Doctor Details</h1>
             <div class="msg">
                         <?php 
-                            if (isset($_GET['status']) && $_GET['status']=='1'){
-                                echo "<p class='nor-message'>Record Added Successfully.</p>";
-                            }elseif (isset($_GET['status']) && $_GET['status']=='error'){
+                            if (isset($_GET['status']) && $_GET['status']=='errorIDTaken'){
+                                echo "<p class='imp-message'>Doctor ID is already taken.</p>";
+                            }elseif (isset($_GET['status']) && $_GET['status']=='erroremptyField'){
                                 echo "<p class='imp-message'>All the fields are required.</p>";
+                            }elseif (isset($_GET['status']) && $_GET['status']=='success'){
+                                echo "<p class='nor-message'>Record Added Successfully.</p>";
                             }
                         ?>
                     </div>
@@ -79,3 +87,10 @@
     </div>
 </body>
 </html>
+
+<?php
+}else{
+    header("Location:login.php");
+}
+
+?>
