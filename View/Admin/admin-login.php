@@ -28,7 +28,7 @@
                 <form action="..\..\Config\admin-loginprocess.php" method="POST">
                     <div class="container-2">
                         <div class="form-container">
-                        <h2>Sign In</h2>
+                        <h2>Log In</h2>
                         <div class="input-fields">
                             <div class="labels">
                                 <label>User Role</label>
@@ -51,7 +51,7 @@
                         </div>
                         <p><a href="password-reset.html">Forgot Password?</a></p>
                         <div class="btn">
-                            <button>Back</button>
+                            <!-- <button>Back</button> -->
                             <button name="insert" value="1">Login</button>
                         </div>
                         </div>

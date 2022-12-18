@@ -22,7 +22,8 @@
                             }elseif (isset($_GET['error']) && $_GET['error']=='confirmPasswordError'){
                                 echo "<p class='imp-message'>Confirmation Password should be same as the Password.</p>";
                             }elseif (isset($_GET['status']) && $_GET['status']=='success'){
-                                echo "<p class='nor-message'>Your account has been created. Please Login to Proceed.</p>";
+                                echo "<p class='nor-message'>Your account has been created. You will be directed.</p>";
+                                echo "<script>setTimeout(\"location.href = 'admin-login.php';\",1500);</script>";
                             }
                         ?>
                     </div>
@@ -55,7 +56,7 @@
                                 </div>
                                     <p><a href="password-reset.html">Forgot Password?</a></p>
                                     <div class="btn">
-                                        <button>Back</button>
+                                        <!-- <button>Back</button> -->
                                         <button name="insert" value="1">Sign Up</button>
                                     </div>
                             </div>
