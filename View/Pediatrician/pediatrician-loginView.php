@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="javascript" href="/js/validation.js">
-    <link rel="stylesheet" href="pediatrician_styleLogin.css">
+    <link rel="stylesheet" href="../../Assets/css/pediatrician_styleLogin.css">
 </head>
 
 <body>

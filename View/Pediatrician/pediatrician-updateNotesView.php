@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
 
 <html>
 <head>
-<link rel="stylesheet" href="pediatrician-style.css">
+<link rel="stylesheet" href="../../Assets/css/pediatrician-style.css">
 </head> 
 <body class="txtcol">
 

@@ -47,7 +47,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 </html>
 <?php }
 else{
-    header("Location: index.php");
+    header("Location: vog-index.php");
     exit();
 }
 ?>
