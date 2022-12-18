@@ -42,22 +42,22 @@ if ($isNotNull == 1){
                         $sql_insert = "INSERT INTO admin (ad_passwd, ad_email) VALUES('$password', '$email')";
                         $insert_admin = $con->query($sql_insert);
                         if ($insert_admin){
-                            header("Location:..\View\Admin\signup.php?status=success");
+                            header("Location:..\View\Admin\admin-signup.php?status=success");
                         }
 
                     }else{
-                        header("Location:..\View\Admin\signup.php?error=confirmPasswordError");
+                        header("Location:..\View\Admin\admin-signup.php?error=confirmPasswordError");
                     }
                 }else{
-                    header("Location:..\View\Admin\signup.php?error=passLength");
+                    header("Location:..\View\Admin\admin-signup.php?error=passLength");
                 }
             }else{
-                header("Location:..\View\Admin\signup.php?error=emailExist");
+                header("Location:..\View\Admin\admin-signup.php?error=emailExist");
             }
         }// else of role != admin
         
     }// else of insert not set
 }else{
-    header("Location:..\View\Admin\signup.php?error=emptyFields");
+    header("Location:..\View\Admin\admin-signup.php?error=emptyFields");
 }
 ?>
