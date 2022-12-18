@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in form</title>
-    <link rel="stylesheet" type="text/css" href="..\..\Assets\css\login.css"/>
+    <link rel="stylesheet" type="text/css" href="..\..\Assets\css\admin-login.css"/>
 </head>
 <body>
     <div class="container">
-            <div class="header"><img src="..\..\Assets\Images\images-Sachini\logo.png"><p><a href="..\..\View\Admin\signup.php">Create New Account? <button>Sign Up</button></a></p></div>
+            <div class="header"><img src="..\..\Assets\Images\images-Sachini\logo.png"><p><a href="..\..\View\Admin\admin-signup.php">Create New Account? <button>Sign Up</button></a></p></div>
             <div class="content">
                 <div class="msg">
                             <?php 
@@ -19,13 +19,13 @@
                                     echo "<p class='imp-message'>These credentials do not match our records.</p>";
                                 }elseif (isset($_GET['status']) && $_GET['status']=='success'){
                                     echo "<p class='nor-message'>Login Success</p>";
-                                    echo "<script>setTimeout(\"location.href = 'admin_panel.php';\",1500);</script>";
+                                    echo "<script>setTimeout(\"location.href = 'admin-dashboard.php';\",1500);</script>";
                                     
                                 }
                             ?>
                 </div>
                 <h1>Welcome!</h1>
-                <form action="..\..\Config\loginprocess.php" method="POST">
+                <form action="..\..\Config\admin-loginprocess.php" method="POST">
                     <div class="container-2">
                         <div class="form-container">
                         <h2>Sign In</h2>

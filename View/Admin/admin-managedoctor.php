@@ -1,5 +1,5 @@
 <?php
-    include "..\..\Config\managedoctor_process.php";
+    include "..\..\Config\admin-managedoctorprocess.php";
     session_start();
     if (isset($_SESSION['s_email'])){
 ?>
@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="..\..\Assets\css\manage-doctor.css" type="text/css">
+    <link rel="stylesheet" href="..\..\Assets\css\admin-managedoctor.css" type="text/css">
 </head>
 <body>
     <div class="container">
@@ -23,7 +23,7 @@
                <div class="nav-text">
                 <a href="#">Home</a>
                 <a href="#">About</a>
-                <a href="admin_panel.php">Dashboard</a>
+                <a href="admin-dashboard.php">Dashboard</a>
                </div>
                <div class="image-user"><img src="..\..\Assets\Images\images-Sachini\people.png" alt="user profile picture"></div> 
             </div>
@@ -35,7 +35,7 @@
             </div>
             <div class="middle">
                 <p>Add User</p>
-                <a href="add_doctor.php"><img src="..\..\Assets\Images\images-Sachini\add-user.png" alt="add user"></a>
+                <a href="admin-adddoctor.php"><img src="..\..\Assets\Images\images-Sachini\add-user.png" alt="add user"></a>
             </div>
             <div class="bar-container"></div>
 
@@ -73,6 +73,6 @@
 </html>
 <?php
     }else{
-        header("Location:login.php");
+        header("Location:admin-login.php");
     }
 ?>

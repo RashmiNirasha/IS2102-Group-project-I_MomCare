@@ -11,7 +11,7 @@ if (isset($_SESSION['s_email'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="..\..\Assets\css\add-doctor.css" type="text/css">
+    <link rel="stylesheet" href="..\..\Assets\css\admin-adddoctor.css" type="text/css">
 </head>
 <body>
     <div class="container">
@@ -22,7 +22,7 @@ if (isset($_SESSION['s_email'])){
                <div class="nav-text">
                 <a href="#">Home</a>
                 <a href="#">About</a>
-                <a href="admin_panel.php">Dashboard</a>
+                <a href="admin-dashboard.php">Dashboard</a>
                </div>
                <div class="image-user"><img src="..\..\Assets\Images\images-Sachini\people.png" alt="user profile picture"></div> 
             </div>
@@ -38,13 +38,14 @@ if (isset($_SESSION['s_email'])){
                                 echo "<p class='imp-message'>All the fields are required.</p>";
                             }elseif (isset($_GET['status']) && $_GET['status']=='success'){
                                 echo "<p class='nor-message'>Record Added Successfully.</p>";
+                                echo "<script>setTimeout(\"location.href = 'admin-managedoctor.php';\",1500);</script>";
                             }
                         ?>
                     </div>
             <img src="..\..\Assets\Images\images-Sachini\notification.png" alt="notification icon">
             </div>
             <div class="doctor-form">
-                <form action="..\..\Config\adddoctor_process.php" method="post">
+                <form action="..\..\Config\admin-adddoctorprocess.php" method="post">
                     <div class="first-raw">
                         <div class="doctor-id"><label>Doctor_ID</label><input type="text" name="docid"></div>
                             <select class="dropdown" name = "dtype">
@@ -58,7 +59,7 @@ if (isset($_SESSION['s_email'])){
                         <div class="middle-content">
                         <div class="labels">
                         <label>Name:</label>
-                        <label>Age:</label>
+                        <!-- <label>Age:</label> -->
                         <label>Telephone:</label>
                         <label>Email:</label>
                         <label>Address:</label>
@@ -67,7 +68,7 @@ if (isset($_SESSION['s_email'])){
                         </div>
                         <div class="inputs">
                         <input type="text" name="name">
-                        <input type="text" name="age">
+                        <!-- <input type="text" name="age"> -->
                         <input type="text" name="tel">
                         <input type="email" name="email">
                         <input type="text" name="address">
@@ -90,7 +91,7 @@ if (isset($_SESSION['s_email'])){
 
 <?php
 }else{
-    header("Location:login.php");
+    header("Location:admin-login.php");
 }
 
 ?>
