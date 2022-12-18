@@ -122,7 +122,7 @@ h1 {
 
 .container .content .doctor-form .middle .middle-content {
     display: flex;
-    margin-top: 15px;
+    margin-top: 20px;
     height: 75%;
 }
 
@@ -144,7 +144,7 @@ h1 {
     padding: 15px 25px;
     width: 500px;
     height: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .container .content .doctor-form .middle .btn {
