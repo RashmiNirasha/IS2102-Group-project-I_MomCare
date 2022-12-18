@@ -20,7 +20,7 @@
 
 if ($check_not_null == true){
     if (isset($_POST['insert'])){
-        if ($_POST['role'] == 'admin'){
+        // if ($_POST['role'] == 'admin'){
             $password = md5($_POST['password']);
             $email = $_POST['email'];
 
@@ -40,7 +40,7 @@ if ($check_not_null == true){
                     header('Location:..\View\Admin\admin-login.php?status=errorNoRecord');
                 }
             }
-        }//elseif ($_POST['role'] == 'VOG'){
+        // }elseif ($_POST['role'] == 'VOG'){
         //     header('Location:..\View\VOG\VOG-dashboard.php');
         // }elseif role != admin and role != VOG return to the another page   
     }
