@@ -8,7 +8,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         $test_name = $_POST['test-name'];
         $note = $_POST['note'];
         $upload_report = $_FILES['upload-report']['name'];
-        $path = "uploads/tests/".$upload_report;
+        $path = "Assets/Images/uploads/tests/".$upload_report;
         $sql = "INSERT INTO tests (test_name, note, upload_report) VALUES ('$test_name',' $note','$upload_report')";
         $result = mysqli_query($conn, $sql,);
 
