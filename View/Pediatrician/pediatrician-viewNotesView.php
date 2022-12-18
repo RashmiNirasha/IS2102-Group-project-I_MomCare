@@ -31,7 +31,6 @@
  
     </table>
     </div>
-
     <?php include_once '../../Assets/Includes/ped-footer.php';?>
 
 </body>

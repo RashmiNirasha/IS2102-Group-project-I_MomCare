@@ -1,7 +1,7 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="/View/Pediatrician/pediatrician-style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>

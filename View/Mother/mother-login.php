@@ -1,3 +1,7 @@
+<?php  
+    include_once '../../Config/mother-login.inc.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,37 +25,39 @@
     <div class="login">
         <h2>Sign In</h2>
         <div class="login-form">
-            <table class="login-details">
-                <tr>
-                    <td><label for="mother-username">Username</label></td>
-                    <td>
-                        <div class="input-fields">
-                            <input type="text" id="mother-username" placeholder="">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="mother-password">Password</label></td>
-                    <td>
-                        <div class="input-fields">
-                            <input type="password" id="mother-password" placeholder="">
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="forgot-pass"><a href="">Forgot Password</a></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <div class="btn">
-                            <input type="button" value="Sign In">
-                            <input type="button" value="Back">
-                        </div>
-                    </td>
-                </tr>
-            </table>
+            <form action="../../Config/mother-login.inc.php" method="POST">
+                <table class="login-details">
+                    <tr>
+                        <td><label for="mother-username">Email</label></td>
+                        <td>
+                            <div class="input-fields">
+                                <input type="text" name="mother-email" placeholder="">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="mother-password">Password</label></td>
+                        <td>
+                            <div class="input-fields">
+                                <input type="password" name="mother-password" placeholder="">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="forgot-pass"><a href="">Forgot Password</a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div class="btn">
+                                <input type="submit" value="Sign In" name="btn-login">
+                                <input type="button" value="Back">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
     </div>
 </body>

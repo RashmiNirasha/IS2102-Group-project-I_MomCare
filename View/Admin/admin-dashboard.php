@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="..\..\Assets\css\admin-panel.css" type="text/css">
+    <link rel="stylesheet" href="..\..\Assets\css\admin-dashboard.css" type="text/css">
     <!-- <link rel="icon" href="..\..\Assets\Images\images-Sachini\logo.png" type="image/icon type"> -->
 </head>
 <body>
@@ -20,9 +20,9 @@
                <div class="logo"><img src="..\..\Assets\Images\images-Sachini\logo.png" alt="website logo"></div>
                <span></span>
                <div class="nav-text">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="admin_panel.html">Dashboard</a>
+                <a class = "ahover" href="#">Home</a>
+                <a class = "ahover" href="#">About</a>
+                <a class = "ahover" href="..\..\View\Admin\admin-dashboard.php">Dashboard</a>
                </div>
                <div class="image-user"><img src="..\..\Assets\Images\images-Sachini\people.png" alt="user profile picture"></div> 
             </div>
@@ -33,7 +33,7 @@
             <img src="..\..\Assets\Images\images-Sachini\notification.png" alt="notification icon">
             </div>
             <div class="cards">
-                <a href="View\Admin\manage_doctor.php"><div class="card">
+                <a href="#"><div class="card">
                 <div class="icon-case">
                     <img src="..\..\Assets\Images\images-Sachini\mother.png" alt="mother icon">
                 </div>
@@ -43,7 +43,7 @@
                 </div> 
                 </a>
                
-                <a href="manage_doctor.php"><div class="card">
+                <a href="admin-managedoctor.php"><div class="card">
                 <div class="icon-case">
                     <img src="..\..\Assets\Images\images-Sachini\doctor.png" alt="mother icon">
                 </div>
@@ -97,7 +97,7 @@
         </div>
         <div class="content-2">
             <span></span>
-            <button><div class="btn-text"><a href = "..\..\Config\logout.php">Log out</a></div><div class="btn-icon"><img src="..\..\Assets\Images\images-Sachini\logout.png"></div></button>
+            <button><div class="btn-text"><a href = "..\..\Config\admin-logout.php"><h6>Log out</h6></a></div><div class="btn-icon"><img src="..\..\Assets\Images\images-Sachini\logout.png"></div></button>
         </div>
     </div>
 </body>
@@ -105,6 +105,6 @@
 
 <?php 
     }else{
-        header("Location:login.php");
+        header("Location:admin-login.php");
     }
 ?>

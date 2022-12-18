@@ -1,5 +1,6 @@
 <?php 
-include('header.php');
+include('mother-header.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +12,7 @@ include('header.php');
     <title>Mother Profile</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="mother-stylesheet.css">
+    <link rel="stylesheet" href="../../Assets/css/mother-stylesheet.css">
 
 </head>
 <body>
@@ -19,14 +20,14 @@ include('header.php');
         <!-- pro pic -->
         <div class="profile-content">
             <div class="pro-pic">
-                <img src="../Assets/Profile_pic_mother" alt="">
+                <img src="../../Assets/Images/Profile_pic_mother" alt="">
             </div>
             <div class="profile-name">
-                <h4>Hansika Prashani Weerasinghe</h4>
+                <h4><label for="mother-fname"></label> &nbsp; <label for="mother-mname"></label> &nbsp; <label for="mother-lname"></label></h4>
             </div>
             <div class="profile-address">
                 <span class="material-icons">fmd_good</span>
-                <h4>Hometown, District.</h4>
+                <h4><label for="mother-address"></label></h4>
             </div>
         </div>
         <div class="vline"></div>

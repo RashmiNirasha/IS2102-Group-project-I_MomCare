@@ -11,7 +11,7 @@ include('mother-header.php');
     <title>Mother Dashboard</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="mother-stylesheet.css">
+    <link rel="stylesheet" href="../../Assets/css/mother-stylesheet.css">
 
 </head>
 <body>

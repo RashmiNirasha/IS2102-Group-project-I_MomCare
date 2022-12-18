@@ -5,29 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Form</title>
-    <link rel="stylesheet" type="text/css" href="..\..\Assets\css\login.css"/>
+    <link rel="stylesheet" type="text/css" href="..\..\Assets\css\admin-login.css"/>
 </head>
 <body>
     <div class="container">
-            <div class="header"><img src="..\..\Assets\Images\images-Sachini\logo.png"><p><a href="..\..\View\Admin\login.php">Already have an account? <button>Log in</button></a></p></div>
+            <div class="header"><img src="..\..\Assets\Images\images-Sachini\logo.png"><p><a href="..\..\View\Admin\admin-login.php">Already have an account? <button>Log in</button></a></p></div>
             <div class="content">
             <div class="msg">
                         <?php 
-                            if (isset($_GET['error']) && $_GET['error']=='confirmPasswordError'){
-                                echo "<p class='imp-message'>Confirmation Password should be same as the Password.</p>";
-                            }elseif (isset($_GET['error']) && $_GET['error']=='emptyFields'){
+                            if (isset($_GET['error']) && $_GET['error']=='emptyFields'){
                                 echo "<p class='imp-message'>All the fields are required.</p>";
                             }elseif (isset($_GET['error']) && $_GET['error']=='emailExist'){
                                 echo "<p class='imp-message'>Email address is already taken.</p>";
                             }elseif (isset($_GET['error']) && $_GET['error']=='passLength'){
                                 echo "<p class='imp-message'>Password should have at least 6 characters.</p>";
+                            }elseif (isset($_GET['error']) && $_GET['error']=='confirmPasswordError'){
+                                echo "<p class='imp-message'>Confirmation Password should be same as the Password.</p>";
                             }elseif (isset($_GET['status']) && $_GET['status']=='success'){
                                 echo "<p class='nor-message'>Your account has been created. Please Login to Proceed.</p>";
                             }
                         ?>
                     </div>
                 <h1>Welcome!</h1>
-                <form action = "..\..\Config\signupProcess.php" method="POST">
+                <form action = "..\..\Config\admin-signuprocess.php" method="POST">
                     <div class="container-2">
                             <div class="form-container">
                                 <h2>Sign Up</h2>

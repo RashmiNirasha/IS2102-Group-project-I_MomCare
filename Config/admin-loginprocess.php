@@ -16,6 +16,8 @@
         return true;
     }
     $check_not_null = is_array_empty($_POST);
+
+
 if ($check_not_null == true){
     if (isset($_POST['insert'])){
         if ($_POST['role'] == 'admin'){
@@ -33,17 +35,17 @@ if ($check_not_null == true){
                 if ($ad_exists == 1){
                     $_SESSION['s_email'] = $email;
                     $_SESSION['s_password'] = $password;
-                    header('Location:..\View\Admin\login.php?status=success');
+                    header('Location:..\View\Admin\admin-login.php?status=success');
                 }else{
-                    header('Location:..\View\Admin\login.php?status=errorNoRecord');
+                    header('Location:..\View\Admin\admin-login.php?status=errorNoRecord');
                 }
             }
         }//elseif ($_POST['role'] == 'VOG'){
         //     header('Location:..\View\VOG\VOG-dashboard.php');
-        // }elseif role != admin and role != VOG return to the another page
-    }elseif ($check_not_null == false){
-        header("Location:..\View\Admin\login.php?status=errorfieldEmpty");
+        // }elseif role != admin and role != VOG return to the another page   
     }
+}elseif ($check_not_null == false){
+    header("Location:..\View\Admin\admin-login.php?status=errorfieldEmpty");
 }
 
 

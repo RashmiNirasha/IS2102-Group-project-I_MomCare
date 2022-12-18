@@ -18,7 +18,7 @@
     <div class="signup">
         <h2>Register</h2>
         <div class="register-form">
-            <form action="../../Config/mother-signup.inc.php" method="post">
+            <form action="../../Config/mother-signup.inc.php" method="POST">
                 <table class="reg-details">
                     <tr>
                     <td><label for="mother-name">First Name</label></td> 

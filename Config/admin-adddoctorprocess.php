@@ -52,14 +52,14 @@ function is_array_empty($arr){
 
                 $insert = $con->query($sql_insert);
                 if ($insert){
-                    header("Location:..\View\Admin\add_doctor.php?status=success");
+                    header("Location:..\View\Admin\admin-adddoctor.php?status=success");
                 }
             }elseif ($doc_idExists == 1){
-                header("Location:..\View\Admin\add_doctor.php?status=errorIDTaken");
+                header("Location:..\View\Admin\admin-adddoctor.php?status=errorIDTaken");
             }
         }
     }else{
-        header("Location:..\View\Admin\add_doctor.php?status=erroremptyField");
+        header("Location:..\View\Admin\admin-adddoctor.php?status=erroremptyField");
     }
 
 ?>
