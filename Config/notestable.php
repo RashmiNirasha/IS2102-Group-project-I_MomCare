@@ -24,7 +24,7 @@ if($result){
         <td>' . $note_date .'</td>
         <td>' . $note_records .'</td>
         <td>
-        <a href="update.php?updateid='.$ped_note_id.'>Update</a>
+        <a href="pediatrician-updateNotesView.php?updateid='.$ped_note_id.'">Update</a>
         <a href="delete.php?deleteid='.$ped_note_id.'">Delete</a>
         </td>
         </tr> ';

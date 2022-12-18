@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
     $result=mysqli_query($mysqli, $sql);
     
     if (mysqli_query($mysqli, $sql)) {
-        header("Location: pediatrician-viewNotesView.php");
+        header("Location: /pediatrician-viewNotesView.php");
     } else {
         echo "ERROR: not succesfull $sql. "
             . mysqli_error($mysqli);
@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
 </div>
 
 <div class="formcenter">
-<form form method="POST" action=" " id="submit">
+<form form method="POST" action=" pediatrician-updateNotesView.php" id="submit">
 <table border="0" class="tblSize">
 
 <tr><td colspan="3"><b><h2>Upload Records..</h2></b></td></tr>
