@@ -1,5 +1,5 @@
 <?php
-   include_once("Config/db.php");
+   include_once("Config/dbConnection.php");
    include('Assets/Includes/header.php');
 ?>
 
