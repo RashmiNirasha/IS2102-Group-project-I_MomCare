@@ -73,10 +73,9 @@ h1{
 }
 /* logout section */
 .logout{
-    width: 100%;
+    width: 95%;
     display: flex;
-    justify-content: space-around;
-    padding-left: 250px;
+    justify-content: space-between;
     padding-bottom: 50px;
 }
 .logout button{ 
@@ -239,4 +238,31 @@ a{
 .profile-buttons button:hover{
     color: #111C43;
 }
+
+/* Appointments Page */
+.add-btn{
+    display: flex;
+    justify-content: center;
+    padding-left: 800px;
+}
+.add-btn button{
+    width: 250px;
+    height: 40px;
+    background: #F3F4F5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    border: none;
+    margin-right: 20px;
+}
+.add-btn-items{
+    display: flex;
+    justify-content: center;
+    color: #111C43;
+}
+.add-btn-items h4{
+    padding-right: 20px;
+}
+
+/* Appointment List */
+
 

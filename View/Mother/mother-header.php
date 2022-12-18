@@ -70,12 +70,12 @@
         </div>
         <span></span>
         <div class="nav-bar-items">
-            <a href="http://">Home</a>
-            <a href="http://">About</a>
-            <a href="http://">Dashboard</a>
+            <a href="../../index.php">Home</a>
+            <a href="../../About.php">About</a>
+            <a href="mother-dashboard.php">Dashboard</a>
         </div>
         <div class="profile-pic">
-            <img src="../../Assets/Images/Profile_pic_mother" alt="">
+            <a href="mother-profile.php"><img src="../../Assets/Images/Profile_pic_mother" alt=""></a>
         </div>
     </div>
 </body>

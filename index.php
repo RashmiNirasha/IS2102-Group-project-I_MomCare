@@ -24,7 +24,7 @@
             <div class="logo-middle">
                 <img src="Assets\Images\Project Logo - landscape.png" alt="">
             </div>
-            <h4>New user? <a href="View\Mother\mother-signup.php">Register</a> here</h4>
+            <h5>New user? <a href="View\Mother\mother-signup.php">Register</a> here</h5>
         </div>
     </div>
 </body>
