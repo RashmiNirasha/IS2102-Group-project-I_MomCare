@@ -23,6 +23,11 @@ if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
 if (empty($_POST["phone"])) {
     die("Telephone number is required");
 }
+
+if(!preg_match("/^[0-9]{10}$/", $_POST["phone"])) {
+    die("Telephone number must be 10 digits");
+}
+
 if (empty($_POST["worlplace"])) {
     die("Workplace is required");
 }
