@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing_Git</title>
     <!-- <link rel="stylesheet" href="style.css" type="text/css"> -->
-    <style><?php include 'style.css' ?></style>
+    <style><?php include '../../Assets/css/vog-style.css' ?></style>
 </head>
 <body>
     <nav class="topnav"> <!-- top navigation bar -- start -->

@@ -28,7 +28,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style><?php include "style.css" ?></style>
+    <style><?php include "../../Assets/css/vog-style.css " ?></style>
 </head>
 <body>
     <!-- top navigation bar -- start -->

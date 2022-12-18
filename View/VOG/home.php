@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <style><?php include "style.css" ?></style>
+    <style><?php include "../../Assets/css/vog-style.css " ?></style>
 </head>
 <body>
     <nav class="topnav"> <!-- top navigation bar -- start -->
