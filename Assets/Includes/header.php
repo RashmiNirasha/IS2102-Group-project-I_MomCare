@@ -127,10 +127,10 @@
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content" id="myDropdown">
-                    <a href="#">Admin</a>
+                    <a href="View/Admin/admin-login.php">Admin</a>
                     <a href="View\Mother\mother-login.php">Mother</a>
                     <a href="#">PHM</a>
-                    <a href="#">VOG</a>
+                    <a href="View/VOG/vog-index.php">VOG</a>
                     <a href="View/Pediatrician/pediatrician-loginView.php">Pediatrician</a>
                 </div> 
             </div>

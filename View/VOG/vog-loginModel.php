@@ -13,11 +13,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $pass = validate($_POST['password']);
 
     if (empty($uname)) {
-        header("Location: index.php?error=User name is required");
+        header("Location: vog-index.php?error=User name is required");
         exit();
     }
     else if(empty($pass)) {
-        header("Location: index.php?error=Password is required");
+        header("Location: vog-index.php?error=Password is required");
         exit();
     }
     else{
@@ -33,17 +33,17 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                 exit();
             }
             else{
-                header("Location: index.php?error=Incorrect User name or password");
+                header("Location: vog-index.php?error=Incorrect User name or password");
                 exit();
             }
         }
         else{
-            header("Location: index.php?error=Incorrect User name or password");
+            header("Location: vog-index.php?error=Incorrect User name or password");
             exit();
         }
     }
 }
 else {
-    header("Location: index.php");
+    header("Location: v0g-index.php");
     exit();
 }
