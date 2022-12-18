@@ -26,7 +26,7 @@ function is_array_empty($arr){
             $id = $_POST['docid'];
             $type = $_POST['dtype'];
             $name = $_POST['name'];
-            // $age = $_POST['age'];
+            $age = $_POST['age'];
             $address = $_POST['address'];
             $dob = $_POST['dob'];
             $email = $_POST['email'];

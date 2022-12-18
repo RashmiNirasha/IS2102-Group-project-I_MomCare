@@ -59,7 +59,7 @@ if (isset($_SESSION['s_email'])){
                         <div class="middle-content">
                         <div class="labels">
                         <label>Name:</label>
-                        <!-- <label>Age:</label> -->
+                        <label>Age:</label>
                         <label>Telephone:</label>
                         <label>Email:</label>
                         <label>Address:</label>
@@ -68,7 +68,7 @@ if (isset($_SESSION['s_email'])){
                         </div>
                         <div class="inputs">
                         <input type="text" name="name">
-                        <!-- <input type="text" name="age"> -->
+                        <input type="text" name="age">
                         <input type="text" name="tel">
                         <input type="email" name="email">
                         <input type="text" name="address">
