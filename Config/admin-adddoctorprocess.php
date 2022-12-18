@@ -26,7 +26,7 @@ function is_array_empty($arr){
             $id = $_POST['docid'];
             $type = $_POST['dtype'];
             $name = $_POST['name'];
-            $age = $_POST['age'];
+            // $age = $_POST['age'];
             $address = $_POST['address'];
             $dob = $_POST['dob'];
             $email = $_POST['email'];
@@ -48,7 +48,7 @@ function is_array_empty($arr){
 
                 //insert data
                 $sql_insert = "INSERT INTO doctor_details (doctor_id, doc_type, doc_name, doc_age, doc_address, doc_DOB, doc_email, doc_tele, doc_workplace) VALUES 
-                ('$id', '$type', '$name', '$age', '$address', '$dob', '$email', '$tel', '$work')";
+                ('$id', '$type', '$name', '$address', '$dob', '$email', '$tel', '$work')";
 
                 $insert = $con->query($sql_insert);
                 if ($insert){
