@@ -1,6 +1,6 @@
 <?php
 
-include '../../Config/database.php';
+$mysqli = require __DIR__ . " ../../../Config/database.php";
 
 $id= $_GET['updateid'];
 

@@ -4,14 +4,14 @@ session_start();
 
 if (isset($_SESSION["doc_email"])) {
     
-    $mysqli = require __DIR__ . "../config/database.php";
+    $mysqli = require __DIR__ . " ../../../Config/database.php";
     
     $sql = "SELECT * FROM doctor_details
             WHERE doc_email = {$_SESSION["doc_email"]}";
             
     $result = $mysqli->query($sql);
     
-    $user = $result->fetch_assoc();
+    
 }
 
 ?>
@@ -61,7 +61,7 @@ if (isset($_SESSION["doc_email"])) {
                  </div>
                </div></a>
 
-               <a href="notes.php"><div class="card">
+               <a href="pediatrician-addNotesView.php"><div class="card">
                 <div class="Icon">
                     <img src="../../Assets/Images/file-text.png" alt="mother icon">
                 </div>
@@ -70,7 +70,7 @@ if (isset($_SESSION["doc_email"])) {
                  </div>
                </div></a>
  
-               <a href="notes.php"><div class="card">
+               <a href="pediatrician-viewNotesView.php"><div class="card">
                 <div class="Icon">
                     <img src="../../Assets/Images/file-text.png" alt="mother icon">
                 </div>
@@ -80,7 +80,7 @@ if (isset($_SESSION["doc_email"])) {
                </div></a>
              </div>
              <div class="log-out">
-                    <div class="log-out-btn"><p><a href="../../Config/ped-logoutModel.php">Log out<span class="material-symbols-outlined">logout</span></a></p></div>
+                    <div class="log-out-btn"><p><a href="../../Config/ped-logoutModel.php">Log out</a></p></div>
                 </div>
             </div>
         </div>
