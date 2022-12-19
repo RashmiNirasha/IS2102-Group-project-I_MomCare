@@ -14,27 +14,27 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 </head>
 <body>
     <nav class="topnav"> <!-- top navigation bar -- start -->
-        <img class="logo-MomCare" src="images\Project Logo - landscape-01 1 (1).png" alt="logo-MomCare">
+        <img class="logo-MomCare" src="../../Assets/Images/images-vog/Project Logo - landscape-01 1 (1).png" alt="logo-MomCare">
         <ul>
             <li><a href="home.php">Home</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="dashboard.php">Dashboard</a></li>
         </ul>
-        <img class="profile_pic" src="images\doctor.png" alt="profile_pic">
+        <img class="profile_pic" src="../../Assets/Images/images-vog/doctor.png" alt="profile_pic">
     </nav> 
     <!-- top navigation bar -- end -->
     <div class="dashboard">
         <div class="card-pack"><!--gap remover
         --><button class="card">
-                <div class="card-content-left"><img src="images/calendar-dates.png" alt="schedule-manager"></div>
+                <div class="card-content-left"><img src="../../Assets/Images/images-vog/calendar-dates.png" alt="schedule-manager"></div>
                 <div class="card-content-right"><p>Schedule Manager</p></div>
             </button><!--gap remover
         --><button class="card" onclick="window.location.href = 'mothers.php';">
-                <div class="card-content-left"><img src="images/mothers-list.png" alt="mothers-list"></div>
+                <div class="card-content-left"><img src="../../Assets/Images/images-vog/mothers-list.png" alt="mothers-list"></div>
                 <div class="card-content-right"><p>Mothers</p></div>
             </button><!--gap remover
             --><button class="card">
-                <div class="card-content-left"><img src="images/mothers-list.png" alt="children-list"></div>
+                <div class="card-content-left"><img src="../../Assets/Images/images-vog/mothers-list.png" alt="children-list"></div>
                 <div class="card-content-right"><p>Children</p></div>
             </button>
         </div>
@@ -47,7 +47,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 </html>
 <?php }
 else{
-    header("Location: index.php");
+    header("Location: vog-index.php");
     exit();
 }
 ?>

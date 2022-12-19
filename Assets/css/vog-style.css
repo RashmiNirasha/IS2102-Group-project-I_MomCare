@@ -1,6 +1,6 @@
 @font-face {
     font-family: style-font;
-    src: url(fonts/LucidaHandwritingStdRg.TTF);
+    src: url(../../Assets/fonts/LucidaHandwritingStdRg.TTF);
 }
 
 
@@ -75,7 +75,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 
 .left {
     background-color: rgb(255, 255, 255);
-    background-image: url(../../Assets/Images/images-kivi/mother.png);
+    background-image: url(../../Assets/Images/images-vog/mother.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: -40px 0px;
@@ -140,7 +140,7 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
 .div-logo img{
     max-width: 300px;
     max-height: 103.5px;
-    
+    margin-top: -10px;
     float: none;
 }
 /* @media screen and (max-width: 500px) {
@@ -216,13 +216,14 @@ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, O
     width: 90%;
     height: 40%;
     text-align: center;
-    margin-top: 5%;
+    margin-top: 20px;
 }
 
 #about {
     font-family: style-font;
     color: #384292;
     font-size: 25px;
+    margin-top: 5px;
 }
 
 #about-para {
