@@ -1,5 +1,7 @@
 <?php 
 include('mother-header.php');
+    session_start();
+    if (isset($_SESSION['mother_email'])){
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +71,7 @@ include('mother-header.php');
                     </div>
                 </div>
             </a>
-            <a href="http://">
+            <a href="mother-listAppointments.php">
                 <div class="card">
                     <div class="icon-set">
                     <span class="material-icons-outlined">medical_information</span>
@@ -93,7 +95,7 @@ include('mother-header.php');
         <!-- Logout -->
         <div class="logout">
             <span></span>
-            <a href="http://">
+            <a href="../../Config/logout.php">
                 <button>
                     <div class="logout-btn-items">
                         <span class="material-icons-outlined">logout</span>
@@ -105,3 +107,9 @@ include('mother-header.php');
     </div>
 </body>
 </html>
+<?php
+    }
+    else{
+        header("Location: ../../index.php");
+    }
+?>

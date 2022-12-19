@@ -1,5 +1,6 @@
 <?php 
 include('mother-header.php');
+include('../../Config/mother-viewProfile.inc.php')
 
 ?>
 
@@ -16,18 +17,18 @@ include('mother-header.php');
 
 </head>
 <body>
-    <div class="profile content">
+    <div class="profile-page-content">
         <!-- pro pic -->
         <div class="profile-content">
             <div class="pro-pic">
                 <img src="../../Assets/Images/Profile_pic_mother" alt="">
             </div>
             <div class="profile-name">
-                <h4><label for="mother-fname"></label> &nbsp; <label for="mother-mname"></label> &nbsp; <label for="mother-lname"></label></h4>
+                <h4> <?php  echo $mother_fname?> &nbsp; <?php  echo $mother_mname?> &nbsp; <?php  echo $mother_lname?></h4>
             </div>
             <div class="profile-address">
                 <span class="material-icons">fmd_good</span>
-                <h4><label for="mother-address"></label></h4>
+                <h4><?php  echo $mother_address?></h4>
             </div>
         </div>
         <div class="vline"></div>
@@ -36,11 +37,11 @@ include('mother-header.php');
             <table class="profile-details">
                 <tr>
                     <td><p>Mother ID</p></td>
-                    <td><label for="mother-id">001</label></td>
+                    <td><label for="mother-id"><?php  echo $mother_id?></label></td>
                 </tr>
                 <tr>
                     <td><p>Mobile Number</p></td>
-                    <td><label for="mother-mobile">076685457</label></td>
+                    <td><label for="mother-mobile"><?php  echo $mother_mobile?></label></td>
                 </tr>
                 <tr>
                     <td><p>Fixedline Number</p></td>
