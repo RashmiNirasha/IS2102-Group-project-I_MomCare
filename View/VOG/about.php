@@ -9,20 +9,20 @@
 </head>
 <body>
     <nav class="topnav"> <!-- top navigation bar -- start -->
-        <img class="logo-MomCare" src="images\Project Logo - landscape-01 1 (1).png" alt="logo-MomCare">
+        <img class="logo-MomCare" src="../../Assets/Images/images-vog/Project Logo - landscape-01 1 (1).png" alt="logo-MomCare">
         <ul>
             <li><a href="home.php">Home</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="dashboard.php">Dashboard</a></li>
         </ul>
-        <img class="profile_pic" src="images\doctor.png" alt="profile_pic">
+        <img class="profile_pic" src="../../Assets/Images/images-vog/doctor.png" alt="profile_pic">
     </nav> <!-- top navigation bar -- end -->
     <div class="main">
         <div class="left"></div>
         <div class="right">
             <div class="login-container">
                 <div class="div-logo">
-                    <img src="images/Project Logo - landscape-01 2.png" alt="login-logo">
+                    <img src="../../Assets/Images/images-vog/Project Logo - landscape-01 2.png" alt="login-logo">
                 </div>
                 <div class="about-para">
                     <p id="about">About MOM CARE</p>

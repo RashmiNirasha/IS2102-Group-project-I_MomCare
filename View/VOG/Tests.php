@@ -33,18 +33,18 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 <body>
     <!-- top navigation bar -- start -->
     <nav class="topnav">
-        <img class="logo-MomCare" src="images\Project Logo - landscape-01 1 (1).png" alt="logo-MomCare">
+        <img class="logo-MomCare" src="../../Assets/Images/images-vog/Project Logo - landscape-01 1 (1).png" alt="logo-MomCare">
         <ul>
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="About.html">About</a></li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="about.php">About</a></li>
             <li><a href="dashboard.php">Dashboard</a></li>
         </ul>
-        <img class="profile_pic" src="images\doctor.png" alt="profile_pic">
+        <img class="profile_pic" src="../../Assets/Images/images-vog/doctor.png" alt="profile_pic">
     </nav> 
     <!-- top navigation bar -- end -->
     <div class="main-mother">
         <div class="mom-intro">
-            <img src="images/Profile_pic_mother 1.png" alt="mother-profile-pic">
+            <img src="../../Assets/Images/images-vog/Profile_pic_mother 1.png" alt="mother-profile-pic">
             <div class="mom-intro-content">
                 <h3 class="Name-header-mom">Mrs. Indrani Perera</h3>
                 <p class="num-header-mom">0712345678</p>
@@ -101,7 +101,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 </html>
 <?php }
 else{
-    header("Location: index.php");
+    header("Location: vog-index.php");
     exit();
 }
 ?>
