@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
     $result=mysqli_query($mysqli, $sql);
     
     if (mysqli_query($mysqli, $sql)) {
-        header("Location: /pediatrician-viewNotesView.php");
+        header("Location: pediatrician-viewNotesView.php");
     } else {
         echo "ERROR: not succesfull $sql. "
             . mysqli_error($mysqli);
