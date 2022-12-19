@@ -9,6 +9,9 @@
         $sql = "SELECT * FROM registered_user_details WHERE email = '$mother_email' AND password = '$hashpw'";
         if($result = mysqli_query($con, $sql)){
             if(mysqli_num_rows($result) > 0){
+                session_start();
+                $_SESSION['mother_email'] = $mother_email;
+                $_SESSION['mother_fname'] = $row['first_name'];
                 header("Location: ../View/Mother/mother-dashboard.php");
                 exit();
             }

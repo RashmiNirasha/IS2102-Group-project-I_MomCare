@@ -67,29 +67,6 @@
                             }
                         }
                     }
-                    // $resultCheck = mysqli_num_rows($result);
-
-                    // if($resultCheck > 0)
-                    // {
-                    //     header("Location: ../View/Mother/mother-signup.php?signup=usertaken");
-                    //     exit();
-                    // }
-                    // else
-                    // {
-                    //     if($mother_password != $mother_cpassword)
-                    //     {
-                    //         header("Location: ../View/Mother/mother-signup.php?signup=password");
-                    //         exit();
-                    //     }
-                    //     else
-                    //     {
-                    //         $hashedPwd = password_hash($mother_password, PASSWORD_DEFAULT);
-                    //         $sql = "INSERT INTO registered_user_details (first_name, middle_name, last_name, age, address, dob, phm_id, email, phone, password) VALUES ('$mother_fname', '$mother_mname', '$mother_lname', '$mother_age', '$mother_address', '$mother_dob', '$phm_id', '$mother_email', '$mother_phone', '$hashedPwd');";
-                    //         mysqli_query($con, $sql);
-                    //         header("Location: ../View/Mother/mother-signup.php?signup=success");
-                    //         exit();
-                    //     }
-                    // }
                 }
             }
         }

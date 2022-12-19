@@ -1,5 +1,7 @@
 <?php 
-include('mother-header.php');
+    include('mother-header.php');
+    include('../../Config/mother-viewAppointments.inc.php')
+
 ?>
 
 <!DOCTYPE html>
@@ -18,64 +20,74 @@ include('mother-header.php');
     <div class="content">
         <!-- topic and notifications -->
         <div class="heading">
-            <h1>Appoinments</h1>
+            <h1>View Appoinments</h1>
             <a href="#">
                 <span class="material-icons">notifications</span>
             </a>
         </div>
-        <div class="add-btn">
-            <a href="/mother-createAppointment.php">
-                <button>
-                    <div class="add-btn-items">
-                        <h4>Create Appointment</h4>
-                        <span class="material-icons-outlined">add_box</span>
+        <!-- Appointment view -->
+        <div class="app-board">
+            <form action="../../Config/">
+                
+                <div class="app-form">
+                    <div class="app-topic">
+                        <label for="app-topic">Topic: </label>
+                        <p> <?php  echo $app_topic  ?> </p>
                     </div>
-                </button>
-            </a>
+                    <table class="app-details-view">
+                        <tr>
+                            <td><label for="doc-id">Doc ID:</label></td> 
+                            <td>
+                            <p> <?php  echo $doc_id  ?> </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="doc-name">Doc Name:</label></td> 
+                            <td>
+                            <p> <?php  echo $doc_name  ?> </p>  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="app-date">App. Date:</label></td> 
+                            <td>
+                            <p> <?php  echo $app_date  ?> </p>  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="app-time">Time:</label></td> 
+                            <td>
+                            <p> <?php  echo $app_time  ?> </p>    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="app-place">Place:</label></td> 
+                            <td>
+                            <p> <?php  echo $app_place  ?> </p>    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="app-note">Notes:</label></td> 
+                            <td>
+                            <p> <?php  echo $app_notes  ?> </p>   
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="btn">
+                                    <input type="submit" value="Edit" name="btn-reg">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
         </div>
-        <!-- Appointment list -->
-        <table class="app-list">
-            <tr>
-                <td>
-                    <div class="pro-pics">
-                        <img src="../../Assets/Images/Profile_pic_mother" alt="">
-                    </div>
-                </td>
-                <td>
-                    <div class="doc-details">
-                        <h4>Name</h4><br>
-                        <p>Place n address</p>
-                    </div>
-                </td>
-                <td>
-                    <a href="#">
-                        <button>
-                            <div class="app-btn-items">
-                                <h4>View</h4>
-                            </div>
-                        </button>
-                    </a>
-
-
-
-                </td>
-                <td>
-                    <a href="#">
-                        <button>
-                            <div class="app-btn-items">
-                                <h4>Delete</h4>
-                            </div>
-                        </button>
-                    </a>
-                </td>
-            </tr>
-
-        </table>
 
         <!-- Logout -->
         <div class="logout">
             <span></span>
-            <a href="#">
+            <a href="../../Config/logout.php">
                 <button>
                     <div class="logout-btn-items">
                         <span class="material-icons-outlined">logout</span>

@@ -1,16 +1,28 @@
 <?php
-    require __DIR__ . "/dbConnection.php";
+    require_once 'dbConnection.php';
 
-    $sql = "SELECT * FROM registered_user_details";
-    $result = mysqli_query($con, $sql);
+    $sql = "SELECT * FROM mother_details";
+    $result = $con->query($sql);
 
-    if (mysqli_num_rows($result) > 0) {
-        while($row = mysqli_fetch_assoc($result)) {
-            echo "id: " . $row["id"]. " - Name: " . $row["first_name"]. " " . $row["middle_name"]. " " . $row["last_name"]. " - Age: " . $row["age"]. " - Address: " . $row["address"]. " - DOB: " . $row["dob"]. " - PHM ID: " . $row["phm_id"]. " - Email: " . $row["email"]. " - Phone: " . $row["phone"]. " - Password: " . $row["password"]. "<br>";
+    if($result->num_rows > 0)
+    {
+        while($row = $result->fetch_assoc())
+        {
+            $mother_id = $row['mom_id'];
+            $mother_fnmae = $row['mom_fname'];
+            $mother_mname = $row['mom_mname'];
+            $mother_lname = $row['mom_lname'];
+            $mother_landline = $row['mom_landline'];
+            $mother_mobile = $row['mom_mobile'];
+            $mother_email = $row['mom_email'];
+            $mother_address = $row['mom_address'];
+            $guardian_name = $row['guardian_name'];
+            $guardian_mobile = $row['guardian_mobile'];
         }
-    } else {
+    }
+    else
+    {
         echo "0 results";
     }
-
 
 ?>
