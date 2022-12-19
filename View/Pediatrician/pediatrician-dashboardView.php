@@ -1,18 +1,10 @@
 <?php
-session_start();
+
+session_start(); 
+$mysqli = require __DIR__ . " ../../../Config/database.php";
 
 if (isset($_SESSION["doc_email"])) {
     
-    $mysqli = require __DIR__ . " ../../../Config/database.php";
-    
-    $sql = "SELECT * FROM doctor_details
-            WHERE doc_email = {$_SESSION["doc_email"]}";
-            
-    $result = $mysqli->query($sql);
-    
-    
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +21,7 @@ if (isset($_SESSION["doc_email"])) {
 
             <div class="main-dash">
             <h1>Pediatrician Dashboard</h1>
-            <a href="notificationsView.php"><img src="../../Assets/Images/notifications_black_24dp.svg" alt="notification icon"></a>
+            <a href="Pediatrician-notificationsView.php"><img src="../../Assets/Images/notifications_black_24dp.svg" alt="notification icon"></a>
             </div>
             <?php if (isset($user)): ?>
         
@@ -42,7 +34,7 @@ if (isset($_SESSION["doc_email"])) {
         <?php endif; ?>
             <div class="cards">
                
-               <a href="childCardSearchView.php"><div class="card">
+               <a href="pediatrician-childCardSearchView.php"><div class="card">
                 <div class="Icon">
                     <img src="../../Assets/Images/child.png" alt="mother icon">
                 </div>
@@ -86,3 +78,8 @@ if (isset($_SESSION["doc_email"])) {
         <?php include_once '../../Assets/Includes/ped-footer.php';?>
 </header>
 </html>
+<?php
+} else {
+    header("Location: pediatrician-loginView.php");
+    exit();
+}
