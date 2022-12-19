@@ -1,0 +1,847 @@
+@font-face {
+    font-family: style-font;
+    src: url(../../Assets/fonts/LucidaHandwritingStdRg.TTF);
+}
+
+
+body {
+margin: 0%;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}   
+
+.topnav {
+    background-color: #f0f0f0;
+    margin-right: 0px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    padding-top: 10px;
+    width: 100%;
+    height: 60px;
+    margin-top: -7px;
+    box-shadow: 0 3px 10px 3px rgba(0,0,0,.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+
+.topnav ul li a {
+    color: #111C43;
+    font-family:'Calibri';
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav ul {
+    width: 100%;
+    text-align: right;
+}
+
+.topnav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+.logo-MomCare {
+    width: 151px;
+    height: 50px;
+    padding-left: 10px;
+    top: 8px;
+}
+
+.profile_pic {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 20px;
+    border-style: solid;
+    border-width: 1px;
+    stroke: #111C43;
+}
+
+.main {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    margin-top: 70px;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.left {
+    background-color: rgb(255, 255, 255);
+    background-image: url(../../Assets/Images/images-vog/mother.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -40px 0px;
+    width: 40%;
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-bottom: 30px;
+    height:80vh;
+    border-radius: 25px 0 0 25px;
+    box-shadow: -6px 6px 10px 3px rgba(0,0,0,.2);
+}
+.right {
+    background-color: #029EE4;
+    width: 40%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 10%;
+    height:80vh;
+    border-radius: 0 25px 25px 0;
+    box-shadow: 6px 6px 10px 3px rgba(0,0,0,.2);
+}
+
+.login-image {
+   width: 100%; 
+}
+
+
+/* ---------------------------------login-form */
+
+.login-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+    flex-flow: wrap;
+    z-index: 3;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-inline: 10%;
+    min-width: 266px;
+}
+
+.div-logo {
+    width: 50%;
+    display: flex;
+    height: fit-content;
+    margin-top: 10%;
+    justify-content: space-around;
+    min-width: 200px;
+}
+
+.div-form {
+    width: 80%;
+    height: fit-content;
+    padding-bottom: 10px;
+    margin-top: 10%;
+}
+
+.div-logo img{
+    max-width: 300px;
+    max-height: 103.5px;
+    margin-top: -10px;
+    float: none;
+}
+/* @media screen and (max-width: 500px) {
+    .left,
+    .right{
+        width: 20%;
+    }
+} */
+
+.login-form fieldset {
+    border-radius: 5px;
+    padding: 3px 0px 3px 7px;
+    color: rgb(34, 33, 32);
+    border-style:solid;
+    border-width: thin;
+    font-size: 12px;
+    border-color: rgb(199, 187, 187);
+}
+
+.login-form fieldset input {
+    border-radius: 2px;
+    border-style: hidden;
+    margin-left: -7px;
+    width: 90%;
+    margin-bottom: 5px; 
+    margin-left: 1px;   
+    outline-style: none;
+    font-size: 15px;
+}
+
+/* sign-in option  */
+
+
+.end {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+.forgot-psw {
+    text-align: right;
+}
+
+.forgot-psw a {
+    color: #029EE4;
+    text-decoration: none;
+    font-size: small;
+}
+
+.sign-in-btn {
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10%;
+}
+.sign-in-btn button{
+    font-size: larger;
+    padding: 10px 10px;
+    width: 100px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #d0f0ff;
+    background-color: #029EE4;
+    color: #f5f5f5;
+    cursor: pointer;
+}
+
+.sign-in-btn button:hover {
+    background-color: #24D4B9;
+    border-color: #fefffe;
+}
+/*----------------------- About page styles --------------*/
+
+.about-para {
+    width: 90%;
+    height: 40%;
+    text-align: center;
+    margin-top: -30px;
+}
+
+#about {
+    font-family: style-font;
+    color: #384292;
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+#about-para {
+    font-style: italic;
+    margin-inline: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+
+/*----------------------- Home page styles --------------*/
+
+.home-para{
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    font-family: style-font;
+    color: #384292;
+}
+
+#welcome {
+    font-size: larger;
+}
+
+#momCare {
+    font-size: 40px;
+    margin-top: -10px;
+    margin-bottom: -20px;
+}
+
+.home-buttons {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    padding-bottom: 100px;
+}
+
+.register {
+    font-size: larger;
+    padding: 10px 10px;
+    width: 100px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #d0f0ff;
+    background-color: #029EE4;
+    color: #f5f5f5;
+    cursor: pointer;
+}
+
+.sign-in {
+    font-size: larger;
+    padding: 10px 10px;
+    width: 100px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #d0f0ff;
+    background-color: #029EE4;
+    color: #f5f5f5;
+    cursor: pointer;
+}
+
+.sign-in:hover {
+    background-color: #24D4B9;
+    border-color: #fefffe;
+}
+
+.register:hover {
+    background-color: #d42424;
+    border-color: #fefffe;
+}
+
+/*----------------------- Dashboard page styles --------------*/
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.card-pack {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    float: left;
+    overflow: hidden;
+    column-gap: 10%;
+    row-gap: 50px;
+    /* background-color: #111C43; */
+    width: 100%;
+    height: auto;
+    margin-top: 200px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 20px;
+}
+
+.card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    height: 150px;
+
+    background: #029EE4;
+    border: 1px solid #c3c4cc;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #111C43;
+    transition: all 0.2s;
+}
+
+.card p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 250px;
+    font-size: 20px;
+    color: #f5f5f5;
+    margin-left: 10%;
+    padding-bottom: 5px;
+    text-align: left;
+    /* background-color: #111C43; */
+}
+
+.card img {
+    float: left;
+    margin-left: 10%;
+    margin-top: 40%;
+    /* background-color: brown; */
+}
+
+.card-content-left {
+    width: 30%;
+    height: 100%; 
+    padding-left: 8%;
+    /* background-color: #000000; */
+}
+
+.card-content-right{
+    width: 100%;
+    height: 100%;
+    margin-top: -5px;
+    position: relative;
+    /* background-color: chartreuse; */
+}
+
+
+@media screen and (max-width: 696px) {
+    .card{
+        width: 250px;
+        height: auto;
+    }
+
+    .card-pack {
+        justify-content: space-around;
+        float: left;
+    }
+}
+
+.log-out {
+    /* background-color: #111C43; */
+    display: flex;
+    float: right;
+    height: auto;
+    margin-right: 80px;
+    right: 0px;
+    position: fixed;
+    bottom: 0px;
+    margin-bottom: 50px;
+    /* margin-top: 80px; */
+
+}
+
+.log-out button {
+    width: 120px;
+    height: 60px;
+    background-color: #c3c4cc;
+    border-radius: 15px;
+    border-color: #f5f5f5;
+    border-style: solid;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: large;
+}
+
+.log-out button:hover {
+    background-color: rgb(224, 15, 15);
+    color: #f5f5f5;
+}
+
+.error {
+    width: auto;
+    background-color: #d3cccc4d;
+    color: #d42424;
+    margin-left: 3px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+}
+
+/*----------------------- mothers page styles --------------*/
+
+.main-mother {
+    margin-top: 150px;
+    justify-content: space-between;
+}
+
+.mom-filter {
+    margin-bottom: 20px;
+    /* background-color: #d42424; */
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.mom-filter-right {
+    float: right;
+    margin-top: 5px;
+}
+
+.mom-filter-right label {
+    margin-right: 10px;
+}
+
+.dropdown-menu {
+    width: auto;
+    height: 30px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.mom-search {
+    width: 30%;
+    height: 40px;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.mom-bar {
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    width: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+    height: auto;
+    background-color: #029EE4;
+    justify-content:space-between;
+
+}
+.mom-bar-left {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.mom-bar img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    margin-left: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mom-bar h3 {
+    color: #f0f0f0;
+    margin-left: 10px;
+    width: 100%;
+    margin-block: -1px;
+    margin-right: 20px;
+    margin-left: 20px;
+    float: right;
+    /* background-color: #054664; */
+}
+
+.second-line {
+    color: #f0f0f0;
+    margin-left: 10px;
+    width: 100%;
+    margin-block: -1px;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 15px;
+    float: right;
+}
+
+.mom-bar h3 {
+    margin-top: 30px;
+    font-size: 26px;
+}
+
+.mom-btns {
+    /* background-color: #d0f0ff; */
+    width: auto;
+    display: flex;
+    float: right;
+    flex-direction: row;
+    gap: 20px;
+    margin-right: 20px;
+    justify-content: end;
+}
+
+.mom-bar button {
+    height: fit-content;
+    height: 50px;
+    border-radius: 15px;
+    width: 130px;
+    margin-top: 30px;
+    margin-right: 10px;
+    border-style: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: #029EE4;
+}
+
+.mom-bar button:hover {
+    background-color: #111C43;
+    transition: all 0.2s;
+}
+
+/*----------------------- tests page styles --------------*/
+
+.mom-intro {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+    /* background-color: #111C43; */
+}
+
+.mom-intro img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mom-intro-content {
+    margin-left: 20px;
+    width: 100%;
+    /* background-color: #d42424; */
+}
+
+.Name-header-mom {
+    margin-bottom: 0px;
+    margin-top: 30px;
+    font-size: 26px;
+}
+
+.num-header-mom {
+    margin-top: 0px;
+}
+
+.add-report-label {
+    background-color: #029EE4;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
+
+.add-report-label label {
+    font-weight: 500;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.add-report {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.view-report {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+#test-name{
+    width: 30%;
+    height: 25px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+#view-test-name {
+    width: 30%;
+    height: 25px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+#note {
+    width: 35%;
+    height: 25px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 10px;
+}
+
+#view-note {
+    width: 35%;
+    height: 25px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 10px;
+}
+
+#upload-report {
+    width: auto;
+    height: 25px;
+}
+
+@media screen and (max-width: 1500px) {
+    #upload-report {
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+}
+
+.add-report-btn {
+    width: 150px;
+    height: 25px;
+    border-radius: 10px;
+    border-width: 1px;
+    float: right;
+    margin-top: 2.5px;
+    margin-right: 10px;
+    background-color: #029EE4;
+    color: #f0f0f0;
+    border-color: #029EE4;
+    cursor: pointer;
+    
+}
+
+.view-report-btn {
+    width: 60%;
+    height: 25px;
+    border-radius: 10px;
+    border-width: 1px;
+    margin-top: 2.5px;
+    /* margin-right: 10px; */
+    background-color: #029EE4;
+    color: #f0f0f0;
+    border-color: #029EE4;
+    cursor: pointer;
+    
+}
+
+.test-form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+#x {
+    width: 100%;
+}
+
+/* -------------------test table css--------------- */
+.test-view-table {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.test-view-table th{
+    background-color: #029EE4;
+    color: #f0f0f0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+.test-view-table tr {
+    border-radius: 10px;
+}
+
+.test-view-table td{
+    text-align: center;
+}
+
+.test-view-table th:nth-child(1) {
+    width: 20%;
+}
+
+.test-view-table th:nth-child(2) {
+    width: 30%;
+}
+
+.test-view-table th:nth-child(3) {
+    width: 15%;
+}
+
+.test-view-table th:nth-child(4) {
+    width: 15%;
+}
+
+.test-view-table th:nth-child(5) {
+    width: 15%;
+}
+
+.test-view-table td:nth-child(1) {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.test-view-table td:nth-child(2) {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.test-view-table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* ----------------register page------------- */
+
+.reg-form-div {
+    width: 80%;
+    background-color: #029EE4;
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+    flex-flow: wrap;
+    z-index: 3;
+    border-radius: 25px;
+    margin-top: 10%;
+    padding-bottom: 20px;
+    margin-inline: 10%;
+    min-width: 266px;
+    margin-bottom: 40px;
+}
+
+.reg-form {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.reg-form td input {
+    border-radius: 10px;
+    border-style: none;
+    border-width: 1px;
+    padding-left: 10px;
+    width: 100%;
+    font-size: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.reg-form th {
+    column-span: all;
+    color: #f0f0f0;
+    float: left;
+}
+
+.reg-form td {
+    font-size: 18px;
+}
+
+.reg-btn input {
+    width: 100px;
+    height: 30px;
+    float: right;
+    border-radius: 10px;
+    border-width: 1px;
+    background-color: #ffffff;
+    color: #029EE4;
+    margin-right: -10px;
+    border-color: #029EE4;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
