@@ -9,7 +9,7 @@
         while($row = $result->fetch_assoc())
         {
             $mother_id = $row['mom_id'];
-            $mother_fnmae = $row['mom_fname'];
+            $mother_fname = $row['mom_fname'];
             $mother_mname = $row['mom_mname'];
             $mother_lname = $row['mom_lname'];
             $mother_landline = $row['mom_landline'];
