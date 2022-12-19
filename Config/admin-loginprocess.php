@@ -1,6 +1,6 @@
 <?php
     //Connecting to the database;
-    require_once "dbConnection.php";
+    require_once "dbSch.php";
 
     session_start();
     

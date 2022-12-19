@@ -1,6 +1,6 @@
 <?php
 //Connect to the database
-require_once "dbConnection.php";
+require_once "dbSch.php";
 
 //Function Definintion to check the array is empty
 function is_array_empty($arr){

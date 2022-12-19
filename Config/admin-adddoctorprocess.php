@@ -1,7 +1,7 @@
 <?php
 
 //connecting to the database
- require_once 'dbConnection.php';
+ require_once 'dbSch.php';
 
 
 //process the form if $_POST is not empty
