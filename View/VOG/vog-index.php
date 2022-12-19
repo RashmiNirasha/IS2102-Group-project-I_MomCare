@@ -23,7 +23,7 @@
         <div class="right">
             <div class="login-container">
                 <div class="div-logo">
-                    <img src="../../Assets/images/images-kivi/Project Logo - landscape-01 2.png" alt="login-logo">
+                    <img src="../../Assets/images/images-vog/Project Logo - landscape-01 2.png" alt="login-logo">
                 </div>
                 <div class="div-form">
                     <form method="post" class="login-form" action="vog-loginModel.php">
