@@ -13,7 +13,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         $_FILES['upload-report']['name'] = uniqid("test-") . "." . $filex;
         $upload_report = $_FILES['upload-report']['name'];
         $path = "../../Assets/Images/uploads/tests/".$upload_report;
-        $sql = "INSERT INTO tests (test_name, note, upload_report, test_date) VALUES ('$test_name',' $note','$upload_report','$test_date')";
+        $sql = "INSERT INTO tests (test_name, note, upload_report) VALUES ('$test_name',' $note','$upload_report')";
         $result = mysqli_query($conn, $sql,);
 
         // file upload code -- start
@@ -43,7 +43,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
             <li><a href="dashboard.php">Dashboard</a></li>
         </ul>
         <img class="profile_pic" src="../../Assets/Images/images-vog/doctor.png" alt="profile_pic">
-    </nav> 
+    </nav>  
     <!-- top navigation bar -- end -->
     <div class="main-mother">
         <div class="mom-intro">
