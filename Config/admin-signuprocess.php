@@ -21,7 +21,7 @@ echo "<br> $isNotNull";
 
 if ($isNotNull == 1){
     if (isset($_POST['insert'])){
-        if (isset($_POST['role']) && ($_POST['role'] == 'admin')){
+        // if (isset($_POST['role']) && ($_POST['role'] == 'admin')){
             $email = $_POST['email'];
             
             $sql_check = "SELECT COUNT('ad_email') as 'email_count' FROM admin WHERE ad_email='$email'";
@@ -54,7 +54,7 @@ if ($isNotNull == 1){
             }else{
                 header("Location:..\View\Admin\admin-signup.php?error=emailExist");
             }
-        }// else of role != admin
+        // } else of role != admin
         
     }// else of insert not set
 }else{

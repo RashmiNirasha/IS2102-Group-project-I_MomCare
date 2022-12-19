@@ -2,16 +2,16 @@
 
 session_start();
 
-if (isset($_SESSION["user_id"])) {
+if (isset($_SESSION["doc_email"])) {
     
-    $mysqli = require __DIR__ . "../config/database.php";
+    $mysqli = require __DIR__ . " ../../../Config/database.php";
     
-    $sql = "SELECT * FROM user
-            WHERE id = {$_SESSION["user_id"]}";
+    $sql = "SELECT * FROM doctor_details
+            WHERE doc_email = {$_SESSION["doc_email"]}";
             
     $result = $mysqli->query($sql);
     
-    $user = $result->fetch_assoc();
+    
 }
 
 ?>
@@ -20,7 +20,7 @@ if (isset($_SESSION["user_id"])) {
 <head>
     
     <title>Dashboard</title>
-    <link rel="stylesheet" href="pediatrician-style.css">
+    <link rel="stylesheet" href="../../Assets/css/pediatrician-style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 </head>
@@ -34,7 +34,7 @@ if (isset($_SESSION["user_id"])) {
             </div>
             <?php if (isset($user)): ?>
         
-        <p>Hello <?= htmlspecialchars($user["name"]) ?></p>
+        <p>Hello <?= htmlspecialchars($user["doc_name"]) ?></p>
         
         <p><a href="logout.php">Log out</a></p>
         
@@ -61,7 +61,7 @@ if (isset($_SESSION["user_id"])) {
                  </div>
                </div></a>
 
-               <a href="notes.php"><div class="card">
+               <a href="pediatrician-addNotesView.php"><div class="card">
                 <div class="Icon">
                     <img src="../../Assets/Images/file-text.png" alt="mother icon">
                 </div>
@@ -70,7 +70,7 @@ if (isset($_SESSION["user_id"])) {
                  </div>
                </div></a>
  
-               <a href="notes.php"><div class="card">
+               <a href="pediatrician-viewNotesView.php"><div class="card">
                 <div class="Icon">
                     <img src="../../Assets/Images/file-text.png" alt="mother icon">
                 </div>
@@ -78,9 +78,10 @@ if (isset($_SESSION["user_id"])) {
                     <h3>View Doctor's Notes</h3>
                  </div>
                </div></a>
-
              </div>
-                    <div class="button-text"><p><a href="logout.php">Log out<span class="material-symbols-outlined">logout</span></a></p></div>
+             <div class="log-out">
+                    <div class="log-out-btn"><p><a href="../../Config/ped-logoutModel.php">Log out</a></p></div>
+                </div>
             </div>
         </div>
         <?php include_once '../../Assets/Includes/ped-footer.php';?>

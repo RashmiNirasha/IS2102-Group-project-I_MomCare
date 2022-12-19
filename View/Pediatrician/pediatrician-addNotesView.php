@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
             VALUES ('$doc_id','$mom_id','$note_topic','$note_date','$note_description','$note_records')";
 
     if (mysqli_query($mysqli, $sql)) {
-       echo "records added successfully";
+        header("Location: pediatrician-viewNotesView.php");
     } else {
         echo "ERROR: not succesfull $sql. "
             . mysqli_error($mysqli);
@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
 
 <html>
 <head>
-<link rel="stylesheet" href="pediatrician-style.css">
+<link rel="stylesheet" href="../../Assets/css/pediatrician-style.css">
 </head> 
 <body class="txtcol">
 
@@ -41,10 +41,10 @@ if (isset($_POST['submit'])) {
 <tr><td colspan="3"><b><h2>Upload Records..</h2></b></td></tr>
 </br>
 <tr><td> </td></tr>
-<tr><td >Choose Patient <form action="/action_page.php">
+<!-- <tr><td >Choose Patient <form action="/action_page.php">
     <input type="text" placeholder="Search.." name="search">
     <button type="submit" class="btn-1">search </button>
-  </form></td> </tr> 
+  </form></td> </tr>  -->
   <tr><td colspan="2">Enter Doctor Id</td></tr>
   <tr><td colspan ="2" ><input type ="text" class="tblSize" id="doc_id" name="doc_id" > </td></tr>
 

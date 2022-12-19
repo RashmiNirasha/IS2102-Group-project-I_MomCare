@@ -31,20 +31,20 @@
                         <h2>Log In</h2>
                         <div class="input-fields">
                             <div class="labels">
-                                <label>User Role</label>
+                                <!-- <label>User Role</label> -->
                                 <label>User Email</label>
                                 <label>Password</label>
                             </div>
                             <div class="inputs">
-                                <select name = "role">
+                                <!-- <select name = "role">
                                     <option value="admin">Admin</option>
                                     <option value="mother">Mother</option>
                                     <option value="vog">VOG</option>
                                     <option value="phm">PHM</option>
-                                    <!--<option value="mo">MO</option>-->
+                                    <option value="mo">MO</option>
                                     <option value="pediatrician">Pediatrician</option>
                                     <option value="gaurdian">Guardian</option>
-                                    <options value="" selected>Select</option></select>
+                                    <options value="" selected>Select</option></select> -->
                                 <input type="email" name ="email" placeholder="user email">
                                 <input type="password" name = "password" placeholder="password">
                             </div>

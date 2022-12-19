@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 
 $is_invalid = false;
 
@@ -22,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
             session_regenerate_id();
             
-            $_SESSION["doc_id"] = $user["doc_id"];
+            $_SESSION["doc_email"] = $user["doc_email"];
             
-            header("Location: dashboard.php");
+            header("Location: pediatrician-dashboardView.php");
             exit;
         }
     }
