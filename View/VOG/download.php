@@ -5,9 +5,11 @@
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     $file = $row['upload_report'];
+    print_r($_GET);
     if(!empty($_GET['upload_report'])){
         $filename = basename($_GET['upload_report']);
-        $filepath = 'uploads/tests/'.$filename;
+        $filepath = '../../Assets/Images/uploads/tests/'.$filename;
+        echo $filepath;
         if(!empty($filename) && file_exists($filepath)){
             header("Cache-Control: public");
             header("Content-Description: File Transfer");

@@ -31,7 +31,7 @@
                                 <p class="error"><?php echo $_GET['error']; ?></p> 
                         <?php } ?>
                         <fieldset>
-                            <legend>&nbsp;User name:&nbsp;</legend>
+                            <legend>&nbsp;Email:&nbsp;</legend>
                             <input type="email" name="username" id="username" placeholder="Enter your user name">
                         </fieldset>
                         <br>

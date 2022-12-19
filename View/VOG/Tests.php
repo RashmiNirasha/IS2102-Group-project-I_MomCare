@@ -7,9 +7,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         include 'db_conn.php';
         $test_name = $_POST['test-name'];
         $note = $_POST['note'];
+        $target_file = "../../Assets/Images/uploads/tests/".$_FILES['upload-report']['name'];
+
+        $filex = pathinfo($target_file,PATHINFO_EXTENSION);
+        $_FILES['upload-report']['name'] = uniqid("test-") . "." . $filex;
         $upload_report = $_FILES['upload-report']['name'];
-        $path = "Assets/Images/uploads/tests/".$upload_report;
-        $sql = "INSERT INTO tests (test_name, note, upload_report) VALUES ('$test_name',' $note','$upload_report')";
+        $path = "../../Assets/Images/uploads/tests/".$upload_report;
+        $sql = "INSERT INTO tests (test_name, note, upload_report, test_date) VALUES ('$test_name',' $note','$upload_report','$test_date')";
         $result = mysqli_query($conn, $sql,);
 
         // file upload code -- start
@@ -19,7 +23,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         }
         // file upload code -- end
     }
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,6 +70,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                 <tr>
                     <th>Test name</th>
                     <th>Special note</th>
+                    <th>Date</th>
                     <th>Edit report</th>
                     <th>View report</th>
                 </tr>
@@ -82,9 +86,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                     
                             echo "<tr> 
                                 <td>".$row['test_name']."</td>
-                                <td>".$row['note']."</td>" ?>
+                                <td>".$row['note']."</td>
+                                <td>".$row['test_date']."</td>" ?>
                                 <td><a href="testEdit.php"><input class='view-report-btn' type='button' value='Edit'></a></td>
-                                <td><a href="download.php?upload_report= <?php echo $row['upload_report']; ?>"><input class='view-report-btn' type='button' value='View'></a></td>
+                                <td><a target="_blank" href="../../Assets/Images/uploads/tests/<?php echo $row['upload_report']; ?>"><input class='view-report-btn' type='button' value='View'></a></td>
+                                <!-- <td><a href="download.php?upload_report=<?php //echo $row['upload_report']; ?>"><input class='view-report-btn' type='button' value='View'></a></td> -->
                                 </tr>
                 <?php
                         }
