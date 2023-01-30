@@ -1,7 +1,7 @@
 
 <?php 
 include_once("Config/dbConnection.php");
-include "Assets/Includes/header-kivi.php"; ?> 
+include "Assets/Includes/header_index.php"; ?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,8 +23,8 @@ include "Assets/Includes/header-kivi.php"; ?>
             </div>
             <img class="logoLarge" src="Assets/Images/common/logoLarge.png" alt="Logo">
             <div>
-                <a href="View/register.php"><button class="btnMain" >Register</button></a>
-                <a href="View/login.php"><button class="btnMain" >Sign in</button></a>
+                <a href="View/Mother/mother-signup.php"><button class="btnMain" >Register</button></a>
+                <a href="mainLogin.php"><button class="btnMain" >Sign in</button></a>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-<?php include "../Includes/header.php" ?>
+<?php include "Assets/Includes/header_index.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style><?php include "../Css/style.css" ?></style>
+    <style><?php include "Assets/Css/style-kivi.css" ?></style>
 </head>
 <body>
 <div class="landingMain">
         <div class="landingLeft">
-            <img class="landingPagePhoto" src="../Assets/images/common/landing-page-photo.jpg" alt="landing-page-photo">
+            <img class="landingPagePhoto" src="Assets/images/common/landing-page-photo.jpg" alt="landing-page-photo">
         </div>
         <div class="landingRight">
             <div class="login-container">
                 <div class="div-logo">
-                    <img src="../Assets/images/common/logo.png" alt="login-logo">
+                    <img src="Assets/images/common/logo.png" alt="login-logo">
                 </div>
                 <div class="div-form">
                     <form method="post" class="login-form" action="vog-loginModel.php">
@@ -47,5 +47,4 @@
     </div>
 </body>
 </html>
-<?php include "../Includes/footer.php"; ?>
-
+<?php include "Assets/Includes/footer_index.php"; ?>
