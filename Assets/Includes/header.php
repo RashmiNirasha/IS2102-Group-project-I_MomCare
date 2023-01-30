@@ -129,7 +129,7 @@
                 <div class="dropdown-content" id="myDropdown">
                     <a href="View/Admin/admin-login.php">Admin</a>
                     <a href="View\Mother\mother-login.php">Mother</a>
-                    <a href="View/child/dashboard.php">child</a>
+                    <a href="#">PHM</a>
                     <a href="View/VOG/vog-index.php">VOG</a>
                     <a href="View/Pediatrician/pediatrician-loginView.php">Pediatrician</a>
                 </div> 
