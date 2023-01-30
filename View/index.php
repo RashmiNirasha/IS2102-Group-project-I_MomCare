@@ -1,4 +1,4 @@
-<?php include "header_index.php"; ?> 
+<?php include "Assets/Includes/header_index.php"; ?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style><?php include "Css/style.css" ?></style> 
+    <style><?php include "Assets/css/style-kivi.css" ?></style> 
 </head>
 <body>
     <div class="landingMain">
@@ -25,6 +25,6 @@
             </div>
         </div>
     </div>
-    <?php include "footer_index.php"; ?>
+    <?php include "Assets/includes/footer_index.php"; ?>
 </body>
 </html>

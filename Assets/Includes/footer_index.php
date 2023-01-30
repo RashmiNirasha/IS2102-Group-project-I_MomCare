@@ -21,11 +21,12 @@
         background-color: #111C43;
         margin: 0;
         width: 100%;
+        
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        border-top-right-radius: 50px;
-        border-top-left-radius: 50px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
         z-index: 1;
 
     }
@@ -144,27 +145,27 @@
         <div class="footerLeft">
             <h3>Useful Links</h3>
             <ul>
-                <li><a href="#">Home</a></li>
+                <!-- <li><a href="#">Home</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Contact Us</a></li> -->
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms & Conditions</a></li>
             </ul>
         </div>
         <hr>
         <div class="footerMiddle">
-            <h3>Subscribe</h3>
-                <p>Subscribe to our newsletter to get the latest news and updates.</p>
+            <h3>Reach out to Us</h3>
+                <p>Reach out to us for any help you want..</p>
                 <form action="">
                     <input type="email" name="email" id="email" placeholder="Enter your email">
-                    <input type="submit" id="submit" value="Subscribe">
+                    <!-- <input type="submit" id="submit" value="Subscribe"> -->
                 </form>
         </div>
         <hr>
         <div class="footerRight">
             <h3>Contact</h3>
                 <ul>
-                    <li>Administrator - <a href="#">admin@gmail.com</a></li>
+                    <li>Administrator - <a href="#">adminGov@gmail.lk.com</a></li>
                     <li>Hotline - <a href="#">+94114235688</a></li>
                 </ul>
         </div>
