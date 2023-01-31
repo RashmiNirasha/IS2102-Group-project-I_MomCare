@@ -1,4 +1,4 @@
-<?php include "../Includes/header.php"; ?>
+<?php include "../Assets/Includes/header_index.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <style><?php include "../Css/style.css" ?></style>
+    <style><?php include "../Assets/css/style-common.css" ?></style>
 </head>
 <body>
     <div class="dashboard">
@@ -52,4 +52,4 @@
     </div>
 </body>
 </html>
-<?php include "../Includes/footer.php"; ?>
+<?php include "../Assets/Includes/footer_index.php"; ?>

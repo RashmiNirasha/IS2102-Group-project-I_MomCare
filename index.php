@@ -10,7 +10,7 @@ include "Assets/Includes/header_index.php"; ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style><?php include "Assets/css/style-kivi.css" ?></style> 
+    <style><?php include "Assets/css/style-common.css" ?></style> 
 </head>
 <body>
     <div class="landingMain">

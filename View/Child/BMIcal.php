@@ -6,7 +6,7 @@ include "../../Assets/Includes/heading.php";
 <html lang="en">
 <Head>
   <Link Href="Https://Fonts.Googleapis.Com/Css?Family=Quicksand:400,700" Rel="Stylesheet">
-  <style><?php include "../../View/Child/Style.css";?></style>
+  <style><?php include "../../Assets/css/style-common.css";?></style>
 </Head>
 <body>
 <div class="content">
