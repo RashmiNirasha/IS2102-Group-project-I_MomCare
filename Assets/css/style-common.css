@@ -828,18 +828,37 @@
   }
   
   .child-button1{
-    margin-top: 3%;
+    margin-top: 2%;
     margin-left: 75%;
     margin-bottom: 3%;
   }
-
+  .child-button2{
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 3%;
+    margin-right: 5%;
+}
   .NextBtn:hover{
     background-color: #e40260;
   }
 
-    .child-button2{
-        margin-top: 3%;
-        margin-left: 3%;
+    .child-button3{
+        margin-top: 2%;
+        margin-left: 65%;
+        margin-bottom: 3%;
+    }
+
+    .child-button4{
+        margin-top: 2%;
+        margin-left: 2%;
+        margin-bottom: 3%;
+      }
+      .child-button5{
+        margin-top: 2%;
+        margin-left: 2%;
         margin-bottom: 3%;
         margin-right: 5%;
     }
+
+
+    
