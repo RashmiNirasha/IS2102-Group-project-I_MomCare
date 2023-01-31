@@ -8,7 +8,8 @@
     <style>
         body {
             margin: 0%;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
         }
         
         .topnav {
@@ -64,18 +65,19 @@
             border-width: 1px;
             stroke: #111C43;
         }
+        
     </style>
 </head>
 <body>
     <div>
     <nav class="topnav"> <!-- top navigation bar -- start -->
-        <img class="logo-MomCare" src="Assets/images/common/logo.png" alt="logo-MomCare">
+        <img class="logo-MomCare" src="../../Assets/Images/common/logo.png" alt="logo-MomCare">
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="View/dashboardVog.php">Dashboard</a></li>
         </ul>
-        <img class="profile_pic" src="Assets\images\vog\doctor.png" alt="profile_pic">
+        <img class="profile_pic" src="../../Assets/Images/doctor.png" alt="profile_pic">
     </nav> <!-- top navigation bar -- end -->
     </div>
 </body>
