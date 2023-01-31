@@ -39,7 +39,6 @@ body{
 
 h1{
     font-style: normal;
-    font-weight: 500;
     font-size: 36px;
     line-height: 56px;
     padding-left: 50px;
