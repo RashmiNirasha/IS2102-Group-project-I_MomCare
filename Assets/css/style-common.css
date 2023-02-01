@@ -1,0 +1,944 @@
+@font-face {
+    font-family: style-font;
+    src: url(../Assets/Fonts/LucidaHandwritingStdRg.TTF);
+}
+
+@font-face {
+    font-family: style-font1;
+    src: url(Assets/Fonts/LucidaHandwritingStdRg.TTF);
+}
+
+@font-face {
+    font-family: "barlowBold";
+    src: url(../Assets/Fonts/Barlow-Bold.ttf);
+}
+
+@font-face {
+    font-family: "barlowRegular";
+    src: url(../Assets/Fonts/Barlow-Regular.ttf);
+}
+
+.landingMain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100vh;
+    z-index: -1;
+}
+
+.landingLeft {
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    height: 100vh;
+}
+
+.landingRight {
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    text-align: center;
+    margin-left: -10%;
+    height: 100vh;
+}
+
+.landingPagePhoto {
+    margin-left: 10%;
+    height: 100vh;
+    width: 90%;
+}
+
+.rightContent {
+    margin-top: 27%;
+}
+
+.IndexRightContent {
+    margin-top: 27%;
+}
+
+.IndexRightContent h1{
+    font-family: style-font1;
+    font-size: 70px;
+    color: rgb(0, 0, 0);
+}
+
+.rightContent h1 {
+    font-family: style-font;
+    font-size: 70px;
+    color: rgb(0, 0, 0);
+}
+
+.logoLarge {
+    width: 40%;
+    margin-bottom: 60px;
+}
+
+.btnMain {
+    height: 40px;
+    width: 100px;
+    margin: 10px;
+    color: aliceblue;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #029ee4;
+    border-color: #029ee4;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* --------------------about_page---------------------- */
+
+/* Path: groupProject1-personal\Css\style.css */
+
+.aboutContent {
+    display: flex;
+    justify-content: space-around;
+    height: 25%;
+
+}
+
+.aboutContent p {
+    width: 80%;
+    font-style: italic;
+    text-align: center;
+    font-family: "barlowRegular";
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    vertical-align: middle;
+}
+
+/* ---------------------dashboard--------------------- */
+
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    
+}
+
+.card-pack {
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    flex-flow: wrap;
+    overflow: hidden;
+    column-gap: 10%;
+    /* row-gap: -160px; */
+    width: 100%;
+    height: 60%;
+    margin-top: 200px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 20px;
+    /* background-color: #d42424; */
+}
+
+.card {
+    /* box-sizing: border-box; */
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    height: 150px;
+    background: #029EE4;
+    border: 1px solid #c3c4cc;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #111C43;
+    transition: all 0.2s;
+}
+
+.card p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 250px;
+    font-size: 20px;
+    color: #f5f5f5;
+    margin-left: 10%;
+    padding-bottom: 5px;
+    text-align: left;
+    /* background-color: #111C43; */
+}
+
+.card img {
+    float: left;
+    margin-left: 10%;
+    margin-top: 40%;
+    /* background-color: brown; */
+}
+
+.card-content-left {
+    width: 30%;
+    height: 100%; 
+    padding-left: 8%;
+    /* background-color: #000000; */
+}
+
+.card-content-right{
+    width: 100%;
+    height: 100%;
+    margin-top: -15px;
+    position: relative;
+    /* background-color: chartreuse; */
+}
+
+
+@media screen and (max-width: 696px) {
+    .card{
+        width: 250px;
+        height: auto;
+    }
+
+    .card-pack {
+        justify-content: space-around;
+        float: left;
+    }
+}
+
+.log-out {
+    /* background-color: #111C43; */
+    display: flex;
+    float: right;
+    height: auto;
+    margin-right: 80px;
+    right: 0px;
+    position: fixed;
+    bottom: 0px;
+    margin-bottom: 50px;
+    /* margin-top: 80px; */
+
+}
+
+.log-out button {
+    width: 120px;
+    height: 60px;
+    background-color: #c3c4cc;
+    border-radius: 15px;
+    border-color: #f5f5f5;
+    border-style: solid;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: large;
+}
+
+.log-out button:hover {
+    background-color: rgb(224, 15, 15);
+    color: #f5f5f5;
+}
+
+.error {
+    width: auto;
+    background-color: #d3cccc4d;
+    color: #d42424;
+    margin-left: 3px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+}
+
+.material-symbols-outlined {
+    margin-top: 20px;
+    margin-left: 10px;
+    color: #ffffff;
+    font-size: 70px;
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+
+  /* ------------------------login_page------------------------ */
+
+  .login-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 70%;
+    height: 60%;
+    flex-flow: wrap;
+    z-index: 3;
+    border-radius: 25px;
+    background-color: #ffffff17;
+    margin-top: 23%;
+    margin-bottom: 10%;
+    margin-inline: 10%;
+    min-width: 266px;
+    border-style: solid;
+    border-color: #029EE4;
+}
+
+.div-logo {
+    width: 50%;
+    display: flex;
+    height: fit-content;
+    margin-top: 20%;
+    justify-content: space-around;
+    min-width: 200px;
+}
+
+.div-form {
+    width: 80%;
+    height: fit-content;
+    padding-bottom: 10px;
+}
+
+.login-form fieldset {
+    border-radius: 5px;
+    padding: 3px 0px 3px 7px;
+    color: rgb(34, 33, 32);
+    border-style:solid;
+    border-width: thin;
+    font-size: 12px;
+    border-color: rgb(199, 187, 187);
+    text-align: left;
+}
+
+.login-form fieldset input {
+    border-radius: 2px;
+    border-style: hidden;
+    margin-left: -7px;
+    width: 90%;
+    margin-bottom: 5px; 
+    margin-left: 1px;   
+    outline-style: none;
+    font-size: 15px;
+}
+
+/* sign-in option  */
+
+
+.end {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+.forgot-psw {
+    text-align: right;
+}
+
+.forgot-psw a {
+    color: #029EE4;
+    text-decoration: none;
+    font-size: small;
+}
+
+.sign-in-btn {
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10%;
+}
+.sign-in-btn button{
+    font-size: larger;
+    padding: 10px 10px;
+    width: 100px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #d0f0ff;
+    background-color: #029EE4;
+    color: #f5f5f5;
+    cursor: pointer;
+}
+
+.sign-in-btn button:hover {
+    background-color: #24D4B9;
+    border-color: #fefffe;
+}
+
+/* ---------------------------mother_card------------------------ */
+
+.SectionNameDiv h3 {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 40px;
+    font-style: normal;
+    font-family: barlowBold;
+}
+
+.MotherCardOuterDiv {
+    display: flex;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 50px;
+    margin-bottom: 5%;
+    width: 70%;
+    height: auto;
+    background: #029EE4;
+    border-radius: 20px;
+}
+
+.MotherCardMiddleDiv {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+    background: #ffffff;
+    border-radius: 20px;
+}
+
+.MotherCardInnerDiv {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    height: auto;
+    background: #ffffff;
+    border-radius: 20px;
+}
+
+.MotherBasicDetails {
+    display: flex;
+    flex-direction: block;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+}
+
+.MotherBasicDetails-Pic {
+    width: 20%;
+    height: auto;
+    background: #ffffff;
+}
+
+.MotherBasicDetails-Text {
+    width: 80%;
+    height: auto;
+    background: #ffffff;
+}
+
+.MotherBasicDetails img {
+    width: 160px;
+    height: 160px;
+    left: 243px;
+    top: 264px;
+
+}
+
+.MotherBasicDetails-Text table {
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    border-collapse: collapse;
+    background: #029ce446;
+    border-radius: 10px;
+}
+
+.MotherBasicDetails-Text table td {
+    white-space: wrap;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.MotherBasicDetails-Text table td:nth-child(odd) {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.MotherCardTables th {
+    text-align: left;
+}
+
+.MotherStatus {
+    display: flex;
+    width: 100px;
+    height: 40px;
+    background: #029EE4;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.tableTitle b {
+    font-size: 14px;
+}
+
+.MotherStatus b {
+    margin: auto;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.MotherGeneralDetailsTitle {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.TwoColumnSection {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    column-gap: 20px;
+}
+
+.TwoColumnSec1 {
+    width: 50%;
+}
+
+.TwoColumnSec2 {
+    width: 50%;
+}
+
+.MotherCardTables {
+    width: 100%;
+}
+
+.MotherCardTables td {
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.MotherCardTables th {
+    padding-left: 10px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
+
+.MotherCardButtonSet {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    float: right;
+    margin-right: 15%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.MotherCardButtons {
+    display: flex;
+    margin-right: 90px;
+    margin-left: 89%;
+    margin-top: 32%;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 100px;
+    position: fixed;
+}
+
+.PrintBtn {
+    width: 150px;
+    height: 30px;
+    border-style: none;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #d42424;
+    cursor: pointer;
+}
+
+.PrintBtn:hover {
+    background-color: #ff0000;
+}
+
+.NextBtn {
+    width: 150px;
+    height: 30px;
+    border-style: none;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #029EE4;
+    cursor: pointer;
+}
+
+.NextBtn:hover {
+    background-color: #41c3ff;
+}
+
+.BackBtn {
+    width: 150px;
+    height: 30px;
+    border-style: none;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #029EE4;
+    cursor: pointer;
+}
+
+.BackBtn:hover {
+    background-color: #41c3ff;
+}
+
+.innerTable {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.innerTable td {
+    background-color: #ffffff;
+}
+
+.ThreeColumnSection {
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    column-gap: 20px;
+}
+
+.ThreeColumnSec1 {
+    width: 33%;
+}
+
+.ThreeColumnSec2 {
+    width: 33%;
+}
+
+.ThreeColumnSec3 {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+
+.emptyTableCell {
+    background-color: #ffffff;
+}
+
+ /* ---------------------------- child bmi calculator page ---------------------------*/
+ .Bmi-container .form{
+    background-color: #289df6;
+    height: 340px;
+    width: 900px;
+    border-radius: 20px;
+    margin: 50px auto 20px auto;
+    display: block;
+    border: solid 2px #289df6;
+    box-shadow: 0 0 40px 0 #ddd;
+  }
+  
+  .Bmi-container.form:hover {
+    box-shadow: 0 0 60px 0 #ccc;
+    transition: .4s;
+    transform: scale(1.02);
+  }
+  
+  .Bmi-container .text-input {
+    width: 600px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #F3F4F5;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 12px;
+  }
+  
+  .Bmi-cont-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    height:200px;
+    background-color: white;
+    border-radius: 12px;
+  }
+
+  .Bmi-container.text-input:last-child {
+    margin-bottom: 35px;
+  }
+  
+  .Bmi-container.text-input:hover {
+    background-color: #cbe7fd;
+  }
+  
+  .Bmi-cont-2 button{
+      border: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 140px;
+    background-color:#fff ;
+    color: black;
+    margin: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+
+   
+  }
+  
+  .Bmi-cont-2 button:hover{
+    background-color: #24D4B9;
+  }
+  
+  .Bmi-container .text {
+    display: inline-block;
+    margin: 5px 20px 5px 8px;;
+  }
+  
+  .Bmi-container .row-one {
+    padding: 30px 20px 15px 20px;
+  }
+  .Bmi-container .row-two {
+    padding: 15px 20px 30px 20px;
+  }
+  
+  .Bmi-container .container {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .Bmi-container .container input {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .Bmi-container .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #dbeffe;
+    border-radius: 50%;
+  }
+  
+  .Bmi-container .container:hover input ~ .checkmark {
+    background-color: #cbe7fd;
+  }
+  
+  .Bmi-container .container input:checked ~ .checkmark {
+    background-color: #289df6;
+  }
+   
+  .Bmi-container .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .Bmi-container .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .Bmi-container .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  /*------------------------------- child card page --------------------- */
+
+  .heading h1 {
+    margin-bottom: 20px;
+  }
+
+  .CardTitles{
+    width: 70%;
+    height: 50px;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 25px;
+    background-color: #289df6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    text-align: left;
+    padding-top: 5px;
+    color: white;
+    margin-top: 10px;
+  }
+
+  .CardTitles:hover{
+    background-color: #24D4B9;
+    cursor: pointer;
+  }
+
+  .CardTitles a{
+    text-decoration: none;
+    color: black;
+    padding: 10px 10px 10px 10px;
+    width: 25%;
+    border-radius: 20px;
+    background-color: white;
+    margin-bottom: 5px;
+  }
+
+  .CardTitles h3{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: left;
+    margin-left: 5px;
+    font-size: 15px;
+  }
+
+/* ----------------------------- general Information View page -------------------------- */
+
+.ChildCardMain {
+    display: flex;
+    flex-direction: column;
+    width:70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 100px;
+}
+
+.ChildCardMain-titleOuter {
+    background-color: #24D4B9;
+    display: flex;
+    height: 50px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+}
+
+.ChildCardMain-TitleInner {
+    background-color: #ffffff;
+    width: fit-content;
+    height: 40px;
+    margin-top: 5px;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ChildCardMain-TitleInner h3 {
+    margin-top: 7px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.ChildFormSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.ChildFormSection h3 {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ChildFormSection table {
+    width: 100%;
+}
+
+.ChildFormSection input {
+    width: 100%;
+    text-align: left;
+    border-radius:10px;
+    border: 2px solid #A1B9D8;
+    padding:5px 5px 5px 0px;
+}
+
+.ChildFormSection input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.ChildFormSection input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.ChildCardInputSec-3 tr{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ChildCardInputSec-3 td {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+
+.ChildCardInputSec-3 input[type="text"] {
+    float: right;
+    /* width: 90%; */
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+.ChildCardInputSec-3 td:nth-child(1){
+    width: 30%;
+    white-space: nowrap;
+}
+
+.ChildFormSection td {
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+/* .ChildCardInputSec-2 td:nth-child() {
+    width: 1%;
+    white-space: nowrap;
+} */
+.ChildCardInputSec-1 td:nth-child(1) {
+    /* width: 1%; */
+    white-space: nowrap;
+}
+
+.ChildCardOuterDiv {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    height: auto;
+    background: #029EE4;
+    border-radius: 20px;
+}
+
+.ChildCardInnerDiv {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: auto;
+    background: #ffffff;
+    border-radius: 20px;
+}
+
+.ChildFormButtons {
+    display: flex;
+    margin-right: 90px;
+    margin-left: 85%;
+    margin-top: 20px;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 100px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.SaveBtn {
+    width: 150px;
+    height: 30px;
+    border-style: none;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #029EE4;
+    cursor: pointer;
+}
+
+/* ------------------------- Mother Card Form Titles page ------------------------- */
+
+

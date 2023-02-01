@@ -1,6 +1,7 @@
 <?php
     include("../../Config/mother-signup.inc.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +12,6 @@
     <link rel="stylesheet" href="../../Assets/css/mother-login.css">
 </head>
 <body>
-    <div class="logo">
-        <img src="../../Assets/Images/Project Logo-01.png" alt="logo">
-    </div>
     <h1 class="signup-heading">Welcome to Mom Care</h1>
     <div class="signup">
         <h2>Register</h2>

@@ -9,25 +9,23 @@
 
     @font-face {
         font-family: "barlowBold";
-        src: url(Assets/Fonts/Barlow-Bold.ttf);
+        src: url(../Assets/Fonts/Barlow-Bold.ttf);
     }
 
     @font-face {
-        font-family: "barlowRegular";
-        src: url(Assets/Fonts/Barlow-Regular.ttf);
+        font-family: "lucidaBlack";
+        src: url(../Assets/Fonts/Barlow-Regular.ttf);
     }
-    
     .footer {
         background-color: #111C43;
         margin: 0;
         width: 100%;
-        
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        border-top-right-radius: 20px;
-        border-top-left-radius: 20px;
-        z-index: 1;
+        border-top-right-radius: 50px;
+        border-top-left-radius: 50px;
+
 
     }
 
@@ -40,7 +38,7 @@
     }
 
     .footer ul {
-        font-family: "barlow";
+        font-family: "lucidaBlack";
         font-size: 1rem;
         color: black;
         margin-top: 10px;
@@ -115,17 +113,17 @@
         text-align: center;
     }
 
+    .footerRight li {
+        color: #F3F4F5;
+    }
+
     .footerRight ul {
         list-style-type: none;
         padding: 0;
     }
 
-    .footerRight li {
-        color: #F3F4F5;
-    }
-
     .footerMiddle p {
-        font-family: "barlow";
+        font-family: "lucidaBlack";
         font-size: 1rem;
         color: #F3F4F5;
         margin-top: 10px;
@@ -145,27 +143,27 @@
         <div class="footerLeft">
             <h3>Useful Links</h3>
             <ul>
-                <!-- <li><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li> -->
+                <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms & Conditions</a></li>
             </ul>
         </div>
         <hr>
         <div class="footerMiddle">
-            <h3>Reach out to Us</h3>
-                <p>Reach out to us for any help you want..</p>
+            <h3>Subscribe</h3>
+                <p>Subscribe to our newsletter to get the latest news and updates.</p>
                 <form action="">
                     <input type="email" name="email" id="email" placeholder="Enter your email">
-                    <!-- <input type="submit" id="submit" value="Subscribe"> -->
+                    <input type="submit" id="submit" value="Subscribe">
                 </form>
         </div>
         <hr>
         <div class="footerRight">
-            <h3>Contact</h3>
+        <h3>Contact</h3>
                 <ul>
-                    <li>Administrator - <a href="#">adminGov@gmail.lk.com</a></li>
+                    <li>Administrator - <a href="#">admin@gmail.com</a></li>
                     <li>Hotline - <a href="#">+94114235688</a></li>
                 </ul>
         </div>
