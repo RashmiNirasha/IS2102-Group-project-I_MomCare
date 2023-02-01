@@ -6,7 +6,9 @@
 </head> 
 <body class="txtcol">
 
-<?php include_once '../../Assets/Includes/ped-header.php';?>
+<?php 
+include "../../Assets/Includes/header_pages.php";
+?>
 
     <div class="main-dash">
         <h1> Notes and Records</h1>

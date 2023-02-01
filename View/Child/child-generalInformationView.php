@@ -164,8 +164,8 @@ include "../../Assets/Includes/header_pages.php";
         
         <div class="ChildFormButtons">
             <a href=""><button class="SaveBtn">Save</button></a>
-            <a href="infantCareView2.php"><button class="NextBtn">Next</button></a>
-            <a href="childCardView.php"><button class="NextBtn">Back</button></a>
+            <a href="child-infantCareView.php"><button class="NextBtn">Next</button></a>
+            <a href="child-childCardView.php"><button class="NextBtn">Back</button></a>
 
         </div>
     </div>

@@ -28,7 +28,9 @@ if (isset($_POST['submit'])) {
 </head> 
 <body class="txtcol">
 
-<?php include_once '../../Assets/Includes/ped-header.php';?>
+<?php 
+include "../../Assets/Includes/header_pages.php";
+?>
 
 <div class="title">
     <p> </p>

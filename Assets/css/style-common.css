@@ -598,9 +598,9 @@
 
  /* ---------------------------- child bmi calculator page ---------------------------*/
  .Bmi-container .form{
-    background-color: #fff;
-    height: 240px;
-    width: 800px;
+    background-color: #289df6;
+    height: 340px;
+    width: 900px;
     border-radius: 20px;
     margin: 50px auto 20px auto;
     display: block;
@@ -615,16 +615,28 @@
   }
   
   .Bmi-container .text-input {
-    width: 60px;
+    width: 600px;
     height: 30px;
     border-radius: 10px;
-    background-color: #dbeffe;
+    background-color: #F3F4F5;
     border: none;
     outline: none;
     padding: 5px 10px;
     cursor: pointer;
+    margin-left: 12px;
   }
   
+  .Bmi-cont-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    height:200px;
+    background-color: white;
+    border-radius: 12px;
+  }
+
   .Bmi-container.text-input:last-child {
     margin-bottom: 35px;
   }
@@ -633,23 +645,22 @@
     background-color: #cbe7fd;
   }
   
-  .Bmi-container button{
+  .Bmi-cont-2 button{
       border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     height: 40px;
     width: 140px;
-    background-color: #289df6;
-    color: #fff;
+    background-color:#fff ;
+    color: black;
     margin: 10px;
-    margin-left: 20px;
-    outline: none;
+    margin-left: 10px;
     cursor: pointer;
-    justify-content: space-between;
-    text-align: center;
+
+   
   }
   
-  .Bmi-container button:hover{
-    background-color: #0a8ef2;
+  .Bmi-cont-2 button:hover{
+    background-color: #24D4B9;
   }
   
   .Bmi-container .text {

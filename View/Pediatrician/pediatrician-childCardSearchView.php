@@ -6,7 +6,9 @@
 </head>
 <body>
 
-<?php include_once 'includes\header.php'; ?>
+<?php 
+include "../../Assets/Includes/header_pages.php";
+?>
 
 <div class="main-mother">
     <h1>Find Child Card</h1>

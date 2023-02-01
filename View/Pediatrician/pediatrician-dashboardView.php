@@ -16,7 +16,9 @@ if (isset($_SESSION["doc_email"])) {
 
 </head>
 <body>
-   <?php include_once '../../Assets/Includes/ped-header.php';?>
+<?php 
+include "../../Assets/Includes/header_pages.php";
+?>
 </header>
 
             <div class="main-dash">
@@ -75,7 +77,7 @@ if (isset($_SESSION["doc_email"])) {
                 </div>
             </div>
         </div>
-        <?php include_once '../../Assets/Includes/ped-footer.php';?>
+        <?php //include_once '../../Assets/Includes/ped-footer.php';?>
 </header>
 </html>
 <?php
