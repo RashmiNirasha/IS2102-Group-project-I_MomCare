@@ -12,10 +12,7 @@ include "../../Assets/Includes/header_pages.php";
     <style><?php include "../../Assets/css/style-common.css"; ?></style>
 </head>
 <body>
-    <div class="ChildFormButtons">
-            <a href=""><button class="SaveBtn">Save</button></a>
-            <a href=""><button class="NextBtn">Next</button></a>
-        </div>
+
     <div class="ChildCardMain">
         <!-- title section -->
         <div class="ChildCardMain-titleOuter">
@@ -163,6 +160,10 @@ include "../../Assets/Includes/header_pages.php";
                     </table>
                 </div>
             </div>
+        </div>
+        <div class="ChildFormButtons">
+            <a href=""><button class="SaveBtn">Save</button></a>
+            <a href=""><button class="NextBtn">Next</button></a>
         </div>
     </div>
 </body>
