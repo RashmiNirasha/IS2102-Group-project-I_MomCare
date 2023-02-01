@@ -17,24 +17,24 @@ include "../../Assets/Includes/header_pages.php";
         <!-- title section -->
         <div class="ChildCardMain-titleOuter">
             <div class="ChildCardMain-TitleInner">
-                <h3>General Information</h3>
+                <h3>Infant Care</h3>
             </div>
         </div>
         <!-- form section 1 -->
         <div class="ChildCardOuterDiv">
             <div class="ChildCardInnerDiv">
                 <div class="ChildFormSection">
-                    <h3>Neonatal Examination</h3>
                     <table class="ChildCardInputSec-1">
                         <tr>
-                            <td>Date</td>
-                            <td><input type="date" name="Neonatal_Examination" id="Neonatal_Examination"></td>
-                            <td>Maturity of the Baby</td>
+                            <td>MOH area</td>
                             <td><input type="text"></td>
-                            <td>Weeks</td>
                         </tr>
                         <tr>
-                            <td>Baby's Growth</td>
+                            <td>PHM area</td>
+                            <td colspan="6"><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Name of the Field Clinic</td>
                             <td colspan="6"><input type="text"></td>
                         </tr>
                         <tr>
@@ -47,6 +47,10 @@ include "../../Assets/Includes/header_pages.php";
                         </tr>
                         <tr>
                             <td>Registered Date</td>
+                            <td colspan="6"><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Age</td>
                             <td colspan="6"><input type="text"></td>
                         </tr>
                         <tr>
@@ -163,7 +167,8 @@ include "../../Assets/Includes/header_pages.php";
         </div>
         <div class="ChildFormButtons">
             <a href=""><button class="SaveBtn">Save</button></a>
-            <a href="infantCareView2.php"><button class="NextBtn">Next</button></a>
+            <a href=""><button class="NextBtn">Next</button></a>
+            <a href="generalInformationView.php"><button class="BackBtn">Back</button></a>
         </div>
     </div>
 </body>
