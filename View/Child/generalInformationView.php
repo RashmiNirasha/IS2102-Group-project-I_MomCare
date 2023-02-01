@@ -164,12 +164,9 @@ include "../../Assets/Includes/header_pages.php";
         
         <div class="ChildFormButtons">
             <a href=""><button class="SaveBtn">Save</button></a>
-<<<<<<< Updated upstream
             <a href="infantCareView2.php"><button class="NextBtn">Next</button></a>
-=======
-            <a href="infantCareView.php"><button class="NextBtn">Next</button></a>
             <a href="childCardView.php"><button class="NextBtn">Back</button></a>
->>>>>>> Stashed changes
+
         </div>
     </div>
 </body>

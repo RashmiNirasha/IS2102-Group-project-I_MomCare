@@ -24,10 +24,10 @@ include "../../Assets/Includes/heading.php";
           <a href="generalInformationView.php"><h3>General information</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="infantCareView2.php"><h3>Infant Care</h3></a>
+          <a href="infantCareView.php"><h3>Infant Care</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Immunization</h3></a>
+          <a href="immunizationView.php"><h3>Immunization</h3></a>
         </div>
         <div class="CardTitles">
           <a href="#"><h3>Age - Weight Graph</h3></a>

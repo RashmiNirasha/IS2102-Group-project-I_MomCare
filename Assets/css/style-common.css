@@ -140,7 +140,7 @@
     /* box-sizing: border-box; */
     display: flex;
     flex-direction: column;
-    min-width: 250px;
+    min-width: 300px;
     height: 150px;
     background: #029EE4;
     border: 1px solid #c3c4cc;
@@ -819,6 +819,9 @@
 .ChildFormSection input {
     width: 100%;
     text-align: left;
+    border-radius:10px;
+    border: 2px solid #A1B9D8;
+    padding:5px 5px 5px 0px;
 }
 
 .ChildFormSection input[type="radio"] {
@@ -841,6 +844,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-left: 10px;
 }
 
 .ChildCardInputSec-3 input[type="text"] {
@@ -860,12 +864,13 @@
     padding-right: 10px;
 
 }
+
 /* .ChildCardInputSec-2 td:nth-child() {
     width: 1%;
     white-space: nowrap;
 } */
 .ChildCardInputSec-1 td:nth-child(1) {
-    width: 1%;
+    /* width: 1%; */
     white-space: nowrap;
 }
 
