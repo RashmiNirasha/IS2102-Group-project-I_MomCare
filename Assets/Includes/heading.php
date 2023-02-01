@@ -1,5 +1,5 @@
 <?php 
-include "header_index.php"?>
+include "header_pages.php"?>
 
 <!DOCTYPE html>
 <html lang="en">
