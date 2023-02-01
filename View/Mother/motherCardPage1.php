@@ -1,4 +1,4 @@
-<?php include "../../Assets/Includes/header_index.php" ?>
+<?php include "../../Assets/Includes/header_pages.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,13 +13,12 @@
         <div class="SectionNameDiv">
             <h3>Section A</h3>
         </div>
-        
         <div class="MotherCardOuterDiv">
             <div class="MotherCardMiddleDiv">
                 <div class="MotherCardInnerDiv">
                     <div class="Section1">
                         <div class="MotherBasicDetails">
-                            <div class="MotherBasicDetails-Pic"><img src="..\Assets\images\mother\mother_Profile_Pic.png" alt="mother_Profile_Pic"></div>
+                            <div class="MotherBasicDetails-Pic"><img src="..\..\Assets\images\mother\mother_Profile_Pic.png" alt="mother_Profile_Pic"></div>
                             <div class="MotherBasicDetails-Text">
                                 <table>
                                     <div class="MotherStatus"><b>Blue</b></div>
@@ -344,25 +343,15 @@
                 </div>
             </div>
         </div>
+        <div class="MotherCardButtonSet">
+        <a href="#"><button class="PrintBtn">Print</button></a>
+        <a href="motherCardPage2.php"><button class="NextBtn">Next</button></a>
+        </div>
     </div>
-
-    <div class="child-buttons">
-<div class="child-button3">
-<a href="#"><button class="NextBtn" type="submit">Back</button></a>
-</div>
-
-<div class="child-button4">
-<a href="#"><button class="NextBtn" type="submit">Next</button></a>
-</div>
-
-<div class="child-button5">
-<a href="#"><button class="NextBtn" type="submit">Print</button></a>
-</div>
-
-</div>
-<?php include "../../Assets/Includes/footer_index.php"; ?>
-
-
 </body>
 </html>
+<?php include "../../Assets/Includes/footer_pages.php"; ?>
+
+
+
 

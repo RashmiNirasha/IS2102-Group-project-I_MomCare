@@ -1,4 +1,4 @@
-<?php include "../Assets/Includes/header_index.php"; ?>
+<?php include "../../Assets/Includes/header_pages.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <style><?php include "../Assets/css/style-common.css" ?></style>
+    <style><?php include "../../Assets/css/style-common.css" ?></style>
 </head>
 <body>
     <div class="dashboard">
@@ -17,9 +17,9 @@
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
                 <div class="card-content-right"><p>Schedule Manager</p></div>
             </button><!--gap remover
-        --><button class="card" onclick="window.location.href = 'mothers.php';">
+        --><button class="card" onclick="window.location.href = 'motherCardPage1.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">pregnant_woman</span></div>
-                <div class="card-content-right"><p>Mothers</p></div>
+                <div class="card-content-right"><p>Mother Card</p></div>
             </button><!--gap remover
             --><button class="card">
                 <div class="card-content-left"><span class="material-symbols-outlined">child_care</span></div>
@@ -52,4 +52,4 @@
     </div>
 </body>
 </html>
-<?php include "../Assets/Includes/footer_index.php"; ?>
+<?php include "../../Assets/Includes/footer_pages.php"; ?>

@@ -1,4 +1,4 @@
-<?php include "../Includes/header.php" ?>
+<?php include "../../Assets/Includes/header_pages.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,17 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style><?php include "../Css/style.css" ?></style>
+    <style><?php include "../../Assets/css/style-common.css" ?></style>
 </head>
 <body>
     <div class="MotherCardMainDiv">
         <div class="SectionNameDiv">
             <h3>Section A</h3>
-        </div>
-        <div class="MotherCardButtons">
-            <button class="PrintBtn">Print</button>
-            <a href="motherCardPage2.php"><button class="BackBtn">Back</button></a>
-            <button class="NextBtn">Next</button class="NextBtn">Next</button></a>
         </div>
         <div class="MotherCardOuterDiv">
             <div class="MotherCardMiddleDiv">
@@ -188,7 +183,11 @@
                 </div>
             </div>
         </div>
+        <div class="MotherCardButtonSet">
+        <a href="#"><button class="PrintBtn">Print</button></a>
+        <a href="motherCardPage2.php"><button class="BackBtn">Back</button></a>
+        </div>
     </div>
 </body>
 </html>
-<?php include "../Includes/footer.php"; ?>
+<?php include "../../Assets/Includes/footer_pages.php"; ?>
