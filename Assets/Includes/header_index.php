@@ -74,7 +74,7 @@
         <img class="logo-MomCare" src="Assets/Images/common/logo.png" alt="logo-MomCare">
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="about.php">About</a></li>
+            <li><a href="About.php">About</a></li>
             <!-- <li><a href="View/dashboardVog.php">Dashboard</a></li> -->
         </ul>
         <!-- <img class="profile_pic" src="../../Assets/Images/doctor.png" alt="profile_pic"> -->
