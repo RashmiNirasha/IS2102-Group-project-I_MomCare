@@ -1,5 +1,5 @@
 <?php 
-include "header_pages.php"?>
+include "header_index.php"?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,11 +9,12 @@ include "header_pages.php"?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
     <style>
 @import url(https://fonts.googleapis.com/css?family=roboto);
 
 *{
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto'; */
     margin: 0px;
     padding: 0px;
 }
@@ -39,6 +40,7 @@ body{
 
 h1{
     font-style: normal;
+    font-weight: 500;
     font-size: 36px;
     line-height: 56px;
     padding-left: 50px;

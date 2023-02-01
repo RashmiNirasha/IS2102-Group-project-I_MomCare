@@ -1,6 +1,7 @@
-//<?php
-   // session_start();
-    //if (isset($_SESSION['s_email'])){
+<?php
+    session_start();
+    if (isset($_SESSION['s_email'])){
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -103,7 +104,7 @@
 </html>
 
 <?php 
-   // }else{
-      //  header("Location:admin-login.php");
-   // }
+    }else{
+        header("Location:admin-login.php");
+    }
 ?>

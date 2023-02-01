@@ -38,12 +38,6 @@ function countBmi(){
     result = 'Extremely obese';
      }
   
-     //get the result into the html
-
-     var result= document.getElementById("result");
-      print(result);
-
-
   var h1 = document.createElement("h1");
   var h2 = document.createElement("h2");
 

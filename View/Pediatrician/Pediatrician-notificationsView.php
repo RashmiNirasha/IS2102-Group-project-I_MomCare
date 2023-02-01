@@ -6,9 +6,7 @@
 </head>
 <body>
 
-<?php 
-include "../../Assets/Includes/header_pages.php";
-?>
+<?php include_once '../../Assets/Includes/ped-header.php';?>
 <div class="main-notif">
     <h1>Notifications</h1>
     

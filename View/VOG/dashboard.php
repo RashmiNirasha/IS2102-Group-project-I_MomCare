@@ -2,7 +2,6 @@
 session_start();
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 ?>
-<?php include "../../Assets/Includes/header_pages.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +10,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <style><?php include "../../Assets/css/style-common.css" ?></style>
+    <style><?php include "../../Assets/css/vog-style.css " ?></style>
 </head>
 <body>
     <nav class="topnav"> <!-- top navigation bar -- start -->
@@ -46,7 +45,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 
 </body>
 </html>
-<?php include "../../Assets/Includes/footer_pages.php"; ?>
 <?php }
 else{
     header("Location: vog-index.php");

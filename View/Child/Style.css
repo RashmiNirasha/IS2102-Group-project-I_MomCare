@@ -1,0 +1,126 @@
+body {
+  font-family: 'Roboto', sans-serif;
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    border: 0;
+  }
+
+  .Bmi-container .form{
+    background-color: #fff;
+    height: 240px;
+    width: 800px;
+    border-radius: 20px;
+    margin: 50px auto 20px auto;
+    display: block;
+    border: solid 2px #289df6;
+    box-shadow: 0 0 40px 0 #ddd;
+  }
+  
+  .Bmi-container.form:hover {
+    box-shadow: 0 0 60px 0 #ccc;
+    transition: .4s;
+    transform: scale(1.02);
+  }
+  
+  .Bmi-container .text-input {
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #dbeffe;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .Bmi-container.text-input:last-child {
+    margin-bottom: 35px;
+  }
+  
+  .Bmi-container.text-input:hover {
+    background-color: #cbe7fd;
+  }
+  
+  .Bmi-container button{
+      border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 140px;
+    background-color: #289df6;
+    color: #fff;
+    margin: 10px;
+    margin-left: 20px;
+    outline: none;
+    cursor: pointer;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  .Bmi-container button:hover{
+    background-color: #0a8ef2;
+  }
+  
+  .Bmi-container .text {
+    display: inline-block;
+    margin: 5px 20px 5px 8px;;
+  }
+  
+  .Bmi-container .row-one {
+    padding: 30px 20px 15px 20px;
+  }
+  .Bmi-container .row-two {
+    padding: 15px 20px 30px 20px;
+  }
+  
+  .Bmi-container .container {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .Bmi-container .container input {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .Bmi-container .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #dbeffe;
+    border-radius: 50%;
+  }
+  
+  .Bmi-container .container:hover input ~ .checkmark {
+    background-color: #cbe7fd;
+  }
+  
+  .Bmi-container .container input:checked ~ .checkmark {
+    background-color: #289df6;
+  }
+   
+  .Bmi-container .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .Bmi-container .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .Bmi-container .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  

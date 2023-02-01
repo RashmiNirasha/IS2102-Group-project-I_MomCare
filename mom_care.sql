@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 01, 2023 at 09:44 AM
+-- Generation Time: Dec 05, 2022 at 08:19 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
   `ad_id` varchar(255) NOT NULL,
-  `ad_password` varchar(255) NOT NULL,
+  `ad_passwd` varchar(255) NOT NULL,
   PRIMARY KEY (`ad_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`ad_id`, `ad_password`) VALUES
+INSERT INTO `admin` (`ad_id`, `ad_passwd`) VALUES
 ('admin', 'admin123'),
 ('admin1', 'admin123');
 
@@ -52,29 +52,16 @@ DROP TABLE IF EXISTS `appointment_details`;
 CREATE TABLE IF NOT EXISTS `appointment_details` (
   `app_id` int(10) NOT NULL AUTO_INCREMENT,
   `topic` varchar(255) NOT NULL,
-  `doc_id` varchar(20) NOT NULL,
-  `doc_name` varchar(255) NOT NULL,
+  `doc_id` varchar(11) NOT NULL,
   `app_date` date NOT NULL,
-  `app_time` time NOT NULL,
+  `app_time` date NOT NULL,
   `app_place` varchar(255) NOT NULL,
   `notes` varchar(255) NOT NULL,
-  `mom_id` varchar(11) DEFAULT NULL,
+  `mom_id` varchar(11) NOT NULL,
   PRIMARY KEY (`app_id`),
   KEY `doc_id` (`doc_id`),
   KEY `mom_id` (`mom_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `appointment_details`
---
-
-INSERT INTO `appointment_details` (`app_id`, `topic`, `doc_id`, `doc_name`, `app_date`, `app_time`, `app_place`, `notes`, `mom_id`) VALUES
-(1, 'Test #1', 'aa1', 'Ranjith', '2022-12-24', '13:55:18', 'Colombo', 'Testing 1', NULL),
-(10, 'egehvef', 'aa2', 'Bimsara', '2022-12-29', '11:10:00', 'Colombo', 'Testing 3', NULL),
-(11, 'test 2', 'aa2', 'Bimsara', '2022-12-29', '11:10:00', 'Colombo', 'Testing 3', NULL),
-(12, 'test 25', 'aa1', 'Bimsara', '2022-12-17', '11:18:00', 'Galle', 'GGudqwg', NULL),
-(18, 'Test #3', 'aa3', 'Kivi Amarakoon', '2022-12-23', '05:05:00', 'Colombo', 'Testing', NULL),
-(19, 'Appointment 1', 'aa2', 'Bimsara', '2022-12-22', '17:00:00', 'Galle', 'Testing 1', NULL);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -106,27 +93,17 @@ CREATE TABLE IF NOT EXISTS `child_details` (
 
 DROP TABLE IF EXISTS `doctor_details`;
 CREATE TABLE IF NOT EXISTS `doctor_details` (
-  `doc_id` varchar(20) NOT NULL,
+  `doctor_id` varchar(20) NOT NULL,
   `doc_name` varchar(255) NOT NULL,
   `doc_age` int(10) NOT NULL,
   `doc_address` varchar(255) NOT NULL,
   `doc_DOB` date NOT NULL,
   `doc_email` varchar(255) NOT NULL,
-  `doc_password` varchar(255) NOT NULL,
   `doc_tele` int(10) NOT NULL,
   `doc_workplace` varchar(255) NOT NULL,
   `doc_type` varchar(255) NOT NULL,
-  PRIMARY KEY (`doc_id`)
+  PRIMARY KEY (`doctor_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `doctor_details`
---
-
-INSERT INTO `doctor_details` (`doc_id`, `doc_name`, `doc_age`, `doc_address`, `doc_DOB`, `doc_email`, `doc_password`, `doc_tele`, `doc_workplace`, `doc_type`) VALUES
-('aa1', 'Ranjith Rathnayake', 25, 'galle', '2022-12-21', 'ss@gmail.com', '', 1234567890, 'Teaching Hospital, Karapitiya', 'VOG'),
-('aa2', 'Parakrama Perera', 34, 'Colombo', '2022-12-29', 'aa2@gmail.com', '', 1234567890, 'General Hospital Colombo', 'Pediatrician'),
-('aa3', 'Dishan Silva', 35, 'Matara', '2022-12-31', 'aa3@gmail.com', '', 1234567890, 'Kalubowila Hospital, Colombo', 'VOG');
 
 -- --------------------------------------------------------
 
@@ -286,7 +263,6 @@ CREATE TABLE IF NOT EXISTS `mother_details` (
   `mom_mobile` int(10) NOT NULL,
   `mom_propic` varchar(255) NOT NULL,
   `mom_email` varchar(255) NOT NULL,
-  `mom_password` varchar(255) NOT NULL,
   `mom_address` varchar(255) NOT NULL,
   `mom_DOB` date NOT NULL,
   `mom_age` int(10) NOT NULL,
@@ -299,14 +275,6 @@ CREATE TABLE IF NOT EXISTS `mother_details` (
   KEY `reg_user_id` (`reg_user_id`),
   KEY `mom_id` (`mom_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `mother_details`
---
-
-INSERT INTO `mother_details` (`mom_id`, `mom_fname`, `mom_mname`, `mom_lname`, `mom_landline`, `mom_mobile`, `mom_propic`, `mom_email`, `mom_password`, `mom_address`, `mom_DOB`, `mom_age`, `mom_regdate`, `guardian_name`, `guardian_mobile`, `reg_user_id`, `mom_delivery_date`) VALUES
-('a001', 'Bim', 'Sav', 'Wick', 912223571, 766423123, '', 'bb@gmail.com', '', 'galle', '2022-12-20', 22, '2022-12-17', 'sarath alwis', 761254245, 5, NULL),
-('a002', 'Hansika', 'Prashani', 'Weerasinghe', 912223571, 766423123, '', 'aa@gmail.com', '', 'Piliyandala, Sri Lanka.', '2012-12-20', 22, '2022-12-19', 'Saman Wijerathne', 761254245, 6, NULL);
 
 -- --------------------------------------------------------
 
@@ -365,7 +333,6 @@ CREATE TABLE IF NOT EXISTS `phm_details` (
   `phm_address` varchar(255) NOT NULL,
   `phm_tele` int(10) NOT NULL,
   `phm_email` varchar(255) NOT NULL,
-  `phm_password` varchar(255) NOT NULL,
   `phm_workplace` varchar(255) NOT NULL,
   PRIMARY KEY (`phm_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -387,20 +354,10 @@ CREATE TABLE IF NOT EXISTS `registered_user_details` (
   `tele_number` int(10) NOT NULL,
   `age` int(5) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `reg_date` date NOT NULL,
   `phm_id` varchar(10) NOT NULL,
-  `password` varchar(255) NOT NULL,
   PRIMARY KEY (`reg_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `registered_user_details`
---
-
-INSERT INTO `registered_user_details` (`reg_user_id`, `first_name`, `middle_name`, `last_name`, `address`, `DOB`, `tele_number`, `age`, `email`, `reg_date`, `phm_id`, `password`) VALUES
-(5, 'Bim', 'Sav', 'Wick', 'no.12, beraliyadolawatta, hapu', '2000-12-01', 771950342, 22, 'bb@gmail.com', '2022-12-16 14:35:37', 'nii', '202cb962ac59075b964b07152d234b70'),
-(6, 'gdg', 'ddd', 'ss', 'no.12, beraliyadolawatta, hapu', '2000-12-01', 763361822, 21, 'aa@gmail.com', '2022-12-18 05:46:31', 'qqwe', '81dc9bdb52d04dc20036dbd8313ed055'),
-(7, 'gdg', 'bii', 'ss', 'no.12, beraliyadolawatta, hapu', '2022-12-01', 763361822, 23, 'cc@gmail.com', '2022-12-18 18:17:54', 'nini', '81dc9bdb52d04dc20036dbd8313ed055');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -429,7 +386,7 @@ CREATE TABLE IF NOT EXISTS `vog_notes` (
 --
 ALTER TABLE `child_details`
   ADD CONSTRAINT `child_details_ibfk_1` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`),
-  ADD CONSTRAINT `child_details_ibfk_2` FOREIGN KEY (`doc_id`) REFERENCES `doctor_details` (`doc_id`),
+  ADD CONSTRAINT `child_details_ibfk_2` FOREIGN KEY (`doc_id`) REFERENCES `doctor_details` (`doctor_id`),
   ADD CONSTRAINT `child_details_ibfk_3` FOREIGN KEY (`phm_id`) REFERENCES `phm_details` (`phm_id`),
   ADD CONSTRAINT `child_details_ibfk_4` FOREIGN KEY (`guardian_id`) REFERENCES `guardian_details` (`guardian_id`);
 
@@ -463,7 +420,7 @@ ALTER TABLE `mother_details`
 ALTER TABLE `notifications`
   ADD CONSTRAINT `notifications_ibfk_1` FOREIGN KEY (`ad_id`) REFERENCES `admin` (`ad_id`),
   ADD CONSTRAINT `notifications_ibfk_2` FOREIGN KEY (`child_id`) REFERENCES `child_details` (`child_id`),
-  ADD CONSTRAINT `notifications_ibfk_3` FOREIGN KEY (`doc_id`) REFERENCES `doctor_details` (`doc_id`),
+  ADD CONSTRAINT `notifications_ibfk_3` FOREIGN KEY (`doc_id`) REFERENCES `doctor_details` (`doctor_id`),
   ADD CONSTRAINT `notifications_ibfk_4` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`),
   ADD CONSTRAINT `notifications_ibfk_5` FOREIGN KEY (`phm_id`) REFERENCES `phm_details` (`phm_id`);
 COMMIT;
