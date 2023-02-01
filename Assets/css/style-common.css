@@ -355,7 +355,7 @@
 
 .SectionNameDiv h3 {
     text-align: center;
-    margin-top: 130px;
+    margin-top: 100px;
     font-size: 40px;
     font-style: normal;
     font-family: barlowBold;
@@ -365,7 +365,7 @@
     display: flex;
     margin-left: 15%;
     margin-right: 15%;
-    margin-top: 90px;
+    margin-top: 50px;
     margin-bottom: 5%;
     width: 70%;
     height: auto;
@@ -507,6 +507,16 @@
     padding-left: 10px;
     background-color: #D9D9D9;
     border-radius: 10px;
+}
+
+.MotherCardButtonSet {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    float: right;
+    margin-right: 15%;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .MotherCardButtons {
