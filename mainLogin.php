@@ -1,7 +1,52 @@
+<<<<<<< Updated upstream
 <?php 
     include "Assets/Includes/header_index.php"; 
 
 ?>
+=======
+<?php
+session_start(); 
+
+$is_invalid = false;
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    
+    $mysqli = require __DIR__ . "\control\database.php";
+    
+    $sql = sprintf("SELECT * FROM doctor_details
+                    WHERE doc_email = '%s'",
+                   $mysqli->real_escape_string($_POST["doc_email"]));
+    
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc();
+    
+    if ($user) {
+        
+        if (password_verify($_POST["password"], $user["password"])) {
+            
+            session_start();
+            
+            session_regenerate_id();
+            
+            $_SESSION["doc_email"] = $user["doc_email"];
+            
+            header("Location: pediatrician-dashboardView.php");
+            exit;
+        }
+    }
+    
+    $is_invalid = true;
+}
+
+?>
+
+<?php if ($is_invalid): ?>
+    <em>Invalid login</em>
+<?php endif; ?>
+
+<?php include "Assets/Includes/header_index.php"; ?>
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,10 +67,10 @@
                     <img src="Assets/images/common/logo.png" alt="login-logo">
                 </div>
                 <div class="div-form">
-                    <form method="post" class="login-form" action="vog-loginModel.php">
-                        <?php if(isset($_GET['error'])) { ?>
+                    <form method="post" class="login-form" action=" ">
+                        <?php //if(isset($_GET['error'])) { ?>
                                 <p class="error"><?php echo $_GET['error']; ?></p> 
-                        <?php } ?>
+                        <?php //} ?>
                         <fieldset>
                             <legend>&nbsp;Username:&nbsp;</legend>
                             <input type="email" name="username" id="username" placeholder="Enter your Username">
