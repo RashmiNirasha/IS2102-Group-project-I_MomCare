@@ -55,7 +55,7 @@
             top: 8px;
         }
 
-        .profile_pic {
+        /* .profile_pic {
             width: 40px;
             height: 40px;
             cursor: pointer;
@@ -64,7 +64,7 @@
             border-style: solid;
             border-width: 1px;
             stroke: #111C43;
-        }
+        } */
         
     </style>
 </head>
@@ -75,9 +75,9 @@
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="about.php">About</a></li>
-            <li><a href="View/dashboardVog.php">Dashboard</a></li>
+            <!-- <li><a href="View/dashboardVog.php">Dashboard</a></li> -->
         </ul>
-        <img class="profile_pic" src="../../Assets/Images/doctor.png" alt="profile_pic">
+        <!-- <img class="profile_pic" src="../../Assets/Images/doctor.png" alt="profile_pic"> -->
     </nav> <!-- top navigation bar -- end -->
     </div>
 </body>

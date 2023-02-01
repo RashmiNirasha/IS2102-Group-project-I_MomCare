@@ -1,4 +1,7 @@
-<?php include "Assets/Includes/header_index.php"; ?>
+<?php 
+    include "Assets/Includes/header_index.php"; 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +27,8 @@
                                 <p class="error"><?php echo $_GET['error']; ?></p> 
                         <?php } ?>
                         <fieldset>
-                            <legend>&nbsp;Email:&nbsp;</legend>
-                            <input type="email" name="username" id="username" placeholder="Enter your user name">
+                            <legend>&nbsp;Username:&nbsp;</legend>
+                            <input type="email" name="username" id="username" placeholder="Enter your Username">
                         </fieldset>
                         <br>
                         <fieldset>
