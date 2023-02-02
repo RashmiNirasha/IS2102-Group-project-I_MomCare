@@ -161,6 +161,11 @@
     float: right;
 }
 
+.RegistrationMotherForm input[type="submit"]:hover {
+    background-color: #029ee4;
+    color: #ffffff;
+}
+
 .RegisterMotherMainDiv img {
     align-self: center;
     width: 130px;
