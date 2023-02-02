@@ -45,87 +45,87 @@
                         <div class="MotherGeneralDetails">
                             <table class="MotherCardTables">
                                 <tr>
-                                    <th>Name of the Mother:</th>
+                                    <td>Name of the Mother:</td>
                                     <td>Ruwanmali Senanayake</td>
                                 </tr>
                                 <tr>
-                                    <th>Age:</th>
+                                    <td>Age:</td>
                                     <td>27</td>
                                 </tr>
                                 <tr>
-                                    <th>MOH area:</th>
+                                    <td>MOH area:</td>
                                     <td>Colombo 15</td>
                                 </tr>
                                 <tr>
-                                    <th>PHM area:</th>
+                                    <td>PHM area:</td>
                                     <td>Colombo 15</td>
                                 </tr>
                                 <tr>
-                                    <th>Name of the Field Clinic:</th>
+                                    <td>Name of the Field Clinic:</td>
                                     <td>Colombo 15 main</td>
                                 </tr>
                                 <tr>
-                                    <th>Grama Niladhari Division:</th>
+                                    <td>Grama Niladhari Division:</td>
                                     <td>Colombo 15</td>
                                 </tr>
                                 <tr>
-                                    <th>Name of the Hospital Clinic:</th>
+                                    <td>Name of the Hospital Clinic:</td>
                                     <td>Colombo Central</td>
                                 </tr>
                                 <tr>
-                                    <th>Name of the Consultant Obstetrician:</th>
+                                    <td>Name of the Consultant Obstetrician:</td>
                                     <td>Name of the Consultant</td>
                                 </tr>
                                 <tr>
-                                    <th>Identified anatal risks conditions and mobilities:</th>
+                                    <td>Identified anatal risks conditions and mobilities:</td>
                                     <td>Nothing</td>
                                 </tr>
                                 <tr>
-                                    <th>Registration Number:</th>
+                                    <td>Registration Number:</td>
                                     <td>455623</td>
                                 </tr>
                                 <tr>
-                                    <th>Registration Date:</th>
+                                    <td>Registration Date:</td>
                                     <td>02/05/2021</td>
                                 </tr>
                                 <tr>
-                                    <th>Eligible Family Register:</th>
+                                    <td>Eligible Family Register:</td>
                                     <td>Mr.Roshan Weerasinghe</td>
                                 </tr>
                                 <tr>
-                                    <th>Pregnant Mother's Register:</th>
+                                    <td>Pregnant Mother's Register:</td>
                                     <td>Ms. Rasangi Rathnayake</td>
                                 </tr>
                                 <tr>
-                                    <th>Identified antenatal risk conditions & morbidities:</th>
+                                    <td>Identified antenatal risk conditions & morbidities:</td>
                                     <td>Nothing</td>
                                 </tr>
                                 <tr>
-                                    <th>Consanguinity:</th>
+                                    <td>Consanguinity:</td>
                                     <td>Positive</td>
                                 </tr>
                                 <tr>
-                                    <th>Rubella immunization:</th>
+                                    <td>Rubella immunization:</td>
                                     <td>Positive</td>
                                 </tr>
                                 <tr>
-                                    <th>Pre-pregnancy screening done:</th>
+                                    <td>Pre-pregnancy screening done:</td>
                                     <td>Positive</td>
                                 </tr>
                                 <tr>
-                                    <th>Preconceptional folic acid:</th>
+                                    <td>Preconceptional folic acid:</td>
                                     <td>Negative</td>
                                 </tr>
                                 <tr>
-                                    <th>History of subfertility:</th>
+                                    <td>History of subfertility:</td>
                                     <td>Positive</td>
                                 </tr>
                                 <tr>
-                                    <th>Planned pregnancy or not:</th>
+                                    <td>Planned pregnancy or not:</td>
                                     <td>Negative</td>
                                 </tr>
                                 <tr>
-                                    <th>Family planning method last used:</th>
+                                    <td>Family planning method last used:</td>
                                     <td>Positive</td>
                                 </tr>
                             </table>
@@ -139,22 +139,22 @@
                             <div class="PersonalInformation">
                                 <table class="MotherCardTables">
                                     <tr>
-                                        <th class="emptyTableCell"></th>
-                                        <th>Wife</th>
-                                        <th>Husband</th>
+                                        <td class="emptyTableCell"></td>
+                                        <td>Wife</td>
+                                        <td>Husband</td>
                                     </tr>
                                     <tr>
-                                        <th>Age:</th>
+                                        <td>Age:</td>
                                         <td>27</td>
                                         <td>30</td>
                                     </tr>
                                     <tr>
-                                        <th>Highest level of education:</th>
+                                        <td>Highest level of education:</td>
                                         <td>Degree</td>
                                         <td>Degree</td>
                                     </tr>
                                     <tr>
-                                        <th>Occupation</th>
+                                        <td>Occupation</td>
                                         <td>Teacher</td>
                                         <td>Teacher</td>
                                     </tr>
@@ -168,23 +168,23 @@
                             <div class="PersonalInformation">
                                 <table class="MotherCardTables">
                                     <tr>
-                                        <th>Diabetes mellitus:</th>
+                                        <td>Diabetes mellitus:</td>
                                         <td>Negative</td>
                                     </tr>
                                     <tr>
-                                        <th>Hypertension:</th>
+                                        <td>Hypertension:</td>
                                         <td>Negative</td>
                                     </tr>
                                     <tr>
-                                        <th>Haematological diseases:</th>
+                                        <td>Haematological diseases:</td>
                                         <td>Negative</td>
                                     </tr>
                                     <tr>
-                                        <th>Twin / multiple pregnancies:</th>
+                                        <td>Twin / multiple pregnancies:</td>
                                         <td>Negative</td>
                                     </tr>
                                     <tr>
-                                        <th>Any other (specify):</th>
+                                        <td>Any other (specify):</td>
                                         <td>Nothing</td>
                                     </tr>
                                 </table>
@@ -199,51 +199,51 @@
                             <div class="MedicalHistory">
                                 <table class="MotherCardTables">
                                     <tr>
-                                        <th>Diabetes:</th>
+                                        <td>Diabetes:</td>
                                         <td>Negative</td>
-                                        <th>Haematologies:</th>
-                                        <td>Negative</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Hypertension:</th>
-                                        <td>Negative</td>
-                                        <th>Thyroid diseases:</th>
+                                        <td>Haematologies:</td>
                                         <td>Negative</td>
                                     </tr>
                                     <tr>
-                                        <th>Cardiac diseases:</th>
+                                        <td>Hypertension:</td>
                                         <td>Negative</td>
-                                        <th>Bronchial asthma:</th>
-                                        <td>Negative</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Renal diseases:</th>
-                                        <td>Negative</td>
-                                        <th>Tuberculosis:</th>
+                                        <td>Thyroid diseases:</td>
                                         <td>Negative</td>
                                     </tr>
                                     <tr>
-                                        <th>Hepatic diseases:</th>
+                                        <td>Cardiac diseases:</td>
+                                        <td>Negative</td>
+                                        <td>Bronchial asthma:</td>
+                                        <td>Negative</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Renal diseases:</td>
+                                        <td>Negative</td>
+                                        <td>Tuberculosis:</td>
+                                        <td>Negative</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hepatic diseases:</td>
                                         <td>Nothing</td>
-                                        <th>Previous DVT:</th>
+                                        <td>Previous DVT:</td>
                                         <td>Negative</td>
                                     </tr>
                                     <tr>
-                                        <th>Psychiatric illnesses:</th>
+                                        <td>Psychiatric illnesses:</td>
                                         <td>Nothing</td>
-                                        <th>Surgeries other than LSCS:</th>
+                                        <td>Surgeries other than LSCS:</td>
                                         <td>Negative</td>
                                     </tr>
                                     <tr>
-                                        <th>Epilepsy:</th>
+                                        <td>Epilepsy:</td>
                                         <td>Nothing</td>
-                                        <th>Other (specify):</th>
+                                        <td>Other (specify):</td>
                                         <td>Negative</td>
                                     </tr>
                                     <tr>
-                                        <th>Malignancies:</th>
+                                        <td>Malignancies:</td>
                                         <td>Nothing</td>
-                                        <th>Social Z score:</th>
+                                        <td>Social Z score:</td>
                                         <td>Negative</td>
                                     </tr>
                                 </table>
@@ -256,35 +256,35 @@
                             <div class="ObstericHistory">
                                 <table class="MotherCardTables">
                                     <tr>
-                                        <th>Gravidity:</th>
+                                        <td>Gravidity:</td>
                                         <td>Negative</td>
                                     </tr>
                                     <tr>
-                                        <th>Age of the youngest child::</th>
+                                        <td>Age of the youngest child::</td>
                                         <td>Negative</td>
                                     </tr>
                                     <tr>
-                                        <th>LRMP:</th>
+                                        <td>LRMP:</td>
                                         <td>Negative</td>
                                     </tr>
                                     <tr>
-                                        <th>EED:</th>
+                                        <td>EED:</td>
                                         <td>Negative</td>
                                     </tr>
                                     <tr>
-                                        <th>US corrected EED (To be filled by VOG/MO):</th>
+                                        <td>US corrected EED (To be filled by VOG/MO):</td>
                                         <td>Nothing</td>
                                     </tr>
                                     <tr>
-                                        <th>POA at dating scan: :</th>
+                                        <td>POA at dating scan: :</td>
                                         <td>Nothing</td>
                                     </tr>
                                     <tr>
-                                        <th>Date of quickening:</th>
+                                        <td>Date of quickening:</td>
                                         <td>Nothing</td>
                                     </tr>
                                     <tr>
-                                        <th>POA at registration: :</th>
+                                        <td>POA at registration: :</td>
                                         <td>Nothing</td>
                                     </tr>
                                 </table>
@@ -298,14 +298,14 @@
                         <div class="PregnancyHistory">
                             <table class="MotherCardTables">
                                 <tr>
-                                    <th>Pregnancy</th>
-                                    <th>Antenatal complications</th>
-                                    <th>Place & mode of delivery</th>
-                                    <th>Outcome</th>
-                                    <th>Birth weight</th>
-                                    <th>Postal complications(specify)</th>
-                                    <th>Sex</th>
-                                    <th>Age</th>
+                                    <td>Pregnancy</td>
+                                    <td>Antenatal complications</td>
+                                    <td>Place & mode of delivery</td>
+                                    <td>Outcome</td>
+                                    <td>Birth weight</td>
+                                    <td>Postal complications(specify)</td>
+                                    <td>Sex</td>
+                                    <td>Age</td>
                                 </tr>
                                 <tr>
                                     <td>Normal</td>

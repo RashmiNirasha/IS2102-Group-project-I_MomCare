@@ -24,6 +24,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         // file upload code -- end
     }
 ?>
+<?php include "../../Assets/Includes/header_pages.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,23 +33,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style><?php include "../../Assets/css/vog-style.css " ?></style>
+    <style><?php include "../../Assets/css/style-common.css" ?></style>
 </head>
 <body>
-    <!-- top navigation bar -- start -->
-    <nav class="topnav">
-        <img class="logo-MomCare" src="../../Assets/Images/images-vog/Project Logo - landscape-01 1 (1).png" alt="logo-MomCare">
-        <ul>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="dashboard.php">Dashboard</a></li>
-        </ul>
-        <img class="profile_pic" src="../../Assets/Images/images-vog/doctor.png" alt="profile_pic">
-    </nav>  
-    <!-- top navigation bar -- end -->
     <div class="main-mother">
         <div class="mom-intro">
-            <img src="../../Assets/Images/images-vog/Profile_pic_mother 1.png" alt="mother-profile-pic">
+            <img src="../../Assets/Images/mother/Profile_pic_mother 1.png" alt="mother-profile-pic">
             <div class="mom-intro-content">
                 <h3 class="Name-header-mom">Mrs. Indrani Perera</h3>
                 <p class="num-header-mom">0712345678</p>
@@ -105,6 +96,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     </div>
 </body>
 </html>
+<?php //include "../../Assets/Includes/footer_pages.php"; ?>
 <?php }
 else{
     header("Location: vog-index.php");

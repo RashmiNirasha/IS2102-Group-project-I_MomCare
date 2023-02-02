@@ -42,32 +42,32 @@
                             <div class="MedicalHistory">
                                 <table class="MotherCardTables">
                                     <tr>
-                                        <th class="emptyTableCell"></th>
-                                        <th>Delivery</th>
-                                        <th>In an emergency</th>
+                                        <td class="emptyTableCell"></td>
+                                        <td>Delivery</td>
+                                        <td>In an emergency</td>
                                     </tr>
                                     <tr>
-                                        <th>Intended hospital</th>
-                                        <td>txt</td>
-                                        <td>txt</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Mode of transport</th>
+                                        <td>Intended hospital</td>
                                         <td>txt</td>
                                         <td>txt</td>
                                     </tr>
                                     <tr>
-                                        <th>Mode of transport</th>
+                                        <td>Mode of transport</td>
                                         <td>txt</td>
                                         <td>txt</td>
                                     </tr>
                                     <tr>
-                                        <th>Distance from home(km)</th>
+                                        <td>Mode of transport</td>
+                                        <td>txt</td>
+                                        <td>txt</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Distance from home(km)</td>
                                         <td>5</td>
                                         <td>2</td>
                                     </tr>
                                     <tr>
-                                        <th>Time taken to reach</th>
+                                        <td>Time taken to reach</td>
                                         <td>15</td>
                                         <td>10</td>
                                     </tr>
@@ -81,15 +81,15 @@
                             <div class="AttendanceAtAntenatalClasses">
                                 <table class="MotherCardTables">
                                     <tr>
-                                        <th>Session</th>
-                                        <th>Date</th>
-                                        <th>Husband</th>
-                                        <th>Wife</th>
-                                        <th>Other</th>
-                                        <th>Signature</th>
+                                        <td>Session</td>
+                                        <td>Date</td>
+                                        <td>Husband</td>
+                                        <td>Wife</td>
+                                        <td>Other</td>
+                                        <td>Signature</td>
                                     </tr>
                                     <tr>
-                                        <th>T1</th>
+                                        <td>T1</td>
                                         <td>2022/5/6</td>
                                         <td>came</td>
                                         <td>came</td>
@@ -97,7 +97,7 @@
                                         <td>txt</td>
                                     </tr>
                                     <tr>
-                                        <th>T2</th>
+                                        <td>T2</td>
                                         <td>2022/5/6</td>
                                         <td>came</td>
                                         <td>came</td>
@@ -105,7 +105,7 @@
                                         <td>txt</td>
                                     </tr>
                                     <tr>
-                                        <th>T3</th>
+                                        <td>T3</td>
                                         <td>2022/5/6</td>
                                         <td>came</td>
                                         <td>came</td>
@@ -124,19 +124,19 @@
                             <div class="IEC_Material">
                                 <table class="MotherCardTables">
                                     <tr>
-                                        <th>Prenatal ployband book</th>
+                                        <td>Prenatal ployband book</td>
                                         <td>Given</td>
                                     </tr>
                                     <tr>
-                                        <th>The book on breastfeeding</th>
+                                        <td>The book on breastfeeding</td>
                                         <td>Given</td>
                                     </tr>
                                     <tr>
-                                        <th>Books on early childhood development</th>
+                                        <td>Books on early childhood development</td>
                                         <td>Given</td>
                                     </tr>
                                     <tr>
-                                        <th>Family planning methods</th>
+                                        <td>Family planning methods</td>
                                         <td>Given</td>
                                     </tr>
                                 </table>
@@ -149,19 +149,19 @@
                             <div class="FamilyPlanning">
                                 <table class="MotherCardTables">
                                     <tr>
-                                        <th>Date of counselling</th>
+                                        <td>Date of counselling</td>
                                         <td>2022/05/06</td>
                                     </tr>
                                     <tr>
-                                        <th>Chosen method</th>
+                                        <td>Chosen method</td>
                                         <td>txt</td>
                                     </tr>
                                     <tr>
-                                        <th>Reason for not using a method</th>
+                                        <td>Reason for not using a method</td>
                                         <td>txt</td>
                                     </tr>
                                     <tr>
-                                        <th>Consent from sign date</th>
+                                        <td>Consent from sign date</td>
                                         <td>2022/05/06</td>
                                     </tr>
                                 </table>
