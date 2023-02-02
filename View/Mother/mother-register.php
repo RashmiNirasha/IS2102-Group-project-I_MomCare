@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <style><?php include "Assets/css/style-common.css" ?></style>
+    <style><?php include "../../Assets/css/style-common.css" ?></style>
 </head>
 <body>
     <div class="RegisterMotherMainDiv">
-        <img src="Assets/Images/common/Project Logo-01.png" alt="Logo">
+        <img src="../../Assets/Images/common/Project Logo-01.png" alt="Logo">
         <h1>Welcome to MOM CARE</h1>
         <div class="RegisterMotherInnerDiv">
             <h2>Register</h2>
