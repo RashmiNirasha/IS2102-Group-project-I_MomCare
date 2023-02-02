@@ -21,15 +21,15 @@
                         <div class="ClinicDetailsDetails">
                             <table class="MotherCardTables">
                                 <tr>
-                                    <th>Date of Visit</th>
+                                    <td>Date of Visit</td>
                                     <td>2022/2/4</td>
                                 </tr>
                                 <tr>
-                                    <th>POA</th>
+                                    <td>POA</td>
                                     <td>test</td>
                                 </tr>
                                 <tr>
-                                    <th>Urine
+                                    <td>Urine
                                         <table class="innerTable">
                                             <tr>
                                                 <td>Sugar</td>
@@ -38,7 +38,7 @@
                                                 <td>Albumin</td>
                                             </tr>
                                         </table>
-                                    </th>
+                                    </td>
                                     <td>Status<table class="innerTable">
                                         <tr>
                                             <td>Normal</td>
@@ -49,18 +49,18 @@
                                     </table></td>
                                 </tr>
                                 <tr>
-                                    <th>Pallor</th>
+                                    <td>Pallor</td>
                                     <td>test</td>
                                 </tr>
                                 <tr>
-                                    <th>Oedema<table class="innerTable">
+                                    <td>Oedema<table class="innerTable">
                                         <tr>
                                             <td>Sugar</td>
                                         </tr>
                                         <tr>
                                             <td>Albumin</td>
                                         </tr>
-                                    </table></th>
+                                    </table></td>
                                     <td>Status<table class="innerTable">
                                         <tr>
                                             <td>Normal</td>
@@ -71,59 +71,59 @@
                                     </table></td>
                                 </tr>
                                 <tr>
-                                    <th>BP</th>
+                                    <td>BP</td>
                                     <td>Normal</td>
                                 </tr>
                                 <tr>
-                                    <th>Fundal height(cm)</th>
+                                    <td>Fundal height(cm)</td>
                                     <td>5</td>
                                 </tr>
                                 <tr>
-                                    <th>Foetal lie</th>
+                                    <td>Foetal lie</td>
                                     <td>test</td>
                                 </tr>
                                 <tr>
-                                    <th>Presentation</th>
+                                    <td>Presentation</td>
                                     <td>Normal</td>
                                 </tr>
                                 <tr>
-                                    <th>Engagement of the presenting parent</th>
+                                    <td>Engagement of the presenting parent</td>
                                     <td>Normal</td>
                                 </tr>
                                 <tr>
-                                    <th>FM</th>
+                                    <td>FM</td>
                                     <td>test</td>
                                 </tr>
                                 <tr>
-                                    <th>FHS</th>
+                                    <td>FHS</td>
                                     <td>test</td>
                                 </tr>
                                 <tr>
-                                    <th>Iron</th>
+                                    <td>Iron</td>
                                     <td>test</td>
                                 </tr>
                                 <tr>
-                                    <th>Folate</th>
+                                    <td>Folate</td>
                                     <td>test</td>
                                 </tr>
                                 <tr>
-                                    <th>Calcium</th>
+                                    <td>Calcium</td>
                                     <td>test</td>
                                 </tr>
                                 <tr>
-                                    <th>Vitamin C</th>
+                                    <td>Vitamin C</td>
                                     <td>test</td>
                                 </tr>
                                 <tr>
-                                    <th>Food supplementation</th>
+                                    <td>Food supplementation</td>
                                     <td>test</td>
                                 </tr>
                                 <tr>
-                                    <th>Signature of the officer examined</th>
+                                    <td>Signature of the officer examined</td>
                                     <td>test</td>
                                 </tr>
                                 <tr>
-                                    <th>Designation</th>
+                                    <td>Designation</td>
                                     <td>test</td>
                                 </tr>
                             </table>
@@ -137,22 +137,22 @@
                             <div class="Auscultation&MentalHealth">
                                 <table class="MotherCardTables">
                                     <tr>
-                                        <th class="emptyTableCell"></th>
-                                        <th>Auscultation</th>
-                                        <th>Mental health</th>
+                                        <td class="emptyTableCell"></td>
+                                        <td>Auscultation</td>
+                                        <td>Mental health</td>
                                     </tr>
                                     <tr>
-                                        <th>T1</th>
-                                        <td>test</td>
-                                        <td>test</td>
-                                    </tr>
-                                    <tr>
-                                        <th>T2</th>
+                                        <td>T1</td>
                                         <td>test</td>
                                         <td>test</td>
                                     </tr>
                                     <tr>
-                                        <th>T3</th>
+                                        <td>T2</td>
+                                        <td>test</td>
+                                        <td>test</td>
+                                    </tr>
+                                    <tr>
+                                        <td>T3</td>
                                         <td>test</td>
                                         <td>test</td>
                                     </tr>
@@ -166,15 +166,15 @@
                             <div class="DentalCare">
                                 <table class="MotherCardTables">
                                     <tr>
-                                        <th>Referred date</th>
+                                        <td>Referred date</td>
                                         <td>2022/02/15</td>
                                     </tr>
                                     <tr>
-                                        <th>Date of examination</th>
+                                        <td>Date of examination</td>
                                         <td>2022/02/15</td>
                                     </tr>
                                     <tr>
-                                        <th>Treatment</th>
+                                        <td>Treatment</td>
                                         <td>No treatment needed</td>
                                     </tr>
                                 </table>
@@ -211,38 +211,38 @@
                             <div class="Investigations">
                                 <table class="MotherCardTables">
                                     <tr>
-                                        <th></th>
-                                        <th>POA</th>
-                                        <th>Result</th>
+                                        <td></td>
+                                        <td>POA</td>
+                                        <td>Result</td>
                                     </tr>
                                     <tr>
-                                        <th>Blood Sugar</th>
+                                        <td>Blood Sugar</td>
                                         <td>test</td>
                                         <td>normal</td>
                                     </tr>
                                     <tr>
-                                        <th>Hemoglobin</th>
+                                        <td>Hemoglobin</td>
                                         <td>test</td>
                                         <td>normal</td>
                                     </tr>
                                     <tr>
-                                        <th>Other Investigation</th>
+                                        <td>Other Investigation</td>
                                         <td colspan="2">test</td>
                                     </tr>
                                     <tr>
-                                        <th>Antihelminthic drugs</th>
+                                        <td>Antihelminthic drugs</td>
                                         <td colspan="2">test</td>
                                     </tr>
                                     <tr>
-                                        <th>Date of issuing lick count chart</th>
+                                        <td>Date of issuing lick count chart</td>
                                         <td colspan="2">test</td>
                                     </tr>
                                     <tr>
-                                        <th>Date of taking blood sample for HIV</th>
+                                        <td>Date of taking blood sample for HIV</td>
                                         <td colspan="2">2022/2/5</td>
                                     </tr>
                                     <tr>
-                                        <th>Date of result informed to mother</th>
+                                        <td>Date of result informed to mother</td>
                                         <td colspan="2">2022/2/20</td>
                                     </tr>
                                 </table>
@@ -256,36 +256,39 @@
                                 <div class="SyphilisScreening">
                                     <table class="MotherCardTables">
                                         <tr>
-                                            <th>POA at blood sampling</th>
+                                            <td>POA at blood sampling</td>
                                             <td>test</td>
                                         </tr>
                                         <tr>
-                                            <th>Date of blood sampling</th>
+                                            <td>Date of blood sampling</td>
                                             <td>test</td>
                                         </tr>
                                         <tr>
-                                            <th>Date of result received</th>
+                                            <td>Date of result received</td>
                                             <td>test</td>
                                         </tr>
                                         <tr>
-                                            <th>Result</th>
+                                            <td>Result</td>
                                             <td>R</td>
                                         </tr>
                                         <tr>
-                                            <th>If (R) date of referral</th>
+                                            <td>If (R) date of referral</td>
                                             <td>test</td>
                                         </tr>
                                     </table>
                                 </div>
                             </div>
-                            <div>
+                        </div>
+                    </div>
+                    <div class="OneColumnSection">
+                    <div>
                                 <div class="TetanusToxoidImmunization_Title">
                                     <h3>Tetanus Toxoid Immunization</h3>
                                 </div>
                                 <div class="TetanusToxoidImmunization">
                                     <table class="MotherCardTables">
                                         <tr>
-                                            <th>Dose</th>
+                                            <td>Dose</td>
                                             <td>1</td>
                                             <td>1</td>
                                             <td>1</td>
@@ -294,7 +297,7 @@
                                             <td>1</td>
                                         </tr>
                                         <tr>
-                                            <th>Date</th>
+                                            <td>Date</td>
                                             <td>2022/02/03</td>
                                             <td>2022/02/03</td>
                                             <td>2022/02/03</td>
@@ -303,7 +306,7 @@
                                             <td>2022/02/03</td>
                                         </tr>
                                         <tr>
-                                            <th>Batch no.</th>
+                                            <td>Batch no.</td>
                                             <td>2022/02/03</td>
                                             <td>2022/02/03</td>
                                             <td>2022/02/03</td>
@@ -314,7 +317,6 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
                     </div>
                     <div class="OneColumnSection">
                         <div class="BP_Chart">
