@@ -11,8 +11,10 @@
 </head>
 <body>
     <div class="RegisterMotherMainDiv">
-        <img src="../../Assets/Images/common/Project Logo-01.png" alt="Logo">
-        <h1>Welcome to MOM CARE</h1>
+        <div class="RegisterFormHeading">
+            <img src="../../Assets/Images/common/Project Logo-01.png" alt="Logo">
+            <!-- <h1>Welcome to MOM CARE</h1> -->
+        </div>
         <div class="RegisterMotherInnerDiv">
             <h2>Register</h2>
             <form class="RegistrationMotherForm" action="registerMother.php" method="POST">
@@ -23,7 +25,7 @@
                     </tr>
                     <tr>
                         <td><label for="surname">Middle name(s)</label></td>
-                        <td><input type="text" name="surname" id="surname" placeholder="Enter your middle name(s)" required></td>
+                        <td><input type="text" name="surname" id="surname" placeholder="Enter your middle name(s)"></td>
                     </tr>
                     <tr>
                         <td><label for="surname">Surname</label></td>
@@ -34,8 +36,8 @@
                         <td><input type="email" name="email" id="email" placeholder="Enter your email" required></td>
                     </tr>
                     <tr>
-                        <td><label for="age">Age</label></td>
-                        <td><input type="number" name="age" id="age" placeholder="Enter your age" required></td>
+                        <td><label for="birthday">Birthday</label></td>
+                        <td><input type="date" name="birthday" id="birthday" placeholder="Enter your birthday" required></td>
                     </tr>
                     <tr>
                         <td><label for="address">Address</label></td>
@@ -59,6 +61,7 @@
                     </tr>
                 </table>
                 <input type="submit" value="Register">
+                <input type="cancel" value="Cancel">
             </form>
         </div>
     </div>

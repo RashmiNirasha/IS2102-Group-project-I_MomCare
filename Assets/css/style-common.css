@@ -5,22 +5,32 @@
 
 @font-face {
     font-family: style-font1;
-    src: url(Assets/fonts/LucidaHandwritingStdRg.TTF);
+    src: url(../../Assets/fonts/LucidaHandwritingStdRg.TTF);
 }
 
 @font-face {
-    font-family: "barlowBold";
+    font-family: barlowBold;
     src: url(../../Assets/fonts/Barlow-Bold.TTF);
 }
 
 @font-face {
-    font-family: "barlowRegular";
+    font-family: barlowRegular;
     src: url(../../Assets/fonts/Barlow-Regular.ttf);
 }
 
 @font-face {
-    font-family: "Roboto";
-    src: url(../../Assets/fonts/Roboto-Black.ttf)
+    font-family: RobotoMedium;
+    src: url(../../Assets/fonts/Roboto-Medium.ttf)
+}
+
+@font-face {
+    font-family: RobotoLight;
+    src: url(../../Assets/fonts/Roboto-Light.ttf)
+}
+
+@font-face {
+    font-family: RobotoRegular;
+    src: url(../../Assets/fonts/Roboto-Regular.ttf)
 }
 
 .landingMain {
@@ -139,11 +149,29 @@
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
-    background-color: #029ee4;
+    background-color: #ffffff;
     justify-content: space-around;
     align-items: center;
     padding-bottom: 30px;
     border-radius: 25px;
+}
+
+.RegistrationMotherForm input[type="cancel"] {
+    width: 98px;
+    height: 37px;
+    text-align: center;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    color: #ffffff;
+    background-color: #029ee4;
+    border-color: #029ee4;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    float: right;
 }
 
 .RegistrationMotherForm input[type="submit"] {
@@ -152,7 +180,8 @@
     border-radius: 10px;
     border-style: solid;
     border-width: 1px;
-    background-color: #ffffff;
+    color: #ffffff;
+    background-color: #029ee4;
     border-color: #029ee4;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -162,19 +191,37 @@
 }
 
 .RegistrationMotherForm input[type="submit"]:hover {
+    background-color: #20ca45;
+    color: #ffffff;
+}
+
+.RegistrationMotherForm input[type="cancel"]:hover {
     background-color: #ca2020;
     color: #ffffff;
 }
 
-.RegisterMotherMainDiv img {
+.RegisterFormHeading {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.RegisterFormHeading img {
+    margin-top: 10px;
     align-self: center;
     width: 130px;
-    margin-bottom: -20px;
+    margin-bottom: -30px;
 }
 
 .RegisterMotherInnerDiv h2 {
-    font-size: 30px;
+    font-family: RobotoMedium;
+    font-size: 40px;
     text-align: center;
+    background-color: #029ee4;
+    padding: 10px 40px 10px 40px;
+    border-radius: 20px;
+    width: 30%;
 }
 
 .RegistrationMotherForm {
@@ -184,7 +231,14 @@
 .RegistrationMotherForm table {
     align-items: center;
     width: 100%;
+    font-family: RobotoRegular;
     font-size: 20px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #029EE4;
 }
 
 .RegistrationMotherForm table td:nth-child(1) {
@@ -204,7 +258,9 @@
     font-size: 18px;
     padding: 10px;
     border-radius: 10px;
-    border-style: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029EE4;
 }
 
 /* --------------------- dashboard --------------------- */
@@ -978,14 +1034,14 @@
 
 .ChildCardInputSec-3 input[type="text"] {
     float: right;
-    /* width: 90%; */
+    width: 100%;
     justify-content: space-between;
     margin-left: 10px;
 }
 
 .ChildCardInputSec-3 td:nth-child(1){
-    width: 30%;
-    white-space: nowrap;
+    width: 40%;
+    white-space: wrap;
 }
 
 .ChildFormSection td {
