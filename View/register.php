@@ -56,7 +56,7 @@
                         <td><input type="text" name="phm_id" id="phm_id" placeholder="Enter PHM ID"></td>
                     </tr>
                     <tr>
-                        <td><label for="user_roll"></label></td>
+                        <td><label for="user_role"></label></td>
                         <td><input type="hidden" name="user_roll" id="user_roll" value="mother"></td>
                     </tr>
                 </table>

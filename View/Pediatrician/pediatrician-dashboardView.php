@@ -1,11 +1,8 @@
 <?php
+session_start();
+include "../../Config/dbConnection.php";
+if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 
-// session_start(); 
-$mysqli = require __DIR__ . " ../../../Config/database.php";
-
-// if (isset($_SESSION["doc_email"])) {
-    
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,7 +78,7 @@ include "../../Assets/Includes/header_pages.php";
 </header>
 </html>
 <?php
-// } else {
-//     header("Location: pediatrician-loginView.php");
-//     exit();
-//}
+} else {
+   header("Location: ../../mainLogin.php");
+    exit();
+}?>
