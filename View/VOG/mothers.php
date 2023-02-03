@@ -2,7 +2,8 @@
 session_start();
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 ?>
-<?php include "../../Assets/Includes/header_pages.php" ?>
+<?php include "../../Assets/Includes/header_pages.php" ?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
