@@ -1,9 +1,9 @@
 <?php
 
-session_start(); 
+// session_start(); 
 $mysqli = require __DIR__ . " ../../../Config/database.php";
 
-if (isset($_SESSION["doc_email"])) {
+// if (isset($_SESSION["doc_email"])) {
     
 ?>
 <!DOCTYPE html>
@@ -81,7 +81,7 @@ include "../../Assets/Includes/header_pages.php";
 </header>
 </html>
 <?php
-} else {
-    header("Location: pediatrician-loginView.php");
-    exit();
-}
+// } else {
+//     header("Location: pediatrician-loginView.php");
+//     exit();
+//}

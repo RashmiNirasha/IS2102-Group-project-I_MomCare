@@ -1,8 +1,8 @@
 <?php 
 include('mother-header.php');
-    session_start();
-    if (isset($_SESSION['mother_email'])){
-?>
+//     session_start();
+//     if (isset($_SESSION['mother_email'])){
+// ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -108,8 +108,8 @@ include('mother-header.php');
 </body>
 </html>
 <?php
-    }
-    else{
-        header("Location: ../../index.php");
-    }
+    // }
+    // else{
+    //     header("Location: ../../index.php");
+    // }
 ?>
