@@ -1,3 +1,5 @@
+<?php 
+    include "Assets/Includes/header_index.php"; 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +21,7 @@
                     <img src="Assets/images/common/logo.png" alt="login-logo">
                 </div>
                 <div class="div-form">
-                    <form method="post" class="login-form" action=" ">
+                        <form method="post" class="login-form" action=" ">
                         <?php //if(isset($_GET['error'])) { ?>
                                 <!-- <p class="error"><?php echo $_GET['error']; ?></p>  -->
                         <?php //} ?>
@@ -37,7 +39,7 @@
                                 <a href="">Forgot password?</a>
                             </div>
                             <div class="sign-in-btn">
-                                <button class="submit-btn" type="submit">Sign in</button>
+                                <button class="btn-login" type="submit">Sign in</button>
                             </div>  
                         </div>
                     </form>

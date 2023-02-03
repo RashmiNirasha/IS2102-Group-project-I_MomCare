@@ -19,7 +19,7 @@ include('../../Config/mother-viewProfile.inc.php')
 <body>
     <div class="profile-page-content">
         <!-- pro pic -->
-        <div class="profile-content">
+        <div class="profilepic-content">
             <div class="pro-pic">
                 <img src="../../Assets/Images/Profile_pic_mother" alt="">
             </div>
@@ -34,7 +34,7 @@ include('../../Config/mother-viewProfile.inc.php')
         <div class="vline"></div>
         <!-- profile details -->
         <div class="profile-data">
-            <table class="profile-details">
+            <table class="update-form">
                 <tr>
                     <td><p>Mother ID</p></td>
                     <td><label for="mother-id"><?php  echo $mother_id?></label></td>
@@ -71,7 +71,7 @@ include('../../Config/mother-viewProfile.inc.php')
                 </tr>
             </table>
             <!-- buttons -->
-            <div class="profile-buttons">
+            <div class="profileUpdate-buttons">
                 <a href="http://">
                     <button class="edit-button">Edit Profile</button>
                 </a>

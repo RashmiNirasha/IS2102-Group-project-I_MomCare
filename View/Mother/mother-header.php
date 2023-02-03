@@ -20,7 +20,7 @@
             height: 70px;
             left: 0px;
             top: 0px;
-            background: #FFFFFF;
+            background: #f3f4f5;
             display: flex;
             justify-content: space-between;
 
@@ -52,7 +52,7 @@
         .nav-bar span{
             margin-left: 50%
         }
-        .profile-pic img{
+        .pro-pic img{
             padding: 10px 20px;
 
             border-radius: 10px;
@@ -65,7 +65,7 @@
     <div class="nav-bar">
         <div class="logo">
             <a href="">
-                <img src="../../Assets/Images/Project Logo - landscape" alt="Logo">
+                <img src="../../Assets/Images/common/Project Logo - landscape" alt="Logo">
             </a>
         </div>
         <span></span>
@@ -74,8 +74,8 @@
             <a href="../../About.php">About</a>
             <a href="mother-dashboard.php">Dashboard</a>
         </div>
-        <div class="profile-pic">
-            <a href="mother-profile.php"><img src="../../Assets/Images/Profile_pic_mother" alt=""></a>
+        <div class="pro-pic">
+            <a href="mother-profile.php"><img src="../../Assets/Images/mother/Profile_pic_mother" alt=""></a>
         </div>
     </div>
 </body>
