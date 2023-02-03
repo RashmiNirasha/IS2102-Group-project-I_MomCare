@@ -36,8 +36,8 @@
                         <td><input type="email" name="email" id="email" placeholder="Enter your email" required></td>
                     </tr>
                     <tr>
-                        <td><label for="birthday">Birthday</label></td>
-                        <td><input type="date" name="birthday" id="birthday" placeholder="Enter your birthday" required></td>
+                        <td><label for="BOD">BOD</label></td>
+                        <td><input type="date" name="BOD" id="BOD" placeholder="Enter your birthday" required></td>
                     </tr>
                     <tr>
                         <td><label for="address">Address</label></td>

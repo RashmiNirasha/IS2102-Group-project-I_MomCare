@@ -1,6 +1,6 @@
 @font-face {
-    font-family: style-font;
-    src: url(../../Assets/Fonts/LucidaHandwritingStdRg.TTF);
+    font-family: style-font-ForIndexPage;
+    src: url(Assets/Fonts/LucidaHandwritingStdRg.TTF);
 }
 
 @font-face {
@@ -73,7 +73,7 @@
 }
 
 .IndexRightContent h1{
-    font-family: style-font1;
+    font-family: style-font-ForIndexPage;
     font-size: 70px;
     color: rgb(0, 0, 0);
 }
@@ -262,7 +262,55 @@
     border-width: 1px;
     border-color: #029EE4;
 }
+/* ----------------- Registration Cofirmation page ---------------------- */
 
+.RegConf {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    vertical-align: middle;
+    align-self: center;
+    padding: 10px 10px 10px 10px;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #029EE4;
+    background-color: #ffffff;
+    margin-top: 300px;
+}
+
+.RegConf h1 {
+    display: flex;
+    flex-direction: column;
+    font-family: RobotoMedium;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-top: 10px;
+}
+
+.RegConf p {
+    font-size: 25px;
+}
+
+.RegConf b {
+    color: #ca2020;
+}
+
+.BackToHomeBtn {
+    margin-top: 20px;
+    height: 30px;
+    width: 120px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #029EE4;
+}
+
+.BackToHomeBtn:hover {
+    background-color: #20ca45;
+    color: #ffffff;
+}
 /* --------------------- dashboard --------------------- */
 
 
@@ -653,6 +701,10 @@
 
 .MotherCardTables {
     width: 100%;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #029EE4;
+    padding: 3px;
 }
 
 .MotherCardTables td {
@@ -660,6 +712,8 @@
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .MotherCardTables td:nth-child(1) {
@@ -1132,8 +1186,10 @@
     border-radius: 10px;
     border-style: solid;
     border-width: 1px;
-    padding-left: 20px;
+    padding-left: 10px;
     padding-right: 20px;
+    border-color: #029EE4;
+    background-color: rgb(255, 255, 255);
 }
 
 .mom-search {
@@ -1141,6 +1197,7 @@
     height: 40px;
     border-radius: 15px;
     border-style: solid;
+    border-color: #029EE4;
     border-width: 1px;
     padding-left: 20px;
     padding-right: 10px;
