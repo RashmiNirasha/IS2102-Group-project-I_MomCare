@@ -36,7 +36,8 @@
                         </fieldset>
                         <div class="end">
                             <div class="forgot-psw">
-                                <a href="">Forgot password?</a>
+                                <a href="View/forgotPass.php">Forgot password?</a>
+                                <a href="View/register.php">Create an account</a>
                             </div>
                             <div class="sign-in-btn">
                                 <button class="btn-login" type="submit">Sign in</button>
