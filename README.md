@@ -8,8 +8,8 @@ Mom care is a system that is made aiming for the digitalization of the current p
 - 
 
 <h3>team members </h3>
-Rashmi Gunawardana
-Kivi Amarakoon
-Bimsara
-Sachini Shermila
+- Rashmi Gunawardana
+- Kivi Amarakoon
+- Bimsara
+- Sachini Shermila
 
