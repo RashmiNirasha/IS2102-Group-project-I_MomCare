@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
             $to = $email;
             $subject = "Password Reset Link";
             $message = "A password reset request has been made for your account. If you did not make this request, you can ignore this email. 
-            Otherwise, you can reset your password using this link: http://localhost/IS2102-Group-project-I_MomCare/View/new_passw.phptoken=" . $token . " to reset your password on our site";
+            Otherwise, you can reset your password using this link: http://localhost/IS2102-Group-project-I_MomCare/View/new_passw.php =" . $token . " to reset your password on our site";
 
             sendemail($email, 'Reset Password', $message);
             header("Location:forgotPass.php?success=" . urlencode("Email Verification Sent!"));
@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
                     <img src="../Assets/images/common/Project-Logo-landscape-size-middle.png" alt="login-logo">
                 </div>
                 <div class="ForgetPassFormDiv">
-                        <form method="post" class="login-form" action="app_logic.php ">
+                        <form method="post" class="login-form" action=" ">
                     <h2>Reset Password</h2>
                         <fieldset>
                             <legend>&nbsp;Email Address:&nbsp;</legend>

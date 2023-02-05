@@ -1,6 +1,6 @@
 <?php 
 //include "../Assets/Includes/header_index.php"; 
-include "../Config/dbConnection.php";
+include "../../Config/dbConnection.php";
 
 ?>
 <!DOCTYPE html>
@@ -10,16 +10,16 @@ include "../Config/dbConnection.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <style><?php include "../Assets/Css/style-common.css" ?></style>
+    <style><?php include "../../Assets/Css/style-common.css" ?></style>
 </head>
 <body>
     <div class="RegisterMotherMainDiv">
         <div class="RegisterFormHeading">
-            <img src="../Assets/images/common/Project Logo-01.png" alt="Logo">
+            <img src="../../Assets/images/common/Project Logo-01.png" alt="Logo">
         </div>
         <div class="RegisterMotherInnerDiv">
             <h2>Register</h2>
-            <form class="RegistrationMotherForm" id="RegistrationMotherForm" action="mother-register.php" method="POST">
+            <form class="RegistrationMotherForm" id="RegistrationMotherForm" action="mother-registrationModel.php" method="POST">
                 <table>
                     <tr>
                         <td><label for="name">First name</label></td>
@@ -59,7 +59,7 @@ include "../Config/dbConnection.php";
                     </tr>
                 </table>
                 <button type="submit" name="register">Register</button>
-                <button type="cancel" name="cancel" onclick="window.location='../index.php'">Cancel</button>
+                <button type="cancel" name="cancel" onclick="window.location='../../index.php'">Cancel</button>
                 <button type="clear" name="clear" onclick="clearForm()">Clear</button>
                 <script>
                     function clearForm() {

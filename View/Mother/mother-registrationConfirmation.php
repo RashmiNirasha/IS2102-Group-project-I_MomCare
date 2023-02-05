@@ -26,3 +26,12 @@
     </div>
 </body>
 </html>
+
+
+
+         <?php //if(isset($_GET['success'])) { ?>
+         <!-- <div class="alert alert-success"><?php //echo $_GET['success']; ?></div> -->
+         <?php // } ?>
+         <?php //if(isset($_GET['err'])) { ?>  
+         <!-- <div class="alert alert-danger"><?php //echo $_GET['err']; ?></div> -->
+         <?php // } ?>
