@@ -7,9 +7,9 @@ include "../Assets/Includes/email.php";
 if (empty($_POST["fname"])) {
     die("First Name is required");
 }
-if (empty($_POST["mname"])) {
-    die("Middle Name is required");
-}
+// if (empty($_POST["mname"])) {
+//     die("Middle Name is required");
+// }
 if (empty($_POST["sname"])) {
     die("Last Name is required");
 }

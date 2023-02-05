@@ -1,6 +1,6 @@
 <?php 
-include "Assets/Includes/header_index.php"; 
-include "Config/dbConnection.php";
+//include "../Assets/Includes/header_index.php"; 
+include "../Config/dbConnection.php";
 
 ?>
 <!DOCTYPE html>
@@ -9,23 +9,17 @@ include "Config/dbConnection.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register</title>
     <style><?php include "../Assets/Css/style-common.css" ?></style>
 </head>
 <body>
-<div class="landingMain">
-        <div class="landingLeft">
-            <img class="landingPagePhoto" src="Assets/images/common/landing-page-photo.jpg" alt="landing-page-photo">
+    <div class="RegisterMotherMainDiv">
+        <div class="RegisterFormHeading">
+            <img src="../Assets/images/common/Project Logo-01.png" alt="Logo">
         </div>
-        <div class="landingRight">
-            <div class="login-container">
-                <div class="div-logo">
-                    <img src="Assets/images/common/logo.png" alt="login-logo">
-                </div>
-                <div class="div-form">
-                    <h3>Register</h3>
-                 
-                    <form class="RegistrationMotherForm" action="mother-register.php" method="POST">
+        <div class="RegisterMotherInnerDiv">
+            <h2>Register</h2>
+            <form class="RegistrationMotherForm" id="RegistrationMotherForm" action="mother-register.php" method="POST">
                 <table>
                     <tr>
                         <td><label for="name">First name</label></td>
@@ -64,8 +58,14 @@ include "Config/dbConnection.php";
                         <td><input type="hidden" name="user_role" id="user_role" value="mother"></td>
                     </tr>
                 </table>
-                <button type="submit" name="register" class="btn btn-default">Register</button>
-                <button name="clear" class="btn btn-default" onclick="//clear all fileds">Clear</button>
+                <button type="submit" name="register">Register</button>
+                <button type="cancel" name="cancel" onclick="window.location='../index.php'">Cancel</button>
+                <button type="clear" name="clear" onclick="clearForm()">Clear</button>
+                <script>
+                    function clearForm() {
+                        document.getElementById("RegistrationMotherForm").reset();
+                    }
+                </script>
             </form>
         </div>
     </div>

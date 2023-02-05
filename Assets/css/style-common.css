@@ -156,10 +156,9 @@
     border-radius: 25px;
 }
 
-.RegistrationMotherForm input[type="cancel"] {
-    width: 98px;
-    height: 37px;
-    text-align: center;
+.RegistrationMotherForm button[type="cancel"] {
+    width: 100px;
+    height: 40px;
     border-radius: 10px;
     border-style: solid;
     border-width: 1px;
@@ -170,11 +169,10 @@
     cursor: pointer;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-right: 10px;
-    float: right;
+    float: left;
 }
 
-.RegistrationMotherForm input[type="submit"] {
+.RegistrationMotherForm button[type="submit"] {
     width: 100px;
     height: 40px;
     border-radius: 10px;
@@ -190,13 +188,38 @@
     float: right;
 }
 
-.RegistrationMotherForm input[type="submit"]:hover {
+.RegistrationMotherForm button[type="clear"] {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    color: #ffffff;
+    background-color: #029ee4;
+    border-color: #029ee4;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    float: right;
+}
+
+.RegistrationMotherForm button[type="submit"]:hover {
     background-color: #20ca45;
+    border-color: #ffffff;
     color: #ffffff;
 }
 
-.RegistrationMotherForm input[type="cancel"]:hover {
+.RegistrationMotherForm button[type="cancel"]:hover {
     background-color: #ca2020;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.RegistrationMotherForm button[type="clear"]:hover {
+    background-color: #ca2020;
+    border-color: #ffffff;
     color: #ffffff;
 }
 
@@ -245,12 +268,16 @@
     width: 30%;
     text-align: left;
     padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .RegistrationMotherForm table td:nth-child(2) {
     width: 70%;
     text-align: left;
     padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .RegistrationMotherForm table input {
@@ -262,6 +289,66 @@
     border-width: 1px;
     border-color: #029EE4;
 }
+
+.RegistrationMotherForm table input:focus {
+    outline: none;
+    border-color: #029EE4;
+    border-width: 2px;
+}
+
+/* ---------------------- Forget Password page------------------------- */
+
+.ForgetPassFormDiv {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background-color: #ffffff;
+}
+
+.ForgetPassLogoDiv {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    align-self: center;
+
+}
+
+.ForgetPassLogoDiv img {
+    margin: 0;
+    align-self: center;
+}
+
+.ForgetPassFormDiv h2 {
+    font-family: RobotoMedium;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 0;
+
+}
+
+.ForgetPassFormDiv button{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    color: #ffffff;
+    background-color: #029ee4;
+    border-color: #029ee4;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: right;
+}
+
+.ForgetPassFormDiv button:hover {
+    background-color: #20ca45;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
 /* ----------------- Registration Cofirmation page ---------------------- */
 
 .RegConf {
@@ -435,8 +522,9 @@
 
 .error {
     width: auto;
-    background-color: #d3cccc4d;
+    background-color: #029ce444;
     color: #d42424;
+    font-size: 14px;
     margin-left: 3px;
     border-radius: 5px;
     padding-left: 10px;
@@ -1222,6 +1310,11 @@
     border-width: 1px;
     padding-left: 20px;
     padding-right: 10px;
+}
+
+.mom-search:focus {
+    outline: none;
+    border-width: 2px;
 }
 
 .mom-bar {

@@ -265,6 +265,8 @@ a{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    padding-right: 20px;
+    padding-top: 170px;
 
     width: 40%;
     height: 100%;
@@ -308,10 +310,53 @@ a{
     justify-content: space-evenly;
     align-items: center;
     padding-left: 20px;
-    width: 40%;
+    width: 80%;
     height: 100%;
 }
+.profile-child-data h3{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
 
+    color: #111C43;
+}
+.child-details table{
+    padding-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.child-details td{
+    padding: 10px 0px 10px 5px;
+    background-color: #f3f4f5;
+    border-radius: 20px;
+}
+.child-details td ul{
+    list-style: none;
+}
+.child-details button{
+    width: 100px;
+    height: 50px;
+    background: #F3F4F5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    border: none;
+    margin-right: 20px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    align-items: center;
+    text-align: center;
+
+    color: #029EE4;
+}
+.child-details button:hover{
+    color: #111C43;
+}
 
 
 .profile-buttons {

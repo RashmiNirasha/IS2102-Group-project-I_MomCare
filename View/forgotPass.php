@@ -51,25 +51,22 @@ if (isset($_POST['submit'])) {
 <body>
 <div class="landingMain">
         <div class="landingLeft">
-            <img class="landingPagePhoto" src="Assets/images/common/landing-page-photo.jpg" alt="landing-page-photo">
+            <img class="landingPagePhoto" src="../Assets/images/common/landing-page-photo.jpg" alt="landing-page-photo">
         </div>
         <div class="landingRight">
             <div class="login-container">
-                <div class="div-logo">
-                    <img src="Assets/images/common/logo.png" alt="login-logo">
+                <div class="ForgetPassLogoDiv">
+                    <img src="../Assets/images/common/Project-Logo-landscape-size-middle.png" alt="login-logo">
                 </div>
                 <div class="div-form">
-                        <form method="post" class="login-form" action="  ">
+                        <form method="post" class="login-form" action="app_logic.php ">
                     <h3>Reset Password</h3>
                         <fieldset>
                             <legend>&nbsp;Email Address:&nbsp;</legend>
                             <input type="email" name="email" id="email" placeholder="Enter your email">
                         </fieldset>
                         <br>
-                            
-                            <button type="submit" name="reset-password" class="login-btn">Submit</button>
-                            </div>  
-                        </div>
+                        <button type="submit" name="reset-password">Submit</button> 
                     </form>
                 </div>
             </div>
@@ -77,4 +74,4 @@ if (isset($_POST['submit'])) {
     </div>
 </body>
 </html>
-<?php include "../Assets/Includes/footer_index.php"; ?>
+<?php //include "../Assets/Includes/footer_index.php"; ?>

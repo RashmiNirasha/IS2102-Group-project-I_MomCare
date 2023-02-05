@@ -36,9 +36,6 @@ if(isset($_POST['submit'])){
     background-color: white;
 }
 
-form {
-
-}
 .container .form-group{
   position: relative;
     margin-left: 10rem;
