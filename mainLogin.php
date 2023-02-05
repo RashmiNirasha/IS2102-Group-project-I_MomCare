@@ -20,10 +20,10 @@
         <div class="landingRight">
             <div class="login-container">
                 <div class="div-logo">
-                    <img src="Assets/images/common/logo.png" alt="login-logo">
+                    <img src="Assets/images/common/Project-Logo-landscape-size-middle.png" alt="login-logo">
                 </div>
                 <div class="div-form">
-                    <form method="post" class="login-form" action="Config/mainLoginModel.php ">
+                    <form method="POST" class="login-form" action="Config/mainLoginModel.php ">
                         <?php if(isset($_GET['error'])) { ?>
                                 <p class="error"><?php echo $_GET['error']; ?></p> 
                         <?php } ?>

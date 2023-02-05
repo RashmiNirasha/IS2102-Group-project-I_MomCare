@@ -35,7 +35,6 @@ if (isset($_POST['submit'])) {
             exit();
         }
     }
-
 }  
     ?>
 
@@ -58,9 +57,9 @@ if (isset($_POST['submit'])) {
                 <div class="ForgetPassLogoDiv">
                     <img src="../Assets/images/common/Project-Logo-landscape-size-middle.png" alt="login-logo">
                 </div>
-                <div class="div-form">
+                <div class="ForgetPassFormDiv">
                         <form method="post" class="login-form" action="app_logic.php ">
-                    <h3>Reset Password</h3>
+                    <h2>Reset Password</h2>
                         <fieldset>
                             <legend>&nbsp;Email Address:&nbsp;</legend>
                             <input type="email" name="email" id="email" placeholder="Enter your email">

@@ -321,7 +321,7 @@
 
 .ForgetPassFormDiv h2 {
     font-family: RobotoMedium;
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
     margin-top: 0;
 
@@ -568,7 +568,7 @@
     width: 50%;
     display: flex;
     height: fit-content;
-    margin-top: 20%;
+    margin-top: 12%;
     justify-content: space-around;
     min-width: 200px;
 }

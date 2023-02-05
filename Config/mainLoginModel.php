@@ -22,8 +22,10 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
 	if (empty($email)) {
 		header("Location: ../mainLogin.php?error=Email is required");
+		exit();
 	} else if (empty($password)) {
 		header("Location: ../mainLogin.php?error=Password is required");
+		exit();
 	} else {
 
 		$sql = "SELECT * FROM user_tbl WHERE email='$email' AND password='$password'";
@@ -41,26 +43,35 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 				$_SESSION['id'] = $row['user_id'];
                 $_SESSION['name'] = $row['name'];
 				header("Location: ../View/Admin/admin-dashboard.php");
+				exit();
 
 			} else if ($row['user_role']=='mother') {
                 $_SESSION['id'] = $row['user_id'];
                 $_SESSION['name'] = $row['name'];
 				header("Location: ../View/Mother/mother-dashboard.php");
+				exit();
 
 			} else if ($row['user_role']=='vog') {
                 $_SESSION['id'] = $row['user_id'];
 				header("Location: ../View/VOG/dashboardVog.php");
+				exit();
 
 			} else if ($row['user_role'] == 'ped') {
 				$_SESSION['id'] = $row['user_id'];
 				header("Location: ../View/Pediatrician/pediatrician-dashboardView.php");
+				exit();
 
 			}else if ($row['user_role']=='phm') {
                 $_SESSION['id'] = $row['user_id'];
 				header("Location: ../View/PHM/phm-dashboard.html");
+				exit();
 			} else {
 				header("Location: ../index.php?error=Incorect User name or password");
+				exit();
 			}
+		}else {
+			header("Location: ../index.php?error=Incorect User name or password");
+			exit();
 		}
 	}
 }
