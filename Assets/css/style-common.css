@@ -258,7 +258,7 @@
     align-items: center;
     width: 100%;
     font-family: RobotoRegular;
-    font-size: 20px;
+    font-size: 18px;
     background-color: #ffffff;
     padding: 30px;
     border-radius: 20px;
@@ -285,7 +285,7 @@
 
 .RegistrationMotherForm table input {
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     padding: 10px;
     border-radius: 10px;
     border-style: solid;
