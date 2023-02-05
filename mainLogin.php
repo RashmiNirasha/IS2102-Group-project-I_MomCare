@@ -23,11 +23,10 @@
                 </div>
                 <div class="div-form">
                         <form method="post" class="login-form" action="Config/mainLoginModel.php ">
-                        
-
                         <fieldset>
                             <legend>&nbsp;Email:&nbsp;</legend>
                             <input type="email" name="email" id="email" placeholder="Enter your email">
+                            <!-- <input type="email" name="email" id=""> -->
                         </fieldset>
                         <br>
                         <fieldset>
@@ -35,9 +34,13 @@
                             <input type="password" name="password" id="password" placeholder="Enter your password">
                         </fieldset>
                         <div class="end">
-                            <div class="forgot-psw">
-                                <a href="View/forgotPass.php">Forgot password?</a>
-                                <a href="View/register.php">Create an account</a>
+                            <div class="logInOtherLinks">
+                                <div class="forgot-psw">
+                                    <a href="View/forgotPass.php">Forgot password?</a>
+                                </div>
+                                <div class="createAcc">
+                                    <a href="View/register.php">Create an account</a>
+                                </div>
                             </div>
                             <div class="sign-in-btn">
                                 <button class="btn-login" type="submit">Sign in</button>

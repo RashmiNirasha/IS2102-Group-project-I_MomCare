@@ -61,7 +61,7 @@ include "Config/dbConnection.php";
                     </tr>
                     <tr>
                         <td><label for="user_role"></label></td>
-                        <td><input type="hidden" name="user_roll" id="user_roll" value="mother"></td>
+                        <td><input type="hidden" name="user_role" id="user_role" value="mother"></td>
                     </tr>
                 </table>
                 <button type="submit" name="register" class="btn btn-default">Register</button>
