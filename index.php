@@ -37,7 +37,6 @@ include "Assets/Includes/header_index.php";
          
          <?php //} ?> -->
                 <a href="View/register.php"><button class="btnMain" >Register</button></a>
-
                 <a href="View/Mother/mother-registrationView.php"><button class="btnMain" >Register</button></a>
                 <a href="mainLogin.php"><button class="btnMain" >Sign in</button></a>
             </div>
