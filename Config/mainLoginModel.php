@@ -7,7 +7,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
 	function test_input($data)
 	{
-		$data = trim($data);
+		$data = trim($data); //remove whitespace
 		$data = stripslashes($data);
 		$data = htmlspecialchars($data);
 		return $data;
@@ -21,9 +21,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $password = md5($password);
 
 	if (empty($email)) {
-		header("Location: ../index.php?error=email is Required");
+		header("Location: ../mainLogin.php?error=Email is required");
 	} else if (empty($password)) {
-		header("Location: ../index.php?error=Password is Required");
+		header("Location: ../mainLogin.php?error=Password is required");
 	} else {
 
 		$sql = "SELECT * FROM user_tbl WHERE email='$email' AND password='$password'";

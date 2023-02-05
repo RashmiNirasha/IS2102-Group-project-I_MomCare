@@ -22,11 +22,13 @@
                     <img src="Assets/images/common/logo.png" alt="login-logo">
                 </div>
                 <div class="div-form">
-                        <form method="post" class="login-form" action="Config/mainLoginModel.php ">
+                    <form method="post" class="login-form" action="Config/mainLoginModel.php ">
+                        <?php if(isset($_GET['error'])) { ?>
+                                <p class="error"><?php echo $_GET['error']; ?></p> 
+                        <?php } ?>
                         <fieldset>
                             <legend>&nbsp;Email:&nbsp;</legend>
                             <input type="email" name="email" id="email" placeholder="Enter your email">
-                            <!-- <input type="email" name="email" id=""> -->
                         </fieldset>
                         <br>
                         <fieldset>
