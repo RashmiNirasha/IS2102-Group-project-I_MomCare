@@ -1,5 +1,6 @@
 <?php 
     include "Assets/Includes/header_index.php"; 
+?>
     include "Config/dbConnection.php";?>
 
 <!DOCTYPE html>
