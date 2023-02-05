@@ -1423,7 +1423,8 @@
     width: auto;
     margin-left: 15%;
     margin-right: 15%;
-    /* background-color: #111C43; */
+    background-color: #ffffff;
+    margin-top: -60px;
 }
 
 .mom-intro img {
@@ -1437,7 +1438,6 @@
 .mom-intro-content {
     margin-left: 20px;
     width: 100%;
-    /* background-color: #d42424; */
 }
 
 .Name-header-mom {
@@ -1468,7 +1468,7 @@
 }
 
 .add-report {
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     display: flex;
     flex-direction: row;
     width: auto;
@@ -1477,6 +1477,10 @@
     margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 10px;
+    padding-bottom: -20px;
+    border-style: solid;
+    border-color: #029EE4;
+    border-width: 1px;
     justify-content: space-between;
 }
 
@@ -1501,6 +1505,7 @@
     border-width: 1px;
     padding-left: 10px;
     margin-left: 10px;
+    border-color: #029EE4;
 }
 
 #view-test-name {
@@ -1513,6 +1518,11 @@
     margin-left: 10px;
 }
 
+#test-name:focus {
+    outline: none;
+    border-width: 2px;
+}
+
 #note {
     width: 35%;
     height: 25px;
@@ -1520,6 +1530,12 @@
     border-style: solid;
     border-width: 1px;
     padding-left: 10px;
+    border-color: #029EE4;
+}
+
+#note:focus {
+    outline: none;
+    border-width: 2px;
 }
 
 #view-note {
@@ -1535,6 +1551,49 @@
     width: auto;
     height: 25px;
 }
+
+.test-view-table {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: hsl(0, 100%, 98%);
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #029EE4;
+    padding: 10px;
+}
+
+.test-view-table td {
+    background-color: #d1d1d3;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.test-view-table td:nth-child(1) {
+    padding-left: 10px;
+}
+
+.test-view-table td:nth-child(2) {
+    padding-left: 10px;
+    width: 40%;
+}
+
+.test-view-table td:nth-child(3) {
+    text-align: center;
+}
+
+.test-view-table td:nth-child(4) {
+    background-color: transparent;
+    text-align: center;
+    width: 10%;
+}
+
+.test-view-table td:nth-child(5) {
+    background-color: transparent;
+    text-align: center;
+    width: 10%;
+}
+
 
 @media screen and (max-width: 1500px) {
     #upload-report {
@@ -1559,16 +1618,15 @@
 }
 
 .view-report-btn {
-    width: 60%;
+    width: 100%;
     height: 25px;
     border-radius: 10px;
     border-width: 1px;
-    margin-top: 2.5px;
-    /* margin-right: 10px; */
     background-color: #029EE4;
     color: #f0f0f0;
     border-color: #029EE4;
     cursor: pointer;
+    margin-bottom: 1px;
     
 }
 
@@ -1583,5 +1641,16 @@
 
 #x {
     width: 100%;
+}
+
+.error2 {
+    color: red;
+    width: 69%;
+    margin-left: 15%;
+    margin-right: 16%;
+    padding-left: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    background-color: #029ce450;
 }
 

@@ -31,4 +31,4 @@
     </div>
 </body>
 </html>
-<?php include "../../Assets/Includes/footer_pages.php"; ?>
+<?php //include "../../Assets/Includes/footer_pages.php"; ?>

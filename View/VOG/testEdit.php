@@ -10,7 +10,7 @@
 <body>
 <div class="add-report">
     <?php
-        include 'db_conn.php';
+        include '../../Config/dbConnection.php';
         
         // $id = "SELECT * FROM tests ['test_id']";
         // $testUpdateQuery = "SELECT * FROM tests WHERE id = '$id'";
