@@ -19,7 +19,7 @@ include "../Config/dbConnection.php";
         </div>
         <div class="RegisterMotherInnerDiv">
             <h2>Register</h2>
-            <form class="RegistrationMotherForm" action="mother-register.php" method="POST">
+            <form class="RegistrationMotherForm" id="RegistrationMotherForm" action="mother-register.php" method="POST">
                 <table>
                     <tr>
                         <td><label for="name">First name</label></td>
@@ -59,8 +59,13 @@ include "../Config/dbConnection.php";
                     </tr>
                 </table>
                 <button type="submit" name="register">Register</button>
-                <button type="cancel" name="cancel">Cancel</button>
-                <button type="clear" name="clear" onclick="//clear all fileds">Clear</button>
+                <button type="cancel" name="cancel" onclick="window.location='../index.php'">Cancel</button>
+                <button type="clear" name="clear" onclick="clearForm()">Clear</button>
+                <script>
+                    function clearForm() {
+                        document.getElementById("RegistrationMotherForm").reset();
+                    }
+                </script>
             </form>
         </div>
     </div>

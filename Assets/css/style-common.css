@@ -295,6 +295,60 @@
     border-color: #029EE4;
     border-width: 2px;
 }
+
+/* ---------------------- Forget Password page------------------------- */
+
+.ForgetPassFormDiv {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background-color: #ffffff;
+}
+
+.ForgetPassLogoDiv {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    align-self: center;
+
+}
+
+.ForgetPassLogoDiv img {
+    margin: 0;
+    align-self: center;
+}
+
+.ForgetPassFormDiv h2 {
+    font-family: RobotoMedium;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 0;
+
+}
+
+.ForgetPassFormDiv button{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    color: #ffffff;
+    background-color: #029ee4;
+    border-color: #029ee4;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: right;
+}
+
+.ForgetPassFormDiv button:hover {
+    background-color: #20ca45;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
 /* ----------------- Registration Cofirmation page ---------------------- */
 
 .RegConf {
