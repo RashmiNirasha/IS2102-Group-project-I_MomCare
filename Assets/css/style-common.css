@@ -129,6 +129,9 @@
 .RegisterMotherMainDiv {
     display: flex;
     flex-direction: column;
+    margin:0 auto;
+    justify-content: space-around;
+    vertical-align: middle;
     width: 100%;
     background-color: rgb(255, 255, 255);
 }
@@ -239,10 +242,10 @@
 
 .RegisterMotherInnerDiv h2 {
     font-family: RobotoMedium;
-    font-size: 40px;
+    font-size: 25px;
     text-align: center;
     background-color: #029ee4;
-    padding: 10px 40px 10px 40px;
+    padding: 5px 40px 5px 40px;
     border-radius: 20px;
     width: 30%;
 }

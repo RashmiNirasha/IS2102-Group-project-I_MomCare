@@ -1,5 +1,5 @@
 <?php 
-    include "../Assets/Includes/header_index.php"; 
+    include "../Assets/Includes/header.php"; 
     include "../Config/dbConnection.php";
     include "../Assets/Includes/email.php";
     

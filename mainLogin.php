@@ -1,7 +1,7 @@
 <?php 
-    include "Assets/Includes/header_index.php"; 
+    include "Assets/Includes/header_index.php";
+    include "Config/dbConnection.php"; 
 ?>
-<?php include "Config/dbConnection.php";?>
 
 <!DOCTYPE html>
 <html lang="en">
