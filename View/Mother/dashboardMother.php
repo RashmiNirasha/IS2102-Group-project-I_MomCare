@@ -1,4 +1,8 @@
-<?php include "../../Assets/Includes/header_pages.php"; ?>
+<?php 
+session_start();
+
+//include "../../Assets/Includes/header_pages.php";
+if (isset($_SESSION['email'])){?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,10 +16,15 @@
 </head>
 <body>
     <div class="dashboard">
-        <div class="card-pack"><!--gap remover
+
+        <div class="card-pack">
+        <h1>Hi <?php
+      echo $_SESSION['name'];
+      ?>, Welcome to Mother Dashboard</h1><!--gap remover
         --><button class="card">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
                 <div class="card-content-right"><p>Schedule Manager</p></div>
+            
             </button><!--gap remover
         --><button class="card" onclick="window.location.href = 'motherCardPage1.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">pregnant_woman</span></div>
@@ -48,8 +57,13 @@
         </div>
     </div>
     <div class="log-out"> <!--logout button-->
-        <button onclick="window.location.href='logout.php';" class="log-out-btn">Log out</button>
+        <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
     </div>
 </body>
 </html>
-<?php include "../../Assets/Includes/footer_pages.php"; ?>
+<?php include "../../Assets/Includes/footer_pages.php"; 
+?>
+<?php
+}else
+header("Location: ../../index.php");
+?>

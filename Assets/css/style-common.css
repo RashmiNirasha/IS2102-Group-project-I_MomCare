@@ -1,6 +1,6 @@
 @font-face {
-    font-family: style-font;
-    src: url(../../Assets/Fonts/LucidaHandwritingStdRg.TTF);
+    font-family: style-font-ForIndexPage;
+    src: url(Assets/Fonts/LucidaHandwritingStdRg.TTF);
 }
 
 @font-face {
@@ -73,7 +73,7 @@
 }
 
 .IndexRightContent h1{
-    font-family: style-font1;
+    font-family: style-font-ForIndexPage;
     font-size: 70px;
     color: rgb(0, 0, 0);
 }
@@ -156,10 +156,9 @@
     border-radius: 25px;
 }
 
-.RegistrationMotherForm input[type="cancel"] {
-    width: 98px;
-    height: 37px;
-    text-align: center;
+.RegistrationMotherForm button[type="cancel"] {
+    width: 100px;
+    height: 40px;
     border-radius: 10px;
     border-style: solid;
     border-width: 1px;
@@ -170,11 +169,10 @@
     cursor: pointer;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-right: 10px;
-    float: right;
+    float: left;
 }
 
-.RegistrationMotherForm input[type="submit"] {
+.RegistrationMotherForm button[type="submit"] {
     width: 100px;
     height: 40px;
     border-radius: 10px;
@@ -190,13 +188,38 @@
     float: right;
 }
 
-.RegistrationMotherForm input[type="submit"]:hover {
+.RegistrationMotherForm button[type="clear"] {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    color: #ffffff;
+    background-color: #029ee4;
+    border-color: #029ee4;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    float: right;
+}
+
+.RegistrationMotherForm button[type="submit"]:hover {
     background-color: #20ca45;
+    border-color: #ffffff;
     color: #ffffff;
 }
 
-.RegistrationMotherForm input[type="cancel"]:hover {
+.RegistrationMotherForm button[type="cancel"]:hover {
     background-color: #ca2020;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.RegistrationMotherForm button[type="clear"]:hover {
+    background-color: #ca2020;
+    border-color: #ffffff;
     color: #ffffff;
 }
 
@@ -245,12 +268,16 @@
     width: 30%;
     text-align: left;
     padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .RegistrationMotherForm table td:nth-child(2) {
     width: 70%;
     text-align: left;
     padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .RegistrationMotherForm table input {
@@ -263,6 +290,60 @@
     border-color: #029EE4;
 }
 
+.RegistrationMotherForm table input:focus {
+    outline: none;
+    border-color: #029EE4;
+    border-width: 2px;
+}
+/* ----------------- Registration Cofirmation page ---------------------- */
+
+.RegConf {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    vertical-align: middle;
+    align-self: center;
+    padding: 10px 10px 10px 10px;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #029EE4;
+    background-color: #ffffff;
+    margin-top: 300px;
+}
+
+.RegConf h1 {
+    display: flex;
+    flex-direction: column;
+    font-family: RobotoMedium;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-top: 10px;
+}
+
+.RegConf p {
+    font-size: 25px;
+}
+
+.RegConf b {
+    color: #ca2020;
+}
+
+.BackToHomeBtn {
+    margin-top: 20px;
+    height: 30px;
+    width: 120px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #029EE4;
+}
+
+.BackToHomeBtn:hover {
+    background-color: #20ca45;
+    color: #ffffff;
+}
 /* --------------------- dashboard --------------------- */
 
 
@@ -387,8 +468,9 @@
 
 .error {
     width: auto;
-    background-color: #d3cccc4d;
+    background-color: #029ce444;
     color: #d42424;
+    font-size: 14px;
     margin-left: 3px;
     border-radius: 5px;
     padding-left: 10px;
@@ -450,11 +532,11 @@
     border-style:solid;
     border-width: thin;
     font-size: 12px;
-    border-color: rgb(199, 187, 187);
+    border-color: #029EE4;
     text-align: left;
 }
 
-.login-form fieldset input {
+.login-form input{
     border-radius: 2px;
     border-style: hidden;
     margin-left: -7px;
@@ -463,7 +545,9 @@
     margin-left: 1px;   
     outline-style: none;
     font-size: 15px;
+    background-color: #ffffff;
 }
+
 
 /* sign-in option  */
 
@@ -473,8 +557,27 @@
     width: 100%;
     margin-top: 10px;
 }
+
+.logInOtherLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .forgot-psw {
+    text-align: left;
+    margin-left: 2px;
+}
+
+.createAcc {
     text-align: right;
+    margin-right: 2px;
+}
+
+.createAcc a {
+    color: #029EE4;
+    text-decoration: none;
+    font-size: small;
 }
 
 .forgot-psw a {
@@ -653,6 +756,10 @@
 
 .MotherCardTables {
     width: 100%;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #029EE4;
+    padding: 3px;
 }
 
 .MotherCardTables td {
@@ -660,6 +767,8 @@
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .MotherCardTables td:nth-child(1) {
@@ -1132,8 +1241,10 @@
     border-radius: 10px;
     border-style: solid;
     border-width: 1px;
-    padding-left: 20px;
+    padding-left: 10px;
     padding-right: 20px;
+    border-color: #029EE4;
+    background-color: rgb(255, 255, 255);
 }
 
 .mom-search {
@@ -1141,9 +1252,15 @@
     height: 40px;
     border-radius: 15px;
     border-style: solid;
+    border-color: #029EE4;
     border-width: 1px;
     padding-left: 20px;
     padding-right: 10px;
+}
+
+.mom-search:focus {
+    outline: none;
+    border-width: 2px;
 }
 
 .mom-bar {
@@ -1398,5 +1515,4 @@
 #x {
     width: 100%;
 }
-
 

@@ -4,7 +4,6 @@
 
     session_start();
     
-
     function is_array_empty($arr){
         if (is_array($arr)){
             foreach ($arr as $value){

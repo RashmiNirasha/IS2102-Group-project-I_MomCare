@@ -1,6 +1,8 @@
 <?php 
     include "Assets/Includes/header_index.php"; 
 ?>
+    include "Config/dbConnection.php";?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +23,13 @@
                     <img src="Assets/images/common/logo.png" alt="login-logo">
                 </div>
                 <div class="div-form">
-                        <form method="post" class="login-form" action=" ">
-                        <?php //if(isset($_GET['error'])) { ?>
-                                <!-- <p class="error"><?php echo $_GET['error']; ?></p>  -->
-                        <?php //} ?>
+                    <form method="post" class="login-form" action="Config/mainLoginModel.php ">
+                        <?php if(isset($_GET['error'])) { ?>
+                                <p class="error"><?php echo $_GET['error']; ?></p> 
+                        <?php } ?>
                         <fieldset>
-                            <legend>&nbsp;Username:&nbsp;</legend>
-                            <input type="email" name="username" id="username" placeholder="Enter your Username">
+                            <legend>&nbsp;Email:&nbsp;</legend>
+                            <input type="email" name="email" id="email" placeholder="Enter your email">
                         </fieldset>
                         <br>
                         <fieldset>
@@ -35,8 +37,13 @@
                             <input type="password" name="password" id="password" placeholder="Enter your password">
                         </fieldset>
                         <div class="end">
-                            <div class="forgot-psw">
-                                <a href="">Forgot password?</a>
+                            <div class="logInOtherLinks">
+                                <div class="forgot-psw">
+                                    <a href="View/forgotPass.php">Forgot password?</a>
+                                </div>
+                                <div class="createAcc">
+                                    <a href="View/register.php">Create an account</a>
+                                </div>
                             </div>
                             <div class="sign-in-btn">
                                 <button class="btn-login" type="submit">Sign in</button>
