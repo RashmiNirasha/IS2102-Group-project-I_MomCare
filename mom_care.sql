@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 01, 2023 at 09:44 AM
+-- Generation Time: Feb 05, 2023 at 09:39 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -79,6 +79,22 @@ INSERT INTO `appointment_details` (`app_id`, `topic`, `doc_id`, `doc_name`, `app
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `child_card`
+--
+
+DROP TABLE IF EXISTS `child_card`;
+CREATE TABLE IF NOT EXISTS `child_card` (
+  `Age` int(10) NOT NULL,
+  `height` varchar(10) NOT NULL,
+  `weight` varchar(10) NOT NULL,
+  `Gender` varchar(10) NOT NULL,
+  `child_id` varchar(11) NOT NULL,
+  PRIMARY KEY (`child_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `child_details`
 --
 
@@ -115,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `doctor_details` (
   `doc_password` varchar(255) NOT NULL,
   `doc_tele` int(10) NOT NULL,
   `doc_workplace` varchar(255) NOT NULL,
-  `doc_type` varchar(255) NOT NULL,
+  `doc_type` enum('vog','ped','other') NOT NULL,
   PRIMARY KEY (`doc_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -124,9 +140,11 @@ CREATE TABLE IF NOT EXISTS `doctor_details` (
 --
 
 INSERT INTO `doctor_details` (`doc_id`, `doc_name`, `doc_age`, `doc_address`, `doc_DOB`, `doc_email`, `doc_password`, `doc_tele`, `doc_workplace`, `doc_type`) VALUES
-('aa1', 'Ranjith Rathnayake', 25, 'galle', '2022-12-21', 'ss@gmail.com', '', 1234567890, 'Teaching Hospital, Karapitiya', 'VOG'),
-('aa2', 'Parakrama Perera', 34, 'Colombo', '2022-12-29', 'aa2@gmail.com', '', 1234567890, 'General Hospital Colombo', 'Pediatrician'),
-('aa3', 'Dishan Silva', 35, 'Matara', '2022-12-31', 'aa3@gmail.com', '', 1234567890, 'Kalubowila Hospital, Colombo', 'VOG');
+('12', 'deepal', 45, 'horana', '1965-02-09', 'deepal12345@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 714436987, 'Horana', 'vog'),
+('13', 'Rashmi', 45, 'kaluthara', '1965-02-09', 'rashmi123@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 714436987, 'kalutara', 'ped'),
+('aa1', 'Ranjith Rathnayake', 25, 'galle', '2022-12-21', 'ss@gmail.com', '', 1234567890, 'Teaching Hospital, Karapitiya', 'vog'),
+('aa2', 'Parakrama Perera', 34, 'Colombo', '2022-12-29', 'aa2@gmail.com', '', 1234567890, 'General Hospital Colombo', 'vog'),
+('aa3', 'Dishan Silva', 35, 'Matara', '2022-12-31', 'aa3@gmail.com', '', 1234567890, 'Kalubowila Hospital, Colombo', 'vog');
 
 -- --------------------------------------------------------
 
@@ -244,9 +262,9 @@ CREATE TABLE IF NOT EXISTS `mcard-medicalhistory` (
   `other` tinyint(1) NOT NULL,
   `social_zscore` tinyint(1) NOT NULL,
   `mom_id` varchar(11) CHARACTER SET latin1 NOT NULL,
-  `phm_id` varchar(20) CHARACTER SET latin1 DEFAULT NULL,
+  `phm_id` varchar(20) CHARACTER SET latin1 NOT NULL,
   KEY `mom_id` (`mom_id`),
-  KEY `phm_id` (`phm_id`)
+  KEY `Foreign key` (`phm_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -336,6 +354,28 @@ CREATE TABLE IF NOT EXISTS `notifications` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `password_reset`
+--
+
+DROP TABLE IF EXISTS `password_reset`;
+CREATE TABLE IF NOT EXISTS `password_reset` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `Foreign key` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `password_reset`
+--
+
+INSERT INTO `password_reset` (`id`, `email`, `token`) VALUES
+(1, 'nirasha999@gmail.com', '80d75f0227660bd003d5f03f7e11945487a101b62c5a516c138cb9b090e0c626216a60110ee1c0595c78df5af0a20bf679e2');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ped_notes`
 --
 
@@ -390,8 +430,9 @@ CREATE TABLE IF NOT EXISTS `registered_user_details` (
   `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `phm_id` varchar(10) NOT NULL,
   `password` varchar(255) NOT NULL,
-  PRIMARY KEY (`reg_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`reg_user_id`),
+  KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=1031 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `registered_user_details`
@@ -400,7 +441,38 @@ CREATE TABLE IF NOT EXISTS `registered_user_details` (
 INSERT INTO `registered_user_details` (`reg_user_id`, `first_name`, `middle_name`, `last_name`, `address`, `DOB`, `tele_number`, `age`, `email`, `reg_date`, `phm_id`, `password`) VALUES
 (5, 'Bim', 'Sav', 'Wick', 'no.12, beraliyadolawatta, hapu', '2000-12-01', 771950342, 22, 'bb@gmail.com', '2022-12-16 14:35:37', 'nii', '202cb962ac59075b964b07152d234b70'),
 (6, 'gdg', 'ddd', 'ss', 'no.12, beraliyadolawatta, hapu', '2000-12-01', 763361822, 21, 'aa@gmail.com', '2022-12-18 05:46:31', 'qqwe', '81dc9bdb52d04dc20036dbd8313ed055'),
-(7, 'gdg', 'bii', 'ss', 'no.12, beraliyadolawatta, hapu', '2022-12-01', 763361822, 23, 'cc@gmail.com', '2022-12-18 18:17:54', 'nini', '81dc9bdb52d04dc20036dbd8313ed055');
+(7, 'gdg', 'bii', 'ss', 'no.12, beraliyadolawatta, hapu', '2022-12-01', 763361822, 23, 'cc@gmail.com', '2022-12-18 18:17:54', 'nini', '81dc9bdb52d04dc20036dbd8313ed055'),
+(1030, 'Rashmi', 'Nirasha', 'Gunawardana', 'Horana', '1992-01-07', 342264331, 31, 'nirasha999@gmail.com', '2023-02-03 18:30:00', 'P102', '$2y$10$MKgQ1p68GyCOKFGTIGYf9un5zBvAakRHANCFkCqHCtlr1l5xMUu2u');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_tbl`
+--
+
+DROP TABLE IF EXISTS `user_tbl`;
+CREATE TABLE IF NOT EXISTS `user_tbl` (
+  `user_id` int(20) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `password` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `name` varchar(200) NOT NULL,
+  `doc_id` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `user_role` enum('mother','vog','ped','admin','phm') NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_tbl`
+--
+
+INSERT INTO `user_tbl` (`user_id`, `email`, `password`, `created_at`, `name`, `doc_id`, `user_role`) VALUES
+(12, 'deepal123@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2023-02-03 08:01:27', 'Nirusha', '', 'mother'),
+(14, 'admin@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2023-02-03 19:31:16', 'Admin', '', 'admin'),
+(15, 'phm@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2023-02-03 19:31:42', 'Kamala', '', 'phm'),
+(16, 'nirasha999@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2023-02-04 16:18:27', 'Rashmi', '', 'mother'),
+(50, 'deepal12345@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2023-02-03 19:23:41', 'deepal', '12', 'vog'),
+(51, 'rashmi123@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2023-02-03 19:23:53', 'Rashmi', '13', 'ped');
 
 -- --------------------------------------------------------
 
@@ -429,7 +501,6 @@ CREATE TABLE IF NOT EXISTS `vog_notes` (
 --
 ALTER TABLE `child_details`
   ADD CONSTRAINT `child_details_ibfk_1` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`),
-  ADD CONSTRAINT `child_details_ibfk_2` FOREIGN KEY (`doc_id`) REFERENCES `doctor_details` (`doc_id`),
   ADD CONSTRAINT `child_details_ibfk_3` FOREIGN KEY (`phm_id`) REFERENCES `phm_details` (`phm_id`),
   ADD CONSTRAINT `child_details_ibfk_4` FOREIGN KEY (`guardian_id`) REFERENCES `guardian_details` (`guardian_id`);
 
@@ -443,13 +514,7 @@ ALTER TABLE `guardian_details`
 -- Constraints for table `mcard-medicalhistory`
 --
 ALTER TABLE `mcard-medicalhistory`
-  ADD CONSTRAINT `mcard-medicalhistory_ibfk_1` FOREIGN KEY (`mom_id`) REFERENCES `momcare`.`mother_details` (`mom_id`);
-
---
--- Constraints for table `mcard-pohistory`
---
-ALTER TABLE `mcard-pohistory`
-  ADD CONSTRAINT `mcard-pohistory_ibfk_1` FOREIGN KEY (`mom_id`) REFERENCES `momcare`.`mother_details` (`mom_id`);
+  ADD CONSTRAINT `Foreign key` FOREIGN KEY (`phm_id`) REFERENCES `phm_details` (`phm_id`);
 
 --
 -- Constraints for table `mother_details`
