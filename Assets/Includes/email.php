@@ -32,13 +32,13 @@ function sendemail($to,$subject,$message)
 //Port to connect smtp
 	$mail->Port = "587";
 //Set gmail username
-	$mail->Username = "nirashagunawardana9@gmail.com";
+	$mail->Username = "momcare.ucsc@gmail.com";
 //Set gmail password
-	$mail->Password = "cfpnxrijumanbebj";
+	$mail->Password = " mtqftejzjwgtchoz";
 //Email subject
 	$mail->Subject = $subject;
 //Set sender email
-	$mail->setFrom('nirashagunawardana9@gmail.com');
+	$mail->setFrom('momcare.ucsc@gmail.com');
 //Enable HTML
 	$mail->isHTML(true);
 //Attachment

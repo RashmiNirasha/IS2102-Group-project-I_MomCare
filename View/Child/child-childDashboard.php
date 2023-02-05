@@ -45,11 +45,10 @@ include "../../Assets/Includes/header_pages.php";
                 <div class="card-content-left"><span class="material-symbols-outlined">calendar_month</span></div>
                 <div class="card-content-right"><p>Development Index</p></div>
             </button><!--gap remover-->
-          
         </div>
     </div>
     <div class="log-out"> <!--logout button-->
-        <button onclick="window.location.href='logout.php';" class="log-out-btn">Log out</button>
+        <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
     </div>
 </body>
 </html>

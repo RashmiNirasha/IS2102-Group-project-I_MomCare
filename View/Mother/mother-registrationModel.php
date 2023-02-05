@@ -1,8 +1,8 @@
 
 <?php
 define("OTP_LEN", "8"); // password length
-include "../Config/dbConnection.php";
-include "../Assets/Includes/email.php";
+include "../../Config/dbConnection.php";
+include "../../Assets/Includes/email.php";
 
 if (empty($_POST["fname"])) {
     die("First Name is required");
@@ -69,6 +69,8 @@ $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[1], $birthDate[2], $birt
   ? ((date("Y") - $birthDate[0]) - 1)
   : (date("Y") - $birthDate[0]));
 
+    
+
 //autogenerate values for mother id
 $mother_id = rand(1000,9999);
 
@@ -80,12 +82,12 @@ $sql = "INSERT INTO registered_user_details(reg_user_id,first_name, middle_name,
     your password is $password_hash </br>
     Username: $mom_email";
 
-    $email = $mom_email;
-        sendemail($email,'Activate Account',$message);
+   
+        sendemail($mom_email,'Activate Account',$message);
 
         if(mysqli_query($con, $sql)){
             //give a message to the user that the registration is successful in the same page
-            header("Location:../index.php?success=" . urlencode("Please wait until admin verifies your account.</br>Account Activation mail will be sent to your email account"));
+            header("Location:mother-registrationConfirmation.php?success=" . urlencode("Please wait until admin verifies your account.</br>Account Activation mail will be sent to your email account"));
             exit();
         } else{
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
