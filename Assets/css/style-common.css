@@ -354,10 +354,18 @@
 
 /* ----------------- Registration Cofirmation page ---------------------- */
 
+.RegConfMain {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    align-self: center;
+    background-color: #ffffff;
+}
+
 .RegConf {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: auto;
     margin: 0 auto;
     vertical-align: middle;
     align-self: center;
@@ -367,21 +375,22 @@
     border-width: 10px;
     border-color: #029EE4;
     background-color: #ffffff;
-    margin-top: 300px;
+    margin-top: 250px;
 }
 
-.RegConf h1 {
+.RegConf h2 {
     display: flex;
     flex-direction: column;
     font-family: RobotoMedium;
-    font-size: 40px;
+    font-size: 30px;
     color: rgb(0, 0, 0);
     text-align: center;
     padding-top: 10px;
 }
 
 .RegConf p {
-    font-size: 25px;
+    font-size: 20px;
+    padding: 0px 10px 0px 10px;
 }
 
 .RegConf b {
@@ -390,11 +399,14 @@
 
 .BackToHomeBtn {
     margin-top: 20px;
-    height: 30px;
-    width: 120px;
+    height: 45px;
+    width: 100px;
     border-radius: 10px;
     border-style: none;
+    color: #ffffff;
     background-color: #029EE4;
+    float: right;
+    margin-right: 5px;
 }
 
 .BackToHomeBtn:hover {
