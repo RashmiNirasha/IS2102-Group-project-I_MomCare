@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <style><?php include "../../Assets/css/style-common.css" ?></style>
 </head>
 <body>
@@ -16,8 +15,8 @@
         --><button class="card">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
                 <div class="card-content-right"><p>Schedule Manager</p></div>
-            </button><!--gap remover
-        --><button class="card" onclick="window.location.href = 'mothers.php';">
+            </button><!--gap remover -->
+       <button class="card" onclick="window.location.href = 'mothers.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">pregnant_woman</span></div>
                 <div class="card-content-right"><p>Mothers</p></div>
             </button><!--gap remover

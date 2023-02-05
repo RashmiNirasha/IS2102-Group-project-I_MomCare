@@ -1,8 +1,9 @@
 <?php 
+include "../../Config/dbConnection.php";
 include('mother-header.php');
-//     session_start();
-//     if (isset($_SESSION['mother_email'])){
-// ?>
+    session_start();
+     if (isset($_SESSION['email'])){
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -83,6 +84,13 @@ include('mother-header.php');
 
         <!-- row 3 -->
         <div class="cards-list">
+            <?php
+                //$email = $_SESSION['email'];
+                //$sql = "SELECT * FROM child_details WHERE mom_email = '$email'";
+               // $result = mysqli_query($con, $sql);
+                //$row = mysqli_fetch_array($result);
+
+            //echo $row['child_name'];//"<a href='child-dashboard.php?child_id=".$row['child_id']."'>";?>
             <a href="http://">
                 <div class="card">
                     <div class="icon-set">
@@ -108,8 +116,8 @@ include('mother-header.php');
 </body>
 </html>
 <?php
-    // }
-    // else{
-    //     header("Location: ../../index.php");
-    // }
+     }
+     else{
+        header("Location: ../../index.php");
+    }
 ?>
