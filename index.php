@@ -40,6 +40,6 @@ include "Assets/Includes/header_index.php";
             </div>
         </div>
     </div>
-    <?php include "Assets/Includes/footer_index.php"; ?>
+    <?php //include "Assets/Includes/footer_index.php"; ?>
 </body>
 </html>
