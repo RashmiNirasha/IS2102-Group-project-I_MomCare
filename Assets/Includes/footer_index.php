@@ -90,7 +90,7 @@
         align-items: center;
     }
 
-    #email {
+    #sub_email {
         margin-top: 10px;
         margin-bottom: 10px;
         padding: 5px;
@@ -99,7 +99,7 @@
         font-size: 1rem;
     }
 
-    #submit {
+    #sub_submit {
         background-color: #EA2727;
         border-style: none;
         border-radius: 5px;
@@ -157,8 +157,8 @@
             <h3>Reach out to Us</h3>
                 <p>Reach out to us for any help you want..</p>
                 <form action="">
-                    <input type="email" name="email" id="email" placeholder="Enter your email">
-                    <!-- <input type="submit" id="submit" value="Subscribe"> -->
+                    <input type="email" name="email" id="sub_email" placeholder="Enter your email">
+                    <!-- <input type="submit" id="sub_submit" value="Subscribe"> -->
                 </form>
         </div>
         <hr>
