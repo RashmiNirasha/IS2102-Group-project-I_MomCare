@@ -1,6 +1,6 @@
 <?php
     include "../../Assets/Includes/header_admin.php";
-    // include "..\..\Config\admin-managedoctorprocess.php";
+    // include "..\..\Config\admin-managephmprocess.php";
     // session_start();
     // if (isset($_SESSION['s_email'])){
 ?>
@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Doctor</title>
+    <title>Manage PHM</title>
     <link rel="stylesheet" href="..\..\Assets\css\style-common.css" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -29,7 +29,7 @@
     <div class="a-container">
         <div class="a-content">
             <div class="a-container-n">
-                <h1>Manage Doctor Accounts</h1>
+                <h1>Manage PHM Accounts</h1>
                 <div class="a-container-m">
                 <div class="a-dropdown"><div class="a-manage-icon"><i class="material-icons" alt="manage accounts">manage_accounts</i>
             </div>

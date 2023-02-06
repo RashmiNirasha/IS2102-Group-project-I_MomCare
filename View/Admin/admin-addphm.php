@@ -11,7 +11,7 @@ include "../../Assets/Includes/header_admin.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Doctor</title>
+    <title>Add PHM</title>
     <link rel="stylesheet" href="..\..\Assets\css\style-common.css" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -28,11 +28,11 @@ include "../../Assets/Includes/header_admin.php";
     <div class="a-container">
          <div class="a-content">
             <div class="a-container-n">
-            <h1>Add Doctor Details</h1>
+            <h1>Add PHM Details</h1>
             <div class="au-msg">
                         <?php 
                             // if (isset($_GET['status']) && $_GET['status']=='errorIDTaken'){
-                            //     echo "<p class='au-imp-message'>Doctor ID is already taken.</p>";
+                            //     echo "<p class='au-imp-message'>PHM ID is already taken.</p>";
                             // }else
                             if (isset($_GET['status']) && $_GET['status']=='erroremptyField'){
                                 echo "<p class='au-imp-message'>All the fields are required.</p>";
@@ -56,13 +56,8 @@ include "../../Assets/Includes/header_admin.php";
             <div class="au-doctor-form">
                 <form action="..\..\Config\admin-adddoctorprocess.php" method="post">
                     <div class="au-first-raw">
-                        <div class="au-doctor-id"><label>Doctor_ID</label  name="docid"><input type="text" name="docid" disabled></div>
-                            <select class="au-dropdown" name = "dtype">
-                                <option value="VOG">VOG</option>
-                                <option value="Pediatrician">Pediatrician</option>
-                                <!--<option value="mo">MO</option>-->
-                                <option value="" selected>select</option>
-                            </select>
+                        <div class="au-doctor-id"><label>PHM_ID</label  name="docid"><input type="text" name="phmid" disabled></div>
+                        <span> </span>
                         </div>
                     <div class="au-middle">
                         <div class="au-middle-content">
