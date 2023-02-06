@@ -17,22 +17,22 @@ include "../../Config/dbConnection.php";
 <body>
 <div class="dashboard">
 <div class="card-pack"><!--gap remover
-        --><button class="card" ><a href="pediatrician-childCardSearchView.php"></a>
+        --><button class="card" onclick="window.location.href = 'pediatrician-childCardSearchView.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
                 <div class="card-content-right"><p>Child Card Management</p></div>
             </button><!--gap remover -->
             <!--gap remover
-        --><button class="card"><a href="EngSignup.php"></a>
+        --><button class="card" onclick="window.location.href = ' ';">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
                 <div class="card-content-right"><p>Immunization Details</p></div>
             </button><!--gap remover -->
            <!--gap remover
-        --><button class="card"><a href="pediatrician-addNotesView.php"></a>
+        --><button class="card" onclick="window.location.href = 'pediatrician-addNotesView.php ';">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
                 <div class="card-content-right"><p>Enter Notes</p></div>
             </button><!--gap remover -->
             <!--gap remover
-        --><button class="card"><a href="pediatrician-viewNotesView.php"></a>
+        --><button class="card" onclick="window.location.href = 'pediatrician-viewNotesView.php ';">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
                 <div class="card-content-right"><p>View Doctor's Notes</p></div>
             </button><!--gap remover -->

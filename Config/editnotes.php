@@ -1,13 +1,13 @@
 <?php
-include_once '/notestable.php';
+include_once 'ped-notesTableModel.php';
 
-$mysqli = require __DIR__ . "/database.php";
+include('dbConnection.php');
 
 session_start();
 $noteid = $_SESSION[$row['ped_note_id']];
 
 $sql = "SELECT * FROM ped_notes WHERE ped_note_id=$noteid";
-$result = mysqli_query($mysqli, $sql);
+$result = mysqli_query($con, $sql);
 // mysqli_query() function performs a query against a database.to perform data retrival
 if (mysqli_num_rows($result) == 1) { //  // Return the number of rows in result set
 
@@ -15,7 +15,6 @@ if (mysqli_num_rows($result) == 1) { //  // Return the number of rows in result 
 } else {
     echo '<script> window.alert("Error receiving data!");</script>';
 }
-
 ?>
 
 ?>

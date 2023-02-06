@@ -175,6 +175,17 @@
     float: left;
 }
 
+.RegistrationMotherForm textarea {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029EE4;
+    height: 150px;
+}
+
 .RegistrationMotherForm button[type="submit"] {
     width: 100px;
     height: 40px;
@@ -281,6 +292,16 @@
     padding-right: 10px;
     padding-top: 2px;
     padding-bottom: 2px;
+}
+
+.RegistrationMotherForm table input[type="search"] {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029EE4;
 }
 
 .RegistrationMotherForm table input {
@@ -1584,4 +1605,151 @@
 #x {
     width: 100%;
 }
+
+/* --------------------------------- Pediatrician add notes View ----------------------------------------------*/
+.PediatrianAddNotes {
+    display: flex;
+    flex-direction: column;
+    margin:0 auto;
+    justify-content: space-around;
+    vertical-align: middle;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.PediatrianAddNotes h1 {
+    display: flex;
+    flex-direction: column;
+    font-family: style-font1;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-top: 10px;
+}
+
+.PediatrianAddNotesForm button[type="cancel"] {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    color: #ffffff;
+    background-color: #029ee4;
+    border-color: #029ee4;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.PediatrianAddNotesForm textarea {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029EE4;
+    height: 150px;
+}
+
+.PediatrianAddNotesForm button[type="submit"] {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    color: #ffffff;
+    background-color: #029ee4;
+    border-color: #029ee4;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: right;
+}
+
+.PediatrianAddNotesForm button[type="clear"] {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    color: #ffffff;
+    background-color: #029ee4;
+    border-color: #029ee4;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    float: right;
+}
+
+.PediatrianAddNotesForm button[type="submit"]:hover,button[type="cancel"]:hover,button[type="clear"]:hover  {
+    background-color: #ca2020;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.PediatrianAddNotesForm {
+    width: 70%;
+}
+
+.PediatrianAddNotesForm table {
+    align-items: center;
+    width: 100%;
+    font-family: RobotoRegular;
+    font-size: 18px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #029EE4;
+}
+
+.PediatrianAddNotesForm table td:nth-child(1) {
+    width: 30%;
+    text-align: left;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.PediatrianAddNotesForm table td:nth-child(2) {
+    width: 70%;
+    text-align: left;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.PediatrianAddNotesForm table input[type="search"] {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029EE4;
+}
+
+.PediatrianAddNotesForm table input {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029EE4;
+}
+
+.PediatrianAddNotesForm table input:focus {
+    outline: none;
+    border-color: #029EE4;
+    border-width: 2px;
+}
+
 

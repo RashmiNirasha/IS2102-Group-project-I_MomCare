@@ -1,3 +1,7 @@
+<?php 
+include "../../Assets/Includes/header_pages.php";
+?>
+
 <!DOCTYPE html>
 <head>
     <title>Home</title>
@@ -5,10 +9,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
-
-<?php 
-include "../../Assets/Includes/header_pages.php";
-?>
 
 <div class="main-mother">
     <h1>Find Child Card</h1>
@@ -36,8 +36,6 @@ include "../../Assets/Includes/header_pages.php";
             </div>
         </div>
     </div>
-
-    <?php include_once 'includes\footer.php'; ?>
 </body>
 
 </html>

@@ -1,10 +1,10 @@
 <?php
 
-$mysqli = require __DIR__ . "/database.php";
+include "dbConnection.php";
 
 $sql="SELECT * FROM ped_notes";
 
-$result = mysqli_query($mysqli, $sql);
+$result = mysqli_query($con, $sql);
 
 if($result){
     while($row = mysqli_fetch_assoc($result)){

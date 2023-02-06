@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+include "../../Assets/Includes/header_pages.php";
+?>
 <html>
 <head>
 <link rel="stylesheet" href="../../Assets/css/pediatrician-style.css">
@@ -7,7 +10,7 @@
 <body class="txtcol">
 
 <?php 
-include "../../Assets/Includes/header_pages.php";
+
 ?>
 
     <div class="main-dash">
@@ -29,11 +32,9 @@ include "../../Assets/Includes/header_pages.php";
                 <th>  </th>
             </tr>
         </thead>
-    <?php include_once '../../Config/notestable.php'; ?>
+    <?php include_once '../../Config/ped-notesTableModel.php'; ?>
  
     </table>
     </div>
-    <?php include_once '../../Assets/Includes/ped-footer.php';?>
-
 </body>
 </html>
