@@ -1,26 +1,26 @@
 <?php
     if(isset($_POST['add_report'])){
-        if(empty($_POST['test-name']) || empty($_POST['note'])) {
+        if(empty($_POST['test_name']) || empty($_POST['note'])) {
             $color = "red";
             header("Location: ../../View/VOG/testsVog.php?error2=Please fill all the fields & $color");
             exit();
         }else {
             include '../../Config/dbConnection.php';
-            $test_name = $_POST['test-name'];
+            $test_name = $_POST['test_name'];
             $note = $_POST['note'];
-            $target_file = "../../Assets/Images/uploads/tests/".$_FILES['upload-report']['name'];
+            $target_file = "../../Assets/Images/uploads/tests/".$_FILES['test_report']['name'];
     
             $filex = pathinfo($target_file,PATHINFO_EXTENSION);
-            $_FILES['upload-report']['name'] = uniqid("test-") . "." . $filex;
-            $upload_report = $_FILES['upload-report']['name'];
-            $path = "../../Assets/Images/uploads/tests/".$upload_report;
-            $sql = "INSERT INTO vog_tests (test_name, note, upload_report) VALUES ('$test_name',' $note','$upload_report')";
+            $_FILES['test_report']['name'] = uniqid("test-") . "." . $filex;
+            $test_report = $_FILES['test_report']['name'];
+            $path = "../../Assets/Images/uploads/tests/".$test_report;
+            $sql = "INSERT INTO vog_tests (test_name, note, test_report) VALUES ('$test_name',' $note','$test_report')";
             $result = mysqli_query($con, $sql,);
     
             // file upload code -- start
             // reference: https://www.youtube.com/watch?v=ewDlz_shKzU
             if($result){
-                move_uploaded_file($_FILES['upload-report']['tmp_name'], $path);
+                move_uploaded_file($_FILES['test_report']['tmp_name'], $path);
             }
             // file upload code -- end
         }
@@ -51,9 +51,9 @@
         <div class="add-report">
             <form class="test-form" action="" method="post" enctype="multipart/form-data">
                 <div id="x"> 
-                    <input type="text" name="test-name" id="test-name" placeholder="Test name">
+                    <input type="text" name="test_name" id="test_name" placeholder="Test name">
                     <input type="text" name="note" id="note" placeholder="Special note">
-                    <input type="file" name="upload-report" id="upload-report" placeholder="Upload report">
+                    <input type="file" name="test_report" id="test_report" placeholder="Upload report">
                 </div>
                     <input class="add-report-btn" name="add_report" type="submit" value="Add report">
             </form>
@@ -87,8 +87,8 @@
                                 <td>".$row['note']."</td>
                                 <td>".$row['test_date']."</td>" ?>
                                 <td><a href="testEdit.php"><input class='view-report-btn' type='button' value='Edit'></a></td>
-                                <td><a target="_blank" href="../../Assets/Images/uploads/tests/<?php echo $row['upload_report']; ?>"><input class='view-report-btn' type='button' value='View'></a></td>
-                                <!-- <td><a href="download.php?upload_report=<?php //echo $row['upload_report']; ?>"><input class='view-report-btn' type='button' value='View'></a></td> -->
+                                <td><a target="_blank" href="../../Assets/Images/uploads/tests/<?php echo $row['test_report']; ?>"><input class='view-report-btn' type='button' value='View'></a></td>
+                                <!-- <td><a href="download.php?test_report=<?php //echo $row['test_report']; ?>"><input class='view-report-btn' type='button' value='View'></a></td> -->
                                 </tr>
                 <?php
                         }
@@ -99,7 +99,7 @@
     </div>
     <!--logout button-->
     <div class="log-out">
-        <button onclick="window.location.href='logout.php';" class="log-out-btn">Log out</button>
+    <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
     </div>
 </body>
 </html>

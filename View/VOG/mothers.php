@@ -37,7 +37,7 @@
     </div>
     <!--logout button-->
     <div class="log-out"> 
-        <button onclick="window.location.href='logout.php';" class="log-out-btn">Log out</button>
+    <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
     </div>
 </body>
 </html>

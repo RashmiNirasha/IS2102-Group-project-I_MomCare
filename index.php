@@ -36,7 +36,6 @@ include "Assets/Includes/header_index.php";
          <div class="alert alert-danger"><?php //echo $_GET['err']; ?></div>
          
          <?php //} ?> -->
-                <a href="View/register.php"><button class="btnMain" >Register</button></a>
                 <a href="View/Mother/mother-registrationView.php"><button class="btnMain" >Register</button></a>
                 <a href="mainLogin.php"><button class="btnMain" >Sign in</button></a>
             </div>

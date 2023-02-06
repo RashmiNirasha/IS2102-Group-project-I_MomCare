@@ -1497,7 +1497,7 @@
     justify-content: space-between;
 }
 
-#test-name{
+#test_name{
     width: 30%;
     height: 25px;
     border-radius: 10px;
@@ -1518,7 +1518,7 @@
     margin-left: 10px;
 }
 
-#test-name:focus {
+#test_name:focus {
     outline: none;
     border-width: 2px;
 }
