@@ -23,12 +23,10 @@ include('../../Config/mother-viewProfile.inc.php')
             <div class="profile-child-data">
                 <hr>
                 <h3>Children Details</h3>
-                <table class="child-details">
-                    <tr>
-                        <td><label for="child-name">Child name</label></td>
-                        <td><a href="#"><input type="button" value="View" name="view-btn"></a></td>
-                    </tr>
-                </table>
+                <div class="child-details">
+                        <label for="child-name">Child name</label>
+                        <a href="#"><input type="button" value="View" name="view-btn"></a>
+                </div>
             </div>
         </div>
         <div class="profile-details">
@@ -76,9 +74,9 @@ include('../../Config/mother-viewProfile.inc.php')
         </div>
     </div>
     <div class="profile-buttons">
-        <a href="mother-editProfile.php"><input type="button" value="Edit Profile" name="edit-btn"></a>
-        <a href="mother-changePassword.php"><input type="button" value="Change Password" name="change-btn"></a>
-        <a href="mother-card.php"><input type="button" value="View Mother Card" name="view-btn"></a>
+        <a href="mother-profileUpdate.php"><button class="edit" style="background:#24D4B9;">Edit Profile</button></a>
+        <a href="mother-changePassword.php"><button class="change" style="background:#EA2727;">Change Password</button></a>
+        <a href="mother-card.php"><button class="view" style="background:#029EE4;">View Mother Card</button></a>
     </div>
 </body>
 </html>
