@@ -29,7 +29,7 @@
     <div class="a-container">
         <div class="a-content">
             <div class="a-container-n">
-                <h1>Manage Doctor Accounts</h1>
+                <h1>New Registrations</h1>
                 <div class="a-container-m">
                 <div class="a-dropdown"><div class="a-manage-icon"><i class="material-icons" alt="manage accounts">manage_accounts</i>
             </div>
@@ -41,11 +41,11 @@
             </div>
                 <i class="material-icons" alt="notification icon">notifications</i>
                 </div></div>
-            <div class="ma-middle">
+            <div class="ml-middle">
                 <p>Add User</p>
                 <a href="admin-adddoctor.php"><img src="..\..\Assets\Images\images-Sachini\add-user.png" alt="add user"></a>
             </div>
-            <div class="ma-bar-container"></div>
+            <div class="ml-bar-container"></div>
 
             <?php 
                 if ($result->num_rows>0){
@@ -55,17 +55,17 @@
                         $work = $row['doc_workplace'];
                 
                         
-                        $output =  '  <div class="ma-bar">
+                        $output =  '  <div class="ml-bar">
                 
-                                    <div class="ma-img-manage">
+                                    <div class="ml-img-manage">
                                         <img src="..\..\Assets\Images\images-Sachini\guest.png" alt="doctor profile picture">
-                                        <div class="ma-text-manage">';
+                                        <div class="ml-text-manage">';
                         $output .=  "<h3>Name - $name</h3>";
                         $output .=  "<p>Hospital - $type, $work</p>";
                         $output .= '</div>
                                         </div>
-                                        <div class="ma-btn-container">
-                                        <div class="ma-btn-manage">
+                                        <div class="ml-btn-container">
+                                        <div class="mi-btn-manage">
                                             <a href = "admin-updatedoctor.php"><input type="button" value="Edit"></a>
                                             <a href = "#"><input type="button" value="Delete"></a>
                                         </div>

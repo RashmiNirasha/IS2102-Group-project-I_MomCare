@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Doctor</title>
+    <title>Manage Mother</title>
     <link rel="stylesheet" href="..\..\Assets\css\style-common.css" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -29,7 +29,7 @@
     <div class="a-container">
         <div class="a-content">
             <div class="a-container-n">
-                <h1>Manage Doctor Accounts</h1>
+                <h1>Manage Mother Accounts</h1>
                 <div class="a-container-m">
                 <div class="a-dropdown"><div class="a-manage-icon"><i class="material-icons" alt="manage accounts">manage_accounts</i>
             </div>
@@ -41,40 +41,39 @@
             </div>
                 <i class="material-icons" alt="notification icon">notifications</i>
                 </div></div>
-            <div class="ma-middle">
+                <div class="ml-middle">
                 <p>Add User</p>
                 <a href="admin-adddoctor.php"><img src="..\..\Assets\Images\images-Sachini\add-user.png" alt="add user"></a>
             </div>
-            <div class="ma-bar-container"></div>
-
-            <?php 
-                if ($result->num_rows>0){
-                    while($row = $result->fetch_assoc()){
-                        $name = $row['doc_name'];
-                        $type = $row['doc_type'];
-                        $work = $row['doc_workplace'];
-                
-                        
-                        $output =  '  <div class="ma-bar">
-                
-                                    <div class="ma-img-manage">
-                                        <img src="..\..\Assets\Images\images-Sachini\guest.png" alt="doctor profile picture">
-                                        <div class="ma-text-manage">';
-                        $output .=  "<h3>Name - $name</h3>";
-                        $output .=  "<p>Hospital - $type, $work</p>";
-                        $output .= '</div>
-                                        </div>
-                                        <div class="ma-btn-container">
-                                        <div class="ma-btn-manage">
-                                            <a href = "admin-updatedoctor.php"><input type="button" value="Edit"></a>
-                                            <a href = "#"><input type="button" value="Delete"></a>
-                                        </div>
-                                        </div>
-                                    </div>';
-                        echo "$output";
-                    }
-                }
-            ?>
+            <div class="ma-table">
+            <table>
+                <tr>
+                    <th>Mother ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Telephone</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>PHM ID</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Mother ID</td>
+                    <td>Mother ID</td>
+                    <td>Mother ID</td>
+                    <td>Mother ID</td>
+                    <td>Mother ID</td>
+                    <td>Mother ID</td>
+                    <td>Mother ID</td>
+                    <td><div class="ma-actions">
+                            <div class="ma-btn-action"></div>
+                            <div class="ma-btn-action"></div>
+                            <div class="ma-btn-action"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            </div> 
         </div>
     </div>
 </body>
