@@ -2066,9 +2066,6 @@ a {
     text-decoration: none;
     display: block;
 }
-
-  
-
 .a-dropdown-content a:hover, .au-dropdown-content a:hover {background-color: #ddd;}
 
 .a-dropdown:hover .a-dropdown-content, .a-dropdown:hover .au-dropdown-content {display: block;}
@@ -2302,12 +2299,12 @@ a {
     width: 100%;
 }
 
-.ma-table table, td, th {  
+.ma-table table, .ma-table td, .ma-table th {  
     border: 1px solid #ddd;
     text-align: left;
   }
 
-.ma-table th, td {
+.ma-table th, .ma-table td {
     padding: 10px;
     height: 50px;
 }
