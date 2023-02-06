@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+    include '../../Config/dbConnection.php';
+    if (isset($_SESSION['email'])){?>
 <?php include "../../Assets/Includes/header_pages.php" ?>
 
 <!DOCTYPE html>
@@ -33,3 +37,6 @@
 </body>
 </html>
 <?php //include "../../Assets/Includes/footer_pages.php"; ?>
+<?php }else{
+    header("Location: ../../mainLogin.php");
+} ?>
