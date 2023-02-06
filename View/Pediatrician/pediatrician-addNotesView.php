@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-//include "../../Assets/Includes/header_pages.php";
+include "../../Assets/Includes/header_pages.php";
 include "../../Config/dbConnection.php";
 
 if (isset($_POST['submit'])) {
@@ -73,8 +73,7 @@ if (isset($_POST['submit'])) {
         <td><label for="note_records">Select File to Upload</label></td>
         <td><input type="file" name="note_records" id="note_records" ></td>
     </tr>
-    <a href="pediatrician-viewNotesView.php"><button class="btnMain" >View Notes</button></a>
-   
+    
 </table>
 <button type="submit" name="submit">Create</button>
 
@@ -84,10 +83,10 @@ if (isset($_POST['submit'])) {
                     }
                 </script>
  <button type="clear" name="clear" onclick="clearForm()">Clear</button>
-
-
 </form>
+<div class="btnMain-2">
+<a href="pediatrician-viewNotesView.php"><button class="btnMain" >View Notes</button></a>
 </div>
-
+</div>
 </body>
 </html>
