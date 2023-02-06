@@ -73,10 +73,10 @@ include('../../Config/mother-viewProfile.inc.php')
             <!-- buttons -->
             <div class="profileUpdate-buttons">
                 <a href="http://">
-                    <button class="edit-button">Edit Profile</button>
+                    <button class="back-button">Back</button>
                 </a>
                 <a href="http://">
-                    <button class="password-change-button">Change Password</button>
+                    <button class="update-button">Update Details</button>
                 </a>
             </div>
         </div>

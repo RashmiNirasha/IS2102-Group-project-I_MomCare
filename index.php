@@ -24,6 +24,18 @@ include "Assets/Includes/header_index.php";
             </div>
             <img class="logoLarge" src="Assets/Images/common/logoLarge.png" alt="Logo">
             <div>
+
+            <!-- <?php //if(isset($_GET['success'])) { ?>
+         
+         <div class="alert alert-success"><?php //echo $_GET['success']; ?></div>
+         
+         <?php //} ?>
+         
+         <?php //if(isset($_GET['err'])) { ?>
+         
+         <div class="alert alert-danger"><?php //echo $_GET['err']; ?></div>
+         
+         <?php //} ?> -->
                 <a href="View/Mother/mother-registrationView.php"><button class="btnMain" >Register</button></a>
                 <a href="mainLogin.php"><button class="btnMain" >Sign in</button></a>
             </div>

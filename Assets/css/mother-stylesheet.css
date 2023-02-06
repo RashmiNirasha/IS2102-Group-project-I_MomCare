@@ -322,24 +322,17 @@ a{
 
     color: #111C43;
 }
-.child-details table{
-    padding-top: 10px;
-    width: 100%;
+.child-details{
     display: flex;
     align-items: center;
 }
-.child-details td{
-    padding: 10px 0px 10px 5px;
-    background-color: #f3f4f5;
-    border-radius: 20px;
+.child-details label{
+    padding-right: 80px;
 }
-.child-details td ul{
-    list-style: none;
-}
-.child-details button{
-    width: 100px;
-    height: 50px;
-    background: #F3F4F5;
+.child-details input{
+    width: 50px;
+    height: 20px;
+    background: #029EE4;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     border: none;
@@ -347,25 +340,39 @@ a{
 
     font-style: normal;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 10px;
     line-height: 14px;
     align-items: center;
     text-align: center;
 
-    color: #029EE4;
+    color: #F3F4F5;
 }
-.child-details button:hover{
+.child-details input:hover{
     color: #111C43;
 }
-
-
 .profile-buttons {
     display: flex;
     align-items: flex-end;
     padding-top: 20px;
-    padding-left: 150px;
+    padding: 20px;
     flex-direction: column;
 }
+.profile-buttons a{
+    padding-top: 10px;
+}
+.profile-buttons button{
+    width: 150px;
+    height: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    border: none;
+    margin-right: 20px;
+    color: #F3F4F5;
+}
+.profile-buttons button:hover{
+    color: #111C43;
+}
+
 
 /* Appointments Page */
 .add-btn{

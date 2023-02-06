@@ -1,7 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
-?>
 <?php include "../../Assets/Includes/header_pages.php" ?> 
 
 <!DOCTYPE html>
@@ -27,7 +23,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         </div>
         <div class="mom-bar">
             <div class="mom-bar-left">
-                <img src="../../Assets/Images/mother/Profile_pic_mother 1.png" alt="mpther-profile-pic">
+                <img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic">
                 <div>
                     <h3>Ms. Indrani Perera</h3>
                     <p class="second-line">0712345678</p>
@@ -41,14 +37,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     </div>
     <!--logout button-->
     <div class="log-out"> 
-        <button onclick="window.location.href='logout.php';" class="log-out-btn">Log out</button>
+    <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
     </div>
 </body>
 </html>
 <?php //include "../../Assets/Includes/footer_pages.php"; ?>
-<?php }
-else{
-    header("Location: vog-index.php");
-    exit();
-}
-?>
