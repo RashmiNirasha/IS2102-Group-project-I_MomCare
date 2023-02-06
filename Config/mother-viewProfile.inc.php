@@ -12,6 +12,7 @@
             $mother_fname = $row['mom_fname'];
             $mother_mname = $row['mom_mname'];
             $mother_lname = $row['mom_lname'];
+            $mother_dob = $row['mom_DOB'];
             $mother_landline = $row['mom_landline'];
             $mother_mobile = $row['mom_mobile'];
             $mother_email = $row['mom_email'];

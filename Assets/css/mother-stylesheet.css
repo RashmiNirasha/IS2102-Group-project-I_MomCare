@@ -122,7 +122,7 @@ a{
     text-decoration: none;
 }
 
-/* Mother Profile */
+/* Mother Profile Update */
 
 .profile-page-content{
     display: flex;
@@ -138,13 +138,13 @@ a{
     justify-content: center;
     align-items: center;
 }
-/* .pro-pic img{
+.pro-pic1 img{
     width: 200px;
     height: 200px;
     border-radius: 15px;
     border: 1px solid #D9D9D9;
     box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.2);
-} */
+}
 .profile-name h4{
     font-style: normal;
     font-weight: 500;
@@ -178,15 +178,16 @@ a{
 .vline{
     border-left: 2px solid #D9D9D9;
     height: 800px;
+    margin-top: 100px;
 }
 .profile-data{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     padding-left: 50px;
-    width: 500px;
-    height: 450px;
+    width: 600px;
+    height: 800px;
     margin-top: 100px;
     
     background: #029EE4;
@@ -207,14 +208,38 @@ a{
     font-weight: 500;
 }
 .update-form td{
-    width: 50%;
+    
     padding: 10px 40px 10px 40px;
-    border-bottom: rgba(0, 0, 0, 0.24);
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
 }
 .update-form td ul{
     list-style: none;
+}
+.update-form input{
+    position: relative;
+    width: 200px;
+    height: 30px;
+    background: none;
+    border: none;
+    outline: none;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-weight: 400;
+}
+input::file-selector-button {
+    background-color: #24D4B9;
+    border: none;
+    border-radius: 5px;
+    margin-top: 6px;
+  }
+.update-form .mother-id{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.update-form .mother-id label{
+    padding-left: 20px;
 }
 .profileUpdate-buttons{
     display: flex;
@@ -223,7 +248,7 @@ a{
     padding-left: 150px;
 }
 .profileUpdate-buttons button{
-    width: 150px;
+    width: 120px;
     height: 30px;
     background: #F3F4F5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -296,7 +321,6 @@ a{
     font-weight: 500;
 }
 .profile-details td{
-    width: 50%;
     padding: 10px 40px 10px 40px;
     background-color: #f3f4f5;
     border-radius: 20px;
