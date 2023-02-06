@@ -9,6 +9,8 @@ if(isset($_POST['submit'])){
         while ($row = mysqli_fetch_assoc($result)) {
             $childname=$row['child_name'];
             $childid=$row['child_id'];
+            $PHM_id=$row['phm_id'];
+            $mom_email=$row['mom_email'];
 
             echo '<div class="mom-bar">
             <div class="mom-bar-left">
@@ -17,7 +19,8 @@ if(isset($_POST['submit'])){
             </span>
                 <div>
                     <h3>'.$childid.'</h3>
-                    <p class="second-line">Mother name and location</p>
+                    <p class="second-line">Name : '.$childname.' </p>
+                    <p class="second-line">PHM ID : '.$PHM_id.'</p>
                 </div>
             </div>
             <div class="mom-bar-right">

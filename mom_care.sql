@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 05, 2023 at 09:39 AM
+-- Generation Time: Feb 06, 2023 at 06:41 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -102,17 +102,24 @@ DROP TABLE IF EXISTS `child_details`;
 CREATE TABLE IF NOT EXISTS `child_details` (
   `child_id` varchar(11) NOT NULL,
   `child_name` varchar(255) DEFAULT NULL,
-  `child_gender` varchar(10) NOT NULL,
-  `mom_id` varchar(11) NOT NULL,
+  `child_gender` enum('F','M') NOT NULL,
   `phm_id` varchar(11) NOT NULL,
   `doc_id` varchar(11) DEFAULT NULL,
   `guardian_id` varchar(11) DEFAULT NULL,
+  `mom_email` varchar(255) NOT NULL,
   PRIMARY KEY (`child_id`),
-  KEY `mom_id` (`mom_id`),
   KEY `phm` (`phm_id`),
   KEY `doc` (`doc_id`),
   KEY `guardian` (`guardian_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `child_details`
+--
+
+INSERT INTO `child_details` (`child_id`, `child_name`, `child_gender`, `phm_id`, `doc_id`, `guardian_id`, `mom_email`) VALUES
+('C102', 'Dedunu', 'F', 'P102', 'D102', 'G102', 'nirasha999@gmail.com'),
+('C103', 'Sashini', 'F', 'P102', 'D103', 'G102', 'nirasha999@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -140,11 +147,14 @@ CREATE TABLE IF NOT EXISTS `doctor_details` (
 --
 
 INSERT INTO `doctor_details` (`doc_id`, `doc_name`, `doc_age`, `doc_address`, `doc_DOB`, `doc_email`, `doc_password`, `doc_tele`, `doc_workplace`, `doc_type`) VALUES
-('12', 'deepal', 45, 'horana', '1965-02-09', 'deepal12345@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 714436987, 'Horana', 'vog'),
 ('13', 'Rashmi', 45, 'kaluthara', '1965-02-09', 'rashmi123@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 714436987, 'kalutara', 'ped'),
 ('aa1', 'Ranjith Rathnayake', 25, 'galle', '2022-12-21', 'ss@gmail.com', '', 1234567890, 'Teaching Hospital, Karapitiya', 'vog'),
 ('aa2', 'Parakrama Perera', 34, 'Colombo', '2022-12-29', 'aa2@gmail.com', '', 1234567890, 'General Hospital Colombo', 'vog'),
-('aa3', 'Dishan Silva', 35, 'Matara', '2022-12-31', 'aa3@gmail.com', '', 1234567890, 'Kalubowila Hospital, Colombo', 'vog');
+('aa3', 'Dishan Silva', 35, 'Matara', '2022-12-31', 'aa3@gmail.com', '', 1234567890, 'Kalubowila Hospital, Colombo', 'vog'),
+('D102', 'deepal', 45, 'horana', '1965-02-09', 'deepal12345@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 714436987, 'Horana', 'vog'),
+('D103', 'vimal', 45, 'Kalutara', '1965-02-08', 'vimal@gmail.com', '1234', 714536987, 'Kalutara', 'vog'),
+('D104', 'Kamal', 45, 'Kalutara', '1965-02-08', 'kamal@gmail.com', '1234', 714536987, 'Kalutara', 'ped'),
+('D105', 'Santha', 45, 'Kalutara', '1965-02-08', 'Santha@gmail.com', '1234', 714536987, 'Kalutara', 'vog');
 
 -- --------------------------------------------------------
 
@@ -161,6 +171,13 @@ CREATE TABLE IF NOT EXISTS `guardian_details` (
   PRIMARY KEY (`guardian_id`),
   KEY `mom_id` (`mom_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `guardian_details`
+--
+
+INSERT INTO `guardian_details` (`guardian_id`, `guardian_name`, `guardian_mobile`, `mom_id`) VALUES
+('G102', 'Deepal', 714436698, 'a001');
 
 -- --------------------------------------------------------
 
@@ -314,8 +331,7 @@ CREATE TABLE IF NOT EXISTS `mother_details` (
   `reg_user_id` int(11) NOT NULL,
   `mom_delivery_date` date DEFAULT NULL,
   PRIMARY KEY (`mom_id`),
-  KEY `reg_user_id` (`reg_user_id`),
-  KEY `mom_id` (`mom_id`)
+  KEY `reg_user_id` (`reg_user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -389,7 +405,7 @@ CREATE TABLE IF NOT EXISTS `ped_notes` (
   `note_description` varchar(255) NOT NULL,
   `note_records` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ped_note_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -409,6 +425,15 @@ CREATE TABLE IF NOT EXISTS `phm_details` (
   `phm_workplace` varchar(255) NOT NULL,
   PRIMARY KEY (`phm_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `phm_details`
+--
+
+INSERT INTO `phm_details` (`phm_id`, `phm_name`, `phm_DOB`, `phm_address`, `phm_tele`, `phm_email`, `phm_password`, `phm_workplace`) VALUES
+('P102', 'Kamala', '1965-08-02', 'Hoarana', 714436987, 'kamala@gmail.com', '1234', 'Hoarana'),
+('P103', 'Nimala', '1965-08-30', 'Horana', 714436987, 'Nimala@gmail.com', '1234', 'Horana'),
+('P104', 'Vimala', '1965-07-02', 'Panadura', 714436987, 'Vimala@gmail.com', '1234', 'Panadura');
 
 -- --------------------------------------------------------
 
@@ -432,7 +457,7 @@ CREATE TABLE IF NOT EXISTS `registered_user_details` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`reg_user_id`),
   KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=1031 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4383 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `registered_user_details`
@@ -442,7 +467,8 @@ INSERT INTO `registered_user_details` (`reg_user_id`, `first_name`, `middle_name
 (5, 'Bim', 'Sav', 'Wick', 'no.12, beraliyadolawatta, hapu', '2000-12-01', 771950342, 22, 'bb@gmail.com', '2022-12-16 14:35:37', 'nii', '202cb962ac59075b964b07152d234b70'),
 (6, 'gdg', 'ddd', 'ss', 'no.12, beraliyadolawatta, hapu', '2000-12-01', 763361822, 21, 'aa@gmail.com', '2022-12-18 05:46:31', 'qqwe', '81dc9bdb52d04dc20036dbd8313ed055'),
 (7, 'gdg', 'bii', 'ss', 'no.12, beraliyadolawatta, hapu', '2022-12-01', 763361822, 23, 'cc@gmail.com', '2022-12-18 18:17:54', 'nini', '81dc9bdb52d04dc20036dbd8313ed055'),
-(1030, 'Rashmi', 'Nirasha', 'Gunawardana', 'Horana', '1992-01-07', 342264331, 31, 'nirasha999@gmail.com', '2023-02-03 18:30:00', 'P102', '$2y$10$MKgQ1p68GyCOKFGTIGYf9un5zBvAakRHANCFkCqHCtlr1l5xMUu2u');
+(2149, 'Rashmi', 'Nirasha', 'Gunawardana', 'horana', '1994-06-15', 714436987, 28, 'nirasha999@gmail.com', '2023-02-04 18:30:00', '125', '$2y$10$IitJYeVGzqMs1uFdEmH3seNs9nstlkceQIWxbZCGl2KhkbFAaaNju'),
+(4382, 'Hiruni', 'nimesha', 'Amarakoon', 'Matara', '1987-02-27', 764523698, 35, 'kiviamarakoon@gmail.com', '2023-02-04 18:30:00', '125', '$2y$10$VzrRRGcwH9o7lqAculXvi.W9CQxFhyFBOi6U/sYqGWAMWOAeDxSAS');
 
 -- --------------------------------------------------------
 
@@ -500,7 +526,6 @@ CREATE TABLE IF NOT EXISTS `vog_notes` (
 -- Constraints for table `child_details`
 --
 ALTER TABLE `child_details`
-  ADD CONSTRAINT `child_details_ibfk_1` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`),
   ADD CONSTRAINT `child_details_ibfk_3` FOREIGN KEY (`phm_id`) REFERENCES `phm_details` (`phm_id`),
   ADD CONSTRAINT `child_details_ibfk_4` FOREIGN KEY (`guardian_id`) REFERENCES `guardian_details` (`guardian_id`);
 
