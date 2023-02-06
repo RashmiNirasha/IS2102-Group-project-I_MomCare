@@ -49,26 +49,26 @@ include('../../Config/mother-viewProfile.inc.php')
                     </tr>
                     <tr>
                         <td><p>Fixedline Number</p></td>
-                        <td><label for="mother-landline">011685457</label></td>
+                        <td><label for="mother-landline"><?php  echo $mother_landline?></label></td>
                     </tr>
                     <tr>
                         <td><p>Date of Birth</p></td>
-                        <td><label for="mother-dob">2022/11/11</label></td>
+                        <td><label for="mother-dob"><?php  echo $mother_dob?></label></td>
                     </tr>
                     <tr>
                         <td><p>Email</p></td>
-                        <td><label for="mother-email">hansika@gmail.com</label></td>
+                        <td><label for="mother-email"><?php  echo $mother_email?></label></td>
                     </tr>
                     <tr>
                         <td colspan="2" style="height:50px"><hr></td>
                     </tr>
                     <tr>
                         <td><p>Guardian Name</p></td>
-                        <td><label for="mother-guardian">Guardian me</label></td>
+                        <td><label for="mother-guardian"><?php  echo $guardian_name?></label></td>
                     </tr>
                     <tr>
                         <td><p>Guardian Mobile</p></td>
-                        <td><label for="mother-guardian-mobile">011685457</label></td>
+                        <td><label for="mother-guardian-mobile"><?php  echo $guardian_mobile?></label></td>
                 </table>
             </div>
         </div>

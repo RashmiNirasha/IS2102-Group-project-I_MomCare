@@ -75,7 +75,7 @@
             <a href="mother-dashboard.php">Dashboard</a>
         </div>
         <div class="pro-pic">
-            <a href="mother-profile.php"><img src="../../Assets/Images/mother/Profile_pic_mother" alt=""></a>
+            <a href="mother-profileDetails.php"><img src="../../Assets/Images/mother/Profile_pic_mother" alt=""></a>
         </div>
     </div>
 </body>
