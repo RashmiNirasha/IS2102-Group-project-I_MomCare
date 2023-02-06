@@ -83,9 +83,9 @@ if (isset($_POST['submit'])) {
                     }
                 </script>
  <button type="clear" name="clear" onclick="clearForm()">Clear</button>
+ <a href="pediatrician-viewNotesView.php"><button class="pd-viewNote-btnMain" >View Notes</button></a>
 </form>
-<div class="btnMain-2">
-<a href="pediatrician-viewNotesView.php"><button class="btnMain" >View Notes</button></a>
+<div>
 </div>
 </div>
 </body>
