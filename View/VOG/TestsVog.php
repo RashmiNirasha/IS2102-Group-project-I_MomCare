@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+    include '../../Config/dbConnection.php';
+    if (isset($_SESSION['email'])){?>
 <?php
     if(isset($_POST['add_report'])){
         if(empty($_POST['test_name']) || empty($_POST['note'])) {
@@ -104,3 +108,7 @@
 </body>
 </html>
 <?php //include "../../Assets/Includes/footer_pages.php"; ?>
+<?php }else{
+    header("Location: ../../mainLogin.php");
+    exit();
+} ?>

@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
     </tr>
     <tr>
         <td><label for="mother_id">Mother Id</label></td>
-        <td><input type="search" placeholder="Search.." name="mom_id" id="mom_id"></td>
+        <td><input type="search" placeholder="Search..." name="mom_id" id="mom_id"></td>
     </tr>
     <tr>
         <td><label for="note_date">Choose Date</label></td>

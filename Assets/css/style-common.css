@@ -1353,6 +1353,10 @@
     border-width: 2px;
 }
 
+.MomBarTable {
+    width: 100%;
+}
+
 .mom-bar {
     display: flex;
     flex-direction: row;
@@ -2323,7 +2327,7 @@ a {
     margin-left: 10px;
 }
 
-/* pediatrician search children view */
+/* ------------------------ pediatrician search children view -----------------------*/
 
 mom-search {
     width: 30%;
@@ -2344,7 +2348,7 @@ mom-search {
     width: 100%;
     background-color: rgb(255, 255, 255);
   }
-  .mom-bar {
+  .child-bar {
     display: flex;
     flex-direction: row;
     border-radius: 20px;
@@ -2354,7 +2358,7 @@ mom-search {
     justify-content:space-between;
     border-color: #029EE4;
   }
-  .mom-bar span{
+  .child-bar span{
     width: 70px;
     height: 70px;
     border-radius: 50px;
@@ -2364,14 +2368,14 @@ mom-search {
     justify-content: center;
     font-size: 70px;
   }
-  .mom-bar-left {
+  .child-bar-left {
     display: flex;
     flex-direction: row;
     gap: 40px;
     padding: 10px;
   }
   
-  .mom-bar h3 {
+  .child-bar h3 {
     color: #f0f0f0;
     margin-left: 10px;
     width: 100%;
@@ -2393,7 +2397,7 @@ mom-search {
     float: right;
   }
   
-  .mom-bar h3 {
+  .child-bar h3 {
     margin-top: 30px;
     font-size: 26px;
   }
@@ -2409,7 +2413,7 @@ mom-search {
     justify-content: end;
   }
   
-  .mom-bar button {
+  .child-bar button {
     height: 50px;
     border-radius: 15px;
     width: 130px;
@@ -2419,7 +2423,7 @@ mom-search {
     color: #029EE4;
   }
   
-  .mom-bar button:hover {
+  .child-bar button:hover {
     background-color: #111C43;
     transition: all 0.2s;
   }

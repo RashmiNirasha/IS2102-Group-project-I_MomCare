@@ -12,8 +12,8 @@ if(isset($_POST['submit'])){
             $PHM_id=$row['phm_id'];
             $mom_email=$row['mom_email'];
 
-            echo '<div class="mom-bar">
-            <div class="mom-bar-left">
+            echo '<div class="child-bar">
+            <div class="child-bar-left">
             <span class="material-symbols-outlined">
             child_care
             </span>
@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
                     <p class="second-line">PHM ID : '.$PHM_id.'</p>
                 </div>
             </div>
-            <div class="mom-bar-right">
+            <div class="child-bar-right">
                 <a href="../Child/child-childCardView.php?childid='.$childid.'"><button class="mom-btn">View</button></a>
             </div>
         </div>';
