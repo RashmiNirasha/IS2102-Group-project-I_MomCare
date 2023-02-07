@@ -27,7 +27,7 @@ include "../../Config/dbConnection.php";
                 <div class="card-content-right"><p>Immunization Details</p></div>
             </button><!--gap remover -->
            <!--gap remover
-        --><button class="card" onclick="window.location.href = 'pediatrician-addNotesView.php ';">
+        --><button class="card" onclick="window.location.href = 'enterNotes.php ';">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
                 <div class="card-content-right"><p>Enter Notes</p></div>
             </button><!--gap remover -->

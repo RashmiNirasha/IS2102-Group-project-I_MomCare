@@ -1,38 +1,50 @@
 <?php
-
 session_start();
-include "../../Assets/Includes/header_pages.php";
+//include "../../Assets/Includes/header_pages.php";
 include "../../Config/dbConnection.php";
 
 if (isset($_POST['submit'])) {
+ 
+    $doc_email = $_SESSION['email'];
 
-    $doc= $_SESSION['email'];
-    $query="SELECT doc_id FROM `doctor_details` WHERE doc_email='$doc'";
-    $result=mysqli_query($con,$query);
-    $row=mysqli_fetch_assoc($result);
-    if($row){
-        $doc_id=$row['doc_id'];
-        $mom_id = $_POST['mom_id'];
-        $note_topic = $_POST['note_topic'];
-        $note_date = $_POST['note_date'];
-        $note_description = $_POST['note_description'];
-        $note_records = $_POST['note_records'];
-
-        $sql = "INSERT INTO ped_notes(doc_id, mom_id, note_topic, note_date, note_description, note_records)
-                VALUES ('$doc_id','$mom_id','$note_topic','$note_date','$note_description','$note_records')";
-                if (mysqli_query($con, $sql)) {
-                    echo "New record created successfully !";
-                    //header("Location: pediatrician-viewNotesView.php");
-                } else {
-                    echo "ERROR: not succesfull $sql. "
-                        . mysqli_error($con);
-                }
-
+    if (isset($_GET['childid'])) {
+        $user_id = mysqli_real_escape_string($con, $_GET['childid']);       
+    } else {
+        header("Location: pediatrician-addNotesView.php?error=missingchildid");
+        exit();
     }
-    else{
-        echo "Error";
-    }  
+    $note_topic = mysqli_real_escape_string($con, $_POST['note_topic']);
+    $note_date = mysqli_real_escape_string($con, $_POST['note_date']);
+    $note_description = mysqli_real_escape_string($con, $_POST['note_description']);
+    $note_records = mysqli_real_escape_string($con, $_POST['note_records']);
+    
+    if (empty($note_topic) || empty($note_date) || empty($note_description) || empty($note_records)) {
+        header("Location: pediatrician-addNotesView.php?error=emptyfields&note_topic=" . $note_topic . "&note_date=" . $note_date . "&note_description=" . $note_description . "&note_records=" . $note_records);
+        exit();
+    } else {
+        $sql = "SELECT * FROM doctor_details WHERE doc_email='$doc_email'";
+        $result = mysqli_query($con, $sql);
+        $resultCheck = mysqli_num_rows($result);
+        $row = mysqli_fetch_assoc($result);
+        $doc_id = $row['doc_id'];
+        $doc_type = $row['doc_type'];
+
+        if ($resultCheck > 0) {
+            $sql = "INSERT into doctor_notes(doc_id, child_id,note_topic, note_date, note_description, note_records,doc_role)
+                    VALUES ('$doc_id','$user_id','$note_topic','$note_date','$note_description','$note_records','$doc_type')";
+            $result = mysqli_query($con, $sql);
+    
+            if ($result) {
+                header("Location: pediatrician-viewNotesView.php?success=noteadded");
+                exit();
+            } else {
+                     echo "Error: " . $sql . "<br>" . mysqli_error($con);
+                exit();
+            }
+        }
+    }
 }
+
 ?>
 
 <html>
@@ -47,15 +59,14 @@ if (isset($_POST['submit'])) {
 
 <div class="RegisterMotherInnerDiv">
 <h2>Upload Records..</h2>
-<form class="PediatrianAddNotesForm" id="pediareicianAddNotes" action=" " method="POST">
+<form class="PediatrianAddNotesForm" id="pediareicianAddNotes" action="pediatrician-addNotesView.php?childid=<?php echo $_GET['childid']?>" method="POST">
 <table>
     <tr>
-        <td><label for="doctor_id"></label></td>
+        
         <td><input type="hidden" name="doctor_id" id="doctor_id"></td>
     </tr>
     <tr>
-        <td><label for="mother_id">Mother Id</label></td>
-        <td><input type="search" placeholder="Search..." name="mom_id" id="mom_id"></td>
+        <td><input type="hidden" placeholder="Search..." name="child_id" id="child_id"></td>
     </tr>
     <tr>
         <td><label for="note_date">Choose Date</label></td>
@@ -83,7 +94,7 @@ if (isset($_POST['submit'])) {
                     }
                 </script>
  <button type="clear" name="clear" onclick="clearForm()">Clear</button>
- <a href="pediatrician-viewNotesView.php"><button class="pd-viewNote-btnMain" >View Notes</button></a>
+ <a href=" pediatrician-viewNotesView.php"><button class="pd-viewNote-btnMain" >View Notes</button></a>
 </form>
 <div>
 </div>

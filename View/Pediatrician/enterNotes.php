@@ -1,5 +1,7 @@
 <?php 
 include "../../Assets/Includes/header_pages.php";
+session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +14,7 @@ include "../../Assets/Includes/header_pages.php";
 
 <div class="main-mother">
 
-    <h1>Find Child Card</h1>
+    <h1>Find Mother/Child</h1>
         <div class="mom-filter">
         <form action=" " method="POST">
             <input class="mom-search" type="search" name="query" id="query" placeholder="Search">
@@ -22,36 +24,41 @@ include "../../Assets/Includes/header_pages.php";
             <div class="child-details">
             <?php 
             include("../../Config/dbConnection.php");
-            
-            if(isset($_POST['submit'])){
+
+            if (isset($_POST['submit'])) {
                 $query = $_POST['query'];
                 $sql = "SELECT * FROM child_details WHERE child_id LIKE '%$query%' OR mom_email LIKE '%$query%' ";
                 $result = mysqli_query($con, $sql);
                 if ($result) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        $childname=$row['child_name'];
-                        $childid=$row['child_id'];
-                        $mom_email=$row['mom_email'];
-                        $PHM_id=$row['phm_id'];
-            
+                        $childname = $row['child_name'];
+                        $childid = $row['child_id'];
+                        $mom_email = $row['mom_email'];
+                        $PHM_id = $row['phm_id'];
+
                         echo '<div class="child-bar">
                         <div class="child-bar-left">
                         <span class="material-symbols-outlined">
                         child_care
                         </span>
                             <div>
-                                <h3>'.$childid.'</h3>
-                                <p class="second-line">Name : '.$childname.' </p>
-                                <p class="second-line">PHM ID : '.$PHM_id.'</p>
+                                <h3>' . $childid . '</h3>
+                                <p class="second-line">Name : ' . $childname . ' </p>
+                                <p class="second-line">PHM ID : ' . $PHM_id . '</p>
                             </div>
                         </div>
                         <div class="child-bar-right">
-                            <a href="pediatrician-addNotesView.php?childid='.$childid.'"><button class="mom-btn">Enter Notes</button></a>
+                            <a href="pediatrician-addNotesView.php?childid=' . $childid . '"><button class="mom-btn">Enter Notes</button></a>
                         </div>
                     </div>';
-                    }}
+                    }
                 }
-             ?>
+            }
+            ?>
+            </div>
+
+            <div class = "enter-notes">
+                
             </div>
 
         </div>
