@@ -1743,6 +1743,11 @@
     text-align: center;
     width: 10%;
 }
+.test-view-table td:nth-child(7) {
+    background-color: transparent;
+    text-align: center;
+    width: 10%;
+}
 
 
 @media screen and (max-width: 1500px) {
@@ -1767,7 +1772,7 @@
     
 }
 
-.view-report-btn {
+.view-report-btn, .delete-report-btn, .edit-report-btn {
     width: 80%;
     height: 20px;
     border-radius: 10px;
@@ -1778,7 +1783,23 @@
     cursor: pointer;
     border-style: none;
     margin-bottom: 1px;
+    font-size: 12px;
     
+}
+
+.delete-report-btn:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+.view-report-btn:hover {
+    background-color: #1eff00;
+    color: #ffffff;
+}
+
+.edit-report-btn:hover {
+    background-color: #111C43;
+    color: #ffffff;
 }
 
 .test-form {

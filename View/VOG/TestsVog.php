@@ -12,13 +12,15 @@
             include '../../Config/dbConnection.php';
             $test_name = $_POST['test_name'];
             $note = $_POST['note'];
+            $mom_id = $_POST['mom_id'];
+            $doc_id = $_POST['doc_id'];
             $target_file = "../../Assets/Images/uploads/tests/".$_FILES['test_report']['name'];
     
             $filex = pathinfo($target_file,PATHINFO_EXTENSION);
             $_FILES['test_report']['name'] = uniqid("test-") . "." . $filex;
             $test_report = $_FILES['test_report']['name'];
             $path = "../../Assets/Images/uploads/tests/".$test_report;
-            $sql = "INSERT INTO doctor_notes (note_topic, note_description, note_records) VALUES ('$test_name',' $note','$test_report')";
+            $sql = "INSERT INTO doctor_notes (note_topic, note_description, note_records, mom_id) VALUES ('$test_name',' $note','$test_report', '$mom_id')";
             $result = mysqli_query($con, $sql,);
     
             // file upload code -- start
@@ -31,7 +33,9 @@
 
     }
 ?>
-<?php include "../../Assets/Includes/header_pages.php" ?>
+<?php include "../../Assets/Includes/header_pages.php"; 
+echo $_SESSION['mom_search'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,8 +51,15 @@
         <div class="mom-intro">
             <img src="../../Assets/Images/mother/Profile_pic_mother.png" alt="mother-profile-pic">
             <div class="mom-intro-content">
-                <h3 class="Name-header-mom">Mrs. Indrani Perera</h3>
-                <p class="num-header-mom">0712345678</p>
+                <?php
+                    include '../../Config/dbConnection.php';
+                    $mom_id = $_GET['mom_id'];
+                    $query = "SELECT mom_fname, mom_lname, mom_id, mom_mobile FROM mother_details WHERE mom_id LIKE '%$mom_id%'";
+                    $result = mysqli_query($con, $query);
+                    $row = mysqli_fetch_assoc($result);
+                ?>
+                <h3 class="Name-header-mom"><?php echo $row['mom_fname']." ".$row['mom_lname']; ?></h3>
+                <p class="num-header-mom"><?php echo $row['mom_mobile']; ?></p>
             </div>
         </div>
         <div class="add-report-label"><label for="add-report">Add report</label></div>
@@ -58,6 +69,8 @@
                     <input type="text" name="test_name" id="test_name" placeholder="Test name">
                     <input type="text" name="note" id="note" placeholder="Special note">
                     <input type="file" name="test_report" id="test_report" placeholder="Upload report">
+                    <input type="hidden" name="mom_id" value="<?php echo $row['mom_id']; ?>">
+                    <input type="hidden" name="doc_id" value="<?php //echo $row['doc_id']; ?>">
                 </div>
                     <input class="add-report-btn" name="add_report" type="submit" value="Add report">
             </form>
@@ -76,10 +89,11 @@
                     <th>Date</th>
                     <th>Edit report</th>
                     <th>View report</th>
+                    <th>Delete</th>
                 </tr>
                 <?php
                     include '../../Config/dbConnection.php';
-                    $sql = "SELECT * FROM doctor_notes";
+                    $sql = "SELECT * FROM doctor_notes WHERE mom_id = '$mom_id'";
                     $result = mysqli_query($con, $sql);
                     // $id = $_SESSION['id'];
                     // $filename = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -91,8 +105,9 @@
                                     <td><?php echo $row['note_topic'] ?> </td>
                                     <td><?php echo $row['note_description'] ?></td>
                                     <td><?php echo $row['note_date'] ?></td>
-                                    <td><a href="testEdit.php"><input class='view-report-btn' type='button' value='Edit'></a></td>
+                                    <td><a href="testEdit.php"><input class='edit-report-btn' type='button' value='Edit'></a></td>
                                     <td><a target="_blank" href="../../Assets/Images/uploads/tests/<?php echo $row['note_records']; ?>"><input class='view-report-btn' type='button' value='View'></a></td>
+                                    <td><a href="#"><input type="button" class="delete-report-btn" value="Delete"></a></td>
                                     <!-- <td><a href="download.php?test_report=<?php //echo $row['test_report']; ?>"><input class='view-report-btn' type='button' value='View'></a></td> -->
                                 </tr>
                 <?php
@@ -100,6 +115,7 @@
                     }
                 ?>
             </table>
+            
         </div>
     </div>
     <!--logout button-->
