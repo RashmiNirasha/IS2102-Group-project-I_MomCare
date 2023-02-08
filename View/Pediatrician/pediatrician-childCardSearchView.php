@@ -54,7 +54,7 @@ if (isset($_SESSION['email'])){
                 </tr>';
                     }
                 }else{
-                    echo "There are no results matching your search!";
+                    //echo "There are no results matching your search!";
                 }
             }else{
                 //echo "please enter a search term";
