@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+
+.container .header {
+    background-color: rgb(195, 197, 197);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .header .nav {
+    display: felx;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .header .nav span{
+    margin-left: 50%
+}
+
+a {
+    text-decoration: none;
+}
+
+.container .header .nav .nav-text a {
+    font-size: 17px;
+    font-weight: 600;
+    color: black;
+    padding-left: 30px;
+}
+
+.container .header .nav .logo img {
+    width: 150px;
+    height: 50px;
+}
+
+.container .header .nav .image-user img {
+    height: 42px;
+    width: 42px;
+}
+
+.container .content {
+    position: relative;
+    margin-top: 10vh;
+    min-height: 75vh;
+}
+
+.container .content .container-n {
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .content .container-n img {
+    margin-right: 5%;
+    width: 34px;
+    height: 32px;
+}
+
+.container .content .cards {
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 25px;
+}
+
+.container .content .cards .card {
+    border-radius: 10px;
+    padding: 20px 15px;
+    width: 250px;
+    height: 150px;
+    background-color: rgb(5, 169, 245);
+    margin: 20px 10px;
+    display: grid;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container .content .cards .card:hover {
+    background-color: rgb(1, 143, 225);
+}
+
+.container .content .cards .card .icon-case img {
+    width: 40px;
+    height: 40px;
+}
+
+.container .content-2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.container .content-2 button {
+    padding: 10px 20px;
+    margin-right: 5%;
+    border-style: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 125px;
+    height: 50px;
+    opacity: 0.8;
+}
+
+.container .content-2 button:hover {
+    background-color: rgb(224, 224, 224);
+}
+
+.container .content-2 button .btn-text {
+    font-size: 15px;
+    font-weight: 200; 
+    text-decoration-color: black;
+}
+
+.container .content-2 button .btn-icon img {
+    width: 25px;
+    height: 25px;  
+}
+
+h3 {
+    font-size: 17px;
+    color: white;
+    font-weight: 200;
+}
+
+h1 {
+    text-indent: 0.8rem;
+    font-weight: 700;
+    font-size: 40px;
+    margin-left: 5%;
+}
+
+
