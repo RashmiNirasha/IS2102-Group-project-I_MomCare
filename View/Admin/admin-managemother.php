@@ -30,6 +30,10 @@
         <div class="a-content">
             <div class="a-container-n">
                 <h1>Manage Mother Accounts</h1>
+                <form class="ma-searchbar" action="/action_page.php" style="margin:auto;max-width:300px">
+                    <input type="text" placeholder="Search..." name="search">
+                    <button type="submit"><i class="material-icons">search</i></button>
+                </form>
                 <div class="a-container-m">
                 <div class="a-dropdown"><div class="a-manage-icon"><i class="material-icons" alt="manage accounts">manage_accounts</i>
             </div>
@@ -39,41 +43,74 @@
                     <a href="..\..\View\Admin\admin-managephm.php">Manage PHM Accounts</a>
                     </div>
             </div>
-                <i class="material-icons" alt="notification icon">notifications</i>
+                <a href = "admin-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
                 </div></div>
-                <div class="ml-middle">
-                <p>Add User</p>
-                <a href="admin-adddoctor.php"><img src="..\..\Assets\Images\images-Sachini\add-user.png" alt="add user"></a>
-            </div>
             <div class="ma-table">
             <table>
                 <tr>
                     <th>Mother ID</th>
                     <th>Name</th>
-                    <th>Age</th>
                     <th>Telephone</th>
                     <th>Email</th>
                     <th>Address</th>
+                    <th>Age</th>
                     <th>PHM ID</th>
                     <th>Action</th>
                 </tr>
                 <tr>
-                    <td>Mother ID</td>
-                    <td>Mother ID</td>
-                    <td>Mother ID</td>
-                    <td>Mother ID</td>
-                    <td>Mother ID</td>
-                    <td>Mother ID</td>
-                    <td>Mother ID</td>
+                    <td>M01</td>
+                    <td>Ama Rathnayake</td>
+                    <td>071 876 5637</td>
+                    <td>ama@chiranthi.gmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmail.com</td>
+                    <td>Ranna, Tangalle</td>
+                    <td>28 years</td>
+                    <td>P906</td>
                     <td><div class="ma-actions">
-                            <div class="ma-btn-action"></div>
-                            <div class="ma-btn-action"></div>
-                            <div class="ma-btn-action"></div>
+                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="view icon">visibility</i></div></a>
+                            <a href = "admin-updatemother.php"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
+                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="delete icon">delete</i></div></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>M01</td>
+                    <td>Ama Rathnayake</td>
+                    <td>071 876 5637</td>
+                    <td>ama@chiranthi.gmail.com</td>
+                    <td>Ranna, Tangalle</td>
+                    <td>28 years</td>
+                    <td>P906</td>
+                    <td><div class="ma-actions">
+                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="view icon">visibility</i></div></a>
+                            <a href = "admin-updatemother.php"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
+                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="delete icon">delete</i></div></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>M01</td>
+                    <td>Ama Rathnayake</td>
+                    <td>071 876 5637</td>
+                    <td>ama@chiranthi.gmail.com</td>
+                    <td>Ranna, Tangalle</td>
+                    <td>28 years</td>
+                    <td>P906</td>
+                    <td><div class="ma-actions">
+                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="view icon">visibility</i></div></a>
+                            <a href = "admin-updatemother.php"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
+                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="delete icon">delete</i></div></a>
                         </div>
                     </td>
                 </tr>
             </table>
             </div> 
+        </div>
+        <div class="a-content-2">
+            <span></span>
+            <a href = "..\..\Config\admin-logout.php"><button>
+                <div class="a-btn-text"><h6>Log out</h6></div>
+                <i class="material-icons" alt="logout">logout</i>
+            </button></a>
         </div>
     </div>
 </body>

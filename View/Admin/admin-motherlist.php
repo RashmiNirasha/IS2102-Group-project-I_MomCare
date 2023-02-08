@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Doctor</title>
+    <title>Mother List</title>
     <link rel="stylesheet" href="..\..\Assets\css\style-common.css" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -39,42 +39,46 @@
                     <a href="..\..\View\Admin\admin-managephm.php">Manage PHM Accounts</a>
                     </div>
             </div>
-                <i class="material-icons" alt="notification icon">notifications</i>
+                <a href = "admin-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
                 </div></div>
-            <div class="ml-middle">
-                <p>Add User</p>
-                <a href="admin-adddoctor.php"><img src="..\..\Assets\Images\images-Sachini\add-user.png" alt="add user"></a>
-            </div>
             <div class="ml-bar-container"></div>
 
-            <?php 
-                if ($result->num_rows>0){
-                    while($row = $result->fetch_assoc()){
-                        $name = $row['doc_name'];
-                        $type = $row['doc_type'];
-                        $work = $row['doc_workplace'];
-                
-                        
-                        $output =  '  <div class="ml-bar">
-                
-                                    <div class="ml-img-manage">
-                                        <img src="..\..\Assets\Images\images-Sachini\guest.png" alt="doctor profile picture">
-                                        <div class="ml-text-manage">';
-                        $output .=  "<h3>Name - $name</h3>";
-                        $output .=  "<p>Hospital - $type, $work</p>";
-                        $output .= '</div>
-                                        </div>
-                                        <div class="ml-btn-container">
-                                        <div class="mi-btn-manage">
-                                            <a href = "admin-updatedoctor.php"><input type="button" value="Edit"></a>
-                                            <a href = "#"><input type="button" value="Delete"></a>
-                                        </div>
-                                        </div>
-                                    </div>';
-                        echo "$output";
-                    }
-                }
-            ?>
+            <div class="ml-bar">
+                <div class="ml-img-manage">
+                    <i class="material-icons" alt="woman">person_3</i>
+                    <div class="ml-text-manage">
+                        <h3>Sandali Amasha Dissanayake</h3>
+                        <p>2017-07-23 13:10:11</p>
+                    </div>
+                </div>
+                <div class="ml-btn-container">
+                    <div class="ml-btn-manage">
+                        <a href = "admin-approvemother.php"><input type="button" value="View Details"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ml-bar">
+                <div class="ml-img-manage">
+                    <i class="material-icons" alt="woman">person_3</i>
+                    <div class="ml-text-manage">
+                        <h3>Sandali Amasha Dissanayake</h3>
+                        <p>2017-07-23 13:10:11</p>
+                    </div>
+                </div>
+                <div class="ml-btn-container">
+                    <div class="ml-btn-manage">
+                        <a href = "admin-approvemother.php"><input type="button" value="View Details"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="a-content-2">
+            <span></span>
+            <a href = "..\..\Config\admin-logout.php"><button>
+                <div class="a-btn-text"><h6>Log out</h6></div>
+                <i class="material-icons" alt="logout">logout</i>
+            </button></a>
         </div>
     </div>
 </body>

@@ -30,6 +30,10 @@
         <div class="a-content">
             <div class="a-container-n">
                 <h1>Manage Doctor Accounts</h1>
+                <form class="ma-searchbar" action="/action_page.php" style="margin:auto;max-width:300px">
+                    <input type="text" placeholder="Search..." name="search">
+                    <button type="submit"><i class="material-icons">search</i></button>
+                </form>
                 <div class="a-container-m">
                 <div class="a-dropdown"><div class="a-manage-icon"><i class="material-icons" alt="manage accounts">manage_accounts</i>
             </div>
@@ -39,42 +43,78 @@
                     <a href="..\..\View\Admin\admin-managephm.php">Manage PHM Accounts</a>
                     </div>
             </div>
-                <i class="material-icons" alt="notification icon">notifications</i>
+                <a href = "admin-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
                 </div></div>
-            <div class="ma-middle">
-                <p>Add User</p>
-                <a href="admin-adddoctor.php"><img src="..\..\Assets\Images\images-Sachini\add-user.png" alt="add user"></a>
-            </div>
-            <div class="ma-bar-container"></div>
-
-            <?php 
-                if ($result->num_rows>0){
-                    while($row = $result->fetch_assoc()){
-                        $name = $row['doc_name'];
-                        $type = $row['doc_type'];
-                        $work = $row['doc_workplace'];
-                
-                        
-                        $output =  '  <div class="ma-bar">
-                
-                                    <div class="ma-img-manage">
-                                        <img src="..\..\Assets\Images\images-Sachini\guest.png" alt="doctor profile picture">
-                                        <div class="ma-text-manage">';
-                        $output .=  "<h3>Name - $name</h3>";
-                        $output .=  "<p>Hospital - $type, $work</p>";
-                        $output .= '</div>
-                                        </div>
-                                        <div class="ma-btn-container">
-                                        <div class="ma-btn-manage">
-                                            <a href = "admin-updatedoctor.php"><input type="button" value="Edit"></a>
-                                            <a href = "#"><input type="button" value="Delete"></a>
-                                        </div>
-                                        </div>
-                                    </div>';
-                        echo "$output";
-                    }
-                }
-            ?>
+            <div class="ma-table">
+            <table>
+                <tr>
+                    <th>Doctor ID</th>
+                    <th>Name</th>
+                    <th>Telephone</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Age</th>
+                    <th>Work Place</th>
+                    <th>Type</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>D01</td>
+                    <td>Ama Rathnayake</td>
+                    <td>071 876 5637</td>
+                    <td>ama@chiranthi.gmail.com</td>
+                    <td>Ranna, Tangalle</td>
+                    <td>28 years</td>
+                    <td>Colombo</td>
+                    <td>VOG</td>
+                    <td><div class="ma-actions">
+                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="view icon">visibility</i></div></a>
+                            <a href = "admin-updatedoctor.php"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
+                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="delete icon">delete</i></div></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>D01</td>
+                    <td>Ama Rathnayake</td>
+                    <td>071 876 5637</td>
+                    <td>ama@chiranthi.gmail.com</td>
+                    <td>Ranna, Tangalle</td>
+                    <td>28 years</td>
+                    <td>Colombo</td>
+                    <td>VOG</td>
+                    <td><div class="ma-actions">
+                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="view icon">visibility</i></div></a>
+                            <a href = "admin-updatedoctor.php"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
+                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="delete icon">delete</i></div></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>D01</td>
+                    <td>Ama Rathnayake</td>
+                    <td>071 876 5637</td>
+                    <td>ama@chiranthi.gmail.com</td>
+                    <td>Ranna, Tangalle</td>
+                    <td>28 years</td>
+                    <td>Colombo</td>
+                    <td>VOG</td>
+                    <td><div class="ma-actions">
+                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="view icon">visibility</i></div></a>
+                            <a href = "admin-updatedoctor.php"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
+                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="delete icon">delete</i></div></a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            </div> 
+        </div>
+        <div class="a-content-2">
+            <span></span>
+            <a href = "..\..\Config\admin-logout.php"><button>
+                <div class="a-btn-text"><h6>Log out</h6></div>
+                <i class="material-icons" alt="logout">logout</i>
+            </button></a>
         </div>
     </div>
 </body>

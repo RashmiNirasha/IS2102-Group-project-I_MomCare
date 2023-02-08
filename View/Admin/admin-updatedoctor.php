@@ -51,7 +51,7 @@ include "../../Assets/Includes/header_admin.php";
                 <a href="..\..\View\Admin\admin-managephm.php">Manage PHM Accounts</a>
                 </div>
         </div>
-            <i class="material-icons" alt="notification icon">notifications</i>
+            <a href = "admin-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
             </div></div>
             <div class="au-doctor-form">
                 <form action="..\..\Config\admin-adddoctorprocess.php" method="post">

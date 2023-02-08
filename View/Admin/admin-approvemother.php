@@ -22,6 +22,33 @@ include "../../Assets/Includes/header_admin.php";
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+.am-doublebtn {
+    display: flex;
+    margin-right: 0%
+}
+
+.am-btn {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.am-add-user-btn {
+    margin-left: 5%;
+    width: 100px;
+    height: 30px;
+    background-color: rgb(177, 217, 238);;
+    color: black;
+    border-radius: 5px;
+    border-style: none;
+    margin-top: 3px;
+    font-weight: 600;
+}
+
+.am-add-user-btn:hover {
+    background-color: rgb(224, 224, 224);
+}
     </style>
 </head>
 <body>
@@ -51,18 +78,13 @@ include "../../Assets/Includes/header_admin.php";
                 <a href="..\..\View\Admin\admin-managephm.php">Manage PHM Accounts</a>
                 </div>
         </div>
-            <i class="material-icons" alt="notification icon">notifications</i>
+            <a href = "admin-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
             </div></div>
             <div class="au-doctor-form">
                 <form action="..\..\Config\admin-adddoctorprocess.php" method="post">
                     <div class="au-first-raw">
                         <div class="au-doctor-id"><label>Doctor_ID</label  name="docid"><input type="text" name="docid" disabled></div>
-                            <select class="au-dropdown" name = "dtype">
-                                <option value="VOG">VOG</option>
-                                <option value="Pediatrician">Pediatrician</option>
-                                <!--<option value="mo">MO</option>-->
-                                <option value="" selected>select</option>
-                            </select>
+                        <span> </span>
                         </div>
                     <div class="au-middle">
                         <div class="au-middle-content">
@@ -76,18 +98,21 @@ include "../../Assets/Includes/header_admin.php";
                         <label>Work Place:</label>
                         </div>
                         <div class="au-inputs">
-                        <input type="text" name="name">
-                        <input type="text" name="age">
-                        <input type="text" name="tel">
-                        <input type="email" name="email">
-                        <input type="text" name="address">
-                        <input type="date" name="dob">
-                        <input type="text" name="work">
+                        <input type="text" name="name" disabled>
+                        <input type="text" name="age" disabled>
+                        <input type="text" name="tel" disabled>
+                        <input type="email" name="email" disabled>
+                        <input type="text" name="address" disabled>
+                        <input type="date" name="dob" disabled>
+                        <input type="text" name="work" disabled>
                         </div>
                         </div>
-                        <div class="au-btn">
+                        <div class="am-btn">
                             <span></span>
-                            <button class="au-add-user-btn" type = "submit" name = "insert" value="1">Update User</button>
+                            <div class="am-doublebtn">
+                            <button class="am-add-user-btn" type = "submit" name = "insert" value="1">Accept</button>
+                            <button class="am-add-user-btn" type = "submit" name = "insert" value="1">Decline</button>
+                            </div>
                         </div>
                         
                     </div>
