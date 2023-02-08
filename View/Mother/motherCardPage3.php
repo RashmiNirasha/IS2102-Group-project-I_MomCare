@@ -18,7 +18,7 @@
                 <div class="MotherCardInnerDiv">
                     <div class="TwoColumnSection"> <!--when a section have two tables, use this class-->
                         <div class="TwoColumnSec1">
-                            <div class="WeightGainChart_Title">
+                            <div class="MotherCardTableTitles">
                                 <h3>Weight Gain Chart</h3>
                             </div>
                             <div class="WeightGainChar">
@@ -26,7 +26,7 @@
                             </div>
                         </div>
                         <div class="TwoColumnSec2">
-                            <div class="SFHchart_Title">
+                            <div class="MotherCardTableTitles">
                                 <h3>SFH Chart</h3>
                             </div>
                             <div class="SFHchart">
@@ -36,7 +36,7 @@
                     </div>
                     <div class="TwoColumnSection">
                         <div class="TwoColumnSec1">
-                            <div class="EmergencyPreparednesPlan_Title">
+                            <div class="MotherCardTableTitles">
                                 <h3>Birth and emergency preparedness plan</h3>
                             </div>
                             <div class="MedicalHistory">
@@ -75,7 +75,7 @@
                             </div>
                         </div>
                         <div class="TwoColumnSec2">
-                            <div class="AttendanceAtAntenatalClasses_Title">
+                            <div class="MotherCardTableTitles">
                                 <h3>Attendance at antenatal classes</h3>
                             </div>
                             <div class="AttendanceAtAntenatalClasses">
@@ -118,7 +118,7 @@
                     </div>
                     <div class="TwoColumnSection"> <!--when a section has only one table, use this class-->
                         <div class="TwoColumnSec1">
-                            <div class="IEC_Material_Title">
+                            <div class="MotherCardTableTitles">
                                 <h3>IEC Material</h3>
                             </div>
                             <div class="IEC_Material">
@@ -143,7 +143,7 @@
                             </div>
                         </div>
                         <div class="TwoColumnSec2">
-                            <div class="FamilyPlanning_Title">
+                            <div class="MotherCardTableTitles">
                                 <h3>Family Planning</h3>
                             </div>
                             <div class="FamilyPlanning">
@@ -169,7 +169,7 @@
                         </div>
                     </div>
                     <div class="OneColumnSection">
-                        <div class="Referrals_Title">
+                        <div class="MotherCardTableTitles">
                             <h3>Referrals</h3>
                         </div>
                         <div class="Referrals">

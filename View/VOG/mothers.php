@@ -1,8 +1,8 @@
 <?php 
 session_start();
 include '../../Config/dbConnection.php';
-if (isset($_SESSION['email'])){
-    ?>
+$_SESSION['mom_search'] = $_GET['search'];
+if (isset($_SESSION['email'])){?>
 
 <?php include "../../Assets/Includes/header_pages.php" ?> 
 
@@ -19,8 +19,8 @@ if (isset($_SESSION['email'])){
     <div class="main-mother">
         <div class="mom-filter">
         <h1>Find mother card</h1>
-            <form action="#" method="GET">
-                <input class="mom-search" type="search" name="mom-search" id="mom-search" placeholder="Please enter a search term (Ex: First name, Last name, Mother ID" required autofocus>
+            <form action="" method="GET">
+                <input class="mom-search" type="search" name="mom-search" id="mom-search" placeholder="Please enter a search term (Ex: First name, Last name, Mother ID)" required autofocus>
                 <input type="submit" name="submit" value="Search">
                 <h3></h3>
             </form>
@@ -44,12 +44,11 @@ if (isset($_SESSION['email'])){
                                         <div>
                                             <h3>Ms. '.$row['mom_fname'].' '.$row['mom_lname'].'</h3>
                                             <p class="second-line">'.$row['mom_mobile'].'</p>
-                                            <label for="mother_id" name="mother_id" type="hidden" value="'.$row['mom_id'].'"></label>
                                         </div>
                                     </div>
                                     <div class="mom-btns">
                                         <button name="viewMotherCard" onclick="window.location.href=\'../Mother/motherCardPage1.php\'">Mother Card</button>
-                                        <button name="viewTests" onclick="window.location.href=\'TestsVog.php\'">Scan & Tests</button>
+                                        <button name="viewTests" onclick="window.location.href=\'TestsVog.php?mom_id='.$row['mom_id'].'\'">Scan & Tests</button>
                                     </div>
                                 </div>
                             </td>

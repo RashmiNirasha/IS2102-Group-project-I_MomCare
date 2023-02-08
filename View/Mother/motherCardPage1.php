@@ -12,6 +12,7 @@
     <div class="MotherCardMainDiv">
         <div class="SectionNameDiv">
             <h3>Section A</h3>
+            <!-- <h4>1</h4> -->
         </div>
         <div class="MotherCardOuterDiv">
             <div class="MotherCardMiddleDiv">
@@ -41,91 +42,91 @@
                         </div>
                     </div>
                     <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
-                        <div class="MotherGeneralDetailsTitle"><h3>General Details</h3></div>
+                        <div class="MotherCardTableTitles"><h3>General Details</h3></div>
                         <div class="MotherGeneralDetails">
                             <table class="MotherCardTables">
                                 <tr>
-                                    <td>Name of the Mother:</td>
+                                    <th>Name of the Mother:</th>
                                     <td>Ruwanmali Senanayake</td>
                                 </tr>
                                 <tr>
-                                    <td>Age:</td>
+                                    <th>Age:</th>
                                     <td>27</td>
                                 </tr>
                                 <tr>
-                                    <td>MOH area:</td>
+                                    <th>MOH area:</th>
                                     <td>Colombo 15</td>
                                 </tr>
                                 <tr>
-                                    <td>PHM area:</td>
+                                    <th>PHM area:</th>
                                     <td>Colombo 15</td>
                                 </tr>
                                 <tr>
-                                    <td>Name of the Field Clinic:</td>
+                                    <th>Name of the Field Clinic:</th>
                                     <td>Colombo 15 main</td>
                                 </tr>
                                 <tr>
-                                    <td>Grama Niladhari Division:</td>
+                                    <th>Grama Niladhari Division:</th>
                                     <td>Colombo 15</td>
                                 </tr>
                                 <tr>
-                                    <td>Name of the Hospital Clinic:</td>
+                                    <th>Name of the Hospital Clinic:</th>
                                     <td>Colombo Central</td>
                                 </tr>
                                 <tr>
-                                    <td>Name of the Consultant Obstetrician:</td>
+                                    <th>Name of the Consultant Obstetrician:</th>
                                     <td>Name of the Consultant</td>
                                 </tr>
                                 <tr>
-                                    <td>Identified anatal risks conditions and mobilities:</td>
+                                    <th>Identified anatal risks conditions and mobilities:</th>
                                     <td>Nothing</td>
                                 </tr>
                                 <tr>
-                                    <td>Registration Number:</td>
+                                    <th>Registration Number:</th>
                                     <td>455623</td>
                                 </tr>
                                 <tr>
-                                    <td>Registration Date:</td>
+                                    <th>Registration Date:</th>
                                     <td>02/05/2021</td>
                                 </tr>
                                 <tr>
-                                    <td>Eligible Family Register:</td>
+                                    <th>Eligible Family Register:</th>
                                     <td>Mr.Roshan Weerasinghe</td>
                                 </tr>
                                 <tr>
-                                    <td>Pregnant Mother's Register:</td>
+                                    <th>Pregnant Mother's Register:</th>
                                     <td>Ms. Rasangi Rathnayake</td>
                                 </tr>
                                 <tr>
-                                    <td>Identified antenatal risk conditions & morbidities:</td>
+                                    <th>Identified antenatal risk conditions & morbidities:</th>
                                     <td>Nothing</td>
                                 </tr>
                                 <tr>
-                                    <td>Consanguinity:</td>
+                                    <th>Consanguinity:</th>
                                     <td>Positive</td>
                                 </tr>
                                 <tr>
-                                    <td>Rubella immunization:</td>
+                                    <th>Rubella immunization:</th>
                                     <td>Positive</td>
                                 </tr>
                                 <tr>
-                                    <td>Pre-pregnancy screening done:</td>
+                                    <th>Pre-pregnancy screening done:</th>
                                     <td>Positive</td>
                                 </tr>
                                 <tr>
-                                    <td>Preconceptional folic acid:</td>
+                                    <th>Preconceptional folic acid:</th>
                                     <td>Negative</td>
                                 </tr>
                                 <tr>
-                                    <td>History of subfertility:</td>
+                                    <th>History of subfertility:</th>
                                     <td>Positive</td>
                                 </tr>
                                 <tr>
-                                    <td>Planned pregnancy or not:</td>
+                                    <th>Planned pregnancy or not:</th>
                                     <td>Negative</td>
                                 </tr>
                                 <tr>
-                                    <td>Family planning method last used:</td>
+                                    <th>Family planning method last used:</th>
                                     <td>Positive</td>
                                 </tr>
                             </table>
@@ -133,7 +134,7 @@
                     </div>
                     <div class="TwoColumnSection"> <!--when a section have two tables, use this class-->
                         <div class="TwoColumnSec1">
-                            <div class="PersonalInfomationTitle">
+                            <div class="MotherCardTableTitles">
                                 <h3>Personal Information</h3>
                             </div>
                             <div class="PersonalInformation">
@@ -162,7 +163,7 @@
                             </div>
                         </div>
                         <div class="TwoColumnSec2">
-                            <div class="PersonalInfomationTitle">
+                            <div class="MotherCardTableTitles">
                                 <h3>Family History</h3>
                             </div>
                             <div class="PersonalInformation">
@@ -193,7 +194,7 @@
                     </div>
                     <div class="TwoColumnSection">
                         <div class="TwoColumnSec1">
-                            <div class="MedicalHistoryTitle">
+                            <div class="MotherCardTableTitles">
                                 <h3>Medical / Surgical History</h3>
                             </div>
                             <div class="MedicalHistory">
@@ -250,7 +251,7 @@
                             </div>
                         </div>
                         <div class="TwoColumnSec2">
-                            <div class="ObstericHistoryTitle">
+                            <div class="MotherCardTableTitles">
                                 <h3>Present Obsteric History</h3>
                             </div>
                             <div class="ObstericHistory">
@@ -292,7 +293,7 @@
                         </div>
                     </div>
                     <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
-                        <div class="PregnancyHistoryTitle">
+                        <div class="MotherCardTableTitles">
                             <h3>Pregnancy History</h3>
                         </div>
                         <div class="PregnancyHistory">
@@ -350,7 +351,7 @@
     </div>
 </body>
 </html>
-<?php include "../../Assets/Includes/footer_pages.php"; ?>
+<?php //include "../../Assets/Includes/footer_pages.php"; ?>
 
 
 

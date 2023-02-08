@@ -17,7 +17,7 @@
             <div class="MotherCardMiddleDiv">
                 <div class="MotherCardInnerDiv">
                     <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
-                        <div class="ClinicDetailsDetailsTitle"><h3>Clinic Care</h3></div>
+                        <div class="MotherCardTableTitles"><h3>Clinic Care</h3></div>
                         <div class="ClinicDetailsDetails">
                             <table class="MotherCardTables">
                                 <tr>
@@ -131,7 +131,7 @@
                     </div>
                     <div class="ThreeColumnSection">
                         <div class="ThreeColumnSec1">
-                            <div class="Auscultation&MentalHealth_Title">
+                            <div class="MotherCardTableTitles">
                                 <h3>Auscultation & Mental Health</h3>
                             </div>
                             <div class="Auscultation&MentalHealth">
@@ -160,7 +160,7 @@
                             </div>
                         </div>
                         <div class="ThreeColumnSec2">
-                            <div class="DentalCare_Title">
+                            <div class="MotherCardTableTitles">
                                 <h3>Dental Care</h3>
                             </div>
                             <div class="DentalCare">
@@ -182,7 +182,7 @@
                         </div>
                         <div class="ThreeColumnSec3">
                             <div>
-                                <div class="RespiratorySystem_Title">
+                                <div class="MotherCardTableTitles">
                                     <h3>Respiratory System</h3>
                                 </div>
                                 <div class="RespiratorySystem">
@@ -192,7 +192,7 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="BreastExamination_Title">
+                                <div class="MotherCardTableTitles">
                                     <h3>Breast examination</h3>
                                 </div>
                                 <div class="BreastExamination">
@@ -205,7 +205,7 @@
                     </div>
                     <div class="TwoColumnSection">
                         <div class="TwoColumnSec1">
-                            <div class="Investigations_Title">
+                            <div class="MotherCardTableTitles">
                                 <h3>Investigations</h3>
                             </div>
                             <div class="Investigations">
@@ -250,7 +250,7 @@
                         </div>
                         <div class="TwoColumnSec2">
                             <div>
-                                <div class="SyphilisScreening_Title">
+                                <div class="MotherCardTableTitles">
                                     <h3>Syphilis screeningtem</h3>
                                 </div>
                                 <div class="SyphilisScreening">
@@ -282,7 +282,7 @@
                     </div>
                     <div class="OneColumnSection">
                     <div>
-                                <div class="TetanusToxoidImmunization_Title">
+                                <div class="MotherCardTableTitles">
                                     <h3>Tetanus Toxoid Immunization</h3>
                                 </div>
                                 <div class="TetanusToxoidImmunization">
@@ -320,7 +320,7 @@
                     </div>
                     <div class="OneColumnSection">
                         <div class="BP_Chart">
-                            <div class="BP_Chart_Title">
+                            <div class="MotherCardTableTitles">
                                 <h3>BP Chart</h3>
                             </div>
                             <div class="BP_Chart_Image">

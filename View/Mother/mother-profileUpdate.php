@@ -43,31 +43,31 @@ include('../../Config/mother-updateProfile.inc.php');
                     </tr>
                     <tr>
                         <td><p>First Name</p></td>
-                        <td><input type="text" value="<?php  echo $mother_fname?>"></td>
+                        <td><input type="text" name="mother-fname" value="<?php  echo $mother_fname?>"></td>
                     </tr>
                     <tr>
                         <td><p>Middle Name</p></td>
-                        <td><input type="text" value="<?php  echo $mother_mname?>"></td>
+                        <td><input type="text" name="mother-mname" value="<?php  echo $mother_mname?>"></td>
                     </tr>
                     <tr>
                         <td><p>Last Name</p></td>
-                        <td><input type="text" value="<?php  echo $mother_lname?>"></td>
+                        <td><input type="text" name="mother-lname" value="<?php  echo $mother_lname?>"></td>
                     </tr>
                     <tr>
                         <td><p>Address</p></td>
-                        <td><input type="text" value="<?php  echo $mother_address?>"></td>
+                        <td><input type="text" name="mother-address" value="<?php  echo $mother_address?>"></td>
                     </tr>
                     <tr>
                         <td><p>Email</p></td>
-                        <td><input type="text" value="<?php  echo $mother_email?>"></td>
+                        <td><input type="text" name="mother-email" value="<?php  echo $mother_email?>"></td>
                     </tr>
                     <tr>
                         <td><p>Mobile Number</p></td>
-                        <td><input type="text" value="<?php  echo $mother_mobile?>"></td>
+                        <td><input type="text" name="mother-mobile" value="<?php  echo $mother_mobile?>"></td>
                     </tr>
                     <tr>
                         <td><p>Fixedline Number</p></td>
-                        <td><input type="text" value="<?php  echo $mother_landline?>"></td>
+                        <td><input type="text" name="mother-landline" value="<?php  echo $mother_landline?>"></td>
                     </tr>
                     <tr>
                         <td><p>Profile Picture</p></td>
@@ -75,23 +75,23 @@ include('../../Config/mother-updateProfile.inc.php');
                     </tr>
                     <tr>
                         <td><p>Guardian Name</p></td>
-                        <td><input type="text" value="<?php  echo $guardian_name?>"></td>
+                        <td><input type="text" name="guardian-name" value="<?php  echo $guardian_name?>"></td>
                     </tr>
                     <tr>
                         <td><p>Guardian Mobile</p></td>
-                        <td><input type="text" value="<?php  echo $guardian_mobile?>"></td>
+                        <td><input type="text" name="guardian-mobile" value="<?php  echo $guardian_mobile?>"></td>
                     </tr>
                 </table>
-            </form>
             <!-- buttons -->
             <div class="profileUpdate-buttons">
                 <a href="mother-profileDetails.php">
                     <button class="back-button">Back</button>
                 </a>
-                <a href="http://">
-                    <button type="submit" name="update-btn" class="update-button">Update Details</button>
-                </a>
+                
+                    <input type="submit" name="update-btn" value="Update Details">
             </div>
+            </form>
+
         </div>
     </div>
 </body>
