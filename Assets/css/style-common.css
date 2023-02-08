@@ -1325,6 +1325,20 @@
     margin-right: 10px;
 }
 
+.mom-filter form {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.mom-filter form h3 {
+    margin-left: 30px;
+    font-size: 20px;
+    margin-top: 10px;
+    color: #535458;
+    background-color: #ffffff;
+}
+
 .dropdown-menu {
     width: auto;
     height: 30px;
@@ -1338,14 +1352,29 @@
 }
 
 .mom-search {
-    width: 30%;
+    width: 50%;
     height: 40px;
-    border-radius: 15px;
+    border-radius: 10px 0px 0px 10px;
     border-style: solid;
     border-color: #029EE4;
     border-width: 1px;
     padding-left: 20px;
     padding-right: 10px;
+}
+
+.mom-filter input[type='submit'] {
+    width: 100px;
+    height: 40px;
+    margin-left: -5px;
+    border-radius: 0px 10px 10px 0px;
+    border-style: none;
+    background-color: #029EE4;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.mom-filter input[type='submit']:hover {
+    background-color: red;
 }
 
 .mom-search:focus {

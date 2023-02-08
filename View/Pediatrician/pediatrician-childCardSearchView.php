@@ -12,10 +12,11 @@ include "../../Assets/Includes/header_pages.php";
 
 <div class="main-mother">
 
-    <h1>Find Child Card</h1>
+    
         <div class="mom-filter">
+        <h1>Find Child Card</h1>
         <form action=" " method="POST">
-            <input class="mom-search" type="search" name="query" id="query" placeholder="Search">
+            <input class="mom-search" type="search" name="query" id="query" placeholder="Please enter a search term (Ex: First name, Last name, Mother ID">
             <input type="submit" name="submit" value="Search">
             </form>
 

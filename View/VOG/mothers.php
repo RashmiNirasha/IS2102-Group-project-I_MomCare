@@ -1,14 +1,11 @@
 <?php 
-    session_start();
-    include '../../Config/dbConnection.php';
-    if (isset($_SESSION['email'])){?>
-<?php //include "../../Assets/Includes/header_pages.php" ?> 
-<?php 
-    //$mothers_list ='';
+session_start();
+include '../../Config/dbConnection.php';
+if (isset($_SESSION['email'])){
+    ?>
 
-    //$query = "SELECT * FROM mother WHERE is_deleted=0 ORDER BY firs_name";
-    //$mothers = mysqli_query($con, $query);
-?>
+<?php include "../../Assets/Includes/header_pages.php" ?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,33 +18,49 @@
 <body>
     <div class="main-mother">
         <div class="mom-filter">
-            <input class="mom-search" type="search" name="mom-search" id="mom-search" placeholder="Search">
-            <!-- <div class="mom-filter-right">
-                <label for="searched-by">Searched by</label>
-                <select class="dropdown-menu" name="dropdown-menu" id="dropdown-menu">
-                    <option value="name">Name</option>
-                    <option value="id">ID</option>
-                </select>
-            </div> -->
+        <h1>Find mother card</h1>
+            <form action="#" method="GET">
+                <input class="mom-search" type="search" name="mom-search" id="mom-search" placeholder="Please enter a search term (Ex: First name, Last name, Mother ID" required autofocus>
+                <input type="submit" name="submit" value="Search">
+                <h3></h3>
+            </form>
         </div>
         <table class="MomBarTable">
-            <tr>
-                <td>
-                    <div class="mom-bar">
-                        <div class="mom-bar-left">
-                            <img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic">
-                            <div>
-                                <h3>Ms. Indrani Perera</h3>
-                                <p class="second-line">0712345678</p>
-                            </div>
-                        </div>
-                        <div class="mom-btns">
-                            <button name="viewMotherCard" onclick="window.location.href='../Mother/motherCardPage1.php'">Mother Card</button>
-                            <button name="viewTests" onclick="window.location.href='TestsVog.php';">Scan & Tests</button>
-                        </div>
-                    </div>
-                </td>
-            </tr>
+            <?php
+            if (isset($_GET['submit'])) {
+                $search = $_GET['mom-search'];
+                $query = "SELECT mom_fname, mom_lname, mom_id, mom_mobile FROM mother_details WHERE mom_id LIKE '%$search%' OR mom_email LIKE '%$search%' OR mom_fname LIKE '%$search%' OR mom_lname LIKE '%$search%' ORDER BY mom_fname ASC    ";
+                $result = mysqli_query($con, $query);
+                $queryResult = mysqli_num_rows($result);
+                if ($queryResult > 0) { 
+                    while ($row = mysqli_fetch_assoc($result)) { 
+                        echo 
+                        '<tr>
+                            <td>
+                                <div class="mom-bar">
+                                    <div class="mom-bar-left">
+                                        <img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic">
+                                        <div>
+                                            <h3>Ms. '.$row['mom_fname'].' '.$row['mom_lname'].'</h3>
+                                            <p class="second-line">'.$row['mom_mobile'].'</p>
+                                            <label for="mother_id" name="mother_id" type="hidden" value="'.$row['mom_id'].'"></label>
+                                        </div>
+                                    </div>
+                                    <div class="mom-btns">
+                                        <button name="viewMotherCard" onclick="window.location.href=\'../Mother/motherCardPage1.php\'">Mother Card</button>
+                                        <button name="viewTests" onclick="window.location.href=\'TestsVog.php\'">Scan & Tests</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>';
+                    }
+                }else{
+                    echo "There are no results matching your search!";
+                }
+            }else{
+                //echo "please enter a search term";
+            }
+            ?>
         </table>
     </div>
     <!--logout button-->
@@ -58,5 +71,6 @@
 </html>
 <?php //include "../../Assets/Includes/footer_pages.php"; ?>
 <?php }else{
-    header("Location: ../../mainLogin.php");
+    header("Location: ../../index.php");
+    exit();
 } ?>
