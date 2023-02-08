@@ -49,7 +49,6 @@ if (isset($_POST['submit'])) {
         </div>
 
 <div class="RegisterMotherInnerDiv">
-
 <form class="PediatrianAddNotesForm" id="pediareicianAddNotes" action=" " method="POST">
 <table>
 

@@ -13,15 +13,19 @@ include "../../Assets/Includes/header_pages.php";
 
 ?>
 <div class="main-mother">
+<div class="top">
+            <button class="back-btn" onclick="window.location.href = 'pediatrician-dashboardView.php';">Back</button>
+        </div>
         <div class="mom-filter">
         <h1>Find the patient/child</h1>
         <form action=" " method="GET">
             <input class="mom-search" type="search" name="query" id="query" placeholder="Please enter a search term (Ex: First name, Last name, Child ID)" required autofocus>
             <input type="submit" name="submit" value="Search">
+            <button class="btnMain-2" onclick="window.location.href = 'pediatrician-childCardSearchView.php';">Add Note</button>
             </form>
-            <button class="ma-table-btn" onclick="window.location.href = 'pediatrician-childCardSearchView.php';">Add New Note</button>
+           
         </div>
-
+        <div class="common_list_content">
         <?php 
         include "../../Config/dbConnection.php";
 
@@ -31,19 +35,20 @@ include "../../Assets/Includes/header_pages.php";
         $result = mysqli_query($con, $sql);
         $resultCheck = mysqli_num_rows($result);
         if ($resultCheck > 0) {
+            echo "<table>
+            <tr>
+                <th>Child id</th>
+                <th>Doctor id</th>
+                <th>Mother id</th>
+                <th>Note topic</th>
+                <th>Note description</th>
+                <th>Note date</th>
+                <th>Note records</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>";
             while ($row = mysqli_fetch_assoc($result)) {
-                echo "<table class='test-view-table'>
-                <tr>
-                    <th>Child id</th>
-                    <th>Doctor id</th>
-                    <th>Mother id</th>
-                    <th>Note topic</th>
-                    <th>Note description</th>
-                    <th>Note date</th>
-                    <th>Note records</th>
-                    <th>Update</th>
-                    <th>Delete</th>
-                </tr>
+                echo "
                 <tr><td>" . $row['child_id'] . "</td><td>" . $row['doc_id'] . "</td><td>" . $row['mom_id'] . "</td><td>" . $row['note_topic'] . "</td><td>" . $row['note_description'] . "</td><td>" . $row['note_date'] . "</td><td>" . $row['note_records'] . "</td>
                 <td><a href='pediatrician-updateNotesView.php?updateid=" . $row['note_id'] . "'><button class='btnMain'>Update</button></a></td>
                 <td><a href='../../Config/ped-deleteNotes.php?deleteid=" . $row['note_id'] . "'><button class='btnMain'>Delete</button></a></td>
@@ -54,7 +59,8 @@ include "../../Assets/Includes/header_pages.php";
             mysqli_error($con);
         }
         }       
-        ?>       
+        ?>      
+        </div> 
     </div>
     </div>
 </body>

@@ -33,7 +33,7 @@ include "../../Assets/Includes/header_pages.php";
                 <div class="card-content-left"><span class="material-symbols-outlined">note_add</span></div>
                 <div class="card-content-right"><p>Medical Notes</p></div>
             </button><!--gap remover
-            --><button class="card" onclick="window.location.href = 'child-bmiCalculator.php';">
+            --><button class="card" onclick="window.location.href = 'child-bmiChart.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">calculate</span></div>
                 <div class="card-content-right"><p>BMI Calculator</p></div>
             </button><!--gap remover
