@@ -700,32 +700,70 @@
 
 /* ---------------------------mother_card------------------------ */
 
+.MotherCardMainDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.SectionNameDiv {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 0px;
+    border-radius: 20px 20px 0px 0px;
+    margin-top: 120px;
+    background-color: #029EE4;
+}
+
 .SectionNameDiv h3 {
     text-align: center;
-    margin-top: 100px;
-    font-size: 40px;
+    width: 100%;
     font-style: normal;
-    font-family: barlowBold;
+    font-size: 25px;
+    font-family: barlowRegular;
+    color: #ffffff;
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+
 }
+/* .SectionNameDiv h4 {
+    float: right;
+    width: 50%;
+    text-align: right;
+    font-style: normal;
+    font-size: 25px;
+    padding-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: barlowRegular;
+    color: #000000;
+    background-color: transparent;
+} */
+
+
 
 .MotherCardOuterDiv {
     display: flex;
     margin-left: 15%;
     margin-right: 15%;
-    margin-top: 50px;
-    margin-bottom: 5%;
+    margin-top: 0px;
+    margin-bottom: 20px;
     width: 70%;
     height: auto;
     background: #029EE4;
-    border-radius: 20px;
+    border-radius: 0px 0px 20px 20px;
 }
 
 .MotherCardMiddleDiv {
     display: flex;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     width: 100%;
     height: auto;
     background: #ffffff;
@@ -737,7 +775,7 @@
     flex-direction: column;
     margin-left: 50px;
     margin-right: 50px;
-    margin-top: 50px;
+    margin-top: 45px;
     margin-bottom: 50px;
     width: 100%;
     height: auto;
@@ -794,10 +832,6 @@
     white-space: nowrap;
 }
 
-.MotherCardTables th {
-    text-align: left;
-}
-
 .MotherStatus {
     display: flex;
     width: 100px;
@@ -818,11 +852,24 @@
     color: #ffffff;
 }
 
-.MotherGeneralDetailsTitle {
+.MotherCardTableTitles {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 20px;
+    background-color: #029EE4;
+    border-radius: 20px 20px 0px 0px;
 
+}
+
+.MotherCardTableTitles h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #ffffff;
 }
 
 .ClinicDetailsDetailsTitle h3 {
@@ -844,20 +891,39 @@
     width: 50%;
 }
 
+.MotherCardTables th {
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 400;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029ce44f;
+    width: 1%;
+    white-space: nowrap;
+}
+
+.MotherCardTables tr:nth-child(odd){
+    background-color: #029ce41e;
+}
+
 .MotherCardTables {
     width: 100%;
     border-style: solid;
-    border-radius: 20px;
+    border-radius: 0px 0px 20px 20px;
     border-color: #029EE4;
     padding: 3px;
+    font-size: 12px;
+    border-collapse: collapse;
 }
 
 .MotherCardTables td {
-    background-color: #D9D9D9;
-    border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029ce44f;
     padding-bottom: 5px;
 }
 
@@ -876,10 +942,11 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
-    float: right;
+    justify-content: end;
+    margin-left: 15%;
     margin-right: 15%;
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .MotherCardButtons {
@@ -1511,7 +1578,7 @@
     padding-left: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .add-report-label label {
@@ -1528,13 +1595,13 @@
     width: auto;
     margin-left: 15%;
     margin-right: 15%;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
     padding-bottom: -20px;
     border-style: solid;
     border-color: #029EE4;
-    border-width: 1px;
+    border-width: 2px;
     justify-content: space-between;
 }
 
@@ -1545,7 +1612,7 @@
     width: auto;
     margin-left: 15%;
     margin-right: 15%;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 10px;
     border-radius: 10px;
     justify-content: space-between;
@@ -1608,32 +1675,55 @@
 
 .test-view-table {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 10px;
     background-color: hsl(0, 100%, 98%);
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
     border-style: solid;
     border-color: #029EE4;
     padding: 10px;
+    border-collapse: collapse;
+}
+
+.test-view-table th {
+    background-color: #fdfdff;
+    border-style: solid;
+    border-color: #029ce44f;
+    font-size: 14px;
+    border-width: 1px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
 }
 
 .test-view-table td {
-    background-color: #d1d1d3;
-    border-radius: 10px;
-    font-size: 15px;
+    background-color: #fdfdff;
+    border-style: solid;
+    border-color: #029ce44f;
+    font-size: 12px;
+    border-width: 1px;
+}
+
+.test-view-table tr:nth-child(odd) {
+    background-color: #029ce41e;
 }
 
 .test-view-table td:nth-child(1) {
-    padding-left: 10px;
+    background-color: transparent;
+    width: 7%;
+    text-align: center;
 }
 
 .test-view-table td:nth-child(2) {
+    background-color: transparent;
     padding-left: 10px;
-    width: 40%;
+    width: 15%;
 }
 
 .test-view-table td:nth-child(3) {
-    text-align: center;
+    background-color: transparent;
+    padding-left: 10px;
+    width: 35%;
 }
 
 .test-view-table td:nth-child(4) {
@@ -1643,6 +1733,12 @@
 }
 
 .test-view-table td:nth-child(5) {
+    background-color: transparent;
+    text-align: center;
+    width: 10%;
+}
+
+.test-view-table td:nth-child(6) {
     background-color: transparent;
     text-align: center;
     width: 10%;
@@ -1666,20 +1762,21 @@
     margin-right: 10px;
     background-color: #029EE4;
     color: #f0f0f0;
-    border-color: #029EE4;
+    border-style: none;
     cursor: pointer;
     
 }
 
 .view-report-btn {
-    width: 100%;
-    height: 25px;
+    width: 80%;
+    height: 20px;
     border-radius: 10px;
     border-width: 1px;
     background-color: #029EE4;
     color: #f0f0f0;
     border-color: #029EE4;
     cursor: pointer;
+    border-style: none;
     margin-bottom: 1px;
     
 }

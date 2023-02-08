@@ -18,7 +18,7 @@
             $_FILES['test_report']['name'] = uniqid("test-") . "." . $filex;
             $test_report = $_FILES['test_report']['name'];
             $path = "../../Assets/Images/uploads/tests/".$test_report;
-            $sql = "INSERT INTO vog_tests (test_name, note, test_report) VALUES ('$test_name',' $note','$test_report')";
+            $sql = "INSERT INTO doctor_notes (note_topic, note_description, note_records) VALUES ('$test_name',' $note','$test_report')";
             $result = mysqli_query($con, $sql,);
     
             // file upload code -- start
@@ -70,6 +70,7 @@
         <div class="view-report">
             <table class="test-view-table">
                 <tr>
+                    <th>Doc. ID</th>
                     <th>Test name</th>
                     <th>Special note</th>
                     <th>Date</th>
@@ -78,21 +79,21 @@
                 </tr>
                 <?php
                     include '../../Config/dbConnection.php';
-                    $sql = "SELECT * FROM vog_tests";
+                    $sql = "SELECT * FROM doctor_notes";
                     $result = mysqli_query($con, $sql);
                     // $id = $_SESSION['id'];
                     // $filename = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     $resultCheck = mysqli_num_rows($result);
                     if($resultCheck > 0){
-                        while($row = mysqli_fetch_assoc($result)){ 
-                    
-                            echo "<tr> 
-                                <td>".$row['test_name']."</td>
-                                <td>".$row['note']."</td>
-                                <td>".$row['test_date']."</td>" ?>
-                                <td><a href="testEdit.php"><input class='view-report-btn' type='button' value='Edit'></a></td>
-                                <td><a target="_blank" href="../../Assets/Images/uploads/tests/<?php echo $row['test_report']; ?>"><input class='view-report-btn' type='button' value='View'></a></td>
-                                <!-- <td><a href="download.php?test_report=<?php //echo $row['test_report']; ?>"><input class='view-report-btn' type='button' value='View'></a></td> -->
+                        while($row = mysqli_fetch_assoc($result)){ ?>
+                                <tr> 
+                                    <td><?php echo $row['doc_id']?></td>
+                                    <td><?php echo $row['note_topic'] ?> </td>
+                                    <td><?php echo $row['note_description'] ?></td>
+                                    <td><?php echo $row['note_date'] ?></td>
+                                    <td><a href="testEdit.php"><input class='view-report-btn' type='button' value='Edit'></a></td>
+                                    <td><a target="_blank" href="../../Assets/Images/uploads/tests/<?php echo $row['note_records']; ?>"><input class='view-report-btn' type='button' value='View'></a></td>
+                                    <!-- <td><a href="download.php?test_report=<?php //echo $row['test_report']; ?>"><input class='view-report-btn' type='button' value='View'></a></td> -->
                                 </tr>
                 <?php
                         }

@@ -1,8 +1,7 @@
 <?php 
 session_start();
 include '../../Config/dbConnection.php';
-if (isset($_SESSION['email'])){
-    ?>
+if (isset($_SESSION['email'])){?>
 
 <?php include "../../Assets/Includes/header_pages.php" ?> 
 
@@ -20,7 +19,7 @@ if (isset($_SESSION['email'])){
         <div class="mom-filter">
         <h1>Find mother card</h1>
             <form action="#" method="GET">
-                <input class="mom-search" type="search" name="mom-search" id="mom-search" placeholder="Please enter a search term (Ex: First name, Last name, Mother ID" required autofocus>
+                <input class="mom-search" type="search" name="mom-search" id="mom-search" placeholder="Please enter a search term (Ex: First name, Last name, Mother ID)" required autofocus>
                 <input type="submit" name="submit" value="Search">
                 <h3></h3>
             </form>
