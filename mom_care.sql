@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 06, 2023 at 06:41 PM
+-- Generation Time: Feb 08, 2023 at 11:34 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -220,6 +220,25 @@ CREATE TABLE IF NOT EXISTS `immunization table` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mcard-fhistory`
+--
+
+DROP TABLE IF EXISTS `mcard-fhistory`;
+CREATE TABLE IF NOT EXISTS `mcard-fhistory` (
+  `mom_id` varchar(11) NOT NULL,
+  `phm_id` varchar(20) NOT NULL,
+  `diabetes` varchar(20) NOT NULL,
+  `hypertension` varchar(20) NOT NULL,
+  `h_diseases` varchar(20) NOT NULL,
+  `m_pregnancies` varchar(20) NOT NULL,
+  `others` varchar(255) NOT NULL,
+  KEY `mom_id` (`mom_id`),
+  KEY `phm_id` (`phm_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mcard-general`
 --
 
@@ -230,6 +249,7 @@ CREATE TABLE IF NOT EXISTS `mcard-general` (
   `blood_group` varchar(10) NOT NULL,
   `mom_bmi` int(10) NOT NULL,
   `mom_height` int(10) NOT NULL,
+  `allergies` varchar(255) NOT NULL,
   `mom_name` varchar(255) NOT NULL,
   `mom_age` int(10) NOT NULL,
   `moh_area` varchar(255) NOT NULL,
@@ -240,19 +260,32 @@ CREATE TABLE IF NOT EXISTS `mcard-general` (
   `VOG_name` varchar(255) NOT NULL,
   `anatal_risks` varchar(255) NOT NULL,
   `reg_number` varchar(11) NOT NULL,
+  `reg_date` date NOT NULL,
   `family_reg` varchar(11) NOT NULL,
   `mother_reg` varchar(11) NOT NULL,
   `antenatal_risks` varchar(255) NOT NULL,
-  `cb1` tinyint(1) NOT NULL,
-  `cb2` tinyint(1) NOT NULL,
-  `cb3` tinyint(1) NOT NULL,
-  `cb4` tinyint(1) NOT NULL,
-  `cb5` tinyint(1) NOT NULL,
-  `cb6` tinyint(1) NOT NULL,
-  `cb7` tinyint(1) NOT NULL,
+  `cb1` varchar(20) NOT NULL,
+  `cb2` varchar(20) NOT NULL,
+  `cb3` varchar(20) NOT NULL,
+  `cb4` varchar(20) NOT NULL,
+  `cb5` varchar(20) NOT NULL,
+  `cb6` varchar(20) NOT NULL,
+  `cb7` varchar(20) NOT NULL,
+  `dad_age` int(10) NOT NULL,
+  `dad_edu` varchar(255) NOT NULL,
+  `dad_occupation` varchar(255) NOT NULL,
+  `mom_edu` varchar(255) NOT NULL,
+  `mom_occupation` varchar(255) NOT NULL,
   UNIQUE KEY `mother_id` (`mother_id`),
   UNIQUE KEY `phm_id` (`phm_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mcard-general`
+--
+
+INSERT INTO `mcard-general` (`mother_id`, `phm_id`, `blood_group`, `mom_bmi`, `mom_height`, `allergies`, `mom_name`, `mom_age`, `moh_area`, `phm_area`, `clinic_name`, `gn_division`, `hospital_name`, `VOG_name`, `anatal_risks`, `reg_number`, `reg_date`, `family_reg`, `mother_reg`, `antenatal_risks`, `cb1`, `cb2`, `cb3`, `cb4`, `cb5`, `cb6`, `cb7`, `dad_age`, `dad_edu`, `dad_occupation`, `mom_edu`, `mom_occupation`) VALUES
+('a001', 'P102', 'A+', 23, 162, 'None', 'Hansika Prashani Weerasinghe', 27, 'Colombo 15', 'Colombo 15', 'Colombo 15 main', 'Colombo 15', 'Colombo Central', 'Prakash Perera', 'Nothing', '456342', '2023-02-05', 'Roshan', 'Rasangi', 'None', 'Positive', 'Positive', 'Positive', 'Positive', 'Positive', 'Positive', 'Positive', 30, 'Degree', 'Teacher', 'Degree', 'Teacher');
 
 -- --------------------------------------------------------
 
@@ -262,22 +295,22 @@ CREATE TABLE IF NOT EXISTS `mcard-general` (
 
 DROP TABLE IF EXISTS `mcard-medicalhistory`;
 CREATE TABLE IF NOT EXISTS `mcard-medicalhistory` (
-  `diabetes` tinyint(1) NOT NULL,
-  `hypertension` tinyint(1) NOT NULL,
-  `cardiac_diseases` tinyint(1) NOT NULL,
-  `renal_diseases` tinyint(1) NOT NULL,
-  `hepatic_diseases` tinyint(1) NOT NULL,
-  `psychiatric_illnesses` tinyint(1) NOT NULL,
-  `epilepsy` tinyint(1) NOT NULL,
-  `malignancies` tinyint(1) NOT NULL,
-  `haematologies` tinyint(1) NOT NULL,
-  `tuberculosis` tinyint(1) NOT NULL,
-  `thyroid_diseases` tinyint(1) NOT NULL,
-  `bronchial_diseases` tinyint(1) NOT NULL,
-  `previous_DVT` tinyint(1) NOT NULL,
-  `surgeries_other_than_LSCS` tinyint(1) NOT NULL,
-  `other` tinyint(1) NOT NULL,
-  `social_zscore` tinyint(1) NOT NULL,
+  `diabetes` varchar(20) NOT NULL,
+  `hypertension` varchar(20) NOT NULL,
+  `cardiac_diseases` varchar(20) NOT NULL,
+  `renal_diseases` varchar(20) NOT NULL,
+  `hepatic_diseases` varchar(20) NOT NULL,
+  `psychiatric_illnesses` varchar(20) NOT NULL,
+  `epilepsy` varchar(20) NOT NULL,
+  `malignancies` varchar(20) NOT NULL,
+  `haematologies` varchar(20) NOT NULL,
+  `tuberculosis` varchar(20) NOT NULL,
+  `thyroid_diseases` varchar(20) NOT NULL,
+  `bronchial_diseases` varchar(20) NOT NULL,
+  `previous_DVT` varchar(20) NOT NULL,
+  `surgeries_other_than_LSCS` varchar(20) NOT NULL,
+  `other` varchar(20) NOT NULL,
+  `social_zscore` varchar(20) NOT NULL,
   `mom_id` varchar(11) CHARACTER SET latin1 NOT NULL,
   `phm_id` varchar(20) CHARACTER SET latin1 NOT NULL,
   KEY `mom_id` (`mom_id`),
@@ -293,17 +326,42 @@ CREATE TABLE IF NOT EXISTS `mcard-medicalhistory` (
 DROP TABLE IF EXISTS `mcard-pohistory`;
 CREATE TABLE IF NOT EXISTS `mcard-pohistory` (
   `mom_id` varchar(11) CHARACTER SET latin1 NOT NULL,
-  `gravidity_G` int(11) NOT NULL,
-  `gravidity_P` int(11) NOT NULL,
-  `gravidity_C` int(11) NOT NULL,
-  `youngest_child_age` int(11) NOT NULL,
-  `LRMP` int(11) NOT NULL,
-  `EED` int(11) NOT NULL,
-  `US_corrected_EED` int(11) NOT NULL,
   `doctor_id` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `gravidity_G` varchar(20) NOT NULL,
+  `gravidity_P` varchar(20) NOT NULL,
+  `gravidity_C` varchar(20) NOT NULL,
+  `youngest_child_age` int(11) NOT NULL,
+  `LRMP` varchar(20) NOT NULL,
+  `EED` varchar(20) NOT NULL,
+  `us_eed` varchar(255) NOT NULL,
+  `poa_at_dating` varchar(255) NOT NULL,
+  `date_quickning` date NOT NULL,
+  `poa_at_reg` varchar(255) NOT NULL,
   KEY `mom_id` (`mom_id`),
   KEY `doctor_id` (`doctor_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mcard-preghistory`
+--
+
+DROP TABLE IF EXISTS `mcard-preghistory`;
+CREATE TABLE IF NOT EXISTS `mcard-preghistory` (
+  `mom_id` varchar(11) NOT NULL,
+  `phm_id` varchar(20) NOT NULL,
+  `pregnancy_type` varchar(255) NOT NULL,
+  `antenatal` varchar(255) NOT NULL,
+  `place` varchar(255) NOT NULL,
+  `outcome` varchar(255) NOT NULL,
+  `weight` int(10) NOT NULL,
+  `postal_complications` varchar(255) NOT NULL,
+  `sex` varchar(255) NOT NULL,
+  `age` int(10) NOT NULL,
+  KEY `mom_id` (`mom_id`),
+  KEY `phm_id` (`phm_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -536,10 +594,31 @@ ALTER TABLE `guardian_details`
   ADD CONSTRAINT `guardian_details_ibfk_1` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`);
 
 --
+-- Constraints for table `mcard-general`
+--
+ALTER TABLE `mcard-general`
+  ADD CONSTRAINT `mcard-general_ibfk_1` FOREIGN KEY (`mother_id`) REFERENCES `mother_details` (`mom_id`),
+  ADD CONSTRAINT `phm-mg` FOREIGN KEY (`phm_id`) REFERENCES `phm_details` (`phm_id`);
+
+--
 -- Constraints for table `mcard-medicalhistory`
 --
 ALTER TABLE `mcard-medicalhistory`
-  ADD CONSTRAINT `Foreign key` FOREIGN KEY (`phm_id`) REFERENCES `phm_details` (`phm_id`);
+  ADD CONSTRAINT `Foreign key` FOREIGN KEY (`phm_id`) REFERENCES `phm_details` (`phm_id`),
+  ADD CONSTRAINT `mcard-medicalhistory_ibfk_1` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`);
+
+--
+-- Constraints for table `mcard-pohistory`
+--
+ALTER TABLE `mcard-pohistory`
+  ADD CONSTRAINT `m-mph` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`),
+  ADD CONSTRAINT `mcard-pohistory_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctor_details` (`doc_id`);
+
+--
+-- Constraints for table `mcard-preghistory`
+--
+ALTER TABLE `mcard-preghistory`
+  ADD CONSTRAINT `mcard-preghistory_ibfk_1` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`);
 
 --
 -- Constraints for table `mother_details`
