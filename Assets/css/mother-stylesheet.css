@@ -247,7 +247,7 @@ input::file-selector-button {
     padding-top: 20px;
     padding-left: 150px;
 }
-.profileUpdate-buttons button{
+.profileUpdate-buttons button, .profileUpdate-buttons input[type]{
     width: 120px;
     height: 30px;
     background: #F3F4F5;
