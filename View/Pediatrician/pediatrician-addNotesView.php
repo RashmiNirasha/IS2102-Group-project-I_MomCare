@@ -1,6 +1,8 @@
 <?php
 session_start();
-//include "../../Assets/Includes/header_pages.php";
+if (isset($_SESSION['email'])){
+    
+include "../../Assets/Includes/header_pages.php";
 include "../../Config/dbConnection.php";
 
 if (isset($_POST['submit'])) {
@@ -52,13 +54,11 @@ if (isset($_POST['submit'])) {
 <style><?php include "../../Assets/Css/style-common.css" ?></style>
 </head> 
 <body>
-
-<div class="maintopic">
-    <h3>Pediareician Notes</h3>
-</div>
-
-<div class="RegisterMotherInnerDiv">
-<h2>Upload Records..</h2>
+<div class="main-mother">
+        <div class="mom-filter">
+        <h1>Add Pediatrician Notes</h1>
+        </div>
+        <div class="RegisterMotherInnerDiv">
 <form class="PediatrianAddNotesForm" id="pediareicianAddNotes" action="pediatrician-addNotesView.php?childid=<?php echo $_GET['childid']?>" method="POST">
 <table>
     <tr>
@@ -97,7 +97,19 @@ if (isset($_POST['submit'])) {
  <a href=" pediatrician-viewNotesView.php"><button class="pd-viewNote-btnMain" >View Notes</button></a>
 </form>
 <div>
+            
+    </div>
+       <!--logout button-->
+    <div class="log-out"> 
+    <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
+    </div>
 </div>
-</div>
+</body>
+</html>
+<?php }else{
+    header("Location: ../../index.php");
+    exit();
+} ?>
+
 </body>
 </html>

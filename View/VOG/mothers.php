@@ -25,6 +25,7 @@ if (isset($_SESSION['email'])){
                 <h3></h3>
             </form>
         </div>
+        
         <table class="MomBarTable">
             <?php
             if (isset($_GET['submit'])) {
