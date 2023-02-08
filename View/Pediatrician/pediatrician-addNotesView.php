@@ -2,52 +2,52 @@
 session_start();
 if (isset($_SESSION['email'])){
     
-include "../../Assets/Includes/header_pages.php";
-include "../../Config/dbConnection.php";
+    include "../../Assets/Includes/header_pages.php";
+    include "../../Config/dbConnection.php";
 
-if (isset($_POST['submit'])) {
- 
-    $doc_email = $_SESSION['email'];
-
-    if (isset($_GET['childid'])) {
-        $user_id = mysqli_real_escape_string($con, $_GET['childid']);       
-    } else {
-        header("Location: pediatrician-addNotesView.php?error=missingchildid");
-        exit();
-    }
-    $note_topic = mysqli_real_escape_string($con, $_POST['note_topic']);
-    $note_date = mysqli_real_escape_string($con, $_POST['note_date']);
-    $note_description = mysqli_real_escape_string($con, $_POST['note_description']);
-    $note_records = mysqli_real_escape_string($con, $_POST['note_records']);
+    if (isset($_POST['submit'])) {
     
-    if (empty($note_topic) || empty($note_date) || empty($note_description) || empty($note_records)) {
-        header("Location: pediatrician-addNotesView.php?error=emptyfields&note_topic=" . $note_topic . "&note_date=" . $note_date . "&note_description=" . $note_description . "&note_records=" . $note_records);
-        exit();
-    } else {
-        $sql = "SELECT * FROM doctor_details WHERE doc_email='$doc_email'";
-        $result = mysqli_query($con, $sql);
-        $resultCheck = mysqli_num_rows($result);
-        $row = mysqli_fetch_assoc($result);
-        $doc_id = $row['doc_id'];
-        $doc_type = $row['doc_type'];
+        $doc_email = $_SESSION['email'];
 
-        if ($resultCheck > 0) {
-            $sql = "INSERT into doctor_notes(doc_id, child_id,note_topic, note_date, note_description, note_records,doc_role)
-                    VALUES ('$doc_id','$user_id','$note_topic','$note_date','$note_description','$note_records','$doc_type')";
+        if (isset($_GET['childid'])) {
+            $user_id = mysqli_real_escape_string($con, $_GET['childid']);       
+        } else {
+            header("Location: pediatrician-addNotesView.php?error=missingchildid");
+            exit();
+        }
+        $note_topic = mysqli_real_escape_string($con, $_POST['note_topic']);
+        $note_date = mysqli_real_escape_string($con, $_POST['note_date']);
+        $note_description = mysqli_real_escape_string($con, $_POST['note_description']);
+        $note_records = mysqli_real_escape_string($con, $_POST['note_records']);
+        
+        if (empty($note_topic) || empty($note_date) || empty($note_description) || empty($note_records)) {
+            header("Location: pediatrician-addNotesView.php?error=emptyfields&note_topic=" . $note_topic . "&note_date=" . $note_date . "&note_description=" . $note_description . "&note_records=" . $note_records);
+            exit();
+        } else {
+            $sql = "SELECT * FROM doctor_details WHERE doc_email='$doc_email'";
             $result = mysqli_query($con, $sql);
-    
-            if ($result) {
-                header("Location: pediatrician-viewNotesView.php?success=noteadded");
-                exit();
-            } else {
-                     echo "Error: " . $sql . "<br>" . mysqli_error($con);
-                exit();
+            $resultCheck = mysqli_num_rows($result);
+            $row = mysqli_fetch_assoc($result);
+            $doc_id = $row['doc_id'];
+            $doc_type = $row['doc_type'];
+
+            if ($resultCheck > 0) {
+                $sql = "INSERT into doctor_notes(doc_id, child_id,note_topic, note_date, note_description, note_records,doc_role)
+                        VALUES ('$doc_id','$user_id','$note_topic','$note_date','$note_description','$note_records','$doc_type')";
+                $result = mysqli_query($con, $sql);
+        
+                if ($result) {
+                    header("Location: pediatrician-viewNotesView.php?success=noteadded");
+                    exit();
+                } else {
+                        echo "Error: " . $sql . "<br>" . mysqli_error($con);
+                    exit();
+                }
             }
         }
     }
-}
 
-?>
+     ?>
 
 <html>
 <head>
@@ -95,21 +95,21 @@ if (isset($_POST['submit'])) {
                 </script>
  <button type="clear" name="clear" onclick="clearForm()">Clear</button>
  <a href=" pediatrician-viewNotesView.php"><button class="pd-viewNote-btnMain" >View Notes</button></a>
-</form>
-<div>
+  </form>
+  <div>
             
     </div>
        <!--logout button-->
     <div class="log-out"> 
     <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
     </div>
-</div>
-</body>
-</html>
-<?php }else{
-    header("Location: ../../index.php");
-    exit();
-} ?>
+    </div>
+    </body>
+    </html>
+                 <?php } else {
+                 header("Location: ../../index.php");
+             exit();} ?>
+                      
 
 </body>
 </html>

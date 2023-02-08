@@ -1,8 +1,8 @@
 <?php
-//session_start();
+session_start();
 include "../../Assets/Includes/header_pages.php";
 include "../../Config/dbConnection.php";
-//if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
+if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,22 +19,23 @@ include "../../Config/dbConnection.php";
 <div class="card-pack"><!--gap remover
         --><button class="card" onclick="window.location.href = 'pediatrician-childCardSearchView.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
-                <div class="card-content-right"><p>Child Card Management</p></div>
+                <div class="card-content-right"><p>Child Management</p></div>
             </button><!--gap remover -->
-            <!--gap remover
-        --><button class="card" onclick="window.location.href = ' ';">
+         
+        <button class="card" onclick="window.location.href = ' enterNotes.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
-                <div class="card-content-right"><p>Immunization Details</p></div>
-            </button><!--gap remover -->
+                <div class="card-content-right"><p>Doctor Notes</p></div>
+            </button>
+
            <!--gap remover
-        --><button class="card" onclick="window.location.href = 'enterNotes.php ';">
+        --><button class="card" onclick="window.location.href = 'childs.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
-                <div class="card-content-right"><p>Enter Notes</p></div>
+                <div class="card-content-right"><p>View Pateint Details</p></div>
             </button><!--gap remover -->
             <!--gap remover
         --><button class="card" onclick="window.location.href = 'pediatrician-viewNotesView.php ';">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
-                <div class="card-content-right"><p>View Doctor's Notes</p></div>
+                <div class="card-content-right"><p>Manage Notes</p></div>
             </button><!--gap remover -->
             
         <div class="log-out"> <!--logout button-->
@@ -45,7 +46,7 @@ include "../../Config/dbConnection.php";
 </header>
 </html>
 <?php
-// } else {
-//    header("Location: ../../mainLogin.php");
-//     exit();
-//}?>
+ } else {
+    header("Location: ../../mainLogin.php");
+     exit();
+}?>

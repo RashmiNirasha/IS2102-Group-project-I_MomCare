@@ -6,12 +6,11 @@ include "../../Assets/Includes/header_pages.php";
 
 $id= $_GET['updateid'];
 
-$sql = "SELECT * FROM ped_notes WHERE ped_note_id = '$id'";
+$sql = "SELECT * FROM doctor_notes WHERE note_id = '$id'";
 $result = mysqli_query($con, $sql);
 $row=mysqli_fetch_assoc($result);
 
 $doc_id = $row['doc_id'];
-$mom_id = $row['mom_id'];
 $note_topic = $row['note_topic'];
 $note_date = $row['note_date'];
 $note_description = $row['note_description'];
@@ -25,7 +24,7 @@ if (isset($_POST['submit'])) {
     $note_description = $_POST['note_description'];
     $note_records = $_POST['note_records'];
 
-    $sql="UPDATE ped_notes SET doc_id='$doc_id', mom_id='$mom_id', note_topic='$note_topic', note_date='$note_date', note_description='$note_description', note_records='$note_records' WHERE ped_note_id='$id'";
+    $sql="UPDATE doctor_notes SET doc_id='$doc_id',note_topic='$note_topic', note_date='$note_date', note_description='$note_description', note_records='$note_records' WHERE note_id='$id'";
 
     $result = mysqli_query($con, $sql);
     if($result){
@@ -44,22 +43,19 @@ if (isset($_POST['submit'])) {
 </head> 
 <body>
 
-<div class="maintopic">
-    <h3>Pediareician Notes</h3>
-</div>
+<div class="main-mother">
+        <div class="mom-filter">
+        <h1>Update Pediatrician Notes</h1>
+        </div>
 
 <div class="RegisterMotherInnerDiv">
-<h2>Update Notes</h2>
+
 <form class="PediatrianAddNotesForm" id="pediareicianAddNotes" action=" " method="POST">
 <table>
 
     <tr>
         <td><label for="doctor_id"></label></td>
         <td><input type="hidden" name="doctor_id" id="doctor_id" value=<?php echo $doc_id;?>></td>
-    </tr>
-    <tr>
-        <td><label for="mother_id">Mother Id</label></td>
-        <td><input type="search" placeholder="Search.." name="mom_id" id="mom_id" value=<?php echo $mom_id;?>></td>
     </tr>
     <tr>
         <td><label for="note_date">Choose Date</label></td>

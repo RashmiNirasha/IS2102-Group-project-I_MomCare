@@ -74,7 +74,26 @@
         <ul>
             <li><a href="../index.php">Home</a></li>
             <li><a href="../../About.php">About</a></li>
-            <li><a href="dashboardVog.php">Dashboard</a></li>
+            <li><a > Dashboard</a>
+                <!-- <?php
+            // if (isset($_SESSION['email'])) {
+            //     //choose the right dashboard page
+            //     if ($_SESSION['user_role'] == 'phm') {
+            //         echo '<a href="../../View/PHM/phm-dashboard.html">Dashboard</a>';
+            //     } else if ($_SESSION['user_role'] == 'ped') {
+            //         echo '<a href="../../View/Pediatrician/pediatrician-dashboardView.php">Dashboard</a>';
+            //     } else if ($_SESSION['user_role'] == 'vog') {
+            //         echo '<a href="../../View/VOG/dashboardVog.php">Dashboard</a>';
+            //     } else if ($_SESSION['user_role'] == 'admin') {
+            //         echo '<a href="../../View/Admin/admin-dashboard.php">Dashboard</a>';
+            //     } else if ($_SESSION['user_role'] == 'mother') {
+            //         echo '<a href="../../View/Mother/mother-dashboard.php">Dashboard</a>';
+            //     } else {
+            //         echo 'Dashboard';
+            //     }
+            // }
+            ?> -->
+            </li>
         </ul>
         <img class="profile_pic" src="../../Assets/images/vog/doctor.png" alt="profile_pic">
     </nav> <!-- top navigation bar -- end -->

@@ -14,9 +14,9 @@ if (isset($_SESSION['email'])){
 
 <div class="main-mother">
         <div class="mom-filter">
-        <h1>Find Child Card</h1>
+        <h1>Find Child </h1>
         <form action=" " method="POST">
-            <input class="mom-search" type="search" name="query" id="query" placeholder="Please enter a search term (Ex: First name, Last name, Mother ID">
+            <input class="mom-search" type="search" name="query" id="query" placeholder="Please enter a search term (Ex: First name, Last name, Child ID)" required autofocus>
             <input type="submit" name="submit" value="Search">
             </form>
 
@@ -46,7 +46,8 @@ if (isset($_SESSION['email'])){
                             </div>
                         </div>
                         <div class="mom-btns">
-                        <button name="viewTests" onclick="window.location.href=\'pediatrician-addNotesView.php?childid='.$childid.'\'">Enter Notes</button>
+                        <button type ="submit" name="enter" onclick="window.location.href=">Child Card</button>
+                        <button type ="submit" name="enternotes" onclick="window.location.href=\'ped-doctorNotes.php?childid='.$childid.'\'">Doctor Notes</button>
                         </div>
                     </div>
                     </td>

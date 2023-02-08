@@ -1,9 +1,9 @@
 <?php 
 include "../../Assets/Includes/header_pages.php";
 session_start();
-
-?>
-
+include '../../Config/dbConnection.php';
+if (isset($_SESSION['email'])){
+    ?>
 <!DOCTYPE html>
 <head>
     <title>Home</title>
@@ -13,56 +13,64 @@ session_start();
 <body>
 
 <div class="main-mother">
-
-    <h1>Find Mother/Child</h1>
         <div class="mom-filter">
+        <h1>Find Child </h1>
         <form action=" " method="POST">
-            <input class="mom-search" type="search" name="query" id="query" placeholder="Search">
+            <input class="mom-search" type="search" name="query" id="query" placeholder="Please enter a search term (Ex: First name, Last name, Child ID)" required autofocus>
             <input type="submit" name="submit" value="Search">
             </form>
 
-            <div class="child-details">
-            <?php 
-            include("../../Config/dbConnection.php");
+        </div>
 
-            if (isset($_POST['submit'])) {
+            <table class="MomBarTable">
+            <?php 
+            if(isset($_POST['submit'])){
                 $query = $_POST['query'];
-                $sql = "SELECT * FROM child_details WHERE child_id LIKE '%$query%' OR mom_email LIKE '%$query%' ";
+                $sql = "SELECT * FROM child_details WHERE child_id LIKE '%$query%' OR mom_email LIKE '%$query%' or child_name LIKE '%$query%' ORDER BY child_name ASC";
                 $result = mysqli_query($con, $sql);
                 if ($result) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        $childname = $row['child_name'];
-                        $childid = $row['child_id'];
-                        $mom_email = $row['mom_email'];
-                        $PHM_id = $row['phm_id'];
-
-                        echo '<div class="child-bar">
-                        <div class="child-bar-left">
-                        <span class="material-symbols-outlined">
-                        child_care
-                        </span>
+                        $childname=$row['child_name'];
+                        $childid=$row['child_id'];
+                        $PHM_id=$row['phm_id'];
+                        echo '
+                        <tr>
+                        <td>
+                        <div class="mom-bar">
+                        <div class="mom-bar-left">
+                        <img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic">
                             <div>
-                                <h3>' . $childid . '</h3>
-                                <p class="second-line">Name : ' . $childname . ' </p>
-                                <p class="second-line">PHM ID : ' . $PHM_id . '</p>
+                                <h3>'.$childid.'</h3>
+                                <p class="second-line">Name : '.$childname.' </p>
+                                <label for="mother_id" name="mother_id" type="hidden" value="'.$row['mom_id'].'"></label>
                             </div>
                         </div>
-                        <div class="child-bar-right">
-                            <a href="pediatrician-addNotesView.php?childid=' . $childid . '"><button class="mom-btn">Enter Notes</button></a>
+                        <div class="mom-btns">
+                        <button type ="submit" name="enternotes" onclick="window.location.href=\'pediatrician-addNotesView.php?childid='.$childid.'\'">Enter Notes</button>
+                        <button type ="submit" name="enternotes" onclick="window.location.href=\'pediatrician-viewNotesView.php?childid='.$childid.'\'">View Notes</button>
+
                         </div>
-                    </div>';
+                    </div>
+                    </td>
+                </tr>';
                     }
+                }else{
+                    echo "There are no results matching your search!";
                 }
+            }else{
+                //echo "please enter a search term";
             }
             ?>
-            </div>
-
-            <div class = "enter-notes">
-                
-            </div>
-
-        </div>
+        </table>
     </div>
+       <!--logout button-->
+    <div class="log-out"> 
+    <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
+    </div>
+</div>
 </body>
-
 </html>
+<?php }else{
+    header("Location: ../../index.php");
+    exit();
+} ?>
