@@ -1,7 +1,6 @@
 <?php 
 session_start();
 include '../../Config/dbConnection.php';
-$_SESSION['mom_search'] = $_GET['search'];
 if (isset($_SESSION['email'])){?>
 
 <?php include "../../Assets/Includes/header_pages.php" ?> 
@@ -15,7 +14,8 @@ if (isset($_SESSION['email'])){?>
     <title>Document</title>
     <style><?php include "../../Assets/Css/style-common.css" ?></style>
 </head>
-<body>
+<body class="mothersCardBody">
+    <a href="dashboardVog.php"><button class="goBackBtn">Go back</button></a>
     <div class="main-mother">
         <div class="mom-filter">
         <h1>Find mother card</h1>
@@ -30,7 +30,7 @@ if (isset($_SESSION['email'])){?>
             <?php
             if (isset($_GET['submit'])) {
                 $search = $_GET['mom-search'];
-                $query = "SELECT mom_fname, mom_lname, mom_id, mom_mobile FROM mother_details WHERE mom_id LIKE '%$search%' OR mom_email LIKE '%$search%' OR mom_fname LIKE '%$search%' OR mom_lname LIKE '%$search%' ORDER BY mom_fname ASC    ";
+                $query = "SELECT mom_fname, mom_lname, mom_id, mom_mobile FROM mother_details WHERE mom_id LIKE '%$search%' OR mom_email LIKE '%$search%' OR mom_fname LIKE '%$search%' OR mom_lname LIKE '%$search%' ORDER BY mom_fname ASC";
                 $result = mysqli_query($con, $query);
                 $queryResult = mysqli_num_rows($result);
                 if ($queryResult > 0) { 
@@ -54,9 +54,9 @@ if (isset($_SESSION['email'])){?>
                             </td>
                         </tr>';
                     }
-                }else{
-                    echo "There are no results matching your search!";
-                }
+                }else{ ?>
+                    <p class="error_mother_search"><?php echo "There are no results matching your search!"; ?></p>
+                <?php }
             }else{
                 //echo "please enter a search term";
             }

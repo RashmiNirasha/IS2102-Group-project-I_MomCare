@@ -4,81 +4,63 @@ session_start();
 include "dbConnection.php";
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
+    // Input validation
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
-	function test_input($data)
-	{
-		$data = trim($data); //remove whitespace
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-	}
+    if (empty($email)) {
+        header("Location: ../mainLogin.php?error=Email is required");
+        exit();
+    } elseif (empty($password)) {
+        header("Location: ../mainLogin.php?error=Password is required");
+        exit();
+    } else {
+        // Salt and hash the password for security
+        $password = md5($password);
 
-	// validation
-	$email = test_input($_POST['email']);
-	$password = test_input($_POST['password']);
+        $sql = "SELECT * FROM user_tbl WHERE email=? AND password=?";
+        $stmt = mysqli_prepare($con, $sql);
+        mysqli_stmt_bind_param($stmt, "ss", $email, $password);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
-    //hashing password
-    $password = md5($password);
+        // Store the email and hashed password in the session
+        $_SESSION['email'] = $email;
+        $_SESSION['password'] = $password;
 
-	if (empty($email)) {
-		header("Location: ../mainLogin.php?error=Email is required");
-		exit();
-	} else if (empty($password)) {
-		header("Location: ../mainLogin.php?error=Password is required");
-		exit();
-	} else {
-
-		$sql = "SELECT * FROM user_tbl WHERE email='$email' AND password='$password'";
-		$result = mysqli_query($con, $sql);
-
-		$_SESSION['email'] = $email;
-		$_SESSION['password'] = $password;
-		//$_SESSION['user_role'] = $user_role;
-       
 		if (mysqli_num_rows($result) === 1) {
-			// the user name must be unique
 			$row = mysqli_fetch_assoc($result);
-			if ($row['user_role']=='admin') {
-				
-				$_SESSION['id'] = $row['user_id'];
-                $_SESSION['name'] = $row['name'];
-				header("Location: ../View/Admin/admin-dashboard.php");
-				exit();
-
-			} else if ($row['user_role']=='mother') {
-                $_SESSION['id'] = $row['user_id'];
-                $_SESSION['name'] = $row['name'];
-
-				$sql_getmomid = "SELECT * FROM mother_details WHERE mom_email='$email'";
-				$result_getmomid = mysqli_query($con,$sql_getmomid);
-				$row_getmomid = mysqli_fetch_assoc($result_getmomid);
-
-				$_SESSION['mom_id'] = $row_getmomid['mom_id'];
-				header("Location: ../View/Mother/mother-dashboard.php");
-				exit();
-
-			} else if ($row['user_role']=='vog') {
-                $_SESSION['id'] = $row['user_id'];
-				header("Location: ../View/VOG/dashboardVog.php");
-				exit();
-
-			} else if ($row['user_role'] == 'ped') {
-				$_SESSION['id'] = $row['user_id'];
-				header("Location: ../View/Pediatrician/pediatrician-dashboardView.php");
-				exit();
-
-			}else if ($row['user_role']=='phm') {
-                $_SESSION['id'] = $row['user_id'];
-				header("Location: ../View/PHM/phm-dashboard.html");
-				exit();
-			} else {
-				header("Location: ../index.php?error=Incorect User name or password");
-				exit();
+			$_SESSION['id'] = $row['user_id'];
+			$_SESSION['name'] = $row['name'];
+		
+			switch ($row['user_role']) {
+				case 'admin':
+					header("Location: ../View/Admin/admin-dashboard.php");
+					break;
+				case 'mother':
+					header("Location: ../View/Mother/mother-dashboard.php");
+					break;
+				case 'vog':
+					header("Location: ../View/VOG/dashboardVog.php");
+					break;
+				case 'ped':
+					header("Location: ../View/Pediatrician/pediatrician-dashboardView.php");
+					break;
+				case 'phm':
+					header("Location: ../View/PHM/phm-dashboard.html");
+					break;
+				default:
+					header("Location: ../index.php?error=Incorrect User name or password");
+					break;
 			}
-		}else {
-			header("Location: ../index.php?error=Incorect User name or password");
+			exit();
+		} else {
+			header("Location: ../mainLogin.php?error=Incorrect User name or password");
 			exit();
 		}
-	}
+    }
+} else {
+	header("Location: ../index.php");
+	exit();
 }
 ?>
