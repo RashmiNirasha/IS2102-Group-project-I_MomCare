@@ -58,8 +58,14 @@ if (isset($_POST['submit'])) {
 
     var options = {
       title: 'BMI Chart',
+      //name x axis
+      hAxis: {title: 'Age in weeks',  titleTextStyle: {color: '#333'}},
+      //name y axis
+      vAxis: {title: 'BMI value'},
+
       curveType: 'function',
       legend: { position: 'bottom' }
+
     };
 
     var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
