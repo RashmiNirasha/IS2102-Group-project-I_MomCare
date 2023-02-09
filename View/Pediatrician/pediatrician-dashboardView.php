@@ -28,23 +28,23 @@ $doc_name=$row['doc_name'];
 </div>
 <div class="card-pack"><!--gap remover
         --><button class="card" onclick="window.location.href = 'pediatrician-childCardSearchView.php';">
-                <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
+                <div class="card-content-left"><span class="material-symbols-outlined">Child_care</span></div>
                 <div class="card-content-right"><p>Child Management</p></div>
             </button><!--gap remover -->
          
         <button class="card" onclick="window.location.href = ' enterNotes.php';">
-                <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
+                <div class="card-content-left"><span class="material-symbols-outlined">description</span></div>
                 <div class="card-content-right"><p>Doctor Notes</p></div>
             </button>
 
            <!--gap remover
         --><button class="card" onclick="window.location.href = 'childs.php';">
-                <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
+                <div class="card-content-left"><span class="material-symbols-outlined">List</span></div>
                 <div class="card-content-right"><p>View Pateint Details</p></div>
             </button><!--gap remover -->
             <!--gap remover
         --><button class="card" onclick="window.location.href = 'pediatrician-viewNotesView.php ';">
-                <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
+                <div class="card-content-left"><span class="material-symbols-outlined">note_add</span></div>
                 <div class="card-content-right"><p>Manage Notes</p></div>
             </button><!--gap remover -->
             

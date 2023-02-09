@@ -16,7 +16,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 ?>
 <div class="main-mother">
 <div class="top">
-            <button class="back-btn" onclick="window.location.href = 'pediatrician-dashboardView.php';">Back</button>
+<a href="pediatrician-dashboardView.php"><button class="goBackBtn">Go back</button></a>
         </div>
         <div class="mom-filter">
         <h1>Find the Child</h1>

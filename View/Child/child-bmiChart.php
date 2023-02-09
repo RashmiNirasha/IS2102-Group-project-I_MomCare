@@ -4,30 +4,30 @@ include "../../Config/dbConnection.php";
 
 if (isset($_POST['submit'])) {
     // Store values from the form
-    $date = $_POST["date"];
-    $gender = $_POST["gender"];
+   
     $age = $_POST["age"];
     $height = $_POST["height"];
     $weight = $_POST["weight"];
 
     // Calculate BMI value
-    $bmi = $weight / ($height * $height);
+    $bmi = $weight / ($height * $height)*10000;
 
     // Prepare the insert statement
-    $stmt = $con->prepare("INSERT INTO bmi_values (date, gender, age, height, weight, bmi) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssissd", $date, $gender, $age, $height, $weight, $bmi);
+    $sql = "INSERT INTO bmi_values (age, height, weight, bmi) VALUES (?, ?, ?, ?)";
+  $stmt = mysqli_prepare($con, $sql);
+  mysqli_stmt_bind_param($stmt, "iddd", $age, $height, $weight, $bmi);
 
-    if ($stmt->execute()) {
-        echo "Values stored successfully in the database.";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
+  // Execute the insert statement
+  if (mysqli_stmt_execute($stmt)) {
+    echo "BMI values inserted successfully";
+  } else {
+    echo "Error inserting BMI values: " . mysqli_error($con);
+  }
 
-    // Close connection
-    $con->close();
+  // Close the connection
+  mysqli_close($con);
+  }
 
-    // Generate chart using the values from the database
-}
 ?>
 
 <!DOCTYPE html>
@@ -72,46 +72,14 @@ if (isset($_POST['submit'])) {
 <div class="content">
         <!-- topic and notifications -->
         <div class="heading">
-            <h1>Body Mass Index Calculator</h1>
+            <h1>Body Mass Index Chart</h1>
             <a href="#">
                 <span class="material-icons">notifications</span>
             </a>
         </div>
-<div class="Bmi-container">
 
-<form class="form" id="form" action=" " method="POST">
-<div class="Bmi-cont-1">
-  <table>
-    <tr>
-      <td>Date</td>
-      <td><input type="date" class="text-input" id="date" autocomplete="off" required/>
-    </tr>
-    <tr>
-      <td>Gender</td>
-      <td><label for="Female">Female</label><input type="radio" name="radio" id="f"></td>
-      <td><label for="male">Male</label><input type="radio" name="radio" id="m"></td>
-
-    </tr>
-    <tr>
-      <td>Age</td>
-      <td><input type="text" class="text-input" id="age" autocomplete="off" required/></td>
-    </tr>
-    <tr>
-      <td>Height in m</td>
-      <td><input type="text" class="text-input" id="height" autocomplete="off" required/></td></td>
-    </tr>
-    <tr>
-      <td>Weight in kg</td>
-      <td><input type="text" class="text-input" id="weight" autocomplete="off" required/></td>
-    </tr>
-  </table>
-</div>
-<div class="Bmi-cont-2">
-<button type="submit" id="submit">Calculate</button>
-</div>
-</form>
-</div>
-  <div id="curve_chart" style="width: 900px; height: 500px">
+</br>
+  <div id="curve_chart" style="width: 900px; height: 500px;margin-left: 300px ">
   <!-- use funtion drawchart -->
 
                        

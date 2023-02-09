@@ -13,6 +13,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 <body>
 
 <div class="main-mother">
+<a href="pediatrician-dashboardView.php"><button class="goBackBtn">Go back</button></a>
         <div class="mom-filter">
         <h1>Find Child </h1>
         <form action=" " method="POST">
@@ -59,6 +60,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                 <div class="mom-btns">
                 <button type ="submit" name="enter" onclick="window.location.href=\'../Child/child-generalInformationView.php?childid=' . $childid . '\'">Child Card</button>
                 <button type ="submit" name="enternotes" onclick="window.location.href=\'ped-doctorNotes.php?childid=' . $childid . '\'">Doctor Notes</button>
+                <button type ="submit" name="enternotes" onclick="window.location.href=\'pediatrician-addNotesView.php?childid=' . $childid . '\'">Add Notes</button>
                 </div>
             </div>
             </td>

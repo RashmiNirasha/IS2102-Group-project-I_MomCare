@@ -56,6 +56,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 </head> 
 <body>
 <div class="main-mother">
+<a href="pediatrician-dashboardView.php"><button class="goBackBtn">Go back</button></a>
         <div class="mom-filter">
         <h1>Add Pediatrician Notes</h1>
         </div>
