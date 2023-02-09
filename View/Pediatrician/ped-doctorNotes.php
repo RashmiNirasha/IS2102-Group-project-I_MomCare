@@ -81,34 +81,34 @@
             </div>
         </div>
         <div class="add-report-label"><label for="add-report">Add report</label></div>
-        <div class="add-report">
+        <div class="ped-add-report">
         <form class="PediatrianAddNotesForm" id="pediareicianAddNotes" action="ped-doctorNotes.php?childid=<?php echo $_GET['childid']?>" method="POST">
-<table>
-    <tr>
-        <td><input type="hidden" name="doctor_id" id="doctor_id"></td>
-    </tr>
-    <tr>
-        <td><input type="hidden" placeholder="Search..." name="child_id" id="child_id"></td>
-    </tr>
-    <tr>
-        <td><label for="note_date">Choose Date</label></td>
-        <td><input type="date" name="note_date" id="note_date" ></td>
-    </tr>
-    <tr>
-        <td><label for="note_topic">Title</label></td>
-        <td><input type="text" name="note_topic" id="note_topic" ></td>
-    </tr>
-    <tr>
-        <td><label for="note_description">Description</label></td>
-        <td><textarea name="note_description" id="note_description" ></textarea></td>
-    </tr>
-    <tr>
-        <td><label for="note_records">Select File to Upload</label></td>
-        <td><input type="file" name="test_report" id="test_report" placeholder="Upload report"></td>
-    </tr>
-    
-</table>
-<button type="submit" name="submit">Create</button>
+            <table>
+                <tr>
+                    <td><input type="hidden" name="doctor_id" id="doctor_id"></td>
+                </tr>
+                <tr>
+                    <td><input type="hidden" placeholder="Search..." name="child_id" id="child_id"></td>
+                </tr>
+                <tr>
+                    <td><label for="note_date">Choose Date</label></td>
+                    <td><input type="date" name="note_date" id="note_date" ></td>
+                </tr>
+                <tr>
+                    <td><label for="note_topic">Title</label></td>
+                    <td><input type="text" name="note_topic" id="note_topic" ></td>
+                </tr>
+                <tr>
+                    <td><label for="note_description">Description</label></td>
+                    <td><textarea name="note_description" id="note_description" ></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="note_records">Select File to Upload</label></td>
+                    <td><input type="file" name="test_report" id="test_report" placeholder="Upload report"></td>
+                </tr>
+                
+            </table>
+        <button type="submit" name="submit">Create</button>
 
                 <script>
                     function clearForm() {

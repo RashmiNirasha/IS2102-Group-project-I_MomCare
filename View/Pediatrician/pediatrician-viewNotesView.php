@@ -3,8 +3,6 @@ session_start();
 include "../../Assets/Includes/header_pages.php";
 if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 
-
-?>
 <html>
 <head>
 <style><?php include "../../Assets/Css/style-common.css" ?></style>

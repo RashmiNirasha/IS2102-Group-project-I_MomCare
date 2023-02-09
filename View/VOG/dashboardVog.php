@@ -15,7 +15,7 @@
     <style><?php include "../../Assets/css/style-common.css" ?></style>
 </head>
 <body>
-    <div class="dashboard">
+    <div class="dashboard-vog">
         <div class="card-pack"><!--gap remover
         --><button class="card">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>

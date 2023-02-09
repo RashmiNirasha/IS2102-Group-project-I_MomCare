@@ -5,8 +5,8 @@
 <?php
     if(isset($_POST['add_report'])){
         if(empty($_POST['test_name']) || empty($_POST['note'])) {
-            $color = "red";
-            header("Location: ../../View/VOG/testsVog.php?error2=Please fill all the fields & $color");
+            $mom_id = $_POST['mom_id'];
+            header("Location: ../../View/VOG/testsVog.php?mom_id=$mom_id&error2=Please fill all the fields!");
             exit();
         }else {
             include '../../Config/dbConnection.php';
@@ -29,6 +29,9 @@
                 move_uploaded_file($_FILES['test_report']['tmp_name'], $path);
             }
             // file upload code -- end
+
+            header("Location: ../../View/VOG/testsVog.php?mom_id=$mom_id&error3=Record successfully added!");
+            exit();
         }
 
     }
@@ -48,6 +51,7 @@ echo $_SESSION['mom_search'];
 </head>
 <body>
     <div class="main-mother">
+    <a href="mothers.php"><button class="goBackBtn-motherPage">Go back</button></a>
         <div class="mom-intro">
             <img src="../../Assets/Images/mother/Profile_pic_mother.png" alt="mother-profile-pic">
             <div class="mom-intro-content">
@@ -78,6 +82,8 @@ echo $_SESSION['mom_search'];
         <?php
             if(isset($_GET['error2'])){ ?>
                 <p class="error2"><?php echo $_GET['error2']; ?></p>
+        <?php }else if(isset($_GET['error3'])){ ?>
+                <p class="error3"><?php echo $_GET['error3']; ?> </p>
         <?php } ?>
         <div class="add-report-label"><label for="add-report">Search report</label></div>
         <div class="view-report">
@@ -107,7 +113,9 @@ echo $_SESSION['mom_search'];
                                     <td><?php echo $row['note_date'] ?></td>
                                     <td><a href="testEdit.php"><input class='edit-report-btn' type='button' value='Edit'></a></td>
                                     <td><a target="_blank" href="../../Assets/Images/uploads/tests/<?php echo $row['note_records']; ?>"><input class='view-report-btn' type='button' value='View'></a></td>
-                                    <td><a href="#"><input type="button" class="delete-report-btn" value="Delete"></a></td>
+                                    <td><a href="testRecordDelete.php?note_id=<?php echo $row['note_id']; ?>&mom_id=<?php echo $row['mom_id']; ?>"><input type="button" class="delete-report-btn" value="Delete"></a></td>
+                                    <input type="hidden" name="note_id" value="<?php echo $row['note_id']; ?>">
+                                    <!-- <input type="submit" name="delete" value="Delete"> -->
                                     <!-- <td><a href="download.php?test_report=<?php //echo $row['test_report']; ?>"><input class='view-report-btn' type='button' value='View'></a></td> -->
                                 </tr>
                 <?php
