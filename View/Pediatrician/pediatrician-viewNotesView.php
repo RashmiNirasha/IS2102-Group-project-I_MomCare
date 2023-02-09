@@ -1,6 +1,8 @@
 <?php
 session_start();
 include "../../Assets/Includes/header_pages.php";
+if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
+
 
 ?>
 <html>
@@ -65,3 +67,8 @@ include "../../Assets/Includes/header_pages.php";
     </div>
 </body>
 </html>
+<?php
+ } else {
+    header("Location: ../../mainLogin.php");
+     exit();
+}?>

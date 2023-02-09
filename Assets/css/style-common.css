@@ -454,7 +454,7 @@
     /* row-gap: -160px; */
     width: 100%;
     height: 60%;
-    margin-top: 200px;
+    margin-top: 50px;
     margin-left: 10%;
     margin-right: 10%;
     padding-bottom: 20px;
@@ -2368,7 +2368,7 @@ a {
     font-size: 14px;
 }
 
-.ma-table th, td {
+.ma-table th, .ma-tabl td {
     padding: 1% 0% 1% 1%;
     text-align: left;
     border-bottom: 1px solid #05a9f5;
@@ -2882,4 +2882,12 @@ mom-search {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     margin-left: 200px;
+}
+
+.ped-Dashboard{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    width: 100%;
+    height: 100%;
 }

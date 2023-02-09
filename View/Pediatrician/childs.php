@@ -2,6 +2,8 @@
 session_start();
 include '../../Config/dbConnection.php';
 include "../../Assets/Includes/header_pages.php"; 
+if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
+
 ?>
 <!DOCTYPE html>
 <html lang="en">    
@@ -85,3 +87,8 @@ echo mysqli_error($con);
     </div>
        
     </body>
+    <?php
+ } else {
+    header("Location: ../../mainLogin.php");
+     exit();
+}?>

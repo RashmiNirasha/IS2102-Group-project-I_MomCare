@@ -4,6 +4,12 @@ include "../../Assets/Includes/header_pages.php";
 include "../../Config/dbConnection.php";
 if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 
+<?php 
+$sql="SELECT doc_name FROM doctor_details WHERE doc_email='".$_SESSION['email']."'";
+$result=mysqli_query($con,$sql);
+$row=mysqli_fetch_assoc($result);
+$doc_name=$row['doc_name'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +21,11 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
     <style><?php include "../../Assets/css/style-common.css" ?></style>
 </head>
 <body>
-<div class="dashboard">
+<div class="ped-Dashboard">
+    <div class="dashboard-header">
+    <h1>Welcome to the Dashboard <?php echo $doc_name ?></h1>
+    </div>
+</div>
 <div class="card-pack"><!--gap remover
         --><button class="card" onclick="window.location.href = 'pediatrician-childCardSearchView.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>

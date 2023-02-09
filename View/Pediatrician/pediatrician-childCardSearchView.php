@@ -2,8 +2,8 @@
 include "../../Assets/Includes/header_pages.php";
 session_start();
 include '../../Config/dbConnection.php';
-if (isset($_SESSION['email'])){
-    ?>
+if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
+
 <!DOCTYPE html>
 <head>
     <title>Home</title>
@@ -57,7 +57,7 @@ if (isset($_SESSION['email'])){
                     </div>
                 </div>
                 <div class="mom-btns">
-                <button type ="submit" name="enter" onclick="window.location.href=">Child Card</button>
+                <button type ="submit" name="enter" onclick="window.location.href=\'../Child/child-generalInformationView.php?childid=' . $childid . '\'">Child Card</button>
                 <button type ="submit" name="enternotes" onclick="window.location.href=\'ped-doctorNotes.php?childid=' . $childid . '\'">Doctor Notes</button>
                 </div>
             </div>
@@ -79,7 +79,8 @@ if (isset($_SESSION['email'])){
 </div>
 </body>
 </html>
-<?php }else{
-    header("Location: ../../index.php");
-    exit();
-} ?>
+<?php
+ } else {
+    header("Location: ../../mainLogin.php");
+     exit();
+}?>
