@@ -19,7 +19,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
             <button class="back-btn" onclick="window.location.href = 'pediatrician-dashboardView.php';">Back</button>
         </div>
         <div class="mom-filter">
-        <h1>Find the patient/child</h1>
+        <h1>Find the Child</h1>
         <form action=" " method="GET">
             <input class="mom-search" type="search" name="query" id="query" placeholder="Please enter a search term (Ex: First name, Last name, Child ID)" required autofocus>
             <input type="submit" name="submit" value="Search">

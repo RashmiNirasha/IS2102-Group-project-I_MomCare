@@ -2,7 +2,6 @@
 include "../../Assets/Includes/header_pages.php";
 session_start();
 include '../../Config/dbConnection.php';
-$_SESSION['child_search'] = $_GET['search'];
 if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 
 <!DOCTYPE html>
@@ -26,8 +25,8 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
             <table class="MomBarTable">
             <?php 
            if (isset($_GET['submit'])){
-                $search = $_GET['child_search'];
-                $sql = "SELECT * FROM child_details WHERE child_id LIKE '%$$search%' OR mom_email LIKE '%$$search%' or child_name LIKE '%$query%' ORDER BY child_name ASC";
+                $search = $_GET['search'];
+                $sql = "SELECT * FROM child_details WHERE child_id LIKE '%$search%' OR mom_email LIKE '%$search%' or child_name LIKE '%$search%' ORDER BY child_name ASC";
                 $result = mysqli_query($con, $sql);
                 if ($result) {
                     while ($row = mysqli_fetch_assoc($result)) {

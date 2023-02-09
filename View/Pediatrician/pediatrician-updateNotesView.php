@@ -3,7 +3,8 @@
 session_start();
 include "../../Config/dbConnection.php";
 include "../../Assets/Includes/header_pages.php";
-
+if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
+<?php
 $id= $_GET['updateid'];
 
 $sql = "SELECT * FROM doctor_notes WHERE note_id = '$id'";
@@ -88,3 +89,8 @@ if (isset($_POST['submit'])) {
 </div>
 </body>
 </html>
+<?php
+ } else {
+    header("Location: ../../mainLogin.php");
+     exit();
+}?>

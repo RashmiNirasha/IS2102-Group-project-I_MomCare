@@ -1,6 +1,7 @@
 <?php
 session_start();
-if (isset($_SESSION['email'])){
+if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
+<?php
     
     include "../../Assets/Includes/header_pages.php";
     include "../../Config/dbConnection.php";
@@ -107,9 +108,7 @@ if (isset($_SESSION['email'])){
     </body>
     </html>
                  <?php } else {
-                 header("Location: ../../index.php");
-             exit();} ?>
-                      
-
-</body>
-</html>
+    header("Location: ../../mainLogin.php");
+     exit();
+}?>
+                
