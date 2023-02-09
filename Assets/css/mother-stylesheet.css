@@ -268,6 +268,25 @@ input::file-selector-button {
 .profileUpdate-buttons button:hover{
     color: #111C43;
 }
+.profileUpdate-buttons input[type]:hover{
+    color: #111C43;
+}
+
+/* Password Reset */
+.pass-reset{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 50px;
+    width: 600px;
+    height: 500px;
+    margin-top: 100px;
+    
+    background: #029EE4;
+    box-shadow: 20px 20px 50px rgba(0, 16, 35, 0.12);
+    border-radius: 25px;
+}
 
 /* Mother profile details */
 .profile-content{

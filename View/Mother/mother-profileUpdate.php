@@ -43,7 +43,7 @@ include('../../Config/mother-updateProfile.inc.php');
                     </tr>
                     <tr>
                         <td><p>First Name</p></td>
-                        <td><input type="text" name="mother-fname" value="<?php  echo $mother_fname?>"></td>
+                        <td><input type="text" name="mother-fname" value="<?php  echo $mother_fname?>" required></td>
                     </tr>
                     <tr>
                         <td><p>Middle Name</p></td>
@@ -51,23 +51,23 @@ include('../../Config/mother-updateProfile.inc.php');
                     </tr>
                     <tr>
                         <td><p>Last Name</p></td>
-                        <td><input type="text" name="mother-lname" value="<?php  echo $mother_lname?>"></td>
+                        <td><input type="text" name="mother-lname" value="<?php  echo $mother_lname?>" required></td>
                     </tr>
                     <tr>
                         <td><p>Address</p></td>
-                        <td><input type="text" name="mother-address" value="<?php  echo $mother_address?>"></td>
+                        <td><input type="text" name="mother-address" value="<?php  echo $mother_address?>" required></td>
                     </tr>
                     <tr>
                         <td><p>Email</p></td>
-                        <td><input type="text" name="mother-email" value="<?php  echo $mother_email?>"></td>
+                        <td><input type="text" name="mother-email" value="<?php  echo $mother_email?>" required></td>
                     </tr>
                     <tr>
                         <td><p>Mobile Number</p></td>
-                        <td><input type="text" name="mother-mobile" value="<?php  echo $mother_mobile?>"></td>
+                        <td><input type="text" name="mother-mobile" value="<?php  echo $mother_mobile?>" required></td>
                     </tr>
                     <tr>
                         <td><p>Fixedline Number</p></td>
-                        <td><input type="text" name="mother-landline" value="<?php  echo $mother_landline?>"></td>
+                        <td><input type="text" name="mother-landline" value="<?php  echo $mother_landline?>" required></td>
                     </tr>
                     <tr>
                         <td><p>Profile Picture</p></td>
@@ -75,11 +75,11 @@ include('../../Config/mother-updateProfile.inc.php');
                     </tr>
                     <tr>
                         <td><p>Guardian Name</p></td>
-                        <td><input type="text" name="guardian-name" value="<?php  echo $guardian_name?>"></td>
+                        <td><input type="text" name="guardian-name" value="<?php  echo $guardian_name?>" required></td>
                     </tr>
                     <tr>
                         <td><p>Guardian Mobile</p></td>
-                        <td><input type="text" name="guardian-mobile" value="<?php  echo $guardian_mobile?>"></td>
+                        <td><input type="text" name="guardian-mobile" value="<?php  echo $guardian_mobile?>" required></td>
                     </tr>
                 </table>
             <!-- buttons -->

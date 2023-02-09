@@ -1,5 +1,7 @@
 <?php
     require_once 'dbConnection.php';
+    session_start ();
+    
 
     $sql = "SELECT * FROM mother_details";
     $result = $con->query($sql);

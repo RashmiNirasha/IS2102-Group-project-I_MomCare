@@ -1,4 +1,7 @@
-<?php include "../../Assets/Includes/header_pages.php" ?>
+<?php 
+    //include "mother-header.php";
+    include "../../Config/mother-mcardPage1.inc.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,11 +28,11 @@
                                     <div class="MotherStatus"><b>Blue</b></div>
                                     <tr>
                                         <td class="tableTitle"><b>Blood group:</b></td>
-                                        <td>A+</td>
+                                        <td><?php echo $mom_blood_group ?></td>
                                         <td class="tableTitle"><b>BMI:</b></td>
-                                        <td>23</td>
+                                        <td><?php echo $mom_bmi ?></td>
                                         <td class="tableTitle"><b>Height(cm):</b></td>
-                                        <td>162</td>
+                                        <td><?php echo $mom_height ?></td>
                                     </tr>
                                 <table>
                                     <tr>

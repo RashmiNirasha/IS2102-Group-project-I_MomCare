@@ -75,7 +75,7 @@ include('../../Config/mother-viewProfile.inc.php')
     </div>
     <div class="profile-buttons">
         <a href="mother-profileUpdate.php"><button class="edit" style="background:#24D4B9;">Edit Profile</button></a>
-        <a href="mother-changePassword.php"><button class="change" style="background:#EA2727;">Change Password</button></a>
+        <a href="mother-passwordReset.php"><button class="change" style="background:#EA2727;">Change Password</button></a>
         <a href="mother-card.php"><button class="view" style="background:#029EE4;">View Mother Card</button></a>
     </div>
 </body>

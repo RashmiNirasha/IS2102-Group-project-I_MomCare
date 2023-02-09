@@ -48,6 +48,12 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 			} else if ($row['user_role']=='mother') {
                 $_SESSION['id'] = $row['user_id'];
                 $_SESSION['name'] = $row['name'];
+
+				$sql_getmomid = "SELECT * FROM mother_details WHERE mom_email='$email'";
+				$result_getmomid = mysqli_query($con,$sql_getmomid);
+				$row_getmomid = mysqli_fetch_assoc($result_getmomid);
+
+				$_SESSION['mom_id'] = $row_getmomid['mom_id'];
 				header("Location: ../View/Mother/mother-dashboard.php");
 				exit();
 
