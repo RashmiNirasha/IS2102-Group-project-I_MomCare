@@ -2091,7 +2091,7 @@ a {
     background-color: rgb(1, 143, 225);
 }
 
-.a-card .a-icon-case .material-icons {
+.a-icon-case .material-icons {
     color: white;
     font-size: 40px;
 }
@@ -2188,6 +2188,9 @@ a {
     text-decoration: none;
     display: block;
 }
+
+  
+
 .a-dropdown-content a:hover, .au-dropdown-content a:hover {background-color: #ddd;}
 
 .a-dropdown:hover .a-dropdown-content, .a-dropdown:hover .au-dropdown-content {display: block;}
@@ -2209,7 +2212,7 @@ a {
 }
 
 .au-doctor-form form {
-    padding: 31px;
+    padding: 27px;
 }
 
 .au-first-raw {
@@ -2328,64 +2331,55 @@ a {
 
 /* ------------------------- mother list -------------------------------- */
 
-.ml-middle {
-    display: flex;
-    align-items: center;
-    margin-left: 78%;
-}
-
-.ml-middle img {
-    padding: 10px;
-    width: 50px;
-    height: 50px; 
-}
-
 .ml-bar-container{
     display: grid;
-
+    margin-top: 3.5%;
 }
 
 .ml-bar {
     display: flex;
     justify-content: space-between;
-    width: 70%;
-    border-radius: 10px;
+    width: 60%;
+    border-radius: 20px;
     background-color: #05a9f5;
-    height: 12vh;
-    padding: 20px 75px;
+    height: 10vh;
+    padding: 1%;
     align-items: center;
-    margin-top: 12px;
     margin-left: 15%;
+    margin-bottom: 1%;
 }
 
 .ml-img-manage {
     display: flex;
+    width: 80%;
+    margin-left: 2%;
 }
 
-.ml-img-manage img{
-    width: 40px;
-    height: 40px;
+.ml-img-manage .material-icons{
+    font-size: 36px;
+    color: white;
+    margin-top: 0.7vh;
 }
 
 .ml-text-manage {
-    padding-left: 20px;
+    padding-left: 5%;
 }
 
 .ml-text-manage h3 {
     color: white;
     font-weight: 600;
-    padding-bottom: 3px;
 }
 
 .ml-text-manage p {
     color: white;
-    font-weight: 0;
-    font-size: 13.5px;
+    font-weight: 400;
+    /* margin-top: 1vh; */
+    font-size: 11px;
 }
 
 .ml-btn-container {
-    display: flex;
     justify-content: center;
+    margin-right: 8.5%;
 }
 
 .ml-btn-manage input {
@@ -2393,9 +2387,11 @@ a {
     color: #05a9f5;
     border-radius: 8px;
     border-style: none;
-    width: 100px;
-    height: 40px;
-    margin: 10px;
+    width: 150%;
+    height: 4.5vh;
+    margin: 0.7vh;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 .ml-btn-manage input:hover {
@@ -2404,34 +2400,32 @@ a {
 
 /* ------------------------- Admin manage users -------------------------------- */
 .ma-table {
-    height: 80%;
-    width: 90%;
+    max-width: 90%;
     background-color: white;
-    /* border: solid 5px rgb(177, 217, 238); */
-    /* box-shadow: 0 0 40px 0 #ddd; */
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 27px;
-    border-radius: 10px;
+    margin-top: 3.5%;
     position: absolute;
+    border: 3.5px solid #05a9f5;
+    border-radius: 10px;
 }
 
 .ma-table table {
-    font-size: 15px;
     width: 100%;
+    border-collapse: collapse;
 }
 
-.ma-table table, .ma-table td, .ma-table th {  
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-
-.ma-table th, .ma-table td {
-    padding: 10px;
-    height: 50px;
+.ma-table th {
+    font-size: 15px;
+    padding-bottom: 1%;
+    padding-top: 2%;
 }
 
-.ma-table th, .ma-tabl td {
+.ma-table td {
+    font-size: 14px;
+}
+
+.ma-table th, td {
     padding: 1% 0% 1% 1%;
     text-align: left;
     border-bottom: 1px solid #05a9f5;
@@ -2445,17 +2439,100 @@ a {
 
 .ma-actions {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.ma-btn-action {
-    background-color: #05a9f5;
-    color: white;
-    border-radius: 8px;
-    border-style: none;
-    width: 100px;
-    height: 40px;
-    margin-left: 10px;
+/* .ma-actions a {
+    width: 45px;
+    height:45px;
+    margin-left:7%;
+    margin-top: 10%;
+    color: #05a9f5;
+} */
+
+.ma-actions a .material-icons {
+    font-size: 24px;
+    /* margin-left:7%; */
+    margin-top: 10%;
+    color: #05a9f5;
 }
+
+/* .ma-img-action {
+    width: 45px;
+    height:45px;
+    margin-left:7%;
+    margin-top: 10%;
+    color: #05a9f5;
+} */
+
+.ma-searchbar {
+    display: flex;
+    width: 350rem;
+    height: 5vh;
+    background-color: white;
+    border: 3px solid rgb(177, 217, 238);
+    border-radius: 10px;
+    outline-style: none;
+}
+
+.ma-searchbar button {
+    border-style: none;
+    background-color: rgb(177, 217, 238);
+    width: 15%;
+    
+}
+
+.ma-searchbar button .material-icons {
+    font-size: 24px;
+    padding: 5%;
+    color: #666668;
+}
+
+.ma-searchbar input {
+    border-style: none;
+    outline-style: none;
+    padding: 15px;
+    width: 85%;
+    margin-left: 3%;
+}
+
+/* ------------------------- Notification -------------------------------- */
+
+.n-bar {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    border-radius: 25px;
+    background-color: #05a9f5;
+    height: 8.5vh;
+    padding: 20px 50px;
+    align-items: center;
+    margin: 0% 0% 1% 15%;
+ }
+
+ .n-body1 .material-icons {
+    color: red;
+    font-size: 36px;
+    margin-top: 1%
+ }
+
+ .n-body1, .n-body2 {
+    display: flex;
+ }
+
+ .n-topic, .n-date, .n-time{
+    margin-left: 10px;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 11px;
+ }
+
+.n-topic p{
+    font-size: 12px;
+    font-weight: 500;
+ }
 
 /* ------------------------- PHM Mother List -------------------------------- */
 
