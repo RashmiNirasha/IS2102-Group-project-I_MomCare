@@ -100,13 +100,9 @@
             </div>
             </div>
         </div>
-        <div class="a-content-2">
-            <span></span>
-            <a href = "..\..\Config\admin-logout.php"><button>
-                <div class="a-btn-text"><h6>Log out</h6></div>
-                <i class="material-icons" alt="logout">logout</i>
-            </button></a>
-        </div>
+        <div class="log-out"> <!--logout button-->
+        <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
+    </div>  
     </div>
 </body>
 </html>
