@@ -13,17 +13,15 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 
 ?>
 <div class="main-mother">
-<div class="top">
 <a href="pediatrician-dashboardView.php"><button class="goBackBtn">Go back</button></a>
-        </div>
+    </div>
         <div class="mom-filter">
-        <h1>Find the Child</h1>
+            <h1>Find the Child</h1>
         <form action=" " method="GET">
             <input class="mom-search" type="search" name="query" id="query" placeholder="Please enter a search term (Ex: First name, Last name, Child ID)" required autofocus>
             <input type="submit" name="submit" value="Search">
             <button class="btnMain-2" onclick="window.location.href = 'pediatrician-childCardSearchView.php';">Add Note</button>
             </form>
-           
         </div>
         <div class="common_list_content">
         <?php 

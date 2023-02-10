@@ -23,7 +23,7 @@ $doc_name=$row['doc_name'];
 <body>
 <div class="ped-Dashboard">
     <div class="dashboard-header">
-    <h1>Welcome to the Dashboard <?php echo $doc_name ?></h1>
+        <h1>Welcome to the Dashboard Dr. <?php echo $doc_name ?></h1>
     </div>
 </div>
 <div class="card-pack"><!--gap remover

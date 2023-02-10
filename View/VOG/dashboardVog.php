@@ -3,7 +3,12 @@
     include '../../Config/dbConnection.php';
     if (isset($_SESSION['email'])){?>
 <?php include "../../Assets/Includes/header_pages.php" ?>
-
+<?php 
+$sql="SELECT doc_name FROM doctor_details WHERE doc_email='".$_SESSION['email']."'";
+$result=mysqli_query($con,$sql);
+$row=mysqli_fetch_assoc($result);
+$doc_name=$row['doc_name'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +21,9 @@
 </head>
 <body>
     <div class="dashboard-vog">
+        <div class="dashboard-header">
+            <h1>Welcome to the Dashboard <?php echo $doc_name ?></h1>
+        </div>
         <div class="card-pack"><!--gap remover
         --><button class="card">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>

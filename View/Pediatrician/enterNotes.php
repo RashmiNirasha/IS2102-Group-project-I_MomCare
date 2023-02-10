@@ -34,6 +34,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                         $childname=$row['child_name'];
                         $childid=$row['child_id'];
                         $PHM_id=$row['phm_id'];
+                        $mom_id=$row['guardian_id'];
                         echo '
                         <tr>
                         <td>
@@ -43,7 +44,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                             <div>
                                 <h3>'.$childid.'</h3>
                                 <p class="second-line">Name : '.$childname.' </p>
-                                <label for="mother_id" name="mother_id" type="hidden" value="'.$row['mom_id'].'"></label>
+                                <label for="mother_id" name="mother_id" type="hidden" value="'.$row['guardian_id'].'"></label>
                             </div>
                         </div>
                         <div class="mom-btns">

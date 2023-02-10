@@ -12,11 +12,11 @@ if (isset($_SESSION['email'])){?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <style><?php include "../../Assets/css/style-common.css" ?></style>
 </head>
 <body>
     <div class="dashboard">
-
         <div class="card-pack">
         <h1>Hi <?php
       echo $_SESSION['name'];
@@ -24,7 +24,6 @@ if (isset($_SESSION['email'])){?>
         --><button class="card">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
                 <div class="card-content-right"><p>Schedule Manager</p></div>
-            
             </button><!--gap remover
         --><button class="card" onclick="window.location.href = 'motherCardPage1.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">pregnant_woman</span></div>
