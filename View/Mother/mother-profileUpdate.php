@@ -18,7 +18,7 @@ include('../../Config/mother-updateProfile.inc.php');
 </head>
 <body>
     <?php 
-    include('mother-header.php');
+    //include('mother-header.php');
     ?>
     <div class="profile-page-content">
         <!-- pro pic -->

@@ -2,7 +2,7 @@
 include('mother-header.php');
 require_once '../../Config/dbConnection.php';
     session_start();
-    if (isset($_SESSION['mother_email'])){
+    if (isset($_SESSION['mom_id'])){
 ?>
 
 <!DOCTYPE html>

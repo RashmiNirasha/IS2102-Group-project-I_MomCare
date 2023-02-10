@@ -1,6 +1,5 @@
 <?php 
     include "../../Config/mother-mcardPage1.inc.php";
-    include("../../Config/mainLoginModel.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +12,7 @@
 </head>
 <body>
     <?php 
-    //include('mother-header.php');
-    
+    include('mother-header.php');
     ?>
     <div class="MotherCardMainDiv">
         <div class="SectionNameDiv">
@@ -317,10 +315,10 @@
                                     <th>Age</th>
                                 </tr>
                                 <?php
-                                    $sql = "SELECT * FROM pregnancy_history WHERE mother_id = '$mother_id'";
-                                    $result = mysqli_query($conn, $sql);
+                                    $sql = "SELECT * FROM mcard_preghistory WHERE mom_id = '$mom_id'";
+                                    $result = $con->query($sql);
                                     if($result->num_rows > 0){
-                                        while($row = $result->fetch_assoc()){
+                                        while($row=mysqli_fetch_assoc($result)){
                                             $pregnancy_type = $row['pregnancy_type'];
                                             $antenatal = $row['antenatal'];
                                             $place = $row['place'];
@@ -343,8 +341,9 @@
                                             echo $output;
                                         }
                                     }
-
-                                
+                                    else{
+                                        echo "0 results";
+                                    }
                                 ?>
                             </table>
                         </div>
