@@ -2441,7 +2441,7 @@ a {
     font-size: 14px;
 }
 
-.ma-table th, td {
+.ma-table th, .ma-table td {
     padding: 1% 0% 1% 1%;
     text-align: left;
     border-bottom: 1px solid #05a9f5;

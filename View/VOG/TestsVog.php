@@ -20,7 +20,7 @@
             $_FILES['test_report']['name'] = uniqid("test-") . "." . $filex;
             $test_report = $_FILES['test_report']['name'];
             $path = "../../Assets/Images/uploads/tests/".$test_report;
-            $sql = "INSERT INTO doctor_notes (note_topic, note_description, note_records, mom_id) VALUES ('$test_name',' $note','$test_report', '$mom_id')";
+            $sql = "INSERT INTO doctor_notes (note_topic, note_description, note_records, mom_id) VALUES ('$test_name',' $note', '$test_report', '$mom_id')";
             $result = mysqli_query($con, $sql,);
     
             // file upload code -- start
@@ -110,7 +110,7 @@ echo $_SESSION['mom_search'];
                                     <td><?php echo $row['doc_id']?></td>
                                     <td><?php echo $row['note_topic'] ?> </td>
                                     <td><?php echo $row['note_description'] ?></td>
-                                    <td><?php echo $row['note_date'] ?></td>
+                                    <td><?php echo date("y-m-d") ?></td>
                                     <td><a href="testEdit.php"><input class='edit-report-btn' type='button' value='Edit'></a></td>
                                     <td><a target="_blank" href="../../Assets/Images/uploads/tests/<?php echo $row['note_records']; ?>"><input class='view-report-btn' type='button' value='View'></a></td>
                                     <td><a href="testRecordDelete.php?note_id=<?php echo $row['note_id']; ?>&mom_id=<?php echo $row['mom_id']; ?>"><input type="button" class="delete-report-btn" value="Delete"></a></td>
