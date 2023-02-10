@@ -1,6 +1,6 @@
 <?php
     include "../../Assets/Includes/header_admin.php";
-    // include "..\..\Config\admin-managedoctorprocess.php";
+    include "..\..\Config\admin-managephmprocess.php";
     // session_start();
     // if (isset($_SESSION['s_email'])){
 ?>
@@ -57,51 +57,42 @@
                     <th>Work Place</th>
                     <th>Action</th>
                 </tr>
-                <tr>
-                    <td>P01</td>
-                    <td>Ama Rathnayake</td>
-                    <td>071 876 5637</td>
-                    <td>ama@chiranthi.gmail.com</td>
-                    <td>Ranna, Tangalle</td>
-                    <td>28 years</td>
-                    <td>Colombo</td>
-                    <td><div class="ma-actions">
+                <?php 
+                if ($result->num_rows>0){
+                    while($row = $result->fetch_assoc()){
+                        $id = $row['phm_id'];
+                        $name = $row['phm_name'];
+                        $work = $row['phm_workplace'];
+                        $age = $row['phm_age'];
+                        $address = $row['phm_address'];
+                        $email = $row['phm_email'];
+                        $tel = $row['phm_tele'];
+            
+
+                $output = '<tr>';
+                $output .= "<td>$id</td>";
+                $output .= "<td>$name</td>";
+                $output .= "<td>$tel</td>";
+                $output .= "<td>$email</td>";
+                $output .= "<td>$address</td>";
+                $output .= "<td>$age</td>";
+                $output .= "<td>$work</td>";
+                $output .= '<td><div class="ma-actions">
                             <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="view icon">visibility</i></div></a>
-                            <a href = "admin-updatephm.php"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
-                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="delete icon">delete</i></div></a>
+                            <a href = "admin-updatephm.php?id=';
+                $output .=$id;
+                $output .='"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
+                            <a href = "..\..\Config\admin-deletephmprocess.php?status=delete&id=';
+                $output .=$id;
+                $output .='"><div class="ma-img-action"><i class="material-icons" alt="delete icon">delete</i></div></a>
                         </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>P01</td>
-                    <td>Ama Rathnayake</td>
-                    <td>071 876 5637</td>
-                    <td>ama@chiranthi.gmail.com</td>
-                    <td>Ranna, Tangalle</td>
-                    <td>28 years</td>
-                    <td>Colombo</td>
-                    <td><div class="ma-actions">
-                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="view icon">visibility</i></div></a>
-                            <a href = "admin-updatephm.php"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
-                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="delete icon">delete</i></div></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>P01</td>
-                    <td>Ama Rathnayake</td>
-                    <td>071 876 5637</td>
-                    <td>ama@chiranthi.gmail.com</td>
-                    <td>Ranna, Tangalle</td>
-                    <td>28 years</td>
-                    <td>Colombo</td>
-                    <td><div class="ma-actions">
-                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="view icon">visibility</i></div></a>
-                            <a href = "admin-updatephm.php"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
-                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="delete icon">delete</i></div></a>
-                        </div>
-                    </td>
-                </tr>
+                    </td>';
+                '</tr>';
+                echo "$output";
+
+                    }
+                }
+                ?>
             </table>
             </div> 
         </div>

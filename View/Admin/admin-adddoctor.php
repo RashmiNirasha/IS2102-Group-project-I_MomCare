@@ -56,10 +56,14 @@ include "../../Assets/Includes/header_admin.php";
             <div class="au-doctor-form">
                 <form action="..\..\Config\admin-adddoctorprocess.php" method="post">
                     <div class="au-first-raw">
-                        <div class="au-doctor-id"><label>Doctor_ID</label  name="docid"><input type="text" name="docid" disabled></div>
+                        <div class="au-doctor-id"><label>Doctor_ID</label>
+                        <input value = "<?php $prefix = 'DOCID_';
+                                            $id = $prefix . uniqid();
+                                            echo $id;?>"
+                        type="text" name="docid" readonly></div>
                             <select class="au-dropdown" name = "dtype">
-                                <option value="VOG">VOG</option>
-                                <option value="Pediatrician">Pediatrician</option>
+                                <option value="vog">VOG</option>
+                                <option value="ped">Pediatrician</option>
                                 <!--<option value="mo">MO</option>-->
                                 <option value="" selected>select</option>
                             </select>

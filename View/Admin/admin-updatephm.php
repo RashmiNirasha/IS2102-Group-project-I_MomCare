@@ -1,5 +1,6 @@
 <?php
-include "../../Assets/Includes/header_admin.php";
+include "..\..\Config\admin-updatephmSQLprocess.php";
+include "..\..\Assets\Includes\header_admin.php";
 // session_start();
 // if (isset($_SESSION['s_email'])){
 
@@ -37,7 +38,7 @@ include "../../Assets/Includes/header_admin.php";
                             if (isset($_GET['status']) && $_GET['status']=='erroremptyField'){
                                 echo "<p class='au-imp-message'>All the fields are required.</p>";
                             }elseif (isset($_GET['status']) && $_GET['status']=='success'){
-                                echo "<p class='au-nor-message'>Record Added Successfully.</p>";
+                                echo "<p class='au-nor-message'>Record Updated Successfully.</p>";
                                 // echo "<script>setTimeout(\"location.href = 'admin-managedoctor.php';\",1500);</script>";
                             }
                         ?>
@@ -54,9 +55,9 @@ include "../../Assets/Includes/header_admin.php";
              <a href = "admin-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
             </div></div>
             <div class="au-doctor-form">
-                <form action="..\..\Config\admin-adddoctorprocess.php" method="post">
+                <form action="..\..\Config\admin-updatephmprocess.php" method="post">
                     <div class="au-first-raw">
-                        <div class="au-doctor-id"><label>PHM_ID</label  name="docid"><input type="text" name="phmid" disabled></div>
+                        <div class="au-doctor-id"><label>PHM_ID</label  name="phmid"><input type="text" name="phmid" value = "<?php  echo $id?>" readonly></div>
                         <span> </span>
                         </div>
                     <div class="au-middle">
@@ -71,13 +72,13 @@ include "../../Assets/Includes/header_admin.php";
                         <label>Work Place:</label>
                         </div>
                         <div class="au-inputs">
-                        <input type="text" name="name">
-                        <input type="text" name="age">
-                        <input type="text" name="tel">
-                        <input type="email" name="email">
-                        <input type="text" name="address">
-                        <input type="date" name="dob">
-                        <input type="text" name="work">
+                        <input type="text" name="name" value = "<?php  echo $name?>">
+                        <input type="text" name="age" value = "<?php  echo $age?>">
+                        <input type="text" name="tel" value = "<?php  echo $tel?>">
+                        <input type="email" name="email" value = "<?php  echo $email?>">
+                        <input type="text" name="address" value = "<?php  echo $address?>">
+                        <input type="date" name="dob" value = "<?php  echo $dob?>">
+                        <input type="text" name="work" value = "<?php  echo $work?>">
                         </div>
                         </div>
                         <div class="au-btn">

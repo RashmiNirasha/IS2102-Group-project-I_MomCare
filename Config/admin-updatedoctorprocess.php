@@ -45,27 +45,26 @@ function is_array_empty($arr){
             echo "$doc_idExists";
 
 
-            if ($doc_idExists == 0){
+            if ($doc_idExists == 1){
 
-                //insert data
-                $sql_insert = "INSERT INTO doctor_details (doc_id, doc_type, doc_name, doc_age, doc_address, doc_DOB, doc_email, doc_tele, doc_workplace) VALUES 
-                ('$id', '$type', '$name', '$age', '$address', '$dob', '$email', '$tel', '$work')";
+                //update data
+                $sql_update = "UPDATE doctor_details SET doc_id='$id', doc_type='$type', doc_name='$name', doc_age='$age', doc_address='$address', doc_DOB='$dob', doc_email='$email', doc_tele='$tel', doc_workplace='$work' where doc_id = '$id' ";
 
-                echo $sql_insert;
+                echo $sql_update;
 
-                $insert = $con->query($sql_insert);
-                echo "$insert";
-                if ($insert){
-                    header("Location:..\View\Admin\admin-adddoctor.php?status=success");
+                $update = $con->query($sql_update);
+                echo "$update";
+                if ($update){
+                    header("Location:..\View\Admin\admin-updatedoctor.php?status=success");
                 }
-            }elseif ($doc_idExists == 1){
-                header("Location:..\View\Admin\admin-adddoctor.php?status=errorIDTaken");
+            }elseif ($doc_idExists == 0){
+                header("Location:..\View\Admin\admin-updatedoctor.php?status=errorIDTaken");
             }
             
         }
         }
     else{
-        header("Location:..\View\Admin\admin-adddoctor.php?status=erroremptyField");
+        header("Location:..\View\Admin\admin-updatedoctor.php?status=erroremptyField");
     }
 
 ?>

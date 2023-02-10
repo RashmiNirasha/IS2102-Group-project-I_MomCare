@@ -23,8 +23,7 @@ function is_array_empty($arr){
     //When the button is clicked
         if (isset($_POST['insert'])){
 
-            $id = $_POST['docid'];
-            $type = $_POST['dtype'];
+            $id = $_POST['phmid'];
             $name = $_POST['name'];
             $age = $_POST['age'];
             $address = $_POST['address'];
@@ -34,38 +33,37 @@ function is_array_empty($arr){
             $work = $_POST['work'];
 
             //Check whether the Doctor ID is already taken
-            $sql_check = "(SELECT count(doc_id) as 'doc' FROM doctor_details WHERE doc_id='$id');";
+            $sql_check = "(SELECT count(phm_id) as 'phm' FROM phm_details WHERE phm_id='$id');";
             $check = $con->query($sql_check);
 
             if ($check->num_rows>0){
                 while ($row = $check->fetch_assoc()){
-                    $doc_idExists ="$row[doc]";
+                    $doc_idExists ="$row[phm]";
                 }
             }
             echo "$doc_idExists";
 
 
-            if ($doc_idExists == 0){
+            if ($doc_idExists == 1){
 
-                //insert data
-                $sql_insert = "INSERT INTO doctor_details (doc_id, doc_type, doc_name, doc_age, doc_address, doc_DOB, doc_email, doc_tele, doc_workplace) VALUES 
-                ('$id', '$type', '$name', '$age', '$address', '$dob', '$email', '$tel', '$work')";
+                //update data
+                $sql_update = "UPDATE phm_details SET phm_id='$id', phm_name='$name', phm_age='$age', phm_address='$address', phm_DOB='$dob', phm_email='$email', phm_tele='$tel', phm_workplace='$work' where phm_id = '$id' ";
 
-                echo $sql_insert;
+                echo $sql_update;
 
-                $insert = $con->query($sql_insert);
-                echo "$insert";
-                if ($insert){
-                    header("Location:..\View\Admin\admin-adddoctor.php?status=success");
+                $update = $con->query($sql_update);
+                echo "$update";
+                if ($update){
+                    header("Location:..\View\Admin\admin-updatedoctor.php?status=success");
                 }
-            }elseif ($doc_idExists == 1){
-                header("Location:..\View\Admin\admin-adddoctor.php?status=errorIDTaken");
+            }elseif ($doc_idExists == 0){
+                header("Location:..\View\Admin\admin-updatedoctor.php?status=errorIDTaken");
             }
             
         }
         }
     else{
-        header("Location:..\View\Admin\admin-adddoctor.php?status=erroremptyField");
+        header("Location:..\View\Admin\admin-updatedoctor.php?status=erroremptyField");
     }
 
 ?>

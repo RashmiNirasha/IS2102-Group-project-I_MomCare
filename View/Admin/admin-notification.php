@@ -42,7 +42,7 @@ include "../../Assets/Includes/header_admin.php";
                 <div class="n-bar">
                     <div class="n-body1">
                         <i class="material-icons" alt="notification icon">notifications</i>
-                        <div class="n-topic"><p>Topic: Appointment alert</p></div>
+                        <div class="n-topic"><p>Topic: New User Registration alert</p></div>
                     </div>
                     <div class="n-body2">
                         <div class="n-date"><p>Date: 28/10/2022</p></div>
@@ -52,7 +52,7 @@ include "../../Assets/Includes/header_admin.php";
                 <div class="n-bar">
                     <div class="n-body1">
                         <i class="material-icons" alt="notification icon">notifications</i>
-                        <div class="n-topic"><p>Topic: Appointment alert</p></div>
+                        <div class="n-topic"><p>Topic: New User Registration alert</p></div>
                     </div>
                     <div class="n-body2">
                         <div class="n-date"><p>Date: 28/10/2022</p></div>

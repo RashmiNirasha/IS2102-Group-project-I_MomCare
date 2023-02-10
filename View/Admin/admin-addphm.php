@@ -54,9 +54,13 @@ include "../../Assets/Includes/header_admin.php";
             <a href = "admin-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
             </div></div>
             <div class="au-doctor-form">
-                <form action="..\..\Config\admin-adddoctorprocess.php" method="post">
+                <form action="..\..\Config\admin-addphmprocess.php" method="post">
                     <div class="au-first-raw">
-                        <div class="au-doctor-id"><label>PHM_ID</label  name="docid"><input type="text" name="phmid" disabled></div>
+                        <div class="au-doctor-id"><label>PHM_ID</label  name="phmid">
+                        <input type="text" name="phmid" value = "<?php $prefix = 'PHMID_';
+                                                                    $id = $prefix . uniqid();
+                                                                    echo $id;?>"
+                        readonly></div>
                         <span> </span>
                         </div>
                     <div class="au-middle">

@@ -1,7 +1,7 @@
 <?php
     include "../../Assets/Includes/header_admin.php";
-    // include "..\..\Config\admin-managedoctorprocess.php";
-    // session_start();
+    include "..\..\Config\admin-managedoctorprocess.php";
+    session_start();
     // if (isset($_SESSION['s_email'])){
 ?>
 
@@ -58,7 +58,47 @@
                     <th>Type</th>
                     <th>Action</th>
                 </tr>
-                <tr>
+
+                <?php 
+                if ($result->num_rows>0){
+                    while($row = $result->fetch_assoc()){
+                        $id = $row['doc_id'];
+                        $name = $row['doc_name'];
+                        $type = $row['doc_type'];
+                        $work = $row['doc_workplace'];
+                        $age = $row['doc_age'];
+                        $address = $row['doc_address'];
+                        $email = $row['doc_email'];
+                        $tel = $row['doc_tele'];
+            
+
+                $output = '<tr>';
+                $output .= "<td>$id</td>";
+                $output .= "<td>$name</td>";
+                $output .= "<td>$tel</td>";
+                $output .= "<td>$email</td>";
+                $output .= "<td>$address</td>";
+                $output .= "<td>$age</td>";
+                $output .= "<td>$work</td>";
+                $output .= "<td>$type</td>";
+                $output .= '<td><div class="ma-actions">
+                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="view icon">visibility</i></div></a>
+                            <a href = "admin-updatedoctor.php?id=';
+                $output .=$id;
+                $output .='"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
+                            <a href = "..\..\Config\admin-deletedoctorprocess.php?status=delete&id=';
+                $output .=$id;
+                $output .='"><div class="ma-img-action"><i class="material-icons" alt="delete icon">delete</i></div></a>
+                        </div>
+                    </td>';
+                '</tr>';
+                echo "$output";
+
+                    }
+                }
+                ?>
+
+                <!-- <tr>
                     <td>D01</td>
                     <td>Ama Rathnayake</td>
                     <td>071 876 5637</td>
@@ -89,23 +129,7 @@
                             <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="delete icon">delete</i></div></a>
                         </div>
                     </td>
-                </tr>
-                <tr>
-                    <td>D01</td>
-                    <td>Ama Rathnayake</td>
-                    <td>071 876 5637</td>
-                    <td>ama@chiranthi.gmail.com</td>
-                    <td>Ranna, Tangalle</td>
-                    <td>28 years</td>
-                    <td>Colombo</td>
-                    <td>VOG</td>
-                    <td><div class="ma-actions">
-                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="view icon">visibility</i></div></a>
-                            <a href = "admin-updatedoctor.php"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
-                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="delete icon">delete</i></div></a>
-                        </div>
-                    </td>
-                </tr>
+                </tr> -->
             </table>
             </div> 
         </div>

@@ -23,8 +23,7 @@ function is_array_empty($arr){
     //When the button is clicked
         if (isset($_POST['insert'])){
 
-            $id = $_POST['docid'];
-            $type = $_POST['dtype'];
+            $id = $_POST['phmid'];
             $name = $_POST['name'];
             $age = $_POST['age'];
             $address = $_POST['address'];
@@ -34,12 +33,12 @@ function is_array_empty($arr){
             $work = $_POST['work'];
 
             //Check whether the Doctor ID is already taken
-            $sql_check = "(SELECT count(doc_id) as 'doc' FROM doctor_details WHERE doc_id='$id');";
+            $sql_check = "(SELECT count(phm_id) as 'phm' FROM phm_details WHERE phm_id='$id');";
             $check = $con->query($sql_check);
 
             if ($check->num_rows>0){
                 while ($row = $check->fetch_assoc()){
-                    $doc_idExists ="$row[doc]";
+                    $doc_idExists ="$row[phm]";
                 }
             }
             echo "$doc_idExists";
@@ -48,24 +47,24 @@ function is_array_empty($arr){
             if ($doc_idExists == 0){
 
                 //insert data
-                $sql_insert = "INSERT INTO doctor_details (doc_id, doc_type, doc_name, doc_age, doc_address, doc_DOB, doc_email, doc_tele, doc_workplace) VALUES 
-                ('$id', '$type', '$name', '$age', '$address', '$dob', '$email', '$tel', '$work')";
+                $sql_insert = "INSERT INTO phm_details (phm_id, phm_name, phm_age, phm_address, phm_DOB, phm_email, phm_tele, phm_workplace) VALUES 
+                ('$id', '$name', '$age', '$address', '$dob', '$email', '$tel', '$work')";
 
                 echo $sql_insert;
 
                 $insert = $con->query($sql_insert);
                 echo "$insert";
                 if ($insert){
-                    header("Location:..\View\Admin\admin-adddoctor.php?status=success");
+                    header("Location:..\View\Admin\admin-addphm.php?status=success");
                 }
             }elseif ($doc_idExists == 1){
-                header("Location:..\View\Admin\admin-adddoctor.php?status=errorIDTaken");
+                header("Location:..\View\Admin\admin-addphm.php?status=errorIDTaken");
             }
             
         }
         }
     else{
-        header("Location:..\View\Admin\admin-adddoctor.php?status=erroremptyField");
+        header("Location:..\View\Admin\admin-addphm.php?status=erroremptyField");
     }
 
 ?>

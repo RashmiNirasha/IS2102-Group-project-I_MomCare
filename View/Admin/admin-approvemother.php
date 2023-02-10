@@ -81,7 +81,7 @@ include "../../Assets/Includes/header_admin.php";
             <a href = "admin-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
             </div></div>
             <div class="au-doctor-form">
-                <form action="..\..\Config\admin-adddoctorprocess.php" method="post">
+                <form action="#" method="post">
                     <div class="au-first-raw">
                         <div class="au-doctor-id"><label>Doctor_ID</label  name="docid"><input type="text" name="docid" disabled></div>
                         <span> </span>
@@ -111,7 +111,7 @@ include "../../Assets/Includes/header_admin.php";
                             <span></span>
                             <div class="am-doublebtn">
                             <button class="am-add-user-btn" type = "submit" name = "insert" value="1">Accept</button>
-                            <button class="am-add-user-btn" type = "submit" name = "insert" value="1">Decline</button>
+                            <button class="am-add-user-btn" type = "submit" name = "insert" value="0">Decline</button>
                             </div>
                         </div>
                         
