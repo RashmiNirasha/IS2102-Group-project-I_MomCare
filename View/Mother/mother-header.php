@@ -24,7 +24,8 @@
             display: flex;
             justify-content: space-between;
 
-            filter: drop-shadow(4px 4px 50px rgba(0, 0, 0, 0.25));
+            box-shadow: 0 3px 10px 3px rgba(0,0,0,.2);
+            /* filter: drop-shadow(4px 4px 50px rgba(0, 0, 0, 0.25)); */
         }
         .logo img{
             position: relative;

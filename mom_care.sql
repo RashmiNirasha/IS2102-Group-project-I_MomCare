@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 10, 2023 at 01:40 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Host: 127.0.0.1:3306
+-- Generation Time: Feb 10, 2023 at 07:02 AM
+-- Server version: 5.7.36
+-- PHP Version: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,10 +27,12 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-CREATE TABLE `admin` (
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
   `ad_id` varchar(255) NOT NULL,
-  `ad_password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `ad_password` varchar(255) NOT NULL,
+  PRIMARY KEY (`ad_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
@@ -46,8 +48,9 @@ INSERT INTO `admin` (`ad_id`, `ad_password`) VALUES
 -- Table structure for table `appointment_details`
 --
 
-CREATE TABLE `appointment_details` (
-  `app_id` int(10) NOT NULL,
+DROP TABLE IF EXISTS `appointment_details`;
+CREATE TABLE IF NOT EXISTS `appointment_details` (
+  `app_id` int(10) NOT NULL AUTO_INCREMENT,
   `topic` varchar(255) NOT NULL,
   `doc_id` varchar(20) NOT NULL,
   `doc_name` varchar(255) NOT NULL,
@@ -55,8 +58,11 @@ CREATE TABLE `appointment_details` (
   `app_time` time NOT NULL,
   `app_place` varchar(255) NOT NULL,
   `notes` varchar(255) NOT NULL,
-  `mom_id` varchar(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `mom_id` varchar(11) DEFAULT NULL,
+  PRIMARY KEY (`app_id`),
+  KEY `doc_id` (`doc_id`),
+  KEY `mom_id` (`mom_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `appointment_details`
@@ -68,7 +74,8 @@ INSERT INTO `appointment_details` (`app_id`, `topic`, `doc_id`, `doc_name`, `app
 (11, 'test 2', 'aa2', 'Bimsara', '2022-12-29', '11:10:00', 'Colombo', 'Testing 3', NULL),
 (12, 'test 25', 'aa1', 'Bimsara', '2022-12-17', '11:18:00', 'Galle', 'GGudqwg', NULL),
 (18, 'Test #3', 'aa3', 'Kivi Amarakoon', '2022-12-23', '05:05:00', 'Colombo', 'Testing', NULL),
-(19, 'Appointment 1', 'aa2', 'Bimsara', '2022-12-22', '17:00:00', 'Galle', 'Testing 1', NULL);
+(19, 'Appointment 1', 'aa2', 'Bimsara', '2022-12-22', '17:00:00', 'Galle', 'Testing 1', NULL),
+(20, 'Appointment 1', 'aa2', 'Kivi Amarakoon', '2023-02-24', '15:02:00', 'Galle', '-', NULL);
 
 -- --------------------------------------------------------
 
@@ -76,13 +83,15 @@ INSERT INTO `appointment_details` (`app_id`, `topic`, `doc_id`, `doc_name`, `app
 -- Table structure for table `child_card`
 --
 
-CREATE TABLE `child_card` (
+DROP TABLE IF EXISTS `child_card`;
+CREATE TABLE IF NOT EXISTS `child_card` (
   `Age` int(10) NOT NULL,
   `height` varchar(10) NOT NULL,
   `weight` varchar(10) NOT NULL,
   `Gender` varchar(10) NOT NULL,
-  `child_id` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `child_id` varchar(11) NOT NULL,
+  PRIMARY KEY (`child_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -90,15 +99,20 @@ CREATE TABLE `child_card` (
 -- Table structure for table `child_details`
 --
 
-CREATE TABLE `child_details` (
+DROP TABLE IF EXISTS `child_details`;
+CREATE TABLE IF NOT EXISTS `child_details` (
   `child_id` varchar(11) NOT NULL,
   `child_name` varchar(255) DEFAULT NULL,
   `child_gender` enum('F','M') NOT NULL,
   `phm_id` varchar(11) NOT NULL,
   `doc_id` varchar(11) DEFAULT NULL,
   `guardian_id` varchar(11) DEFAULT NULL,
-  `mom_email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `mom_email` varchar(255) NOT NULL,
+  PRIMARY KEY (`child_id`),
+  KEY `phm` (`phm_id`),
+  KEY `doc` (`doc_id`),
+  KEY `guardian` (`guardian_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `child_details`
@@ -114,18 +128,20 @@ INSERT INTO `child_details` (`child_id`, `child_name`, `child_gender`, `phm_id`,
 -- Table structure for table `doctor_details`
 --
 
-CREATE TABLE `doctor_details` (
+DROP TABLE IF EXISTS `doctor_details`;
+CREATE TABLE IF NOT EXISTS `doctor_details` (
   `doc_id` varchar(255) NOT NULL,
   `doc_name` varchar(255) NOT NULL,
   `doc_age` int(10) NOT NULL,
   `doc_address` varchar(255) NOT NULL,
   `doc_DOB` date NOT NULL,
   `doc_email` varchar(255) NOT NULL,
-  `doc_password` varchar(255) NOT NULL,
+  `doc_password` varchar(255) DEFAULT NULL,
   `doc_tele` int(10) NOT NULL,
   `doc_workplace` varchar(255) NOT NULL,
-  `doc_type` enum('vog','ped','other') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `doc_type` enum('vog','ped','other') NOT NULL,
+  PRIMARY KEY (`doc_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `doctor_details`
@@ -139,7 +155,8 @@ INSERT INTO `doctor_details` (`doc_id`, `doc_name`, `doc_age`, `doc_address`, `d
 ('D102', 'deepal', 45, 'horana', '1965-02-09', 'deepal12345@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 714436987, 'Horana', 'vog'),
 ('D103', 'vimal', 45, 'Kalutara', '1965-02-08', 'vimal@gmail.com', '1234', 714536987, 'Kalutara', 'vog'),
 ('D104', 'Kamal', 45, 'Kalutara', '1965-02-08', 'kamal@gmail.com', '1234', 714536987, 'Kalutara', 'ped'),
-('D105', 'Santha', 45, 'Kalutara', '1965-02-08', 'Santha@gmail.com', '1234', 714536987, 'Kalutara', 'vog');
+('D105', 'Santha', 45, 'Kalutara', '1965-02-08', 'Santha@gmail.com', '1234', 714536987, 'Kalutara', 'vog'),
+('DOCID_63e5ebae8a9f6', 'Bimsara Wickramarathne', 25, 'no.12, beraliyadolawatta, hapugala', '2023-02-16', 'a@a.com', NULL, 3333, 'Colombo', 'vog');
 
 -- --------------------------------------------------------
 
@@ -147,12 +164,15 @@ INSERT INTO `doctor_details` (`doc_id`, `doc_name`, `doc_age`, `doc_address`, `d
 -- Table structure for table `guardian_details`
 --
 
-CREATE TABLE `guardian_details` (
+DROP TABLE IF EXISTS `guardian_details`;
+CREATE TABLE IF NOT EXISTS `guardian_details` (
   `guardian_id` varchar(11) NOT NULL,
   `guardian_name` varchar(255) NOT NULL,
   `guardian_mobile` int(10) NOT NULL,
-  `mom_id` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `mom_id` varchar(11) NOT NULL,
+  PRIMARY KEY (`guardian_id`),
+  KEY `mom_id` (`mom_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `guardian_details`
@@ -167,7 +187,8 @@ INSERT INTO `guardian_details` (`guardian_id`, `guardian_name`, `guardian_mobile
 -- Table structure for table `immunization referrals`
 --
 
-CREATE TABLE `immunization referrals` (
+DROP TABLE IF EXISTS `immunization referrals`;
+CREATE TABLE IF NOT EXISTS `immunization referrals` (
   `child_id` varchar(11) NOT NULL,
   `mother_id` varchar(11) NOT NULL,
   `referral_date` date NOT NULL,
@@ -175,8 +196,9 @@ CREATE TABLE `immunization referrals` (
   `referral_place` varchar(255) NOT NULL,
   `referral_notes` varchar(255) DEFAULT NULL,
   `doc_id` varchar(11) NOT NULL,
-  `phm_id` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `phm_id` varchar(11) NOT NULL,
+  KEY `child_id` (`child_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -184,7 +206,8 @@ CREATE TABLE `immunization referrals` (
 -- Table structure for table `immunization table`
 --
 
-CREATE TABLE `immunization table` (
+DROP TABLE IF EXISTS `immunization table`;
+CREATE TABLE IF NOT EXISTS `immunization table` (
   `child_id` varchar(11) NOT NULL,
   `age` int(10) NOT NULL,
   `type_of_vaccine` varchar(255) NOT NULL,
@@ -192,33 +215,45 @@ CREATE TABLE `immunization table` (
   `batch_no` varchar(20) NOT NULL,
   `adverse_effects` varchar(255) NOT NULL,
   `phm_id` varchar(11) DEFAULT NULL,
-  `doc_id` varchar(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `doc_id` varchar(11) DEFAULT NULL,
+  KEY `child_id` (`child_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mcard-fhistory`
+-- Table structure for table `mcard_fhistory`
 --
 
-CREATE TABLE `mcard-fhistory` (
+DROP TABLE IF EXISTS `mcard_fhistory`;
+CREATE TABLE IF NOT EXISTS `mcard_fhistory` (
   `mom_id` varchar(11) NOT NULL,
   `phm_id` varchar(20) NOT NULL,
   `diabetes` varchar(20) NOT NULL,
   `hypertension` varchar(20) NOT NULL,
   `h_diseases` varchar(20) NOT NULL,
   `m_pregnancies` varchar(20) NOT NULL,
-  `others` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `others` varchar(255) NOT NULL,
+  KEY `mom_id` (`mom_id`),
+  KEY `phm_id` (`phm_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mcard_fhistory`
+--
+
+INSERT INTO `mcard_fhistory` (`mom_id`, `phm_id`, `diabetes`, `hypertension`, `h_diseases`, `m_pregnancies`, `others`) VALUES
+('a002', 'P102', 'Negative', 'Positive', 'Negative', 'Positive', 'Nothing much for now.');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mcard-general`
+-- Table structure for table `mcard_general`
 --
 
-CREATE TABLE `mcard-general` (
-  `mother_id` varchar(11) NOT NULL,
+DROP TABLE IF EXISTS `mcard_general`;
+CREATE TABLE IF NOT EXISTS `mcard_general` (
+  `mom_id` varchar(11) NOT NULL,
   `phm_id` varchar(11) NOT NULL,
   `blood_group` varchar(10) NOT NULL,
   `mom_bmi` int(10) NOT NULL,
@@ -249,23 +284,27 @@ CREATE TABLE `mcard-general` (
   `dad_edu` varchar(255) NOT NULL,
   `dad_occupation` varchar(255) NOT NULL,
   `mom_edu` varchar(255) NOT NULL,
-  `mom_occupation` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `mom_occupation` varchar(255) NOT NULL,
+  UNIQUE KEY `mother_id` (`mom_id`),
+  UNIQUE KEY `phm_id` (`phm_id`),
+  KEY `mom_id` (`mom_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mcard-general`
+-- Dumping data for table `mcard_general`
 --
 
-INSERT INTO `mcard-general` (`mother_id`, `phm_id`, `blood_group`, `mom_bmi`, `mom_height`, `allergies`, `mom_name`, `mom_age`, `moh_area`, `phm_area`, `clinic_name`, `gn_division`, `hospital_name`, `VOG_name`, `anatal_risks`, `reg_number`, `reg_date`, `family_reg`, `mother_reg`, `antenatal_risks`, `cb1`, `cb2`, `cb3`, `cb4`, `cb5`, `cb6`, `cb7`, `dad_age`, `dad_edu`, `dad_occupation`, `mom_edu`, `mom_occupation`) VALUES
-('a001', 'P102', 'A+', 23, 162, 'None', 'Hansika Prashani Weerasinghe', 27, 'Colombo 15', 'Colombo 15', 'Colombo 15 main', 'Colombo 15', 'Colombo Central', 'Prakash Perera', 'Nothing', '456342', '2023-02-05', 'Roshan', 'Rasangi', 'None', 'Positive', 'Positive', 'Positive', 'Positive', 'Positive', 'Positive', 'Positive', 30, 'Degree', 'Teacher', 'Degree', 'Teacher');
+INSERT INTO `mcard_general` (`mom_id`, `phm_id`, `blood_group`, `mom_bmi`, `mom_height`, `allergies`, `mom_name`, `mom_age`, `moh_area`, `phm_area`, `clinic_name`, `gn_division`, `hospital_name`, `VOG_name`, `anatal_risks`, `reg_number`, `reg_date`, `family_reg`, `mother_reg`, `antenatal_risks`, `cb1`, `cb2`, `cb3`, `cb4`, `cb5`, `cb6`, `cb7`, `dad_age`, `dad_edu`, `dad_occupation`, `mom_edu`, `mom_occupation`) VALUES
+('a002', 'P102', 'A+', 25, 162, 'None', 'Hansika Prashani Weerasinghe', 28, 'Colombo 15', 'Colombo 15', 'Colombo 15 main', 'Colombo 15', 'Colombo Central', 'Prakash Perera', 'Nothing', '456342', '2023-02-05', 'Roshan', 'Rasangi', 'None', 'Positive', 'Positive', 'Positive', 'Positive', 'Positive', 'Positive', 'Positive', 30, 'Degree', 'Teacher', 'Degree', 'Teacher');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mcard-medicalhistory`
+-- Table structure for table `mcard_medicalhistory`
 --
 
-CREATE TABLE `mcard-medicalhistory` (
+DROP TABLE IF EXISTS `mcard_medicalhistory`;
+CREATE TABLE IF NOT EXISTS `mcard_medicalhistory` (
   `diabetes` varchar(20) NOT NULL,
   `hypertension` varchar(20) NOT NULL,
   `cardiac_diseases` varchar(20) NOT NULL,
@@ -282,19 +321,29 @@ CREATE TABLE `mcard-medicalhistory` (
   `surgeries_other_than_LSCS` varchar(20) NOT NULL,
   `other` varchar(20) NOT NULL,
   `social_zscore` varchar(20) NOT NULL,
-  `mom_id` varchar(11) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `phm_id` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `mom_id` varchar(11) CHARACTER SET latin1 NOT NULL,
+  `phm_id` varchar(20) CHARACTER SET latin1 NOT NULL,
+  KEY `mom_id` (`mom_id`),
+  KEY `Foreign key` (`phm_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mcard_medicalhistory`
+--
+
+INSERT INTO `mcard_medicalhistory` (`diabetes`, `hypertension`, `cardiac_diseases`, `renal_diseases`, `hepatic_diseases`, `psychiatric_illnesses`, `epilepsy`, `malignancies`, `haematologies`, `tuberculosis`, `thyroid_diseases`, `bronchial_diseases`, `previous_DVT`, `surgeries_other_than_LSCS`, `other`, `social_zscore`, `mom_id`, `phm_id`) VALUES
+('Negative', 'Positive', 'Negative', 'Negative', 'Negative', 'Negative', 'Positive', 'Positive', 'Positive', 'Negative', 'Positive', 'Negative', 'Positive', 'Negative', 'Nothing', 'Negative', 'a002', 'P102');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mcard-pohistory`
+-- Table structure for table `mcard_pohistory`
 --
 
-CREATE TABLE `mcard-pohistory` (
-  `mom_id` varchar(11) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `doctor_id` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+DROP TABLE IF EXISTS `mcard_pohistory`;
+CREATE TABLE IF NOT EXISTS `mcard_pohistory` (
+  `mom_id` varchar(11) CHARACTER SET latin1 NOT NULL,
+  `doctor_id` varchar(20) CHARACTER SET latin1 NOT NULL,
   `gravidity_G` varchar(20) NOT NULL,
   `gravidity_P` varchar(20) NOT NULL,
   `gravidity_C` varchar(20) NOT NULL,
@@ -304,16 +353,26 @@ CREATE TABLE `mcard-pohistory` (
   `us_eed` varchar(255) NOT NULL,
   `poa_at_dating` varchar(255) NOT NULL,
   `date_quickning` date NOT NULL,
-  `poa_at_reg` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `poa_at_reg` varchar(255) NOT NULL,
+  KEY `mom_id` (`mom_id`),
+  KEY `doctor_id` (`doctor_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mcard_pohistory`
+--
+
+INSERT INTO `mcard_pohistory` (`mom_id`, `doctor_id`, `gravidity_G`, `gravidity_P`, `gravidity_C`, `youngest_child_age`, `LRMP`, `EED`, `us_eed`, `poa_at_dating`, `date_quickning`, `poa_at_reg`) VALUES
+('a002', 'D102', '2', '1', '1', 5, '6 weeks ago', '42 weeks', '42 Weeks', 'Done', '2023-02-15', 'Nothing');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mcard-preghistory`
+-- Table structure for table `mcard_preghistory`
 --
 
-CREATE TABLE `mcard-preghistory` (
+DROP TABLE IF EXISTS `mcard_preghistory`;
+CREATE TABLE IF NOT EXISTS `mcard_preghistory` (
   `mom_id` varchar(11) NOT NULL,
   `phm_id` varchar(20) NOT NULL,
   `pregnancy_type` varchar(255) NOT NULL,
@@ -323,8 +382,18 @@ CREATE TABLE `mcard-preghistory` (
   `weight` int(10) NOT NULL,
   `postal_complications` varchar(255) NOT NULL,
   `sex` varchar(255) NOT NULL,
-  `age` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `age` int(10) NOT NULL,
+  KEY `mom_id` (`mom_id`),
+  KEY `phm_id` (`phm_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mcard_preghistory`
+--
+
+INSERT INTO `mcard_preghistory` (`mom_id`, `phm_id`, `pregnancy_type`, `antenatal`, `place`, `outcome`, `weight`, `postal_complications`, `sex`, `age`) VALUES
+('a002', 'P102', 'Normal', 'Negative', 'Colombo General Hospital', 'Baby', 2, 'nothing', 'Male', 23),
+('a002', 'P102', 'Normal', 'Positive', 'General Hospital Colombo', 'Success', 2, 'None', 'Female', 25);
 
 -- --------------------------------------------------------
 
@@ -332,13 +401,14 @@ CREATE TABLE `mcard-preghistory` (
 -- Table structure for table `mother_details`
 --
 
-CREATE TABLE `mother_details` (
+DROP TABLE IF EXISTS `mother_details`;
+CREATE TABLE IF NOT EXISTS `mother_details` (
   `mom_id` varchar(11) NOT NULL,
   `mom_fname` varchar(255) NOT NULL,
   `mom_mname` varchar(255) NOT NULL,
   `mom_lname` varchar(255) NOT NULL,
-  `mom_landline` int(10) NOT NULL,
-  `mom_mobile` int(10) NOT NULL,
+  `mom_landline` varchar(10) NOT NULL,
+  `mom_mobile` varchar(10) NOT NULL,
   `mom_propic` varchar(255) NOT NULL,
   `mom_email` varchar(255) NOT NULL,
   `mom_password` varchar(255) NOT NULL,
@@ -347,18 +417,20 @@ CREATE TABLE `mother_details` (
   `mom_age` int(10) NOT NULL,
   `mom_regdate` date NOT NULL,
   `guardian_name` varchar(255) NOT NULL,
-  `guardian_mobile` int(10) NOT NULL,
+  `guardian_mobile` varchar(10) NOT NULL,
   `reg_user_id` int(11) NOT NULL,
-  `mom_delivery_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `mom_delivery_date` date DEFAULT NULL,
+  PRIMARY KEY (`mom_id`),
+  KEY `reg_user_id` (`reg_user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `mother_details`
 --
 
 INSERT INTO `mother_details` (`mom_id`, `mom_fname`, `mom_mname`, `mom_lname`, `mom_landline`, `mom_mobile`, `mom_propic`, `mom_email`, `mom_password`, `mom_address`, `mom_DOB`, `mom_age`, `mom_regdate`, `guardian_name`, `guardian_mobile`, `reg_user_id`, `mom_delivery_date`) VALUES
-('a001', 'Bim', 'Sav', 'Wick', 912223571, 766423123, '', 'bb@gmail.com', '', 'galle', '2022-12-20', 22, '2022-12-17', 'sarath alwis', 761254245, 5, NULL),
-('a002', 'Hansika', 'Prashani', 'Weerasinghe', 912223571, 766423123, '', 'aa@gmail.com', '', 'Piliyandala, Sri Lanka.', '2012-12-20', 22, '2022-12-19', 'Saman Wijerathne', 761254245, 6, NULL);
+('a001', 'Bim', 'Sav', 'Wick', '912223571', '766423123', '', 'aa@gmail.com', '', 'galle', '2022-12-20', 22, '2022-12-17', 'sarath alwis', '761254245', 5, NULL),
+('a002', 'Hansika', 'Prashani', 'Weerasinghe', '0912223571', '0766423123', '', 'deepal123@gmail.com', '', 'Piliyandala, Sri Lanka.', '2012-12-20', 22, '2022-12-19', 'Saman Wijerathne', '0761254245', 6, NULL);
 
 -- --------------------------------------------------------
 
@@ -366,7 +438,8 @@ INSERT INTO `mother_details` (`mom_id`, `mom_fname`, `mom_mname`, `mom_lname`, `
 -- Table structure for table `notifications`
 --
 
-CREATE TABLE `notifications` (
+DROP TABLE IF EXISTS `notifications`;
+CREATE TABLE IF NOT EXISTS `notifications` (
   `noti_id` varchar(11) NOT NULL,
   `mom_id` varchar(11) DEFAULT NULL,
   `doc_id` varchar(11) DEFAULT NULL,
@@ -375,8 +448,14 @@ CREATE TABLE `notifications` (
   `ad_id` varchar(11) DEFAULT NULL,
   `noti_topic` varchar(255) NOT NULL,
   `noti_date` date NOT NULL,
-  `noti_time` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `noti_time` date NOT NULL,
+  PRIMARY KEY (`noti_id`),
+  KEY `mom_id` (`mom_id`),
+  KEY `doc_id` (`doc_id`),
+  KEY `phm_id` (`phm_id`),
+  KEY `child_id` (`child_id`),
+  KEY `ad_id` (`ad_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -384,11 +463,14 @@ CREATE TABLE `notifications` (
 -- Table structure for table `password_reset`
 --
 
-CREATE TABLE `password_reset` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `password_reset`;
+CREATE TABLE IF NOT EXISTS `password_reset` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `token` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `Foreign key` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `password_reset`
@@ -403,15 +485,17 @@ INSERT INTO `password_reset` (`id`, `email`, `token`) VALUES
 -- Table structure for table `ped_notes`
 --
 
-CREATE TABLE `ped_notes` (
-  `ped_note_id` int(10) NOT NULL,
+DROP TABLE IF EXISTS `ped_notes`;
+CREATE TABLE IF NOT EXISTS `ped_notes` (
+  `ped_note_id` int(10) NOT NULL AUTO_INCREMENT,
   `doc_id` varchar(11) NOT NULL,
   `mom_id` varchar(11) NOT NULL,
   `note_topic` varchar(255) NOT NULL,
   `note_date` date NOT NULL,
   `note_description` varchar(255) NOT NULL,
-  `note_records` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `note_records` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ped_note_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -419,17 +503,19 @@ CREATE TABLE `ped_notes` (
 -- Table structure for table `phm_details`
 --
 
-CREATE TABLE `phm_details` (
+DROP TABLE IF EXISTS `phm_details`;
+CREATE TABLE IF NOT EXISTS `phm_details` (
   `phm_id` varchar(255) NOT NULL,
   `phm_name` varchar(255) NOT NULL,
   `phm_DOB` date NOT NULL,
-  `phm_age` int(20) NOT NULL,
+  `phm_age` int(10) NOT NULL,
   `phm_address` varchar(255) NOT NULL,
   `phm_tele` int(10) NOT NULL,
   `phm_email` varchar(255) NOT NULL,
-  `phm_password` varchar(255) NOT NULL,
-  `phm_workplace` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `phm_password` varchar(255) DEFAULT NULL,
+  `phm_workplace` varchar(255) NOT NULL,
+  PRIMARY KEY (`phm_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `phm_details`
@@ -446,8 +532,9 @@ INSERT INTO `phm_details` (`phm_id`, `phm_name`, `phm_DOB`, `phm_age`, `phm_addr
 -- Table structure for table `registered_user_details`
 --
 
-CREATE TABLE `registered_user_details` (
-  `reg_user_id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `registered_user_details`;
+CREATE TABLE IF NOT EXISTS `registered_user_details` (
+  `reg_user_id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(255) NOT NULL,
   `middle_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
@@ -456,10 +543,12 @@ CREATE TABLE `registered_user_details` (
   `tele_number` int(10) NOT NULL,
   `age` int(5) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `reg_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `phm_id` varchar(10) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`reg_user_id`),
+  KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4383 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `registered_user_details`
@@ -469,6 +558,7 @@ INSERT INTO `registered_user_details` (`reg_user_id`, `first_name`, `middle_name
 (5, 'Bim', 'Sav', 'Wick', 'no.12, beraliyadolawatta, hapu', '2000-12-01', 771950342, 22, 'bb@gmail.com', '2022-12-16 14:35:37', 'nii', '202cb962ac59075b964b07152d234b70'),
 (6, 'gdg', 'ddd', 'ss', 'no.12, beraliyadolawatta, hapu', '2000-12-01', 763361822, 21, 'aa@gmail.com', '2022-12-18 05:46:31', 'qqwe', '81dc9bdb52d04dc20036dbd8313ed055'),
 (7, 'gdg', 'bii', 'ss', 'no.12, beraliyadolawatta, hapu', '2022-12-01', 763361822, 23, 'cc@gmail.com', '2022-12-18 18:17:54', 'nini', '81dc9bdb52d04dc20036dbd8313ed055'),
+(1058, 'Nimesha', 'Pawani', 'Pathirana', 'no.12, beraliyadolawatta, hapugala', '1999-01-01', 771950342, 24, 'bimbi2254@gmail.com', '2023-02-08 18:30:00', 'P102', '$2y$10$jeilVi/UBzwbP89OSQ9yi.UWp49hG3DRKw4LRLvrdAoWi62Q6T4HC'),
 (2149, 'Rashmi', 'Nirasha', 'Gunawardana', 'horana', '1994-06-15', 714436987, 28, 'nirasha999@gmail.com', '2023-02-04 18:30:00', '125', '$2y$10$IitJYeVGzqMs1uFdEmH3seNs9nstlkceQIWxbZCGl2KhkbFAaaNju'),
 (4382, 'Hiruni', 'nimesha', 'Amarakoon', 'Matara', '1987-02-27', 764523698, 35, 'kiviamarakoon@gmail.com', '2023-02-04 18:30:00', '125', '$2y$10$VzrRRGcwH9o7lqAculXvi.W9CQxFhyFBOi6U/sYqGWAMWOAeDxSAS');
 
@@ -478,15 +568,17 @@ INSERT INTO `registered_user_details` (`reg_user_id`, `first_name`, `middle_name
 -- Table structure for table `user_tbl`
 --
 
-CREATE TABLE `user_tbl` (
-  `user_id` int(20) NOT NULL,
-  `email` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `password` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+DROP TABLE IF EXISTS `user_tbl`;
+CREATE TABLE IF NOT EXISTS `user_tbl` (
+  `user_id` int(20) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `password` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `name` varchar(200) NOT NULL,
-  `doc_id` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `user_role` enum('mother','vog','ped','admin','phm') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `doc_id` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `user_role` enum('mother','vog','ped','admin','phm') NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user_tbl`
@@ -506,204 +598,17 @@ INSERT INTO `user_tbl` (`user_id`, `email`, `password`, `created_at`, `name`, `d
 -- Table structure for table `vog_notes`
 --
 
-CREATE TABLE `vog_notes` (
-  `VOG_note_id` int(10) NOT NULL,
+DROP TABLE IF EXISTS `vog_notes`;
+CREATE TABLE IF NOT EXISTS `vog_notes` (
+  `VOG_note_id` int(10) NOT NULL AUTO_INCREMENT,
   `doc_id` varchar(11) NOT NULL,
   `mom_id` varchar(11) NOT NULL,
   `note_topic` varchar(255) NOT NULL,
   `note_date` date NOT NULL,
   `note_description` varchar(255) NOT NULL,
-  `note_records` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`ad_id`);
-
---
--- Indexes for table `appointment_details`
---
-ALTER TABLE `appointment_details`
-  ADD PRIMARY KEY (`app_id`),
-  ADD KEY `doc_id` (`doc_id`),
-  ADD KEY `mom_id` (`mom_id`);
-
---
--- Indexes for table `child_card`
---
-ALTER TABLE `child_card`
-  ADD PRIMARY KEY (`child_id`);
-
---
--- Indexes for table `child_details`
---
-ALTER TABLE `child_details`
-  ADD PRIMARY KEY (`child_id`),
-  ADD KEY `phm` (`phm_id`),
-  ADD KEY `doc` (`doc_id`),
-  ADD KEY `guardian` (`guardian_id`);
-
---
--- Indexes for table `doctor_details`
---
-ALTER TABLE `doctor_details`
-  ADD PRIMARY KEY (`doc_id`);
-
---
--- Indexes for table `guardian_details`
---
-ALTER TABLE `guardian_details`
-  ADD PRIMARY KEY (`guardian_id`),
-  ADD KEY `mom_id` (`mom_id`);
-
---
--- Indexes for table `immunization referrals`
---
-ALTER TABLE `immunization referrals`
-  ADD KEY `child_id` (`child_id`);
-
---
--- Indexes for table `immunization table`
---
-ALTER TABLE `immunization table`
-  ADD KEY `child_id` (`child_id`);
-
---
--- Indexes for table `mcard-fhistory`
---
-ALTER TABLE `mcard-fhistory`
-  ADD KEY `mom_id` (`mom_id`),
-  ADD KEY `phm_id` (`phm_id`);
-
---
--- Indexes for table `mcard-general`
---
-ALTER TABLE `mcard-general`
-  ADD UNIQUE KEY `mother_id` (`mother_id`),
-  ADD UNIQUE KEY `phm_id` (`phm_id`);
-
---
--- Indexes for table `mcard-medicalhistory`
---
-ALTER TABLE `mcard-medicalhistory`
-  ADD KEY `mom_id` (`mom_id`),
-  ADD KEY `Foreign key` (`phm_id`);
-
---
--- Indexes for table `mcard-pohistory`
---
-ALTER TABLE `mcard-pohistory`
-  ADD KEY `mom_id` (`mom_id`),
-  ADD KEY `doctor_id` (`doctor_id`);
-
---
--- Indexes for table `mcard-preghistory`
---
-ALTER TABLE `mcard-preghistory`
-  ADD KEY `mom_id` (`mom_id`),
-  ADD KEY `phm_id` (`phm_id`);
-
---
--- Indexes for table `mother_details`
---
-ALTER TABLE `mother_details`
-  ADD PRIMARY KEY (`mom_id`),
-  ADD KEY `reg_user_id` (`reg_user_id`);
-
---
--- Indexes for table `notifications`
---
-ALTER TABLE `notifications`
-  ADD PRIMARY KEY (`noti_id`),
-  ADD KEY `mom_id` (`mom_id`),
-  ADD KEY `doc_id` (`doc_id`),
-  ADD KEY `phm_id` (`phm_id`),
-  ADD KEY `child_id` (`child_id`),
-  ADD KEY `ad_id` (`ad_id`);
-
---
--- Indexes for table `password_reset`
---
-ALTER TABLE `password_reset`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `Foreign key` (`email`);
-
---
--- Indexes for table `ped_notes`
---
-ALTER TABLE `ped_notes`
-  ADD PRIMARY KEY (`ped_note_id`);
-
---
--- Indexes for table `phm_details`
---
-ALTER TABLE `phm_details`
-  ADD PRIMARY KEY (`phm_id`);
-
---
--- Indexes for table `registered_user_details`
---
-ALTER TABLE `registered_user_details`
-  ADD PRIMARY KEY (`reg_user_id`),
-  ADD KEY `email` (`email`);
-
---
--- Indexes for table `user_tbl`
---
-ALTER TABLE `user_tbl`
-  ADD PRIMARY KEY (`user_id`);
-
---
--- Indexes for table `vog_notes`
---
-ALTER TABLE `vog_notes`
-  ADD PRIMARY KEY (`VOG_note_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `appointment_details`
---
-ALTER TABLE `appointment_details`
-  MODIFY `app_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- AUTO_INCREMENT for table `password_reset`
---
-ALTER TABLE `password_reset`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `ped_notes`
---
-ALTER TABLE `ped_notes`
-  MODIFY `ped_note_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `registered_user_details`
---
-ALTER TABLE `registered_user_details`
-  MODIFY `reg_user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4383;
-
---
--- AUTO_INCREMENT for table `user_tbl`
---
-ALTER TABLE `user_tbl`
-  MODIFY `user_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
-
---
--- AUTO_INCREMENT for table `vog_notes`
---
-ALTER TABLE `vog_notes`
-  MODIFY `VOG_note_id` int(10) NOT NULL AUTO_INCREMENT;
+  `note_records` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`VOG_note_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Constraints for dumped tables
@@ -723,31 +628,31 @@ ALTER TABLE `guardian_details`
   ADD CONSTRAINT `guardian_details_ibfk_1` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`);
 
 --
--- Constraints for table `mcard-general`
+-- Constraints for table `mcard_general`
 --
-ALTER TABLE `mcard-general`
-  ADD CONSTRAINT `mcard-general_ibfk_1` FOREIGN KEY (`mother_id`) REFERENCES `mother_details` (`mom_id`),
+ALTER TABLE `mcard_general`
+  ADD CONSTRAINT `mcard_general_ibfk_1` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`),
   ADD CONSTRAINT `phm-mg` FOREIGN KEY (`phm_id`) REFERENCES `phm_details` (`phm_id`);
 
 --
--- Constraints for table `mcard-medicalhistory`
+-- Constraints for table `mcard_medicalhistory`
 --
-ALTER TABLE `mcard-medicalhistory`
+ALTER TABLE `mcard_medicalhistory`
   ADD CONSTRAINT `Foreign key` FOREIGN KEY (`phm_id`) REFERENCES `phm_details` (`phm_id`),
-  ADD CONSTRAINT `mcard-medicalhistory_ibfk_1` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`);
+  ADD CONSTRAINT `mcard_medicalhistory_ibfk_1` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`);
 
 --
--- Constraints for table `mcard-pohistory`
+-- Constraints for table `mcard_pohistory`
 --
-ALTER TABLE `mcard-pohistory`
+ALTER TABLE `mcard_pohistory`
   ADD CONSTRAINT `m-mph` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`),
-  ADD CONSTRAINT `mcard-pohistory_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctor_details` (`doc_id`);
+  ADD CONSTRAINT `mcard_pohistory_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctor_details` (`doc_id`);
 
 --
--- Constraints for table `mcard-preghistory`
+-- Constraints for table `mcard_preghistory`
 --
-ALTER TABLE `mcard-preghistory`
-  ADD CONSTRAINT `mcard-preghistory_ibfk_1` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`);
+ALTER TABLE `mcard_preghistory`
+  ADD CONSTRAINT `mcard_preghistory_ibfk_1` FOREIGN KEY (`mom_id`) REFERENCES `mother_details` (`mom_id`);
 
 --
 -- Constraints for table `mother_details`

@@ -2,7 +2,7 @@
     include('mother-header.php');
     include('../../Config/mother-createAppointment.inc.php');
     session_start();
-    if (isset($_SESSION['mother_email'])){
+    if (isset($_SESSION['mom_id'])){
 
 ?>
 

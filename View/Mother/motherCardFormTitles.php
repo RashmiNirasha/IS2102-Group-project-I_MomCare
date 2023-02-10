@@ -1,11 +1,13 @@
 <?php 
-include "../../Assets/Includes/heading.php";
+include "mother-header.php";
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <Head>
   <Link Href="Https://Fonts.Googleapis.Com/Css?Family=Quicksand:400,700" Rel="Stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <style><?php include "../../Assets/css/style-common.css";?></style>
 </Head>
 <body class="motherCardFormTitles-body">
@@ -21,34 +23,34 @@ include "../../Assets/Includes/heading.php";
 <!-------- Child Card Topic Section ----------->
 
         <div class="CardTitles">
-          <a href=".php"><h3>About Mother</h3></a>
+          <a href="mother-profileDetails.php"><h3>About Mother</h3></a>
         </div>
         <div class="CardTitles">
-          <a href=".php"><h3>General Details</h3></a>
+          <a href="motherCardPage1.php"><h3>General Details</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Present Obstetric History</h3></a>
+          <a href="motherCardPage1.php"><h3>Present Obstetric History</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Personal Information</h3></a>
+          <a href="motherCardPage1.php"><h3>Personal Information</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Family History</h3></a>
+          <a href="motherCardPage1.php"><h3>Family History</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Medical / Surgical History</h3></a>
+          <a href="motherCardPage1.php"><h3>Medical / Surgical History</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Past Obstetric History</h3></a>
+          <a href="motherCardPage1.php"><h3>Past Obstetric History</h3></a>
         </div>        
         <div class="CardTitles">
-          <a href="#"><h3>Clinic Care</h3></a>
+          <a href="motherCardPage2.php"><h3>Clinic Care</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Auscultation</h3></a>
+          <a href="motherCardPage2.php"><h3>Auscultation</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Mental Health</h3></a>
+          <a href="motherCardPage2.php"><h3>Mental Health</h3></a>
         </div>
         <div class="CardTitles">
           <a href="#"><h3>Respiratory System</h3></a>

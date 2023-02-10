@@ -38,6 +38,13 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 					header("Location: ../View/Admin/admin-dashboard.php");
 					break;
 				case 'mother':
+					$sql_getmomid = "SELECT * FROM mother_details WHERE mom_email='$email'";
+					$result_getmomid = mysqli_query($con,$sql_getmomid);
+					$row_getmomid = mysqli_fetch_assoc($result_getmomid);
+
+					$_SESSION['mom_id'] = $row_getmomid['mom_id'];
+
+				header("Location: ../View/Mother/mother-dashboard.php");
 					header("Location: ../View/Mother/mother-dashboard.php");
 					break;
 				case 'vog':

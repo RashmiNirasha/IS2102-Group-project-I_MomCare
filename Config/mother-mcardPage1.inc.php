@@ -1,9 +1,9 @@
 <?php 
     require_once 'dbConnection.php';
-    include("mainLoginModel.php");
-    
+
+    session_start();
     $mom_id = $_SESSION['mom_id'];
-    echo $mom_id;
+    
     $sql = "SELECT * FROM mcard_general WHERE mom_id = '$mom_id'";
     $result = $con->query($sql);
     if($result->num_rows > 0)

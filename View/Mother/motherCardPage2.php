@@ -1,4 +1,3 @@
-<?php include "../../Assets/Includes/header_pages.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +8,9 @@
     <style><?php include "../../Assets/css/style-common.css" ?></style>
 </head>
 <body>
+    <?php 
+    include('mother-header.php');
+    ?>
     <div class="MotherCardMainDiv">
         <div class="SectionNameDiv">
             <h3>Section A</h3>
