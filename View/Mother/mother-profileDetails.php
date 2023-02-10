@@ -1,5 +1,4 @@
 <?php 
-include('mother-header.php');
 include('../../Config/mother-viewProfile.inc.php')
 
 ?>
@@ -17,6 +16,9 @@ include('../../Config/mother-viewProfile.inc.php')
 
 </head>
 <body>
+    <?php 
+    include('mother-header.php');
+    ?>
     <div class="profile-content">
         <div class="profile-pic">
             <img src="../../Assets/Images/mother/Profile_pic_mother" alt="">

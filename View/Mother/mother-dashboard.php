@@ -28,7 +28,7 @@ include('mother-header.php');
         </div>
         <!-- row 1 -->
         <div class="cards-list">
-            <a href="http://">
+            <a href="motherCardFormTitles.php">
                 <div class="card">
                     <div class="icon-set">
                     <span class="material-icons-outlined">description</span>

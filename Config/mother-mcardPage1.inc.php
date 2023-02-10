@@ -4,7 +4,6 @@
     
     $mom_id = $_SESSION['mom_id'];
     echo $mom_id;
-
     $sql = "SELECT * FROM mcard_general WHERE mom_id = '$mom_id'";
     $result = $con->query($sql);
     if($result->num_rows > 0)
@@ -41,9 +40,72 @@
             $mom_edu = $row['mom_edu'];
             $mom_occupation = $row['mom_occupation'];
 
-        }}
+        }
+    }
     else
     {
+        echo "0 results";
+    }
+
+    $sql = "SELECT * FROM mcard_fhistory WHERE mom_id = '$mom_id'";
+    $result = $con->query($sql);
+    if($result->num_rows > 0){
+        while($row=mysqli_fetch_assoc($result)){
+            $diabetes1 = $row['diabetes'];
+            $hypertension = $row['hypertension'];
+            $h_diseases = $row['h_diseases'];
+            $m_pregnancies = $row['m_pregnancies'];
+            $fhistory_others = $row['others'];
+        }
+    }
+    else{
+        echo "0 results";
+    }
+
+    $sql = "SELECT * FROM mcard_medicalhistory WHERE mom_id = '$mom_id'";
+    $result = $con->query($sql);
+    if($result->num_rows > 0){
+        while($row=mysqli_fetch_assoc($result)){
+            $diabetes2 = $row['diabetes'];
+            $hypertension2 = $row['hypertension'];
+            $cardiac_d = $row['cardiac_diseases'];
+            $renal_d = $row['renal_diseases'];
+            $hepatic_d = $row['hepatic_diseases'];
+            $psychiatric_d = $row['psychiatric_illnesses'];
+            $epilepsy = $row['epilepsy'];
+            $malignancies = $row['malignancies'];
+            $haematologies = $row['haematologies'];
+            $tuberculosis = $row['tuberculosis'];
+            $thyroid_d = $row['thyroid_diseases'];
+            $bronchial_d = $row['bronchial_diseases'];
+            $previous_DVT = $row['previous_DVT'];
+            $surgeries_other = $row['surgeries_other_than_LSCS'];
+            $mhistory_other = $row['other'];
+            $social_zscore = $row['social_zscore'];
+        }
+    }
+    else{
+        echo "0 results";
+    }
+
+    $sql = "SELECT * FROM mcard_pohistory WHERE mom_id = '$mom_id'";
+    $result = $con->query($sql);
+    if($result->num_rows > 0){
+        while($row=mysqli_fetch_assoc($result)){
+            $gravidity_G = $row['gravidity_G'];
+            $gravidity_P = $row['gravidity_P']; 
+            $gravidity_C = $row['gravidity_C'];
+            $youngest_child_age = $row['youngest_child_age'];
+            $LRMP = $row['LRMP'];
+            $EED = $row['EED'];
+            $us_eed = $row['us_eed'];
+            $poa_at_dating = $row['poa_at_dating'];
+            $date_quickning = $row['date_quickning'];
+            $poa_at_reg = $row['poa_at_reg'];
+
+        }
+    }
+    else{
         echo "0 results";
     }
 

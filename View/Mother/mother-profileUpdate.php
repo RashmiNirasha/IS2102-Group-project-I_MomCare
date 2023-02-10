@@ -1,5 +1,4 @@
 <?php 
-include('mother-header.php');
 include('../../Config/mother-viewProfile.inc.php');
 include('../../Config/mother-updateProfile.inc.php');
 
@@ -18,6 +17,9 @@ include('../../Config/mother-updateProfile.inc.php');
 
 </head>
 <body>
+    <?php 
+    include('mother-header.php');
+    ?>
     <div class="profile-page-content">
         <!-- pro pic -->
         <div class="profilepic-content">

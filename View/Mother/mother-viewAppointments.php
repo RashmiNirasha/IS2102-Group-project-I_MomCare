@@ -1,5 +1,4 @@
 <?php 
-    include('mother-header.php');
     include('../../Config/mother-viewAppointments.inc.php')
 
 ?>
@@ -17,6 +16,9 @@
 
 </head>
 <body>
+    <?php 
+    include('mother-header.php');
+    ?>
     <div class="content">
         <!-- topic and notifications -->
         <div class="heading">
