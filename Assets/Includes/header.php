@@ -70,7 +70,7 @@
 <body>
     <div>
     <nav class="topnav"> <!-- top navigation bar -- start -->
-        <img class="logo-MomCare" src="../Assets/images/common/logo.png" alt="logo-MomCare">
+        <img class="logo-MomCare" src="../../Assets/images/common/logo.png" alt="logo-MomCare">
         <ul>
             <li><a href="../index.php">Home</a></li>
             <li><a href="about.php">About</a></li>

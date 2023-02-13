@@ -73,14 +73,16 @@
 }
 
 .IndexRightContent h1{
-    font-family: style-font-ForIndexPage;
+    font-family: style-font-ForIndexPage
+    ;
     font-size: 70px;
     color: rgb(0, 0, 0);
 }
 
 .rightContent h1 {
-    font-family: style-font1;
+    font-family: style-font-ForIndexPage;
     font-size: 70px;
+    margin-top: -30px;
     color: rgb(0, 0, 0);
 }
 
@@ -118,7 +120,7 @@
     width: 80%;
     font-style: italic;
     text-align: center;
-    font-family: "barlowRegular";
+    font-family: barlowRegular;
     font-size: 20px;
     color: rgb(0, 0, 0);
     vertical-align: middle;
@@ -458,18 +460,17 @@
 
 .card-pack {
     display: flex;
-    justify-content: start;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
     flex-flow: wrap;
-    overflow: hidden;
     column-gap: 10%;
     /* row-gap: -160px; */
-    width: 100%;
-    height: 60%;
-    margin-top: 80px;
+    width: 80%;
+    height: 80%;
+    margin-top: 60px;
     margin-left: 10%;
     margin-right: 10%;
-    padding-bottom: 20px;
+    padding-bottom: 100px;
     /* background-color: #d42424; */
 }
 
