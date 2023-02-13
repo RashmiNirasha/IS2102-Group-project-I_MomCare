@@ -1,6 +1,6 @@
 <?php 
 include "../../Config/dbConnection.php";
-include"../../Assets/Includes/header.php";
+include "../../Assets/Includes/header.php";
     session_start();
      if (isset($_SESSION['email'])){
  ?>
@@ -19,11 +19,11 @@ $mom_name=$row['mom_fname'];
     <title>Mother Dashboard</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="../../Assets/css/style-common.css">
+    <style><?php include "../../Assets/css/style-common.css" ?></style>
 
 </head>
 <body>
-<div class="dashboard-vog">
+<div class="dashboard-mother">
         <div class="dashboard-header">
             <h1>Welcome to the Dashboard <?php echo "Ms ".$mom_name ?></h1>
         </div>

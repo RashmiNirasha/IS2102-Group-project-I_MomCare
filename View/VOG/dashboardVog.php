@@ -25,7 +25,7 @@ $doc_name=$row['doc_name'];
             <h1>Welcome to the Dashboard <?php echo $doc_name ?></h1>
         </div>
         <div class="card-pack"><!--gap remover
-        --><button class="card">
+        --><button class="card" onclick="window.location.href='vog-scheduleManager.php'">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
                 <div class="card-content-right"><p>Schedule Manager</p></div>
             </button><!--gap remover -->
