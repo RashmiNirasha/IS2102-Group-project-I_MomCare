@@ -2,7 +2,7 @@
     session_start();
     include '../../Config/dbConnection.php';
     if (isset($_SESSION['email'])){?>
-<?php include "../../Assets/Includes/header_pages.php" ?>
+<?php //include "../../Assets/Includes/header_pages.php" ?>
 <?php 
 $sql="SELECT doc_name FROM doctor_details WHERE doc_email='".$_SESSION['email']."'";
 $result=mysqli_query($con,$sql);
