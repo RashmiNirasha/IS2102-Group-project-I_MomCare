@@ -20,6 +20,7 @@
                     <h2>Up Comming Appointments...</h2>
                     <button class="ViewVogCalendar">View my calendar</button>
                 </div>
+                <hr class="app-hr">
                 <div class="vogAppointmentsView-body">
                     <div class="VogAppointmentBar">
                             <!-- // $query = "SELECT * FROM appointment_details WHERE doc_id = '$mother_id'";

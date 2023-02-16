@@ -609,10 +609,10 @@
     margin-bottom: 10%;
     margin-inline: 10%;
     min-width: 266px;
-
+    border-style: solid;
+    border-color: #0000001a;
     border-width: 2px;
-    box-shadow: black 0px 0px 20px -5px;
-}
+    box-shadow: 0 3px 100px 10px rgba(0,0,0,.20);}
 
 .div-logo {
     width: 50%;
@@ -636,7 +636,7 @@
     border-style:solid;
     border-width: thin;
     font-size: 12px;
-    border-color: #029EE4;
+    border-color: #029ee454;
     text-align: left;
 }
 
@@ -3013,15 +3013,29 @@ a {
     flex-direction: row;
     justify-content: space-between;
     cursor: pointer;
-    /* background-color: #202020; */
-    margin-bottom: 15px;
+    background-color: #029EE4;
+    /* margin-bottom: 15px; */
+    border-radius: 10px;
+    padding: 0px 20px 0px 20px;
 }
 
 .vogAppointmentsView-heading h2 {
-    width: 60%;
+    width:60%;
     font-size: 25px;
     padding-left: 10px;
-    /* background-color: #111C43; */
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 5px 10px 5px 10px;
+    /* background-color: #ffffff; */
+
+}
+
+.app-hr {
+    width: 80%;
+    height: 1px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #029EE4;
 }
 
 .ViewVogCalendar {
@@ -3030,11 +3044,11 @@ a {
     border-width: 1px;
     font-weight: bold;
     background-color: #029EE4;
-    border-color: #029EE4;
+    border-color: #ffffff;
     padding: 10px;
     color: #ffffff;
     height: 40px;
-    margin-top: 15px;
+    margin-top: 20px;
     cursor: pointer;
 }
 
@@ -3096,7 +3110,7 @@ a {
     float: right;
     margin-top: 30px;
     font-size: 26px;
-    /* background-color: #054664; */
+    /* background-color: #029EE4; */
 }
 
 .commonCard-btn {
