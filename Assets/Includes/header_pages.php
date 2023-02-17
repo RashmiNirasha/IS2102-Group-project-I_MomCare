@@ -77,28 +77,60 @@
         <ul>
             <li><a href="../index.php">Home</a></li>
             <li><a href="../../About.php">About</a></li>
-            <li><a > Dashboard</a>
-                <!-- <?php
-            // if (isset($_SESSION['email'])) {
-            //     //choose the right dashboard page
-            //     if ($_SESSION['user_role'] == 'phm') {
-            //         echo '<a href="../../View/PHM/phm-dashboard.html">Dashboard</a>';
-            //     } else if ($_SESSION['user_role'] == 'ped') {
-            //         echo '<a href="../../View/Pediatrician/pediatrician-dashboardView.php">Dashboard</a>';
-            //     } else if ($_SESSION['user_role'] == 'vog') {
-            //         echo '<a href="../../View/VOG/dashboardVog.php">Dashboard</a>';
-            //     } else if ($_SESSION['user_role'] == 'admin') {
-            //         echo '<a href="../../View/Admin/admin-dashboard.php">Dashboard</a>';
-            //     } else if ($_SESSION['user_role'] == 'mother') {
-            //         echo '<a href="../../View/Mother/mother-dashboard.php">Dashboard</a>';
-            //     } else {
-            //         echo 'Dashboard';
-            //     }
-            // }
-            ?> -->
+            <li><!--<a >Dashboard</a> -->
+                <?php
+            if (isset($_SESSION['email'])) {
+                //get user role
+                include "../../Config/dbConnection.php";
+                $query = "SELECT * FROM user_tbl WHERE email = '" . $_SESSION['email'] . "'";
+                $result = mysqli_query($con, $query);
+                $row = mysqli_fetch_array($result);
+                $_SESSION['user_role'] = $row['user_role'];
+                //choose the right dashboard page
+                if ($_SESSION['user_role'] == 'phm') {
+                    echo '<a href="../../View/PHM/phm-dashboard.html">Dashboard</a>';
+                } else if ($_SESSION['user_role'] == 'ped') {
+                    echo '<a href="../../View/Pediatrician/pediatrician-dashboardView.php">Dashboard</a>';
+                } else if ($_SESSION['user_role'] == 'vog') {
+                    echo '<a href="../../View/VOG/dashboardVog.php">Dashboard</a>';
+                } else if ($_SESSION['user_role'] == 'admin') {
+                    echo '<a href="../../View/Admin/admin-dashboard.php">Dashboard</a>';
+                } else if ($_SESSION['user_role'] == 'mother') {
+                    echo '<a href="../../View/Mother/mother-dashboard.php">Dashboard</a>';
+                } else {
+                    echo 'Dashboard';
+                }
+            }
+            ?>
             </li>
         </ul>
-        <img class="profile_pic" src="../../Assets/images/vog/doctor.png" alt="profile_pic">
+        <?php
+        if (isset($_SESSION['email'])) {
+            //get user role
+            include "../../Config/dbConnection.php";
+            $query = "SELECT * FROM user_tbl WHERE email = '" . $_SESSION['email'] . "'";
+            $result = mysqli_query($con, $query);
+            $row = mysqli_fetch_array($result);
+            $_SESSION['user_role'] = $row['user_role'];
+            //choose the right dashboard page
+            if ($_SESSION['user_role'] == 'phm') {
+                echo '<a href=""><img class="profile_pic" src="../../Assets/Images/phm/phm_proPic.png" alt="profile_pic"></a>';
+            } else if ($_SESSION['user_role'] == 'ped') {
+                echo '<a href=""><img class="profile_pic" src="../../Assets/Images/ped/ped_proPic.png" alt="profile_pic"></a>';
+            } else if ($_SESSION['user_role'] == 'vog') {
+                echo '<a href=""><img class="profile_pic" src="../../Assets/Images/vog/doctor.png" alt="profile_pic"></a>';
+            } else if ($_SESSION['user_role'] == 'admin') {
+                echo '<a href=""><img class="profile_pic" src="../../Assets/Images/admin/people.png" alt="profile_pic"></a>';
+            } else if ($_SESSION['user_role'] == 'mother') {
+                echo '<a href=""><img class="profile_pic" src="../../Assets/Images/mother/Profile_pic_mother.png" alt="profile_pic"></a>';
+            } else {
+                //echo 'Dashboard';
+            }
+        } else {
+            echo '<a href="../../Login.php"><img class="profile_pic" src="../../Assets/images/common/login.png" alt="profile_pic"></a>';
+        }
+        ?>
+        <!-- <img class="profile_pic" src="../../Assets/images/vog/doctor.png" alt="profile_pic"> -->
     </nav> <!-- top navigation bar -- end -->
     </div>
 </body>

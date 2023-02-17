@@ -1,7 +1,8 @@
 <?php
-    include "../../Assets/Includes/header_admin.php";
-    // session_start();
-    // if (isset($_SESSION['s_email'])){
+    include "../../Config/dbConnection.php";
+    session_start();
+    if (isset($_SESSION['email'])){
+        include "../../Assets/Includes/header_pages.php";
 
 ?>
 <!DOCTYPE html>
@@ -108,7 +109,7 @@
 </html>
 
 <?php 
-    //}else{
-    //     header("Location:admin-login.php");
-    // }
+    }else{
+        header("Location:admin-login.php");
+    }
 ?>

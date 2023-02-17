@@ -595,6 +595,7 @@
 
   /* ------------------------login_page------------------------ */
 
+  
   .login-container {
     display: flex;
     flex-direction: row;
@@ -673,6 +674,16 @@
     margin-left: 2px;
 }
 
+.div-form input::placeholder {
+    color: #00000077;
+    font-size: small;
+}
+
+.div-form legend:focus{
+    border-color: #029EE4;
+    border-width: 5px;
+}
+
 .createAcc {
     text-align: right;
     margin-right: 2px;
@@ -684,10 +695,20 @@
     font-size: small;
 }
 
+.createAcc a:hover {
+    color: #00ff0d;
+}
+
+
+
 .forgot-psw a {
     color: #029EE4;
     text-decoration: none;
     font-size: small;
+}
+
+.forgot-psw a:hover {
+    color: #ff0000;
 }
 
 .sign-in-btn {

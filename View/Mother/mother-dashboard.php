@@ -1,14 +1,14 @@
 <?php 
 include "../../Config/dbConnection.php";
-include "../../Assets/Includes/header.php";
     session_start();
      if (isset($_SESSION['email'])){
+        include "../../Assets/Includes/header_pages.php";
  ?>
 <?php 
-$sql="SELECT mom_fname FROM mother_details WHERE mom_email='".$_SESSION['email']."'";
-$result=mysqli_query($con,$sql);
-$row=mysqli_fetch_assoc($result);
-$mom_name=$row['mom_fname'];
+    $sql="SELECT mom_fname FROM mother_details WHERE mom_email='".$_SESSION['email']."'";
+    $result=mysqli_query($con,$sql);
+    $row=mysqli_fetch_assoc($result);
+    $mom_name=$row['mom_fname'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
