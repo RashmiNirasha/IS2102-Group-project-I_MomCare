@@ -118,11 +118,11 @@
             } else if ($_SESSION['user_role'] == 'ped') {
                 echo '<a href=""><img class="profile_pic" src="../../Assets/Images/ped/ped_proPic.png" alt="profile_pic"></a>';
             } else if ($_SESSION['user_role'] == 'vog') {
-                echo '<a href=""><img class="profile_pic" src="../../Assets/Images/vog/doctor.png" alt="profile_pic"></a>';
+                echo '<a href="../../View/Vog/vog-profile.php"><img class="profile_pic" src="../../Assets/Images/vog/doctor.png" alt="profile_pic"></a>';
             } else if ($_SESSION['user_role'] == 'admin') {
                 echo '<a href=""><img class="profile_pic" src="../../Assets/Images/admin/people.png" alt="profile_pic"></a>';
             } else if ($_SESSION['user_role'] == 'mother') {
-                echo '<a href=""><img class="profile_pic" src="../../Assets/Images/mother/Profile_pic_mother.png" alt="profile_pic"></a>';
+                echo '<a href="../../View/mother/mother-profileDetails.php"><img class="profile_pic" src="../../Assets/Images/mother/Profile_pic_mother.png" alt="profile_pic"></a>';
             } else {
                 //echo 'Dashboard';
             }

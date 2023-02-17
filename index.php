@@ -16,7 +16,7 @@ include "Assets/Includes/header_index.php";
 <body>
     <div class="landingMain">
         <div class="landingLeft">
-            <img class="landingPagePhoto" src="Assets/Images//common/landing-page-photo.jpg" alt="landing-page-photo">
+            <img class="landingPagePhoto" src="Assets/Images//common/landing-page-photo.png" alt="landing-page-photo">
         </div>
         <div class="landingRight">
             <div class="IndexRightContent">

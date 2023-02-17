@@ -1,4 +1,9 @@
 <?php 
+    session_start();
+    include '../../Config/dbConnection.php';
+    if (isset($_SESSION['email'])){?>
+<?php include "../../Assets/Includes/header_pages.php" ?>
+<?php 
     include "../../Config/mother-mcardPage1.inc.php";
 ?>
 <!DOCTYPE html>
@@ -12,7 +17,7 @@
 </head>
 <body>
     <?php 
-    include('mother-header.php');
+    //include('mother-header.php');
     ?>
     <div class="MotherCardMainDiv">
         <div class="SectionNameDiv">
@@ -359,7 +364,9 @@
 </body>
 </html>
 <?php //include "../../Assets/Includes/footer_pages.php"; ?>
-
+<?php }else{
+    header("Location: ../../mainLogin.php");
+} ?>
 
 
 

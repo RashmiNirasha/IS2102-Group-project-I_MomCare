@@ -18,8 +18,10 @@ include "../../Config/dbConnection.php";
             <img src="../../Assets/images/common/Project Logo-01.png" alt="Logo">
         </div>
         <div class="RegisterMotherInnerDiv">
-            <h2>Register</h2>
+            <!-- <h2>Register</h2> -->
             <form class="RegistrationMotherForm" id="RegistrationMotherForm" action="mother-registrationModel.php" method="POST">
+                <div class="box-shadow">
+                <h3>Register</h3>
                 <table>
                     <tr>
                         <td><label for="name">First name</label></td>
@@ -38,7 +40,7 @@ include "../../Config/dbConnection.php";
                         <td><input type="email" name="email" id="email" placeholder="Enter your email" required></td>
                     </tr>
                     <tr>
-                        <td><label for="BOD">BOD</label></td>
+                        <td><label for="BOD">DOB</label></td>
                         <td><input type="date" name="BOD" id="BOD" placeholder="Enter your birthday" required></td>
                     </tr>
                     <tr>
@@ -58,6 +60,7 @@ include "../../Config/dbConnection.php";
                         <td><input type="hidden" name="user_role" id="user_role" value="mother"></td>
                     </tr>
                 </table>
+                </div>
                 <button type="submit" name="register">Register</button>
                 <button type="cancel" name="cancel" onclick="window.location='../../index.php'">Cancel</button>
                 <button type="clear" name="clear" onclick="clearForm()">Clear</button>
