@@ -2874,6 +2874,7 @@ a {
   }
   
   .common_list_content table {
+    margin-top: 20px;
     font-size: 0.9rem;
     text-align: center;
     table-layout: fixed;

@@ -2,7 +2,7 @@
     require_once 'dbConnection.php';
     //include("mainLoginModel.php");
     
-    session_start();    
+    //session_start();    
     $mom_id = $_SESSION['mom_id'];
 
 
