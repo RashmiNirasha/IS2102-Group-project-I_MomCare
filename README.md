@@ -13,3 +13,4 @@ Mom care is a system that is made aiming for the digitalization of the current p
 - Bimsara
 - Sachini Shermila
 
+Photo Compressor - https://tinypng.com/

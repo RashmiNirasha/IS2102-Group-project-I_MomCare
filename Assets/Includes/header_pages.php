@@ -13,7 +13,7 @@
         }
         
         .topnav {
-            background-color: #f0f0f0;
+            background-color: #ffffff;
             margin-right: 0px;
             overflow: hidden;
             position: fixed;
@@ -22,8 +22,11 @@
             width: 100%;
             height: 60px;
             margin-top: -7px;
-            box-shadow: 0 3px 10px 3px rgba(0,0,0,.2);
-            display: flex;
+            box-shadow: 0 3px 100px 10px rgba(0,0,0,.20);
+            border-color: #111c431f;
+            border-style: solid;
+            border-width: 1px;
+            display: flex;  
             justify-content: space-between;
             align-items: center;
             z-index: 9999;
@@ -74,28 +77,60 @@
         <ul>
             <li><a href="../index.php">Home</a></li>
             <li><a href="../../About.php">About</a></li>
-            <li><a > Dashboard</a>
-                <!-- <?php
-            // if (isset($_SESSION['email'])) {
-            //     //choose the right dashboard page
-            //     if ($_SESSION['user_role'] == 'phm') {
-            //         echo '<a href="../../View/PHM/phm-dashboard.html">Dashboard</a>';
-            //     } else if ($_SESSION['user_role'] == 'ped') {
-            //         echo '<a href="../../View/Pediatrician/pediatrician-dashboardView.php">Dashboard</a>';
-            //     } else if ($_SESSION['user_role'] == 'vog') {
-            //         echo '<a href="../../View/VOG/dashboardVog.php">Dashboard</a>';
-            //     } else if ($_SESSION['user_role'] == 'admin') {
-            //         echo '<a href="../../View/Admin/admin-dashboard.php">Dashboard</a>';
-            //     } else if ($_SESSION['user_role'] == 'mother') {
-            //         echo '<a href="../../View/Mother/mother-dashboard.php">Dashboard</a>';
-            //     } else {
-            //         echo 'Dashboard';
-            //     }
-            // }
-            ?> -->
+            <li><!--<a >Dashboard</a> -->
+                <?php
+            if (isset($_SESSION['email'])) {
+                //get user role
+                include "../../Config/dbConnection.php";
+                $query = "SELECT * FROM user_tbl WHERE email = '" . $_SESSION['email'] . "'";
+                $result = mysqli_query($con, $query);
+                $row = mysqli_fetch_array($result);
+                $_SESSION['user_role'] = $row['user_role'];
+                //choose the right dashboard page
+                if ($_SESSION['user_role'] == 'phm') {
+                    echo '<a href="../../View/PHM/phm-dashboard.html">Dashboard</a>';
+                } else if ($_SESSION['user_role'] == 'ped') {
+                    echo '<a href="../../View/Pediatrician/pediatrician-dashboardView.php">Dashboard</a>';
+                } else if ($_SESSION['user_role'] == 'vog') {
+                    echo '<a href="../../View/VOG/dashboardVog.php">Dashboard</a>';
+                } else if ($_SESSION['user_role'] == 'admin') {
+                    echo '<a href="../../View/Admin/admin-dashboard.php">Dashboard</a>';
+                } else if ($_SESSION['user_role'] == 'mother') {
+                    echo '<a href="../../View/Mother/mother-dashboard.php">Dashboard</a>';
+                } else {
+                    echo 'Dashboard';
+                }
+            }
+            ?>
             </li>
         </ul>
-        <img class="profile_pic" src="../../Assets/images/vog/doctor.png" alt="profile_pic">
+        <?php
+        if (isset($_SESSION['email'])) {
+            //get user role
+            include "../../Config/dbConnection.php";
+            $query = "SELECT * FROM user_tbl WHERE email = '" . $_SESSION['email'] . "'";
+            $result = mysqli_query($con, $query);
+            $row = mysqli_fetch_array($result);
+            $_SESSION['user_role'] = $row['user_role'];
+            //choose the right dashboard page
+            if ($_SESSION['user_role'] == 'phm') {
+                echo '<a href=""><img class="profile_pic" src="../../Assets/Images/phm/phm_proPic.png" alt="profile_pic"></a>';
+            } else if ($_SESSION['user_role'] == 'ped') {
+                echo '<a href=""><img class="profile_pic" src="../../Assets/Images/ped/ped_proPic.png" alt="profile_pic"></a>';
+            } else if ($_SESSION['user_role'] == 'vog') {
+                echo '<a href="../../View/Vog/vog-profile.php"><img class="profile_pic" src="../../Assets/Images/vog/doctor.png" alt="profile_pic"></a>';
+            } else if ($_SESSION['user_role'] == 'admin') {
+                echo '<a href=""><img class="profile_pic" src="../../Assets/Images/admin/people.png" alt="profile_pic"></a>';
+            } else if ($_SESSION['user_role'] == 'mother') {
+                echo '<a href="../../View/mother/mother-profileDetails.php"><img class="profile_pic" src="../../Assets/Images/mother/Profile_pic_mother.png" alt="profile_pic"></a>';
+            } else {
+                //echo 'Dashboard';
+            }
+        } else {
+            echo '<a href="../../Login.php"><img class="profile_pic" src="../../Assets/images/common/login.png" alt="profile_pic"></a>';
+        }
+        ?>
+        <!-- <img class="profile_pic" src="../../Assets/images/vog/doctor.png" alt="profile_pic"> -->
     </nav> <!-- top navigation bar -- end -->
     </div>
 </body>

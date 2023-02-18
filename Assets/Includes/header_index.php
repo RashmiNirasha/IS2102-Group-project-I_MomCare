@@ -13,7 +13,7 @@
         }
         
         .topnav {
-            background-color: #f0f0f0;
+            background-color: #ffffff;
             margin-right: 0px;
             overflow: hidden;
             position: fixed;
@@ -22,7 +22,7 @@
             width: 100%;
             height: 60px;
             margin-top: -7px;
-            box-shadow: 0 3px 10px 3px rgba(0,0,0,.2);
+            box-shadow: 0 3px 100px 10px rgba(0,0,0,.20);
             display: flex;
             justify-content: space-between;
             align-items: center;

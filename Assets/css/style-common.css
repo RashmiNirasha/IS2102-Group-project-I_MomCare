@@ -73,14 +73,16 @@
 }
 
 .IndexRightContent h1{
-    font-family: style-font-ForIndexPage;
+    font-family: style-font-ForIndexPage
+    ;
     font-size: 70px;
     color: rgb(0, 0, 0);
 }
 
 .rightContent h1 {
-    font-family: style-font1;
+    font-family: style-font-ForIndexPage;
     font-size: 70px;
+    margin-top: -30px;
     color: rgb(0, 0, 0);
 }
 
@@ -118,13 +120,13 @@
     width: 80%;
     font-style: italic;
     text-align: center;
-    font-family: "barlowRegular";
+    font-family: barlowRegular;
     font-size: 20px;
     color: rgb(0, 0, 0);
     vertical-align: middle;
 }
 
-/* --------------------- registration page --------------------- */
+/* --------------------- Mother registration page --------------------- */
 
 .RegisterMotherMainDiv {
     display: flex;
@@ -133,6 +135,7 @@
     justify-content: space-around;
     vertical-align: middle;
     width: 100%;
+    margin-top: 30px;
     background-color: rgb(255, 255, 255);
 }
 
@@ -249,6 +252,7 @@
     align-self: center;
     width: 130px;
     margin-bottom: -30px;
+    z-index: 1;
 }
 
 .RegisterMotherInnerDiv h2 {
@@ -256,13 +260,34 @@
     font-size: 25px;
     text-align: center;
     background-color: #029ee4;
-    padding: 5px 40px 5px 40px;
-    border-radius: 20px;
-    width: 30%;
+    padding: 5px 5px;
+    border-radius: 20px 20px 0px 0px;
+    width: 69%;
 }
 
 .RegistrationMotherForm {
+    /* background-color: #004869; */
     width: 70%;
+    margin-top: 30px;
+}
+
+.RegistrationMotherForm h3 {
+    text-align: center;
+    font-family: BarlowRegular;
+    font-size: 30px;
+    background-color: #029EE4;
+    width: 100%;
+    margin: 0;
+    border-radius: 20px 20px 0px 0px;
+    padding: 5px 0px 5px 0px;
+}
+
+.box-shadow {
+    /* width: fit-content; */
+    background-color: transparent;
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 1000px -60px rgba(2, 136, 177, 0.918); */
+    box-shadow: 0px 20px 1000px 10px rgba(52, 189, 253, 0.521);
 }
 
 .RegistrationMotherForm table {
@@ -272,7 +297,7 @@
     font-size: 18px;
     background-color: #ffffff;
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 0px 0px 20px 20px;
     border-style: solid;
     border-width: 5px;
     border-color: #029EE4;
@@ -458,18 +483,17 @@
 
 .card-pack {
     display: flex;
-    justify-content: start;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
     flex-flow: wrap;
-    overflow: hidden;
     column-gap: 10%;
     /* row-gap: -160px; */
-    width: 100%;
-    height: 60%;
-    margin-top: 80px;
+    width: 80%;
+    height: 80%;
+    margin-top: 60px;
     margin-left: 10%;
     margin-right: 10%;
-    padding-bottom: 20px;
+    padding-bottom: 100px;
     /* background-color: #d42424; */
 }
 
@@ -594,6 +618,7 @@
 
   /* ------------------------login_page------------------------ */
 
+  
   .login-container {
     display: flex;
     flex-direction: row;
@@ -608,9 +633,10 @@
     margin-bottom: 10%;
     margin-inline: 10%;
     min-width: 266px;
-
+    border-style: solid;
+    border-color: #0000001a;
     border-width: 2px;
-    box-shadow: black 0px 0px 20px -5px;
+    box-shadow: 0 3px 100px 10px rgba(0,0,0,.20);
 }
 
 .div-logo {
@@ -635,7 +661,7 @@
     border-style:solid;
     border-width: thin;
     font-size: 12px;
-    border-color: #029EE4;
+    border-color: #029ee454;
     text-align: left;
 }
 
@@ -672,6 +698,16 @@
     margin-left: 2px;
 }
 
+.div-form input::placeholder {
+    color: #00000077;
+    font-size: small;
+}
+
+.div-form legend:focus{
+    border-color: #029EE4;
+    border-width: 5px;
+}
+
 .createAcc {
     text-align: right;
     margin-right: 2px;
@@ -683,10 +719,20 @@
     font-size: small;
 }
 
+.createAcc a:hover {
+    color: #00ff0d;
+}
+
+
+
 .forgot-psw a {
     color: #029EE4;
     text-decoration: none;
     font-size: small;
+}
+
+.forgot-psw a:hover {
+    color: #ff0000;
 }
 
 .sign-in-btn {
@@ -1425,6 +1471,8 @@
     margin-right: 20px;
     margin-left: 20px;
     float: right;
+    margin-top: 30px;
+    font-size: 26px;
     /* background-color: #054664; */
 }
 
@@ -1437,11 +1485,6 @@
     margin-left: 20px;
     font-size: 15px;
     float: right;
-}
-
-.mom-bar h3 {
-    margin-top: 30px;
-    font-size: 26px;
 }
 
 .mom-btns {
@@ -1510,6 +1553,210 @@
     margin-top: -20px;
     position: fixed;
 }
+
+/* ----------------------- Mother profile page ----------------- */
+
+.profile-content-mainDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0px;
+    padding-bottom: 50px;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: 15%;
+    width: 70%;
+    /* background-color: #90ce00; */
+    margin-top: 60px;
+    padding:20px;
+}
+
+.profile-content-innerDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: fit-content;
+    /* background-color: #ce0000;     */
+    padding:20px;
+    border-style: solid;
+    border-color: #029ce43d;
+    border-width: 2px;
+    border-radius: 15px;
+    box-shadow: 0px 20px 1000px 10px rgba(52, 189, 253, 0.521);
+}
+
+.profile-content img {
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 70px;
+    border-color: #0000001a;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.profile-child-data, .profile-guardian-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    /* background-color: #0082ce; */
+    margin: 20px;
+    padding:20px;
+    border-style: solid;
+    border-color: #029ce471;
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+.profile-child-data h3 {
+    margin-top: -20px;
+}
+
+.profile-guardian-data h3 {
+    margin-top: -1px;
+}
+
+.child-details-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: opx 20px 0px 20px;
+    /* background-color: #535458; */
+}
+
+.child-details-section table {
+    width: 100%;
+}
+
+.child-details-section table td:nth-child(2) {
+    text-align: right;
+}
+
+.child-details-section label {
+    font-size: 13px;
+    margin-top: 2px;
+    color: #000000;
+}
+
+.child-details-section input[type='button'] {
+    width: 50px;
+    height: 20px;
+    border-style: none;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #029EE4;
+    cursor: pointer;
+}
+
+.profile-details {
+    margin-left: 10%;
+    width: 100%;
+    /* background-color: #535458; */
+}
+
+.profile-name {
+    /* background-color: #004869; */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    font-size: 26px;
+}
+
+.profile-name h4 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 28px;
+    text-align: left;
+    padding: 0px 20px 0px 20px;
+    color: #111C43;
+}
+
+.profile-address span {
+    font-size: 23px;
+    color: #24D4B9;
+    padding-right: 15px;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    /* background-color: #004869; */
+}
+
+.profile-address p {
+    margin: 0px;
+}
+
+.profile-address {
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    /* background-color: #029EE4; */
+}
+
+/* .profile-other-data {
+    background-color: teal;
+} */
+
+.profile-details-tbl {
+    /* background-color: #e4af02; */
+    padding-left: 20px;
+    padding-right: 15px;
+    margin-left: 13px;
+    margin-right: 15px;
+    width: 90%;
+    border-radius: 10px;
+    border-color: #029ce471;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.profile-details-tbl th {
+    float: left;
+}
+
+.profile-details-tbl td {
+    padding: 0px;
+    height: 10px;
+    font-size: 15px;
+}
+
+.profile-details-tbl td:nth-child(2) {
+    text-align: right;
+}
+
+.profile-buttons {
+    display: flex;
+    float: right;
+    align-items:first baseline;
+    margin-top: 60px;
+    width: fit-content;
+    padding-top: 470px;
+    padding-right: 40px;
+    flex-direction: column;
+    /* background-color: #712b29; */
+}
+.profile-buttons a{
+    padding-top: 10px;
+}
+.profile-buttons button{
+    width: 150px;
+    height: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    border: none;
+    color: #F3F4F5;
+}
+.profile-buttons button:hover{
+    color: #111C43;
+}
+
 
 /*----------------------- tests page styles --------------*/
 
@@ -2984,3 +3231,197 @@ a {
     padding-bottom: -20px;
     justify-content: space-between;
 }
+
+/* --------------------- Vog - schedule manager page ------------------------ */
+.MainOuterDiv {
+    width: 100%;
+    margin-top: 100px;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+.MainInnerDiv {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    height: 70vh;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+    border-style: solid;
+    border-color: #029EE4;
+    border-radius: 10px;
+    border-width: 1px;
+    /* background-color: #14aa00; */
+}
+
+.vogAppointmentsView-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: #029EE4;
+    /* margin-bottom: 15px; */
+    border-radius: 10px;
+    padding: 0px 20px 0px 20px;
+}
+
+.vogAppointmentsView-heading h2 {
+    width:60%;
+    font-size: 25px;
+    padding-left: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 5px 10px 5px 10px;
+    /* background-color: #ffffff; */
+
+}
+
+.app-hr {
+    width: 80%;
+    height: 1px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #029EE4;
+}
+
+.ViewVogCalendar {
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    font-weight: bold;
+    background-color: #029EE4;
+    border-color: #ffffff;
+    padding: 10px;
+    color: #ffffff;
+    height: 40px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.ViewVogCalendar:hover {
+    background-color: #111C43;
+    color: white;
+}
+
+.Appointment-bar {
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    background-color: #029EE4;
+    justify-content:space-between;
+}
+
+.Appointment-bar-right {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-right: 0px;
+    /* background-color: red; */
+}
+
+.Appointment-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+    margin-right: 0px;
+    /* background-color: red; */
+        
+}
+
+.Appointment-bar-left {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.Appointment-bar img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    margin-left: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.Appointment-bar h3 {
+    color: #f0f0f0;
+    margin-left: 10px;
+    width: 100%;
+    margin-block: -1px;
+    margin-right: 20px;
+    margin-left: 20px;
+    float: right;
+    margin-top: 30px;
+    font-size: 26px;
+    /* background-color: #029EE4; */
+}
+
+.commonCard-btn {
+    height: fit-content;
+    height: 30px;
+    border-radius: 10px;
+    width: 130px;
+    margin-right: 10px;
+    border-style: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: #029EE4;
+    cursor: pointer;
+
+}
+
+.view-app-btn {
+    height: fit-content;
+    height: 30px;
+    border-radius: 10px;
+    width: 275px;
+    border-style: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: #029EE4;
+    cursor: pointer;
+}
+
+.app-bar-timestamp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 20px;
+    row-gap: 10px;
+    /* background-color: black; */
+}
+
+.app-bar-timestamp label {
+    border-radius: 10px;
+    font-family: barlowBold;
+    padding: 5px 10px 5px 10px;
+    color: #004869;
+    text-align: center;
+    background-color: #ffffff7a;
+}
+
+.view-app-btn:hover {
+    background-color: #111C43;
+    color: #ffffff;
+}
+
+.commonCard-btn:hover {
+    background-color: #111C43;
+    color: #ffffff;
+}
+
+/* ------------------------------------- mother-dashboard -----------------------------  */
+
+
+
+/* ------------------------------------- mother list Appointments ------------------------- */
