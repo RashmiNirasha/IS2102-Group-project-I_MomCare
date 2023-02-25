@@ -13,14 +13,17 @@
             $test_name = $_POST['test_name'];
             $note = $_POST['note'];
             $mom_id = $_POST['mom_id'];
-            $doc_id = $_POST['doc_id'];
+            $email = $_SESSION['email'];
+            $Currentdoc = "SELECT doc_id FROM doctor_details WHERE doc_email = '$email'";
+            $result = mysqli_query($con, $Currentdoc);
+            $row = mysqli_fetch_assoc($result);
+            $doc_id = $row['doc_id'];
             $target_file = "../../Assets/Images/uploads/tests/".$_FILES['test_report']['name'];
-    
             $filex = pathinfo($target_file,PATHINFO_EXTENSION);
             $_FILES['test_report']['name'] = uniqid("test-") . "." . $filex;
             $test_report = $_FILES['test_report']['name'];
             $path = "../../Assets/Images/uploads/tests/".$test_report;
-            $sql = "INSERT INTO doctor_notes (note_topic, note_description, note_records, mom_id) VALUES ('$test_name',' $note', '$test_report', '$mom_id')";
+            $sql = "INSERT INTO doctor_notes (doc_id, note_topic, note_description, note_records, mom_id) VALUES ('$doc_id', '$test_name', '$note', '$test_report', '$mom_id')";
             $result = mysqli_query($con, $sql,);
     
             // file upload code -- start
@@ -37,7 +40,7 @@
     }
 ?>
 <?php include "../../Assets/Includes/header_pages.php"; 
-echo $_SESSION['mom_search'];
+//echo $_SESSION['mom_search'];
 ?>
 
 <!DOCTYPE html>
@@ -89,7 +92,7 @@ echo $_SESSION['mom_search'];
         <div class="view-report">
             <table class="test-view-table">
                 <tr>
-                    <th>Doc. ID</th>
+                    <th>Doc. name</th>
                     <th>Test name</th>
                     <th>Special note</th>
                     <th>Date</th>
@@ -107,7 +110,12 @@ echo $_SESSION['mom_search'];
                     if($resultCheck > 0){
                         while($row = mysqli_fetch_assoc($result)){ ?>
                                 <tr> 
-                                    <td><?php echo $row['doc_id']?></td>
+                                    <td>Dr. <?php 
+                                        $docd = "SELECT doc_name FROM doctor_details WHERE doc_id = '$row[doc_id]' ";
+                                        $docdresult = mysqli_query($con, $docd);
+                                        $docdrow = mysqli_fetch_assoc($docdresult);
+                                        echo $docdrow['doc_name'];
+                                    ?></td>
                                     <td><?php echo $row['note_topic'] ?> </td>
                                     <td><?php echo $row['note_description'] ?></td>
                                     <td><?php echo date("y-m-d") ?></td>

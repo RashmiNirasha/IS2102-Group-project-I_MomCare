@@ -1848,7 +1848,7 @@
     border-width: 1px;
     padding-left: 10px;
     margin-left: 10px;
-    border-color: #029EE4;
+    border-color: #029ce450;
 }
 
 #view-test-name {
@@ -1863,7 +1863,7 @@
 
 #test_name:focus {
     outline: none;
-    border-width: 2px;
+    border-color: #029EE4;
 }
 
 #note {
@@ -1873,12 +1873,12 @@
     border-style: solid;
     border-width: 1px;
     padding-left: 10px;
-    border-color: #029EE4;
+    border-color: #029ce450;
 }
 
 #note:focus {
     outline: none;
-    border-width: 2px;
+    border-color: #029EE4;
 }
 
 #view-note {
