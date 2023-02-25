@@ -54,7 +54,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 					header("Location: ../View/Pediatrician/pediatrician-dashboardView.php");
 					break;
 				case 'phm':
-					header("Location: ../View/PHM/phm-dashboard.html");
+					header("Location: ../View/PHM/phm-dashboard.php");
 					break;
 				default:
 					header("Location: ../index.php?error=Incorrect User name or password");

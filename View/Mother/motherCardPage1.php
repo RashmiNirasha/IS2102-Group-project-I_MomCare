@@ -1,7 +1,7 @@
 <?php 
-    session_start();
+   session_start();
     include '../../Config/dbConnection.php';
-    if (isset($_SESSION['email'])){?>
+   if (isset($_SESSION['email'])){?>
 <?php include "../../Assets/Includes/header_pages.php" ?>
 <?php 
     include "../../Config/mother-mcardPage1.inc.php";

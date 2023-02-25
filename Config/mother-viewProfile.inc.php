@@ -1,6 +1,6 @@
 <?php
     require_once 'dbConnection.php';
-    session_start ();
+    //session_start ();
     
 
     $sql = "SELECT * FROM mother_details";

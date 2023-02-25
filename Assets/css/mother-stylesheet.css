@@ -341,7 +341,7 @@ input::file-selector-button {
 }
 .profile-details td{
     padding: 10px 40px 10px 40px;
-    background-color: #f3f4f5;
+    /* background-color: #f3f4f5; */
     border-radius: 20px;
 }
 .profile-details td ul{
