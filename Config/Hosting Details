@@ -3,3 +3,6 @@ Database name: sql12600925
 Database user: sql12600925
 Database password: zg4AMtcWnW
 Port number: 3306
+
+
+Connection URL - jdbc:mysql://sql6.freesqldatabase.com:3306/sql6492450
