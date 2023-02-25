@@ -1,9 +1,9 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db = "mom_care";
+$servername = "sql12.freesqldatabase.com";
+$username = "sql12600925";
+$password = "zg4AMtcWnW";
+$db = "sql12600925";
 
 $con = new mysqli( $servername, $username, $password, $db);
 
