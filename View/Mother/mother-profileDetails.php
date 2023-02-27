@@ -105,7 +105,6 @@
             <a href="mother-card.php"><button class="view" style="background:#029EE4;">View Mother Card</button></a>
         </div>
     </div>
- 
 </body>
 </html>
 

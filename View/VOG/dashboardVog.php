@@ -22,7 +22,7 @@ $doc_name=$row['doc_name'];
 <body>
     <div class="dashboard-vog">
         <div class="dashboard-header">
-            <h1>Welcome to the Dashboard <?php echo $doc_name ?></h1>
+            <h1>Welcome to the dashboard Dr. <?php echo $doc_name ?></h1>
         </div>
         <div class="card-pack"><!--gap remover
         --><button class="card" onclick="window.location.href='vog-scheduleManager.php'">
@@ -40,7 +40,7 @@ $doc_name=$row['doc_name'];
         </div>
     </div>
     <div class="log-out"> <!--logout button-->
-    <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
+    <!-- <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button> -->
     </div>
 </body>
 </html>

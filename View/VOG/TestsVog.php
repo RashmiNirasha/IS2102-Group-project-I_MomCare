@@ -39,7 +39,7 @@
 
     }
 ?>
-<?php   //include "../../Assets/Includes/header_pages.php"; 
+<?php   include "../../Assets/Includes/header_pages.php"; 
 ////echo $_SESSION['mom_search'];
 ?>
 
@@ -121,7 +121,19 @@
                                     <td><?php echo date("y-m-d") ?></td>
                                     <td><a href="testEdit.php"><input class='edit-report-btn' type='button' value='Edit'></a></td>
                                     <td><a target="_blank" href="../../Assets/Images/uploads/tests/<?php echo $row['note_records']; ?>"><input class='view-report-btn' type='button' value='View'></a></td>
-                                    <td><a href="testRecordDelete.php?note_id=<?php echo $row['note_id']; ?>&mom_id=<?php echo $row['mom_id']; ?>"><input type="button" class="delete-report-btn" value="Delete"></a></td>
+                                    <td><a href="#"><input type="button" onclick="delConf_function()" class="delete-report-btn" value="Delete"></a></td>
+                                    <script>
+                                        function delConf_function() {
+                                            var delConf = confirm("Are you sure you want to delete this record?");
+                                            if (delConf == true) {
+                                                alert("Record deleted successfully!");
+                                                // Redirect to the deletion script with note_id and mom_id parameters
+                                                window.location.href = "testRecordDelete.php?note_id=<?php echo $row['note_id']; ?>&mom_id=<?php echo $row['mom_id']; ?>";
+                                            } else {
+                                                alert("Record not deleted!");
+                                            }
+                                        }
+                                    </script>
                                     <input type="hidden" name="note_id" value="<?php echo $row['note_id']; ?>">
                                     <!-- <input type="submit" name="delete" value="Delete"> -->
                                     <!-- <td><a href="download.php?test_report=<?php //echo $row['test_report']; ?>"><input class='view-report-btn' type='button' value='View'></a></td> -->
@@ -136,7 +148,7 @@
     </div>
     <!--logout button-->
     <div class="log-out">
-    <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
+    <!-- <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button> -->
     </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
     require_once 'dbConnection.php';
 
     //session_start();
-    $mom_id = $_SESSION['mom_id'];
+    $mom_id = $_GET['mom_id'];
     
     $sql = "SELECT * FROM mcard_general WHERE mom_id = '$mom_id'";
     $result = $con->query($sql);
