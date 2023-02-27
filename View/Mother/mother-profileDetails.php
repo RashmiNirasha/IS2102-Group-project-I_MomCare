@@ -25,7 +25,7 @@
 </head>
 <body>
     <?php 
-    //include('mother-header.php');
+    include('mother-header.php');
     ?>
     <div class="profile-content-mainDiv">
         <div class="profile-content">

@@ -2,7 +2,6 @@
     require_once 'dbConnection.php';
     //include("mainLoginModel.php");
     
-    session_start();    
     $mom_id = $_SESSION['mom_id'];
     if(isset($_POST['update-btn'])){
         $mother_fname = mysqli_real_escape_string($con, $_POST['mother-fname']);

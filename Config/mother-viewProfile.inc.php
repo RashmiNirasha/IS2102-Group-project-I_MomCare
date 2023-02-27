@@ -1,9 +1,14 @@
 <?php
     require_once 'dbConnection.php';
+<<<<<<< Updated upstream
     //session_start ();
     
+=======
+    session_start ();
+    $mom_id = $_SESSION['mom_id'];
+>>>>>>> Stashed changes
 
-    $sql = "SELECT * FROM mother_details";
+    $sql = "SELECT * FROM mother_details WHERE mom_id = '$mom_id'";
     $result = $con->query($sql);
 
     if($result->num_rows > 0)
