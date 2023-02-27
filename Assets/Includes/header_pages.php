@@ -17,7 +17,7 @@
             margin-right: 0px;
             overflow: hidden;
             position: fixed;
-            top: 0;
+            top: -5px;
             padding-top: 10px;
             width: 100%;
             height: 60px;
@@ -33,22 +33,43 @@
         }
 
         .topnav ul li a {
+            display: block;
             color: #111C43;
             font-family:'Calibri';
             font-weight: bold;
             text-decoration: none;
             font-size: 17px;
+            padding: 18px 20px 22px 20px;
+            background-color: #ffffff;
         }
 
         .topnav ul {
             width: 100%;
-            text-align: right;
+            margin-right: 20px;
+            padding-left: 0px;
+            height: 100%;
+            /* background-color: #111C43; */
         }   
 
         .topnav ul li {
             display: inline-block;
+            gap: 0px;
             list-style: none;
-            margin: 10px 20px;
+            height: 100%;
+        }
+
+        .topnav ul li:last-child:hover a {
+            background-color: #ff0000;
+            color: #ffffff;
+        }
+
+        .topnav ul li a:hover {
+            background-color: #029EE4;
+            color: #ffffff;
+        }
+
+        .topnav ul li:last-child {
+            float: right !important;
         }
 
         .logo-MomCare {
@@ -63,6 +84,7 @@
             height: 40px;
             cursor: pointer;
             border-radius: 5px;
+            margin-top: 5px;
             margin-right: 20px;
             border-style: solid;
             border-width: 1px;
@@ -75,9 +97,9 @@
     <nav class="topnav"> <!-- top navigation bar -- start -->
         <img class="logo-MomCare" src="../../Assets/images/common/logo.png" alt="logo-MomCare">
         <ul>
-            <li><a href="../index.php">Home</a></li>
-            <li><a href="../../About.php">About</a></li>
-            <li><!--<a >Dashboard</a> -->
+            <li><a href="../../index.php">Home</a></li><!-- gap-remove 
+        --><li><a href="../../About.php">About</a></li><!-- gap-remove
+        --><li><!--<a >Dashboard</a> -->
                 <?php
             if (isset($_SESSION['email'])) {
                 //get user role
@@ -103,6 +125,7 @@
             }
             ?>
             </li>
+            <li><a href="../../Config/logout.php">Log out</a></li>
         </ul>
         <?php
         if (isset($_SESSION['email'])) {

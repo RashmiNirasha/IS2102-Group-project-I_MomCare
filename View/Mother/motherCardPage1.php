@@ -22,7 +22,7 @@
     <div class="MotherCardMainDiv">
         <div class="SectionNameDiv">
             <h3>Section A</h3>
-            <!-- <?php echo $_SESSION['mom_id']; ?> -->
+            <!-- <?php //echo $_SESSION['mom_id']; ?> -->
             <!-- <h4>1</h4> -->
         </div>
         <div class="MotherCardOuterDiv">
