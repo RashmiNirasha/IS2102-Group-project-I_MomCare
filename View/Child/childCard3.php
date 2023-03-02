@@ -1,0 +1,72 @@
+<?php 
+//include "../../Assets/Includes/header_pages.php";
+
+include "child-cardModel.php";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    insert_child_special_care_reasons($_POST);
+
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style><?php include "../../Assets/css/style-common.css"; ?></style>
+</head>
+<body>
+
+<div class="ChildCardOuterDiv">
+    <div class="ChildCardInnerDiv">
+        <div class="ChildFormSection">
+            <h3>Reasons for Special Care</h3>
+            <form method="post">
+                <table class="ChildCardInputSec-3">
+                    <tr>
+                        <td>Immature births</td>
+                        <td><input type="checkbox" name="Immature_births" id=""><input type="text" name="immature_births_text"></td>
+                    </tr>
+                    <tr>
+                        <td>Under weight Births</td>
+                        <td colspan="6"><input type="checkbox" name="Under_weight_Births" id=""><input type="text" name="under_weight_births_text"></td>
+                    </tr>
+                    <tr>
+                        <td>Disorders</td>
+                        <td colspan="6"><input type="checkbox" name="Disorders" id=""><input type="text" name="disorders_text"></td>
+                    </tr>
+                    <tr>
+                        <td>Serious issues for mother after the birth</td>
+                        <td colspan="6"><input type="checkbox" name="Serious_issues_for_mother_after_the_birth" id=""><input type="text" name="serious_issues_for_mother_text"></td>
+                    </tr>
+                    <tr>
+                        <td>Giving Milk powder during 6 moths</td>
+                        <td colspan="6"><input type="checkbox" name="Giving_Milk_powder_during_6_moths" id=""><input type="text" name="milk_powder_during_6_months_text"></td>
+                    </tr>
+                    <tr>
+                        <td>Impairment og Growth</td>
+                        <td colspan="6"><input type="checkbox" name="Impairment_of_Growth" id=""><input type="text" name="growth_impairment_text"></td>
+                    </tr>
+                    <tr>
+                        <td>Feeding Issues</td>
+                        <td colspan="6"><input type="checkbox" name="Feeding_Issues" id=""><input type="text" name="feeding_issues_text"></td>
+                    </tr>
+                    <tr>
+                        <td>Death of Mother/Farther</td>
+                        <td colspan="6"><input type="checkbox" name="Death_of_Mother_Farther" id=""><input type="text" name="death_of_parent_text"></td>
+                    </tr>
+                    <tr>
+                        <td>Migration of Mother/Father</td>
+                        <td colspan="6"><input type="checkbox" name="Migration_of_Mother_Father" id=""><input type="text" name="parent_migration_text"></td>
+                    </tr>
+                </table>
+                <button type="submit" name="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
