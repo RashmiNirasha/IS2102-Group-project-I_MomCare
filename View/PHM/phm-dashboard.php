@@ -72,6 +72,16 @@
                 </div> 
                 </a>
 
+                <a href="phm-registrationRequests.php"><div class="p-card">
+                <div class="a-icon-case">
+                     <i class="material-icons" alt="calendar icon">child_care</i> 
+                </div>
+                <div class="a-box">
+                    <h3>Manage Registrations</h3>
+                </div>
+                </div> 
+                </a>
+
             </div>
         </div>
 

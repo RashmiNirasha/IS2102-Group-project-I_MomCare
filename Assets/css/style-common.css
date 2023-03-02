@@ -3425,3 +3425,90 @@ a {
 
 
 /* ------------------------------------- mother list Appointments ------------------------- */
+
+
+
+/* phm - registration request */
+
+.cont-table-1 {
+    color: black;
+    margin: 10px 10px;
+    width: 90%;
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px 20px;
+    overflow: hidden;
+  }
+  
+  .cont-table-header {
+    color: black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    margin: 10px 10px 10px 10px;
+
+  }
+  
+  .cont-table-header h1 {
+    margin: 0;
+    font-size: 24px;
+    padding: 20px 20px 20px 20px;
+  }
+  
+  .registration-requests {
+    background-color: #6682a6;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .registration-requests th,
+  .registration-requests td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .registration-requests th:last-child,
+  .registration-requests td:last-child {
+    text-align: center;
+  }
+  
+  .registration-requests tr:not(:first-child):hover {
+    background-color: #f5f5f5;
+  }
+  
+  .registration-requests td form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .registration-requests td form label {
+    margin-right: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .registration-requests td form select {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+  }
+  
+  .registration-requests td form button {
+    padding: 8px 16px;
+    background-color: #004aad;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .registration-requests td form button:hover {
+    background-color: #0059b3;
+  }
+  

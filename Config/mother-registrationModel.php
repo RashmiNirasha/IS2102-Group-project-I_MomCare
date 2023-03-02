@@ -1,8 +1,8 @@
-
 <?php
+
 define("OTP_LEN", "8"); // password length
-include "../../Config/dbConnection.php";
-include "../../Assets/Includes/email.php";
+include "dbConnection.php";
+include "../Assets/Includes/email.php";
 
 if (empty($_POST["fname"])) {
     die("First Name is required");
@@ -69,25 +69,15 @@ $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[1], $birthDate[2], $birt
   ? ((date("Y") - $birthDate[0]) - 1)
   : (date("Y") - $birthDate[0]));
 
-    
-
 //autogenerate values for mother id
 $mother_id = rand(1000,9999);
 
 $sql = "INSERT INTO registered_user_details(reg_user_id,first_name, middle_name, last_name, address, DOB, tele_number, age, email, reg_date, phm_id, password) 
     VALUES ('$mother_id','$mom_fname','$mom_mname','$mom_sname','$mom_address','$mom_dob','$mom_tele','$age','$mom_email','$reg_date','$PHM_id','$password_hash')";     
    
-    $message = "Hi $mom_sname! Account created , Please go to this link and create a new password.</br>
-    link http://localhost/IS2102-Group-project-I_MomCare/View/reset-password.php</br>
-    your password is $password_hash </br>
-    Username: $mom_email";
-
-   
-        sendemail($mom_email,'Activate Account',$message);
-
         if(mysqli_query($con, $sql)){
             //give a message to the user that the registration is successful in the same page
-            header("Location:mother-registrationConfirmation.php?success=" . urlencode("Please wait until admin verifies your account.</br>Account Activation mail will be sent to your email account"));
+            header("Location:../View/Mother/mother-registrationConfirmation.php?success=" . urlencode("Please wait until admin verifies your account.</br>Account Activation mail will be sent to your email account"));
             exit();
         } else{
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);

@@ -2,7 +2,7 @@
 include "../../Config/dbConnection.php";
     session_start();
      if (isset($_SESSION['email'])){
-        include "../../Assets/Includes/header_pages.php";
+        //include "../../Assets/Includes/header_pages.php";
  ?>
 <?php 
     $sql="SELECT mom_fname FROM mother_details WHERE mom_email='".$_SESSION['email']."'";

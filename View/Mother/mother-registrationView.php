@@ -1,5 +1,4 @@
 <?php 
-//include "../Assets/Includes/header_index.php"; 
 include "../../Config/dbConnection.php";
 
 ?>
@@ -19,7 +18,7 @@ include "../../Config/dbConnection.php";
         </div>
         <div class="RegisterMotherInnerDiv">
             <!-- <h2>Register</h2> -->
-            <form class="RegistrationMotherForm" id="RegistrationMotherForm" action="mother-registrationModel.php" method="POST">
+            <form class="RegistrationMotherForm" id="RegistrationMotherForm" action="../../Config/mother-registrationModel.php" method="POST">
                 <div class="box-shadow">
                 <h3>Register</h3>
                 <table>

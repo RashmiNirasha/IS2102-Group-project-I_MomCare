@@ -5,7 +5,6 @@
     // if (isset($_SESSION['s_email'])){
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

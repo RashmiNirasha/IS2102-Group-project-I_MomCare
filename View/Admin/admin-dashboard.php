@@ -58,7 +58,7 @@
                 </div>
                 </div>
 
-                <a href="admin-motherlist.php"><div class="a-card">
+                <a href="admin-handleRequests.php"><div class="a-card">
                 <div class="a-icon-case">
                 <i class="material-icons" alt="Pregnant woman">pregnant_woman</i>
                 </div>

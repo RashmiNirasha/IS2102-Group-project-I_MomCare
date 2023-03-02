@@ -26,9 +26,6 @@
     </div>
 </body>
 </html>
-
-
-
          <?php //if(isset($_GET['success'])) { ?>
          <!-- <div class="alert alert-success"><?php //echo $_GET['success']; ?></div> -->
          <?php // } ?>
