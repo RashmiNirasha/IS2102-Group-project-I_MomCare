@@ -17,11 +17,10 @@ include "../../Assets/Includes/heading.php";
           <span class="material-icons">notifications</span>
         </a>
         </div>
-
 <!-------- Child Card Topic Section ----------->
 
         <div class="CardTitles">
-          <a href="generalInformationView.php"><h3>General information</h3></a>
+          <a href="child-generalInformationView.php"><h3>General information</h3></a>
         </div>
         <div class="CardTitles">
           <a href="infantCareView.php"><h3>Infant Care</h3></a>
@@ -42,4 +41,4 @@ include "../../Assets/Includes/heading.php";
   </body>
 </html>
 
-<?php //include "../../Assets/Includes/footer.php";?>
+

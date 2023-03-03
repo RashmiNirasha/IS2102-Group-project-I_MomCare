@@ -1252,7 +1252,7 @@
     text-align: left;
     border-radius:10px;
     border: 2px solid #A1B9D8;
-    padding:5px 5px 5px 0px;
+    padding:5px 5px 5px 5px;
 }
 
 .ChildFormSection input[type="radio"] {

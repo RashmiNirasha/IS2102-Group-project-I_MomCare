@@ -12,7 +12,20 @@ include "../../Assets/Includes/header_pages.php";
     <style><?php include "../../Assets/css/style-common.css"; ?></style>
 </head>
 <body>
+<?php 
+   include '../../Config/dbConnection.php';
 
+   $sql="SELECT ci.*, nc.*, nhc.*, cscr.*
+   FROM `child_identification_information` ci
+   LEFT JOIN `child_newborn_care_form` nc ON ci.`child_id` = nc.`child_id`
+   LEFT JOIN `child_newborn_health_chart` nhc ON ci.`child_id` = nhc.`child_id`
+   LEFT JOIN `child_special_care_reasons` cscr ON ci.`child_id` = cscr.`child_id`
+--    Where ci.`child_id` = Session['child_id']";
+
+$result=mysqli_query($con,$sql);
+$row=mysqli_fetch_assoc($result);
+$age = date_diff(date_create($row['child_birth_date']), date_create('today'))->m . ' months';
+?>
     <div class="ChildCardMain">
         <!-- title section -->
         <div class="ChildCardMain-titleOuter">
@@ -24,152 +37,146 @@ include "../../Assets/Includes/header_pages.php";
         <div class="ChildCardOuterDiv">
             <div class="ChildCardInnerDiv">
                 <div class="ChildFormSection">
-                    <h3>Neonatal Examination</h3>
+                    <h3>Identification Information</h3>
                     <table class="ChildCardInputSec-1">
                         <tr>
-                            <td>Date</td>
-                            <td><input type="date" name="Neonatal_Examination" id="Neonatal_Examination"></td>
-                            <td>Maturity of the Baby</td>
-                            <td><input type="text"></td>
-                            <td>Weeks</td>
+                            <td>Child's Name</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['child_name'] ?>" disabled></td>
+                            <td>Child's Birth Date </td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['child_birth_date'] ?>" disabled></td>
                         </tr>
                         <tr>
-                            <td>Baby's Growth</td>
-                            <td colspan="6"><input type="text"></td>
+                            <td>Registration Date</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['registration_date'] ?>" disabled></td>
+                            <td>Child's Age</td>
+                            <td colspan="6"><input type="text" value="<?php echo $age ?>" disabled></td>
                         </tr>
                         <tr>
-                            <td>Grama Niladhari Division</td>
-                            <td colspan="6"><input type="text"></td>
+                            <td>Mother's Name</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['mothers_name'] ?>" disabled></td>
                         </tr>
                         <tr>
-                            <td>Child's Date of Birth</td>
-                            <td colspan="6"><input type="text"></td>
+                            <td>Mother's Age</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['mothers_age'] ?>" disabled></td>
                         </tr>
                         <tr>
-                            <td>Registered Date</td>
-                            <td colspan="6"><input type="text"></td>
+                            <td>Mother's Address</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['mothers_address'] ?>" disabled></td>
                         </tr>
                         <tr>
-                            <td>Name of the Mother</td>
-                            <td colspan="6"><input type="text"></td>
+                            <td>Father's Name</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['fathers_name'] ?>" disabled></td>
                         </tr>
                         <tr>
-                            <td>Age</td>
-                            <td colspan="6"><input type="text"></td>
+                            <td>Father's Age</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['fathers_age'] ?>" disabled></td>
+                           
                         </tr>
                         <tr>
-                            <td>Address</td>
-                            <td colspan="6"><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>Total No. of Children</td>
-                            <td colspan="6"><input type="text"></td>
+                            <td>No. of Children Alive</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['no_of_children_alive'] ?>" disabled></td> 
                         </tr>
                     </table>
                 </div>
             </div>
-        </div>
+        </div> 
         <!-- form section 2 -->
         <div class="ChildCardOuterDiv">
             <div class="ChildCardInnerDiv">
                 <div class="ChildFormSection">
+                    <h3>Newborn Care</h3>
                     <table class="ChildCardInputSec-2">
                         <tr>
-                            <td>Hospital Name</td>
-                            <td colspan="6"><input type="text"></td>
+                            <td>Birth Place</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['birth_place'] ?>" disabled></td>
+                            <td>Dilivery Mode</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['delivery_mode'] ?>" disabled></td>
                         </tr>
                         <tr>
-                            <td>Delivery Method</td>
-                            <td><input type="radio" name="Delivery_Method_Normal" id="">Normal</td>
-                            <td colspan="3"><input type="radio" name="Delivery_Method_Vaccum" id="">Vaccum</td>
-                            <td><input type="radio" name="Delivery_Method_Cesarean" id="">Cesarean</td>
-                        </tr>
-                        <tr>
+                            <td>Apgar Score</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['apgar_score'] ?>" disabled></td>
                             <td>Birth Weight</td>
-                            <td><input type="text"></td>
-                            <td>Circumferences of the head</td>
-                            <td colspan="4"><input type="text"></td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['birth_weight'] ?>" disabled></td>
                         </tr>
                         <tr>
+                            <td>Head Circumference</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['head_circumference'] ?>" disabled></td>
+                            <td>Baby Length</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['baby_length'] ?>" disabled></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Discharge Weight</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['discharge_weight'] ?>" disabled></td>
                             <td>Vitamin K</td>
-                            <td colspan="5"><input type="checkbox" name="VitaminK" id="VitaminK">Given</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['vitamin_k'] ?>" disabled></td>
                         </tr>
                         <tr>
-                            <td>Breast Feeding</td>
-                            <td>Started in the 1st hour?</td>
-                            <td><input type="radio" name="Delivery_Method_Vaccum" id="">Yes</td>
-                            <td colspan="3"><input type="radio" name="Delivery_Method_Cesarean" id="">No</td>
-
+                            <td>Breastfeeding Start</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['breastfeeding_start'] ?>" disabled></td>
+                            <td>Breastfeeding Establishment</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['breastfeeding_establishment'] ?>" disabled></td>
                         </tr>
                         <tr>
-                            <td>TSH Test</td>
-                            <td><input type="radio" name="Delivery_Method_Vaccum" id="">Done</td>
-                            <td><input type="radio" name="Delivery_Method_Cesarean" id="">Not done</td>
-                            <td colspan="3"></td>
-                        </tr>
-                        <tr>
-                            <td>Test Results</td>
-                            <td colspan="6"><input type="text"></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <!-- form section 3 -->
-        <div class="ChildCardOuterDiv">
-            <div class="ChildCardInnerDiv">
-                <div class="ChildFormSection">
-                    <h3>Reasons for Special Care</h3>
-                    <table class="ChildCardInputSec-3">
-                        <tr>
-                            <td>Immature births</td>
-                            <td><input type="checkbox" name="Immature_births" id=""><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>Under weight Births</td>
-                            <td colspan="6"><input type="checkbox" name="Under_weight_Births" id=""><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>Disorders</td>
-                            <td colspan="6"><input type="checkbox" name="Disorders" id=""><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>Serious issues for mother after the birth</td>
-                            <td colspan="6"><input type="checkbox" name="Serious_issues_for_mother_after_the_birth" id=""><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>Giving Milk powder during 6 moths</td>
-                            <td colspan="6"><input type="checkbox" name="Giving_Milk_powder_during_6_moths" id=""><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>Impairment og Growth</td>
-                            <td colspan="6"><input type="checkbox" name="Impairment_og_Growth" id=""><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>Feeding Issues</td>
-                            <td colspan="6"><input type="checkbox" name="Feeding_Issues" id=""><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>Death of Mother/Farther</td>
-                            <td colspan="6"><input type="checkbox" name="Death_of_Mother_Farther" id=""><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>Migration of Mother/Father</td>
-                            <td colspan="6"><input type="checkbox" name="Migration_of_Mother_Father" id=""><input type="text"></td>
+                            <td>Breastfeeding Relationship</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['breastfeeding_relationship'] ?>" disabled></td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
         
+        <!-- form section 4 -->
+        <div class="ChildCardOuterDiv">
+            <div class="ChildCardInnerDiv">
+                <div class="ChildFormSection">
+                    <h3>Reasons for Special Care</h3>
+                    <table class="ChildCardInputSec-3">
+                        <tr>
+                            <td>Immature Births</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['immature_births_text'] ?>" disabled></td>
+                        <tr>
+                            <td>Under Weight Births</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['under_weight_births_text'] ?>" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Disorders</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['disorders_text'] ?>" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Serious Issues for Mother</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['serious_issues_for_mother_text'] ?>" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Milk Powder During 6 Months</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['milk_powder_during_6_months_text'] ?>" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Growth Impairment</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['growth_impairment_text'] ?>" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Feeding Issues</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['feeding_issues_text'] ?>" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Death of Parent</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['death_of_parent_text'] ?>" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Parent Migration</td>
+                            <td colspan="6"><input type="text" value="<?php echo $row['parent_migration_text'] ?>" disabled></td>
+                        </tr>
+                        <td>   
+                    </table>
+                </div>
+            </div>
+        </div>
         <div class="ChildFormButtons">
-            <a href=""><button class="SaveBtn">Save</button></a>
             <a href="child-infantCareView.php"><button class="NextBtn">Next</button></a>
             <a href="child-childCardView.php"><button class="NextBtn">Back</button></a>
-
         </div>
     </div>
 </body>
 </html>
 
-<?php // include "../../Assets/Includes/footer_pages.php"; ?>

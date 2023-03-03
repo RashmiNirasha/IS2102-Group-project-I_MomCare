@@ -1,7 +1,7 @@
 <?php 
 //include "../../Assets/Includes/header_pages.php";
 
-include "child-cardModel.php";
+include "child-cardFunctionsModel.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     insert_child_special_care_reasons($_POST);
 
@@ -15,16 +15,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style><?php include "../../Assets/css/style-common.css"; ?></style>
+    <style><?php include 'Style-child.css'; ?></style>
 </head>
 <body>
 
-<div class="ChildCardOuterDiv">
-    <div class="ChildCardInnerDiv">
-        <div class="ChildFormSection">
-            <h3>Reasons for Special Care</h3>
+    <div>
+        <div class="childcontainer-3">
+            <h1>Reasons for Special Care</h1>
             <form method="post">
-                <table class="ChildCardInputSec-3">
+                <table>
                     <tr>
                         <td>Immature births</td>
                         <td><input type="checkbox" name="Immature_births" id=""><input type="text" name="immature_births_text"></td>
@@ -46,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <td colspan="6"><input type="checkbox" name="Giving_Milk_powder_during_6_moths" id=""><input type="text" name="milk_powder_during_6_months_text"></td>
                     </tr>
                     <tr>
-                        <td>Impairment og Growth</td>
+                        <td>Impairment of Growth</td>
                         <td colspan="6"><input type="checkbox" name="Impairment_of_Growth" id=""><input type="text" name="growth_impairment_text"></td>
                     </tr>
                     <tr>
@@ -62,11 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <td colspan="6"><input type="checkbox" name="Migration_of_Mother_Father" id=""><input type="text" name="parent_migration_text"></td>
                     </tr>
                 </table>
-                <button type="submit" name="submit">Submit</button>
+                <input type="submit" value="Submit">
             </form>
         </div>
     </div>
-</div>
+
 
 </body>
 </html>
