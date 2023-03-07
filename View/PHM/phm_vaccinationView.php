@@ -1,6 +1,21 @@
 <?php
-    include "../../Assets/Includes/header_phm.php";
+    
     include '../../Config/dbConnection.php';
+    include "../../Assets/Includes/header_phm.php";
+
+    $sql = "SELECT * FROM vaccines";
+    $result = mysqli_query($con, $sql);
+   
+    $sql1 = "SELECT * FROM immunization_table";
+    $result1 = mysqli_query($con, $sql1);
+    $resultCheck1 = mysqli_num_rows($result1);
+ 
+    $sql3 = "SELECT * FROM child_details";
+    $result3 = mysqli_query($con, $sql3);
+    while ($row = mysqli_fetch_array($result3)){
+        $age = date_diff(date_create($row['date_of_birth']), date_create(date("Y-m-d")))->format('%m months %d days');
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +29,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <style><?php include "../../Assets/css/style-common.css" ?></style>
     <style> 
-    .Profile-con{
+
+.Profile-con{
         margin-top: 10%;
         margin-left: 15%;
         margin-right: 15%;
@@ -47,7 +63,6 @@ tr:nth-child(even) {
 <div class="Profile-con">
     <div class="row">
         <div class="col-md-12">
-           
             <?php
             $vid = $_GET['child_id'];
             $ret = mysqli_query($con, "select * from child_details where child_id='$vid'");
@@ -91,72 +106,52 @@ tr:nth-child(even) {
     </div>
 </div>
 
-<div class="add-report-label"><label for="add-report">Add Vaccination Record</label></div>
-        <div class="add-report">
-            <form class="test-form" action="" method="post" enctype="multipart/form-data">
-                <div id="x"> 
-                <label for="DoctorSpecialization">Vaccine Selection</label>
-                <select name="Doctorspecialization" class="form-control" onChange="getdoctor(this.value);" required="required">
-                <option value="">Select Vaccine</option>
-                <?php
-                  $ret = mysqli_query($con,"SELECT * FROM `vaccinetypes`");
-                  while($row = mysqli_fetch_array($ret)) {
-                    ?>
-                      <option value="<?php echo htmlentities($row['Vaccine']);?>">
-                        <?php echo htmlentities($row['Vaccine']);?>
-                      </option>
-                    <?php
-                  }
-                ?>
-              </select>
+<div class="add-report-label"><label for="add-report">Add Vaccine entries </label></div>
+                    <form action="../../Config/phm-enterVaccinModel.php" method="POST">
+                    
+                    <input type="text" id="child_id" name="child_id" value="<?php echo htmlentities($vid); ?>" hidden ><br>
+                    <input type="text" id="age" name="age" value="<?php echo htmlentities($age); ?>" hidden><br>
 
-                <label for="des">Any Comments on vaccination</label>
-              <textarea type="text" name="des" class="form-control" placeholder="Enter the comments here" required="true"></textarea>
-<label for="AppointmentDate">Date</label>				
-              <input class="form-control datepicker" name="appdate"  required="required" data-date-format="yyyy-mm-dd">      
-                            <input type="hidden" name="child_id" value="<?php echo $vid ?>">
-                            <label for="Appointmenttime">Time</label>								
-              <input class="form-control" name="apptime" id="timepicker1" required="required">
+                    <label for="type_of_vaccine">Type of Vaccine:</label>
+                    <select id="type_of_vaccine" name="type_of_vaccine" required>
+                        <option value="">Select a vaccine</option>
+                        <?php
+                        $ret = mysqli_query($con, "SELECT * FROM `vaccinetypes`");
+                        while($row = mysqli_fetch_array($ret)) {
+                        ?>
+                        <option value="<?php echo htmlentities($row['Vaccine']);?>">
+                            <?php echo htmlentities($row['Vaccine']);?>
+                        </option>
+                        <?php
+                        }
+                        ?>
+                    </select><br>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required><br>
 
-                </div>
-                    <input class="add-report-btn" name="add_report" type="submit" value="Submit" >
-            </form>
-            <?php 
-            $vaccine = $_POST['vaccine'];
-            $comments = $_POST['comments'];
-            $appointmentDate = $_POST['appointmentDate'];
-            $appointmentTime = $_POST['appointmentTime'];
-            $childId = $_POST['childId'];
+                    <label for="batch_no">Batch No:</label>
+                    <input type="text" id="batch_no" name="batch_no" required><br>
 
-            $res = $ret=mysqli_query($con,"SELECT `date_of_birth` FROM `child_details` WHERE child_id = '$vid'");
-            while($row = mysqli_fetch_array($ret)) {
-                $dob=$row['date_of_birth'];
-                $age= $dob ;
-                $query = "INSERT INTO `immunization_table` (`child_id`, `age`, `type_of_vaccine`, `date`, `batch_no`, `adverse_effects`, `phm_id`) 
-                VALUES ('$childId',$age, '$vaccine', '$comments', '$appointmentDate', '$appointmentTime')";
-                   if (mysqli_query($con, $query)) {
-                   echo "Vaccine appointment added successfully";
-                   } else {
-                   echo "Error adding vaccine appointment: " . mysqli_error($con);
-                   }
-   
-            }
-            ?>
-        </div>
-        <div class="add-report-label"><label for="add-report">Search records</label></div>
+                    <label for="adverse_effects">Adverse Effects:</label>
+                    <input type="text" id="adverse_effects" name="adverse_effects"><br>
+
+                    <input type="submit" value="Submit">
+                    </form></div>
+
+        <div class="add-report-label"><label for="add-report">Search Vaccine entries </label></div>
         <div class="view-report">
             <table class="test-view-table">
                 <tr>
-                    <th>Doc. ID</th>
-                    <th>Test name</th>
-                    <th>Special note</th>
+                    <th>Child Name</th>
+                    <th>Age</th>
+                    <th>Vaccine</th>
                     <th>Date</th>
-                    <th>Edit report</th>
-                    <th>View report</th>
-                    <th>Delete</th>
+                    <th>Batch No</th>
+                    <th>Adverse Effects</th>
                 </tr>
 
                <?php 
+               
     $ret=mysqli_query($con,"SELECT * FROM immunization_table WHERE child_id = '$vid'");
     if($ret){
         $num=mysqli_num_rows($ret);
@@ -164,9 +159,11 @@ tr:nth-child(even) {
             while($row = mysqli_fetch_array($ret)){
                 echo "<tr> 
                         <td>".$row['child_id']."</td>
-                        <td>".$row['note_topic']."</td>
-                        <td>".$row['note_description']."</td>
-                        <td>".date("y-m-d")."</td>
+                        <td>".$row['age']."</td>
+                        <td>".$row['type_of_vaccine']."</td>
+                        <td>".$row['date']."</td>
+                        <td>".$row['batch_no']."</td>
+                        <td>".$row['adverse_effects']."</td>
                     </tr>";
             } 
         } else {
@@ -181,3 +178,5 @@ tr:nth-child(even) {
 
 </body>
 </html>
+
+?>
