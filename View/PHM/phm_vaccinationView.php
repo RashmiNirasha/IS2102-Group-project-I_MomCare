@@ -1,7 +1,7 @@
 <?php
     
     include '../../Config/dbConnection.php';
-    include "../../Assets/Includes/header_phm.php";
+    //include "../../Assets/Includes/header_phm.php";
 
     $sql = "SELECT * FROM vaccines";
     $result = mysqli_query($con, $sql);
@@ -10,12 +10,6 @@
     $result1 = mysqli_query($con, $sql1);
     $resultCheck1 = mysqli_num_rows($result1);
  
-    $sql3 = "SELECT * FROM child_details";
-    $result3 = mysqli_query($con, $sql3);
-    while ($row = mysqli_fetch_array($result3)){
-        $age = date_diff(date_create($row['date_of_birth']), date_create(date("Y-m-d")))->format('%m months %d days');
-    }
-    
 ?>
 
 <!DOCTYPE html>
@@ -68,6 +62,10 @@ tr:nth-child(even) {
             $ret = mysqli_query($con, "select * from child_details where child_id='$vid'");
             $cnt = 1;
             while ($row = mysqli_fetch_array($ret)) {
+                $dateOfBirth = ($row['date_of_birth']);
+                $today = date("Y-m-d");
+                $diff = date_diff(date_create($dateOfBirth), date_create($today));
+                $age = $diff->format('%y years %m months %d days');    
             ?>
                 <table border="1" class="table table-bordered">
                     <tr align="center">
