@@ -101,15 +101,12 @@
             </div>
             </div>
         </div>
-        <div class="log-out"> <!--logout button-->
-        <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
-    </div>  
     </div>
 </body>
 </html>
 
 <?php 
     }else{
-        header("Location:admin-login.php");
+        header("Location:../../mainLogin.php");
     }
 ?>

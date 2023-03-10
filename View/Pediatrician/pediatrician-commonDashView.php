@@ -5,10 +5,12 @@ include "../../Config/dbConnection.php";
 if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 
 <?php 
-$sql="SELECT doc_name FROM doctor_details WHERE doc_email='".$_SESSION['email']."'";
+$vid=$_GET['childid'];
+$sql="select * from child_details where child_id='$vid'";
 $result=mysqli_query($con,$sql);
 $row=mysqli_fetch_assoc($result);
-$doc_name=$row['doc_name'];
+$name=$row['child_name'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,27 +26,18 @@ $doc_name=$row['doc_name'];
 
 <div class="ped-Dashboard">
     <div class="dashboard-header">
-        <h1>Welcome to the Dashboard Dr. <?php echo $doc_name ?></h1>
+        <h1>Welcome to the Dashboard of <?php echo $name ?></h1>
     </div>
 </div>
 
-<div class="card-pack"><!--gap remover
-        --><button class="card" onclick="window.location.href = 'pediatrician-childCardSearchView.php';">
+<div class="card-pack">
+
+<button class="card" onclick="window.location.href = '../Child/test.php?childid=<?php echo $vid; ?>'">
                 <div class="card-content-left"><span class="material-symbols-outlined">Child_care</span></div>
-                <div class="card-content-right"><p>Search For Child</p></div>
+                <div class="card-content-right"><p>Immunization Card</p></div>
             </button><!--gap remover -->
 
-            <button class="card" onclick="window.location.href = 'childs.php';">
-                <div class="card-content-left"><span class="material-symbols-outlined">List</span></div>
-                <div class="card-content-right"><p>View Child List</p></div>
-            </button><!--gap remover -->
-
-            <button class="card" onclick="window.location.href = 'pediatrician-childCardSearchView.php';">
-                <div class="card-content-left"><span class="material-symbols-outlined">Child_care</span></div>
-                <div class="card-content-right"><p>Child Management</p></div>
-            </button><!--gap remover -->
-
-        <button class="card" onclick="window.location.href = ' enterNotes.php';">
+        <button class="card" onclick="window.location.href = 'enterNotes.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">description</span></div>
                 <div class="card-content-right"><p>Doctor Notes</p></div>
             </button>
@@ -62,7 +55,6 @@ $doc_name=$row['doc_name'];
             
         
 </div>
-        <?php //include_once '../../Assets/Includes/ped-footer.php';?>
 </header>
 </html>
 <?php

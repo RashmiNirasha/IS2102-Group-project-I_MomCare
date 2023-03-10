@@ -1,6 +1,6 @@
 <?php 
-include "../../Assets/Includes/header_pages.php";
 session_start();
+include "../../Assets/Includes/header_pages.php";
 include '../../Config/dbConnection.php';
 if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 
@@ -61,6 +61,8 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                 <button type ="submit" name="enter" onclick="window.location.href=\'../Child/child-generalInformationView.php?childid=' . $childid . '\'">Child Card</button>
                 <button type ="submit" name="enternotes" onclick="window.location.href=\'ped-doctorNotes.php?childid=' . $childid . '\'">Doctor Notes</button>
                 <button type ="submit" name="enternotes" onclick="window.location.href=\'pediatrician-addNotesView.php?childid=' . $childid . '\'">Add Notes</button>
+                <button type ="submit" name="enternotes" onclick="window.location.href=\'pediatrician-commonDashView.php?childid=' . $childid . '\'">Dashboard</button>
+
                 </div>
             </div>
             </td>
@@ -74,10 +76,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                 }
 ?>
     </div>
-       <!--logout button-->
-    <div class="log-out"> 
-    <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
-    </div>
+      
 </div>
 </body>
 </html>

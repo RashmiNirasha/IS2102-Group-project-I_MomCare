@@ -1,15 +1,17 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .table-data {
     background-color: #ffffff;
     color: #333333;
     font-size: 14px;
-  border-collapse: collapse;
-  width: 50%;
+    border-collapse: collapse;
     margin: 0 auto;
+    border-radius:  30px 30px 30px 30px;
+ 
   }
-  
+   
   .table-data th,
   .table-data td {
     border: 1px solid #dddddd;
@@ -81,4 +83,12 @@ body{
     color: #b6b6b6;
     background-color: #f7f7f7;
   }
-  
+
+  .t-colum{
+    margin-left: 15%;
+    width: 70%;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgb(157 154 154 / 10%), 0 6px 20px 0 rgb(147 142 142 / 29%);
+    padding: 20px
+  }

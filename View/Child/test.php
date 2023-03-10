@@ -1,30 +1,39 @@
-<?php  
-//include "../../Assets/Includes/header_pages.php" ;
- function fetch_data()  
- {  
-    include("../../Config/dbConnection.php");
-      $sql = "SELECT * FROM immunization_table where child_id like 'C102'" ;
-      $result = mysqli_query($con, $sql);  
-      $output = '';  
-      while($row = mysqli_fetch_array($result))  
-      {       
-        $phm_id=$row["phm_id"];
-        $sql1 = "SELECT * FROM phm_details where phm_id like '$phm_id'" ;
-        $result1 = mysqli_query($con, $sql1);
-        $row1 = mysqli_fetch_array($result1);
+<?php 
 
-      $output .= '<tr>  
-                          <td>'.$row["age"].'</td>  
-                          <td>'.$row["type_of_vaccine"].'</td>  
-                          <td>'.$row["date"].'</td>  
-                          <td>'.$row["batch_no"].'</td>
-                          <td>'.$row["adverse_effects"].'</td>
-                          
-                     </tr>  
-                          ';  
-      }  
-      return $output;  
- }  
+include "../../Config/dbConnection.php";
+
+$sql = "SELECT * FROM child_details WHERE child_id = '{$_GET['childid']}'";
+$result = mysqli_query($con, $sql);
+$row = mysqli_fetch_assoc($result);
+$name = $row['child_name'];
+function fetch_data()  
+{  
+    include("../../Config/dbConnection.php");
+    // Escape user input to prevent SQL injection
+    $childid = mysqli_real_escape_string($con, $_GET['childid']);
+
+    $sql = "SELECT *
+            FROM immunization_table
+            WHERE child_id = '$childid'";
+
+    $result = mysqli_query($con, $sql);
+
+    $output = '';  
+    $child_name = ''; // Declare variable to store child name
+    while($row = mysqli_fetch_array($result))  
+    {       
+        $output .= '<tr>  
+                      <td>'.$row["age"].'</td>  
+                      <td>'.$row["type_of_vaccine"].'</td>  
+                      <td>'.$row["date"].'</td>  
+                      <td>'.$row["batch_no"].'</td>
+                      <td>'.$row["adverse_effects"].'</td>
+                      <td>'.$row["official_name"].'</td>
+                    </tr>';  
+    }  
+    return $output ; // Return both the output and child name
+  }
+
  if(isset($_POST["generate_pdf"]))  
  {  
       require_once('tcpdf/tcpdf.php');  
@@ -59,6 +68,7 @@
       $content .= '</table>';  
       $obj_pdf->writeHTML($content);  
       $obj_pdf->Output('file.pdf', 'I');  
+  
  }  
  ?>  
  <!DOCTYPE html>  
@@ -72,6 +82,7 @@
     <br/>
     <div class="container">
     <h2 align="center">ප්‍රතිශක්‍රීයකරණය&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Immunization&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;நோய்த்தடுப்பு</h2>
+    <h4 align="center">Child Name : <?php echo $name; ?></h4>
       <br />
       <div class="table-responsive">
         <div class="row">
@@ -83,14 +94,15 @@
         </div>
         <br />
         <br />
-        <table class="table table-bordered table-data">
+        <div class="t-colum">
+        <table class="table-data">
           <thead>
             <tr>
               <th width="15%">Age</th>
-              <th width="20%">Type of Vaccine</th>
+              <th width="15%">Type of Vaccine</th>
               <th width="13%">Date</th>
               <th width="15%">Batch No</th>
-              <th width="30%">Adverse Effects</th>
+              <th width="25%">Adverse Effects</th>
               <th width="25%">Name of the official</th>
             </tr>
           </thead>
@@ -98,6 +110,7 @@
             <?php echo fetch_data(); ?>
           </tbody>
         </table>
+</div>
       </div>
     </div>
   </body>

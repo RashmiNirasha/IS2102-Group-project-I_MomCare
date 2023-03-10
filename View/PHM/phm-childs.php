@@ -69,7 +69,7 @@ if (mysqli_num_rows($result) > 0) {
           <td>" . $row['mom_id'] . "</td>
           <td> $mothername </td>
           <td>
-            <button class = 'viewBtn' name='viewChildCard' onclick='window.location.href=\"phm-vaccines.php?child_id=".$row['child_id']."\"'>View</button>
+            <button class = 'viewBtn' name='viewChildCard' onclick='window.location.href=\"phm_vaccinationView.php?child_id=".$row['child_id']."\"'>Select</button>
           </td>
         </tr>";
     }
