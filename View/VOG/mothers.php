@@ -14,7 +14,7 @@ if (isset($_SESSION['email'])){?>
     <title>Document</title>
     <style><?php include "../../Assets/Css/style-common.css" ?></style>
 </head>
-<body class="mothersCardBody">
+<body>
     <a href="dashboardVog.php"><button class="goBackBtn">Go back</button></a>
     <div class="main-mother">
         <div class="mom-filter">
