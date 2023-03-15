@@ -1191,6 +1191,224 @@
     font-size: 15px;
   }
 
+/* ---------------------------- Child card menu page ----------------------------- */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.ChildCardMenuView-MainDiv {
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+h1 {
+    text-align: center;
+    /* margin-top: 30px; */
+    margin-bottom: 20px;
+}
+.ChildDataInput-cards {
+    background-color: #dff3ff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px 20% 20px 19%;
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin-bottom: 20px;
+}
+
+.ChildDataInput-cards fieldset {
+    border-radius: 10px;
+    margin: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ffffff;
+    padding: 10px;
+}
+
+.ChildDataInput-cards fieldset legend {
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 0 5px;
+}
+
+.childform-submit-btn{
+    background-color: #141166;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+    margin-left: 20px;
+    margin-right: 2px;
+}
+
+.ChildDataInput-cards input[type="text"],
+.ChildDataInput-cards input[type="date"],
+.ChildDataInput-cards input[type="number"],
+.ChildDataInput-cards textarea {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+.ChildDataInput-cards input[type="submit"] {
+    background-color: #141166;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.ChildDataInput-cards input[type="submit"]:hover {
+    background-color: rgb(5, 85, 138);
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    width: 100%;
+    background-color: white;
+}
+.ChildDataInput-cards input[type="radio"],
+.ChildDataInput-cards input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: -15px;
+}
+.ChildDataInput-cards label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.CardTitles {
+    width: 70%;
+    height: 50px;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 25px;
+    background-color: #289df6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    text-align: left;
+    color: white;
+}
+
+.CardTitles h1 {
+    margin-top: 2px;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.CardTitles-1{
+    height: 25px;
+    text-decoration: none;
+    color: black;
+    margin-top: -4px;
+    padding: 5px;
+    margin-left: 2px;
+    display: flex;
+    width: 30%;
+    border-radius: 20px;
+    background-color: white;
+}
+
+
+.childcontainer-3 form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.childcontainer-3 table tr {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .childcontainer-3 table td:first-child {
+    flex-basis: 50%;
+  }
+  
+  .childcontainer-3 table td:last-child {
+    display: flex;
+    flex-basis: 50%;
+  }
+
+  .childcontainer-3 input[type="submit"] {
+    background-color: #141166;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    width:25%;
+    margin-left: 50%;
+} 
+
+.ChildCardOuterDiv {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    height: auto;
+    background: #029EE4;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin-bottom: 20px;
+}
+
+.ChildCardInnerDiv {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: auto;
+    background: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    box-shadow: none;
+}
+
+.ChildCardInnerDiv form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    box-shadow: none;
+   
+}
+  
+
 /* ----------------------------- general Information View page -------------------------- */
 
 .ChildCardMain {

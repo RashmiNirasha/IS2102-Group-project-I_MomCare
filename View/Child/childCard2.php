@@ -8,11 +8,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
 	<title>Newborn Care Form</title>
-	<style> <?php include 'Style-child.css'; ?> </style>
+	<style><?php include "../../Assets/css/style-common.css"; ?></style>
 </head>
 <body>
-	<h1>Newborn Care </h1>
+	<!-- <h1>Newborn Care </h1> -->
 	<form method="POST">
+		<div class="ChildDataInput-cards">
 			<div class="child-container-2">
 				<fieldset>
 					<legend>Birth Information:</legend>
@@ -40,20 +41,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					<label><input type="radio" name="vitamin_k" value="no"> No</label>
 				</fieldset>
 			</div>
-			<div>
-				<fieldset>
-			<legend>Breastfeeding:</legend>
-			<label>Started within the first hour at birth:</label>
-			<label><input type="radio" name="breastfeeding_start" value="yes"> Yes</label>
-			<label><input type="radio" name="breastfeeding_start" value="no"> No</label>
-			<label>Establishment:</label>
-			<label><input type="radio" name="breastfeeding_establishment" value="correct"> Correct</label>
-			<label><input type="radio" name="breastfeeding_establishment" value="incorrect"> Incorrect</label>
-			<label>Relationship:</label>
-            <label><input type="radio" name="breastfeeding_relationship" value="correct"> Correct</label>
-			<label><input type="radio" name="breastfeeding_relationship" value="incorrect"> Incorrect</label>
-			<button type="submit">Submit</button>
-        </fieldset>
+			<div class="ChildForm-Container-Right">
+				<fieldset >
+					<legend>Breastfeeding:</legend>
+					<label>Started within the first hour at birth:</label>
+					<label><input type="radio" name="breastfeeding_start" value="yes"> Yes</label>
+					<label><input type="radio" name="breastfeeding_start" value="no"> No</label>
+					<label>Establishment:</label>
+					<label><input type="radio" name="breastfeeding_establishment" value="correct"> Correct</label>
+					<label><input type="radio" name="breastfeeding_establishment" value="incorrect"> Incorrect</label>
+					<label>Relationship:</label>
+					<label><input type="radio" name="breastfeeding_relationship" value="correct"> Correct</label>
+					<label><input type="radio" name="breastfeeding_relationship" value="incorrect"> Incorrect</label>
+        		</fieldset>
+			</div>
+			<div></div>
+			<div class="childform-submit-btn-div"><input class="childform-submit-btn" type="submit" value="Submit"></div>
         </div>
     </form>
 </body>

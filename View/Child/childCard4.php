@@ -8,11 +8,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
 	<title>Newborn Health Chart</title>
-    <style> <?php include 'Style-child.css'; ?> </style>
+	<style><?php include "../../Assets/css/style-common.css"; ?></style>
 </head>
 <body>
-	<h1>Newborn Health Chart</h1>
-	<form action="" method="post">
+	<!-- <h1>Newborn Health Chart</h1> -->
+	<form class="ChildDataInput-cards" action="" method="post">
 		<div>
         <label for="report-entry-date">Date of report entry</label>
 		<input type="date" id="report-entry-date" name="report_entry_date" required>
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<label for="deficiency">Any other deficiency</label>
         <input type="text" id="deficiency" name="deficiency" required>
 
-	<input type="submit" value="Submit">
+	<input class="childform-submit-btn" type="submit" value="Submit">
 </div>
 </form>
 </body>

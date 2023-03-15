@@ -15,14 +15,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style><?php include 'Style-child.css'; ?></style>
+	<style><?php include "../../Assets/css/style-common.css"; ?></style>
 </head>
 <body>
 
     <div>
         <div class="childcontainer-3">
-            <h1>Reasons for Special Care</h1>
-            <form method="post">
+            <!-- <h1>Reasons for Special Care</h1> -->
+            <form class="ChildDataInput-cards" method="post">
                 <table>
                     <tr>
                         <td>Immature births</td>
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <td colspan="6"><input type="checkbox" name="Migration_of_Mother_Father" id=""><input type="text" name="parent_migration_text"></td>
                     </tr>
                 </table>
-                <input type="submit" value="Submit">
+                <div class="childform-submit-btn-div"><input class="childform-submit-btn" type="submit" value="Submit"></div>
             </form>
         </div>
     </div>
