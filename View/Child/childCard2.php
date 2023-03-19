@@ -1,9 +1,4 @@
-<?php
-include "child-cardFunctionsModel.php";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    insert_child_newborn_care($_POST);
-}
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			<div class="child-container-2">
 				<fieldset>
 					<legend>Birth Information:</legend>
+					<label for="child-id" style="display:none">Child ID:</label>
+					<input type="hidden" name="childid" value="<?php echo $_GET['childid']; ?>">
+
 					<label>Birth Place (hospital):</label>
 					<input type="text" name="birth_place">
 					<label>Mode of Delivery:</label>
@@ -55,6 +53,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					<label><input type="radio" name="breastfeeding_relationship" value="incorrect"> Incorrect</label>
         		</fieldset>
 			</div>
+			<?php
+					include "child-cardFunctionsModel.php";
+					if ($_SERVER["REQUEST_METHOD"] == "POST") {
+						insert_child_newborn_care($_POST);
+					}
+					?>
 			<div></div>
 			<div class="childform-submit-btn-div"><input class="childform-submit-btn" type="submit" value="Submit"></div>
         </div>

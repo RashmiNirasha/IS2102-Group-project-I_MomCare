@@ -26,6 +26,7 @@ if (mysqli_query($con, $sql)) {
 
 function insert_child_newborn_care($data) {
     global $con;
+    $Child_id = $data['childid'];
     $birth_place = $data['birth_place'];
     $delivery_mode = $data['delivery_mode'];
     $apgar_score = $data['apgar_score'];
@@ -38,11 +39,11 @@ function insert_child_newborn_care($data) {
     $breastfeeding_establishment = $data['breastfeeding_establishment'];
     $breastfeeding_relationship = $data['breastfeeding_relationship'];
 
-    $sql = "INSERT INTO child_newborn_care_form (birth_place, delivery_mode, apgar_score, birth_weight, head_circumference, baby_length, discharge_weight, vitamin_k, breastfeeding_start, breastfeeding_establishment, breastfeeding_relationship)
-  VALUES ('$birth_place', '$delivery_mode', '$apgar_score', '$birth_weight', '$head_circumference', '$baby_length', '$discharge_weight', '$vitamin_k', '$breastfeeding_start', '$breastfeeding_establishment', '$breastfeeding_relationship')";
+    $sql = "INSERT INTO child_newborn_care_form (Child_id,birth_place, delivery_mode, apgar_score, birth_weight, head_circumference, baby_length, discharge_weight, vitamin_k, breastfeeding_start, breastfeeding_establishment, breastfeeding_relationship)
+  VALUES ('$Child_id','$birth_place', '$delivery_mode', '$apgar_score', '$birth_weight', '$head_circumference', '$baby_length', '$discharge_weight', '$vitamin_k', '$breastfeeding_start', '$breastfeeding_establishment', '$breastfeeding_relationship')";
 
     if (mysqli_query($con, $sql)) {
-        header ("Location: childCard2.php?success=1");
+        header ("Location: child-cardMenuView.php?success=1");
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($con);
     }

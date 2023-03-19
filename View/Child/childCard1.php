@@ -9,10 +9,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
 	<title>Identification Information</title>
 	<style><?php include "../../Assets/css/style-common.css"; ?></style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$("#child-form").submit(function(event) {
+			event.preventDefault();
+			var form_data = $(this).serialize();
+			$.ajax({
+				type: "POST",
+				url: "child-form.php",
+				data: form_data,
+				success: function(response) {
+					// handle success response
+				},
+				error: function(xhr, status, error) {
+					// handle error response
+				}
+			});
+		});
+	});
+	</script>
 </head>
 <body>
 	<!-- <h1>Identification Information</h1> -->
-	<form class="ChildDataInput-cards" action=" " method="post">
+	<form id="child-form" class="ChildDataInput-cards">
 		<div class="ChildForm-Container-Light">
 			<label for="child-name">Child Name:</label>
 			<input type="text" id="child-name" name="child-name" required>
@@ -43,10 +63,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="number" id="no-of-children" name="no-of-children" required>
     	</div>
 		<div></div>
-		<div class="childform-submit-btn-div"><input class="childform-submit-btn" type="submit" value="Submit"></div>
+		<div class="childform-submit-btn-div">
+		<input class="childform-submit-btn" type="submit" value="Submit">
+		</div>
 	</form>
 </body>
 </html>
-
-
-			
