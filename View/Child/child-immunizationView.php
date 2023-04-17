@@ -3,19 +3,19 @@ session_start();
 include '../../Config/dbConnection.php';
 include "../../Assets/Includes/header_pages.php";
 
-$sql = "SELECT * FROM child_details WHERE child_id = '{$_GET['childid']}'";
+$sql = "SELECT * FROM child_details WHERE child_id = '{$_GET['child_id']}'";
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
-$name = $row['child_name'];
+$child_name = $row['child_name'];
 function fetch_data()  
 {  
     include("../../Config/dbConnection.php");
     // Escape user input to prevent SQL injection
-    $childid = mysqli_real_escape_string($con, $_GET['childid']);
+    $child_id = mysqli_real_escape_string($con, $_GET['child_id']);
 
     $sql = "SELECT *
             FROM immunization_table
-            WHERE child_id = '$childid'";
+            WHERE child_id = '$child_id'";
 
     $result = mysqli_query($con, $sql);
 
@@ -87,7 +87,9 @@ function fetch_data()
     <style><?php include "../../Assets/css/style-common.css"; ?></style>
 </head>
 <body>
-
+<div class="top-button" >
+<a href="child-childDashboard.php?child_id=<?php echo $_GET['child_id']; ?>"><button class="goBackBtn">Go back</button></a>
+        </div>
     <div class="ChildCardMain">
         <!-- title section -->
         <div class="ChildCardMain-titleOuter">

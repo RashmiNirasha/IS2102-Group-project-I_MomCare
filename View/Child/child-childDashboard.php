@@ -4,7 +4,7 @@
     include "../../Assets/Includes/header_pages.php" ;
 
     // fetch childid from the url and store it in a variable
-    $childid = $_GET['child_id'];
+    $child_id = $_GET['child_id'];
     ?>
 
 <!DOCTYPE html>
@@ -20,17 +20,17 @@
 <body>
     <div class="child-dashboard">
         <div class="card-pack"><!--gap remover
-        --><button class="card" onclick="window.location.href = 'child-childCardView.php?childid=<?php echo $_GET['child_id']; ?>';">
+        --><button class="card" onclick="window.location.href = 'child-childCardView.php?child_id=<?php echo $_GET['child_id']; ?>';">
                 <div class="card-content-left"><span class="material-symbols-outlined">description</span></div>
                 <div class="card-content-right"><p>Child Cards</p></div>
             </button><!--gap remover -->
             
-       <button class="card" onclick="window.location.href = 'child-immunizationView.php?childid=<?php echo $_GET['child_id']; ?>';">
+       <button class="card" onclick="window.location.href = 'child-immunizationView.php?child_id=<?php echo $_GET['child_id']; ?>';">
                 <div class="card-content-left"><span class="material-symbols-outlined">vaccines</span></div>
-                <div class="card-content-right"><p>Immunization</p></div>
+                <div class="card-content-right"><p>Immunization Card</p></div>
             </button>
 
-            <button class="card" onclick="window.location.href = 'child-viewMedicalNotes.php?childid=<?php echo $_GET['child_id']; ?>';">
+            <button class="card" onclick="window.location.href = 'child-viewMedicalNotes.php?child_id=<?php echo $_GET['child_id']; ?>';">
                 <div class="card-content-left"><span class="material-symbols-outlined">note_add</span></div>
                 <div class="card-content-right"><p>Medical Notes</p></div>
             </button>

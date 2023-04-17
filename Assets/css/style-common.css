@@ -1757,6 +1757,11 @@ body {
     position: fixed;
 }
 
+.goBackBtn:hover {
+    background-color: #ff0000;
+
+}
+
 .goBackBtn-motherPage {
     width: 100px;
     height: 30px;
@@ -3558,6 +3563,7 @@ a {
     height: 2rem;
     background-color: #d9d9d9;
     padding: 0.5rem;
+    width: 10%;
   }
   
   .common_list_content table td {
@@ -3593,12 +3599,16 @@ a {
     font-weight: bold;
 }
 
-/* .top {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 1em;
-} */
+.top-button{
+    margin-top: 150px;
+    margin-bottom: 0px;
+}
+
+.top-button:hover{
+    background-color: #ca2020;
+    border-color: #ffffff;
+    color: #ffffff;
+}
 
 .back-btn {
     margin-left: 20px;
@@ -3629,7 +3639,11 @@ a {
     margin-left: 40px;
 }
 
-
+.btnMain:hover {
+    background-color: #ca2020;
+    border-color: #ffffff;
+    color: #ffffff;
+}
 
 .child-dashboard{
     margin-top: 8%;
@@ -3939,7 +3953,6 @@ a {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-top: 50px;
     margin: 10px 10px 10px 10px;
   }
 
