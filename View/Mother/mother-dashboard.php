@@ -1,8 +1,8 @@
 <?php 
+session_start();
+if (isset($_SESSION['email'])){
 include "../../Config/dbConnection.php";
-    session_start();
-     if (isset($_SESSION['email'])){
-        //include "../../Assets/Includes/header_pages.php";
+include "../../Assets/Includes/header_pages.php" ;
  ?>
 <?php 
     $sql="SELECT mom_fname FROM mother_details WHERE mom_email='".$_SESSION['email']."'";
@@ -10,6 +10,7 @@ include "../../Config/dbConnection.php";
     $row=mysqli_fetch_assoc($result);
     $mom_name=$row['mom_fname'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +18,11 @@ include "../../Config/dbConnection.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mother Dashboard</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <style><?php include "../../Assets/css/style-common.css" ?></style>
 
 </head>
 <body>
+
 <div class="dashboard-mother">
         <div class="dashboard-header">
             <h1>Welcome to the Dashboard <?php echo "Ms ".$mom_name ?></h1>
@@ -56,14 +56,50 @@ include "../../Config/dbConnection.php";
                 <div class="card-content-right"><p>Appoinments</p></div>
             </button>
             </button><!--gap remover
-            --><button class="card">
-                <div class="card-content-left"><span class="material-symbols-outlined">child_care</span></div>
-                <div class="card-content-right"><p>Children</p></div>
-            </button>
+            -->
+           
+            <button class="card" id="myButton">
+    <div class="card-content-left"><span class="material-symbols-outlined">child_care</span></div>
+    <div class="card-content-right">
+        <p>Children</p>
+        <div class="dropdown-menu" id="myDropdown" style="display: none;">
+            <ul>
+            <?php
+                $sql = "SELECT child_name,child_id FROM child_details WHERE mom_email='" . $_SESSION['email'] . "'";
+                $result = mysqli_query($con, $sql);
+                if ($result instanceof mysqli_result && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $child_name = $row['child_name'];
+                        $child_id = $row['child_id'];
+            ?>
+                        <li>
+                            <?php
+                        echo "<a href='../child/child-childDashboard.php?child_id=" . urlencode($child_id) . "'>" . $child_name . "</a></li>";
+                            ?>
+            <?php
+                    }
+                } else {
+                    echo "<li>No data found</li>";
+                }
+            ?>
+            </ul>
         </div>
-        <div class="log-out"> <!--logout button-->
-            <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
+    </div>
+</button>
+
+
+<script>
+document.getElementById("myButton").addEventListener("click", function() {
+  var dropdown = document.getElementById("myDropdown");
+  if (dropdown.style.display === "none") {
+    dropdown.style.display = "block";
+  } else {
+    dropdown.style.display = "none";
+  }
+});
+</script>
         </div>
+
         <!-- ----------------------------------------------------------------------------------------------------------------- -->
 
     <!-- <div class="content"> -->

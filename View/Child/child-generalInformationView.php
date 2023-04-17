@@ -1,4 +1,6 @@
 <?php 
+session_start();
+include '../../Config/dbConnection.php';
 include "../../Assets/Includes/header_pages.php";
 ?>
 
@@ -20,11 +22,12 @@ include "../../Assets/Includes/header_pages.php";
    LEFT JOIN `child_newborn_care_form` nc ON ci.`child_id` = nc.`child_id`
    LEFT JOIN `child_newborn_health_chart` nhc ON ci.`child_id` = nhc.`child_id`
    LEFT JOIN `child_special_care_reasons` cscr ON ci.`child_id` = cscr.`child_id`
---    Where ci.`child_id` = Session['child_id']";
+   Where ci.`child_id` = Session['child_id']";
 
-$result=mysqli_query($con,$sql);
-$row=mysqli_fetch_assoc($result);
-$age = date_diff(date_create($row['child_birth_date']), date_create('today'))->m . ' months';
+    $result=mysqli_query($con,$sql);
+    $row=mysqli_fetch_assoc($result);
+    $age = date_diff(date_create($row['child_birth_date']), date_create('today'))->m . ' months';
+
 ?>
     <div class="ChildCardMain">
         <!-- title section -->

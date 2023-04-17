@@ -462,11 +462,11 @@
 /* --------------------- dashboard vog --------------------- */
 
 .dashboard-header h1 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     color: #202020;
     margin-left: 5%;
-    margin-top: 130px;
+    margin-top: 100px;
     font-family: BarlowBold;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -3632,9 +3632,8 @@ a {
 
 
 .child-dashboard{
-    margin-top: 5%;
+    margin-top: 8%;
     display: flex;
-    padding: 50px;
     width: 100%;
    
 }
@@ -3935,3 +3934,32 @@ a {
     background-color: #0059b3;
   }
   
+  /* child card view */
+  .child-cardMenu{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    margin: 10px 10px 10px 10px;
+  }
+
+  .child-cardMenu .heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .child-cardMenu h1 {
+    margin: 0;
+    font-size: 24px;
+    margin-left: 10%;
+    margin-right: 40%;
+    padding: 20px 20px ;
+    padding-right: 0px;
+  }
+
+  .child-cardMenu a{
+    text-decoration: none;
+    color: #004aad;
+    font-size: 20px;
+    margin-right: 80%;
+  }

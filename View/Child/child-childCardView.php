@@ -1,5 +1,13 @@
 <?php 
-include "../../Assets/Includes/heading.php";
+session_start();
+include '../../Config/dbConnection.php';
+//include "../../Assets/Includes/header_pages.php";
+
+if (isset($_SESSION['email'])){
+  $sql = "SELECT * FROM child_details WHERE child_id = '{$_GET['childid']}'";
+  $result = mysqli_query($con, $sql);
+  $row = mysqli_fetch_assoc($result);
+}
 ?>
 
 <!DOCTYPE html>
@@ -8,8 +16,9 @@ include "../../Assets/Includes/heading.php";
   <Link Href="Https://Fonts.Googleapis.Com/Css?Family=Quicksand:400,700" Rel="Stylesheet">
   <style><?php include "../../Assets/css/style-common.css";?></style>
 </Head>
+
 <body>
-  <div class="content">
+  <div class="child-cardMenu">
        <!-- topic and notifications -->
       <div class="heading">
         <h1>Child Card Menu</h1>
@@ -26,7 +35,7 @@ include "../../Assets/Includes/heading.php";
           <a href="infantCareView.php"><h3>Infant Care</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="immunizationView.php"><h3>Immunization</h3></a>
+        <a href="child-immunizationView.php?childid=<?php echo $_GET['childid']; ?>"><h3>Immunization</h3></a>
         </div>
         <div class="CardTitles">
           <a href="#"><h3>Age - Weight Graph</h3></a>

@@ -2,8 +2,6 @@
 session_start();
 include "../../Assets/Includes/header_pages.php";
 
-
-
 ?>
 <html>
 <head>

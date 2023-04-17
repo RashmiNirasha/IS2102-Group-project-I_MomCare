@@ -1,7 +1,11 @@
 <?php 
     session_start();
     include '../../Config/dbConnection.php';
-include "../../Assets/Includes/header_pages.php" ?>
+    include "../../Assets/Includes/header_pages.php" ;
+
+    // fetch childid from the url and store it in a variable
+    $childid = $_GET['child_id'];
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,17 +19,18 @@ include "../../Assets/Includes/header_pages.php" ?>
 </head>
 <body>
     <div class="child-dashboard">
-   
         <div class="card-pack"><!--gap remover
-        --><button class="card" onclick="window.location.href = 'child-childCardView.php';">
+        --><button class="card" onclick="window.location.href = 'child-childCardView.php?childid=<?php echo $_GET['child_id']; ?>';">
                 <div class="card-content-left"><span class="material-symbols-outlined">description</span></div>
                 <div class="card-content-right"><p>Child Cards</p></div>
             </button><!--gap remover -->
-       <button class="card" onclick="window.location.href = 'child-immunizationView.php';">
+            
+       <button class="card" onclick="window.location.href = 'child-immunizationView.php?childid=<?php echo $_GET['child_id']; ?>';">
                 <div class="card-content-left"><span class="material-symbols-outlined">vaccines</span></div>
                 <div class="card-content-right"><p>Immunization</p></div>
-            </button><!--gap remover
-            --><button class="card" onclick="window.location.href = 'child-viewMedicalNotes.php';">
+            </button>
+
+            <button class="card" onclick="window.location.href = 'child-viewMedicalNotes.php?childid=<?php echo $_GET['child_id']; ?>';">
                 <div class="card-content-left"><span class="material-symbols-outlined">note_add</span></div>
                 <div class="card-content-right"><p>Medical Notes</p></div>
             </button>
@@ -43,9 +48,6 @@ include "../../Assets/Includes/header_pages.php" ?>
             </button>
         </div>
     </div>
-    
-    <div class="log-out"> <!--logout button-->
-    <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
-    </div>
+
 </body>
 </html>
