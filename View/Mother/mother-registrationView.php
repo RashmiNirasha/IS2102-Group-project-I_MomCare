@@ -39,7 +39,7 @@ include "../../Config/dbConnection.php";
                         <td><input type="email" name="email" id="email" placeholder="Enter your email" required></td>
                     </tr>
                     <tr>
-                        <td><label for="BOD">DOB</label></td>
+                        <td><label for="BOD">Date of Birth</label></td>
                         <td><input type="date" name="BOD" id="BOD" placeholder="Enter your birthday" required></td>
                     </tr>
                     <tr>
@@ -51,8 +51,22 @@ include "../../Config/dbConnection.php";
                         <td><input type="tel" name="tele" id="tele" placeholder="Enter your telephone number" required></td>
                     </tr>
                     <tr>
-                        <td><label for="phm_id">PHM ID</label></td>
-                        <td><input type="text" name="phm_id" id="phm_id" placeholder="Enter PHM ID"></td>
+                        <td><label for="phm_id">PHM ID(Public Health Midwife)</label></td>
+                        <!-- Select from a drop down -->
+                        <td><select id="phm_id" name="phm_id" required>
+                        <option value="">Select a PHM</option>
+                        <?php
+                        $ret = mysqli_query($con, "SELECT * FROM `phm_details`");
+                        while($row = mysqli_fetch_array($ret)) {
+                        ?>
+                        <option value="<?php echo htmlentities($row['phm_id']);?>">
+                            <?php echo htmlentities($row['phm_id']);?>
+                        </option>
+                        <?php
+                        }
+                        ?>
+                    </select><br>
+                        <!-- <td><input type="text" name="phm_id" id="phm_id" placeholder="Enter PHM ID"></td> -->
                     </tr>
                     <tr>
                         <td><label for="user_role"></label></td>

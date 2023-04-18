@@ -3,9 +3,9 @@ include "../Config/dbConnection.php";
 if (isset($_POST['submit'])){
 	$new_pass =  $_POST['new_pass'];
 	$new_pass_c =  $_POST['new_pass_c'];
-	$token = $_GET['token'];
+	$email =  $_POST['email'];
 
-	$sql = "SELECT * FROM password_reset WHERE token='$token' && email='$email'";
+	$sql = "SELECT * FROM password_reset";
 	$results = mysqli_query($con, $sql);
 	$num = mysqli_fetch_assoc($results);
 	if ($num == 1) {
@@ -21,8 +21,8 @@ if (isset($_POST['submit'])){
 				$sql = "UPDATE user_tbl SET password='$new_pass' WHERE email='$email'";
 				$results = mysqli_query($con, $sql);
 				if ($result) {
-					echo "successful";
-					//header("Location:../index.php?success=" . urlencode("password changed succesfully.now you can log in"));
+					header("location: ../../index.php");
+
 				}
 			} else {
 				echo "Email not found";
@@ -41,8 +41,21 @@ if (isset($_POST['submit'])){
 </head>
 <body>
 	<form class="login-form" action=" " method="post">
-		<h2 class="form-title">New password</h2>
+
+		<h2 class="form-title">Set password</h2>
 		<!-- form validation messages -->
+		<div class="form-group">
+			<label>Email</label>
+			<input type="email" name="email" >
+		</div>
+		<div class="form-group">
+			<label>Token</label>
+			<input type="text" name="token" >
+		</div>
+		<?php 
+//token verification 
+
+		?>
 		<div class="form-group">
 			<label>New password</label>
 			<input type="password" name="new_pass">

@@ -1,6 +1,6 @@
 <?php
 include "../../Assets/Includes/header_admin.php";
-// session_start();
+session_start();
 // if (isset($_SESSION['s_email'])){
 
 ?>

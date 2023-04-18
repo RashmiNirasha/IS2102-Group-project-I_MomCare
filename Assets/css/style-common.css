@@ -135,7 +135,7 @@
     justify-content: space-around;
     vertical-align: middle;
     width: 100%;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     background-color: rgb(255, 255, 255);
 }
 
@@ -248,7 +248,7 @@
 }
 
 .RegisterFormHeading img {
-    margin-top: 10px;
+    margin-top: 05px;
     align-self: center;
     width: 130px;
     margin-bottom: -30px;
@@ -282,6 +282,16 @@
     padding: 5px 0px 5px 0px;
 }
 
+.RegistrationMotherForm table select {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029EE4;
+}
+
 .box-shadow {
     /* width: fit-content; */
     background-color: transparent;
@@ -294,7 +304,7 @@
     align-items: center;
     width: 100%;
     font-family: RobotoRegular;
-    font-size: 18px;
+    font-size: 16px;
     background-color: #ffffff;
     padding: 30px;
     border-radius: 0px 0px 20px 20px;

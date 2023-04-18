@@ -1,8 +1,7 @@
 <?php
     include "../../Assets/Includes/header_phm.php";
-    // session_start();
-    // if (isset($_SESSION['s_email'])){
-
+    session_start();
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,7 +79,7 @@
                 </div> 
                 </a>
 
-                <a href="phm-registrationRequests.php"><div class="p-card">
+                <a href="phm-registrationRequests.php?phm_id=<?php echo $_GET['phm_id']; ?>"><div class="p-card">
                 <div class="a-icon-case">
                      <i class="material-icons" alt="calendar icon">child_care</i> 
                 </div>
@@ -108,5 +107,5 @@
 // }else{
 //     header("Location:admin-login.php");
 // }
-
+   
 ?>

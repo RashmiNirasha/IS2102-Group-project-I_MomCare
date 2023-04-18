@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -31,7 +35,9 @@
                         <th>Mother Address</th>
                         <th>Mother Telephone No</th>
                         <th>Date of Birth</th>
+                        <th>Midwife Id</th>
                         <th>Verification Status</th>
+                        
                         <th></th>
                     </tr>
                     <?php
@@ -46,6 +52,7 @@
                                     <td>" . $row['address'] . "</td>
                                     <td>" . $row['tele_number'] . "</td>
                                     <td>" . $row['DOB'] . "</td>
+                                    <td>" . $row['phm_id'] . "</td>
                                     <td>
                                         <form method='post' action='../../Config/admin_update_verification.php'>
                                             <select name='verification-status' id='verification-status'>

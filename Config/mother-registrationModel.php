@@ -1,5 +1,4 @@
 <?php
-
 define("OTP_LEN", "8"); // password length
 include "dbConnection.php";
 include "../Assets/Includes/email.php";
@@ -52,12 +51,15 @@ if($num==1){
     echo "Email already taken";
 }else{
 
-$alphabets = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
-$count = strlen($alphabets) - 1;
-$pass = "";
-  for ($i=0; $i<OTP_LEN; $i++) { $pass .= $alphabets[rand(0, $count)]; }
-    $password_hash = password_hash($pass, PASSWORD_DEFAULT);
-    $t=time();
+$password_hash=bin2hex(random_bytes(8));
+
+// $alphabets = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+// $count = strlen($alphabets) - 1;
+// $pass = "";
+//   for ($i=0; $i<OTP_LEN; $i++) { $pass .= $alphabets[rand(0, $count)]; }
+//     $password_hash = password_hash($pass, PASSWORD_DEFAULT);
+
+$t=time();
 $reg_date = date("Y-m-d",$t);
 
 //calculate age 
@@ -77,7 +79,7 @@ $sql = "INSERT INTO registered_user_details(reg_user_id,first_name, middle_name,
    
         if(mysqli_query($con, $sql)){
             //give a message to the user that the registration is successful in the same page
-            header("Location:../View/Mother/mother-registrationConfirmation.php?success=" . urlencode("Please wait until admin verifies your account.</br>Account Activation mail will be sent to your email account"));
+            header("Location:../View/Mother/mother-registrationConfirmation.php");
             exit();
         } else{
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);

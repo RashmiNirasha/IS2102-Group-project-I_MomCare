@@ -1,4 +1,15 @@
+<?php
+session_start();
 
+require_once '../../Config/dbConnection.php';
+$phm_id = $_GET['phm_id'];
+$sql = "SELECT * FROM registered_user_details WHERE phm_acceptance = 'pending' AND phm_id = '{$_GET['phm_id']}'";
+$result = mysqli_query($con, $sql);
+if ($result === false) {
+// Handle SQL query error
+echo "no record found " ;
+} else
+?>
 <!DOCTYPE html>
 <html>
 <!DOCTYPE html>
@@ -35,13 +46,7 @@
                         <th></th>
                     </tr>
                     <?php
-    require_once '../../Config/dbConnection.php';
-    $sql = "SELECT * FROM registered_user_details where phm_acceptance='pending'";
-    $result = mysqli_query($con, $sql);
-    if ($result === false) {
-        // Handle SQL query error
-        echo "no record found " ;
-    } else {
+                         {
         $resultCheck = mysqli_num_rows($result);
         if ($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -51,7 +56,7 @@
                     <td>" . $row['tele_number'] . "</td>
                     <td>" . $row['DOB'] . "</td>
                     <td>
-                        <form method='post' action='../../Config/phm_update_verification.php'>
+                        <form method='post' action='../../Config/phm_update_verification.php?phm_id=".$phm_id."'>
                             <select name='verification-status' id='verification-status'>
                                 <option value='pending' " . (($row['phm_acceptance'] == 'pending') ? 'selected' : '') . ">Pending</option>
                                 <option value='accepted'>Accepted</option>
