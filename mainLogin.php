@@ -13,7 +13,7 @@
     <style><?php include "Assets/Css/style-common.css" ?></style>
 </head>
 <body>
-<div class="landingMain">
+    <div class="landingMain">
         <div class="landingLeft">
             <img class="landingPagePhoto" src="Assets/images/common/landing-page-photo.png" alt="landing-page-photo">
         </div>
@@ -56,4 +56,4 @@
     </div>
 </body>
 </html>
-<?php include "Assets/Includes/footer_index.php"; ?>
+<?php //include "Assets/Includes/footer_index.php"; ?>

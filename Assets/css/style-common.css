@@ -33,11 +33,23 @@
     src: url(../../Assets/fonts/Roboto-Regular.ttf)
 }
 
+body {
+    padding: 0;
+    overflow: hidden;
+    margin: 0;
+    font-family: RobotoLight;
+    font-size: 16px;
+    color: #333333;
+    background-color: #ffffff;
+}
+
 .landingMain {
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     height: 100vh;
+    padding: 0;
     z-index: -1;
 }
 
@@ -46,7 +58,7 @@
     width: 50%;
     margin: 0 auto;
     text-align: center;
-    height: 100vh;
+    height: 100px;
 }
 
 .landingRight {
@@ -687,7 +699,6 @@
     background-color: #ffffff;
 }
 
-
 /* sign-in option  */
 
 
@@ -1203,12 +1214,12 @@
 
 /* ---------------------------- Child card menu page ----------------------------- */
 
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     margin: 0;
     padding: 0;
-}
+} */
 
 .ChildCardMenuView-MainDiv {
     margin-top: 150px;
@@ -1287,13 +1298,13 @@ h1 {
     background-color: rgb(5, 85, 138);
 }
 
-body {
+/* body {
     font-family: sans-serif;
     font-size: 14px;
     line-height: 1.5;
     width: 100%;
     background-color: white;
-}
+} */
 .ChildDataInput-cards input[type="radio"],
 .ChildDataInput-cards input[type="checkbox"] {
     margin-right: 10px;
@@ -2064,7 +2075,7 @@ body {
 }
 
 .view-report {
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     display: flex;
     flex-direction: row;
     width: auto;
@@ -2135,7 +2146,7 @@ body {
     width: 100%;
     margin-top: 0px;
     margin-bottom: 50px;
-    background-color: hsl(0, 100%, 98%);
+    background-color: hsl(0, 0%, 100%);
     border-radius: 0px 0px 10px 10px;
     border-style: solid;
     border-color: #029EE4;
@@ -2275,7 +2286,17 @@ body {
 #x {
     width: 100%;
 }
-
+#x input[type="file"]{
+    color: #c5b7b7;
+    font-size: 10px;
+    width: 250px;
+    border-style: solid;
+    border-color: #029ce44f;
+    padding-top: -1px;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+}
 /* --------------------------------- Update pop-up window ----------------------------------------------*/
 
 #PopUpWindow-noteUpdate {
