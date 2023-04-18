@@ -35,34 +35,40 @@
                         <th></th>
                     </tr>
                     <?php
-                        require_once '../../Config/dbConnection.php';
-                        $sql = "SELECT * FROM registered_user_details where phm_acceptance='pending'";
-                        $result = mysqli_query($con, $sql);
-                        $resultCheck = mysqli_num_rows($result);
-                        if ($resultCheck > 0) {
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                echo "<tr>
-                                    <td>" . $row['first_name'] . " " . $row['middle_name'] . " " . $row['last_name'] . "</td>
-                                    <td>" . $row['address'] . "</td>
-                                    <td>" . $row['tele_number'] . "</td>
-                                    <td>" . $row['DOB'] . "</td>
-                                    <td>
-                                        <form method='post' action='../../Config/phm_update_verification.php'>
-                                            <select name='verification-status' id='verification-status'>
-                                                <option value='pending' " . (($row['phm_acceptance'] == 'pending') ? 'selected' : '') . ">Pending</option>
-                                                <option value='accepted'>Accepted</option>
-                                                <option value='rejected'>Rejected</option>
-                                            </select>
-                                            <input type='hidden' name='reg_user_id' value='" . $row['reg_user_id'] . "'>
-                                            <button type='submit'>Update</button>
-                                        </form>
-                                    </td>
-                                </tr>";
-                            }
-                        } else {
-                            echo "<tr><td colspan='6'>No pending verification requests found.</td></tr>";
-                        }
-                    ?>
+    require_once '../../Config/dbConnection.php';
+    $sql = "SELECT * FROM registered_user_details where phm_acceptance='pending'";
+    $result = mysqli_query($con, $sql);
+    if ($result === false) {
+        // Handle SQL query error
+        echo "no record found " ;
+    } else {
+        $resultCheck = mysqli_num_rows($result);
+        if ($resultCheck > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>
+                    <td>" . $row['first_name'] . " " . $row['middle_name'] . " " . $row['last_name'] . "</td>
+                    <td>" . $row['address'] . "</td>
+                    <td>" . $row['tele_number'] . "</td>
+                    <td>" . $row['DOB'] . "</td>
+                    <td>
+                        <form method='post' action='../../Config/phm_update_verification.php'>
+                            <select name='verification-status' id='verification-status'>
+                                <option value='pending' " . (($row['phm_acceptance'] == 'pending') ? 'selected' : '') . ">Pending</option>
+                                <option value='accepted'>Accepted</option>
+                                <option value='rejected'>Rejected</option>
+                            </select>
+                            <input type='hidden' name='reg_user_id' value='" . $row['reg_user_id'] . "'>
+                            <button type='submit'>Update</button>
+                        </form>
+                    </td>
+                </tr>";
+            }
+        } else {
+            echo "<tr><td colspan='6'>No pending verification requests found.</td></tr>";
+        }
+    }
+?>
+
                 </table>
             </div>
         </div>

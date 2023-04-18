@@ -7,7 +7,6 @@ if (isset($_POST['height']) && isset($_POST['weight'])) {
   $height = $_POST["height"];
   $weight = $_POST["weight"];
 
-
   // Calculate BMI value
   $bmi = $weight / ($height * $height)*10000;
 

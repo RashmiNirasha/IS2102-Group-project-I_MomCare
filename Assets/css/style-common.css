@@ -3866,113 +3866,72 @@ a {
 
 /* phm - registration request */
 
-.cont-table-1 {
-    color: black;
-    margin: 10px 10px;
-    width: 90%;
-    
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 20px 20px;
-    overflow: hidden;
-  }
-  
-  .cont-table-header {
-    color: black;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 20px 20px 20px;
-    margin: 10px 10px 10px 10px;
-
-  }
-  
-  .cont-table-header h1 {
-    margin: 0;
-    font-size: 24px;
-    padding: 20px 20px 20px 20px;
-  }
-  
-  .registration-requests {
-    background-color: #6682a6;
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .registration-requests th,
-  .registration-requests td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .registration-requests th:last-child,
-  .registration-requests td:last-child {
-    text-align: center;
-  }
-  
-  .registration-requests tr:not(:first-child):hover {
-    background-color: #f5f5f5;
-  }
-  
-  .registration-requests td form {
+.child-registration {
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 50px;
+}
+
+.child-registration-form {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    width: 800px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+.child-registration-form form {
+    gap: 10px;
+}
+
+.child-registration-form h2 {
+    grid-column: 1 / -1;
     text-align: center;
-  }
-  
-  .registration-requests td form label {
-    margin-right: 10px;
+}
+
+.child-registration-form label {
     font-weight: bold;
-    text-align: center;
-  }
-  
-  .registration-requests td form select {
+}
+
+.child-registration-form input[type="text"],
+.child-registration-form input[type="number"],
+.child-registration-form select,
+.child-registration-form textarea {
+    width: 100%;
     padding: 8px;
-    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.child-registration-form button[type="submit"] {
+    grid-column: 1 / -1;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
     border: none;
-    margin-right: 10px;
-  }
-  
-  .registration-requests td form button {
-    padding: 8px 16px;
-    background-color: #004aad;
-    color: white;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .registration-requests td form button:hover {
-    background-color: #0059b3;
-  }
-  
-  /* child card view */
-  .child-cardMenu{
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 10px 10px 10px;
-  }
+    border-radius: 3px;
+}
 
-  .child-cardMenu .heading {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .child-cardMenu h1 {
-    margin: 0;
-    font-size: 24px;
-    margin-left: 10%;
-    margin-right: 40%;
-    padding: 20px 20px ;
-    padding-right: 0px;
-  }
+.child-registration-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
 
-  .child-cardMenu a{
-    text-decoration: none;
-    color: #004aad;
-    font-size: 20px;
-    margin-right: 80%;
-  }
+/* Custom styles for two-column layout */
+.section-1-child-register,
+.section-2-child-register {
+    grid-column: span 1;
+}
+
+@media (max-width: 767px) {
+    .child-registration-form {
+        grid-template-columns: 1fr;
+    }
+
+    .section-1-child-register,
+    .section-2-child-register {
+        grid-column: span 2;
+    }
+}

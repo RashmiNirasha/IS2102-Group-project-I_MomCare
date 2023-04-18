@@ -19,7 +19,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+    }
     </style>
 </head>
 <body>
@@ -41,13 +41,21 @@
                  </div>
                 </div> 
                 </a>
-
                 <a href="phm-mothers.php"><div class="p-card">
                 <div class="a-icon-case">
                     <i class="material-icons" alt="calendar icon">escalator_warning</i>
                 </div>
                 <div class="a-box">
                     <h3>Manage Mothers</h3>
+                </div>
+                </div> 
+                </a>
+                <a href="phm-addChild.php"><div class="p-card">
+                <div class="a-icon-case">
+                    <i class="material-icons" alt="calendar icon">escalator_warning</i>
+                </div>
+                <div class="a-box">
+                    <h3>Add Children</h3>
                 </div>
                 </div> 
                 </a>
