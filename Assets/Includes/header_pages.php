@@ -125,6 +125,24 @@
             }
             ?>
             </li>
+            <li>
+            <?php
+        if (isset($_SESSION['email'])) {
+            //get user role
+            include "../../Config/dbConnection.php";
+            $query = "SELECT * FROM user_tbl WHERE email = '" . $_SESSION['email'] . "'";
+            $result = mysqli_query($con, $query);
+            $row = mysqli_fetch_array($result);
+            $_SESSION['user_role'] = $row['user_role'];
+            //choose the right dashboard page
+            if ($_SESSION['user_role'] == 'mother') {
+                echo '<a href="../../View/Child/Contact.php">Contact</a>';
+            } else  {
+                echo '<a href="../../View/Contact-common.php">Contact</a>';
+            }
+        }
+            ?>
+</li>
             <li><a href="../../Config/logout.php">Log out</a></li>
         </ul>
         <?php

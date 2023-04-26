@@ -35,7 +35,7 @@
 
 body {
     padding: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin: 0;
     font-family: RobotoLight;
     font-size: 16px;
@@ -3572,11 +3572,8 @@ a {
 }
 
 .common_list_content {
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
+    width: 100%;
     background-color: #fff;
-    /* background-color: #1eff00; */
   }
   
   .common_list_content table {

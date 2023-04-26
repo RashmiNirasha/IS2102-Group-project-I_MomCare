@@ -14,9 +14,11 @@
 </head>
 <body>
     <div class="MotherCardMainDiv">
+    <div class="top-button" >
+<a href="../pediatrician/pedia-searchChild.php"><button class="goBackBtn">Go back</button></a>
+        </div>
         <div class="SectionNameDiv">
             <h3>Section A</h3>
-            <!-- <h4>1</h4> -->
         </div>
         <div class="MotherCardOuterDiv">
             <div class="MotherCardMiddleDiv">

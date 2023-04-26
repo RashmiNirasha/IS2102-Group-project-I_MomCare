@@ -43,7 +43,7 @@ $name=$row['child_name'];
             </button>
 
            <!--gap remover
-        --><button class="card" onclick="window.location.href = 'childs.php';">
+        --><button class="card" onclick="window.location.href = 'pedia-searchChild.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">List</span></div>
                 <div class="card-content-right"><p>View Child List</p></div>
             </button><!--gap remover -->

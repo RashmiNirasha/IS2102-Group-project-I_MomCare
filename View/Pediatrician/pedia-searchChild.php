@@ -4,7 +4,6 @@ include '../../Config/dbConnection.php';
 include "../../Assets/Includes/header_pages.php"; 
 if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 
-?>
 <!DOCTYPE html>
 <html lang="en">    
     <head>
@@ -32,10 +31,7 @@ FROM child_details
 INNER JOIN mother_details ON child_details.mom_id = mother_details.mom_id";
 
 if (isset($_POST['submit-search'])) {
-    // Get the search query
     $search = mysqli_real_escape_string($con, $_POST['search']);
-
-    // Write the SQL query to search for children matching the search query
     $sql = "SELECT child_details.child_id, mother_details.*, child_details.*
     FROM child_details 
     INNER JOIN mother_details ON child_details.mom_id = mother_details.mom_id
@@ -76,16 +72,15 @@ if (mysqli_num_rows($result) > 0) {
     }
     echo "</table>";
 } else {
-    // If no results were found, display a message
     echo "No results found for '$search'";
 }
 
 echo mysqli_error($con);
 ?>
     </div>
-       
     </body>
     <?php
+   
  } else {
     header("Location: ../../mainLogin.php");
      exit();

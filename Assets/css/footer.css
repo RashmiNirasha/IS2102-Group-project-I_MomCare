@@ -1,0 +1,130 @@
+
+@font-face {
+    font-family: "barlowBold";
+    src: url(Assets/Fonts/Barlow-Bold.ttf);
+}
+
+@font-face {
+    font-family: "barlowRegular";
+    src: url(Assets/Fonts/Barlow-Regular.ttf);
+}
+
+.footer {
+    background-color: #060e2e;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    z-index: 1;
+}
+
+.footer h3 {
+    font-family: "barlowBold";
+    font-size: 2rem;
+    color: #F3F4F5;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.footer ul {
+    font-family: "barlow";
+    font-size: 1rem;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #F3F4F5;
+    text-decoration: none;
+}
+
+.footer li  {
+    margin-bottom: 15px;
+}
+
+.footer a:hover {
+    color: #029ee4;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.footerLeft {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.footerLeft ul {
+    list-style-type: none;
+    padding: 0;
+    text-decoration: none;
+}
+
+.footerMiddle {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footerMiddle form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sub_email {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+#sub_submit {
+    background-color: #EA2727;
+    border-style: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    font-size: large;
+}
+
+.footerRight {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footerRight ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footerRight li {
+    color: #F3F4F5;
+}
+
+.footerMiddle p {
+    font-family: "barlow";
+    font-size: 1rem;
+    color: #F3F4F5;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.footer hr {
+    border: 1px solid #F3F4F5;
+    height: 250px;
+    text-align: center;
+    margin-top: 40px;
+}

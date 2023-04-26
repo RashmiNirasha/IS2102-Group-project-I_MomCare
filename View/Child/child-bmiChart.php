@@ -87,9 +87,7 @@ if (isset($_POST['submit'])) {
 </br>
   <div id="curve_chart" style="width: 900px; height: 500px;margin-left: 300px ">
   <!-- use funtion drawchart -->
-
-                       
-
+  
 </div>
 </body>
 </html>
