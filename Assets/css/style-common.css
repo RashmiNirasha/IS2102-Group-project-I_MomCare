@@ -3963,3 +3963,45 @@ a {
         grid-column: span 2;
     }
 }
+/* child-cards css */
+
+.child-sidenav {
+    padding-top: 20px;
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #029ee4;
+    overflow-x: hidden;
+    padding-top: 100px;
+  }
+  
+  .child-sidenav a {
+    color:rgb(246, 246, 246);
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+  }
+  
+  .child-sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .child-sidenav {padding-top: 15px;}
+    .child-sidenav a {font-size: 18px;}
+  }
+
+  .child-container{
+    margin-top: 06%;
+    margin-left: 20%;
+    width: 75%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 10px 60px 10px 40px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }

@@ -1,6 +1,4 @@
-<?php 
-include "../../Assets/Includes/header_pages.php";
-?>
+<?php include "../../Assets/Includes/header_pages.php";?>
 
 <!DOCTYPE html>
 <html lang="en">

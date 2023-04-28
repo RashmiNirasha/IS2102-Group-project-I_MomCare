@@ -19,8 +19,8 @@
 </head>
 <body>
     <div class="child-dashboard">
-        <div class="card-pack"><!--gap remover
-        --><button class="card" onclick="window.location.href = 'child-childCardView.php?child_id=<?php echo $_GET['child_id']; ?>';">
+        <div class="card-pack">
+       <button class="card" onclick="window.location.href = 'child-ChildCardView.php?child_id=<?php echo $_GET['child_id']; ?>';">
                 <div class="card-content-left"><span class="material-symbols-outlined">description</span></div>
                 <div class="card-content-right"><p>Child Cards</p></div>
             </button><!--gap remover -->
