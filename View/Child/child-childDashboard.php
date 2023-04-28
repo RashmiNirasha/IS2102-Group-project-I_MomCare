@@ -34,7 +34,7 @@
                 <div class="card-content-left"><span class="material-symbols-outlined">note_add</span></div>
                 <div class="card-content-right"><p>Medical Notes</p></div>
             </button>
-            <button class="card" onclick="window.location.href = 'normalBMI.php';">
+            <button class="card" onclick="window.location.href = 'child-chartsView.php?child_id=<?php echo $_GET['child_id']?>';">
                 <div class="card-content-left"><span class="material-symbols-outlined">calculate</span></div>
                 <div class="card-content-right"><p>BMI Calculator</p></div>
             </button><!--gap remover

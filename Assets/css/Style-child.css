@@ -224,6 +224,99 @@ button{
     justify-content: center;
     margin-top: 20px;
     box-shadow: none;
-   
 }
-  
+ 
+.boxchart{
+    width: 800px;
+    
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 20px;
+    
+  }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+    }
+    
+    .form-container {
+      width: 50%;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    label {
+      width: 75%;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    
+    input[type="text"] {
+      margin-left: 10px;
+      width: 55%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    input[type="submit"] {
+      width: 75%;
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #029ee4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+.grid-main {
+    display: grid;
+    width: 100%;
+}
+.grid-1 {
+    display: grid;
+    width : 50%;
+}
+
+#age {
+    border: 0.2rem solid #f3f2f2;
+    background-color: #fbfbfb;
+    color: #817f7f;
+    border-radius: 0.4rem;
+    width:100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#calculator{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.grid-2 {
+    display: grid;
+    width : 50%;
+}
