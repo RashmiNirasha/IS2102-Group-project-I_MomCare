@@ -1,7 +1,8 @@
 <?php 
 session_start();
 include '../../Config/dbConnection.php';
-include "../../Assets/Includes/header_pages.php";?>
+include "../../Assets/Includes/header_pages.php";
+include "../../Assets/Includes/sidenav.php";?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,27 +12,30 @@ include "../../Assets/Includes/header_pages.php";?>
 </Head>
 <body>
 
-<div class="child-sidenav">
-    <a href="child-childDashboard.php?child_id=<?php echo $_GET['child_id']; ?>">Dashboard</a>
-    <a href="#">Child Profile</a>
-  <a href="#">General information</a>
-  <a href="#">Infant Care</a>
-  <a href="#">Dental Care</a>
-  <a href="#">Medical Check</a>
-</div>
-
 <div class="child-container">
-  <h2>General Information</h2>
+  <h2>Child Profile</h2>
   <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
                         <div class="MotherCardTableTitles"><h3> </h3></div>
                         <div class="MotherGeneralDetails">
                             <table class="MotherCardTables">
                                 <tr>
+                                    <th>Child Name:</th>
+                                    <td>Tharushi Senanayake</td>
+                                <tr>
+                                <tr>
+                                    <th>Birth Date</th>
+                                    <td>2007.10.15</td>
+                                </tr>
+                                <tr>
+                                    <th>Child Age </th>
+                                    <td>13</td>
+                                </tr>
+                                <tr>
                                     <th>Name of the Mother:</th>
                                     <td>Ruwanmali Senanayake</td>
                                 </tr>
                                 <tr>
-                                    <th>Age:</th>
+                                    <th>Mother Age:</th>
                                     <td>27</td>
                                 </tr>
                                 <tr>
@@ -70,46 +74,8 @@ include "../../Assets/Includes/header_pages.php";?>
                                     <th>Registration Date:</th>
                                     <td>02/05/2021</td>
                                 </tr>
-                                <tr>
-                                    <th>Eligible Family Register:</th>
-                                    <td>Mr.Roshan Weerasinghe</td>
-                                </tr>
-                                <tr>
-                                    <th>Pregnant Mother's Register:</th>
-                                    <td>Ms. Rasangi Rathnayake</td>
-                                </tr>
-                                <tr>
-                                    <th>Identified antenatal risk conditions & morbidities:</th>
-                                    <td>Nothing</td>
-                                </tr>
-                                <tr>
-                                    <th>Consanguinity:</th>
-                                    <td>Positive</td>
-                                </tr>
-                                <tr>
-                                    <th>Rubella immunization:</th>
-                                    <td>Positive</td>
-                                </tr>
-                                <tr>
-                                    <th>Pre-pregnancy screening done:</th>
-                                    <td>Positive</td>
-                                </tr>
-                                <tr>
-                                    <th>Preconceptional folic acid:</th>
-                                    <td>Negative</td>
-                                </tr>
-                                <tr>
-                                    <th>History of subfertility:</th>
-                                    <td>Positive</td>
-                                </tr>
-                                <tr>
-                                    <th>Planned pregnancy or not:</th>
-                                    <td>Negative</td>
-                                </tr>
-                                <tr>
-                                    <th>Family planning method last used:</th>
-                                    <td>Positive</td>
-                                </tr>
+                                
+                               
                             </table>
                             <input type="submit" name="generate_pdf" class="NextBtn" value="Generate PDF" />
                         </div>

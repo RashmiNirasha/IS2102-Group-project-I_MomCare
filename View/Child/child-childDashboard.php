@@ -37,14 +37,8 @@
             <button class="card" onclick="window.location.href = 'child-chartsView.php?child_id=<?php echo $_GET['child_id']?>';">
                 <div class="card-content-left"><span class="material-symbols-outlined">calculate</span></div>
                 <div class="card-content-right"><p>BMI Calculator</p></div>
-            </button><!--gap remover
-            --><button class="card" onclick="window.location.href = '#';">
-                <div class="card-content-left"><span class="material-symbols-outlined">oncology</span></div>
-                <div class="card-content-right"><p>Vision and Auditory Test</p></div>
-            </button><!--gap remover
-            --><button class="card" onclick="window.location.href = '#';">
-                <div class="card-content-left"><span class="material-symbols-outlined">calendar_month</span></div>
-                <div class="card-content-right"><p>Development Index</p></div>
+            </button>
+            
             </button>
         </div>
     </div>

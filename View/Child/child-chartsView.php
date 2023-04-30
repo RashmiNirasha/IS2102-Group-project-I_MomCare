@@ -15,7 +15,29 @@ include("../../Config/dbConnection.php") ?>
 <?php 
 $child_id=$_GET['child_id'];
 
-  $sql = "select * from child_bmi_values where child_id = '$child_id' order by age asc";
+$sql = "SELECT * FROM child_bmi_values WHERE child_id = '$child_id' ORDER BY 
+        CASE 
+            WHEN age = '1' THEN 1 
+            WHEN age = '2' THEN 2
+            WHEN age = '3' THEN 3
+            WHEN age = '4' THEN 4
+            WHEN age = '5' THEN 5
+            WHEN age = '6' THEN 6
+            WHEN age = '7' THEN 7
+            WHEN age = '8' THEN 8
+            WHEN age = '9' THEN 9
+            WHEN age = '10' THEN 10
+            WHEN age = '11' THEN 11
+            WHEN age = '12' THEN 12
+            WHEN age = '13' THEN 13
+            WHEN age = '14' THEN 14
+            WHEN age = '15' THEN 15
+            WHEN age = '16' THEN 16
+            WHEN age = '17' THEN 17
+            WHEN age = '18' THEN 18
+            WHEN age = '19' THEN 19
+            WHEN age = '20' THEN 20
+        END";
   $result = mysqli_query($con, $sql);
   $resultCheck = mysqli_num_rows($result);
   if($resultCheck > 0){
@@ -36,19 +58,17 @@ $child_id=$_GET['child_id'];
     echo "No records matching your query were found.";
   }?>
 
-<div class="grid-main">
-  <!-- section 01 -->
-   <div class= "grid-1" id="calculator">
+<div class="child-container-chart">
   
   <div class="form-container">
   <h3>BMI CALCULATOR</h3>
-  <form class="calculator" action="../../Config/child-bmi_calculator.php" method="post">
+  <form action="../../Config/child-bmi_calculator.php" method="post">
           <label for = "child_id" hidden ></label ><?php $child_id = $_GET['child_id']; ?>
           <input type="hidden" id="child_id" name="child_id" value="<?php echo $child_id; ?>">
           <label for="age">Age :</label>
           <select id="age" name="age" required>
             <option value="">Select age</option> <?php for ($i = 1; $i <= 20; $i++) { ?>
-           <option value="<?php echo $i . 'year'; ?>"><?php echo $i . ' year'; ?></option><?php } ?>
+           <option value="<?php echo $i ; ?>"><?php echo $i ; ?></option><?php } ?>
           </select>
       
           <label for="height">Height (in centimeters):</label>
@@ -74,29 +94,17 @@ $child_id=$_GET['child_id'];
                 echo "Your child is obese.";
               }
             ?></p>
-
-   
-
   </div>
-
-  </div>
-
-        <div class="grid-3" id="chart">
+  <div class="grid-3" id="chart">
         <h3>CHARTS</h3>
-
         <div class="boxchart"><canvas id="myChart"></canvas>
-      
           <button id="showDataBtn">Age-BMI</button>
           <button id="showDataBtn2">Age-Height</button>
           <button id="showDataBtn3">Age-Weight</button>
         </div>
-
             </div>
-
-
-
+  </div>
 </div>
-
 <script>
   //set up block 
   const age = <?php echo json_encode($age); ?>;
@@ -109,9 +117,9 @@ $child_id=$_GET['child_id'];
       datasets: [{
         label: 'height',
         data: height,
-        backgroundColor: ['rgba(255, 99, 132, 1)'],
-        
-        borderColor: ['rgba(255, 99, 132, 2)'],
+        backgroundColor: ['rgba(153, 102, 255, 0.5)'],
+        fill: true ,
+        borderColor: ['rgba(255, 99, 132, 1)'],
         borderWidth: 1}]
     };
 
@@ -119,12 +127,12 @@ const config = {
   type: 'line',
   data: data,
   options: {
-    backgroundColor: '#e89ce0',
+    responsive: true,
     scales: {
       x: {
         title: { display: true, text: 'Age'}},
       y: {
-        title: {display: true, text: 'Height'},
+        title: {display: true, text: 'Height (cm)'},
         beginAtZero: true
       }
     }
@@ -142,15 +150,15 @@ document.getElementById('showDataBtn').addEventListener('click', function() {
 
 document.getElementById('showDataBtn2').addEventListener('click', function() {
   myChart.data.datasets[0].data = height;
-  myChart.data.datasets[0].label = 'height(centimeters)';
-  myChart.options.scales.y.title.text = 'Height';
+  myChart.data.datasets[0].label = 'height (cm)';
+  myChart.options.scales.y.title.text = 'Height (cm)';
   myChart.update();
 });
 
 document.getElementById('showDataBtn3').addEventListener('click', function() {
   myChart.data.datasets[0].data = weight;
-  myChart.data.datasets[0].label = 'weight(kilograms)';
-  myChart.options.scales.y.title.text = 'Weight';
+  myChart.data.datasets[0].label = 'weight (kg)';
+  myChart.options.scales.y.title.text = 'Weight (kg)';
   myChart.update();
 });
 
