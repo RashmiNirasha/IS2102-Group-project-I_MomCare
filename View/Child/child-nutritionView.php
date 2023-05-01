@@ -17,66 +17,57 @@ include "../../Assets/Includes/sidenav.php";?>
   <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
                         <div class="MotherCardTableTitles"><h3> Vitamin A  </h3></div>
                         <div class="MotherGeneralDetails">
-                            <table class="MotherCardTables">
-                                <tr>
-                                    <th>Vitamin A</th>
-                                    <th>6 months</th>
-                                    <th>1 Year</th>
-                                    <th>1 1/2 Year</th>
-                                    <th>2 Years</th>
-                                    <th>2 1/2 Year</th>
-                                    <th>3 Years</th>
-                                    <th>3 1/2 Year</th>
-                                    <th>4 Years</th>
-                                    <th>4 1/2 Year</th>
-                                    <th>5 Years</th>
-                                </tr>
-                                <tr>
-                                    <th>Date:</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>Batch no:</th>
-                                    <td></td>
-                                </tr>
-                            </table>
-
+                        <?php
+                               $child_id = $_GET['child_id'];
+                               $sql = "SELECT * FROM child_cvitamin_view WHERE child_id = '$child_id'";
+                               $result = mysqli_query($con, $sql);
+                               if (mysqli_num_rows($result) > 0) {
+                                   echo '<table class="MotherCardTables">';
+                                   echo '<tr>
+                                           <th>Age</th>
+                                           <th>Date</th>
+                                           <th>Batch No</th>
+                                         </tr>';
+                                   while($row = mysqli_fetch_assoc($result)) {
+                                       echo "<tr>
+                                               <th>".$row["age"]."</th>
+                                               <td>".$row["date"]."</td>
+                                               <td>".$row["batch_no"]."</td>
+                                             </tr>";
+                                   }
+                                   echo "</table>";
+                               } else {
+                                   echo "0 results";
+                               }
+                                ?>
                             <!-- <input type="submit" name="generate_pdf" class="NextBtn" value="Generate PDF" /> -->
                         </div>
                         <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
                         <div class="MotherCardTableTitles"><h3> Worm Treatment  </h3></div>
                         <div class="MotherGeneralDetails">
-                            <table class="MotherCardTables">
-                                <tr>
-                                    <th>Dewormer</th>
-                                    <th>1 1/2 Year</th>
-                                    <th>2 Years</th>
-                                    <th>3 Years</th>
-                                    <th>4 Years</th>
-                                    <th>5 Years</th>
-                                </tr>
-                                <tr>
-                                    <th>Date:</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>Batch no:</th>
-                                    <td></td>
-                                </tr>
-                            </table>
+                            <?php 
+                                $sql = "SELECT * FROM child_cworm_treatment WHERE child_id = '$child_id'";
+                                $result = mysqli_query($con, $sql);
+                                if (mysqli_num_rows($result) > 0) {
+                                    echo '<table class="MotherCardTables">';
+                                    echo '<tr>
+                                            <th>Age</th>
+                                            <th>Date</th>
+                                            <th>Batch No</th>
+                                          </tr>';
+                                    while($row = mysqli_fetch_assoc($result)) {
+                                        echo "<tr>
+                                                <th>".$row["age"]."</th>
+                                                <td>".$row["date"]."</td>
+                                                <td>".$row["batchno"]."</td>
+                                              </tr>";
+                                    }
+                                    echo "</table>";
+                                } else {
+                                    echo "0 results";
+                                }
+                            ?>
+                           
                         </div>
                     </div>
 

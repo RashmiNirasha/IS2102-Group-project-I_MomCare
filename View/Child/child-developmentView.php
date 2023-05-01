@@ -16,75 +16,155 @@ include "../../Assets/Includes/sidenav.php";?>
 <div class="child-container">
   <h2>Development Tests</h2>
   <div class="OneColumnSection">
-  <div class="MotherCardTableTitles">
-    <h3>At 2 months</h3>
-  </div>
-  <div class="MotherGeneralDetails">
-    <table class="MotherCardTables">
-      <tr>
-        <th></th>
-        <th>Development index</th>
-        <th>Mother/Father/Guardian Observation</th>
-      </tr>
-      <tr>
-        <th>1</th>
-        <td>Does not respond to sounds</td>
-        <td>
-        <select name="dev-idx-1" onchange="changeSelectColor(event)">
-      <option value="">Select</option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
-        </td>
-      </tr>
-      <tr>
-        <th>2</th>
-        <td>Does not look at moving objects</td>
-        <td>
-        <select name="dev-idx-1" onchange="changeSelectColor(event)">
-      <option value="">Select</option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
-        </td>
-      </tr>
-      <tr>
-        <th>3</th>
-        <td>Not smiling responsively with you</td>
-        <td>
-        <select name="dev-idx-1" onchange="changeSelectColor(event)">
-      <option value="">Select</option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
-        </td>
-      </tr>
+    <div class="MotherCardTableTitles">
+      <form action="process.php" method="post">
+        <h3>At 2 months</h3>
+    </div>
+    <div class="MotherGeneralDetails">
+      <table class="MotherCardTables">
+        <tr>
+          <th></th>
+          <th>Development index</th>
+          <th>Mother/Father/Guardian Observation</th>
+          <th>Edit</th>
+        </tr>
+        <tr>
+          <th>1</th><input type="hidden" name="id1" value="1">
+          <td>Does not respond to sounds</td>
+            <td>
+              <?php
+              $sql = "SELECT observation,id FROM child_developmet_tests1 WHERE id = 1";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              }
+              ?>
+            </td>
 
-                        <tr>
-                        <th> 4 </th>
-                        <td>Don't put your hands to your mouth</td>
-                        <td>
-                        <select name="dev-idx-1" onchange="changeSelectColor(event)">
-      <option value="">Select</option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
-                        </td>
-                        </tr>
-                        <tr>
-                        <th> 5 </th>
-                        <td>Does not try to raise your head while lying on your hands</td>
-                        <td>
-                        <select name="dev-idx-1" onchange="changeSelectColor(event)">
-      <option value="">Select</option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
-                        </td>
-                        </tr>
-                            </table>
-                            <!-- <input type="submit" name="generate_pdf" class="NextBtn" value="Generate PDF" /> -->
-                        </div>
+          <td>
+            <select name="observation1" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>2</th><input type="hidden" name="id2" value="2">
+          <td>Does not look at moving objects</td>
+          <td>
+              <?php
+              $sql = "SELECT observation,id FROM child_developmet_tests1 WHERE id = 2";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              }
+              ?>
+            </td>
+          <td>
+            <select name="observation2" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>3</th><input type="hidden" name="id3" value="3">
+          <td>Not smiling responsively with you</td>
+          <td>
+              <?php
+              $sql = "SELECT observation,id FROM child_developmet_tests1 WHERE id = 3";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              }
+              ?>
+            </td>
+          <td>
+            <select name="observation3" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>4</th><input type="hidden" name="id4" value="4">
+          <td>Don't put your hands to your mouth</td>
+          <td>
+              <?php
+              $sql = "SELECT observation,id FROM child_developmet_tests1 WHERE id = 4";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              }
+              ?>
+            </td>
+          <td>
+            <select name="observation4" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>5</th><input type="hidden" name="id5" value="5">
+          <td>Does not try to raise your head while lying on your hands</td>
+          <td>
+              <?php
+              $sql = "SELECT observation,id FROM child_developmet_tests1 WHERE id = 5";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              }
+              ?>
+            </td>
+          <td>
+            <select name="observation5" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <input type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
+      </form>
+    </div>
+</div>
+
 
                         <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
                         <div class="MotherCardTableTitles"><h3> At 4 months  </h3></div>

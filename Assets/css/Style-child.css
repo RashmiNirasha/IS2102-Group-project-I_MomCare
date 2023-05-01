@@ -398,5 +398,11 @@ td {
     margin-top: 10px;
     padding: 10px;
 }
-
+.light-purple {
+    background-color: #D8BFD8; /* light purple color */
+  }
+  
+  .light-red {
+    background-color: #f04380; /* light red color */
+  }
  
