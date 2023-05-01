@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 26, 2023 at 08:00 PM
+-- Generation Time: May 01, 2023 at 07:50 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -24,27 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
---
-
-DROP TABLE IF EXISTS `admin`;
-CREATE TABLE IF NOT EXISTS `admin` (
-  `ad_id` varchar(255) NOT NULL,
-  `ad_password` varchar(255) NOT NULL,
-  PRIMARY KEY (`ad_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`ad_id`, `ad_password`) VALUES
-('admin', 'admin123'),
-('admin1', 'admin123');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `admin_help_requests`
 --
 
@@ -57,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `admin_help_requests` (
   `submission_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `mom_id` varchar(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `admin_help_requests`
@@ -65,7 +44,8 @@ CREATE TABLE IF NOT EXISTS `admin_help_requests` (
 
 INSERT INTO `admin_help_requests` (`id`, `name`, `email`, `message`, `submission_date`, `mom_id`) VALUES
 (1, 'nimal', 'deepal12345@gmail.com', 'nimal', '2023-04-26 18:02:10', ''),
-(2, 'advf', 'maduri@gmail.com', 'Ffafaf', '2023-04-26 18:10:11', 'M002');
+(2, 'advf', 'maduri@gmail.com', 'Ffafaf', '2023-04-26 18:10:11', 'M002'),
+(3, 'nimal', 'maduri@gmail.com', 'nimal', '2023-04-27 04:12:55', 'M002');
 
 -- --------------------------------------------------------
 
@@ -104,19 +84,193 @@ INSERT INTO `appointment_details` (`app_id`, `topic`, `doc_id`, `doc_name`, `app
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bmi_values`
+-- Table structure for table `child_bmi_values`
 --
 
-DROP TABLE IF EXISTS `bmi_values`;
-CREATE TABLE IF NOT EXISTS `bmi_values` (
+DROP TABLE IF EXISTS `child_bmi_values`;
+CREATE TABLE IF NOT EXISTS `child_bmi_values` (
   `id` int NOT NULL AUTO_INCREMENT,
   `height` float(10,2) DEFAULT NULL,
   `weight` float(10,2) DEFAULT NULL,
   `bmi` float(10,2) DEFAULT NULL,
   `date_calculated` datetime DEFAULT NULL,
-  `age` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+  `age` varchar(10) NOT NULL,
+  `child_id` varchar(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `child id` (`child_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `child_bmi_values`
+--
+
+INSERT INTO `child_bmi_values` (`id`, `height`, `weight`, `bmi`, `date_calculated`, `age`, `child_id`) VALUES
+(31, 73.00, 9.20, 17.26, '2023-04-27 10:06:16', '1', 'C103'),
+(33, 87.60, 12.50, 16.29, '2023-04-27 10:08:41', '2', 'C103'),
+(34, 98.00, 15.00, 15.62, '2023-04-27 10:08:52', '3', 'C103'),
+(35, 106.00, 17.50, 15.57, '2023-04-27 10:09:07', '4', 'C103'),
+(36, 113.00, 20.50, 16.05, '2023-04-27 10:09:19', '5', 'C103'),
+(37, 120.00, 23.50, 16.32, '2023-04-27 10:09:35', '6', 'C103'),
+(38, 126.50, 27.00, 16.87, '2023-04-27 10:09:48', '7', 'C103'),
+(39, 133.00, 31.00, 17.53, '2023-04-27 10:09:58', '8', 'C103'),
+(40, 139.00, 35.00, 18.12, '2023-04-27 10:10:11', '9', 'C103'),
+(41, 145.50, 40.00, 18.89, '2023-04-27 10:10:54', '10', 'C103'),
+(42, 152.00, 45.00, 19.48, '2023-04-27 10:11:18', '11', 'C103'),
+(43, 158.50, 50.50, 20.10, '2023-04-27 10:11:33', '12', 'C103'),
+(44, 159.00, 53.00, 21.78, '2023-04-28 16:02:08', '13', 'C103'),
+(45, 160.00, 54.00, 21.09, '2023-04-28 16:13:44', '14', 'C103'),
+(46, 60.00, 5.50, 15.28, '2023-04-28 16:25:54', '1', 'C102'),
+(47, 70.00, 8.00, 16.33, '2023-04-28 16:26:17', '2', 'C102'),
+(50, 73.00, 12.50, 23.46, '2023-04-28 16:44:30', '3', 'C102'),
+(52, 87.60, 15.00, 19.55, '2023-04-28 17:23:04', '4', 'C102');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `child_ceyesight_test`
+--
+
+DROP TABLE IF EXISTS `child_ceyesight_test`;
+CREATE TABLE IF NOT EXISTS `child_ceyesight_test` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `child_id` varchar(11) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `age_range` enum('1st month after birth','2nd month after birth','6th month after birth','10th month after birth','12th month after birth') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `test_name` enum('light_direction','looks_at_face','smiles_responsively','eyes_move','looks_around_curiously','grab_something','suspect_mole','pick_up_small_objects','reach_out_various_things','recognize_acquaintance') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `response` enum('yes','no') NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `childforcard5` (`child_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `child_ceyesight_test`
+--
+
+INSERT INTO `child_ceyesight_test` (`id`, `child_id`, `age_range`, `test_name`, `response`) VALUES
+(1, 'C103', '1st month after birth', 'light_direction', 'yes'),
+(3, 'C103', '1st month after birth', 'looks_at_face', 'yes'),
+(4, 'C103', '2nd month after birth', 'smiles_responsively', 'yes'),
+(5, 'C103', '2nd month after birth', 'eyes_move', 'yes'),
+(6, 'C103', '6th month after birth', 'grab_something', 'yes'),
+(7, 'C103', '6th month after birth', 'looks_around_curiously', 'yes'),
+(10, 'C103', '6th month after birth', 'suspect_mole', 'no'),
+(11, 'C103', '10th month after birth', 'pick_up_small_objects', 'yes'),
+(12, 'C103', '12th month after birth', 'reach_out_various_things', 'yes'),
+(13, 'C103', '12th month after birth', 'recognize_acquaintance', 'no');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `child_chearting_test`
+--
+
+DROP TABLE IF EXISTS `child_chearting_test`;
+CREATE TABLE IF NOT EXISTS `child_chearting_test` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `child_id` varchar(11) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `age_range` enum('Shortly after birth','1st month after birth','From month 4','From month 7','By the 9th month','By the 12th month','12th month after birth') NOT NULL,
+  `test_name` enum('startle_and_blink','recognize_persistent_sounds','silent_when_hearing_sound','turn_head_or_eyes_to_sound','immediately_turn_to_speaker','listen_to_familiar_sounds','look_for_sounds','like_loud_tone','respond_to_name','respond_to_words','pick_up_objects') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `response` enum('yes','no') NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `childforcard6` (`child_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `child_chearting_test`
+--
+
+INSERT INTO `child_chearting_test` (`id`, `child_id`, `age_range`, `test_name`, `response`) VALUES
+(1, 'C103', 'Shortly after birth', 'startle_and_blink', 'yes'),
+(2, 'C103', '1st month after birth', 'recognize_persistent_sounds', 'yes'),
+(3, 'C103', 'From month 4', 'silent_when_hearing_sound', 'yes'),
+(4, 'C103', 'From month 4', 'turn_head_or_eyes_to_sound', 'yes'),
+(5, 'C103', 'From month 7', 'immediately_turn_to_speaker', 'yes'),
+(6, 'C103', 'By the 9th month', 'listen_to_familiar_sounds', 'yes'),
+(7, 'C103', 'By the 9th month', 'look_for_sounds', 'no'),
+(8, 'C103', 'By the 9th month', 'like_loud_tone', 'no'),
+(9, 'C103', '12th month after birth', 'respond_to_name', 'yes'),
+(10, 'C103', '12th month after birth', 'respond_to_words', 'yes'),
+(13, 'C103', 'By the 12th month', 'pick_up_objects', 'yes');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `child_cprofile_view`
+--
+
+DROP TABLE IF EXISTS `child_cprofile_view`;
+CREATE TABLE IF NOT EXISTS `child_cprofile_view` (
+  `child_id` varchar(11) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `child_name` varchar(50) NOT NULL,
+  `birth_date` date NOT NULL,
+  `child_age` int NOT NULL,
+  `mother_name` varchar(50) NOT NULL,
+  `mother_age` int NOT NULL,
+  `MOH_area` varchar(50) NOT NULL,
+  `PHM_area` varchar(50) NOT NULL,
+  `field_clinic` varchar(50) NOT NULL,
+  `GN_division` varchar(50) NOT NULL,
+  `hospital_clinic` varchar(50) NOT NULL,
+  `consultant_obstetrician` varchar(50) NOT NULL,
+  `identified_antatal_risks` varchar(100) NOT NULL,
+  `registration_number` varchar(50) NOT NULL,
+  `registration_date` date NOT NULL,
+  PRIMARY KEY (`child_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `child_cprofile_view`
+--
+
+INSERT INTO `child_cprofile_view` (`child_id`, `child_name`, `birth_date`, `child_age`, `mother_name`, `mother_age`, `MOH_area`, `PHM_area`, `field_clinic`, `GN_division`, `hospital_clinic`, `consultant_obstetrician`, `identified_antatal_risks`, `registration_number`, `registration_date`) VALUES
+('C103', 'Tharushi Senanayake', '2007-10-15', 13, 'Ruwanmali Senanayake', 27, 'Colombo 15', 'Colombo 15', 'Colombo 15 main', 'Colombo 15', 'Colombo Central', 'Name of the Consultant', 'Nothing', '455623', '2021-05-02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `child_cvitamin_view`
+--
+
+DROP TABLE IF EXISTS `child_cvitamin_view`;
+CREATE TABLE IF NOT EXISTS `child_cvitamin_view` (
+  `child_id` varchar(11) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `age` enum('6 months','1 year','1 1/2 years','2 years','2 1/2 years','3 years','3 1/2 years','4 years','4 1/2 years','5 years') NOT NULL,
+  `date` date DEFAULT NULL,
+  `time` time DEFAULT NULL,
+  `batch_no` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`child_id`,`age`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `child_cvitamin_view`
+--
+
+INSERT INTO `child_cvitamin_view` (`child_id`, `age`, `date`, `time`, `batch_no`) VALUES
+('C103', '6 months', '2022-01-01', '10:00:00', '12345'),
+('C103', '1 year', '2015-05-03', '17:04:50', '1457');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `child_cworm_treatment`
+--
+
+DROP TABLE IF EXISTS `child_cworm_treatment`;
+CREATE TABLE IF NOT EXISTS `child_cworm_treatment` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `child_id` varchar(11) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `age` enum('1 1/2 Year','2 Years','3 Years','4 Years','5 Years') DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `batchno` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `childforcard4` (`child_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `child_cworm_treatment`
+--
+
+INSERT INTO `child_cworm_treatment` (`id`, `child_id`, `age`, `date`, `batchno`) VALUES
+(1, 'C103', '1 1/2 Year', '2015-05-03', '1458');
 
 -- --------------------------------------------------------
 
@@ -149,6 +303,32 @@ INSERT INTO `child_details` (`child_id`, `child_name`, `child_gender`, `phm_id`,
 ('C102', 'Dedunu', 'F', 'P102', 'D102', 'G102', 'nirasha999@gmail.com', 'M001'),
 ('C103', 'Sashini', 'F', 'P102', 'D103', 'G102', 'maduri@gmail.com', 'M002'),
 ('C104', 'Nimal', 'M', 'P104', 'D102', 'G102', 'nirasha999@gmail.com', 'M003');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `child_developmet_tests1`
+--
+
+DROP TABLE IF EXISTS `child_developmet_tests1`;
+CREATE TABLE IF NOT EXISTS `child_developmet_tests1` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `child_id` varchar(11) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `test` varchar(100) NOT NULL,
+  `observation` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `child_developmet_tests1`
+--
+
+INSERT INTO `child_developmet_tests1` (`id`, `child_id`, `test`, `observation`) VALUES
+(1, 'C103', 'Does not respond to sounds', 'yes'),
+(2, 'C103', 'Does not look at moving objects', 'yes'),
+(3, 'C103', 'Not smiling responsively with you', 'yes'),
+(4, 'C103', "Don't put your hands to your mouth", 'yes'),
+(5, 'C103', 'Does not try to raise your head while lying on your hands', 'yes');
 
 -- --------------------------------------------------------
 
@@ -249,6 +429,39 @@ CREATE TABLE IF NOT EXISTS `child_special_care_reasons` (
   `parent_migration_text` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `child_vitamin_a_table`
+--
+
+DROP TABLE IF EXISTS `child_vitamin_a_table`;
+CREATE TABLE IF NOT EXISTS `child_vitamin_a_table` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `child_id` int NOT NULL,
+  `age` varchar(20) NOT NULL,
+  `date` date DEFAULT NULL,
+  `batch_no` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `child_worm_treatment`
+--
+
+DROP TABLE IF EXISTS `child_worm_treatment`;
+CREATE TABLE IF NOT EXISTS `child_worm_treatment` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `child_id` int NOT NULL,
+  `dewormer` varchar(20) NOT NULL,
+  `age` varchar(20) NOT NULL,
+  `date` date DEFAULT NULL,
+  `batch_no` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -358,25 +571,6 @@ CREATE TABLE IF NOT EXISTS `immunization referrals` (
   `referral_notes` varchar(255) DEFAULT NULL,
   `doc_id` varchar(11) NOT NULL,
   `phm_id` varchar(11) NOT NULL,
-  KEY `child_id` (`child_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `immunization table`
---
-
-DROP TABLE IF EXISTS `immunization table`;
-CREATE TABLE IF NOT EXISTS `immunization table` (
-  `child_id` varchar(11) NOT NULL,
-  `age` int NOT NULL,
-  `type_of_vaccine` varchar(255) NOT NULL,
-  `date` date NOT NULL,
-  `batch_no` varchar(20) NOT NULL,
-  `adverse_effects` varchar(255) NOT NULL,
-  `phm_id` varchar(11) DEFAULT NULL,
-  `doc_id` varchar(11) DEFAULT NULL,
   KEY `child_id` (`child_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -775,18 +969,6 @@ INSERT INTO `tbl_marks` (`student_id`, `student_name`, `marks`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `testing`
---
-
-DROP TABLE IF EXISTS `testing`;
-CREATE TABLE IF NOT EXISTS `testing` (
-  `name_x` int DEFAULT NULL,
-  `bimbi` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user_tbl`
 --
 
@@ -860,6 +1042,42 @@ INSERT INTO `vaccinetypes` (`id`, `Vaccine`, `Creationdate`, `UpdationDate`) VAL
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `child_bmi_values`
+--
+ALTER TABLE `child_bmi_values`
+  ADD CONSTRAINT `child id` FOREIGN KEY (`child_id`) REFERENCES `child_details` (`child_id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `child_ceyesight_test`
+--
+ALTER TABLE `child_ceyesight_test`
+  ADD CONSTRAINT `childforcard5` FOREIGN KEY (`child_id`) REFERENCES `child_details` (`child_id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `child_chearting_test`
+--
+ALTER TABLE `child_chearting_test`
+  ADD CONSTRAINT `childforcard6` FOREIGN KEY (`child_id`) REFERENCES `child_details` (`child_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `child_cprofile_view`
+--
+ALTER TABLE `child_cprofile_view`
+  ADD CONSTRAINT `childforcard` FOREIGN KEY (`child_id`) REFERENCES `child_details` (`child_id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `child_cvitamin_view`
+--
+ALTER TABLE `child_cvitamin_view`
+  ADD CONSTRAINT `childforcard3` FOREIGN KEY (`child_id`) REFERENCES `child_details` (`child_id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `child_cworm_treatment`
+--
+ALTER TABLE `child_cworm_treatment`
+  ADD CONSTRAINT `childforcard4` FOREIGN KEY (`child_id`) REFERENCES `child_details` (`child_id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `child_details`
