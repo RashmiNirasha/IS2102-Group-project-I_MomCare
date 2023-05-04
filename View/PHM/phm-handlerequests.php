@@ -3,7 +3,7 @@
     include '../../Config/dbConnection.php';
    if (isset($_SESSION['email'])){
     include "../../Assets/Includes/header_pages.php";
-    include "../../Config/admin-handlerequestsprocess.php";
+    include "../../Config/phm-handlerequestsprocess.php";
 ?>
 
 <!DOCTYPE html>
@@ -70,14 +70,14 @@
                                     <td>" . $row['tele_number'] . "</td>
                                     <td>" . $row['DOB'] . "</td>
                                     <td>
-                                        <form method='post' action='../../Config/admin-updateverification.php'>
+                                        <form method='post' action='../../Config/phm-updateverification.php'>
                                             <select name='verification-status' id='verification-status'>
-                                                <option value='pending' " . (($row['admin_acceptence'] == 'pending') ? 'selected' : '') . ">Pending</option>
+                                                <option value='pending' " . (($row['phm_acceptance'] == 'pending') ? 'selected' : '') . ">Pending</option>
                                                 <option value='accepted'>Accepted</option>
                                                 <option value='rejected'>Rejected</option>
                                             </select>
                                             <input type='hidden' name='reg_user_id' value='" . $row['reg_user_id'] . "'>
-                                            <button class ='hr-button' type='submit'>Update</button>
+                                            <button class = 'hr-button' type='submit'>Update</button>
                                         </form>
                                     </td>
                                 </tr>";
@@ -99,3 +99,4 @@
 }
 
 ?>
+

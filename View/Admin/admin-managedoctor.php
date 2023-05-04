@@ -1,8 +1,9 @@
 <?php
-    include "../../Assets/Includes/header_admin.php";
-    include "..\..\Config\admin-managedoctorprocess.php";
     session_start();
-    // if (isset($_SESSION['s_email'])){
+    if (isset($_SESSION['email'])){
+        include "../../Assets/Includes/header_pages.php";
+        include "../../Config/admin-managedoctorprocess.php";
+
 ?>
 
 
@@ -30,19 +31,22 @@
         <div class="a-content">
             <div class="a-container-n">
                 <h1>Manage Doctor Accounts</h1>
-                <form class="ma-searchbar" action="/action_page.php" style="margin:auto;max-width:300px">
+                <form class="ma-searchbar" action="admin-searchdoctor.php" style="margin:auto;max-width:300px" method="get">
                     <input type="text" placeholder="Search..." name="search">
                     <button type="submit"><i class="material-icons">search</i></button>
+
+                 
+
                 </form>
                 <div class="a-container-m">
-                <div class="a-dropdown"><div class="a-manage-icon"><i class="material-icons" alt="manage accounts">manage_accounts</i>
+                <!-- <div class="a-dropdown"><div class="a-manage-icon"><i class="material-icons" alt="manage accounts">manage_accounts</i>
             </div>
             <div class="au-dropdown-content">
                     <a href="..\..\View\Admin\admin-managemother.php">Manage Mother Accounts</a>
                     <a href="..\..\View\Admin\admin-managedoctor.php">Manage Doctor Accounts</a>
                     <a href="..\..\View\Admin\admin-managephm.php">Manage PHM Accounts</a>
                     </div>
-            </div>
+            </div> -->
                 <a href = "admin-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
                 </div></div>
             <div class="ma-table">
@@ -60,6 +64,7 @@
                 </tr>
 
                 <?php 
+                
                 if ($result->num_rows>0){
                     while($row = $result->fetch_assoc()){
                         $id = $row['doc_id'];
@@ -70,7 +75,6 @@
                         $address = $row['doc_address'];
                         $email = $row['doc_email'];
                         $tel = $row['doc_tele'];
-            
 
                 $output = '<tr>';
                 $output .= "<td>$id</td>";
@@ -133,18 +137,18 @@
             </table>
             </div> 
         </div>
-        <div class="a-content-2">
+        <!-- <div class="a-content-2">
             <span></span>
             <a href = "..\..\Config\admin-logout.php"><button>
                 <div class="a-btn-text"><h6>Log out</h6></div>
                 <i class="material-icons" alt="logout">logout</i>
             </button></a>
-        </div>
+        </div> -->
     </div>
 </body>
 </html>
 <?php
-    // }else{
-    //     header("Location:admin-login.php");
-    // }
+    }else{
+        header("Location: ../../mainLogin.php");
+    }
 ?>

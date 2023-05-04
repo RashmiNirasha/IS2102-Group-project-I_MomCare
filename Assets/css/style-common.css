@@ -2684,7 +2684,7 @@ a {
 
 .a-content {
     position: relative;
-    margin-top: 5%;
+    margin-top: 3%;
     min-height: 75%;
 }
 
@@ -2692,6 +2692,7 @@ a {
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
+    margin-top: 4%;
 }
 
 .a-container-m {
@@ -2723,8 +2724,8 @@ a {
     display: grid;
     align-items: center;
     width: 40%;
-    height: 50%;
-    margin-top: 1.25%;
+    height: 40%;
+    margin-top: 1%;
 }
 
 .a-analytics {
@@ -2733,12 +2734,13 @@ a {
     background-color: white;
     border-radius: 30px;
     box-shadow: 0 4px 8px 0 rgba(157, 154, 154, 0.1), 0 6px 20px 0 rgba(147, 142, 142, 0.29);
-    padding: 50px;
+    padding: 30px 50px;
+    /* height: 60%; */
 }
 
 .a-topic {
     background-color: rgb(5, 169, 245);
-    height: 80%;
+    height: 50%;
     width: 50%;
     align-items: center;
     justify-content: space-around;
@@ -2746,7 +2748,7 @@ a {
     display: flex;
     padding: 3.5%;
     margin: auto;
-    margin-top: -1%;
+    /* margin-top: -1%; */
 }
 
 .a-topic p {
@@ -2795,14 +2797,14 @@ a {
 
 .a-day {
     color: rgb(92, 88, 88);
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .a-card {
     border-radius: 10px;
     padding: 20px 15px;
     width: 75%;
-    height: 150px;
+    height: 130px;
     background-color: rgb(5, 169, 245);
     margin: 20px 10px;
     display: grid;
@@ -2893,7 +2895,7 @@ a {
     font-weight: 400;
 }
 
-.au-dropdown-content {
+/* .au-dropdown-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
@@ -2904,7 +2906,7 @@ a {
     margin-left: -60%;
     font-size: 11px;
     font-weight: 400;
-}
+} */
 
 .a-dropdown-content a, .au-dropdown-content a {
     color: black;
@@ -2925,24 +2927,24 @@ a {
 
 .au-doctor-form {
     width: 70%;
-    height: 80%;
+    height: 90%;
     background-color: white;
     border: solid 5px rgb(177, 217, 238);
     /* box-shadow: 0 0 40px 0 #ddd; */
     margin-left: 15%;
-    margin-top: 27px;
+    margin-top: 35px;
     border-radius: 10px;
     position: absolute;
 }
 
 .au-doctor-form form {
-    padding: 27px;
+    padding: 37px;
 }
 
 .au-first-raw {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 25px;
+    padding-bottom: 40px;
 }
 
 .au-doctor-id input {
@@ -2959,7 +2961,6 @@ a {
 .au-doctor-id label {
     font-weight: 600;
 }
-
 
 .au-first-raw select {
     border-style: none;
@@ -2995,7 +2996,7 @@ a {
     padding: 15px 25px;
     width: 500px;
     height: 30px;
-    margin-bottom: 12px;
+    margin-bottom: 23px;
     background-color: rgb(177, 217, 238);
 }
 
@@ -3124,7 +3125,7 @@ a {
 
 /* ------------------------- Admin manage users -------------------------------- */
 .ma-table {
-    max-width: 90%;
+    min-width: 90%;
     background-color: white;
     margin-left: 5%;
     margin-right: 5%;
@@ -3447,6 +3448,84 @@ a {
     margin-top: 15%;
     margin-right: 2%;
     margin-left: 2%;
+}
+
+/* ------------------------- PHM handle registration requests-------------------------------- */
+.hr-table{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3.5%;
+    width: 90%;
+}
+
+.hr-table table>tbody>tr:nth-child(odd){
+    background-color: #029ce41e !important;
+}
+.hr-table table>tbody>tr:nth-child(odd){
+    background-color: #F7F7F7;
+}
+
+.hr-table table {
+    /* min-width: 90%;
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3.5%;
+    position: absolute;
+    border: 3.5px solid #05a9f5;
+    border-radius: 10px; */
+    border-style: solid;
+    border-radius: 0px 0px 20px 20px;
+    border-color: #029EE4;
+    padding: 3px;
+    font-size: 12px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.hr-table .upper-area {
+    display: flex;
+    flex-direction: column;
+    background-color: #029EE4;
+    border-radius: 20px 20px 0px 0px;
+    font-size: 16px;
+    padding: 20px;
+}
+
+.hr-table th, .hr-table td {
+    padding: 5px 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029ce44f;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.hr-table th {
+    font-size: 15px;
+    padding: 15px 8px;
+}
+
+.hr-table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+.hr-button {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 2%;
+    margin-left: 20%;
+    background-color: #029EE4;
+    color: #fff;
+}
+
+.hr-button:hover {
+    background-color: #aeabab;
+    color: #000000;
 }
 
 /* ------------------------ pediatrician search children view -----------------------*/

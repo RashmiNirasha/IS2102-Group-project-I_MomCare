@@ -44,14 +44,14 @@ include ("..\..\Assets\Includes\header_admin.php");
                         ?>
                     </div>
             <div class="a-container-m">
-            <div class="a-dropdown"><div class="a-manage-icon"><i class="material-icons" alt="manage accounts">manage_accounts</i>
+            <!-- <div class="a-dropdown"><div class="a-manage-icon"><i class="material-icons" alt="manage accounts">manage_accounts</i>
         </div>
         <div class="au-dropdown-content">
                 <a href="..\..\View\Admin\admin-managemother.php">Manage Mother Accounts</a>
                 <a href="..\..\View\Admin\admin-managedoctor.php">Manage Doctor Accounts</a>
                 <a href="..\..\View\Admin\admin-managephm.php">Manage PHM Accounts</a>
                 </div>
-        </div>
+        </div> -->
             <a href = "admin-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
             </div></div>
             <div class="au-doctor-form">
