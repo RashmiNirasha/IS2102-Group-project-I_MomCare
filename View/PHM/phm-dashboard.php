@@ -49,12 +49,12 @@
                 </div>
                 </div> 
                 </a>
-                <a href="phm-addChild.php"><div class="p-card">
+                <a href="child/phm-addChildRecords.php"><div class="p-card">
                 <div class="a-icon-case">
-                    <i class="material-icons" alt="calendar icon">escalator_warning</i>
+                    <i class="material-icons" alt="calendar icon">child_care</i>
                 </div>
                 <div class="a-box">
-                    <h3>Add Children</h3>
+                    <h3>Add Child Records</h3>
                 </div>
                 </div> 
                 </a>
