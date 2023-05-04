@@ -3,7 +3,7 @@
     include '../../Config/dbConnection.php';
    if (isset($_SESSION['email'])){
     include "../../Assets/Includes/header_pages.php";
-    include "../../Config/admin-handlerequestsprocess";
+    include "../../Config/admin-handlerequestsprocess.php";
 ?>
 
 <!DOCTYPE html>
