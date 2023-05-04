@@ -1,7 +1,7 @@
 <?php
-    include "../../Assets/Includes/header_phm.php";
     session_start();
-    
+    if (isset($_SESSION['email'])){
+        include "../../Assets/Includes/header_pages.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
+}
     </style>
 </head>
 <body>
@@ -40,21 +40,13 @@
                  </div>
                 </div> 
                 </a>
+
                 <a href="phm-mothers.php"><div class="p-card">
                 <div class="a-icon-case">
                     <i class="material-icons" alt="calendar icon">escalator_warning</i>
                 </div>
                 <div class="a-box">
                     <h3>Manage Mothers</h3>
-                </div>
-                </div> 
-                </a>
-                <a href="child/phm-addChildRecords.php"><div class="p-card">
-                <div class="a-icon-case">
-                    <i class="material-icons" alt="calendar icon">child_care</i>
-                </div>
-                <div class="a-box">
-                    <h3>Add Child Records</h3>
                 </div>
                 </div> 
                 </a>
@@ -79,7 +71,7 @@
                 </div> 
                 </a>
 
-                <a href="phm-registrationRequests.php?phm_id=<?php echo $_GET['phm_id']; ?>"><div class="p-card">
+                <a href="phm-handlerequests.php"><div class="p-card">
                 <div class="a-icon-case">
                      <i class="material-icons" alt="calendar icon">child_care</i> 
                 </div>
@@ -92,20 +84,20 @@
             </div>
         </div>
 
-        <div class="a-content-2">
+        <!-- <div class="a-content-2">
             <span></span>
             <a href = "..\..\Config\admin-logout.php"><button>
                 <div class="a-btn-text"><h6>Log out</h6></div>
                 <i class="material-icons" alt="logout">logout</i>
             </button></a>
-        </div>
+        </div> -->
     </div>
 </body>
 </html>
 
 <?php
-// }else{
-//     header("Location:admin-login.php");
-// }
-   
+}else{
+    header("Location:admin-login.php");
+}
+
 ?>

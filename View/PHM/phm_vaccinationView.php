@@ -59,15 +59,13 @@ tr:nth-child(even) {
         <div class="col-md-12">
             <?php
             $vid = $_GET['child_id'];
-            $ret = mysqli_query($con, "SELECT *
-            FROM child_details
-            INNER JOIN phm_details
-            ON child_details.phm_id = phm_details.phm_id
-            WHERE child_details.child_id = '$vid'");
+            $ret = mysqli_query($con, "select * from child_details where child_id='$vid'");
             $cnt = 1;
             while ($row = mysqli_fetch_array($ret)) {
-                $ofiicial_name=($row['phm_name']);
-                $dateOfBirth = $row['date_of_birth'];
+                $dateOfBirth = ($row['date_of_birth']);
+                $today = date("Y-m-d");
+                $diff = date_diff(date_create($dateOfBirth), date_create($today));
+                $age = $diff->format('%y years %m months %d days');    
             ?>
                 <table border="1" class="table table-bordered">
                     <tr align="center">
@@ -92,7 +90,7 @@ tr:nth-child(even) {
                         <th>Child Gender</th>
                         <td><?php // echo $row['childGender'];?></td>
                         <th>Child Age</th>
-                        <td><?php echo $dateOfBirth;?></td>
+                        <td><?php // echo $row['childAge'];?></td>
                     </tr>
                     <tr>
                         <th>Disease immunized against</th>
@@ -110,8 +108,7 @@ tr:nth-child(even) {
                     <form action="../../Config/phm-enterVaccinModel.php" method="POST">
                     
                     <input type="text" id="child_id" name="child_id" value="<?php echo htmlentities($vid); ?>" hidden ><br>
-                    <input type="text" id="age" name="age" hidden><br>
-                    <input type="text" id="official_name" name="official_name" value="<?php echo htmlentities($ofiicial_name); ?>" hidden><br>
+                    <input type="text" id="age" name="age" value="<?php echo htmlentities($age); ?>" hidden><br>
 
                     <label for="type_of_vaccine">Type of Vaccine:</label>
                     <select id="type_of_vaccine" name="type_of_vaccine" required>
@@ -143,8 +140,9 @@ tr:nth-child(even) {
         <div class="view-report">
             <table class="test-view-table">
                 <tr>
+                    <th>Child Name</th>
                     <th>Age</th>
-                    <th>Vaccine Type</th>
+                    <th>Vaccine</th>
                     <th>Date</th>
                     <th>Batch No</th>
                     <th>Adverse Effects</th>
@@ -158,7 +156,7 @@ tr:nth-child(even) {
         if($num>0){ 
             while($row = mysqli_fetch_array($ret)){
                 echo "<tr> 
-                        
+                        <td>".$row['child_id']."</td>
                         <td>".$row['age']."</td>
                         <td>".$row['type_of_vaccine']."</td>
                         <td>".$row['date']."</td>
@@ -175,5 +173,8 @@ tr:nth-child(even) {
         echo "Error executing query: " . mysqli_error($con);
     }
 ?>
+
 </body>
 </html>
+
+?>

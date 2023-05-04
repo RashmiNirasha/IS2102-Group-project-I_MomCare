@@ -1,8 +1,10 @@
 <?php
-    include "../../Assets/Includes/header_admin.php";
-    include "..\..\Config\admin-managephmprocess.php";
-    // session_start();
-    // if (isset($_SESSION['s_email'])){
+    session_start();
+    if (isset($_SESSION['email'])){
+        include "../../Assets/Includes/header_pages.php";
+        include "../../Config/admin-searchdoctorprocess.php";
+        print_r($s_result);
+
 ?>
 
 
@@ -12,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage PHM</title>
+    <title>Manage Doctor</title>
     <link rel="stylesheet" href="..\..\Assets\css\style-common.css" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -29,8 +31,8 @@
     <div class="a-container">
         <div class="a-content">
             <div class="a-container-n">
-                <h1>Manage PHM Accounts</h1>
-                <form class="ma-searchbar" action="/action_page.php" style="margin:auto;max-width:300px">
+                <h1>Manage Doctor Accounts</h1>
+                <form class="ma-searchbar" action="admin-searchdoctor.php" style="margin:auto;max-width:300px" method="get">
                     <input type="text" placeholder="Search..." name="search">
                     <button type="submit"><i class="material-icons">search</i></button>
                 </form>
@@ -48,26 +50,32 @@
             <div class="ma-table">
             <table>
                 <tr>
-                    <th>PHM ID</th>
+                    <th>Doctor ID</th>
                     <th>Name</th>
                     <th>Telephone</th>
                     <th>Email</th>
                     <th>Address</th>
                     <th>Age</th>
                     <th>Work Place</th>
+                    <th>Type</th>
                     <th>Action</th>
                 </tr>
+
                 <?php 
-                if ($result->num_rows>0){
-                    while($row = $result->fetch_assoc()){
-                        $id = $row['phm_id'];
-                        $name = $row['phm_name'];
-                        $work = $row['phm_workplace'];
-                        $age = $row['phm_age'];
-                        $address = $row['phm_address'];
-                        $email = $row['phm_email'];
-                        $tel = $row['phm_tele'];
-            
+                if ($noResult == "True"){
+                    echo "<tr><td colspan='9' style='text-align:center'>No Result Found</td></tr>";
+                }else{
+                    // echo "record exist";
+                    // print_r($result);
+                    while($row = $s_result->fetch_assoc()){
+                        $id = $row['doc_id'];
+                        $name = $row['doc_name'];
+                        $type = $row['doc_type'];
+                        $work = $row['doc_workplace'];
+                        $age = $row['doc_age'];
+                        $address = $row['doc_address'];
+                        $email = $row['doc_email'];
+                        $tel = $row['doc_tele'];
 
                 $output = '<tr>';
                 $output .= "<td>$id</td>";
@@ -77,37 +85,31 @@
                 $output .= "<td>$address</td>";
                 $output .= "<td>$age</td>";
                 $output .= "<td>$work</td>";
+                $output .= "<td>$type</td>";
                 $output .= '<td><div class="ma-actions">
                             <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="view icon">visibility</i></div></a>
-                            <a href = "admin-updatephm.php?id=';
+                            <a href = "admin-updatedoctor.php?id=';
                 $output .=$id;
                 $output .='"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
-                            <a href = "..\..\Config\admin-deletephmprocess.php?status=delete&id=';
+                            <a href = "..\..\Config\admin-deletedoctorprocess.php?status=delete&id=';
                 $output .=$id;
                 $output .='"><div class="ma-img-action"><i class="material-icons" alt="delete icon">delete</i></div></a>
                         </div>
                     </td>';
                 '</tr>';
                 echo "$output";
-
-                    }
+                    }  
                 }
                 ?>
+                
             </table>
             </div> 
-        </div>
-        <div class="a-content-2">
-            <span></span>
-            <a href = "..\..\Config\admin-logout.php"><button>
-                <div class="a-btn-text"><h6>Log out</h6></div>
-                <i class="material-icons" alt="logout">logout</i>
-            </button></a>
         </div>
     </div>
 </body>
 </html>
 <?php
-    // }else{
-    //     header("Location:admin-login.php");
-    // }
+    }else{
+        header("Location: ../../mainLogin.php");
+    }
 ?>
