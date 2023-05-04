@@ -1,54 +1,25 @@
+@font-face {
+  font-family: RobotoMedium;
+  src: url(../../Assets/fonts/Roboto-Medium.ttf)
+}
+
+@font-face {
+  font-family: RobotoLight;
+  src: url(../../Assets/fonts/Roboto-Light.ttf)
+}
+
+@font-face {
+  font-family: RobotoRegular;
+  src: url(../../Assets/fonts/Roboto-Regular.ttf)
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: RobotoRegular;
     background-color: #f5f5f5;
     margin: 0;
     padding: 0;
 }
-h1 {
-    text-align: center;
-    /* margin-top: 30px; */
-    margin-bottom: 20px;
-}
 
-label {
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-input[type="text"],
-input[type="date"],
-input[type="number"],
-textarea {
-    display: flex;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    font-size: 16px;
-    color: #555;
-}
-input[type="submit"] {
-    background-color: #141166;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-input[type="submit"]:hover {
-    background-color: white;
-}
-
-body {
-    font-family: sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    width: 100%;
-    background-color: white;
-}
 fieldset {
     margin: 20px 20px 20px 20px;
 }
@@ -152,10 +123,9 @@ input[type="radio"] {
     flex-direction: column;
     margin-bottom: 30px;
     height: auto;
-    background: #029EE4;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
+    padding: 5px;
     margin: 0 auto;
     max-width: 800px;
     display: grid;
@@ -192,7 +162,6 @@ input[type="radio"] {
  
 .boxchart{
     width: 800px;
-    
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 20px;
@@ -236,6 +205,9 @@ input[type="radio"] {
       cursor: pointer;
     }
    
+    input[type="submit"]:hover , input[type="reset"]:hover , #showDataBtn2:hover , #showDataBtn:hover , #showDataBtn3:hover {
+      background-color: #0e106e;
+    }
 #age {
     border: 0.2rem solid #f3f2f2;
     background-color: #fbfbfb;
@@ -268,13 +240,13 @@ input[type="radio"] {
     color:rgb(246, 246, 246);
     padding: 6px 6px 6px 32px;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 24px;
     font-weight: bold;
     display: block;
   }
   
   .child-sidenav a:hover {
-    color: #f1f1f1;
+    color: #0e106e;
   }
   
   @media screen and (max-height: 450px) {
@@ -293,19 +265,15 @@ input[type="radio"] {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
 
-th {
-    display: table-cell;
-    vertical-align: inherit;
-    font-weight: normal;
-    text-align: left;
-}
-
-th, td {
-    padding: 1px;
-}
-
-td {
-    padding: 5px;
+  .child-container2{
+    margin-top: 06%;
+    margin-left: 18%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 10px 60px 10px 40px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
 
 /* child-cards */
@@ -398,6 +366,7 @@ td {
     margin-top: 10px;
     padding: 10px;
 }
+
 .light-purple {
     background-color: #D8BFD8; /* light purple color */
   }
@@ -406,3 +375,47 @@ td {
     background-color: #f04380; /* light red color */
   }
  
+  .next {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #029ee4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .next:hover {
+    background-color: #0e106e;
+  }
+
+  select{
+    width: 50%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    border: 1px solid #029EE4;
+    border-radius: 3px;
+  }
+
+  .goBackBtn {
+    width: 100px;
+    height: 30px;
+    margin-top: 100px;
+    border-style: none;
+    border-radius: 25px;
+    color: #ffffff;
+    background-color: #029EE4;
+    cursor: pointer;
+    margin-left: 30px;
+    margin-right: 15%;
+    margin-bottom: 20px;
+    position: fixed;
+}
+
+.goBackBtn:hover {
+    background-color: #ff0000;
+
+}

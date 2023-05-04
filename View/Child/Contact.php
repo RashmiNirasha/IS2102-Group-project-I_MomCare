@@ -148,6 +148,7 @@
       <div class="right-side">
         <div class="topic-text">Send us a message</div>
         <p>If you have any questions or problems regarding the site or any personal inquiries , Please reach out to us .</p>
+
       <form action="../../Config/admin-contact.php" method="POST">
         <div class="input-box">
           <input type="text" name="name" placeholder="Enter your name" required>
@@ -161,6 +162,7 @@
         <div class="button">
           <input type="submit" value="Send Now" >
         </div>
+        
       </form>
     </div>
     </div>

@@ -878,10 +878,9 @@ include "../../Assets/Includes/sidenav.php";?>
       </form>
     </div>
 </div>
- <!-- <input type="submit" name="generate_pdf" class="NextBtn" value="Generate PDF" /> -->
                         
                             <a href="child-developmentView2.php?child_id=<?php echo $_GET['child_id']; ?>">
-                            <button type="submit" class="btn btn-primary">Page 2</button></a></div>
+                            <button class="next" type="submit" class="btn btn-primary">Page 2</button></a></div>
 
                         <script>
 

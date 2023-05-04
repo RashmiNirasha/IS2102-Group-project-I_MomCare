@@ -1,5 +1,5 @@
 <?php
-include "../../Config/dbConnection.php";
+include "../../../Config/dbConnection.php";
 
 function insert_child_health_record($data) {
     global $con;

@@ -351,399 +351,737 @@ include "../../Assets/Includes/sidenav.php";?>
 
 <!-- 36 months --------------------------------------------------------------->
 
-
 <div class="OneColumnSection">
-    <div class="MotherCardTableTitles"><h3>At 36 Months</h3></div>
+    <div class="MotherCardTableTitles">
+      <form action="../../Config/child_36monProcessModel.php?child_id=<?php echo $_GET['child_id']; ?>" method="post"> <h3>At 36 months</h3>
+    </div>
     <div class="MotherGeneralDetails">
-        <table class="MotherCardTables">
-            <tr>
-                <th></th>
-                <th>Development Index</th>
-                <th>Mother/Father/Guardian Observation</th>
-            </tr>
-            <tr>
-                <th>1</th>
-                <td>Frequently falls and difficult to climb stairs</td>
-                <td>
-                    <select name="dev-idx-1" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>2</th>
-                <td>Drooling and difficult to talk well</td>
-                <td>
-                    <select name="dev-idx-2" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>3</th>
-                <td>Cannot play well with simple toys</td>
-                <td>
-                    <select name="dev-idx-3" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>4</th>
-                <td>Cannot talk in sentences</td>
-                <td>
-                    <select name="dev-idx-4" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>5</th>
-                <td>Cannot understand a simple command</td>
-                <td>
-                    <select name="dev-idx-5" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>6</th>
-                <td>Do not play with imitation</td>
-                <td>
-                    <select name="dev-idx-6" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>7</th>
-                <td>Do not play with toys or other children</td>
-                <td>
-                    <select name="dev-idx-7" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>8</th>
-                <td>Does not eye to eye</td>
-                <td>
-                    <select name="dev-idx-7" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>9</th>
-                <td>Loss of previous abilities.</td>
-                <td>
-                    <select name="dev-idx-9" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-        </table>
+      <table class="MotherCardTables">
+        <tr><th></th>
+          <th>Development index</th>
+          <th>Mother/Father/Guardian Observation</th>
+          <th>Edit</th></tr>
+
+        <tr><th>1</th><input type="hidden" name="id1" value="1">
+          <td>Frequently falls and difficult to climb stairs			<input type="hidden" name="test1" value="Frequently falls and difficult to climb stairs	"></td>
+            <td>
+              <?php $child_id = $_GET['child_id'];
+              $sql = "SELECT observation,id FROM child_developmet_tests8 WHERE id = 1 and child_id = '$child_id'" ;
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation1" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></td></tr>
+            
+        <tr><th>2</th><input type="hidden" name="id2" value="2">
+          <td>Drooling and difficult to talk well<input type="hidden" name="test2" value=" Drooling and difficult to talk well	"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests8 WHERE id = 2 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation2" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>3</th><input type="hidden" name="id3" value="3">
+          <td>Cannot play well with simple toys<input type="hidden" name="test3" value="Cannot play well with simple toys">	</td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests8 WHERE id = 3 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation3" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+        
+        <tr><th>4</th><input type="hidden" name="id4" value="4">
+          <td>Cannot talk in sentences<input type="hidden" name="test4" value="Cannot talk in sentences	"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests8 WHERE id = 4 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation4" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>5</th><input type="hidden" name="id5" value="5">
+          <td>Cannot understand a simple command <input type="hidden" name="test5" value="Cannot understand a simple command">	</td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests8 WHERE id = 5 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation5" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>6</th><input type="hidden" name="id6" value="6">
+          <td>Do not play with imitation		<input type="hidden" name="test6" value="Do not play with imitation		">	</td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests8 WHERE id = 6 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation6" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>7</th><input type="hidden" name="id7" value="7">
+          <td>Do not play with toys or other children	<input type="hidden" name="test7" value="Do not play with toys or other children	">	</td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests8 WHERE id = 7 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation7" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>8</th><input type="hidden" name="id8" value="8">
+          <td>Does not look in eye to eye		<input type="hidden" name="test8" value="Does not look in eye to eye		">	</td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests8 WHERE id = 8 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation8" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>9</th><input type="hidden" name="id9" value="9">
+          <td>Loss of previous abilities.		<input type="hidden" name="test9" value="Loss of previous abilities.">	</td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests8 WHERE id = 9 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation9" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+      </table>
+      <input type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
+      </form>
     </div>
 </div>
 
+<!-- ------------------------------------------48 months ------------------------------------ -->
+                       
 <div class="OneColumnSection">
-    <div class="MotherCardTableTitles"><h3>At 48 Months</h3></div>
+    <div class="MotherCardTableTitles">
+      <form action="../../Config/child_48monProcessModel.php?child_id=<?php echo $_GET['child_id']; ?>" method="post"> <h3>At 48 months</h3>
+    </div>
     <div class="MotherGeneralDetails">
-        <table class="MotherCardTables">
-            <tr>
-                <th></th>
-                <th>Development Index</th>
-                <th>Mother/Father/Guardian Observation</th>
-            </tr>
-            <tr>
-                <th>1</th>
-                <td>Cannot Jump</td>
-                <td>
-                    <select name="dev-idx-1" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>2</th>
-                <td>Cannot draw lines in a paper</td>
-                <td>
-                    <select name="dev-idx-2" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>3</th>
-                <td>Do not like to play collaboratively with others</td>
-                <td>
-                    <select name="dev-idx-3" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>4</th>
-                <td>Does not care about other children or strangers</td>
-                <td>
-                    <select name="dev-idx-4" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>5</th>
-                <td>Does not like to do daily-day activities like dressing, sleeping, toileting etc.</td>
-                <td>
-                    <select name="dev-idx-5" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>6</th>
-                <td>Not even in the middle of the day does he/she announce that he needs to go to the bathroom</td>
-                <td>
-                    <select name="dev-idx-6" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>7</th>
-                <td>It is difficult to repeat a short story that he/she knows well</td>
-                <td>
-                    <select name="dev-idx-7" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>8</th>
-                <td>A three-step instruction is difficult to follow</td>
-                <td>
-                    <select name="dev-idx-8" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>9</th>
-                <td>Difficult to understand similarities or differences</td>
-                <td>
-                    <select name="dev-idx-9" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>10</th>
-                <td>The words "I" and "you" are not used correctly</td>
-                <td>
-                    <select name="dev-idx-10" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>11</th>
-                <td>It is difficult to understand others when speaking</td>
-                <td>
-                    <select name="dev-idx-11" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>12</th>
-                <td>The previous abilities are lost</td>
-                <td>
-                    <select name="dev-idx-11" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
+      <table class="MotherCardTables">
+        <tr><th></th>
+          <th>Development index</th>
+          <th>Mother/Father/Guardian Observation</th>
+          <th>Edit</th></tr>
 
-            </table>
-        </div>
+        <tr><th>1</th><input type="hidden" name="id1" value="1">
+          <td>Cannot Jump			<input type="hidden" name="test1" value="Cannot Jump		"></td>
+            <td>
+              <?php $child_id = $_GET['child_id'];
+              $sql = "SELECT observation,id FROM child_developmet_tests9 WHERE id = 1 and child_id = '$child_id'" ;
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation1" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></td></tr>
+            
+        <tr><th>2</th><input type="hidden" name="id2" value="2">
+          <td>Cannot draw lines in a paper		<input type="hidden" name="test2" value="Cannot draw lines in a paper		"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests9 WHERE id = 2 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation2" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>3</th><input type="hidden" name="id3" value="3">
+          <td>Do not like to play collaboratively with others	 <input type="hidden" name="test3" value="Do not like to play collaboratively with others	">	</td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests9 WHERE id = 3 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation3" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+        
+        <tr><th>4</th><input type="hidden" name="id4" value="4">
+          <td>Does not care about other children or strangers	<input type="hidden" name="test4" value="Does not care about other children or strangers		"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests9 WHERE id = 4 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation4" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>5</th><input type="hidden" name="id5" value="5">
+          <td>Does not like to do daily-day activities like dressing, sleeping, toileting etc.	<input type="hidden" name="test5" value="Does not like to do daily-day activities like dressing, sleeping, toileting etc.	">	</td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests9 WHERE id = 5 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation5" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>6</th><input type="hidden" name="id6" value="6">
+          <td>Not even in the middle of the day does he/she announce that he needs to go to the bathroom		<input type="hidden" name="test6" value="Not even in the middle of the day does he/she announce that he needs to go to the bathroom	">	</td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests9 WHERE id = 6 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation6" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+        
+        <tr><th>7</th><input type="hidden" name="id7" value="7">
+          <td>It is difficult to repeat a short story that he/she knows well	<input type="hidden" name="test7" value="It is difficult to repeat a short story that he/she knows well		"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests9 WHERE id = 7 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation7" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>8</th><input type="hidden" name="id8" value="8">
+          <td>A three-step instruction is difficult to follow		<input type="hidden" name="test8" value="A three-step instruction is difficult to follow			"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests9 WHERE id = 8 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation8" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>9</th><input type="hidden" name="id9" value="9">
+          <td>Difficult to understand similarities or differences		<input type="hidden" name="test9" value="Difficult to understand similarities or differences		"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests9 WHERE id = 9 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation9" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>10</th><input type="hidden" name="id10" value="10">
+          <td>The words "I" and "you" are not used correctly			<input type="hidden" name="test10" value="The words I and you are not used correctly"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests9 WHERE id = 10 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation10" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>11</th><input type="hidden" name="id11" value="11">
+          <td>It is difficult to understand others when speaking				<input type="hidden" name="test11" value="It is difficult to understand others when speaking	"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests9 WHERE id = 11 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation11" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>12</th><input type="hidden" name="id12" value="12">
+          <td>The previous abilities are lost	<input type="hidden" name="test12" value="The previous abilities are lost	"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests9 WHERE id = 12 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation12" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+      </table>
+      <input type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
+      </form>
+    </div>
+</div>
+
+<!-- ------------------------------------------60 months --------------------------------------------- -->
 
 <div class="OneColumnSection">
-    <div class="MotherCardTableTitles"><h3>At 60 Months</h3></div>
+    <div class="MotherCardTableTitles">
+      <form action="../../Config/child_60monProcessModel.php?child_id=<?php echo $_GET['child_id']; ?>" method="post"> <h3>At 60 months</h3>
+    </div>
     <div class="MotherGeneralDetails">
-        <table class="MotherCardTables">
-            <tr>
-                <th></th>
-                <th>Development Index</th>
-                <th>Mother/Father/Guardian Observation</th>
-            </tr>
-            <tr>
-                <th>1</th>
-                <td>Does not express feelings well</td>
-                <td>
-                    <select name="dev-idx-1" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>2</th>
-                <td>Shows impulsive behavior, such as too much fear, anger, or shyness</td>
-                <td>
-                    <select name="dev-idx-2" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>3</th>
-                <td>Usually aloof and less active</td>
-                <td>
-                    <select name="dev-idx-3" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>4</th>
-                <td>Easily distracted and does not give more than five minutes of attention to any one activity</td>
-                <td>
-                    <select name="dev-idx-4" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>5</th>
-                <td>Does not respond to others or responds only superficially</td>
-                <td>
-                    <select name="dev-idx-5" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>6</th>
-                <td>Cannot distinguish between truth and imitation</td>
-                <td>
-                    <select name="dev-idx-6" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>7</th>
-                <td>Cannot say first name and last name correctly</td>
-                <td>
-                    <select name="dev-idx-7" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>8</th>
-                <td>Plural, past tense verbs are not used correctly</td>
-                <td>
-                    <select name="dev-idx-8" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>9</th>
-                <td>Does not talk about everyday activities and experiences </td>
-                <td>
-                    <select name="dev-idx-9" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>10</th>
-                <td>Cannot draw objects</td>
-                <td>
-                    <select name="dev-idx-10" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>11</th>
-                <td>Loss of previous abilities.</td>
-                <td>
-                    <select name="dev-idx-11" onchange="changeSelectColor(event)">
-                        <option value="">Select</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            </table>
-        </div>
+      <table class="MotherCardTables">
+        <tr><th></th>
+          <th>Development index</th>
+          <th>Mother/Father/Guardian Observation</th>
+          <th>Edit</th></tr>
+
+        <tr><th>1</th><input type="hidden" name="id1" value="1">
+          <td>Does not express feelings well			<input type="hidden" name="test1" value="Does not express feelings well			"></td>
+            <td>
+              <?php $child_id = $_GET['child_id'];
+              $sql = "SELECT observation,id FROM child_developmet_tests10 WHERE id = 1 and child_id = '$child_id'" ;
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation1" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></td></tr>
+            
+        <tr><th>2</th><input type="hidden" name="id2" value="2">
+          <td>Shows impulsive behavior, such as too much fear, anger, or shyness			<input type="hidden" name="test2" value="Shows impulsive behavior, such as too much fear, anger, or shyness			"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests10 WHERE id = 2 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation2" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>3</th><input type="hidden" name="id3" value="3">
+          <td>Usually aloof and less active		 <input type="hidden" name="test3" value="Usually aloof and less active		">	</td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests10 WHERE id = 3 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation3" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+        
+        <tr><th>4</th><input type="hidden" name="id4" value="4">
+          <td>Easily distracted and does not give more than five minutes of attention to any one activity		<input type="hidden" name="test4" value=" Easily distracted and does not give more than five minutes of attention to any one activity	"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests10 WHERE id = 4 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation4" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>5</th><input type="hidden" name="id5" value="5">
+          <td>Does not respond to others or responds only superficially		<input type="hidden" name="test5" value="Does not respond to others or responds only superficially		">	</td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests10 WHERE id = 5 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation5" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>6</th><input type="hidden" name="id6" value="6">
+          <td>Cannot distinguish between truth and imitation			<input type="hidden" name="test6" value="Cannot distinguish between truth and imitation		">	</td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests10 WHERE id = 6 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation6" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+        
+        <tr><th>7</th><input type="hidden" name="id7" value="7">
+          <td>Cannot say first name and last name correctly		<input type="hidden" name="test7" value="Cannot say first name and last name correctly		"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests10 WHERE id = 7 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation7" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>8</th><input type="hidden" name="id8" value="8">
+          <td>Plural, past tense verbs are not used correctly		<input type="hidden" name="test8" value="Plural, past tense verbs are not used correctly"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests10 WHERE id = 8 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation8" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>9</th><input type="hidden" name="id9" value="9">
+          <td>Does not talk about everyday activities and experiences		<input type="hidden" name="test9" value="Does not talk about everyday activities and experiences		"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests10 WHERE id = 9 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation9" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>10</th><input type="hidden" name="id10" value="10">
+          <td>Cannot draw objects				<input type="hidden" name="test10" value="Cannot draw objects	"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests10 WHERE id = 10 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation10" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+
+        <tr><th>11</th><input type="hidden" name="id11" value="11">
+          <td>Loss of previous abilities.				<input type="hidden" name="test11" value="Loss of previous abilities.		"></td>
+          <td>
+              <?php $sql = "SELECT observation,id FROM child_developmet_tests10 WHERE id = 11 and child_id = '$child_id'";
+              $result = mysqli_query($con, $sql);
+              if ($result === false) {
+                echo "Error: " . mysqli_error($con);
+              } elseif (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["observation"];
+                }
+              } else {
+                echo "0 results";
+              } ?></td>
+
+          <td><select name="observation11" onchange="changeSelectColor(event)">
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select></tr>
+      </table>
+      <input type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
+      </form>
+    </div>
+  </div>
 
   <a href="child-developmentView.php?child_id=<?php echo $_GET['child_id']; ?>">
-  <button type="submit" class="btn btn-primary">Page 1</button>
+  <button name="next" type="submit" class="btn btn-primary">Page 1</button>
   </a>                            </div>
 
                             <script>

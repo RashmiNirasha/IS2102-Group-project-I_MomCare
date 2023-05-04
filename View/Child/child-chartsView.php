@@ -12,6 +12,10 @@ include("../../Config/dbConnection.php") ?>
 </head>
 <body>
 
+<div class="top-button" >
+<a href="child-childDashboard.php?child_id=<?php echo $_GET['child_id']; ?>"><button class="goBackBtn">Go back</button></a>
+        </div>
+        
 <?php 
 $child_id=$_GET['child_id'];
 
@@ -40,6 +44,7 @@ $sql = "SELECT * FROM child_bmi_values WHERE child_id = '$child_id' ORDER BY
         END";
   $result = mysqli_query($con, $sql);
   $resultCheck = mysqli_num_rows($result);
+  $current_bmi = 0;
   if($resultCheck > 0){
     $age = array();
     $height = array();
@@ -52,50 +57,66 @@ $sql = "SELECT * FROM child_bmi_values WHERE child_id = '$child_id' ORDER BY
       $height[] = $row["height"];
       $weight[] = $row["weight"];
       $bmi[] = $row["bmi"];
+      $current_bmi = end($bmi);
     }
+    if (!empty($bmi)) {
+      $current_bmi = end($bmi);
+    } else {
+      $current_bmi = 0;
+    } 
+
     unset($result);
   }else{
     echo "No records matching your query were found.";
   }?>
 
-<div class="child-container-chart">
-  
-  <div class="form-container">
-  <h3>BMI CALCULATOR</h3>
-  <form action="../../Config/child-bmi_calculator.php" method="post">
-          <label for = "child_id" hidden ></label ><?php $child_id = $_GET['child_id']; ?>
-          <input type="hidden" id="child_id" name="child_id" value="<?php echo $child_id; ?>">
-          <label for="age">Age :</label>
-          <select id="age" name="age" required>
-            <option value="">Select age</option> <?php for ($i = 1; $i <= 20; $i++) { ?>
-           <option value="<?php echo $i ; ?>"><?php echo $i ; ?></option><?php } ?>
-          </select>
-      
-          <label for="height">Height (in centimeters):</label>
-          <input type="text" id="height" name="height">
-          <label for="weight">Weight (in kilograms):</label>
-          <input type="text" id="weight" name="weight">
-          <input type="submit" value="Calculate BMI">
-          <input type="reset" value="Reset">
-  </form> 
-  </div>
+<div class="child-container">
+  <h2>BMI Calculator</h2>
+  <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
+                        <div class="MotherCardTableTitles"><h3> BMI Test  </h3></div>
+                        <div class="MotherGeneralDetails">
+                        <form action="../../Config/child-bmi_calculator.php" method="post">
+                        <table class="MotherCardTables">
+                        <tr>
+                        <th><label for="age">Age :</label></th>
+                        <td><select id="age" name="age" required>
+                        <option value="">Select age</option> <?php for ($i = 1; $i <= 20; $i++) { ?>
+                        <option value="<?php echo $i ; ?>"><?php echo $i ; ?></option><?php } ?>
+                        </select></td>
+                        </tr>
+                        <tr>
+                        <th><label for="height">Height (in centimeters):</label></th>
+                        <td><input type="text" id="height" name="height"></td>
+                        </tr>
+                        <tr>
+                        <th><label for="weight">Weight (in kilograms):</label></th>
+                        <td><input type="text" id="weight" name="weight"></td>
+                        </tr>
+                        <tr>
+                        <td><input type="submit" value="Calculate BMI"></td>
+                        <td><input type="reset" value="Reset"></td>
+                        </tr>
+                        </table>
+                        <label for = "child_id" hidden ></label ><?php $child_id = $_GET['child_id']; ?>
+                        <input type="hidden" id="child_id" name="child_id" value="<?php echo $child_id; ?>">
+    </form>
 
   <div class="grid-2" id="result">
-   <p>Your child's current BMI value is <?php echo end($bmi); ?></p>
+   <p>Your Child's current BMI value is <?php echo $current_bmi; ?></p>
    <p><?php 
-              $current_bmi = end($bmi);
               if ($current_bmi < 18.5) {
-                echo "Your child is underweight.";
+                echo "Your Child is underweight.";
               } else if ($current_bmi >= 18.5 && $current_bmi <= 24.9) {
-                echo "Your child is of normal weight.";
+                echo "Your Child is of normal weight.";
               } else if ($current_bmi >= 25 && $current_bmi <= 29.9) {
-                echo "Your child is overweight.";
+                echo "Your Child is overweight.";
               } else {
-                echo "Your child is obese.";
+                echo "Your Child is obese.";
               }
             ?></p>
-  </div>
-  <div class="grid-3" id="chart">
+</div>
+
+    <div class="grid-3" id="chart">
         <h3>CHARTS</h3>
         <div class="boxchart"><canvas id="myChart"></canvas>
           <button id="showDataBtn">Age-BMI</button>
@@ -104,6 +125,9 @@ $sql = "SELECT * FROM child_bmi_values WHERE child_id = '$child_id' ORDER BY
         </div>
             </div>
   </div>
+  </div>
+</div>
+</div>
 </div>
 <script>
   //set up block 
