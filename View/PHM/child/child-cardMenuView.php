@@ -1,8 +1,12 @@
+<?php
+include "../../../Assets/Includes/header_pages.php";
+include '../../../Config/dbConnection.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>My Page</title>
-	<style><?php include "../../Assets/css/style-common.css"; ?></style>
+	<style><?php include "../../../Assets/css/style-common.css"; ?></style>
 </head>
 <body>
 	<div class="ChildCardMenuView-MainDiv">
@@ -10,6 +14,13 @@
 				<h1>Child Card Menu</h1>
 		</div>
 		<!-- Clickable title element -->
+
+		<div id = "title5" class="CardTitles">
+			<div class="CardTitles-1">
+				<h1>Add new child</h1>
+			</div>
+		</div>
+		<div id="content5"></div>
 		<div id = "title" class="CardTitles">
 			<div class="CardTitles-1">
 				<h1>Identification Information</h1>
@@ -46,6 +57,8 @@
 			var content3 = document.getElementById("content3");
 			var title4 = document.getElementById("title4");
 			var content4 = document.getElementById("content4");
+			var title5 = document.getElementById("title5");
+			var content5 = document.getElementById("content5");
 
 			// Initialize the content state to be hidden
 			var contentVisible = false;
@@ -135,6 +148,28 @@
 						}
 					};
 					xhttp.open("GET", "childCard4.php", true);
+					xhttp.send();
+				}
+			});
+
+			title5.addEventListener("click", function() {
+				// Toggle the content visibility based on the current state
+				if (contentVisible) {
+					content5.innerHTML = "";
+					content5.style.display = "none";
+					contentVisible = false;
+				} else {
+					// Load content from a PHP page using an AJAX request
+					var xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+							// Replace the content with the loaded content
+							content5.innerHTML = this.responseText;
+							content5.style.display = "block";
+							contentVisible = true;
+						}
+					};
+					xhttp.open("GET", "childtable.php", true);
 					xhttp.send();
 				}
 			});

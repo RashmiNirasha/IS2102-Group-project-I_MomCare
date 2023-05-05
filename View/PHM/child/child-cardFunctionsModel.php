@@ -103,7 +103,31 @@ function insert_child_newborn_health_chart($data) {
         echo "Error: " . $sql . "<br>" . mysqli_error($con);
     }
 }
+
+function insertChildInfo($child_id, $child_name, $child_gender, $phm_id, $doc_id, $guardian_id, $mom_email, $mom_id, $date_of_birth)
+{
+    include '../../../Config/dbConnection.php';
+    $sql = "INSERT INTO child_details (child_id, child_name, child_gender, phm_id, doc_id, guardian_id, mom_email, mom_id, date_of_birth) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $statement = mysqli_prepare($con, $sql);
+    if (!$statement) {
+    die("Error preparing statement: " . mysqli_error($con));
+    }
+
+    mysqli_stmt_bind_param($statement, "sssssssss", $child_id, $child_name, $child_gender, $phm_id, $doc_id, $guardian_id, $mom_email, $mom_id, $date_of_birth);
+
+    $result = mysqli_stmt_execute($statement);
+    if (!$result) {
+    die("Error executing statement: " . mysqli_error($con));
+    }
+
+    mysqli_stmt_close($statement);
+
+}
+
+
+
 ?>
+
 
 
 

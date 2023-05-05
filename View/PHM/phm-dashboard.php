@@ -31,12 +31,13 @@
             </div>
             </div>
             <div class="p-cards">
+
                 <a href="#"><div class="p-card">
                 <div class="a-icon-case">
                     <i class="material-icons" alt="calendar icon">edit_calendar</i>
                 </div>
                 <div class="a-box">
-                    <h3>Manage Schedule</h3>
+                    <h3>Manage Calendar</h3>
                  </div>
                 </div> 
                 </a>
@@ -51,22 +52,22 @@
                 </div> 
                 </a>
 
-                <a href="phm-children.php"><div class="p-card">
+                <a href="child/phm-addChildRecords.php"><div class="p-card">
                 <div class="a-icon-case">
                      <i class="material-icons" alt="calendar icon">child_care</i> 
                 </div>
                 <div class="a-box">
-                    <h3>Manage Children</h3>
+                    <h3>Maintain Child Records</h3>
                 </div>
                 </div> 
                 </a>
 
-                <a href="phm-childs.php"><div class="p-card">
+                <a href="child/child-cardMenuView.php"><div class="p-card">
                 <div class="a-icon-case">
                     <i class="material-icons" alt="calendar icon">child_care</i>
                 </div>
                 <div class="a-box">
-                    <h3>Add Vaccination Record</h3>
+                    <h3>Create Child Card</h3>
                 </div>
                 </div> 
                 </a>
@@ -80,6 +81,17 @@
                 </div>
                 </div> 
                 </a>
+
+                <a href="phm-children.php"><div class="p-card">
+                <div class="a-icon-case">
+                     <i class="material-icons" alt="calendar icon">child_care</i>
+                     <div>
+                     <div class="a-box">
+                    <h3>Search A Child</h3>
+                </div>
+                </div> 
+                </a>
+
 
             </div>
         </div>
