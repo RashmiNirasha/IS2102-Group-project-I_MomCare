@@ -104,23 +104,28 @@ function insert_child_newborn_health_chart($data) {
     }
 }
 
-function insertChildInfo($child_id, $child_name, $child_gender, $phm_id, $doc_id, $guardian_id, $mom_email, $mom_id, $date_of_birth)
+function insertChildInfo($data)
 {
-    include '../../../Config/dbConnection.php';
-    $sql = "INSERT INTO child_details (child_id, child_name, child_gender, phm_id, doc_id, guardian_id, mom_email, mom_id, date_of_birth) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    $statement = mysqli_prepare($con, $sql);
-    if (!$statement) {
-    die("Error preparing statement: " . mysqli_error($con));
+    global $con;
+    $child_id = $data['child_id'];
+   $child_name = $data['child_name'];
+   $child_gender= $data['child_gender'];
+    $phm_id = $data['phm_id'];
+    $doc_id = $data['doc_id'];
+    $guardian_id = $data['guardian_id'];
+    $mom_email = $data['mom_email'];
+    $mom_id = $data['mom_id'];
+    $date_of_birth = $data['date_of_birth'];
+
+    $sql = "INSERT INTO child_details (child_id, child_name, child_gender, phm_id, doc_id, guardian_id, mom_email, mom_id, date_of_birth) 
+    VALUES ('$child_id','$child_name','$child_gender', '$phm_id', '$doc_id', '$guardian_id', '$mom_email', '$mom_id', '$date_of_birth')";
+
+    if (mysqli_query($con, $sql)) {
+        header("Location: child-cardMenuView.php?success=1");
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($con);
     }
-
-    mysqli_stmt_bind_param($statement, "sssssssss", $child_id, $child_name, $child_gender, $phm_id, $doc_id, $guardian_id, $mom_email, $mom_id, $date_of_birth);
-
-    $result = mysqli_stmt_execute($statement);
-    if (!$result) {
-    die("Error executing statement: " . mysqli_error($con));
-    }
-
-    mysqli_stmt_close($statement);
+   
 
 }
 

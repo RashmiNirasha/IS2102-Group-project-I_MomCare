@@ -1,22 +1,35 @@
 <?php 
-//include "../../Assets/Includes/header_pages.php";
+include "../../../Config/dbConnection.php";
 
-include "child-cardFunctionsModel.php";
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Get form field values
-    $child_id = $_POST['child_id'];
-    $child_name = $_POST['child_name'];
-    $child_gender = $_POST['child_gender'];
-    $phm_id = $_POST['phm_id'];
-    $doc_id = $_POST['doc_id'];
-    $guardian_id = $_POST['guardian_id'];
-    $mom_email = $_POST['mom_email'];
-    $mom_id = $_POST['mom_id'];
-    $date_of_birth = $_POST['date_of_birth'];
+if (isset($_POST['submit'])) {
+  insertChildInfo($_POST);
+}
 
-    // Call the insertChildInfo function with form field values
-    insertChildInfo($child_id, $child_name, $child_gender, $phm_id, $doc_id, $guardian_id, $mom_email, $mom_id, $date_of_birth);}
+function insertChildInfo($data)
+{
+  global $con;
+  $child_id = $data['child_id'];
+  $child_name = $data['child_name'];
+  $child_gender = $data['child_gender'];
+  $phm_id = $data['phm_id'];
+  $doc_id = $data['doc_id'];
+  $guardian_id = $data['guardian_id'];
+  $mom_email = $data['mom_email'];
+  $mom_id = $data['mom_id'];
+  $date_of_birth = $data['date_of_birth'];
+
+  $sql = "INSERT INTO child_details (child_id, child_name, child_gender, phm_id, doc_id, guardian_id, mom_email, mom_id, date_of_birth) 
+          VALUES ('$child_id','$child_name','$child_gender', '$phm_id', '$doc_id', '$guardian_id', '$mom_email', '$mom_id', '$date_of_birth')";
+
+  if (mysqli_query($con, $sql)) {
+    header("Location: child-cardMenuView.php?success=1");
+  } else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($con);
+  }
+}
 ?>
+
+
 <style><?php include '../../../Assets/css/style-child.css'; ?></style>
 <html>
 
@@ -50,7 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <td><input type="text" id="mom_email" name="mom_email" required></td>
             <td><input type="text" id="mom_id" name="mom_id" required></td>
             <td><input type="date" id="date_of_birth" name="date_of_birth" required></td>
-            <td ><input type="submit" value="Submit"></td>
+            <td ><input type="submit" name="submit" value="Submit">
+</td>
         </tr>
         </table>
         </form>
