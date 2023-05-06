@@ -84,3 +84,27 @@ document.addEventListener('DOMContentLoaded', function() {
   
   calendar.render();
   });
+
+  //popup function-------------------
+
+  function appViewPopupFunction(appointmentDetails) {
+    document.getElementById("appointmentDetails").innerHTML = appointmentDetails;
+    var popup = document.getElementById("appViewPopup");
+    popup.classList.toggle("show");
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('.appViewPopup-close').addEventListener('click', function() {
+      document.getElementById('appViewPopup').classList.toggle('show');
+  });
+
+  document.getElementById('appViewPopup').addEventListener('click', function(event) {
+      if (event.target === this) {
+          this.classList.toggle('show');
+      }
+  });
+});
+
+
+  
+  

@@ -48,27 +48,51 @@
                 $mom_fname = $row['mom_fname'];
                 $mom_lname = $row['mom_lname'];
                 $mom_age = $row['mom_age'];
-
                 echo '
-                <div class="appointmentBar">
-                    <div class="appImgDiv">
+                <div class="appointmentBar" onclick="appViewPopupFunction(\'' .
+                '<ul>' .
+                    '<li>Name: ' . $mom_fname . ' ' . $mom_lname . '</li>' .
+                    '<li>Mother ID: ' . $mom_id . '</li>' .
+                    '<li>Age: ' . $mom_age . '</li>' .
+                '</ul>' .
+                '<ul>' .
+                    '<li>Date: ' . $start . '</li>' .
+                    '<li>Location: ' . $location . '</li>' .
+                    '<li>Number: ' . $app_id . '</li>' .
+                '</ul>' .
+                '\')">
+                  <div class="appImgDiv">
                     <img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic">
-                    </div>
-                    <ul>
+                  </div>
+                  <ul>
                     <li>Name: ' . $mom_fname . '' . $mom_lname . '</li>
                     <li>Mother ID: ' . $mom_id . '</li>
                     <li>Age: ' . $mom_age . '</li>
-                    </ul>
-                    <ul>
+                  </ul>
+                  <ul>
                     <li>Date: ' . $start . '</li>
                     <li>Location: ' . $location . '</li>
                     <li>Number: ' . $app_id . '</li>
-                    </ul>
+                  </ul>
                 </div>';
+                
                 }
                 ?>
         </div>
     </div>
+    <div id="appViewPopup" class="appViewPopup">
+    <div class="appViewPopup-content">
+        <span class="appViewPopup-close">&times;</span>
+        <div class="app-profileImage"><img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic"></div>
+        <div id="appointmentDetails"></div>
+        <div class="app-viewMotherCard">
+            <input type="button" value="Mother Card" onclick="">
+            <input type="button" value="Reports" onclick="">
+            <input type="button" value="Children" onclick="">
+        </div>
+    </div>
+    </div>
+
 
 </body>
 </html>
