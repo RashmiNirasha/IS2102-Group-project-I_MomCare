@@ -2,72 +2,76 @@
     session_start();
     include '../../Config/dbConnection.php';
     if(isset($_SESSION['email'])){ 
-        include '../../Assets/Includes/header_pages.php'; ?>
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <style><?php include '../../Assets/Css/style-common.css'; ?></style> 
-    </head>
-    <body>
-        <div class="MainOuterDiv">
-            <div class="MainInnerDiv">
-                <div class="vogAppointmentsView-heading">
-                    <h2>Up Comming Appointments...</h2>
-                    <button class="ViewVogCalendar">View my calendar</button>
-                </div>
-                <hr class="app-hr">
-                <div class="vogAppointmentsView-body">
-                    <div class="VogAppointmentBar">
-                            <!-- // $query = "SELECT * FROM appointment_details WHERE doc_id = '$mother_id'";
-                            // $result = mysqli_query($con, $query);
-                            // $row = mysqli_fetch_assoc($result);
-                            // $app_id = $row['app_id'];
-                            // $app_date = $row['app_date'];
-                            // $app_time = $row['app_time'];
-                            // $app_place = $row['app_place'];
-                            // $topic = $row['topic'];
-                            // $notes = $row['notes'];
-                            // $mom_id = $row['mom_id'];
-                            // $doc_name = $row['doc_name'];
-                            // $doc_id = $row['doc_id']; -->
-
-                                <tr>
-                                        <td>
-                                            <div class="Appointment-bar">
-                                            <div class="Appointment-bar-left">
-                                                <img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic">
-                                                <div>
-                                                    <h3>Ms. Maduri Weerasinghe</h3>
-                                                    <p class="second-line">0712345678</p>
-                                                    <label for="mother_id" name="mother_id" type="hidden" value="'.$mother_id.'"></label>
-                                                </div>
-                                            </div>
-                                            <div class="Appointment-bar-right">
-                                                <div class="Appointment-btns">
-                                                    <div><button class="view-app-btn">View Appointments</button></div>
-                                                    <div>
-                                                        <button class="commonCard-btn" name="viewMotherCard" onclick="window.location.href='../Mother/motherCardPage1.php'">Mother card</button>
-                                                    <button class="commonCard-btn" name="viewTests" onclick="window.location.href='TestsVog.php'">Scan & Tests</button>
-                                                    </div>   
-                                                </div>
-                                                <div class="app-bar-timestamp">
-                                                    <label for="date">2023-02-26</label>
-                                                    <label for="time">4:40 pm</label>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                    </div>
-                </div>
-            </div>    
+        include '../../Assets/Includes/header_pages.php'; 
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calendar</title>
+    <style><?php include '../../Assets/Css/style-common.css'; ?></style> 
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.6/index.global.min.js'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script><?php include 'calendar.js' ?></script>
+</head>
+<body>
+    <div class="mainCalendarDiv">
+        <div class="calendarLeft">
+            <div id='calendar'></div> 
         </div>
-    </body>
-    </html>
-    <?php }
+        <div class="calendarRight">
+            <div class="calendarRightHeader">
+                <h1>Appointments</h1>
+            </div>
+            <?php
+                $clickedDate = isset($_GET['date']) ? $_GET['date'] : '';
+                $doc_id = isset($_GET['doc_id']) ? $_GET['doc_id'] : '';
+
+                $query = "SELECT ma.*, md.mom_fname, md.mom_lname, md.mom_age
+                        FROM mom_appointments ma
+                        JOIN mother_details md ON ma.mom_id = md.mom_id
+                        WHERE ma.doc_id = '$doc_id'";
+
+                if ($clickedDate !== '') {
+                $query .= " AND ma.start = '$clickedDate'";
+                }
+
+                $result = mysqli_query($con, $query);
+
+                while ($row = mysqli_fetch_assoc($result)) {
+                $mom_id = $row['mom_id'];
+                $app_id = $row['app_id'];
+                $start = $row['start'];
+                $location = $row['location'];
+                $mom_fname = $row['mom_fname'];
+                $mom_lname = $row['mom_lname'];
+                $mom_age = $row['mom_age'];
+
+                echo '
+                <div class="appointmentBar">
+                    <div class="appImgDiv">
+                    <img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic">
+                    </div>
+                    <ul>
+                    <li>Name: ' . $mom_fname . '' . $mom_lname . '</li>
+                    <li>Mother ID: ' . $mom_id . '</li>
+                    <li>Age: ' . $mom_age . '</li>
+                    </ul>
+                    <ul>
+                    <li>Date: ' . $start . '</li>
+                    <li>Location: ' . $location . '</li>
+                    <li>Number: ' . $app_id . '</li>
+                    </ul>
+                </div>';
+                }
+                ?>
+        </div>
+    </div>
+
+</body>
+</html>
+<?php 
+    }
 ?>

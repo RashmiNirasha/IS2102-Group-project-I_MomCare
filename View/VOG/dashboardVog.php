@@ -4,10 +4,11 @@
     if (isset($_SESSION['email'])){?>
 <?php include "../../Assets/Includes/header_pages.php" ?>
 <?php 
-$sql="SELECT doc_name FROM doctor_details WHERE doc_email='".$_SESSION['email']."'";
+$sql="SELECT doc_name, doc_id FROM doctor_details WHERE doc_email='".$_SESSION['email']."'";
 $result=mysqli_query($con,$sql);
 $row=mysqli_fetch_assoc($result);
 $doc_name=$row['doc_name'];
+$doc_id=$row['doc_id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +26,7 @@ $doc_name=$row['doc_name'];
             <h1>Welcome to the dashboard Dr. <?php echo $doc_name ?></h1>
         </div>
         <div class="card-pack"><!--gap remover
-        --><button class="card" onclick="window.location.href='vog-scheduleManager.php'">
+        --><button class="card" onclick="window.location.href='vog-scheduleManager.php?doc_id=<?php echo $doc_id ?>'">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
                 <div class="card-content-right"><p>Schedule Manager</p></div>
             </button><!--gap remover -->
@@ -33,7 +34,7 @@ $doc_name=$row['doc_name'];
                 <div class="card-content-left"><span class="material-symbols-outlined">pregnant_woman</span></div>
                 <div class="card-content-right"><p>Mothers</p></div>
             </button><!--gap remover
-            --><button class="card">
+            --><button class="card" onclick="window.location.href='vog-ChildSearch.php'">
                 <div class="card-content-left"><span class="material-symbols-outlined">child_care</span></div>
                 <div class="card-content-right"><p>Children</p></div>
             </button>
