@@ -48,7 +48,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 					header("Location: ../View/Mother/mother-dashboard.php");
 					break;
 				case 'vog':
-					header("Location: ../View/VOG/dashboardVog.php");
+					header("Location: ../View/VOG/vog-dashboard.php");
 					break;
 				case 'ped':
 					header("Location: ../View/Pediatrician/ped-dashboardView.php");

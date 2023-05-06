@@ -56,6 +56,7 @@
         }
 
         /* .profile_pic {
+            display: block;
             width: 40px;
             height: 40px;
             cursor: pointer;
@@ -75,7 +76,7 @@
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="about.php">About</a></li>
-            <!-- <li><a href="View/dashboardVog.php">Dashboard</a></li> -->
+            <!-- <li><a href="View/vog-dashboard.php">Dashboard</a></li> -->
         </ul>
         <!-- <img class="profile_pic" src="../../Assets/Images/doctor.png" alt="profile_pic"> -->
     </nav> <!-- top navigation bar -- end -->

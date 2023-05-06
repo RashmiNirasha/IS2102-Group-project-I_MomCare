@@ -114,7 +114,7 @@
                 } else if ($_SESSION['user_role'] == 'ped') {
                     echo '<a href="../../View/Pediatrician/ped-dashboardView.php">Dashboard</a>';
                 } else if ($_SESSION['user_role'] == 'vog') {
-                    echo '<a href="../../View/VOG/dashboardVog.php">Dashboard</a>';
+                    echo '<a href="../../View/VOG/vog-dashboard.php">Dashboard</a>';
                 } else if ($_SESSION['user_role'] == 'admin') {
                     echo '<a href="../../View/Admin/admin-dashboard.php">Dashboard</a>';
                 } else if ($_SESSION['user_role'] == 'mother') {

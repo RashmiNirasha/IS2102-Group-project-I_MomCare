@@ -75,7 +75,7 @@
             <li><a href="../index.php">Home</a></li>
             <li><a href="about.php">About</a></li>
             
-        <!-- <li><a href="dashboardVog.php">Dashboard</a></li> -->
+        <!-- <li><a href="vog-dashboard.php">Dashboard</a></li> -->
         </ul>
         <!-- <img class="profile_pic" src="../Assets/images/vog/doctor.png" alt="profile_pic"> -->
     </nav> <!-- top navigation bar -- end -->

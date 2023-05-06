@@ -35,7 +35,6 @@
 
 body {
     padding: 0;
-    /* overflow: hidden; */
     margin: 0;
     font-family: RobotoLight;
     font-size: 16px;
@@ -489,7 +488,7 @@ body {
     color: #202020;
     margin-left: 5%;
     margin-top: 100px;
-    font-family: BarlowBold;
+    font-family: RobotoRegular;
     margin-bottom: 20px;
     margin-right: 20px;
     text-align: left;
@@ -1214,12 +1213,6 @@ body {
 
 /* ---------------------------- Child card menu page ----------------------------- */
 
-/* body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-} */
 
 .ChildCardMenuView-MainDiv {
     margin-top: 150px;
@@ -1298,13 +1291,6 @@ h1 {
     background-color: rgb(5, 85, 138);
 }
 
-/* body {
-    font-family: sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    width: 100%;
-    background-color: white;
-} */
 .ChildDataInput-cards input[type="radio"],
 .ChildDataInput-cards input[type="checkbox"] {
     margin-right: 10px;
@@ -1626,8 +1612,8 @@ input[type="file" i] {
 .main-mother {
     margin-top: 180px;
     justify-content: space-between;
-    margin-left: 10%;
-    margin-right: 10%;
+    /* margin-left: 10%;
+    margin-right: 10%; */
     /* background-color: tomato; */
 }
 
@@ -1805,6 +1791,7 @@ input[type="file" i] {
     border-style: none;
     border-radius: 25px;
     color: #ffffff;
+    font-family: RobotoRegular;
     background-color: #029EE4;
     cursor: pointer;
     margin-left: 30px;
@@ -2427,23 +2414,29 @@ input[type="file" i] {
 }
 
 .editPopup {
-    display: flex;
-    flex-direction: row;
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    padding: 20px; 
-    background-color: #f1f1f1; 
-    border: 1px solid #ccc; 
-    border-radius: 5px;
-    z-index: 10;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
     
 
 }
 
 .editPopup form {
     background-color: #ffffff;
+    height: 50%;
+    width: 40%;
+    border-radius: 10px;
+    transform: translate(75%, 50%);
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029EE4;
 }
 
 .editPopup h3 {
@@ -2454,23 +2447,26 @@ input[type="file" i] {
     color: #000000;
     font-size: 20px;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding: 5px 0px 5px 0px;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .editPopup label {
     display: block;
     font-weight: 600;
     margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-bottom: 10px;
     font-size: 15px;
     color: #000000;
 }
 
 .editPopup input[type=text] {
-    box-sizing: border-box;
-    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 50px);
     height: 25px;
     border-radius: 5px;
     border-style: solid;
@@ -2481,8 +2477,21 @@ input[type="file" i] {
 
 .editPopup textarea {
     box-sizing: border-box;
-    width: 100%;
-    height: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 40px);
+    height: 70px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+}
+
+.editPopup input[type=file] {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 50px);
+    height: 25px;
     border-radius: 5px;
     border-style: solid;
     border-width: 1px;
@@ -2526,7 +2535,9 @@ input[type="file" i] {
     flex-direction: row;
     column-gap: 10px;
     justify-content: flex-end;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
     background-color: #ffffff;
 }
 
@@ -3813,192 +3824,249 @@ a {
 }
 
 /* --------------------- Vog - schedule manager page ------------------------ */
-.MainOuterDiv {
-    width: 100%;
-    margin-top: 100px;
-    margin-left: 0%;
-    margin-right: 0%;
+
+.fc-toolbar {
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border: none;
 }
 
-.MainInnerDiv {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
-    height: 70vh;
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 30px;
-    border-style: solid;
-    border-color: #029EE4;
-    border-radius: 10px;
-    border-width: 1px;
-    /* background-color: #14aa00; */
+.fc-event {
+    background-color: #2ecc71;
+    border: none;
 }
 
-.vogAppointmentsView-heading {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    cursor: pointer;
-    background-color: #029EE4;
-    /* margin-bottom: 15px; */
-    border-radius: 10px;
-    padding: 0px 20px 0px 20px;
-}
-
-.vogAppointmentsView-heading h2 {
-    width:60%;
-    font-size: 25px;
-    padding-left: 10px;
-    border-radius: 10px;
-    color: #ffffff;
-    padding: 5px 10px 5px 10px;
-    /* background-color: #ffffff; */
-
-}
-
-.app-hr {
-    width: 80%;
-    height: 1px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    background-color: #029EE4;
-}
-
-.ViewVogCalendar {
-    border-radius: 10px;
-    border-style: solid;
-    border-width: 1px;
-    font-weight: bold;
-    background-color: #029EE4;
-    border-color: #ffffff;
-    padding: 10px;
-    color: #ffffff;
-    height: 40px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-.ViewVogCalendar:hover {
-    background-color: #111C43;
+.fc-day-grid-event .fc-content {
     color: white;
 }
 
-.Appointment-bar {
+#calendar {
+    width: 500px;
+    height: 515px;
+}
+
+.fc-toolbar-chunk h2 {
+    padding-left: 10px;
+}
+
+.mainCalendarDiv {
     display: flex;
     flex-direction: row;
-    border-radius: 20px;
-    width: 100%;
-    height: auto;
-    background-color: #029EE4;
-    justify-content:space-between;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 50px;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
-.Appointment-bar-right {
+.calendarLeft {
+    margin-top: 100px;
+    width: 50%;
+    /* background-color: #007bff; */
+
+}
+
+.calendarRight {
+    margin-top: 100px;
+    width: 50%;
+    /* background-color: #007bff; */
+}
+
+.calendarRightHeader h1 {
+    margin-top: 0px;
+    color: #f2f2f2;
+    font-size: 24px;
+    padding-top: 5px;
+    padding-bottom: 5px ;
+    margin-bottom: 25px;
+    background-color: #2C3E50;
+    border-radius: 5px;
+}
+
+.appointmentBar {
     display: flex;
     flex-direction: row;
-    gap: 5px;
-    margin-right: 0px;
-    /* background-color: red; */
-}
-
-.Appointment-btns {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    row-gap: 10px;
-    margin-right: 0px;
-    /* background-color: red; */
-        
-}
-
-.Appointment-bar-left {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-}
-
-.Appointment-bar img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50px;
-    margin-left: 25px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.Appointment-bar h3 {
-    color: #f0f0f0;
-    margin-left: 10px;
-    width: 100%;
-    margin-block: -1px;
-    margin-right: 20px;
-    margin-left: 20px;
-    float: right;
-    margin-top: 30px;
-    font-size: 26px;
-    /* background-color: #029EE4; */
-}
-
-.commonCard-btn {
-    height: fit-content;
-    height: 30px;
+    justify-content: space-between;
+    background-color: #e9e6e6;
+    border-style: solid;
+    border-color: #f2f2f2;
+    border-width: 1px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    width: 130px;
-    margin-right: 10px;
-    border-style: none;
-    font-size: 15px;
-    font-weight: bold;
-    color: #029EE4;
-    cursor: pointer;
-
-}
-
-.view-app-btn {
-    height: fit-content;
-    height: 30px;
-    border-radius: 10px;
-    width: 275px;
-    border-style: none;
-    font-size: 15px;
-    font-weight: bold;
-    color: #029EE4;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 15px;
     cursor: pointer;
 }
 
-.app-bar-timestamp {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.appointmentBar:hover {
+    background-color: #029ce41f;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029ce449;
+}
+
+.appImgDiv {
+    position: relative;
+    width: 40px;
+    /* background-color: #007bff; */
+    padding: 5px 10px 5px 5px;
+}
+
+.appointmentBar ul {
+    width: 50%;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 0px;
-    margin-right: 20px;
-    row-gap: 10px;
-    /* background-color: black; */
+    /* background-color: #00ff0d; */
 }
 
-.app-bar-timestamp label {
-    border-radius: 10px;
-    font-family: barlowBold;
-    padding: 5px 10px 5px 10px;
-    color: #004869;
+.appImgDiv img {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
+
+.appointmentBar li{
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+.fc-event-title {
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.classCountDiv {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    border-radius: 25px;
+    width: 30px;
+    height: 30px;
+    align-content: space-between;
+    margin-top: -15px;
+    padding: 8px;
+    font-size: 12px;
+    background-color: #007bff;
+}
+
+.fc-daygrid-day-events {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: #4599ca; */
+    margin-bottom: 10px;
+}
+
+.fc-event-main {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fc-event-start {
+    background-color: transparent;
+}
+
+.appointment-count{
+    background-color:#0056b3 ;
     text-align: center;
-    background-color: #ffffff7a;
+    border-radius: 50px;
+    margin-top: -10px;
+    width: 30px;
+    height: 30px; 
 }
 
-.view-app-btn:hover {
-    background-color: #111C43;
-    color: #ffffff;
+.appointment-count-text {
+    color: white;
+    font-size: 12px;
+    margin-top: 8px;
 }
 
-.commonCard-btn:hover {
-    background-color: #111C43;
-    color: #ffffff;
-}
+/* ------------------viewFullDetailsPopup */
+
+.appViewPopup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  
+  .appViewPopup-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    margin-top: -10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .appViewPopup-close:hover,
+  .appViewPopup-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .appViewPopup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .appViewPopup-content ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .show {
+    display: block;
+  }
+
+  .app-viewMotherCard {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .app-viewMotherCard input[type="button"] {
+    float: right;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    width: 30%;
+  }
+
+  .app-profileImage {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .app-profileImage img {
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+  }
+  
 
 /* ------------------------------------- mother-dashboard -----------------------------  */
 

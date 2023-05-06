@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
                             </div>
                             <div class="mom-btns">
                                 <button name="viewMotherCard" onclick="window.location.href=\'"../Mother/motherCardPage1.php\'"S">Mother Card</button>
-                                <button name="viewTests" onclick="window.location.href=\'"TestsVog.php\'";">Scan & Tests</button>
+                                <button name="viewTests" onclick="window.location.href=\'"vog-tests.php\'";">Scan & Tests</button>
                             </div>
                         </div>
                     </td>
