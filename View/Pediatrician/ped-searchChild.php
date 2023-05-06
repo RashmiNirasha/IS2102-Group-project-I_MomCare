@@ -14,7 +14,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
         <style><?php include "../../Assets/Css/style-common.css" ?></style>    </head>
     <body>
     <div class="main-mother">
-    <a href="pediatrician-dashboardView.php"><button class="goBackBtn">Go back</button></a>
+    <a href="ped-dashboardView.php"><button class="goBackBtn">Go back</button></a>
         <div class="mom-filter">
         <h1>List of Children</h1>
         <div class="filter">
@@ -24,7 +24,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
             </form>
         </div>
         
-<div class="common_list_content">
+<div class="child-container2">
 <?php
 $sql = "SELECT child_details.child_id, mother_details.*, child_details.*
 FROM child_details 
@@ -42,8 +42,7 @@ $result = mysqli_query($con, $sql);
 
 // Check if the query returned any results
 if (mysqli_num_rows($result) > 0) {
-    // Display the results in a table
-    echo "<table>
+      echo "<table class= 'MotherCardTables'>
     <tr>
             <th>Child Id</th>
             <th>Child name</th>
@@ -66,7 +65,7 @@ if (mysqli_num_rows($result) > 0) {
           <td>" . $row['mom_id'] . "</td>
           <td> $mothername </td>
           <td>
-            <button class = 'viewBtn' name='viewChildCard' onclick='window.location.href=\"../Child/childCardPage1.php?child_id=".$row['child_id']."\"'>View</button>
+            <button class = 'viewBtn' name='viewChildCard' onclick='window.location.href=\"../Child/Child-fullChildCard.php?child_id=".$row['child_id']."\"'>View</button>
           </td>
         </tr>";
     }

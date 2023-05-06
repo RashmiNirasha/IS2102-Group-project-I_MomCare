@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
 
     $result = mysqli_query($con, $sql);
     if($result){
-        header("Location: pediatrician-viewNotesView.php");
+        header("Location: ped-viewNotesView.php");
     }
     else{
         echo "Error: " . $sql . "<br>" . mysqli_error($con);
@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
 <body>
 
 <div class="main-mother">
-<a href="pediatrician-dashboardView.php"><button class="goBackBtn">Go back</button></a>
+<a href="ped-dashboardView.php"><button class="goBackBtn">Go back</button></a>
         <div class="mom-filter">
         <h1>Update Pediatrician Notes</h1>
         </div>
@@ -74,7 +74,6 @@ if (isset($_POST['submit'])) {
         <td><label for="note_records">Select File to Upload</label></td>
         <td><input type="file" name="note_records" id="note_records"/><span><?php //echo $note_records;?></span></td>
     </tr>
-    <!-- <a href="pediatrician-viewNotesView.php"><button class="btnMain" >View Notes</button></a> -->
    
 </table>
 <button type="submit" name="submit">Update</button>

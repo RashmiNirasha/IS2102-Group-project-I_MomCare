@@ -793,7 +793,7 @@ body {
     margin-left: 15%;
     margin-bottom: 0px;
     border-radius: 20px 20px 0px 0px;
-    margin-top: 120px;
+    margin-top: 20px;
     background-color: #029EE4;
 }
 
@@ -1534,6 +1534,39 @@ h1 {
     padding-right: 10px;
 
 }
+
+input[type="text" i] {
+    width: 75%;
+    text-align: left;
+    border-radius:10px;
+    border: 2px solid #A1B9D8;
+    padding:5px 5px 5px 5px;
+}
+
+input[type="date" i] {
+    width: 75%;
+    text-align: left;
+    border-radius:10px;
+    border: 2px solid #A1B9D8;
+    padding:5px 5px 5px 5px;
+}
+
+textarea {
+    width: 75%;
+    text-align: left;
+    border-radius:10px;
+    border: 2px solid #A1B9D8;
+    padding:5px 5px 5px 5px;
+}
+
+input[type="file" i] {
+    width: 75%;
+    text-align: left;
+    border-radius:10px;
+    border: 2px solid #A1B9D8;
+    padding:5px 5px 5px 5px;
+}
+
 
 /* .ChildCardInputSec-2 td:nth-child() {
     width: 1%;
@@ -3659,6 +3692,8 @@ a {
   
   .common_list_content table {
     margin-top: 20px;
+    margin-left:15%;
+    margin-right:15%;
     font-size: 0.9rem;
     text-align: center;
     table-layout: fixed;
@@ -4057,6 +4092,19 @@ a {
   }
 
   .child-container2{
+    margin-top: 10px;
+    margin-bottom: 5%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 10px 60px 10px 40px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .child-container3{
+
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10%;
     margin-bottom: 5%;
     background: #fff;
     border-radius: 6px;

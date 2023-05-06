@@ -112,7 +112,7 @@
                 if ($_SESSION['user_role'] == 'phm') {
                     echo '<a href="../../View/PHM/phm-dashboard.html">Dashboard</a>';
                 } else if ($_SESSION['user_role'] == 'ped') {
-                    echo '<a href="../../View/Pediatrician/pediatrician-dashboardView.php">Dashboard</a>';
+                    echo '<a href="../../View/Pediatrician/ped-dashboardView.php">Dashboard</a>';
                 } else if ($_SESSION['user_role'] == 'vog') {
                     echo '<a href="../../View/VOG/dashboardVog.php">Dashboard</a>';
                 } else if ($_SESSION['user_role'] == 'admin') {

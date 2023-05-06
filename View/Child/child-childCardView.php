@@ -19,7 +19,7 @@ include "../../Assets/Includes/sidenav.php";?>
                         <div class="MotherGeneralDetails">
                         <?php
                                 $child_id = $_GET['child_id'];
-                                $sql = "SELECT * FROM child_cprofile_view WHERE child_id = '$child_id'";
+                                $sql = "SELECT * FROM child_details WHERE child_id = '$child_id'";
                                 $result = mysqli_query($con, $sql);
                                 if (mysqli_num_rows($result) > 0) {
                                     echo '<table class="MotherCardTables">';

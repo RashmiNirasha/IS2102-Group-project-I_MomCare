@@ -13,7 +13,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
         if (isset($_GET['childid'])) {
             $user_id = mysqli_real_escape_string($con, $_GET['childid']);       
         } else {
-            header("Location: pediatrician-addNotesView.php?error=missingchildid");
+            header("Location: ped-addNotesView.php?error=missingchildid");
             exit();
         }
         $note_topic = mysqli_real_escape_string($con, $_POST['note_topic']);
@@ -21,8 +21,8 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
         $note_description = mysqli_real_escape_string($con, $_POST['note_description']);
         $note_records = mysqli_real_escape_string($con, $_POST['note_records']);
         
-        if (empty($note_topic) || empty($note_date) || empty($note_description) || empty($note_records)) {
-            header("Location: pediatrician-addNotesView.php?error=emptyfields&note_topic=" . $note_topic . "&note_date=" . $note_date . "&note_description=" . $note_description . "&note_records=" . $note_records);
+        if (empty($note_topic) || empty($note_date) || empty($note_description) ) {
+            header("Location: ped-addNotesView.php?error=emptyfields");
             exit();
         } else {
             $sql = "SELECT * FROM doctor_details WHERE doc_email='$doc_email'";
@@ -38,7 +38,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                 $result = mysqli_query($con, $sql);
         
                 if ($result) {
-                    header("Location: pediatrician-viewNotesView.php?success=noteadded");
+                    header("Location: ped-addNotesView.php?childid=".$_GET['childid']);
                     exit();
                 } else {
                         echo "Error: " . $sql . "<br>" . mysqli_error($con);
@@ -55,20 +55,27 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 <style><?php include "../../Assets/Css/style-common.css" ?></style>
 </head> 
 <body>
-<div class="main-mother">
-<a href="pediatrician-dashboardView.php"><button class="goBackBtn">Go back</button></a>
-        <div class="mom-filter">
-        <h1>Add Pediatrician Notes</h1>
-        </div>
-        <div class="RegisterMotherInnerDiv">
-<form class="PediatrianAddNotesForm" id="pediareicianAddNotes" action="pediatrician-addNotesView.php?childid=<?php echo $_GET['childid']?>" method="POST">
-<table>
+<a href="ped-dashboardView.php"><button class="goBackBtn">Go back</button></a>
+
+<div class="child-container3">
+  <h2>Notes and Records</h2>
+
+  <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
+                        <div class="MotherCardTableTitles"><h3> Add Records  </h3></div>
+                        <div class="MotherGeneralDetails">
+
+<form action="ped-addNotesView.php?childid=<?php echo $_GET['childid']?>" method="POST">
+<table class="MotherCardTables">
+    <?php $sql = "select * from doctor_details where doc_email = '".$_SESSION['email']."'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    $doc_id = $row['doc_id'];
+     ?>
+     <input type="hidden" name="doctor_id" id="doctor_id" value='$doc_id'>
     <tr>
-        
-        <td><input type="hidden" name="doctor_id" id="doctor_id"></td>
-    </tr>
-    <tr>
-        <td><input type="hidden" placeholder="Search..." name="child_id" id="child_id"></td>
+        <td><label for="child_id">Child ID</label></td>
+        <td><input type="text" name="child_id" id="child_id" value='<?php echo $_GET['childid']?>'></td>
     </tr>
     <tr>
         <td><label for="note_date">Choose Date</label></td>
@@ -88,28 +95,30 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
     </tr>
     
 </table>
-<button type="submit" name="submit">Create</button>
-
+<button class='btnMain' type="submit" name="submit">Create</button>
                 <script>
                     function clearForm() {
                         document.getElementById("PediatrianAddNotesForm").reset();
                     }
                 </script>
- <button type="clear" name="clear" onclick="clearForm()">Clear</button>
- <a href=" pediatrician-viewNotesView.php"><button class="pd-viewNote-btnMain" >View Notes</button></a>
+ <button class='btnMain' type="clear" name="clear" onclick="clearForm()">Clear</button>
   </form>
   <div>
             
     </div>
-       <!--logout button-->
-    <div class="log-out"> 
-    <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button>
+   
+  
+  <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
+                        <div class="MotherCardTableTitles"><h3> View Records  </h3></div>
+                        <div class="MotherGeneralDetails">
+                            <?php include "../../Config/ped-ViewNotesModel.php"; ?>
+       
+        </div> 
     </div>
     </div>
-    </body>
-    </html>
-                 <?php } else {
-    header("Location: ../../mainLogin.php");
-     exit();
+</body>
+</html>
+<?php } else {
+    header("Location: ../../index.php");
+    exit();
 }?>
-                

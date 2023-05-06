@@ -28,38 +28,23 @@ $doc_name=$row['doc_name'];
     </div>
 </div>
 
-<div class="card-pack"><!--gap remover
-        --><button class="card" onclick="window.location.href = 'pediatrician-childCardSearchView.php';">
-                <div class="card-content-left"><span class="material-symbols-outlined">Child_care</span></div>
-                <div class="card-content-right"><p>Search For Child</p></div>
-            </button><!--gap remover -->
-
-            <button class="card" onclick="window.location.href = 'childs.php';">
-                <div class="card-content-left"><span class="material-symbols-outlined">List</span></div>
-                <div class="card-content-right"><p>View Child List</p></div>
-            </button><!--gap remover -->
-
-            <button class="card" onclick="window.location.href = 'pediatrician-childCardSearchView.php';">
+<div class="card-pack">
+    <!--gap remover-->
+    
+    <button class="card" onclick="window.location.href = 'ped-childCardSearchView.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">Child_care</span></div>
                 <div class="card-content-right"><p>Child Management</p></div>
             </button><!--gap remover -->
 
-        <button class="card" onclick="window.location.href = ' enterNotes.php';">
-                <div class="card-content-left"><span class="material-symbols-outlined">description</span></div>
-                <div class="card-content-right"><p>Doctor Notes</p></div>
-            </button>
-
-           <!--gap remover
-        --><button class="card" onclick="window.location.href = 'childs.php';">
+            <button class="card" onclick="window.location.href = 'ped-searchChild.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">List</span></div>
                 <div class="card-content-right"><p>View Child List</p></div>
             </button><!--gap remover -->
-            <!--gap remover
-        --><button class="card" onclick="window.location.href = 'pediatrician-viewNotesView.php ';">
+
+            <button class="card" onclick="window.location.href = ' ';">
                 <div class="card-content-left"><span class="material-symbols-outlined">note_add</span></div>
-                <div class="card-content-right"><p>Manage Notes</p></div>
-            </button><!--gap remover -->
-            
+                <div class="card-content-right"><p>Manage Shedule</p></div>
+
         
 </div>
         <?php //include_once '../../Assets/Includes/ped-footer.php';?>
