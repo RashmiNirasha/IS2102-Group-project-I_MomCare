@@ -94,41 +94,11 @@
     <title>Document</title>
     <style><?php include "../../Assets/css/style-common.css" ?></style>
 
-    <script>
-    function confirmUpdate() {
-        var response = window.confirm("Are you sure you want to update this record?");
-        if (response == true) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    </script>
-    <script>
-    function confirmDelete() {
-        var response = window.confirm("Are you sure you want to delete this record?");
-        if (response == true) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    </script>
-    <script>
-    function editPopupFunction(note_id) {
-        var popup = document.getElementById("popup");
-        var form = document.createElement("form");
-        document.body.appendChild(form);
-        var cancelButton = form.querySelector("input[type='button'][value='Cancel']");
-        cancelButton.addEventListener("click", function() {
-            form.remove();
-        });
-    }
-    </script>
+    <script><?php include 'vog-tests.js' ?></script>
 </head>
 <body>
+<a href="vog-motherSearch.php"><button class="goBackBtn-motherPage">Go back</button></a>
     <div class="main-mother">
-    <a href="vog-motherSearch.php"><button class="goBackBtn-motherPage">Go back</button></a>
         <div class="mom-intro">
             <div>
                 <img src="../../Assets/Images/mother/Profile_pic_mother.png" alt="mother-profile-pic">
@@ -232,6 +202,7 @@
                         <input type="text" name="updated_test_name" id="updated_test_name" value="'. $row['note_topic'] .'">
                         <label for="upated-note">Special note</label>
                         <textarea name="updated_note" id="updated_note" cols="10" rows="10">'. $row['note_description'] .'</textarea>
+                        <label for="upated-test-report">Upload report</label>
                         <input type="file" name="updated_test_report" id="updated_test_report" value="'. $row['note_records'] .'">
                         <input type="hidden" name="mom_id" value="'. $row['mom_id'] .'">
                         <input type="hidden" name="doc_id" value="'. $row['doc_id'] .'">

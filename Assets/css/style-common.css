@@ -1213,12 +1213,6 @@ body {
 
 /* ---------------------------- Child card menu page ----------------------------- */
 
-/* body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-} */
 
 .ChildCardMenuView-MainDiv {
     margin-top: 150px;
@@ -1297,13 +1291,6 @@ h1 {
     background-color: rgb(5, 85, 138);
 }
 
-/* body {
-    font-family: sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    width: 100%;
-    background-color: white;
-} */
 .ChildDataInput-cards input[type="radio"],
 .ChildDataInput-cards input[type="checkbox"] {
     margin-right: 10px;
@@ -1592,8 +1579,8 @@ h1 {
 .main-mother {
     margin-top: 180px;
     justify-content: space-between;
-    margin-left: 10%;
-    margin-right: 10%;
+    /* margin-left: 10%;
+    margin-right: 10%; */
     /* background-color: tomato; */
 }
 
@@ -2394,23 +2381,29 @@ h1 {
 }
 
 .editPopup {
-    display: flex;
-    flex-direction: row;
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    padding: 20px; 
-    background-color: #f1f1f1; 
-    border: 1px solid #ccc; 
-    border-radius: 5px;
-    z-index: 10;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
     
 
 }
 
 .editPopup form {
     background-color: #ffffff;
+    height: 50%;
+    width: 40%;
+    border-radius: 10px;
+    transform: translate(75%, 50%);
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029EE4;
 }
 
 .editPopup h3 {
@@ -2421,23 +2414,26 @@ h1 {
     color: #000000;
     font-size: 20px;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding: 5px 0px 5px 0px;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .editPopup label {
     display: block;
     font-weight: 600;
     margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-bottom: 10px;
     font-size: 15px;
     color: #000000;
 }
 
 .editPopup input[type=text] {
-    box-sizing: border-box;
-    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 50px);
     height: 25px;
     border-radius: 5px;
     border-style: solid;
@@ -2448,8 +2444,21 @@ h1 {
 
 .editPopup textarea {
     box-sizing: border-box;
-    width: 100%;
-    height: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 40px);
+    height: 70px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+}
+
+.editPopup input[type=file] {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 50px);
+    height: 25px;
     border-radius: 5px;
     border-style: solid;
     border-width: 1px;
@@ -2493,7 +2502,9 @@ h1 {
     flex-direction: row;
     column-gap: 10px;
     justify-content: flex-end;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
     background-color: #ffffff;
 }
 

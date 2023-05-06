@@ -14,7 +14,7 @@
     <style><?php include '../../Assets/Css/style-common.css'; ?></style> 
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.6/index.global.min.js'></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script><?php include 'calendar.js' ?></script>
+    <script><?php include 'vog-calendar.js' ?></script>
 </head>
 <body>
     <div class="mainCalendarDiv">
