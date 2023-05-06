@@ -13,7 +13,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 <body>
 
 <div class="main-mother">
-<a href="dashboardVog.php"><button class="goBackBtn">Go back</button></a>
+<a href="vog-dashboard.php"><button class="goBackBtn">Go back</button></a>
         <div class="mom-filter">
         <h1>Find Child </h1>
         <form action=" " method="POST">

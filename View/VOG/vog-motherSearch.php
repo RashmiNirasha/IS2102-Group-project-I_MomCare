@@ -48,7 +48,7 @@ if (isset($_SESSION['email'])){?>
                                     </div>
                                     <div class="mom-btns">
                                         <button name="viewMotherCard" onclick="window.location.href=\'../Mother/motherCardPage1.php?mom_id='.$row['mom_id'].'\'">Mother Card</button>
-                                        <button name="viewTests" onclick="window.location.href=\'TestsVog.php?mom_id='.$row['mom_id'].'\'">Scan & Tests</button>
+                                        <button name="viewTests" onclick="window.location.href=\'vog-tests.php?mom_id='.$row['mom_id'].'\'">Scan & Tests</button>
                                     </div>
                                 </div>
                             </td>

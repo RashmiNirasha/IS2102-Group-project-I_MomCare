@@ -8,7 +8,7 @@
         if(isset($_POST['add_report'])){
             if(empty($_POST['test_name']) || empty($_POST['note'])) {
                 $mom_id = $_POST['mom_id'];
-                header("Location: ../../View/VOG/testsVog.php?mom_id=$mom_id&error2=Please fill all the fields!");
+                header("Location: ../../View/VOG/vog-tests.php?mom_id=$mom_id&error2=Please fill all the fields!");
                 exit();
             }else {
                 $test_name = $_POST['test_name'];
@@ -34,7 +34,7 @@
                 }
                 // file upload code -- end
 
-                header("Location: ../../View/VOG/testsVog.php?mom_id=$mom_id&error3=Record successfully added!");
+                header("Location: ../../View/VOG/vog-tests.php?mom_id=$mom_id&error3=Record successfully added!");
                 exit();
             }
 
@@ -46,7 +46,7 @@
         if(isset($_POST['update_button'])){
             if(empty($_POST['updated_test_name']) || empty($_POST['updated_note'])) {
                 $mom_id = $_POST['mom_id'];
-                header("Location: ../../View/VOG/testsVog.php?mom_id=$mom_id&error2=Please fill all the fields!");
+                header("Location: ../../View/VOG/vog-tests.php?mom_id=$mom_id&error2=Please fill all the fields!");
                 echo "Please fill all the fields!";
                 exit();
 
@@ -74,7 +74,7 @@
                 }
                 // file upload code -- end
 
-                header("Location: ../../View/VOG/testsVog.php?mom_id=$mom_id&error3=Record successfully Updated!");
+                header("Location: ../../View/VOG/vog-tests.php?mom_id=$mom_id&error3=Record successfully Updated!");
                 exit();
             }
 
@@ -128,7 +128,7 @@
 </head>
 <body>
     <div class="main-mother">
-    <a href="mothers.php"><button class="goBackBtn-motherPage">Go back</button></a>
+    <a href="vog-motherSearch.php"><button class="goBackBtn-motherPage">Go back</button></a>
         <div class="mom-intro">
             <div>
                 <img src="../../Assets/Images/mother/Profile_pic_mother.png" alt="mother-profile-pic">
@@ -201,9 +201,9 @@
                                 <td>' . $row['note_topic'] . '</td>
                                 <td>' . $row['note_description'] . '</td>
                                 <td>' . date("y-m-d") . '</td>
-                                <td><a href="./TestsVog.php?note_id=' .$row['note_id']. '&mom_id=' . $row['mom_id'] . '" onclick="return confirmUpdate(), editPopupFunction()"><input class="edit-report-btn" name="edite_report" type="button" value="Edit"></a></td>
+                                <td><a href="./vog-tests.php?note_id=' .$row['note_id']. '&mom_id=' . $row['mom_id'] . '" onclick="return confirmUpdate(), editPopupFunction()"><input class="edit-report-btn" name="edite_report" type="button" value="Edit"></a></td>
                                 <td><a target="_blank" href="../../Assets/Images/uploads/tests/' . $row['note_records'] . '"><input class="view-report-btn" type="button" value="View"></a></td>
-                                <td><a href="testRecordDelete.php?note_id=' . $row['note_id'] . '&mom_id=' . $row['mom_id'] . '&doc_id=' . $row['doc_id'] . '" onclick="return confirmDelete();"><input type="button" class="delete-report-btn" value="Delete"></a></td>
+                                <td><a href="vog-testRecordDelete.php?note_id=' . $row['note_id'] . '&mom_id=' . $row['mom_id'] . '&doc_id=' . $row['doc_id'] . '" onclick="return confirmDelete();"><input type="button" class="delete-report-btn" value="Delete"></a></td>
                             </tr>'; ?>
                 <?php
                     }
@@ -226,7 +226,7 @@
                     $row = mysqli_fetch_assoc($updateResult);
 
                     echo '<div class="editPopup">
-                    <form action="./TestsVog.php?note_id='. $row['note_id'] .'" method="post" enctype="multipart/form-data">
+                    <form action="./vog-tests.php?note_id='. $row['note_id'] .'" method="post" enctype="multipart/form-data">
                         <h3>Edit report</h3>
                         <label for="upated-test-name">Test name</label>
                         <input type="text" name="updated_test_name" id="updated_test_name" value="'. $row['note_topic'] .'">
@@ -237,7 +237,7 @@
                         <input type="hidden" name="doc_id" value="'. $row['doc_id'] .'">
                         <input type="hidden" name="note_id" value="'. $row['note_id'] .'">
                         <div class="editPopupBtn">
-                            <a href="./TestsVog.php?mom_id='.$row['mom_id'].'"><input type="button" name="cancel" value="Cancel"></a>
+                            <a href="./vog-tests.php?mom_id='.$row['mom_id'].'"><input type="button" name="cancel" value="Cancel"></a>
                             <input type="submit" name="update_button" value="Update">
                         </div>
                     </form>

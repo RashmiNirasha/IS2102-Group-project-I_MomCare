@@ -30,7 +30,7 @@ $doc_id=$row['doc_id'];
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
                 <div class="card-content-right"><p>Schedule Manager</p></div>
             </button><!--gap remover -->
-       <button class="card" onclick="window.location.href = 'mothers.php';">
+       <button class="card" onclick="window.location.href = 'vog-motherSearch.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">pregnant_woman</span></div>
                 <div class="card-content-right"><p>Mothers</p></div>
             </button><!--gap remover

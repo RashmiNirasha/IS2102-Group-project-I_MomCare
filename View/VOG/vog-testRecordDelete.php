@@ -20,16 +20,16 @@ if (isset($_GET['note_id']) && isset($_GET['mom_id']) && isset($_GET['doc_id']))
         $result = mysqli_query($con, $query);
 
         if ($result) {
-            header("Location: ../../View/VOG/testsVog.php?mom_id=$mom_id&error2=Record deleted successfully");
+            header("Location: ../../View/VOG/vog-tests.php?mom_id=$mom_id&error2=Record deleted successfully");
         } else {
-            header("Location: ../../View/VOG/testsVog.php?mom_id=$mom_id&error2=Unable to delete record");
+            header("Location: ../../View/VOG/vog-tests.php?mom_id=$mom_id&error2=Unable to delete record");
         }
     } else {
-        header("Location: ../../View/VOG/testsVog.php?mom_id=$mom_id&error2=You don't have permission to delete this record");
+        header("Location: ../../View/VOG/vog-tests.php?mom_id=$mom_id&error2=You don't have permission to delete this record");
     }
 } else {
     echo "Error: " . mysqli_error($con);
-    header("Location: ../../View/VOG/testsVog.php?mom_id=$mom_id&error2=Unable to delete record");
+    header("Location: ../../View/VOG/vog-tests.php?mom_id=$mom_id&error2=Unable to delete record");
 }
 ?>
 <?php }else{
