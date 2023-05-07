@@ -86,7 +86,8 @@ include "../../Assets/Includes/sidenav.php";?>
                                     echo "0 results";
                                 }
                                 ?>
-                            <input type="submit" name="generate_pdf" class="NextBtn" value="Generate PDF" />
+                            <a href="child-fullChildCard.php?child_id=<?php echo $_GET['child_id']; ?>">
+                            <button class="next" type="submit" class="btn btn-primary">Generate Child Card</button></a>
                         </div>
                     </div>
   </body>

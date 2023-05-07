@@ -4217,7 +4217,32 @@ a {
 }
 .popup p {
     font-size: 14px;
-    text-align: justify;
-    margin: 20px 0;
-    line-height: 25px;
+}
+
+.popup h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.popup table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.popup td {
+    padding: 10px;
+    border: none;
+    text-align: left;
+}
+
+.popup td:first-child {
+    width: 30%;
+    font-weight: bold;
+}
+
+.popup img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }

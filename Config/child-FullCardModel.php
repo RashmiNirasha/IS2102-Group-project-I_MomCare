@@ -1,5 +1,5 @@
 <?php 
-    include "../../Config/dbConnection.php";
+    include "dbConnection.php";
 
     $child_id = $_GET['child_id'];
     $sql = "SELECT * FROM child_details WHERE child_id = '$child_id'";

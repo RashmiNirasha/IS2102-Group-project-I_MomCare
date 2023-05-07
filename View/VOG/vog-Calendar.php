@@ -2,7 +2,7 @@
     session_start();
     include '../../Config/dbConnection.php';
     if(isset($_SESSION['email'])){ 
-        //include '../../Assets/Includes/header_pages.php'; 
+    include '../../Assets/Includes/header_pages.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,10 +11,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Calendar</title>
-    <style><?php include '../../Assets/Css/style-common.css'; ?></style> 
+    <link rel="stylesheet" href="../../Assets/Css/style-common.css">
+    <style><?php //include '../../Assets/Css/style-common.css'; ?></style> 
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.6/index.global.min.js'></script>
     <script>
-
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
