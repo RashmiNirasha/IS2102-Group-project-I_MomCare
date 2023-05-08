@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function allMotherSearch() {
-    var searchInput = document.getElementById("allMotherSearch").value;
-    var encodedSearchInput = encodeURIComponent(searchInput);
+    var allMotherSearchInput = document.getElementById("allMotherSearch").value;
+    var encodedSearchInput = encodeURIComponent(allMotherSearchInput);
 
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -36,6 +36,6 @@ function allMotherSearch() {
             document.querySelector(".allMotherCardsDiv").innerHTML = this.responseText;
         }
     };
-    xhr.open("GET", "vog-motherSearchResult.php?search=" + searchInput, true);
+    xhr.open("GET", "vog-motherSearchResult.php?search=" + allMotherSearchInput, true);
     xhr.send();
 }

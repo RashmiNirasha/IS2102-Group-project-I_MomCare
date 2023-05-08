@@ -13,60 +13,58 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 <body>
 
 <div class="main-mother">
-<a href="vog-dashboard.php"><button class="goBackBtn">Go back</button></a>
-        <div class="mom-filter">
-        <h1>Find Child </h1>
-        <form action=" " method="POST">
-            <input class="mom-search" type="search" name="query" id="query" placeholder="Please enter a search term (Ex: First name, Last name, Child ID)" required autofocus>
-            <input type="submit" name="submit" value="Search">
+    <a href="vog-dashboard.php"><button class="goBackBtn">Go back</button></a>
+        <div class="child-filter">
+            <h1>Find Child </h1>
+            <form action=" " method="POST">
+                <input class="mom-search" type="search" name="query" id="query" placeholder="Please enter a search term (Ex: First name, Last name, Child ID)" required autofocus>
+                <input type="submit" name="submit" value="Search">
             </form>
-
         </div>
-            <table class="MomBarTable">
-            <?php 
-    if(isset($_POST['submit'])){
-        if(empty($_POST['query'])) {
-            echo "Please enter a search term.";
-            return;
-        }
+        <div class="AllMotherCardsDiv">
+        <?php 
+            if(isset($_POST['submit'])){
+                if(empty($_POST['query'])) {
+                    echo "Please enter a search term.";
+                    return;
+                }
 
-        $query = mysqli_real_escape_string($con, $_POST['query']);
-        $query = trim($query);
+                $query = mysqli_real_escape_string($con, $_POST['query']);
+                $query = trim($query);
 
-        if (is_numeric($query)) {
-            echo "Search term should not be a number.";
-            return;
-        }
+                if (is_numeric($query)) {
+                    echo "Search term should not be a number.";
+                    return;
+                }
 
-        $sql = "SELECT * FROM child_details WHERE child_id LIKE '%$query%' OR mom_email LIKE '%$query%' or child_name LIKE '%$query%' ORDER BY child_name ASC";
-        $result = mysqli_query($con, $sql);
-        if ($result) {
+                $sql = "SELECT * FROM child_details WHERE child_id LIKE '%$query%' OR mom_email LIKE '%$query%' or child_name LIKE '%$query%' ORDER BY child_name ASC";
+                $result = mysqli_query($con, $sql);
+                if ($result) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        $childname = $row['child_name'];
-                        $childid = $row['child_id'];
+                        $child_name = $row['child_name'];
+                        $child_id = $row['child_id'];
                         $PHM_id = $row['phm_id'];
                         echo '
-                <tr>
-                <td>
-                <div class="mom-bar">
-                <div class="mom-bar-left">
-                <img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic">
-                    <div>
-                        <h3>' . $childid . '</h3>
-                        <p class="second-line">Name : ' . $childname . ' </p>
-                        <label for="mother_id" name="mother_id" type="hidden" value="' . $row['guardian_id'] . '"></label>
-                    </div>
-                </div>
-                <div class="mom-btns">
-                <button type ="submit" name="enter" onclick="window.location.href=\'../Child/child-generalInformationView.php?childid=' . $childid . '\'">Child Card</button>
-                <button type ="submit" name="enternotes" onclick="window.location.href=\'ped-doctorNotes.php?childid=' . $childid . '\'">Doctor Notes</button>
-                <button type ="submit" name="enternotes" onclick="window.location.href=\'pediatrician-addNotesView.php?childid=' . $childid . '\'">Add Notes</button>
-                <button type ="submit" name="enternotes" onclick="window.location.href=\'pediatrician-commonDashView.php?childid=' . $childid . '\'">Dashboard</button>
-
-                </div>
-            </div>
-            </td>
-        </tr>';
+                        <div class="momBarMain">
+                            <div class="momProfilePic">
+                                <img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic">
+                            </div>
+                            <div class="momBarContent">
+                                <div class="momBarHeader"><b><h7>'.$child_name.'</h7></b></div>
+                                <div class="momBarDetails">
+                                    <div class="momBarDetailsSec1">
+                                        <ul>
+                                            <li>Child ID: '.$child_id.' </li>
+                                            <li>Email: '.$PHM_id.'</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="momBarBtn">
+                                <a href="#"><button class="momBarBtn-1">View Profile</button></a>
+                                <a href="#"><button class="momBarBtn-2">View Reports</button></a>
+                            </div>
+                        </div>';
                     }
                 } else {
                     echo "There are no results matching your search!";
@@ -74,10 +72,8 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
             } else {
                     
                 }
-?>
-    </div>
-      
-</div>
+            ?>      
+        </div>
 </body>
 </html>
 <?php

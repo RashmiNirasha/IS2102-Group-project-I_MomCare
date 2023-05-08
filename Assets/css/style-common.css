@@ -1612,8 +1612,6 @@ input[type="file" i] {
 .main-mother {
     margin-top: 180px;
     justify-content: space-between;
-    /* margin-left: 10%;
-    margin-right: 10%; */
     /* background-color: tomato; */
 }
 
@@ -1673,8 +1671,6 @@ input[type="file" i] {
 .mom-filter input[type='submit'] {
     width: 100px;
     height: 40px;
-    margin-left: -5px;
-    margin-right: -30px;
     border-radius: 0px 10px 10px 0px;
     border-style: none;
     background-color: #029EE4;
@@ -1820,6 +1816,8 @@ input[type="file" i] {
 }
 
 .AllMotherCardsDiv {
+    margin-left: 15%;
+    margin-right: 15%;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -4410,62 +4408,54 @@ a {
     color: #000000;
 }
 
-/* ---------------------- vog-myPatients ----------------- */
+/* --------------------------- vog child search ------------------*/
 
-.myPatientsInnerDiv {
+.searchBar {
     display: flex;
-    flex-direction: column;
-    width: 70%;
+    flex-direction: row;
     margin-left: 15%;
     margin-right: 15%;
-    margin-top: 100px;
-    /* background-color: #0056b3; */
 }
 
-.myPatientsHeader {
+.searchBar form {
     display: flex;
+    flex-direction: column;
     width: 100%;
+}
+
+.child-filter {
     margin-bottom: 20px;
-    /* background-color: #00ff0d; */
+    /* background-color: #d42424; */
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
-.myPatientsHeader h3 {
-    width: 100%;
-    font-size: 30px;
-    text-align: center;
-    color: #000000;
+.child-filter-right {
+    float: right;
+    margin-top: 5px;
 }
 
-.myPatientsSearch-Main, .myPatientsSearch-Main form  {
+.child-filter-right label {
+    margin-right: 10px;
+}
+
+.child-filter form {
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
-    width: 100%;
-    /* background-color: #00ff0d; */
 }
 
-.myPatientsSearch {
-    width: 100%;
+
+.child-filter form h3 {
+    margin-left: 30px;
+    font-size: 20px;
+    margin-top: 10px;
+    color: #535458;
+    background-color: #ffffff;
 }
 
-.myPatientsSearch input[type="search"] {
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.myPatientsSearch input[type="search"]:focus {
-    outline: none;
-    border: 1px solid #029EE4;
-}
-
-.myPatientsSearchBtn {
+.child-filter input[type='submit'] {
     width: 100px;
     height: 40px;
-    margin-left: -5px;
     border-radius: 0px 10px 10px 0px;
     border-style: none;
     background-color: #029EE4;
@@ -4473,96 +4463,15 @@ a {
     cursor: pointer;
 }
 
-.myPatientsSearchBtn:hover {
+.child-filter input[type='submit']:hover {
     background-color: red;
 }
 
-/* vog-Patients - mom Bar */
-
-.myPatientsCardsDiv {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.momBarMain {
-    display: flex;
-    align-self: center;
-    margin-top: 5px;
-    width: calc(100% - 1px);
-    border-style: solid;
-    border-width: 1px;
-    border-color: #029ce444;
-    border-top: #029EE4 5px solid;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    height: 80px;
-    border-radius: 5px;
-    background-color: #ebebeb;
-}
-
-.momProfilePic {
-    /* background-color: #00ff0d; */
-}
-
-.momProfilePic img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin: 10px;
-}
-
-.momBarContent {
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    /* background-color: #423a15; */
-}
-
-.momBarDetails {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.searchBar input[type="search"] {
     width: 100%;
-    /* background-color: #311330; */
-}
-
-.momBarDetailsSec1, .momBarDetailsSec2, .momBarDetailsSec3 {
-    display: flex;
-    flex-direction: column;
-    font-size: 11px;
-    /* background-color: #666668; */
-}
-
-.momBarHeader {
-    padding-top: 8px;
-    width: 100%;
-    /* background-color: #70006c; */
-}
-
-.momBarBtn {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px;
-    flex-direction: row;
-    width: calc(100% - (60% + 60px));
-    /* background-color: #00ff0d; */
-}
-
-.momBarBtn button, select {
-    width: 100px;
-    height: 30px;
-    margin-top: 5px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    background-color: #029ce4;
-    border-color: #029ce479;
-    text-align: center;
-    cursor: pointer;
-}
-
-.momBarBtn button:hover, select:hover {
-    background-color: #ffffff;
-    color: #000000;
+    margin-bottom: 20px;
 }

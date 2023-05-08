@@ -21,7 +21,7 @@
             <div class="myPatientsHeader"><h3>My Patients</h3></div>
             <div class="myPatientsSearch-Main">
             <form action="" onsubmit="event.preventDefault(); submitMyPatientsSearch();">
-                    <div class="myPatientsSearch"><input type="search" name="myPatientsSearch" id="myPatientsSearch" placeholder="Please enter a search term (Ex: First name, Last name, Mother ID)" oninput="myPatientSearch()" onkeydown="if (event.key === 'Enter') { event.preventDefault(); submitMyPatientsSearch(); }"></div>
+                    <div class="myPatientsSearch"><input type="search" name="myPatientsSearch" id="myPatientsSearch" placeholder="Please enter a search term (Ex: First name, Last name, Mother ID)" oninput="myPatientSearch()" onkeydown="if (event.key === 'Enter') { event.preventDefault(); submitMyPatientsSearch(); }" required autofocus></div>
                     <button type="submit" class="myPatientsSearchBtn">Search</button> 
                 </form>
             </div>
