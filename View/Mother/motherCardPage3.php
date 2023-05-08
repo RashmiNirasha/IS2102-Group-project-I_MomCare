@@ -1,9 +1,13 @@
 <?php 
    session_start();
     include '../../Config/dbConnection.php';
-   if (isset($_SESSION['email'])){?>
-<?php include "../../Assets/Includes/header_pages.php" ?>
-
+   if (isset($_SESSION['email']))
+   {
+?>
+<?php 
+    include "../../Assets/Includes/header_pages.php"; 
+    include "../../Config/mother-mcardPage3.inc.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,28 +57,23 @@
                                     </tr>
                                     <tr>
                                         <td>Intended hospital</td>
-                                        <td>txt</td>
-                                        <td>txt</td>
+                                        <td><?php echo $mom_ihospital1 ?></td>
+                                        <td><?php echo $mom_ihospital2 ?></td>
                                     </tr>
                                     <tr>
                                         <td>Mode of transport</td>
-                                        <td>txt</td>
-                                        <td>txt</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mode of transport</td>
-                                        <td>txt</td>
-                                        <td>txt</td>
+                                        <td><?php echo $mom_transport1 ?></td>
+                                        <td><?php echo $mom_transport2 ?></td>
                                     </tr>
                                     <tr>
                                         <td>Distance from home(km)</td>
-                                        <td>5</td>
-                                        <td>2</td>
+                                        <td><?php echo $mom_distance1 ?></td>
+                                        <td><?php echo $mom_distance2 ?></td>
                                     </tr>
                                     <tr>
                                         <td>Time taken to reach</td>
-                                        <td>15</td>
-                                        <td>10</td>
+                                        <td><?php echo $mom_eme_time1 ?></td>
+                                        <td><?php echo $mom_eme_time2 ?></td>
                                     </tr>
                                 </table>
                             </div>
@@ -86,37 +85,41 @@
                             <div class="AttendanceAtAntenatalClasses">
                                 <table class="MotherCardTables">
                                     <tr>
-                                        <td>Session</td>
-                                        <td>Date</td>
-                                        <td>Husband</td>
-                                        <td>Wife</td>
-                                        <td>Other</td>
-                                        <td>Signature</td>
+                                        <th>Session</th>
+                                        <th>Date</th>
+                                        <th>Husband</th>
+                                        <th>Wife</th>
+                                        <th>Other</th>
+                                        <th>Signature</th>
                                     </tr>
-                                    <tr>
-                                        <td>T1</td>
-                                        <td>2022/5/6</td>
-                                        <td>came</td>
-                                        <td>came</td>
-                                        <td>not came</td>
-                                        <td>txt</td>
-                                    </tr>
-                                    <tr>
-                                        <td>T2</td>
-                                        <td>2022/5/6</td>
-                                        <td>came</td>
-                                        <td>came</td>
-                                        <td>not came</td>
-                                        <td>txt</td>
-                                    </tr>
-                                    <tr>
-                                        <td>T3</td>
-                                        <td>2022/5/6</td>
-                                        <td>came</td>
-                                        <td>came</td>
-                                        <td>not came</td>
-                                        <td>txt</td>
-                                    </tr>
+                                    <?php
+                                        $sql = "SELECT * FROM mcard_attendance WHERE mom_id = '$mom_id'";
+                                        $result = $con->query($sql);
+                                        if($result->num_rows > 0)
+                                        {
+                                            while($row=mysqli_fetch_assoc($result)){
+                                                $mom_antenatal_id = $row['antenatal_id'];
+                                                $mom_antenatal_date = $row['date'];
+                                                $mom_antenatal_husband = $row['husband'];
+                                                $mom_antenatal_wife = $row['wife'];
+                                                $mom_antenatal_other = $row['other'];
+                                                $mom_antenatal_sign= $row['sign'];
+                                    
+                                                $output = "<tr>
+                                                    <td>$mom_antenatal_id</td>
+                                                    <td>$mom_antenatal_date</td>
+                                                    <td>$mom_antenatal_husband</td>
+                                                    <td>$mom_antenatal_wife</td>
+                                                    <td>$mom_antenatal_other</td>
+                                                    <td>$mom_antenatal_sign</td>
+                                                    </tr>";
+                                                echo $output;
+                                            }
+                                        }
+                                        else{
+                                            echo "0 results";
+                                        }
+                                    ?>
                                 </table>
                             </div>
                         </div>
@@ -130,19 +133,19 @@
                                 <table class="MotherCardTables">
                                     <tr>
                                         <td>Prenatal ployband book</td>
-                                        <td>Given</td>
+                                        <td><?php echo $mom_prenatal_book ?></td>
                                     </tr>
                                     <tr>
                                         <td>The book on breastfeeding</td>
-                                        <td>Given</td>
+                                        <td><?php echo $mom_breastfeedingbook ?></td>
                                     </tr>
                                     <tr>
                                         <td>Books on early childhood development</td>
-                                        <td>Given</td>
+                                        <td><?php echo $mom_childdev ?></td>
                                     </tr>
                                     <tr>
                                         <td>Family planning methods</td>
-                                        <td>Given</td>
+                                        <td><?php echo $mom_familyplaning ?></td>
                                     </tr>
                                 </table>
                             </div>
@@ -155,19 +158,19 @@
                                 <table class="MotherCardTables">
                                     <tr>
                                         <td>Date of counselling</td>
-                                        <td>2022/05/06</td>
+                                        <td><?php echo $mom_counselldate ?></td>
                                     </tr>
                                     <tr>
                                         <td>Chosen method</td>
-                                        <td>txt</td>
+                                        <td><?php echo $mom_planmethod ?></td>
                                     </tr>
                                     <tr>
                                         <td>Reason for not using a method</td>
-                                        <td>txt</td>
+                                        <td><?php echo $mom_planreason ?></td>
                                     </tr>
                                     <tr>
                                         <td>Consent from sign date</td>
-                                        <td>2022/05/06</td>
+                                        <td><?php echo $mom_plansigneddate ?></td>
                                     </tr>
                                 </table>
                             </div>
