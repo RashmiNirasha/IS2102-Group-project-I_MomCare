@@ -16,6 +16,7 @@
                <th>Note records</th>
                <th>Update</th>
                <th>Delete</th>
+               <th>Download</th>
            </tr>";
            while ($row = mysqli_fetch_assoc($result)) {
                $date1 = date_create($row['note_date']);
@@ -33,6 +34,7 @@
                    <td>" . $row['note_records'] . "</td>
                    <td><a href='ped-updateNotesView.php?updateid=" . $row['note_id'] . "'><button class='btnMain'>Update</button></a></td>
                    <td><a href='../../Config/ped-deleteNotes.php?deleteid=" . $row['note_id'] . "'><button class='btnMain'>Delete</button></a></td>
+                   <td><a href='download.php?file={$row['note_records']}'>Download</a></td>
                    </tr>";
                } else {
                    echo "
@@ -45,6 +47,7 @@
                    <td>" . $row['note_records'] . "</td>
                    <td></td>
                    <td></td>
+                   <td><a href='download.php?file={$row['note_records']}'>Download</a></td>
                    </tr>";
                }
            } echo "</table>";

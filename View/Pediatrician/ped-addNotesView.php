@@ -13,16 +13,15 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
         if (isset($_GET['childid'])) {
             $user_id = mysqli_real_escape_string($con, $_GET['childid']);       
         } else {
-            header("Location: ped-addNotesView.php?error=missingchildid");
+            header("Location: pediatrician-addNotesView.php?error=missingchildid");
             exit();
         }
         $note_topic = mysqli_real_escape_string($con, $_POST['note_topic']);
         $note_date = mysqli_real_escape_string($con, $_POST['note_date']);
         $note_description = mysqli_real_escape_string($con, $_POST['note_description']);
-        $note_records = mysqli_real_escape_string($con, $_POST['note_records']);
         
         if (empty($note_topic) || empty($note_date) || empty($note_description) ) {
-            header("Location: ped-addNotesView.php?error=emptyfields");
+            header("Location: pediatrician-addNotesView.php?error=emptyfields&note_topic=" . $note_topic . "&note_date=" . $note_date . "&note_description=" . $note_description . "&note_records=" . $note_records);
             exit();
         } else {
             $sql = "SELECT * FROM doctor_details WHERE doc_email='$doc_email'";
@@ -31,19 +30,19 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
             $row = mysqli_fetch_assoc($result);
             $doc_id = $row['doc_id'];
             $doc_type = $row['doc_type'];
+            $fileName = $_FILES['file']['name'];
+            $fileTmpName = $_FILES['file']['tmp_name'];
+            $path = "../../Assets/Images/uploads/".$fileName;
 
             if ($resultCheck > 0) {
                 $sql = "INSERT into doctor_notes(doc_id, child_id,note_topic, note_date, note_description, note_records,doc_role)
-                        VALUES ('$doc_id','$user_id','$note_topic','$note_date','$note_description','$note_records','$doc_type')";
+                        VALUES ('$doc_id','$user_id','$note_topic','$note_date','$note_description','$fileName','$doc_type')";
                 $result = mysqli_query($con, $sql);
         
                 if ($result) {
-                    header("Location: ped-addNotesView.php?childid=".$_GET['childid']);
-                    exit();
-                } else {
-                        echo "Error: " . $sql . "<br>" . mysqli_error($con);
-                    exit();
+                    move_uploaded_file($fileTmpName,$path);
                 }
+
             }
         }
     }
@@ -64,12 +63,11 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                         <div class="MotherCardTableTitles"><h3> Add Records  </h3></div>
                         <div class="MotherGeneralDetails">
 
-<form action="ped-addNotesView.php?childid=<?php echo $_GET['childid']?>" method="POST">
+<form action="ped-addNotesView.php?childid=<?php echo $_GET['childid']?>" method="POST" enctype="multipart/form-data">
 <table class="MotherCardTables">
     <?php $sql = "select * from doctor_details where doc_email = '".$_SESSION['email']."'";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_assoc($result);
-
     $doc_id = $row['doc_id'];
      ?>
      <input type="hidden" name="doctor_id" id="doctor_id" value='$doc_id'>
@@ -91,7 +89,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
     </tr>
     <tr>
         <td><label for="note_records">Select File to Upload</label></td>
-        <td><input type="file" name="note_records" id="note_records" ></td>
+        <td><input type="file" name="file"></td>
     </tr>
     
 </table>
@@ -119,6 +117,6 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 </body>
 </html>
 <?php } else {
-    header("Location: ../../index.php");
-    exit();
-}?>
+    header("Location: ped-login.php");
+    exit();}
+?>

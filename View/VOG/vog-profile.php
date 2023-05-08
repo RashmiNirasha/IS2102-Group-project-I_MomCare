@@ -48,11 +48,11 @@
                             <table>
                                 <tr>
                                     <td><label>Name</label></td>
-                                    <td><label for=""><?php  echo $guardian_name?></label></td>
+                                    <td><label for=""><?php  ?></label></td>
                                 </tr>
                                 <tr>
                                     <td><label>Mobile</label></td>
-                                    <td><label for=""><?php  echo $guardian_mobile?></label></td>
+                                    <td><label for=""><?php   ?></label></td>
                                 </tr>
                             </table>
                         </div>
