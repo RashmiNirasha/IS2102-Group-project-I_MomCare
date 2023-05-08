@@ -21,6 +21,7 @@ function insertChildInfo($data)
   $mom_id = $data['mom_id'];
   $date_of_birth = $data['date_of_birth'];
 
+
   $sql = "INSERT INTO child_details (child_id, child_name, child_gender, phm_id, doc_id, guardian_id, mom_email, mom_id, date_of_birth) 
           VALUES ('$child_id','$child_name','$child_gender', '$phm_id', '$doc_id', '$guardian_id', '$mom_email', '$mom_id', '$date_of_birth')";
 
@@ -31,6 +32,7 @@ function insertChildInfo($data)
   }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <Head>

@@ -18,7 +18,7 @@ include "../../Assets/Includes/sidenav2.php";
   <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
       <div class="MotherCardTableTitles"><h3> Vaccination Records  </h3></div>
       <div class="MotherGeneralDetails">
-      <form method="POST" action="../../../Config/phm-enterVaccinModel.php">
+      <form method="POST" action="../../Config/phm-enterVaccinModel.php">
       <table class="MotherCardTables">
         <tr>
           <th>Child ID</th>

@@ -86,7 +86,6 @@ $child_name = $row['child_name'];
        
 <div class="ChildFormButtons">
             <a href="child-vaccineReport.php?child_id=<?php echo $_GET['child_id']; ?>"><button class="NextBtn">Generate pdf</button></a>
-             
         </div>
     </div>
   </body>

@@ -29,7 +29,7 @@ include "../../Assets/Includes/sidenav2.php";
         <th>Actions</th>
     </tr>
     <tr>
-        <form method='POST' action='../../../Config/Child-updateDentalReportModel.php' >
+        <form method='POST' action='../../Config/Child-updateDentalReportModel.php' >
         <td>
   <?php
   $sql = "SELECT child_id FROM child_details ORDER BY child_id DESC";

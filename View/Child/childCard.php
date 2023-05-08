@@ -108,9 +108,6 @@ $image_file = '../../Assets/Images/common/Project-Logo-landscape-size-middle.png
 // add the image to the PDF
 $obj_pdf->Image($image_file, $x, $y, $w, $h);
 
-// add space between image and child card text
-
-
 $obj_pdf->SetFont('Helvetica','',16);
 $obj_pdf->Cell(190,10,"Child Card ",0,1,'L');
 

@@ -79,8 +79,8 @@ th,td {
     border:1px solid #888;
 }
 table tr th {
-    background-color:#888;
-    color:#333;
+    background-color:#007bff;
+    color:#fff;
     font-weight:bold;
 }
 table td {
@@ -98,14 +98,14 @@ p {
       $content .= '  
       <body>
         <h3>Vaccination Chart</h3><br />
-      <table border="1" cellspacing="0" cellpadding="3" style="border: 1px solid #ccc; background-color: #f2f2f2;">
+      <table border="1" cellspacing="0" cellpadding="3">
            <tr>  
-           <th width="15%" style="background-color: #f2f9fd; color: #333; font-weight: bold;  padding: 10px;">Age</th>
-           <th width="15%" style="background-color: #f2f9fd; color: #333; font-weight: bold;  padding: 10px;">Type Of Vaccine</th>
-           <th width="15%" style="background-color: #f2f9fd; color: #333; font-weight: bold; padding: 10px;">Date</th>
-           <th width="12%" style="background-color: #f2f9fd; color: #333; font-weight: bold;  padding: 10px;">Batch No</th>
-           <th width="30%" style="background-color: #f2f9fd; color: #333; font-weight: bold;  padding: 10px;">Adverse Effects</th>
-           <th width="15%" style="background-color: #f2f9fd; color: #333; font-weight: bold;  padding: 10px;">Name of the official</th>           
+           <th width="15%" >Age</th>
+           <th width="20%" >Type of vaccine</th>
+           <th width="15%" >Date</th>
+           <th width="15%" >Batch No</th>
+           <th width="20%" >Adverse Effects</th>
+           <th width="15%" >Name of the official</th>           
            </tr>  
         
       ';    
@@ -113,12 +113,12 @@ p {
         $content .= '</table>';
 
       $content .= '<h3>Referals on immunization</h3><br />
-      <table border="1" cellspacing="0" cellpadding="3" style="border: 1px solid #ccc; background-color: #f2f2f2;">
+      <table border="1" cellspacing="0" cellpadding="3">
            <tr>  
-           <th width="15%" style="background-color: #f2f9fd; color: #333; font-weight: bold;  padding: 10px;">Date</th>
-           <th width="35%" style="background-color: #f2f9fd; color: #333; font-weight: bold;  padding: 10px;">Reason for referral</th>
-           <th width="20%" style="background-color: #f2f9fd; color: #333; font-weight: bold; padding: 10px;">Place	</th>
-           <th width="30%" style="background-color: #f2f9fd; color: #333; font-weight: bold;  padding: 10px;">Notes</th>
+           <th width="15%" >Date</th>
+           <th width="35%" >Reason for referral</th>
+           <th width="20%" >Place	</th>
+           <th width="30%" >Notes</th>
                     
            </tr>  ' ;
         $content .= fetch_data2();

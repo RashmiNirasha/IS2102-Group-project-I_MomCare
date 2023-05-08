@@ -32,8 +32,6 @@
 <?php
     } 
 ?>
-
-
         <div class="SectionNameDiv">
             <h3>Section A</h3>
         </div>
