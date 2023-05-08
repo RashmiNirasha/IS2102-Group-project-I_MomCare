@@ -1,9 +1,13 @@
 <?php 
    session_start();
     include '../../Config/dbConnection.php';
-   if (isset($_SESSION['email'])){?>
-<?php include "../../Assets/Includes/header_pages.php" ?>
-
+   if (isset($_SESSION['email']))
+   {
+?>
+<?php 
+    include "../../Assets/Includes/header_pages.php"; 
+    include "../../Config/mother-mcardPage2.inc.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,11 +31,11 @@
                             <table class="MotherCardTables">
                                 <tr>
                                     <td>Date of Visit</td>
-                                    <td>2022/2/4</td>
+                                    <td><?php echo $mom_clinicdate ?></td>
                                 </tr>
                                 <tr>
                                     <td>POA</td>
-                                    <td>test</td>
+                                    <td><?php echo $mom_poa ?></td>
                                 </tr>
                                 <tr>
                                     <td>Urine
@@ -46,16 +50,16 @@
                                     </td>
                                     <td>Status<table class="innerTable">
                                         <tr>
-                                            <td>Normal</td>
+                                            <td><?php echo $mom_urine_sugar ?></td>
                                         </tr>
                                         <tr>
-                                            <td>Normal</td>
+                                            <td><?php echo $mom_urine_albumin ?></td>
                                         </tr>
                                     </table></td>
                                 </tr>
                                 <tr>
                                     <td>Pallor</td>
-                                    <td>test</td>
+                                    <td><?php echo $mom_pallor ?></td>
                                 </tr>
                                 <tr>
                                     <td>Oedema<table class="innerTable">
@@ -68,68 +72,68 @@
                                     </table></td>
                                     <td>Status<table class="innerTable">
                                         <tr>
-                                            <td>Normal</td>
+                                            <td><?php echo $mom_oedema_sugar ?></td>
                                         </tr>
                                         <tr>
-                                            <td>Normal</td>
+                                            <td><?php echo $mom_oedema_albumin ?></td>
                                         </tr>
                                     </table></td>
                                 </tr>
                                 <tr>
                                     <td>BP</td>
-                                    <td>Normal</td>
+                                    <td><?php echo $mom_bp ?></td>
                                 </tr>
                                 <tr>
                                     <td>Fundal height(cm)</td>
-                                    <td>5</td>
+                                    <td><?php echo $mom_fh ?></td>
                                 </tr>
                                 <tr>
                                     <td>Foetal lie</td>
-                                    <td>test</td>
+                                    <td><?php echo $mom_fl ?></td>
                                 </tr>
                                 <tr>
                                     <td>Presentation</td>
-                                    <td>Normal</td>
+                                    <td><?php echo $mom_presentation ?></td>
                                 </tr>
                                 <tr>
                                     <td>Engagement of the presenting parent</td>
-                                    <td>Normal</td>
+                                    <td><?php echo $mom_engagement ?></td>
                                 </tr>
                                 <tr>
                                     <td>FM</td>
-                                    <td>test</td>
+                                    <td><?php echo $mom_fm ?></td>
                                 </tr>
                                 <tr>
                                     <td>FHS</td>
-                                    <td>test</td>
+                                    <td><?php echo $mom_fhs ?></td>
                                 </tr>
                                 <tr>
                                     <td>Iron</td>
-                                    <td>test</td>
+                                    <td><?php echo $mom_iron ?></td>
                                 </tr>
                                 <tr>
                                     <td>Folate</td>
-                                    <td>test</td>
+                                    <td><?php echo $mom_folate ?></td>
                                 </tr>
                                 <tr>
                                     <td>Calcium</td>
-                                    <td>test</td>
+                                    <td><?php echo $mom_calcium ?></td>
                                 </tr>
                                 <tr>
                                     <td>Vitamin C</td>
-                                    <td>test</td>
+                                    <td><?php echo $mom_vitamin ?></td>
                                 </tr>
                                 <tr>
                                     <td>Food supplementation</td>
-                                    <td>test</td>
+                                    <td><?php echo $mom_food_suppliment ?></td>
                                 </tr>
                                 <tr>
                                     <td>Signature of the officer examined</td>
-                                    <td>test</td>
+                                    <td><?php echo $siganture ?></td>
                                 </tr>
                                 <tr>
                                     <td>Designation</td>
-                                    <td>test</td>
+                                    <td><?php echo $designation ?></td>
                                 </tr>
                             </table>
                         </div>
@@ -146,21 +150,23 @@
                                         <td>Auscultation</td>
                                         <td>Mental health</td>
                                     </tr>
-                                    <tr>
-                                        <td>T1</td>
-                                        <td>test</td>
-                                        <td>test</td>
-                                    </tr>
-                                    <tr>
-                                        <td>T2</td>
-                                        <td>test</td>
-                                        <td>test</td>
-                                    </tr>
-                                    <tr>
-                                        <td>T3</td>
-                                        <td>test</td>
-                                        <td>test</td>
-                                    </tr>
+                                        <?php 
+                                            $sql = "SELECT * FROM mcard_auscultation WHERE mom_id = '$mom_id'";
+                                            $result = $con->query($sql);
+                                            if($result->num_rows > 0){
+                                                while($row=mysqli_fetch_assoc($result)){
+                                                    $test_id = $row['id'];
+                                                    $mom_auscultation = $row['auscultation'];
+                                                    $mom_mental_health = $row['mental_health'];
+                                                    $output = "<tr>
+                                                                <td>$test_id</td>
+                                                                <td>$mom_auscultation</td>
+                                                                <td>$mom_mental_health</td>
+                                                            </tr>";
+                                                    echo $output;
+                                                }
+                                            }
+                                        ?>
                                 </table>
                             </div>
                         </div>
@@ -172,15 +178,15 @@
                                 <table class="MotherCardTables">
                                     <tr>
                                         <td>Referred date</td>
-                                        <td>2022/02/15</td>
+                                        <td><?php echo $mom_refdate ?></td>
                                     </tr>
                                     <tr>
                                         <td>Date of examination</td>
-                                        <td>2022/02/15</td>
+                                        <td><?php echo $mom_examdate ?></td>
                                     </tr>
                                     <tr>
                                         <td>Treatment</td>
-                                        <td>No treatment needed</td>
+                                        <td><?php echo $mom_treatment ?></td>
                                     </tr>
                                 </table>
                             </div>
@@ -192,8 +198,7 @@
                                 </div>
                                 <div class="RespiratorySystem">
                                     <table class="MotherCardTables">
-                                        <tr><td>No issue</td></tr>
-                                    </table>
+                                        <tr><td><?php echo $mom_respiratory ?>
                                 </div>
                             </div>
                             <div>
@@ -202,7 +207,7 @@
                                 </div>
                                 <div class="BreastExamination">
                                     <table class="MotherCardTables">
-                                        <tr><td>No issue</td></tr>
+                                        <tr><td><?php echo $mom_breast ?></td></tr>
                                     </table>
                                 </div>
                             </div>
@@ -222,33 +227,33 @@
                                     </tr>
                                     <tr>
                                         <td>Blood Sugar</td>
-                                        <td>test</td>
-                                        <td>normal</td>
+                                        <td><?php echo $mom_blood_sugar ?></td>
+                                        <td><?php echo $mom_blood_sugarr ?></td>
                                     </tr>
                                     <tr>
                                         <td>Hemoglobin</td>
-                                        <td>test</td>
-                                        <td>normal</td>
+                                        <td><?php echo $mom_blood_hb ?></td>
+                                        <td><?php echo $mom_blood_hbr ?></td>
                                     </tr>
                                     <tr>
                                         <td>Other Investigation</td>
-                                        <td colspan="2">test</td>
+                                        <td colspan="2"><?php echo $mom_other ?></td>
                                     </tr>
                                     <tr>
                                         <td>Antihelminthic drugs</td>
-                                        <td colspan="2">test</td>
+                                        <td colspan="2"><?php echo $mom_adrugs ?></td>
                                     </tr>
                                     <tr>
                                         <td>Date of issuing lick count chart</td>
-                                        <td colspan="2">test</td>
+                                        <td colspan="2"><?php echo $mom_dateissued ?></td>
                                     </tr>
                                     <tr>
                                         <td>Date of taking blood sample for HIV</td>
-                                        <td colspan="2">2022/2/5</td>
+                                        <td colspan="2"><?php echo $mom_datehiv ?></td>
                                     </tr>
                                     <tr>
                                         <td>Date of result informed to mother</td>
-                                        <td colspan="2">2022/2/20</td>
+                                        <td colspan="2"><?php echo $mom_dateresults ?></td>
                                     </tr>
                                 </table>
                             </div>
@@ -262,23 +267,23 @@
                                     <table class="MotherCardTables">
                                         <tr>
                                             <td>POA at blood sampling</td>
-                                            <td>test</td>
+                                            <td><?php echo $mom_POA_sample ?></td>
                                         </tr>
                                         <tr>
                                             <td>Date of blood sampling</td>
-                                            <td>test</td>
+                                            <td><?php echo $mom_datesample ?></td>
                                         </tr>
                                         <tr>
                                             <td>Date of result received</td>
-                                            <td>test</td>
+                                            <td><?php echo $mom_date_result ?></td>
                                         </tr>
                                         <tr>
                                             <td>Result</td>
-                                            <td>R</td>
+                                            <td><?php echo $mom_result ?></td>
                                         </tr>
                                         <tr>
                                             <td>If (R) date of referral</td>
-                                            <td>test</td>
+                                            <td><?php echo $mom_ref ?></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -293,32 +298,14 @@
                                 <div class="TetanusToxoidImmunization">
                                     <table class="MotherCardTables">
                                         <tr>
-                                            <td>Dose</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
+                                            <th>Dose</th>
+                                            <th>Date</th>
+                                            <th>Batch No</th>
                                         </tr>
-                                        <tr>
-                                            <td>Date</td>
-                                            <td>2022/02/03</td>
-                                            <td>2022/02/03</td>
-                                            <td>2022/02/03</td>
-                                            <td>2022/02/03</td>
-                                            <td>2022/02/03</td>
-                                            <td>2022/02/03</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Batch no.</td>
-                                            <td>2022/02/03</td>
-                                            <td>2022/02/03</td>
-                                            <td>2022/02/03</td>
-                                            <td>2022/02/03</td>
-                                            <td>2022/02/03</td>
-                                            <td>2022/02/03</td>
-                                        </tr>
+                                        <?php 
+                                            
+                                            
+                                        ?>
                                     </table>
                                 </div>
                             </div>
