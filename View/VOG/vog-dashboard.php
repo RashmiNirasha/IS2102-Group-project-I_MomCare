@@ -28,17 +28,21 @@ $doc_id=$row['doc_id'];
         <div class="card-pack"><!--gap remover
         --><button class="card" onclick="window.location.href='vog-scheduleManager.php?doc_id=<?php echo $doc_id ?>'">
                 <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
-                <div class="card-content-right"><p>Schedule Manager</p></div>
-            </button><!--gap remover -->
-       <button class="card" onclick="window.location.href = 'vog-motherSearch.php';">
+                <div class="card-content-right"><p>My Calendar</p></div>
+            </button><!--gap remover 
+        --><button class="card" onclick="window.location.href = 'vog-motherSearch.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">pregnant_woman</span></div>
                 <div class="card-content-right"><p>Mothers</p></div>
             </button><!--gap remover
-            --><button class="card" onclick="window.location.href='vog-ChildSearch.php'">
+        --><button class="card" onclick="window.location.href='vog-ChildSearch.php'">
                 <div class="card-content-left"><span class="material-symbols-outlined">child_care</span></div>
                 <div class="card-content-right"><p>Children</p></div>
+            </button><!-- gap remover 
+        --><button class="card" onclick="window.location.href='vog-myPatients.php'">
+                <div class="card-content-left"><span class="material-symbols-outlined">patient_list</span></div>
+                <div class="card-content-right"><p>My Patients</p></div>
             </button>
-        </div>
+        </div> 
     </div>
     <div class="log-out"> <!--logout button-->
     <!-- <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button> -->

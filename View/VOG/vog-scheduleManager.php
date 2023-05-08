@@ -27,7 +27,7 @@
             </div>
             <?php
                 $clickedDate = isset($_GET['date']) ? $_GET['date'] : '';
-                $doc_id = isset($_GET['doc_id']) ? $_GET['doc_id'] : '';
+                $doc_id = $_SESSION['id'];
 
                 $query = "SELECT ma.*, md.mom_fname, md.mom_lname, md.mom_age
                         FROM mom_appointments ma
@@ -35,47 +35,45 @@
                         WHERE ma.doc_id = '$doc_id'";
 
                 if ($clickedDate !== '') {
-                $query .= " AND ma.start = '$clickedDate'";
+                    $query .= " AND ma.start = '$clickedDate'";
                 }
-
                 $result = mysqli_query($con, $query);
-
                 while ($row = mysqli_fetch_assoc($result)) {
-                $mom_id = $row['mom_id'];
-                $app_id = $row['app_id'];
-                $start = $row['start'];
-                $location = $row['location'];
-                $mom_fname = $row['mom_fname'];
-                $mom_lname = $row['mom_lname'];
-                $mom_age = $row['mom_age'];
-                echo '
-                <div class="appointmentBar" onclick="appViewPopupFunction(\'' .
-                '<ul>' .
-                    '<li>Name: ' . $mom_fname . ' ' . $mom_lname . '</li>' .
-                    '<li>Mother ID: ' . $mom_id . '</li>' .
-                    '<li>Age: ' . $mom_age . '</li>' .
-                '</ul>' .
-                '<ul>' .
-                    '<li>Date: ' . $start . '</li>' .
-                    '<li>Location: ' . $location . '</li>' .
-                    '<li>Number: ' . $app_id . '</li>' .
-                '</ul>' .
-                '\')">
-                  <div class="appImgDiv">
-                    <img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic">
-                  </div>
-                  <ul>
-                    <li>Name: ' . $mom_fname . '' . $mom_lname . '</li>
-                    <li>Mother ID: ' . $mom_id . '</li>
-                    <li>Age: ' . $mom_age . '</li>
-                  </ul>
-                  <ul>
-                    <li>Date: ' . $start . '</li>
-                    <li>Location: ' . $location . '</li>
-                    <li>Number: ' . $app_id . '</li>
-                  </ul>
-                </div>';
-                
+                    $mom_id = $row['mom_id'];
+                    $app_id = $row['app_id'];
+                    $title = $row['title'];
+                    $start = $row['start'];
+                    $location = $row['location'];
+                    $mom_fname = $row['mom_fname'];
+                    $mom_lname = $row['mom_lname'];
+                    $mom_age = $row['mom_age'];
+                    echo '
+                        <div class="appointmentBar" onclick="appViewPopupFunction(\'' .
+                        '<ul>' .
+                            '<li>Name: ' . $mom_fname . ' ' . $mom_lname . '</li>' .
+                            '<li>Mother ID: ' . $mom_id . '</li>' .
+                            '<li>Age: ' . $mom_age . '</li>' .
+                        '</ul>' .
+                        '<ul>' .
+                            '<li>Date: ' . $start . '</li>' .
+                            '<li>Location: ' . $location . '</li>' .
+                            '<li>Number: ' . $app_id . '</li>' .
+                        '</ul>' .
+                        '\')">
+                        <div class="appImgDiv">
+                            <img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic">
+                        </div>
+                        <ul>
+                            <li>Name: ' . $mom_fname . '' . $mom_lname . '</li>
+                            <li>Mother ID: ' . $mom_id . '</li>
+                            <li>Age: ' . $mom_age . '</li>
+                        </ul>
+                        <ul>
+                            <li>Date: ' . $start . '</li>
+                            <li>Location: ' . $location . '</li>
+                            <li>Number: ' . $app_id . '</li>
+                        </ul>
+                        </div>';
                 }
                 ?>
         </div>
