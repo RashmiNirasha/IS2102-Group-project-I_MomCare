@@ -1,9 +1,10 @@
 <?php 
     session_start();
     include "../../Assets/Includes/header_pages.php";
-    include "child-fullCardModel.php";
-
+    include "../../Config/child-fullCardModel.php";
+    
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +16,22 @@
 </head>
 <body>
     <div class="MotherCardMainDiv">
+    <?php 
+    if($_SESSION['user_role'] == "ped"){
+?>
     <div class="top-button" >
-<a href="../pediatrician/pedia-searchChild.php"><button class="goBackBtn">Go back</button></a>
-        </div>
+        <a href="../pediatrician/ped-dashboardView.php"><button class="goBackBtn">Go back</button></a>
+    </div>
+<?php
+    } 
+    else if($_SESSION['user_role'] == "mother"){
+?>
+    <div class="top-button" >
+    <a href="child-childDashboard.php?child_id=<?php echo $_GET['child_id']; ?>"><button class="goBackBtn">Go back</button></a>
+    </div>
+<?php
+    } 
+?>
         <div class="SectionNameDiv">
             <h3>Section A</h3>
         </div>
@@ -49,6 +63,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
                         <div class="MotherCardTableTitles"><h3>General Details</h3></div>
                         <div class="MotherGeneralDetails">
@@ -101,6 +116,7 @@
                             </table>
                         </div>
                     </div>
+
                     <div class="TwoColumnSection"> <!--when a section have two tables, use this class-->
                         <div class="TwoColumnSec1">
                             <div class="MotherCardTableTitles">
@@ -266,7 +282,7 @@
 
                     <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
                         <div class="MotherCardTableTitles">
-                            <h3>Pregnancy History</h3>
+                            <h3>Dental Report</h3>
                         </div>
                         <div class="PregnancyHistory">
                              <table class="MotherCardTables">
@@ -297,13 +313,12 @@
             </div>
         </div>
         <div class="MotherCardButtonSet">
-        <a href="#"><button class="PrintBtn">Print</button></a>
+        <a href="childCard.php?child_id=<?php echo $_GET['child_id']; ?>"><button class="PrintBtn">Print</button></a>
         <a href="motherCardPage2.php"><button class="NextBtn">Next</button></a>
         </div>
     </div>
 </body>
 </html>
-<?php //include "../../Assets/Includes/footer_pages.php"; ?>
 
 
 

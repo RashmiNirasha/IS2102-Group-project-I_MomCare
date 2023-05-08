@@ -22,7 +22,7 @@ if (mysqli_stmt_execute($stmt)) {
     
     // Echo the JavaScript code and redirect to the add child records page
     echo $js_code;
-    header("Location: ../View/PHM/child/phm-addChildRecords.php");
+    header("Location: ../View/PHM/child-dentalView.php");
   } else {
     echo "Error inserting child information: " . mysqli_error($con);
   }
