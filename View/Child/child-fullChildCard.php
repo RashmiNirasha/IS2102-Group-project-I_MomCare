@@ -284,7 +284,7 @@
 
                     <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
                         <div class="MotherCardTableTitles">
-                            <h3>Pregnancy History</h3>
+                            <h3>Dental Report</h3>
                         </div>
                         <div class="PregnancyHistory">
                              <table class="MotherCardTables">
@@ -315,7 +315,7 @@
             </div>
         </div>
         <div class="MotherCardButtonSet">
-        <a href="#"><button class="PrintBtn">Print</button></a>
+        <a href="childCard.php?child_id=<?php echo $_GET['child_id']; ?>"><button class="PrintBtn">Print</button></a>
         <a href="motherCardPage2.php"><button class="NextBtn">Next</button></a>
         </div>
     </div>

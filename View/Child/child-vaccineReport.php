@@ -18,14 +18,34 @@ $obj_pdf->SetCreator(PDF_CREATOR);
       $obj_pdf->SetAutoPageBreak(TRUE, 10);  
       $obj_pdf->SetFont('helvetica', '', 11);
 
- 
 $obj_pdf->AddPage();
 
-$obj_pdf->SetFont('Helvetica','',14);
-$obj_pdf->Cell(190,10,"Immunization Card ",0,1,'C');
+// set the position for the image
+$x = 140;
+$y = 5;
+// set the width and height of the image
+$w = 60;
+$h = 0;
+// set the path of the image file
+$image_file = '../../Assets/Images/common/Project-Logo-landscape-size-middle.png';
+// add the image to the PDF
+$obj_pdf->Image($image_file, $x, $y, $w, $h);
 
-$obj_pdf->SetFont('Helvetica','',8);
-$obj_pdf->Cell(190,5,"Sri Lanka",0,1,'C');
+$obj_pdf->SetFont('Helvetica','',16);
+$obj_pdf->Cell(190,10,"Immunization Card ",0,1,'L');
+
+$obj_pdf->SetFont('Helvetica','',12);
+$obj_pdf->Cell(190,3,"Ministry of Health",0,1,'L');
+
+$obj_pdf->SetDrawColor(0, 0, 0);
+$obj_pdf->SetLineWidth(0.5);
+$obj_pdf->Line(10, 30, 200, 30);
+
+$obj_pdf->Ln(10);
+
+$obj_pdf->SetFont('Helvetica','B',10);
+$obj_pdf->Cell(190,3,"General Details ",0,1,'L');
+$obj_pdf->Ln(5);
 
 $obj_pdf->SetFont('Helvetica','',10);
 

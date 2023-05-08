@@ -40,9 +40,9 @@ function insertChildInfo($data)
 <body>
 
 <div class="child-container">
-  <h2>New Child Card</h2>
+  <h2>Child Profile</h2>
   <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
-                        <div class="MotherCardTableTitles"><h3> </h3></div>
+                        <div class="MotherCardTableTitles"><h3>New Child Card </h3></div>
                         <div class="MotherGeneralDetails">
                         <form method="POST">
       <table class="MotherCardTables">
@@ -55,14 +55,11 @@ function insertChildInfo($data)
            <tr> <th>Guardian ID</th><td><input type="text" id="guardian_id" name="guardian_id" required></td></tr>
             <tr><th>Mom Email</th> <td><input type="text" id="mom_email" name="mom_email" required></td></tr>
             <tr><th>Mom ID</th> <td><input type="text" id="mom_id" name="mom_id" required></td></tr></tr>
-           <tr> <th>Date of Birth</th>            <td><input type="date" id="date_of_birth" name="date_of_birth" required></td></tr>
-            <tr><th>Actions</th>            <td ><input type="submit" name="submit" value="Submit">
-
+           <tr> <th>Date of Birth</th><td><input type="date" id="date_of_birth" name="date_of_birth" required></td></tr>
+            <tr><th>Actions</th><td ><input type="submit" name="submit" value="Submit">
         </tr>
         </table>
         </form>
-                           
-                       
                         </div>
                     </div>
   </body>
