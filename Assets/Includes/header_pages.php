@@ -153,13 +153,17 @@
             $result = mysqli_query($con, $query);
             $row = mysqli_fetch_array($result);
             $_SESSION['user_role'] = $row['user_role'];
+            $_SESSION['user_id'] = $row['user_id'];
             //choose the right dashboard page
             if ($_SESSION['user_role'] == 'phm') {
                 echo '<a href=""><img class="profile_pic" src="../../Assets/Images/phm/phm_proPic.png" alt="profile_pic"></a>';
             } else if ($_SESSION['user_role'] == 'ped') {
                 echo '<a href=""><img class="profile_pic" src="../../Assets/Images/ped/ped_proPic.png" alt="profile_pic"></a>';
             } else if ($_SESSION['user_role'] == 'vog') {
-                echo '<a href="../../View/Vog/vog-profile.php"><img class="profile_pic" src="../../Assets/Images/vog/doctor.png" alt="profile_pic"></a>';
+                $doc_sql = "SELECT doc_profile_pic FROM doctor_details WHERE doc_id = '" . $_SESSION['user_id'] . "'";
+                $doc_result = mysqli_query($con, $doc_sql);
+                $doc_profile_pic = mysqli_fetch_array($doc_result);
+                echo '<a href="../../View/Vog/vog-profile.php"><img class="profile_pic" src="'.$doc_profile_pic['doc_profile_pic'].'" alt="profile_pic_vog"></a>';
             } else if ($_SESSION['user_role'] == 'admin') {
                 echo '<a href=""><img class="profile_pic" src="../../Assets/Images/admin/people.png" alt="profile_pic"></a>';
             } else if ($_SESSION['user_role'] == 'mother') {
