@@ -120,14 +120,23 @@ $obj_pdf->Line(10, 30, 200, 30);
 
 $obj_pdf->Ln(10);
 
-$obj_pdf->SetFont('Helvetica','B',10);
-$obj_pdf->Cell(190,3,"General Details ",0,1,'L');
+$obj_pdf->SetFont('Helvetica', '', 9);
+$obj_pdf->Cell(190, 3, "Name of the Public Health Midwife and ID: " . $phm_name . " (" . $phm_id . ")", 0, 1, 'L');
+
 $obj_pdf->Ln(5);
+
+$obj_pdf->SetFont('Helvetica','B',10);
+$obj_pdf->Cell(190,3,"General Details of the Child",0,1,'L');
+$obj_pdf->Ln(5);
+
+
 
 $obj_pdf->SetFont('Helvetica','',8);
 $data = array(
-    array("Name of the Mother:", $mother_name),
+    array("Name of the Child:", $child_name),
+    array("Date of Birth:", $birth_date),
     array("Age", $age),
+    array("Name of the Mother:", $mother_name),
     array("MOH Area", $MOH_area),
     array("PHM Area", $PHM_area),
     array("Name of the Field Clinic", $field_clinic),
@@ -135,7 +144,6 @@ $data = array(
     array("Name of the Consultant Obstetrician", $consultant_obstetrician),
     array("Identified anatal risks conditions and mobilities ", $identified_antatal_risks),
     array("Registration No", $registration_number),
-    array("Date of Registration", $registration_date)
 );
 
 foreach ($data as $row) {
@@ -143,7 +151,6 @@ foreach ($data as $row) {
     $obj_pdf->Cell(140,5,": ".$row[1],0);
     $obj_pdf->Ln();
 }
-
 
 $content = '<style>
 body {
@@ -167,8 +174,6 @@ p {
     font-style: italic;
     font-size: 8px;
 }
-
-
 </style>';
 
 $content .= '<div>

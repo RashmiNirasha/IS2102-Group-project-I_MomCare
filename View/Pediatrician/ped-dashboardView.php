@@ -41,7 +41,7 @@ $doc_name=$row['doc_name'];
                 <div class="card-content-right"><p>View Child List</p></div>
             </button><!--gap remover -->
 
-            <button class="card" onclick="window.location.href = ' ';">
+            <button class="card" onclick="window.location.href = 'ped-scheduleManager.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">note_add</span></div>
                 <div class="card-content-right"><p>Manage Shedule</p></div>
 

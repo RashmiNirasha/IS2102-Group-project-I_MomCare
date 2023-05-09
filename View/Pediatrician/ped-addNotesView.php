@@ -56,8 +56,15 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 <body>
 <a href="ped-dashboardView.php"><button class="goBackBtn">Go back</button></a>
 
+<?php $sql = "select * from child_details where child_id = '".$_GET['childid']."'";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $child_name = $row['child_name'];
+     ?>
+
 <div class="child-container3">
   <h2>Notes and Records</h2>
+  <h3>Child Name : <?php echo $child_name ?></h3>
 
   <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
                         <div class="MotherCardTableTitles"><h3> Add Records  </h3></div>
@@ -71,10 +78,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
     $doc_id = $row['doc_id'];
      ?>
      <input type="hidden" name="doctor_id" id="doctor_id" value='$doc_id'>
-    <tr>
-        <td><label for="child_id">Child ID</label></td>
-        <td><input type="text" name="child_id" id="child_id" value='<?php echo $_GET['childid']?>'></td>
-    </tr>
+     <input type="hidden" name="child_id" id="child_id" value='<?php echo $_GET['childid']?>'>
     <tr>
         <td><label for="note_date">Choose Date</label></td>
         <td><input type="date" name="note_date" id="note_date" ></td>

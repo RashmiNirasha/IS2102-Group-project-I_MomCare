@@ -22,6 +22,13 @@
     $identified_antatal_risks = $row['identified_antatal_risks'];
     $registration_number = $row['registration_number'];
     $registration_date = $row['registration_date'];
+    $phm_id = $row['phm_id'];
+
+    $sql = "SELECT * FROM phm_details WHERE phm_id = '$phm_id'";
+    $result = mysqli_query($con, $sql);
+    $resultCheck = mysqli_num_rows($result);
+    $row = mysqli_fetch_assoc($result);
+    $phm_name = $row['phm_name'];
 
 
 ?>
