@@ -4475,3 +4475,201 @@ a {
     border-radius: 5px;
     margin-bottom: 20px;
 }
+
+/* ----------------- vog profile -----------------*/
+
+.vog-profile-content-mainDiv {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0px;
+    padding-bottom: 50px;
+    /* background-color: #0056b3; */
+}
+
+.vog-profile-content {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-around;
+    margin-left: 15%;
+    margin-right: 30px;
+    width: 70%;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 60px;
+    padding:20px;
+}
+
+.vog-profile-content-left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    /* background-color: #24D4B9; */
+}
+
+.vog-profile-pic {
+    display: flex;
+    justify-content: center;
+    height: 40%;
+    margin: 5px;
+    /* background-color: #3e8e41; */
+}
+
+.vog-profile-pic img {
+    width: auto;
+    height: 95%;
+    border-radius: 5px;
+    align-self: center;
+}
+
+.vog-profile-pq-details {
+    display: flex;
+    flex-direction: column;
+    /* background-color: #f5c905; */
+    margin: 5px;
+    height: calc(60% - 10px);
+    border: solid 1px #00000018;
+    border-radius: 5px;
+    color: #000000;
+}
+
+.vog-profile-pq-details h3 {
+    margin-left: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+    color: #000000;
+    /* background-color: #19f505; */
+}
+
+.vog-profile-pq-data {
+    display: flex;
+    flex-direction: column;
+    /* background-color: #f50505; */
+    margin-left: 10px;
+    color: #000000;
+}
+
+.vog-profile-content-right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    /* background-color: #666668; */
+}
+
+/* .vog-profile-details {
+    display: flex;
+    flex-direction: column;
+    background-color: #712b29;
+    margin: 10px;
+} */
+
+.vog-profile-details-header {
+    display: flex;
+    flex-direction: column;
+    /* background-color: #05a9f5; */
+    margin: 5px;
+}
+
+.vog-profile-name {
+    display: flex;
+    flex-direction: row;
+    /* background-color: #a1f505; */
+    margin: 5px;
+    height: 50px;
+    padding: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.vog-profile-name h4 {
+    margin-top: 5px;
+    height: 40px;
+}
+
+.vog-profile-address {
+    display: flex;
+    flex-direction: row;
+    /* background-color: #f5a105; */
+    margin: 5px;
+    padding: 5px;
+    height: 40px;
+    font-size: 20px;
+    color: #000000;
+}
+
+.material-symbols-outlined[data-icon='badge'] {
+    font-size: 24px;
+    color: #029ce4;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 800,
+    'GRAD' 0,
+    'opsz' 48
+  }
+
+.vog-profile-address span {
+    margin-top: 5px;
+    width: 35px;
+    height: 30px;
+    /* background-color: #443737; */
+}
+
+.vog-profile-address h5 {
+    margin-top: 5px;
+    padding-top: 3px;
+    margin-left: opx;
+    width: calc(100% - 35px);
+    height: 30px;
+    /* background-color: #aeabab; */
+}
+
+.vog-profile-other-data {
+    display: flex;
+    /* background-color: #f505a1; */
+    margin: 5px;
+    border: solid 1px #00000018;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 20px;
+    color: #000000;
+}
+
+.vog-profile-details-tbl {
+    /* background-color: #141166; */
+    width: 100%;
+}
+
+.vog-profile-details-tbl td {
+    font-size: 15px;
+    padding-left: 5px;
+}
+
+.vog-profile-buttons {
+    display: flex;
+    float: right;
+    align-items:first baseline;
+    margin-top: 70px;
+    width: fit-content;
+    padding-top: 470px;
+    padding-right: 40px;
+    flex-direction: column;
+    /* background-color: #712b29; */
+}
+.vog-profile-buttons a{
+    padding-top: 10px;
+}
+.vog-profile-buttons button{
+    width: 150px;
+    height: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    border: none;
+    color: #F3F4F5;
+}
+.vog-profile-buttons button:hover{
+    color: #111C43;
+}
