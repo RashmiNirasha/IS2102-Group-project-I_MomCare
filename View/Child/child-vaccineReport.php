@@ -43,6 +43,11 @@ $obj_pdf->Line(10, 30, 200, 30);
 
 $obj_pdf->Ln(10);
 
+$obj_pdf->SetFont('Helvetica', '', 9);
+$obj_pdf->Cell(190, 3, "Name of the Public Health Midwife and ID: " . $phm_name . " (" . $phm_id . ")", 0, 1, 'L');
+
+$obj_pdf->Ln(5);
+
 $obj_pdf->SetFont('Helvetica','B',10);
 $obj_pdf->Cell(190,3,"General Details ",0,1,'L');
 $obj_pdf->Ln(5);
@@ -103,9 +108,8 @@ p {
            <th width="15%" >Age</th>
            <th width="20%" >Type of vaccine</th>
            <th width="15%" >Date</th>
-           <th width="15%" >Batch No</th>
-           <th width="20%" >Adverse Effects</th>
-           <th width="15%" >Name of the official</th>           
+           <th width="20%" >Batch No</th>
+           <th width="30%" >Adverse Effects</th>
            </tr>  
         
       ';    

@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
       right: "dayGridMonth,timeGridWeek,timeGridDay",
     },
     events: {
-      url: 'vog-getAppointmentInfo.php?doc_id=<?php echo $_GET["doc_id"];?>',
+      url: '../../View/VOG/vog-getAppointmentInfo.php?doc_id=<?php echo $_SESSION["id"];?>',
       method: 'POST',
       format: 'json',
       failure: function() {
@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function getAppointments(date) {
     const xhr = new XMLHttpRequest();
-    const doc_id = '<?php echo $_GET["doc_id"]; ?>';
-    xhr.open('GET', 'vog-scheduleManager.php?date=' + date + '&doc_id=' + doc_id, true);
+    const doc_id = '<?php echo $_SESSION["id"]; ?>';
+    xhr.open('GET', '../../View/VOG/vog-scheduleManager.php?date=' + date + '&doc_id=' + doc_id, true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 

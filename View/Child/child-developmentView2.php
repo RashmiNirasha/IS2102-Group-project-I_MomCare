@@ -1,6 +1,8 @@
 <?php 
 session_start();
 include '../../Config/dbConnection.php';
+if (isset($_SESSION['email']) && isset($_SESSION['id'])) { 
+
 include "../../Assets/Includes/header_pages.php";
 include "../../Assets/Includes/sidenav.php";?>
 
@@ -1081,8 +1083,8 @@ include "../../Assets/Includes/sidenav.php";?>
   </div>
 
   <a href="child-developmentView.php?child_id=<?php echo $_GET['child_id']; ?>">
-  <button name="next" type="submit" class="btn btn-primary">Page 1</button>
-  </a>                            </div>
+  <button class="next" type="submit" class="btn btn-primary">Page 1</button>
+  </a></div>
 
                             <script>
 
@@ -1102,5 +1104,8 @@ include "../../Assets/Includes/sidenav.php";?>
 </script>
   </body>
 </html>
-
+<?php } else {
+    header("Location: ../../mainLogin.php");
+    exit();}
+?>
 

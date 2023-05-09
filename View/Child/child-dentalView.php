@@ -1,6 +1,8 @@
 <?php 
 session_start();
 include '../../Config/dbConnection.php';
+if (isset($_SESSION['email']) && isset($_SESSION['id'])) {
+
 include "../../Assets/Includes/header_pages.php";
 include "../../Assets/Includes/sidenav.php";?>
 
@@ -50,3 +52,7 @@ include "../../Assets/Includes/sidenav.php";?>
    
 </body>
 </html>
+<?php } else {
+    header("Location: ../../mainLogin.php");
+    exit();}
+?>

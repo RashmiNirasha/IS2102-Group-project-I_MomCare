@@ -1,5 +1,6 @@
 <?php 
 session_start();
+if (isset($_SESSION['email']) && isset($_SESSION['id'])) { 
 include '../../Config/dbConnection.php';
 include "../../Assets/Includes/header_pages.php";
 include "../../Config/child_fetchDataModel.php";
@@ -28,7 +29,7 @@ $child_name = $row['child_name'];
         <!-- title section -->
         <div class="ChildCardMain-titleOuter">
             <div class="ChildCardMain-TitleInner">
-                <h3>ප්‍රතිශක්‍රීයකරණය&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Immunization&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;நோய்த்தடுப்பு</h3>
+                <h3>ප්‍රතිශක්‍රීයකරණ සටහන&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Immunization Chart&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;நோய்த்தடுப்பு</h3>
             </div>
         </div>
         <!-- title section end -->
@@ -46,7 +47,7 @@ $child_name = $row['child_name'];
             <th>Date</th>
             <th>Batch No</th>
             <th>Adverse Effects</th>
-            <th>Name of the official</th>
+            
         </tr>
             <?php echo fetch_data(); ?>
         </table>
@@ -90,3 +91,7 @@ $child_name = $row['child_name'];
     </div>
   </body>
 </html>
+<?php } else {
+    header("Location: ../../mainLogin.php");
+    exit();}
+?>

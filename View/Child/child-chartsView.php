@@ -1,6 +1,8 @@
 <?php 
 session_start();
-include("../../Config/dbConnection.php") ?>
+include("../../Config/dbConnection.php") 
+if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
+
 <?php include "../../Assets/Includes/header_pages.php" ?>
 
 <!DOCTYPE html>
@@ -189,3 +191,7 @@ document.getElementById('showDataBtn3').addEventListener('click', function() {
 </script>
 </body>
 </html>
+<?php } else {
+    header("Location: ../../mainLogin.php");
+    exit();}
+?>

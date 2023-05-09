@@ -9,6 +9,7 @@ $sql="SELECT doc_name FROM doctor_details WHERE doc_email='".$_SESSION['email'].
 $result=mysqli_query($con,$sql);
 $row=mysqli_fetch_assoc($result);
 $doc_name=$row['doc_name'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +42,7 @@ $doc_name=$row['doc_name'];
                 <div class="card-content-right"><p>View Child List</p></div>
             </button><!--gap remover -->
 
-            <button class="card" onclick="window.location.href = 'ped-scheduleManager.php';">
+            <button class="card" onclick="window.location.href = 'ped-scheduleManager.php?doc_id=<?php echo $_SESSION['id']; ?>';">
                 <div class="card-content-left"><span class="material-symbols-outlined">note_add</span></div>
                 <div class="card-content-right"><p>Manage Shedule</p></div>
 

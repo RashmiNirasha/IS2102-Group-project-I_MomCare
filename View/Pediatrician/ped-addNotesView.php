@@ -121,6 +121,6 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 </body>
 </html>
 <?php } else {
-    header("Location: ped-login.php");
+    header("Location: ../../mainLogin.php");
     exit();}
 ?>

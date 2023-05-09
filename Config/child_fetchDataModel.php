@@ -19,6 +19,17 @@ if($result){
             $mother_name = $row['mother_name'];
             $MOH_area = $row['MOH_area'];
             $PHM_area = $row['PHM_area'];
+            $phm_id = $row['phm_id'];
+        }
+    }
+}
+
+$sql = "SELECT * FROM phm_details WHERE phm_id = '$phm_id'";
+$result = mysqli_query($con, $sql);
+if($result){
+    if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_assoc($result)){
+            $phm_name = $row['phm_name'];
         }
     }
 }
@@ -56,7 +67,7 @@ if ($result) {
                 <td>'.$row["date"].'</td>  
                 <td>'.$row["batch_no"].'</td>
                 <td>'.$row["adverse_effects"].'</td>
-                <td>'.$row["official_name"].'</td>
+               
             </tr>';  
         }
     } else {

@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 include "../../Config/dbConnection.php";
 include "../../Assets/Includes/header_pages.php";
@@ -89,6 +88,7 @@ if (isset($_POST['submit'])) {
 </div>
 </body>
 </html>
+
 <?php
  } else {
     header("Location: ../../mainLogin.php");

@@ -1,7 +1,7 @@
 <?php 
     session_start();
     include '../../Config/dbConnection.php';
-    if(isset($_SESSION['email'])){ 
+    if(isset($_SESSION['email']) and isset($_SESSION['id'])){ 
         include '../../Assets/Includes/header_pages.php'; 
 ?>
 <!DOCTYPE html>
@@ -17,6 +17,11 @@
     <script><?php include 'ped-calendar.js' ?></script>
 </head>
 <body>
+
+<div class="top-button" >
+<a href="ped-dashboardView.php"><button class="goBackBtn">Go back</button></a>
+</div>
+
     <div class="mainCalendarDiv">
         <div class="calendarLeft">
             <div id='calendar'></div> 
@@ -28,7 +33,6 @@
             <?php
                 $clickedDate = isset($_GET['date']) ? $_GET['date'] : '';
                 $doc_id = $_SESSION['id'];
-
                 $query = "SELECT ma.*, md.mom_fname, md.mom_lname, md.mom_age
                         FROM mom_appointments ma
                         JOIN mother_details md ON ma.mom_id = md.mom_id
@@ -94,6 +98,7 @@
 
 </body>
 </html>
-<?php 
-    }
+<?php } else {
+    header("Location: ../../mainLogin.php");
+    exit();}
 ?>

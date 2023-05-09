@@ -90,6 +90,9 @@
             border-width: 1px;
             stroke: #111C43;
         }
+        .hidden-link {
+         display: none;
+         }
     </style>
 </head>
 <body>
@@ -125,7 +128,6 @@
             }
             ?>
             </li>
-            <li>
             <?php
         if (isset($_SESSION['email'])) {
             //get user role
@@ -136,13 +138,11 @@
             $_SESSION['user_role'] = $row['user_role'];
             //choose the right dashboard page
             if ($_SESSION['user_role'] == 'mother') {
-                echo '<a href="../../View/Child/Contact.php">Contact</a>';
-            } else  {
-                echo '<a href="../../View/Contact-common.php">Contact</a>';
+                echo '<li><a href="../../View/Child/Contact.php">Contact</a></li>
+                ';
+              }
             }
-        }
             ?>
-</li>
             <li><a href="../../Config/logout.php">Log out</a></li>
         </ul>
         <?php

@@ -78,8 +78,8 @@ echo mysqli_error($con);
 ?>
     </div>
     </body>
-    <?php
-   
+
+<?php
  } else {
     header("Location: ../../mainLogin.php");
      exit();

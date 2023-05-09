@@ -226,7 +226,7 @@ input[type="radio"] {
 .child-sidenav {
     padding-top: 20px;
     height: 100%;
-    width: 220px;
+    width: 225px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -418,4 +418,107 @@ input[type="radio"] {
 .goBackBtn:hover {
     background-color: #ff0000;
 
+}
+
+.container{
+  margin-top: 08%;
+  margin-left: 15%;
+width: 75%;
+background: #fff;
+border-radius: 6px;
+padding: 20px 60px 30px 40px;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.container .content{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.container .content .left-side{
+width: 25%;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-top: 15px;
+position: relative;
+}
+.content .left-side::before{
+content: '';
+position: absolute;
+height: 70%;
+width: 2px;
+right: -15px;
+top: 50%;
+transform: translateY(-50%);
+background: #afafb6;
+}
+.content .left-side .details{
+margin: 14px;
+text-align: center;
+}
+.content .left-side .details i{
+font-size: 30px;
+color: #3e2093;
+margin-bottom: 10px;
+}
+.content .left-side .details .topic{
+font-size: 18px;
+font-weight: 500;
+}
+.content .left-side .details .text-one,
+.content .left-side .details .text-two{
+font-size: 14px;
+color: #afafb6;
+}
+.container .content .right-side{
+width: 75%;
+margin-left: 75px;
+}
+.content .right-side .topic-text{
+font-size: 23px;
+font-weight: 600;
+color: #3e2093;
+}
+.right-side .input-box{
+height: 50px;
+width: 100%;
+margin: 12px 0;
+}
+.right-side .input-box input,
+.right-side .input-box textarea{
+height: 100%;
+width: 100%;
+border: none;
+outline: none;
+font-size: 16px;
+background: #F0F1F8;
+border-radius: 6px;
+padding: 0 15px;
+resize: none;
+}
+.right-side .message-box{
+min-height: 110px;
+}
+.right-side .input-box textarea{
+padding-top: 6px;
+}
+.right-side .button{
+display: inline-block;
+margin-top: 12px;
+}
+.right-side .button input[type="submit"]{
+color: #fff;
+font-size: 18px;
+outline: none;
+border: none;
+padding: 8px 16px;
+border-radius: 6px;
+background: #3e2093;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+.button input[type="submit"]:hover{
+background: #5029bc;
 }

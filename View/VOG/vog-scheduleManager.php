@@ -28,7 +28,6 @@
             <?php
                 $clickedDate = isset($_GET['date']) ? $_GET['date'] : '';
                 $doc_id = $_SESSION['id'];
-
                 $query = "SELECT ma.*, md.mom_fname, md.mom_lname, md.mom_age
                         FROM mom_appointments ma
                         JOIN mother_details md ON ma.mom_id = md.mom_id
