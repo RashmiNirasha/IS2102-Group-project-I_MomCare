@@ -21,17 +21,18 @@ function is_array_empty($arr){
     if ($varCheck == true){
     
     //When the button is clicked
-        if (isset($_POST['insert'])){
-
-            $id = $_POST['docid'];
-            $type = $_POST['dtype'];
-            $name = $_POST['name'];
-            $age = $_POST['age'];
-            $address = $_POST['address'];
-            $dob = $_POST['dob'];
-            $email = $_POST['email'];
-            $tel = $_POST['tel'];
-            $work = $_POST['work'];
+    if (isset($_POST['insert'])){
+            
+        $id = $_POST['docid'];
+        $type = $_POST['dtype'];
+        $name = $_POST['name'];
+        $address = $_POST['address'];
+        $dob = $_POST['dob'];
+        $age = date_diff(date_create($dob), date_create('today'))->y; // calculate age
+        $email = $_POST['email'];
+        $tel = $_POST['tel'];
+        $work = $_POST['work'];
+        $password = md5($name);
 
             //Check whether the Doctor ID is already taken
             $sql_check = "(SELECT count(doc_id) as 'doc' FROM doctor_details WHERE doc_id='$id');";
@@ -48,18 +49,31 @@ function is_array_empty($arr){
             if ($doc_idExists == 1){
 
                 //update data
-                $sql_update = "UPDATE doctor_details SET doc_id='$id', doc_type='$type', doc_name='$name', doc_age='$age', doc_address='$address', doc_DOB='$dob', doc_email='$email', doc_tele='$tel', doc_workplace='$work' where doc_id = '$id' ";
+                $sql_update = "UPDATE doctor_details SET doc_type='$type', doc_name='$name', doc_age='$age', doc_address='$address', doc_DOB='$dob', doc_email='$email', doc_tele='$tel', doc_workplace='$work' where doc_id = '$id' ";
 
                 echo $sql_update;
 
                 $update = $con->query($sql_update);
                 echo "$update";
                 if ($update){
+
+                    $sql_update_user_tbl = "UPDATE user_tbl SET email='$email', password='$password', name='$name', user_role='$type' where doc_id='$id'";
+
+                    // echo $sql_insert;
+
+                    $update_user_tbl = $con->query($sql_update_user_tbl);
+
+                    if ($update_user_tbl){
+
+                    }else{
+                        echo "Error: " .$sql_update_user_tbl . "<br>" . mysqli_error($con);
+                    }
+
                     header("Location:..\View\Admin\admin-updatedoctor.php?status=success");
                 }
-            }elseif ($doc_idExists == 0){
-                header("Location:..\View\Admin\admin-updatedoctor.php?status=errorIDTaken");
-            }
+            }//elseif ($doc_idExists == 0){
+            //     header("Location:..\View\Admin\admin-updatedoctor.php?status=errorIDTaken");
+            // }
             
         }
         }

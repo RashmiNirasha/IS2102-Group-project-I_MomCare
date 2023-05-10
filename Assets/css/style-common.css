@@ -2774,17 +2774,19 @@ a {
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
-    margin-top: 4%;
+    margin-top: 2%;
 }
 
 .a-container-m {
     margin-right: 5%;
     display: flex;
+    margin-top: 2%;
 }
 
 .a-container-m .material-icons {
     font-size: 48px;
     color: red;
+    visibility: hidden;
 }
 
 .a-manage-icon .material-icons {
@@ -2798,7 +2800,7 @@ a {
     display: flex;
     margin-left: 15%;
     margin-right: 15%;
-    padding-top: 35px;
+    padding-top: 25px;
     padding-bottom: 25px;
 }
 
@@ -2807,7 +2809,7 @@ a {
     align-items: center;
     width: 40%;
     height: 40%;
-    margin-top: 1%;
+    margin-top: 0%;
 }
 
 .a-analytics {
@@ -2843,8 +2845,8 @@ a {
 .a-count {
     border-radius: 10px;
     padding: 20px 15px;
-    width: 100%;
-    height: 200px;
+    width: 85%;
+    height: 160px;
     background-color: rgb(5, 169, 245);
     display: grid;
     align-items: center;
@@ -2861,6 +2863,7 @@ a {
     display: grid;
     text-align: center;
     padding: 0% 1% 0% 1%;
+    margin: auto;
 }
 
 .a-count p {
@@ -2868,6 +2871,7 @@ a {
     font-size: 20px;
     font-weight: 350;
     text-align: center;
+    /* margin-bottom: 15%; */
 }
 
 .a-count h1 {
@@ -2875,20 +2879,22 @@ a {
     font-size:40px;
     text-align: center;
     font-weight: 400;
+    margin-bottom: -5%;
+    margin-top: 3%;
 }
 
 .a-day {
     color: rgb(92, 88, 88);
-    /* padding: 10px; */
+    margin-bottom: 5%;
 }
 
 .a-card {
     border-radius: 10px;
     padding: 20px 15px;
     width: 75%;
-    height: 130px;
+    height: 100px;
     background-color: rgb(5, 169, 245);
-    margin: 20px 10px;
+    margin: 10px 10px;
     display: grid;
     align-items: center;
     justify-content: space-around;
@@ -3014,7 +3020,7 @@ a {
     border: solid 5px rgb(177, 217, 238);
     /* box-shadow: 0 0 40px 0 #ddd; */
     margin-left: 15%;
-    margin-top: 35px;
+    margin-top: 25px;
     border-radius: 10px;
     position: absolute;
 }
@@ -3027,6 +3033,7 @@ a {
     display: flex;
     justify-content: space-between;
     padding-bottom: 40px;
+    margin-top: -0.8%;
 }
 
 .au-doctor-id input {
@@ -3035,7 +3042,7 @@ a {
     outline-style: hidden;
     padding: 15px 25px;
     width: 190px;
-    height: 30px;
+    height: 3px;
     margin-left: 15px;
     background-color: rgb(177, 217, 238);
 }
@@ -3077,7 +3084,7 @@ a {
     outline-style: none;
     padding: 15px 25px;
     width: 500px;
-    height: 30px;
+    height: 3px;
     margin-bottom: 23px;
     background-color: rgb(177, 217, 238);
 }
@@ -3207,10 +3214,10 @@ a {
 
 /* ------------------------- Admin manage users -------------------------------- */
 .ma-table {
-    min-width: 90%;
+    min-width: 70%;
     background-color: white;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
     margin-top: 3.5%;
     position: absolute;
     border: 3.5px solid #05a9f5;
@@ -3312,10 +3319,12 @@ a {
     width: 70%;
     border-radius: 25px;
     background-color: #05a9f5;
-    height: 8.5vh;
+    height: 3.5vh;
     padding: 20px 50px;
     align-items: center;
-    margin: 0% 0% 1% 15%;
+    /* margin: 0% 5% 1% 15%; */
+    margin: auto;
+    margin-bottom: 1%;
  }
 
  .n-body1 .material-icons {
@@ -3331,7 +3340,7 @@ a {
  .n-topic, .n-date, .n-time{
     margin-left: 10px;
     background-color: white;
-    padding: 10px 15px;
+    padding: 3px 10px;
     border-radius: 25px;
     font-size: 11px;
  }
@@ -3467,44 +3476,59 @@ a {
 }
 
 /* ------------------------- PHM Allocate Doctors -------------------------------- */
+/* .ad-card-div {
+    display: grid;
+} */
 
 .ad-card-container {
-    display: flex;
     margin-left: 15%;
     margin-right: 15%;
     padding-top: 35px;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-evenly; */
+    flex-wrap: wrap;
+    padding-bottom: 25px;
 }
 
 .ad-card {
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(85, 84, 84, 0.2), 0 6px 20px 0 rgba(77, 76, 76, 0.19);
-    width: 23%;
-    height: 35vh;
-    padding-left: 3%;
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px 15px;
+    width: 154px;
+    height: 200px;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    /* display: grid; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
 }
 
 .ad-card h4 {
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: 650;
     color: #029EE4;
-    padding-top: 5%;
+    /* padding-top: 5%; */
     text-align: center;
 }
 
-.ad-card> .material-icons {
+/* .ad-card> .material-icons {
     margin-top: -1%;
     margin-left: 30%;
     font-size: 60px;
     color: black;
+} */
+
+.ad-title{
+    height: 23%;
 }
 
 .ad-location {
     display: flex;
     align-items: center;
-    padding-left: 5%;
+    height: 40%;
+    padding-left: 5%
 }
 
 .ad-location .material-icons{
@@ -3517,27 +3541,38 @@ a {
     font-size: 11px;
 }
 
-.ad-btn {
-    display: flex;
+.ad-actions {
+    display: grid;
+    margin-bottom: 4%;
+    margin: auto;
 }
 
-.ad-btn button{
-    width: 50%;
-    height:5vh;
+.ad-button {
+    background-color: white;
+    color: black;
+    border: 1px solid #029EE4;
+    padding: 5px 10px;
+    max-width: 75%;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 4%;
+}
+
+.ad-btn {
+    width: 70%;
+    height:4vh;
     background-color: #029EE4;
     color: white;
     border-style: none;
-    margin-top: 15%;
-    margin-right: 2%;
-    margin-left: 2%;
+    margin-left: 15%;
 }
 
 /* ------------------------- PHM handle registration requests-------------------------------- */
 .hr-table{
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
     margin-top: 3.5%;
-    width: 90%;
+    width: 70%;
 }
 
 .hr-table table>tbody>tr:nth-child(odd){
@@ -3608,6 +3643,176 @@ a {
 .hr-button:hover {
     background-color: #aeabab;
     color: #000000;
+}
+
+/* ------------------------- PHM add child cards-------------------------------- */
+.acc-sidenav {
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #029ee4;
+    overflow-x: hidden;
+    padding-top: 120px;
+    font-family: RobotoRegular;
+  }
+  
+  .acc-sidenav a {
+    color:black;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    background-color: white;
+    margin-bottom: 5%;
+    border-radius: 0px 10px 10px 0px;
+    margin-left: 8%;
+    margin-right: 8%;
+    font-size: 13px;
+    font-weight: 600;
+    height: 25px;
+  }
+  
+  .acc-sidenav a:hover {
+    color: #0e106e;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .acc-sidenav {padding-top: 15px;}
+    .acc-sidenav a {font-size: 18px;}
+  }
+
+.acc-container {
+    margin-top: 06%;
+    margin-left: 24%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 5%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.acc-container h2 {
+    margin-top: -1.2%;
+    margin-left: 5%;
+}
+
+.acc-table th {
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029ce44f;
+    width: 1%;
+    white-space: nowrap;
+}
+
+.acc-input {
+    border-radius: 10px;
+    border:  1px rgb(212, 206, 206) solid;
+    /* padding: 10px 25px; */
+    width: 95%;
+    margin-bottom: 23px;
+    margin-left: 1%;
+    margin-top: 2%;
+    background-color: white;
+    height: 5vh;
+}
+
+.acc-input>input {
+    outline-style: none;
+    border-style: none;
+    height: 5vh;
+    margin: 0px;
+    padding: 0px 10px;
+    /* margin-bottom: 23px;
+    margin-left: 1%;
+    margin-top: 2%; */
+    background-color: white;
+    border-radius: 10px;
+}
+
+.acc-input>select {
+    outline-style: none;
+    border-style: none;
+    height: 5vh;
+    margin: 0px;
+    padding: 0px 10px;
+    /* margin-bottom: 23px;
+    margin-left: 1%;
+    margin-top: 2%; */
+    background-color: white;
+    border-radius: 10px;
+}
+
+.acc-table tr:nth-child(odd){
+    background-color: #029ce41e;
+}
+
+.acc-table {
+    width: 90%;
+    border-style: solid;
+    border-radius: 0px 0px 20px 20px;
+    border-color: #029EE4;
+    /* padding: 3px; */
+    font-size: 12px;
+    border-collapse: collapse;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.acc-table td {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029ce44f;
+    padding-bottom: 5px;
+}
+
+.acc-table td:nth-child(1) {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.acc-title {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 5%;
+    /* margin-top: 20px; */
+    background-color: #029EE4;
+    border-radius: 20px 20px 0px 0px;
+
+}
+
+.acc-title h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.acc-btn {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 20%;
+    height:5vh;
+    background-color: #029EE4;
+    color: white;
+    border-style: none;
+    margin-left: 2%;
 }
 
 /* ------------------------ pediatrician search children view -----------------------*/

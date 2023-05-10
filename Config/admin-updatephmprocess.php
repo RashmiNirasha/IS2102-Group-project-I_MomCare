@@ -25,12 +25,13 @@ function is_array_empty($arr){
 
             $id = $_POST['phmid'];
             $name = $_POST['name'];
-            $age = $_POST['age'];
             $address = $_POST['address'];
             $dob = $_POST['dob'];
+            $age = date_diff(date_create($dob), date_create('today'))->y; // calculate age
             $email = $_POST['email'];
             $tel = $_POST['tel'];
             $work = $_POST['work'];
+            $password = md5($name);
 
             //Check whether the Doctor ID is already taken
             $sql_check = "(SELECT count(phm_id) as 'phm' FROM phm_details WHERE phm_id='$id');";
@@ -47,18 +48,29 @@ function is_array_empty($arr){
             if ($doc_idExists == 1){
 
                 //update data
-                $sql_update = "UPDATE phm_details SET phm_id='$id', phm_name='$name', phm_age='$age', phm_address='$address', phm_DOB='$dob', phm_email='$email', phm_tele='$tel', phm_workplace='$work' where phm_id = '$id' ";
+                $sql_update = "UPDATE phm_details SET phm_name='$name', phm_address='$address', phm_DOB='$dob', phm_email='$email', phm_tele='$tel', phm_workplace='$work' where phm_id = '$id' ";
 
                 echo $sql_update;
 
                 $update = $con->query($sql_update);
                 echo "$update";
                 if ($update){
+                    $sql_update_user_tbl = "UPDATE user_tbl SET email='$email', password='$password', name='$name' where phm_id='$id'";
+
+                    // echo $sql_insert;
+
+                    $update_user_tbl = $con->query($sql_update_user_tbl);
+
+                    if ($update_user_tbl){
+
+                    }else{
+                        echo "Error: " .$sql_update_user_tbl . "<br>" . mysqli_error($con);
+                    }
                     header("Location:..\View\Admin\admin-updatedoctor.php?status=success");
                 }
-            }elseif ($doc_idExists == 0){
-                header("Location:..\View\Admin\admin-updatedoctor.php?status=errorIDTaken");
-            }
+            }//elseif ($doc_idExists == 0){
+            //     header("Location:..\View\Admin\admin-updatedoctor.php?status=errorIDTaken");
+            // }
             
         }
         }

@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="..\..\Assets\css\style-common.css" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <style>
+    <!-- <style>
     * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-    </style>
+    </style> -->
 </head>
 <body>
     <div class="a-container">
@@ -59,18 +59,28 @@
                         <div class="au-doctor-id"><label>PHM_ID</label  name="phmid">
                         <input type="text" name="phmid" value = "<?php 
                                                                     // Get user input date 
-                                                                    $registration_date = date('Ymd');
+                                                                    //$registration_date = date('Ymd');
                                                                     // Generate unique ID number    
-                                                                    $id_prefix = 'PHM-';
-                                                                    $id_date = date_format(date_create($registration_date), 'Ymd');
+                                                                    // $id_prefix = 'PHM-';
+                                                                    // $id_date = date_format(date_create($registration_date), 'Ymd');
+                                                                    // $max_result = mysqli_query($con, "SELECT MAX(phm_id) AS max_id FROM phm_details");
+                                                                    // $row = mysqli_fetch_array($max_result);
+                                                                    // $max_id = $row['max_id'];
+                                                                    // $new_id = substr($max_id, -4);
+                                                                    // $new_id = intval($new_id);
+                                                                    // $new_id = $new_id + 1;
+                                                                    // $id_number = str_pad($new_id, 4, '0', STR_PAD_LEFT);
+                                                                    // $id = $id_prefix . $id_date . '-' . $id_number;
+
+                                                                    $id_prefix = 'P';
                                                                     $max_result = mysqli_query($con, "SELECT MAX(phm_id) AS max_id FROM phm_details");
                                                                     $row = mysqli_fetch_array($max_result);
                                                                     $max_id = $row['max_id'];
-                                                                    $new_id = substr($max_id, -4);
+                                                                    $new_id = substr($max_id, -3);
                                                                     $new_id = intval($new_id);
                                                                     $new_id = $new_id + 1;
-                                                                    $id_number = str_pad($new_id, 4, '0', STR_PAD_LEFT);
-                                                                    $id = $id_prefix . $id_date . '-' . $id_number;
+                                                                    $id_number = str_pad($new_id, 3, '0', STR_PAD_LEFT);
+                                                                    $id = $id_prefix . $id_number;
                                                                     echo $id; ?>" readonly></div>
                         <span> </span>
                         </div>
