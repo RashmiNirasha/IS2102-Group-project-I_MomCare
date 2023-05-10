@@ -27,7 +27,7 @@ if ($varCheck == true) {
         $name = $_POST['name'];
         $address = $_POST['address'];
         $dob = $_POST['dob'];
-        $age = date_diff(date_create($dob), date_create('today'))->y; // calculate age
+        //$age = date_diff(date_create($dob), date_create('today'))->y; // calculate age
         $email = $_POST['email'];
         $tel = $_POST['tel'];
         $work = $_POST['work'];
@@ -48,8 +48,8 @@ if ($varCheck == true) {
         if ($doc_idExists == 0){
 
         //insert data to phm table
-        $sql_phm = "INSERT INTO phm_details (phm_id, phm_name, phm_age, phm_address, phm_DOB, phm_email, phm_tele, phm_workplace, phm_password) VALUES 
-                ('$id', '$name', '$age', '$address', '$dob', '$email', '$tel', '$work', '$password')";
+        $sql_phm = "INSERT INTO phm_details (phm_id, phm_name, phm_address, phm_DOB, phm_email, phm_tele, phm_workplace, phm_password) VALUES 
+                ('$id', '$name', '$address', '$dob', '$email', '$tel', '$work', '$password')";
          $result_phm = mysqli_query($con, $sql_phm);
 
         if ($result_phm) {

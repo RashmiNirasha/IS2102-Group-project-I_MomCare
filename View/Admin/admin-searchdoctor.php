@@ -3,7 +3,7 @@
     if (isset($_SESSION['email'])){
         include "../../Assets/Includes/header_pages.php";
         include "../../Config/admin-searchdoctorprocess.php";
-        print_r($s_result);
+        //print_r($s_result);
 
 ?>
 

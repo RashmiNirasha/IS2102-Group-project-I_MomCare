@@ -1,8 +1,8 @@
 <?php
-include "..\..\Config\admin-updatedoctorSQLprocess.php";
-include ("..\..\Assets\Includes\header_admin.php");
-// session_start();
-// if (isset($_SESSION['s_email'])){
+session_start();
+if (isset($_SESSION['email'])){
+    include "..\..\Config\admin-updatedoctorSQLprocess.php";
+    include ("..\..\Assets\Includes\header_pages.php");
     
 ?>
 
@@ -16,14 +16,14 @@ include ("..\..\Assets\Includes\header_admin.php");
     <link rel="stylesheet" href="..\..\Assets\css\style-common.css" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <style>
+    <!-- <style>
     * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-    </style>
+    </style> -->
 </head>
 <body>
     <div class="a-container">
@@ -64,8 +64,31 @@ include ("..\..\Assets\Includes\header_admin.php");
                                 <!--<option value="mo">MO</option>-->
                             </select>
                         </div>
+
                     <div class="au-middle">
                         <div class="au-middle-content">
+                        <div class="au-labels">
+                        <label>Name:</label>
+                        <label>Date of Birth:</label>
+                        <label>Telephone:</label>
+                        <label>Email:</label>
+                        <label>Address:</label>
+                        <!-- <label>Age:</label> -->
+                        <label>Work Place:</label>
+                        </div>
+                        <div class="au-inputs">
+                        <input type="text" name="name" value="<?php  echo $name?>">
+                        <input type="date" name="dob" min="1903-01-01" max="2001-10-31" value="<?php  echo $dob?>">
+                        <input type="tel" name="tel" value="<?php  echo $tel?>">
+                        <input type="email" name="email" value="<?php  echo $email?>">
+                        <input type="text" name="address" value="<?php  echo $address?>">
+                        <!-- <input type="number" min="20" max="120" name="age"> -->
+                        <input type="text" name="work" value="<?php  echo $work?>">
+                        </div>
+                        </div>
+
+                    <!-- <div class="au-middle"> -->
+                        <!-- <div class="au-middle-content">
                         <div class="au-labels">
                         <label>Name:</label>
                         <label>Age:</label>
@@ -84,7 +107,7 @@ include ("..\..\Assets\Includes\header_admin.php");
                         <input type="date" name="dob" value="<?php  echo $dob?>">
                         <input type="text" name="work" value="<?php  echo $work?>">
                         </div>
-                        </div>
+                        </div> -->
                         <div class="au-btn">
                             <span></span>
                             <button class="au-add-user-btn" type = "submit" name = "insert" value="1">Update User</button>
@@ -96,18 +119,18 @@ include ("..\..\Assets\Includes\header_admin.php");
         </div>
         <div class="a-content-2">
             <span></span>
-            <a href = "..\..\Config\admin-logout.php"><button>
+            <!-- <a href = "..\..\Config\admin-logout.php"><button>
                 <div class="a-btn-text"><h6>Log out</h6></div>
                 <i class="material-icons" alt="logout">logout</i>
-            </button></a>
+            </button></a> -->
         </div>
     </div>
 </body>
 </html>
 
 <?php
-// }else{
-//     header("Location:admin-login.php");
-// }
+}else{
+    header("Location:../../mainLogin.php");
+}
 
 ?>

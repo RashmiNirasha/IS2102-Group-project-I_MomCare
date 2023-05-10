@@ -29,7 +29,7 @@
                         <?php } ?>
                         <fieldset>
                             <legend>&nbsp;Email:&nbsp;</legend>
-                            <input type="email" name="email" id="email" placeholder="Enter your email">
+                            <input type="email" name="email" id="email" placeholder="Enter your email" autofocus>
                         </fieldset>
                         <br>
                         <fieldset>

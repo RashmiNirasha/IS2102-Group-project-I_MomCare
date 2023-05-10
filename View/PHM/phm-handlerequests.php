@@ -17,14 +17,14 @@
     <!-- <link rel="icon" href="..\..\Assets\Images\images-Sachini\logo.png" type="image/icon type"> -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <style>
+    <!-- <style>
     * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-    </style>
+    </style> -->
 </head>
 <body>
     <div class="a-container">
@@ -49,7 +49,7 @@
                 <a href="..\..\View\Admin\admin-managephm.php">Manage PHM Accounts</a>
                 </div>
         </div> -->
-            <a href = "admin-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
+            <a href = "phm-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
             </div></div>
             <div class="hr-table"> 
                 <table>

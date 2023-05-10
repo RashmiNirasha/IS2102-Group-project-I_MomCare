@@ -2,7 +2,7 @@
 //connecting to the database
 require_once 'dbConnection.php';
   $noResult = "False";
-  $search = $_GET['search'];
+  $search = $_GET["search"];
 
   $sql = "SELECT * FROM doctor_details WHERE doc_name LIKE '%$search%' OR doc_id LIKE '%$search%' OR doc_workplace LIKE '%$search%' OR doc_type LIKE '%$search%'";
 

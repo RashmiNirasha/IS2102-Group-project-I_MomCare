@@ -1,7 +1,11 @@
 <?php
-include "../../Assets/Includes/header_admin.php";
-// require_once "..\..\Assets\Includes\header_pages.php";
-?>
+//connecting to the database
+// require_once '..\..\Config\dbConnection.php';
+ session_start();
+ if (isset($_SESSION['email'])){
+     include "../../Assets/Includes/header_pages.php";
+
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,14 +17,14 @@ include "../../Assets/Includes/header_admin.php";
     <link rel="stylesheet" href="..\..\Assets\css\style-common.css" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <style>
+    <!-- <style>
     * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-    </style>
+    </style> -->
 </head>
 <body>
 <div class="a-container">
@@ -64,3 +68,10 @@ include "../../Assets/Includes/header_admin.php";
     </div>
 </body>
 </html>
+
+<?php
+}else{
+    header("Location:admin-login.php");
+}
+
+?>

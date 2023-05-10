@@ -1,8 +1,8 @@
 <?php
-    include "../../Assets/Includes/header_admin.php";
-    include "..\..\Config\admin-managephmprocess.php";
-    // session_start();
-    // if (isset($_SESSION['s_email'])){
+    session_start();
+    if (isset($_SESSION['email'])){
+        include "../../Assets/Includes/header_pages.php";
+        include "..\..\Config\admin-managephmprocess.php";
 ?>
 
 
@@ -16,14 +16,14 @@
     <link rel="stylesheet" href="..\..\Assets\css\style-common.css" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <style>
+    <!-- <style>
     * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-    </style>
+    </style> -->
 </head>
 <body>
     <div class="a-container">
@@ -63,7 +63,8 @@
                         $id = $row['phm_id'];
                         $name = $row['phm_name'];
                         $work = $row['phm_workplace'];
-                        $age = $row['phm_age'];
+                        $dob = $row['phm_DOB']; 
+                        $age = date_diff(date_create($dob), date_create('today'))->y; // calculate age
                         $address = $row['phm_address'];
                         $email = $row['phm_email'];
                         $tel = $row['phm_tele'];
@@ -78,7 +79,6 @@
                 $output .= "<td>$age</td>";
                 $output .= "<td>$work</td>";
                 $output .= '<td><div class="ma-actions">
-                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="view icon">visibility</i></div></a>
                             <a href = "admin-updatephm.php?id=';
                 $output .=$id;
                 $output .='"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
@@ -98,16 +98,16 @@
         </div>
         <div class="a-content-2">
             <span></span>
-            <a href = "..\..\Config\admin-logout.php"><button>
+            <!-- <a href = "..\..\Config\admin-logout.php"><button>
                 <div class="a-btn-text"><h6>Log out</h6></div>
                 <i class="material-icons" alt="logout">logout</i>
-            </button></a>
+            </button></a> -->
         </div>
     </div>
 </body>
 </html>
 <?php
-    // }else{
-    //     header("Location:admin-login.php");
-    // }
+    }else{
+         header("Location:../../mainLoginphp");
+    }
 ?>

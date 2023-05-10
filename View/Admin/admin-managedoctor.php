@@ -17,14 +17,14 @@
     <link rel="stylesheet" href="..\..\Assets\css\style-common.css" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <style>
+    <!-- <style>
     * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-    </style>
+    </style> -->
 </head>
 <body>
     <div class="a-container">
@@ -86,7 +86,6 @@
                 $output .= "<td>$work</td>";
                 $output .= "<td>$type</td>";
                 $output .= '<td><div class="ma-actions">
-                            <a href = "#"><div class="ma-img-action"><i class="material-icons" alt="view icon">visibility</i></div></a>
                             <a href = "admin-updatedoctor.php?id=';
                 $output .=$id;
                 $output .='"><div class="ma-img-action"><i class="material-icons" alt="edit icon">edit</i></div></a>
