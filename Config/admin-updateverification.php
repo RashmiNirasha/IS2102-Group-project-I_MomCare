@@ -23,7 +23,7 @@ $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
 $mom_name = $row['first_name'] . " " . $row['last_name'] . " " . $row['middle_name'];
 $mom_email = $row['email'];
-$password_hash = $row['password'];
+$password = $row['password'];
 $mom_fname=$row['first_name'];
 $mom_mname=$row['middle_name'];
 $mom_lname=$row['last_name'];
@@ -34,11 +34,13 @@ $mom_DOB=$row['DOB'];
 $mom_age=$row['age'];
 $mom_regdate=$row['reg_date'];
 
+$password_hash = md5($password);
+
 $mom_id =   "M" .  $userId ;
 
-    $message = "Hi $mom_name! Account created , Please go to this link and create a new password.</br>
-    link http://localhost/IS2102-Group-project-I_MomCare/View/reset-password.php</br>
-    your password is $password_hash </br>
+    $message = "Hi $mom_name! Your Account is now activated , Please log into the system and upon login please create a new password.</br>
+    link http://localhost/momcare/mainLogin.php </br>
+    your one time password is $password </br>
     Username: $mom_email";
     
     sendemail($mom_email,'Activate Account',$message);
@@ -47,8 +49,8 @@ $sql= "INSERT INTO `mother_details`(`mom_id`, `mom_fname`, `mom_mname`, `mom_lna
 ('$mom_id','$mom_fname','$mom_mname','$mom_lname','$mom_landline','$mom_email','$mom_password','$mom_address','$mom_DOB','$mom_age','$mom_regdate')";
 $result = mysqli_query($con, $sql);
 
-$rslt="INSERT INTO `user_tbl`(`email`, `password`, `name`, `user_role`) VALUES 
-('$mom_email','$password_hash','$mom_fname','mother')";
+$rslt="INSERT INTO `user_tbl`(`user_id`,`email`, `password`, `name`, `user_role`) VALUES 
+('$mom_id','$mom_email','$password_hash','$mom_fname','mother')";
 $result = mysqli_query($con, $rslt);
 
 header("Location: ../View/admin/admin-handlerequests.php"); // redirect to the page where the table is displayed

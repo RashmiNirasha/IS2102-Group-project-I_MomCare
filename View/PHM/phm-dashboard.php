@@ -34,10 +34,11 @@
                 <div class="card-content-left"><span class="material-symbols-outlined">note_add</span></div>
                 <div class="card-content-right"><p>Medical Notes</p></div>
             </button>
-            <button class="card" onclick="window.location.href = '';">
+            <button class="card" onclick="window.location.href = 'phm-handlerequests.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">calculate</span></div>
-                <div class="card-content-right"><p>BMI Calculator</p></div>
+                <div class="card-content-right"><p>Handling Requests</p></div>
             </button>
+
             
             </button>
         </div>

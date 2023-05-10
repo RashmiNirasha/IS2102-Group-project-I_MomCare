@@ -20,13 +20,14 @@
             <?php 
             if (isset($_GET['child_id'])) {
                 $Child_id = $_GET['child_id'];
+
                 $sql = "SELECT doctor_notes.*, child_details.child_name, doctor_details.doc_name 
                 FROM doctor_notes 
                 INNER JOIN child_details ON doctor_notes.child_id=child_details.child_id 
                 INNER JOIN doctor_details ON doctor_notes.doc_id=doctor_details.doc_id 
-                WHERE (doctor_notes.child_id LIKE '%$Child_id%' OR child_details.child_name LIKE '%$Child_id%') AND doctor_notes.doc_id=doctor_details.doc_id
-                ORDER BY doctor_notes.note_date DESC";
-                        $result = mysqli_query($con, $sql);
+                WHERE doctor_notes.child_id LIKE '%$Child_id%' ORDER BY doctor_notes.note_date DESC";
+                
+                $result = mysqli_query($con, $sql);
                 if (!$result) {
                     die(mysqli_error($con));
                 }
@@ -111,7 +112,7 @@
         btn.addEventListener("click", function() {
             var noteId = this.getAttribute("note_id");
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "../../Config/getNoteDetails.php?note_id=" + noteId, true);
+            xhr.open("GET", "../../Config/child-getNoteDetails.php?note_id=" + noteId, true);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     var noteDetails = JSON.parse(xhr.responseText);

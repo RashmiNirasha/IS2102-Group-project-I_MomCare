@@ -94,7 +94,7 @@ include "../../Assets/Includes/sidenav.php";?>
   </body>
 </html>
 <?php } else {
-    header("Location: ../../mainLogin.php");
+   header("Location: ../../mainLogin.php");
     exit();}
 ?>
 

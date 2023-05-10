@@ -81,7 +81,7 @@
                                         </form>
                                     </td>
                                 </tr>";
-                            }
+                            } 
                         } else {
                             echo "<tr><td colspan='6'>No pending verification requests found.</td></tr>";
                         }

@@ -1,7 +1,8 @@
 <?php 
 session_start();
-include("../../Config/dbConnection.php") 
-if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
+if (isset($_SESSION['email']) && isset($_SESSION['id'])) { 
+
+include("../../Config/dbConnection.php") ?>
 
 <?php include "../../Assets/Includes/header_pages.php" ?>
 
