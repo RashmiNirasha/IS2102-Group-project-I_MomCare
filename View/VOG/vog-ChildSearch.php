@@ -55,7 +55,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                                     <div class="momBarDetailsSec1">
                                         <ul>
                                             <li>Child ID: '.$child_id.' </li>
-                                            <li>Email: '.$PHM_id.'</li>
+                                            <li>PHM ID: '.$PHM_id.'</li>
                                         </ul>
                                     </div>
                                 </div>

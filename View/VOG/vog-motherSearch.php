@@ -23,7 +23,6 @@ if (isset($_SESSION['email'])){?>
             <form action="" method="GET">
                 <input class="mom-search" type="search" name="mom-search" id="mom-search" placeholder="Please enter a search term (Ex: First name, Last name, Mother ID)" required autofocus>
                 <input type="submit" name="submit" value="Search">
-                <h3></h3>
             </form>
         </div>
         
@@ -58,7 +57,7 @@ if (isset($_SESSION['email'])){?>
                             </div>
                             <div class="momBarBtn">
                                 <a href="#"><button class="momBarBtn-1">View Profile</button></a>
-                                <a href="#"><button class="momBarBtn-2">View Reports</button></a>
+                                <a href="vog-tests.php?mom_id='.$mom_id.'"><button class="momBarBtn-2">View Reports</button></a>
                                 <a href="#"><select name="momBarChildSelect" id="momBarChildSelect">
                                     <option value="child1">Child 1</option>
                                     <option value="child2">Child 2</option>

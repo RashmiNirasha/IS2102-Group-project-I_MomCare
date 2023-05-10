@@ -10,15 +10,12 @@
                 $mom_id = $_POST['mom_id'];
                 header("Location: ../../View/VOG/vog-tests.php?mom_id=$mom_id&error2=Please fill all the fields!");
                 exit();
-            }else {
-                $test_name = $_POST['test_name'];
-                $note = $_POST['note'];
+            } else {
+                $test_name = mysqli_real_escape_string($con, $_POST['test_name']);
+                $note = mysqli_real_escape_string($con, $_POST['note']);
                 $mom_id = $_POST['mom_id'];
                 $email = $_SESSION['email'];
-                $Currentdoc = "SELECT doc_id FROM doctor_details WHERE doc_email = '$email'";
-                $result = mysqli_query($con, $Currentdoc);
-                $row = mysqli_fetch_assoc($result);
-                $doc_id = $row['doc_id'];
+                $doc_id = $_SESSION['id'];
                 $target_file = "../../Assets/Images/uploads/tests/".$_FILES['test_report']['name'];
                 $filex = pathinfo($target_file,PATHINFO_EXTENSION);
                 $_FILES['test_report']['name'] = uniqid("test-") . "." . $filex;
@@ -26,7 +23,7 @@
                 $path = "../../Assets/Images/uploads/tests/".$test_report;
                 $sql = "INSERT INTO doctor_notes (doc_id, note_topic, note_description, note_records, mom_id) VALUES ('$doc_id', '$test_name', '$note', '$test_report', '$mom_id')";
                 $result = mysqli_query($con, $sql);
-        
+
                 // file upload code -- start
                 // reference: https://www.youtube.com/watch?v=ewDlz_shKzU
                 if($result){
@@ -37,7 +34,6 @@
                 header("Location: ../../View/VOG/vog-tests.php?mom_id=$mom_id&error3=Record successfully added!");
                 exit();
             }
-
         }
     ?>
 
@@ -141,7 +137,8 @@
         <?php } ?>
 
         <!-- View Report section -->
-        <div class="add-report-label"><label for="add-report">Report table</label></div>
+        <div class="viewReportMainDiv">
+        <div class="view-report-label"><label for="add-report">Report table</label></div>
         <div class="view-report">
             <table class="test-view-table">
                 <tr>
@@ -185,6 +182,7 @@
                 }
                 ?>
             </table>
+        </div>
         </div>
         <div >
             <?php

@@ -293,10 +293,12 @@ body {
     padding: 5px 0px 5px 0px;
 }
 
-.RegistrationMotherForm table select {
-    width: 100%;
+.RegistrationMotherForm select {
+    width: calc(100% + 20px);
+    background-color: #f2f2f2f2;
     font-size: 16px;
     padding: 10px;
+    height: 40px;
     border-radius: 10px;
     border-style: solid;
     border-width: 1px;
@@ -1665,8 +1667,9 @@ input[type="file" i] {
     border-color: #029EE4;
     border-width: 1px;
     padding-left: 20px;
-    padding-right: 10px;
+    /* padding-right: 10px; */
 }
+
 
 .mom-filter input[type='submit'] {
     width: 100px;
@@ -1685,11 +1688,6 @@ input[type="file" i] {
 .mom-search:focus {
     outline: none;
     border-width: 2px;
-}
-
-.MomBarTable {
-    /* width: 100%; */
-    /* background-color: teal; */
 }
 
 .mom-bar {
@@ -2083,6 +2081,21 @@ input[type="file" i] {
 
 }
 
+.view-report-label {
+    background-color: #029EE4;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.view-report-label label {
+    font-weight: 500;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
 .add-report {
     background-color: #ffffff;
     display: flex;
@@ -2101,10 +2114,12 @@ input[type="file" i] {
 }
 
 .view-report {
-    background-color: #ffffff;
+    background-color: #910303;
     display: flex;
     flex-direction: row;
     width: auto;
+    max-height: 300px;
+    overflow-x: hidden;
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 0px;
@@ -2166,6 +2181,15 @@ input[type="file" i] {
 #upload-report {
     width: auto;
     height: 25px;
+}
+
+.viewReportMainDiv {
+    background-color: #03b93a;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-right: 15%;
+    
 }
 
 .test-view-table {
@@ -2257,16 +2281,21 @@ input[type="file" i] {
 .add-report-btn {
     width: 150px;
     height: 25px;
-    border-radius: 10px;
+    border-radius: 5px;
     border-width: 1px;
     float: right;
-    margin-top: 2.5px;
+    margin-top: 5px;
     margin-right: 10px;
     background-color: #029EE4;
     color: #f0f0f0;
     border-style: none;
     cursor: pointer;
     
+}
+
+.add-report-btn:hover {
+    background-color: #0380b9;
+    color: #ffffff;
 }
 
 .view-report-btn, .delete-report-btn, .edit-report-btn {
@@ -2276,7 +2305,7 @@ input[type="file" i] {
     margin-top: 5px;
     margin-bottom: 5px;
     border-width: 1px;
-    background-color: #0380b9;
+    background-color: #029EE4;
     color: #f0f0f0;
     border-color: #029EE4;
     cursor: pointer;
@@ -2310,18 +2339,23 @@ input[type="file" i] {
 }
 
 #x {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 10px;
     width: 100%;
 }
-#x input[type="file"]{
+#test_report {
     color: #c5b7b7;
     font-size: 10px;
-    width: 250px;
+    height: 23px;
+    width: 240px;
     border-style: solid;
     border-color: #029ce44f;
-    padding-top: -1px;
+    margin-top: 0px;
     border-width: 1px;
     border-radius: 10px;
-    padding: 5px 10px 5px 10px;
+    padding: 10px 10px 5px 10px;
 }
 /* --------------------------------- Update pop-up window ----------------------------------------------*/
 
@@ -3578,15 +3612,6 @@ a {
 
 /* ------------------------ pediatrician search children view -----------------------*/
 
-/* mom-search {
-    width: 30%;
-    height: 40px;
-    border-radius: 15px;
-    border-style: solid;
-    border-width: 1px;
-    padding-left: 20px;
-  }
-   */
   .child-details{
     padding: 20px;
     display: flex;
@@ -3862,6 +3887,7 @@ a {
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
+    /* background-color: #007bff; */
 }
 
 .calendarLeft {
@@ -3886,6 +3912,12 @@ a {
     margin-bottom: 25px;
     background-color: #2C3E50;
     border-radius: 5px;
+}
+
+.calendarRightContent {
+    /* background-color: #029ce4; */
+    overflow-x: hidden;    
+    max-height: 450px;
 }
 
 .appointmentBar {
@@ -4660,9 +4692,19 @@ a {
     flex-direction: column;
     /* background-color: #712b29; */
 }
-.vog-profile-buttons a{
-    padding-top: 10px;
+
+.vog-profile-buttons button {
+    margin-top: 10px;
+    width: 150px;
+    height: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    color: #F3F4F5;
 }
+
+
 .vog-profile-buttons button{
     width: 150px;
     height: 30px;
@@ -4670,9 +4712,6 @@ a {
     border-radius: 15px;
     border: none;
     color: #F3F4F5;
-}
-.vog-profile-buttons button:hover{
-    color: #111C43;
 }
 
 /* ------------- vog profile update popup ------------- */
@@ -4683,6 +4722,7 @@ a {
     z-index: 1;
     left: 0;
     top: 0;
+    margin: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -4717,6 +4757,32 @@ a {
     margin-left: -10px;
 }
 
+.updateProfileInnerDiv #vog-id, #vog-name, #vog-email, #vog-dob {
+    border-style: none;
+    cursor: default;
+    color: #6e6e6e;
+}
+
+.contactAdmin:after {
+    content: ' *';
+    color: red;
+}
+
+.updateProfileInnerDiv #vog-id:focus, #vog-name:focus, #vog-email:focus, #vog_dob:focus {
+    outline: none;
+}
+
+.contactAdminLable {
+    /* background-color: #029ce4; */
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.contactAdminLable:before {
+    content: "* ";
+    color: red;
+}
+
 .vogUpdatePopup-close {
     color: #aaa;
     float: right;
@@ -4735,6 +4801,11 @@ a {
     flex-direction: row;
     gap: 10px;
     justify-content: flex-end;
+}
+
+.VogProfilePopupBtn label:nth-child(1) {
+    text-align: left;
+    flex-grow: 1;
 }
 
 .VogProfilePopupBtn button[type=submit] {
@@ -4770,5 +4841,107 @@ a {
 }
 
 .VogProfilePopupBtn button[type=cancel]:hover {
+    background-color: #ec0000;
+}
+
+/* ------------- vog password change popup ------------- */
+
+.vogPasswordChange {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.vogPasswordChangeInnerDiv {
+    position: relative;
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.vogPasswordChangeInnerDiv table {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    /* background-color: #007bff; */
+}
+
+.vogPasswordChangeInnerDiv input {
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    padding: 5px;
+    margin-left: -10px;
+}
+
+.vogPasswordChangeInnerDiv input[type=text]:first-child {
+    border-style: none;
+}
+
+.vogPasswordChange-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.vogPasswordChange-close:hover, .vogPasswordChange-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.VogPasswordChangePopupBtn {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.VogPasswordChangePopupBtn button[type=submit] {
+    justify-self: right;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.VogPasswordChangePopupBtn button[type=submit]:hover {
+    background-color: #0069d9;
+}
+
+.VogPasswordChangePopupBtn button[type=cancel] {
+    justify-self: right;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.VogPasswordChangePopupBtn button[type=cancel]:hover {
     background-color: #ec0000;
 }

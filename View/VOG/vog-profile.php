@@ -69,16 +69,29 @@
             }
         }
     ?>
-    <script>
-        function editVogProfile(){
-            // var confirmUpdate = confirm("Are you sure you want to edit your profile?");
-            // if (confirmUpdate == true){
-                document.getElementById("UpdateVogProfile").style.display = "block";
+    <?php
 
-            // }
+    ?>
+    <script>
+        // Update profile
+        function editVogProfile(){
+            var confirmUpdate = confirm("Are you sure you want to edit your profile?");
+            if (confirmUpdate == true){
+                document.getElementById("UpdateVogProfile").style.display = "block";
+            }
         }
         function vogUpdatePopup_close(){
             document.getElementById("UpdateVogProfile").style.display = "none";
+        }
+        // Password change
+        function vogPasswordChange(){
+            var confirmUpdate = confirm("Are you sure you want to change your password?");
+            if (confirmUpdate == true){
+                document.getElementById("vogPasswordChange").style.display = "block";
+            }
+        }
+        function vogPasswordChange_close(){
+            document.getElementById("vogPasswordChange").style.display = "none";
         }
     </script>
 
@@ -94,7 +107,7 @@
                     <h3>Professional Qualifications</h3>
                     <div class="vog-profile-pq-data">
                         <table>
-                            <?php
+                            <?php   
                                 $doc_id = $_SESSION['id'];
                                 $sql2 = "SELECT * FROM doctor_pq WHERE doctor_id = '$doc_id'";
                                 $result2 = mysqli_query($con, $sql2);
@@ -147,8 +160,8 @@
             </div>
         </div>
         <div class="vog-profile-buttons">
-            <a href="#"><button class="edit" style="background:#24D4B9;" onclick="editVogProfile()">Edit Profile</button></a>
-            <a href="vog-passwordReset.php"><button class="change" style="background:#EA2727;">Change Password</button></a>
+            <button class="edit" style="background:#24D4B9;" onclick="editVogProfile()">Edit Profile</button>
+            <button class="change" style="background:#EA2727;" onclick="vogPasswordChange()">Change Password</button>
         </div>
     </div>
     <div class="UpdateVogProfile" id="UpdateVogProfile">
@@ -158,24 +171,24 @@
             <form action="" method="POST" enctype="multipart/form-data">
                 <table>
                     <tr>
-                        <td><label for='vog-id'>Doctor ID</label></td>
-                        <td><input type='text' name='vog-id' id='vog-id' value='<?php echo $doctor_id?>' readonly></td>
+                        <td><label for='vog-id' class="contactAdmin">Doctor ID</label></td>
+                        <td><input type='text' name='vog-id' id='vog-id' value='<?php echo $doctor_id?>' tabindex="-5" readonly></td>
                     </tr>
                     <tr>
-                        <td><label for='vog-name'>Name</label></td>
-                        <td><input type='text' name='vog-name' id='vog-name' value='<?php echo $doctor_name?>'></td>
+                        <td><label for='vog-name' class="contactAdmin">Name</label></td>
+                        <td><input type='text' name='vog-name' id='vog-name' value='<?php echo $doctor_name?>' readonly></td>
                     </tr>
                     <tr>
-                        <td><label for='vog-dob'>Date of Birth</label></td>
-                        <td><input type='date' name='vog-dob' id='vog-dob' value='<?php echo $doctor_dob?>'></td>
+                        <td><label for='vog-dob' class="contactAdmin">Date of Birth</label></td>
+                        <td><input type='date' name='vog-dob' id='vog-dob' value='<?php echo $doctor_dob?>' readonly></td>
                     </tr>
                     <tr>
                         <td><label for='vog-mobile'>Mobile Number</label></td>
                         <td><input type='text' name='vog-mobile' id='vog-mobile' value='<?php echo $doctor_tele?>'></td>
                     </tr>
                     <tr>
-                        <td><label for='vog-email'>Email</label></td>
-                        <td><input type='email' name='vog-email' id='vog-email' value='<?php echo $doctor_email?>'></td>
+                        <td><label for='vog-email' class="contactAdmin">Email</label></td>
+                        <td><input type='email' name='vog-email' id='vog-email' value='<?php echo $doctor_email?>' readonly></td>
                     </tr>
                     <tr>
                         <td><label for='vog-workplace'>Workplace</label></td>
@@ -191,12 +204,42 @@
                     </tr>
                 </table>
                 <div class="VogProfilePopupBtn">
+                    <label for="contactAdmin" class="contactAdminLable">Contact Admin</label>
                     <button type="cancel" name='cancel_update' id="cancel-update" onclick="vogUpdatePopup_close()">Cancel</button>
                     <button type='submit' name='vog-profile-update-btn' id='vog-profile-update-btn'>Update</button>
                 </div>
             </form>
         </div>
-
+    </div>
+    <div class="vogPasswordChange" id="vogPasswordChange">
+        <div class="vogPasswordChangeInnerDiv">
+            <span class="vogPasswordChange-close" onclick="vogPasswordChange_close()">&times;</span>
+            <h2>Change Password</h2>
+            <form action="" method="POST">
+                <table>
+                    <tr>
+                        <td><label for='vog-id'>Doctor ID</label></td>
+                        <td><input type='text' name='vog-id' id='vog-id' value='<?php echo $doctor_id?>' readonly></td>
+                    </tr>
+                    <tr>
+                        <td><label for='vog-current-password'>Current Password</label></td>
+                        <td><input type='password' name='vog-current-password' id='vog-current-password'></td>
+                    </tr>
+                    <tr>
+                        <td><label for='vog-new-password'>New Password</label></td>
+                        <td><input type='password' name='vog-new-password' id='vog-new-password'></td>
+                    </tr>
+                    <tr>
+                        <td><label for='vog-confirm-password'>Confirm Password</label></td>
+                        <td><input type='password' name='vog-confirm-password' id='vog-confirm-password'></td>
+                    </tr>
+                </table>
+                <div class="VogPasswordChangePopupBtn">
+                    <button type="cancel" name='cancel_password_change' id="cancel-password-change" onclick="vogPasswordChange_close()">Cancel</button>
+                    <button type='submit' name='vog-password-change-btn' id='vog-password-change-btn'>Change</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
