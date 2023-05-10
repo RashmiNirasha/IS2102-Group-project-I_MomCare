@@ -5168,3 +5168,53 @@ a {
 .VogPasswordChangePopupBtn button[type=cancel]:hover {
     background-color: #ec0000;
 }
+
+/* notification section  */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 7%;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    padding: 8px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dropdown-menu li {
+    padding: 8px 10px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-toggle {
+    display: inline-block;
+    font-size: 18px;
+    background-color: #fff;
+    cursor: pointer;
+    border: none;
+    
+}
+
+.dropdown-toggle:hover {
+    background-color: #f5f5f5;
+    border-radius: 10%;
+}
+
+.hide {
+    display: none;
+  }
