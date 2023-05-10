@@ -22,17 +22,18 @@
             <div class="heading">
                 <h1>PHM Instructions</h1>
                 <a href="#">
-                    <span class="material-icons">notifications</span>
+                    <span></span>
                 </a>
             </div>
 
             <?php
-                $sql = "SELECT phm_id FROM phm_instructions";
+                $sql = "SELECT distinct phm_id FROM phm_instructions WHERE mom_id = '".$_SESSION['mom_id']."'";
                 $result = mysqli_query($con, $sql);
                 
                 if (mysqli_num_rows($result) > 0) {
                     while($row = mysqli_fetch_assoc($result)) {
                         $phm_id = $row['phm_id'];
+                        // $phm_ins_id = $row['phm_ins_id'];
 
                         $sql2 = "SELECT * FROM phm_details WHERE phm_id = '$phm_id'";
                         $result2 = mysqli_query($con, $sql2);
@@ -50,7 +51,7 @@
                                     $output .= "<p> $phm_workplace </p>";
                             $output .=      '</div>
                                 <div class="app-buttons">
-                                    <a href="#">
+                                    <a href="mother-viewInstructionsList.php?phm_id='.$row['phm_id'].'">
                                         <button class="app-view">View</button>
                                     </a>
                                 </div>

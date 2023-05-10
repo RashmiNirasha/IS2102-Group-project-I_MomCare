@@ -41,13 +41,15 @@ require_once '../../Config/dbConnection.php';
             <!-- Appointment list -->
             
             <?php
-                $sql = "SELECT doc_id FROM appointment_details";
+                $sql = "SELECT doc_id, app_id FROM appointment_details";
                 $result = $con->query($sql);
 
                 // Checking if doc ids are available
                 if($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
                         $doc_id = $row['doc_id'];
+                        $app_id = $row['app_id'];
+
                         $sql = "SELECT * FROM doctor_details WHERE doc_id = '$doc_id'";
                         $result2 = $con->query($sql);
 

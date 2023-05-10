@@ -474,7 +474,8 @@ input::file-selector-button {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: -400px;
+    margin-right: 20px;
+    width: 600px;
 }
 .app-card .details h5{
     font-size: 16px;
@@ -654,4 +655,96 @@ input::file-selector-button {
 .topics-i h4{
     text-align: center;
     color: #F3F4F5;
+}
+.sub-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1000px;
+    height: 50px;
+    margin-left: 15%;
+    margin-top: 20px;
+    background: #24D4B9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+.med-ins{
+    width: fit-content;
+    height: 15px;
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 8px;
+    background: #f4f5f6;
+    border-radius: 15px;
+}
+.med-ins1{
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+.med-ins h4{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+.popup-window{
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    left: 30%;
+    top: 200px;
+    background: #029EE4;
+    border-radius: 25px;
+}
+.popup-window .popup-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.popup-window .popup-content .med-ins{
+    display: flex;
+    flex-direction: row;
+}
+.popup-content .med-ins1{
+    display: flex;
+    flex-direction: row;
+    margin-left: 380px;
+}
+.med-desc{
+    width: 550px;
+    height: 150px;
+    margin-top: 20px;
+    background: #F3F4F5;
+    border-radius: 25px;
+}
+.popup-content button{
+    position: relative;
+    width: 50px;
+    height: 15px;
+    background: none;
+    border: none;
+    outline: none;
+    float: right;
+    margin-left: 10px;
+    margin-top: 20px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #029EE4;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
