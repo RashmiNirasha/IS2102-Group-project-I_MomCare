@@ -17,6 +17,8 @@
     <script><?php include 'vog-calendar.js' ?></script>
 </head>
 <body>
+<button class="goBackBtn" onclick="history.back()">Go back</button>
+
     <div class="mainCalendarDiv">
         
         <div class="calendarLeft">

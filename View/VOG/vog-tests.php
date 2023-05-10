@@ -93,7 +93,7 @@
     <script><?php include 'vog-tests.js' ?></script>
 </head>
 <body>
-<a href="vog-motherSearch.php"><button class="goBackBtn-motherPage">Go back</button></a>
+<button class="goBackBtn-motherPage" onclick="history.back()">Go back</button>
     <div class="main-mother">
         <div class="mom-intro">
             <div>
@@ -141,46 +141,47 @@
         <div class="view-report-label"><label for="add-report">Report table</label></div>
         <div class="view-report">
             <table class="test-view-table">
-                <tr>
-                    <th>Doc. name</th>
-                    <th>Test name</th>
-                    <th>Special note</th>
-                    <th>Date</th>
-                    <th>Edit report</th>
-                    <th>View report</th>
-                    <th>Delete</th> 
-                </tr>
-                <?php
-                //Get doctor note details from the database
-                $sql = "SELECT * FROM doctor_notes WHERE mom_id = '$mom_id'";
-                $result = mysqli_query($con, $sql);
-                $resultCheck = mysqli_num_rows($result);
-                if ($resultCheck > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        //getting the doctor name from the doctor details table
-                        $docd = "SELECT doc_name FROM doctor_details WHERE doc_id = '$row[doc_id]' ";
-                        $docdresult = mysqli_query($con, $docd);
-                        $docdrow = mysqli_fetch_assoc($docdresult);
-                        $doc_name = $docdrow['doc_name'];
-                        //echoing the doctor note details
-                        echo '<tr>
-                                <td>Dr. ' . $doc_name . '</td>
-                                <td>' . $row['note_topic'] . '</td>
-                                <td>' . $row['note_description'] . '</td>
-                                <td>' . date("y-m-d") . '</td>
-                                <td><a href="./vog-tests.php?note_id=' .$row['note_id']. '&mom_id=' . $row['mom_id'] . '" onclick="return confirmUpdate(), editPopupFunction()"><input class="edit-report-btn" name="edite_report" type="button" value="Edit"></a></td>
-                                <td><a target="_blank" href="../../Assets/Images/uploads/tests/' . $row['note_records'] . '"><input class="view-report-btn" type="button" value="View"></a></td>
-                                <td><a href="vog-testRecordDelete.php?note_id=' . $row['note_id'] . '&mom_id=' . $row['mom_id'] . '&doc_id=' . $row['doc_id'] . '" onclick="return confirmDelete();"><input type="button" class="delete-report-btn" value="Delete"></a></td>
-                            </tr>'; ?>
-                <?php
+                <thead>
+                    <tr>
+                        <th>Doc. name</th>
+                        <th>Test name</th>
+                        <th>Special note</th>
+                        <th>Date</th>
+                        <th>Edit report</th>
+                        <th>View report</th>
+                        <th>Delete</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    //Get doctor note details from the database
+                    $sql = "SELECT * FROM doctor_notes WHERE mom_id = '$mom_id'";
+                    $result = mysqli_query($con, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    if ($resultCheck > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            //getting the doctor name from the doctor details table
+                            $docd = "SELECT doc_name FROM doctor_details WHERE doc_id = '$row[doc_id]' ";
+                            $docdresult = mysqli_query($con, $docd);
+                            $docdrow = mysqli_fetch_assoc($docdresult);
+                            $doc_name = $docdrow['doc_name'];
+                            //echoing the doctor note details
+                            echo '<tr>
+                                    <td>Dr. ' . $doc_name . '</td>
+                                    <td>' . $row['note_topic'] . '</td>
+                                    <td>' . $row['note_description'] . '</td>
+                                    <td>' . date("y-m-d") . '</td>
+                                    <td><a href="./vog-tests.php?note_id=' .$row['note_id']. '&mom_id=' . $row['mom_id'] . '" onclick="return confirmUpdate(), editPopupFunction()"><input class="edit-report-btn" name="edite_report" type="button" value="Edit"></a></td>
+                                    <td><a target="_blank" href="../../Assets/Images/uploads/tests/' . $row['note_records'] . '"><input class="view-report-btn" type="button" value="View"></a></td>
+                                    <td><a href="vog-testRecordDelete.php?note_id=' . $row['note_id'] . '&mom_id=' . $row['mom_id'] . '&doc_id=' . $row['doc_id'] . '" onclick="return confirmDelete();"><input type="button" class="delete-report-btn" value="Delete"></a></td>
+                                </tr>';
+                        }
+                    }else{
+                        //if no records found
+                        echo '<tr><td colspan="7">No records found!</td></tr>';
                     }
-                }else{
-                    //if no records found
-                    echo '<tr>
-                            <td colspan="7">No records found!</td>
-                        </tr>';
-                }
-                ?>
+                    ?>
+                </tbody>
             </table>
         </div>
         </div>

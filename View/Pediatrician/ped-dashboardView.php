@@ -26,6 +26,7 @@ $doc_name=$row['doc_name'];
 <div class="ped-Dashboard">
     <div class="dashboard-header">
         <h1>Welcome to the Dashboard Dr. <?php echo $doc_name ?></h1>
+        <span class="material-symbols-outlined" data-icon="notify">notifications</span>
     </div>
 </div>
 

@@ -15,9 +15,8 @@ if (isset($_SESSION['email'])){?>
     <style><?php include "../../Assets/Css/style-common.css" ?></style>
 </head>
 <body>
+<button class="goBackBtn" onclick="history.back()">Go back</button>
     <div class="main-mother">
-    <a href="vog-dashboard.php"><button class="goBackBtn">Go back</button></a>
-
         <div class="mom-filter">
             <h1>Find mother card</h1>
             <form action="" method="GET">
@@ -30,48 +29,69 @@ if (isset($_SESSION['email'])){?>
         <?php
             if (isset($_GET['submit'])) {
                 $search = $_GET['mom-search'];
-                $query = "SELECT mom_fname, mom_lname, mom_id, mom_email FROM mother_details WHERE mom_id LIKE '%$search%' OR mom_email LIKE '%$search%' OR mom_fname LIKE '%$search%' OR mom_lname LIKE '%$search%' ORDER BY mom_fname ASC";
-                $result = mysqli_query($con, $query);
-                $queryResult = mysqli_num_rows($result);
-                if ($queryResult > 0) { 
-                    while ($row = mysqli_fetch_assoc($result)) { 
-                        $mom_fname = $row['mom_fname'];
-                        $mom_lname = $row['mom_lname'];
-                        $mom_id = $row['mom_id'];
-                        $mom_email = $row['mom_email'];
-                        echo '
-                        <div class="momBarMain">
-                            <div class="momProfilePic">
-                                <img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic">
-                            </div>
-                            <div class="momBarContent">
-                                <div class="momBarHeader"><b><h7>Ms. '.$mom_fname.' '. $mom_lname.' </h7></b></div>
-                                <div class="momBarDetails">
-                                    <div class="momBarDetailsSec1">
-                                        <ul>
-                                            <li>Mother ID: '.$mom_id.' </li>
-                                            <li>Email: '.$mom_email.'</li>
-                                        </ul>
+                if (!empty($search)) {
+                    $query = "SELECT mom_fname, mom_lname, mom_id, mom_email FROM mother_details WHERE mom_id LIKE '%$search%' OR mom_email LIKE '%$search%' OR mom_fname LIKE '%$search%' OR mom_lname LIKE '%$search%' ORDER BY mom_fname ASC";
+                    $result = mysqli_query($con, $query);
+                    $queryResult = mysqli_num_rows($result);
+                    if ($queryResult > 0) { 
+                        while ($row = mysqli_fetch_assoc($result)) { 
+                            $mom_fname = $row['mom_fname'];
+                            $mom_lname = $row['mom_lname'];
+                            $mom_id = $row['mom_id'];
+                            $mom_email = $row['mom_email'];
+                            echo '
+                            <div class="momBarMain">
+                                <div class="momProfilePic">
+                                    <img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic">
+                                </div>
+                                <div class="momBarContent">
+                                    <div class="momBarHeader"><b><h7>Ms. '.$mom_fname.' '. $mom_lname.' </h7></b></div>
+                                    <div class="momBarDetails">
+                                        <div class="momBarDetailsSec1">
+                                            <ul>
+                                                <li>Mother ID: '.$mom_id.' </li>
+                                                <li>Email: '.$mom_email.'</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="momBarBtn">
-                                <a href="#"><button class="momBarBtn-1">View Profile</button></a>
-                                <a href="vog-tests.php?mom_id='.$mom_id.'"><button class="momBarBtn-2">View Reports</button></a>
-                                <a href="#"><select name="momBarChildSelect" id="momBarChildSelect">
-                                    <option value="child1">Child 1</option>
-                                    <option value="child2">Child 2</option>
-                                </select></a>
-                            </div>
-                        </div>';
-                    }
+                                <div class="momBarBtn">
+                                    <a href="#"><button class="momBarBtn-1">View Profile</button></a>
+                                    <a href="vog-tests.php?mom_id='.$mom_id.'"><button class="momBarBtn-2">View Reports</button></a>
+                                    <a href="#"><select name="momBarChildSelect" id="momBarChildSelect">
+                                        <option value="child1">Child 1</option>
+                                        <option value="child2">Child 2</option>
+                                    </select></a>
+                                </div>
+                            </div>';
+                        }
+                    }else{ ?>
+                        <p class="error_mother_search"><?php echo "There are no results matching your search!"; ?></p>
+                    <?php }
                 }else{ ?>
-                    <p class="error_mother_search"><?php echo "There are no results matching your search!"; ?></p>
+                    <p class="error_mother_search"><?php echo "Please enter a search term!"; ?></p>
                 <?php }
-            }else{
-                //echo "please enter a search term";
-            }
-            ?>
+            }else{ 
+                if (empty($search) && isset($_SESSION['recentSearches'])) {
+                    $recentSearches = $_SESSION['recentSearches'];
+                    echo '<p class="recentSearches">Recent Searches: ';
+                    foreach ($recentSearches as $recentSearch) {
+                        echo '<a href="vog-motherSearch.php?mom-search=' . $recentSearch . '">' . $recentSearch . '</a> ';
+                    }
+                    echo '</p>';
+                
+                    foreach ($recentSearches as $recentSearch) {
+                        $query = "SELECT mom_fname, mom_lname, mom_id, mom_email FROM mother_details WHERE mom_id LIKE '%$recentSearch%' OR mom_email LIKE '%$recentSearch%' OR mom_fname LIKE '%$recentSearch%' OR mom_lname LIKE '%$recentSearch%' ORDER BY mom_fname ASC";
+                        $result = mysqli_query($con, $query);
+                        $queryResult = mysqli_num_rows($result);
+                        if ($queryResult > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                            }
+                        }
+                    }
+                }
+            } 
+                ?>
         </div>
 
     </div>

@@ -94,9 +94,10 @@
             document.getElementById("vogPasswordChange").style.display = "none";
         }
     </script>
-
 </head>
+
 <body>
+<button class="goBackBtn" onclick="history.back()">Go back</button>
 <div class="vog-profile-content-mainDiv">
         <div class="vog-profile-content">
             <div class="vog-profile-content-left">

@@ -16,6 +16,7 @@
     <title>My Patients</title>
 </head>
 <body>
+<button class="goBackBtn" onclick="history.back()">Go back</button>
     <div class="myPatientsMainDiv">
         <div class="myPatientsInnerDiv">
             <div class="myPatientsHeader"><h3>My Patients</h3></div>

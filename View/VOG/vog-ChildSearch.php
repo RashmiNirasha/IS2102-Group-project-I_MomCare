@@ -11,9 +11,8 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
-
-<div class="main-mother">
-    <a href="vog-dashboard.php"><button class="goBackBtn">Go back</button></a>
+    <button class="goBackBtn" onclick="history.back()">Go back</button>
+    <div class="main-mother">
         <div class="child-filter">
             <h1>Find Child </h1>
             <form action=" " method="POST">
@@ -74,6 +73,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                 }
             ?>      
         </div>
+    </div>
 </body>
 </html>
 <?php
