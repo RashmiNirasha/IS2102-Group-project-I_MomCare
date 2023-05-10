@@ -1,4 +1,10 @@
 <?php 
+   session_start();
+    include '../../Config/dbConnection.php';
+   if (isset($_SESSION['email']))
+   {
+?>
+<?php 
 include "mother-header.php";
 ?>
 
@@ -53,40 +59,40 @@ include "mother-header.php";
           <a href="motherCardPage2.php"><h3>Mental Health</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Respiratory System</h3></a>
+          <a href="motherCardPage2.php"><h3>Respiratory System</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Breast Examination</h3></a>
+          <a href="motherCardPage2.php"><h3>Breast Examination</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Dental Care</h3></a>
+          <a href="motherCardPage2.php"><h3>Dental Care</h3></a>
         </div>
         <div class="CardTitles">
           <a href="#"><h3>Investigations</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Syphilis Screening </h3></a>
+          <a href="motherCardPage2.php"><h3>Syphilis Screening </h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Tetanus Toxoid Immunization</h3></a>
+          <a href="motherCardPage2.php"><h3>Tetanus Toxoid Immunization</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Weight Gain Chart</h3></a>
+          <a href="motherCardPage3.php"><h3>Weight Gain Chart</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Birth and emergency preparedness plan</h3></a>
+          <a href="motherCardPage3.php"><h3>Birth and emergency preparedness plan</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Attendance at antenatal classes</h3></a>
+          <a href="motherCardPage3.php"><h3>Attendance at antenatal classes</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>IEC Material</h3></a>
+          <a href="motherCardPage3.php"><h3>IEC Material</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Family Planning</h3></a>
+          <a href="motherCardPage3.php"><h3>Family Planning</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="#"><h3>Referrals</h3></a>
+          <a href="motherCardPage3.php"><h3>Referrals</h3></a>
         </div>
         <div class="CardTitles">
           <a href="#"><h3>Hospital Clinic Care</h3></a>
@@ -108,3 +114,7 @@ include "mother-header.php";
 </html>
 
 <?php //include "../../Assets/Includes/footer.php";?>
+<?php }else{
+    header("Location: ../../mainLogin.php");
+} ?>
+

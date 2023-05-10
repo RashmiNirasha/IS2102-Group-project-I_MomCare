@@ -2,13 +2,14 @@
 session_start();
 if (isset($_SESSION['email'])){
 include "../../Config/dbConnection.php";
-include "../../Assets/Includes/header_pages.php" ;
+include "../../Assets/Includes/header_pages.php";
  ?>
 <?php 
-    $sql="SELECT mom_fname FROM mother_details WHERE mom_email='".$_SESSION['email']."'";
+    $sql="SELECT mom_fname, mom_id FROM mother_details WHERE mom_email='".$_SESSION['email']."'";
     $result=mysqli_query($con,$sql);
     $row=mysqli_fetch_assoc($result);
     $mom_name=$row['mom_fname'];
+    $mom_id = $row['mom_id'];
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +37,7 @@ include "../../Assets/Includes/header_pages.php" ;
                 <div class="card-content-left"><span class="material-symbols-outlined">Timeline</span></div>
                 <div class="card-content-right"><p>Timeline</p></div>
             </button><!--gap remover
-            --><button class="card">
+            --><button class="card" onclick="window.location.href='mother-medicalInstructions.php'">
                 <div class="card-content-left"><span class="material-symbols-outlined">medical_information</span></div>
                 <div class="card-content-right"><p>Medical Instructions</p></div>
             </button>
@@ -65,7 +66,7 @@ include "../../Assets/Includes/header_pages.php" ;
         <div class="dropdown-menu" id="myDropdown" style="display: none;">
             <ul>
             <?php
-                $sql = "SELECT child_name,child_id FROM child_details WHERE mom_email='" . $_SESSION['email'] . "'";
+                $sql = "SELECT child_name,child_id FROM child_details WHERE mom_id = '$mom_id'";
                 $result = mysqli_query($con, $sql);
                 if ($result instanceof mysqli_result && mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
