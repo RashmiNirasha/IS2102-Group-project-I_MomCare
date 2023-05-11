@@ -19,30 +19,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
-fieldset {
-    margin: 20px 20px 20px 20px;
-}
-input[type="radio"],
-input[type="checkbox"] {
-    margin-right: 5px;
-}
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-input[type="text"],
-input[type="number"] {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    width: 100%;
-    box-sizing: border-box;
-}
-input[type="radio"] {
-    margin-right: 10px;
-}
 	
 .child-container-2 {
     margin-bottom: 20px;
@@ -193,7 +169,8 @@ input[type="radio"] {
       border-radius: 5px;
     }
     
-    input[type="submit"] , input[type="reset"] , #showDataBtn2 , #showDataBtn , #showDataBtn3 {
+    /* input[type="submit"] , */
+     input[type="reset"] , #showDataBtn2 , #showDataBtn , #showDataBtn3 {
       margin-top: 10px;
       margin-bottom: 0;
       padding: 10px;
@@ -317,6 +294,7 @@ input[type="radio"] {
     border-color: #029ce44f;
     width: 1%;
     white-space: nowrap;
+    
 }
 
 .MotherCardTables tr:nth-child(odd){
@@ -341,6 +319,7 @@ input[type="radio"] {
     border-width: 1px;
     border-color: #029ce44f;
     padding-bottom: 5px;
+    font-family: RobotoRegular;
 }
 
 .MotherCardTables td:nth-child(1) {
@@ -391,7 +370,7 @@ input[type="radio"] {
   }
 
   select{
-    width: 50%;
+    width: 82%;
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -521,4 +500,65 @@ transition: all 0.3s ease;
 }
 .button input[type="submit"]:hover{
 background: #5029bc;
+}
+
+.MotherCardTables input[type="text"]{
+    width: 80%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    border: 1px solid #029EE4;
+    border-radius: 3px;
+    margin-left: 0px;
+}
+.MotherCardTables input[type="date"]{
+  width: 80%;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  border: 1px solid #029EE4;
+  border-radius: 3px;
+}
+
+.MotherCardTables input[type="radio"] {
+  margin-right: 10px;
+  display: flex;
+}
+
+.MotherCardTables textarea {
+  width: 80%;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  border: 1px solid #029EE4;
+  border-radius: 3px;
+  margin-left: 0px;
+  font-family: RobotoRegular;
+}
+
+.error3{
+  width: auto;
+    background-color: rgb(13, 222, 55);
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 5px;
+    padding-left: 10px;
+}
+.small-child-btn {
+  width: 80%;
+  height: 20px;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-width: 1px;
+  background-color: #029EE4;
+  color: #f0f0f0;
+  border-color: #029EE4;
+  cursor: pointer;
+  border-style: none;
+  font-size: 12px;
 }

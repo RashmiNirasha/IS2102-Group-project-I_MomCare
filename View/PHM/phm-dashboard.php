@@ -72,7 +72,7 @@
                 </div> 
                 </a>
 
-                <a href="phm-addchildprofile.php"><div class="p-card">
+                <a href="child-addchild.php"><div class="p-card">
                 <div class="a-icon-case">
                     <i class="material-icons" alt="records">library_books</i>
                 </div>
