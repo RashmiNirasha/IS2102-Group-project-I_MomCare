@@ -42,12 +42,12 @@ include "../../Assets/Includes/header_pages.php";
                 <div class="card-content-right"><p>Medical Instructions</p></div>
             </button>
             </button><!--gap remover
-            --><button class="card">
+            --><button class="card" onclick="window.location.href='mother-calendarView.php'">
                 <div class="card-content-left"><span class="material-symbols-outlined">calendar_month</span></div>
                 <div class="card-content-right"><p>Calendar</p></div>
             </button>
             </button><!--gap remover
-            --><button class="card">
+            --><button class="card" onclick="window.location.href='mother-viewFetalGrowthCalc.php'">
                 <div class="card-content-left"><span class="material-symbols-outlined">calculate</span></div>
                 <div class="card-content-right"><p>Fetal Growth Calculator</p></div>
             </button>

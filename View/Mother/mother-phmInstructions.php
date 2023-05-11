@@ -51,7 +51,7 @@
                                     $output .= "<p> $phm_workplace </p>";
                             $output .=      '</div>
                                 <div class="app-buttons">
-                                    <a href="mother-viewInstructionsList.php?phm_id='.$row['phm_id'].'">
+                                    <a href="mother-viewPHMInstructionsList.php?phm_id='.$row['phm_id'].'">
                                         <button class="app-view">View</button>
                                     </a>
                                 </div>

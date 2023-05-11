@@ -32,6 +32,29 @@ h1{
     color: #111832;
 }
 
+/* Back Button */
+
+.goBackBtn {
+    width: 100px;
+    height: 30px;
+    margin-top: -60px;
+    border-style: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-family: RobotoRegular;
+    background-color: #029EE4;
+    cursor: pointer;
+    margin-left: 30px;
+    margin-right: 15%;
+    margin-bottom: 20px;
+    position: fixed;
+}
+
+.goBackBtn:hover {
+    background-color: #ff0000;
+
+}
+
 /* Dashboard Cards */
 
 .content .heading .material-icons{
@@ -696,7 +719,7 @@ input::file-selector-button {
 .popup-window{
     position: absolute;
     width: 600px;
-    height: 300px;
+    height: 350px;
     left: 30%;
     top: 200px;
     background: #029EE4;
@@ -729,13 +752,13 @@ input::file-selector-button {
 .popup-content button{
     position: relative;
     width: 50px;
-    height: 15px;
+    height: 20px;
     background: none;
     border: none;
     outline: none;
     float: right;
-    margin-left: 10px;
-    margin-top: 20px;
+    margin-right: -495px;
+    margin-top: 15px;
 
     font-family: 'Roboto';
     font-style: normal;
@@ -747,4 +770,16 @@ input::file-selector-button {
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+}
+.med-desc p{
+    padding: 15px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
 }
