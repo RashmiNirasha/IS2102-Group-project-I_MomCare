@@ -3694,7 +3694,7 @@ a {
   }
 
 .acc-container {
-    margin-top: 06%;
+    margin-top: 04%;
     margin-left: 24%;
     margin-right: 10%;
     margin-bottom: 5%;
@@ -3707,6 +3707,21 @@ a {
 .acc-container h2 {
     margin-top: -1.2%;
     margin-left: 5%;
+}
+
+.acc-icons {
+    margin-left: 92%;
+    margin-top: 8%;
+    margin-bottom: -10%;
+    display: grid;
+}
+
+.acc-icons .material-icons {
+    color: #029ee4;
+    font-size: 36px;
+    border: 2px solid;
+    margin-bottom: 3%;
+    width: 32%;
 }
 
 .acc-table th {
@@ -3823,6 +3838,7 @@ a {
     border-style: none;
     margin-left: 2%;
 }
+
 
 /* ------------------------ pediatrician search children view -----------------------*/
 

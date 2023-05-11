@@ -35,16 +35,19 @@ include "../../Assets/Includes/sidenavphm.php";
 <html lang="en">
 <Head>
   <Link Href="Https://Fonts.Googleapis.Com/Css?Family=Quicksand:400,700" Rel="Stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   <style><?php include "../../Assets/css/style-common.css";?></style>
 </Head>
 <body>
-
+<div class = "acc-icons"><i class="material-icons" alt="edit">edit</i>
+<i class="material-icons" alt="delete">delete</i></div>
 <div class="acc-container">
   <h2>Child Profile</h2>
   <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
                         <div class="acc-title"><h3>New Child Card </h3></div>
                         <div class="MotherGeneralDetails">
-                        <form method="POST">
+                        <form method="POST" action="../../Config/phm-addchildprofileprocess.php">
       <table class="acc-table">
         <tr>
           <th>Child ID</th> <td><div class="acc-input"><input type="text" id="child_id" name="child_id" required></div></td> </tr>
@@ -60,14 +63,14 @@ include "../../Assets/Includes/sidenavphm.php";
           <tr><th>Name of the Field Clinic</th> <td><div class="acc-input"><input type="text" id="field_clinic" name="field_clinic" required></div></td></tr>
           <tr><th>Grama Niladhari Division</th> <td><div class="acc-input"><input type="text" id="division_name" name="division_name" required></div></td></tr>
           <tr><th>Name of the Hospital Clinic</th> <td><div class="acc-input"><input type="text" id="hospital_clinic" name="hospital_clinic" required></div></td></tr>
-          <tr><th>Name of the Consultant Obstetrician</th><td><div class="acc-input"><input type="text" id="o_name" name="o_namer" required></div></td></tr>
+          <tr><th>Name of the Consultant Obstetrician</th><td><div class="acc-input"><input type="text" id="o_name" name="o_name" required></div></td></tr>
           <tr>  <th>Identified Antenatal Risks Conditions and Mobilities</th><td><div class="acc-input"><input type="text" id="risk" name="risk" required></div></td></tr>
           <tr>  <th>PHM ID</th><td><div class="acc-input"><input type="text" id="phm_id" name="phm_id" required></div></td></tr>
           <!-- <tr> <th>Doc ID</th><td><div class="acc-input"><input type="text" id="doc_id" name="doc_id" required></div></td></tr> -->
-          <tr> <th>Guardian ID</th><td><div class="acc-input"><input type="text" id="guardian_id" name="guardian_id" required></div></td></tr>
+          <!-- <tr> <th>Guardian ID</th><td><div class="acc-input"><input type="text" id="guardian_id" name="guardian_id" required></div></td></tr> -->
           <tr>  <th>Registration Number</th><td><div class="acc-input"><input type="text" id="reg_no" name="reg_no" required></div></td></tr>
           <tr>  <th>Registration Date</th><td><div class="acc-input"><input type="date" id="reg_date" name="reg_date" required></div></td></tr>
-          <tr><th>Actions</th><td><button class = "acc-btn" type="submit" name="submit" value="Submit">Submit</button></td></tr>
+          <tr><th>Actions</th><td><button class = "acc-btn" type="submit" name="submit" value="Submit">Create</button></td></tr>
         </tr>
         </table>
         </form>

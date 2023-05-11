@@ -99,10 +99,13 @@ include "../../Assets/Includes/sidenavphm.php";
 <html lang="en">
 <Head>
   <Link Href="Https://Fonts.Googleapis.Com/Css?Family=Quicksand:400,700" Rel="Stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   <style><?php include "../../Assets/css/style-common.css";?></style>
 </Head>
 <body>
-
+<div class = "acc-icons"><i class="material-icons" alt="edit">edit</i>
+<i class="material-icons" alt="delete">delete</i></div>
 <div class="acc-container">
   <h2>Immunization Chart</h2>
       <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
