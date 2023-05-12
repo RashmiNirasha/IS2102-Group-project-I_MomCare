@@ -171,7 +171,11 @@
             } else if ($_SESSION['user_role'] == 'admin') {
                 echo '<a href=""><img class="profile_pic" src="../../Assets/Images/admin/people.png" alt="profile_pic"></a>';
             } else if ($_SESSION['user_role'] == 'mother') {
-                echo '<a href="../../View/mother/mother-profileDetails.php"><img class="profile_pic" src="../../Assets/Images/mother/Profile_pic_mother.png" alt="profile_pic"></a>';
+                $mom_sql = "SELECT mom_propic FROM mother_details WHERE mom_email = '" . $_SESSION['email'] . "'";
+                $mom_result = mysqli_query($con, $mom_sql);
+                $mom_profile_pic = mysqli_fetch_array($mom_result);
+                echo '<a href="../../View/Mother/mother-profileDetails.php"><img class="profile_pic" src="'.$mom_profile_pic['mom_propic'].'" alt="profile_pic"></a>';
+                //echo '<a href="../../View/mother/mother-profileDetails.php"><img class="profile_pic" src="../../Assets/Images/mother/Profile_pic_mother.png" alt="profile_pic"></a>';
             } else {
                 //echo 'Dashboard';
             }

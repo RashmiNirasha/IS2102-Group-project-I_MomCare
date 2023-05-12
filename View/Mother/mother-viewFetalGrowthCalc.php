@@ -2,7 +2,7 @@
     session_start();
     include '../../Config/dbConnection.php';
     if(isset($_SESSION['email'])){ 
-        //include '../../Assets/Includes/header_pages.php'; 
+        include '../../Assets/Includes/header_pages.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,8 +100,8 @@
                     </form>
             </div>
             <div class="grid-2" id="result">
-                <p>Approximate Gestational Age: <?php echo $age; ?></p>
-                <p>Estimated Fetal Weight: <?php echo $weight; ?> grams </p>
+                <p><b>Approximate Gestational Age:</b> <?php echo $age; ?></p>
+                <p><b>Estimated Fetal Weight:</b> <?php echo $weight; ?> grams </p>
             </div>
         </div>
     </div>
