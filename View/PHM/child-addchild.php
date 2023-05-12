@@ -12,6 +12,8 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
 <Head>
   <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
   <style><?php include "../../Assets/css/style-child.css";?></style>
+  <script src="../../Assets/js/functions.js"></script>
+
 </Head>
 <body>
     <div class="child-container">
@@ -19,7 +21,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
         <div class="OneColumnSection">
             <div class="MotherCardTableTitles"><h3>Add New Child Profile</h3></div>
             <div class="MotherGeneralDetails">
-        <form action="childfunctions.php" method="POST">
+        <form action="../../Config/child-addchildModel.php" method="POST">
         <table class="MotherCardTables">
 
         <?php
@@ -105,7 +107,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
                 <td><input type="date" id="registration_date" name="registration_date" placeholder="Registration Date" required></td>
             </tr>
         </table>
-        <input type="submit" value="Submit">
+        <input type="submit" value="insert" name="insert">
     </form>
 </div>
 
@@ -122,7 +124,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
             $ret = mysqli_query($con, "SELECT * FROM `child_details` WHERE phm_id = '$Phm_id'");
 
             if (mysqli_num_rows($ret) > 0) {
-                echo "<tr><th>Child ID</th><th>Child Name</th><th>Birth Date</th><th>Gender</th><th>edit</th><th>delete</th></tr>";
+                echo "<tr><th>Child ID</th><th>Child Name</th><th>Birth Date</th><th>Gender</th><th>View Child Card</th><th>edit</th><th>delete</th></tr>";
                 while ($row = mysqli_fetch_assoc($ret)) {
                     $child_id = $row["child_id"];
                     $child_name = $row["child_name"];
@@ -137,10 +139,11 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
                     <td>" . $row["child_name"] . "</td>
                     <td>" . $row["birth_date"] . "</td>
                     <td>" . $row["child_gender"] . "</td>
+                    <td><a href='../../Config/child-addchildModel.php?view=" . $row['child_id'] . "'><button class='small-child-btn'>view</button></a></td>
                     <td><a href='javascript:void(0);' onclick=\"showEditForm('" . $row['child_id'] . "')\"><button class='small-child-btn'>edit</button></a></td>";
 
                     if ($canDelete) {
-                        echo "<td><a href='deletefunction.php?delete=" . $row['child_id'] . "' onclick=\"return confirm('Do you really want to delete this record?')\"><button class='small-child-btn'>delete</button></a></td>";
+                        echo "<td><a href='../../Config/child-addchildModel.php?delete=" . $row['child_id'] . "' onclick=\"return confirm('Do you really want to delete this record?')\"><button class='small-child-btn'>delete</button></a></td>";
                     } else {
                         echo "<td>Delete not allowed</td>";
                     }
@@ -148,23 +151,16 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
                     echo "</tr>";
 
                     // Display the edit form for each child
-                    echo "<tr id='editForm_".$row['child_id']."' style='display:none;'>
-                    <td colspan='6'>
-                        <form onsubmit=\"return confirm('Do you really want to edit?');\" method='POST' action='updatefunction.php'>
-                            <input type='hidden' name='child_id' value='".$row['child_id']."'>
-                            <label for='edit_child_name'>Child Name:</label>
-                            <input type='text' id='edit_child_name' name='edit_child_name' value='".$row['child_name']."'>
-                            <label for='edit_birth_date'>Birth Date:</label>
-                            <input type='date' id='edit_birth_date' name='edit_birth_date' value='".$row['birth_date']."'>
-                            <label for='edit_child_gender'>Child Gender:</label>
-                            <input type='radio' id='edit_male' name='edit_child_gender' value='M' ".($row['child_gender'] == 'M' ? 'checked' : '').">
-                            <label for='edit_male'>Male</label>
-                            <input type='radio' id='edit_female' name='edit_child_gender' value='F' ".($row['child_gender'] == 'F' ? 'checked' : '').">
-                            <input class='small-child-btn' type='submit' value='Save'>
+                    echo "<tr id='editForm_2".$row['child_id']."' style='display:none;'>
+                        <form onsubmit=\"return confirm('Do you really want to edit?');\" method='POST' action='../../Config/child-addchildModel.php'>
+                            <td><input type='hidden' name='child_id' value='".$row['child_id']."'></td>
+                            <td><input type='text' id='edit_child_name' name='edit_child_name' value='".$row['child_name']."'></td>
+                            <td><input type='date' id='edit_birth_date' name='edit_birth_date' value='".$row['birth_date']."'></td>
+                            <td><input type='radio' id='edit_male' name='edit_child_gender' value='M' ".($row['child_gender'] == 'M' ? 'checked' : '').">Male<input type='radio' id='edit_female' name='edit_child_gender' value='F' ".($row['child_gender'] == 'F' ? 'checked' : '').">Female</td>
+                            <td><input class='small-child-btn' type='submit' value='Update' name='update'></td>
                         </form>
                     </td>
                 </tr>";
-
         }
     } else {
         echo "<tr><td colspan='6'>No Child records found.</td></tr>";
@@ -173,19 +169,6 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
 </table>
 </div>
 </div>
-
-<script>
-    function showEditForm(childId) {
-        // Toggle the visibility of the edit form for the corresponding child row
-        var editForm = document.getElementById('editForm_' + childId);
-        if (editForm.style.display === 'none') {
-            editForm.style.display = 'table-row';
-        } else {
-            editForm.style.display = 'none';
-        }
-    }
-</script>
-
 
 <?php } else {
    header("Location: ../../mainLogin.php");

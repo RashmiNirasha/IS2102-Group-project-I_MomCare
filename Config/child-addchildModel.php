@@ -1,7 +1,5 @@
 <?php
-<?php
-
-include '../../Config/dbConnection.php';
+include 'dbConnection.php';
 
 function generateChildId()
 {
@@ -20,7 +18,9 @@ function childIdExists($id, $con)
     }
 }
 
-if (isset($_POST['child_name']) && isset($_POST['birth_date'])) {
+// Insert child details
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["insert"])) {
+ if (isset($_POST['child_name']) && isset($_POST['birth_date'])) {
     $child_name = $_POST['child_name'];
     $birth_date = $_POST['birth_date'];
     $child_gender = $_POST['child_gender'];
@@ -86,7 +86,7 @@ if (isset($_POST['child_name']) && isset($_POST['birth_date'])) {
 
     $result = mysqli_query($con, $sql);
     if ($result) {
-        echo "<script>alert('Child added successfully!'); window.location.href='child-addchild.php';</script>";
+        echo "<script>alert('Child added successfully!'); window.location.href='../View/PHM/child-addchild.php';</script>";
         exit(); // Stop further execution of the script
     } else {
         //display an error message not a script
@@ -99,6 +99,51 @@ if (isset($_POST['child_name']) && isset($_POST['birth_date'])) {
     }    
     
 }
+}
 
+//update function
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update"])) {
+    $child_id = $_POST['child_id'];
+    $edit_child_name = $_POST['edit_child_name'];
+    $edit_birth_date = $_POST['edit_birth_date'];
+    $edit_child_gender = $_POST['edit_child_gender'];
+
+    // Perform the update query
+    $sql = "UPDATE child_details SET child_name = '$edit_child_name', birth_date = '$edit_birth_date', child_gender = '$edit_child_gender' WHERE child_id = '$child_id'";
+    $result = mysqli_query($con, $sql);
+
+    if ($result) {
+        // Redirect back to the child profile page with a success message
+        header("Location: ../View/PHM/child-addchild.php?message=Child record updated successfully");
+        exit();
+    } else {
+        // Redirect back to the child profile page with an error message
+        header("Location: ../View/PHM/child-addchild.php?error=Failed to update child records");
+        exit();
+    }
+}
+
+
+//delete function 
+if (isset($_GET['delete']) && !empty($_GET['delete'])) {
+    $child_id = $_GET['delete'];
+
+    $query = "DELETE FROM child_details WHERE child_id = '$child_id'";
+    $result = mysqli_query($con, $query);
+
+    // Check if the deletion was successful
+    if ($result) {
+
+        header("Location: ../View/PHM/child-addchild.php?message=Child record deleted successfully");
+        exit();
+    } else {
+        // Deletion failed, redirect back to the child list page with an error message
+        header("Location: ../View/PHM/child-addchild.php?error=Failed to delete child record");
+        exit();
+    }
+
+    // Close the database connection
+    mysqli_close($con);
+}
 
 ?>

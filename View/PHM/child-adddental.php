@@ -13,17 +13,17 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
   <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
   <style><?php include "../../Assets/css/style-child.css";?></style>
   <script src="../../Assets/js/functions.js"></script>
+
 </Head>
 <body>
     <div class="child-container">
-        <h2>Nutrition Records </h2>
+        <h2>Dental Records </h2>
 
     <!-- Add a record -->
-
     <div class="OneColumnSection">
             <div class="MotherCardTableTitles"><h3>Add Records</h3></div>
             <div class="MotherGeneralDetails">
-        <form action="../../Config/child-addnutritionModel.php" method="POST">
+        <form action="../../Config/child-adddentalModel.php" method="POST">
         <table class="MotherCardTables">
         <?php
         if (isset($_GET['message'])) {
@@ -35,9 +35,9 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
         <tr>
             <th>Child ID</th>
             <th>Age</th> 
+            <th>No of Teeth</th>
+            <th>Status</th>
             <th>Date</th>
-            <th>Batch No</th>
-            <th>Record Type</th>
             <th>Actions</th>
     </tr>
     <tr> <input type="hidden" name="phm_id" value="<?php echo $Phm_id; ?>">
@@ -54,29 +54,17 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
                         }
                         ?>
                     </select></td>         
-    <td><select id="age" name="age" required>
-                        <option value="">Select age</option>
-                        <?php
-                        $ret = mysqli_query($con, "SELECT age FROM `child_cvitamin_view`");
-                        while($row = mysqli_fetch_array($ret)) {
-                        ?>
-                        <option value="<?php echo htmlentities($row['age']);?>">
-                            <?php echo htmlentities($row['age']);?>
-                        </option>
-                        <?php
-                        }
-                        ?>
-                    </select></td>   
-         <td><input type="date" id="date" name="date" class="inputDate" required></td>
-         <td><input type="text" id="batch_no" name="batch_no" required></td>
-         <td>
-            <select id="record_type" name="record_type">
+            <td><input type="text" id="age" name="age" required></td>
+            <td><input type="text" id="no_of_teeth" name="no_of_teeth" required></td>
+            <td>
+            <select id="status" name="status">
                 <option value="select">Select type</option>
-                <option value="vitaminA">Vitamin A</option>
-                <option value="Worm">Worm treatment</option>
+                <option value="healthy">Healthy </option>
+                <option value="unhealthy">Unhealthy </option>
             </select>
             </td>
-         <td><input type="submit" class="small-child-btn" value="submit"></td>
+         <td><input type="date" id="date" name="date" class="inputDate" required></td>         
+         <td><input type="submit" class="small-child-btn" name="insert" value="insert"></td>
     </tr>
     </table>
     </form>
@@ -85,7 +73,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
 
         <!-- section two  -->
     <div class="OneColumnSection">
-    <div class="MotherCardTableTitles"><h3>List of Vitamin Records</h3>
+    <div class="MotherCardTableTitles"><h3>List of Dental Records</h3>
     <input class="search" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
     </div>
     <div class="MotherGeneralDetails">
@@ -93,11 +81,11 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
             <?php
             $oneMonthAgo = date('Y-m-d', strtotime('-1 month'));
 
-            $query = "SELECT * FROM `child_cvitamin_view` WHERE `child_cvitamin_view`.phm_id = '$Phm_id' ORDER BY `child_cvitamin_view`.date DESC ";
+            $query = "SELECT * FROM `child_dental_report` WHERE `child_dental_report`.phm_id = '$Phm_id' ORDER BY `child_dental_report`.date DESC ";
             $ret = mysqli_query($con, $query);
 
             if (mysqli_num_rows($ret) > 0) {
-                echo "<tr><th id='childid'>Child ID</th><th>Age</th><th>Date</th><th>Batch no</th><th>edit</th><th>delete</th></tr>";
+                echo "<tr><th id='childid'>Child ID</th><th>Age</th><th>No of Teeth</th><th>Status</th><th>Date</th><th>edit</th><th>delete</th></tr>";
                 while ($row = mysqli_fetch_assoc($ret)) {
                     $child_id = $row["child_id"];
                     $date = $row["date"];
@@ -108,17 +96,13 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
                     echo "<tr>
                     <td id='childid'>" . $row["child_id"] . "</td>
                     <td>" . $row["age"] . "</td>
+                    <td>" . $row["no_of_teeth"] . "</td>
+                    <td>" . $row["status"] . "</td>
                     <td>" . $row["date"] . "</td>
-                    <td>" . $row["batchno"] . "</td>
                     <td><a href='javascript:void(0);' onclick=\"showEditForm('" . $row['child_id'] . "')\"><button class='small-child-btn'>edit</button></a></td>";
 
                     if ($canDelete) {
-                        echo "<td>
-                        <a href=\"javascript:void(0);\" onclick=\"deleteRecord(" . $row['id'] . ")\">
-                            <button class='small-child-btn'>Delete</button>
-                        </a>
-                      </td>";
-                
+                        echo "<td><a href='../../Config/child-adddentalModel.php?delete=" . $id . "' onclick=\"return confirm('Do you really want to delete this record?')\"><button class='small-child-btn'>delete</button></a></td>";
                     } else {
                         echo "<td>Delete not allowed</td>";
                     }
@@ -126,17 +110,17 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
                     echo "</tr>";
 
                     // Display the edit form for each child
-                    echo "<tr id='editForm_2".$row['child_id']."' style='display:none;'>
-                        <form onsubmit=\"return confirm('Do you really want to edit?');\" method='POST' action='../../Config/child-addnutritionModel.php'>   
-                        <input type='hidden' name='id' value='".$row['id']."'> 
-                           <td><input type='hidden' name='child_id' value='".$row['child_id']."'></td>
-                           <td><input type='text' id='age' name='age' value='".$row['age']."'></td>
-                            <td><input type='date' id='date' name='date' value='".$row['date']."'></td>
-                            <td><input type='text' id='batchno' name='batchno' value='".$row['batchno']."'></td>
-                            <td colspan='2'><input class='small-child-btn' type='submit' value='Update' name='update'></td>
-                        </form>
-                    </td>
-                </tr>";
+                    echo "<tr id='editForm_2" . $row['child_id'] . "' style='display:none;'>
+                    <form onsubmit=\"return confirm('Do you really want to edit?');\" method='POST' action='../../Config/child-adddentalModel.php?child_id=" . $row['child_id'] . "'>
+                    <input type='hidden' name='id' value='" . $row['id'] . "'>
+                        <td><input type='hidden' name='child_id' value='" . $row['child_id'] . "'></td>
+                        <td><input type='text' name='age' value='" . $row['age'] . "'></td>
+                        <td><input type='text' name='no_of_teeth' value='" . $row['no_of_teeth'] . "'></td>
+                        <td><input type='text' name='status' value='" . $row['status'] . "'></td>
+                        <td><input type='date' name='date' value='" . $row['date'] . "'></td>
+                        <td colspan='2'><input class='small-child-btn' type='submit' value='Update' name='update'></td>
+                    </form>
+                </tr>";                
         }
     } else {
         echo "<tr><td colspan='6'>No Child records found.</td></tr>";

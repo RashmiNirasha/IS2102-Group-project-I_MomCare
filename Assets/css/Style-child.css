@@ -185,18 +185,7 @@ body {
     input[type="submit"]:hover , input[type="reset"]:hover , #showDataBtn2:hover , #showDataBtn:hover , #showDataBtn3:hover {
       background-color: #0e106e;
     }
-#age {
-    border: 0.2rem solid #f3f2f2;
-    background-color: #fbfbfb;
-    color: #817f7f;
-    border-radius: 0.4rem;
-    width:100%;
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+
 
 /* child-cards css */
 
@@ -561,4 +550,25 @@ background: #5029bc;
   cursor: pointer;
   border-style: none;
   font-size: 12px;
+}
+.search{
+    width: 25%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    border: 1px solid #029EE4;
+    border-radius: 3px;
+    margin-left: 60%;
+    display: flex;
+    
+}
+
+.material-symbols-outlined {
+  font-size: 40px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48
 }

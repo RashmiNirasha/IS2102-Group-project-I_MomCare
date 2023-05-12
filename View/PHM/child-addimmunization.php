@@ -16,14 +16,14 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
 </Head>
 <body>
     <div class="child-container">
-        <h2>Nutrition Records </h2>
+        <h2>Vaccination Records </h2>
 
     <!-- Add a record -->
 
     <div class="OneColumnSection">
             <div class="MotherCardTableTitles"><h3>Add Records</h3></div>
             <div class="MotherGeneralDetails">
-        <form action="../../Config/child-addnutritionModel.php" method="POST">
+        <form action="../../Config/child-addimmunizationModel.php" method="POST">
         <table class="MotherCardTables">
         <?php
         if (isset($_GET['message'])) {
@@ -32,16 +32,9 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
             echo "<tr><td colspan='6'><p class='error-message'>" . $_GET['error'] . "</p></td></tr>";
         }
         ?>
-        <tr>
+        <tr><input type="hidden" name="phm_id" value="<?php echo $Phm_id; ?>">
             <th>Child ID</th>
-            <th>Age</th> 
-            <th>Date</th>
-            <th>Batch No</th>
-            <th>Record Type</th>
-            <th>Actions</th>
-    </tr>
-    <tr> <input type="hidden" name="phm_id" value="<?php echo $Phm_id; ?>">
-    <td><select id="child_id" name="child_id" required>
+            <td><select id="child_id" name="child_id" required>
                         <option value="">Select a child</option>
                         <?php
                         $ret = mysqli_query($con, "SELECT child_id FROM `child_details` WHERE phm_id = '$Phm_id'");
@@ -53,30 +46,42 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
                         <?php
                         }
                         ?>
-                    </select></td>         
-    <td><select id="age" name="age" required>
-                        <option value="">Select age</option>
+                    </select></td>     
+
+    </tr>
+    <tr> 
+        <th>Age</th>
+        <td><input type="text" id="age" name="age" required></td>
+    </tr>
+    <tr>
+        <th>Type of Vaccination</th>
+        <td><select id="vaccine" name="vaccine" required>
+                        <option value="">Select vaccine type</option>
                         <?php
-                        $ret = mysqli_query($con, "SELECT age FROM `child_cvitamin_view`");
+                        $ret = mysqli_query($con, "SELECT vaccine FROM `vaccinetypes`");
                         while($row = mysqli_fetch_array($ret)) {
                         ?>
-                        <option value="<?php echo htmlentities($row['age']);?>">
-                            <?php echo htmlentities($row['age']);?>
+                        <option value="<?php echo htmlentities($row['vaccine']);?>">
+                            <?php echo htmlentities($row['vaccine']);?>
                         </option>
                         <?php
                         }
                         ?>
-                    </select></td>   
-         <td><input type="date" id="date" name="date" class="inputDate" required></td>
-         <td><input type="text" id="batch_no" name="batch_no" required></td>
-         <td>
-            <select id="record_type" name="record_type">
-                <option value="select">Select type</option>
-                <option value="vitaminA">Vitamin A</option>
-                <option value="Worm">Worm treatment</option>
-            </select>
-            </td>
-         <td><input type="submit" class="small-child-btn" value="submit"></td>
+                    </select></td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td><input type="date" id="date" name="date" class="inputDate" required></td>
+    </tr>
+    <tr>
+        <th>Batch No</th>
+        <td><input type="text" id="batch_no" name="batch_no" required></td>
+    </tr>
+    <tr>
+        <th>Adverse Effects</th>
+        <td><textarea id="adverse_effects" name="adverse_effects" rows="4" cols="50"></textarea></td>
+    </tr>
+         <td colspan="2"><input type="submit" class="small-child-btn" value="submit"></td>
     </tr>
     </table>
     </form>
@@ -85,7 +90,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
 
         <!-- section two  -->
     <div class="OneColumnSection">
-    <div class="MotherCardTableTitles"><h3>List of Vitamin Records</h3>
+    <div class="MotherCardTableTitles"><h3>List of Vaccination Records</h3>
     <input class="search" type="search" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
     </div>
     <div class="MotherGeneralDetails">
@@ -93,32 +98,29 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
             <?php
             $oneMonthAgo = date('Y-m-d', strtotime('-1 month'));
 
-            $query = "SELECT * FROM `child_cvitamin_view` WHERE `child_cvitamin_view`.phm_id = '$Phm_id' ORDER BY `child_cvitamin_view`.date DESC ";
+            $query = "SELECT * FROM `child_immunization_table` WHERE `child_immunization_table`.phm_id = '$Phm_id' ORDER BY `child_immunization_table`.date DESC ";
             $ret = mysqli_query($con, $query);
 
             if (mysqli_num_rows($ret) > 0) {
-                echo "<tr><th id='childid'>Child ID</th><th>Age</th><th>Date</th><th>Batch no</th><th>edit</th><th>delete</th></tr>";
+                echo "<tr><th id='childid'>Child ID</th><th>Age</th><th>Type of Vaccine</th>
+                <th>Date</th><th>Batch No</th><th>Adverse Effects</th><th>edit</th><th>delete</th></tr>";
                 while ($row = mysqli_fetch_assoc($ret)) {
                     $child_id = $row["child_id"];
                     $date = $row["date"];
-                    $id = $row["id"];
                    
                     $canDelete = (strtotime($date) >= strtotime($oneMonthAgo));
 
                     echo "<tr>
                     <td id='childid'>" . $row["child_id"] . "</td>
                     <td>" . $row["age"] . "</td>
+                    <td>" . $row["type_of_vaccine"] . "</td>
                     <td>" . $row["date"] . "</td>
-                    <td>" . $row["batchno"] . "</td>
+                    <td>" . $row["batch_no"] . "</td>
+                    <td>" . $row["adverse_effects"] . "</td>
                     <td><a href='javascript:void(0);' onclick=\"showEditForm('" . $row['child_id'] . "')\"><button class='small-child-btn'>edit</button></a></td>";
 
                     if ($canDelete) {
-                        echo "<td>
-                        <a href=\"javascript:void(0);\" onclick=\"deleteRecord(" . $row['id'] . ")\">
-                            <button class='small-child-btn'>Delete</button>
-                        </a>
-                      </td>";
-                
+                        echo "<td><a href='../../Config/child-addimmunizationModel.php?delete=" . $row['child_id'] . "' onclick=\"return confirm('Do you really want to delete this record?')\"><button class='small-child-btn'>delete</button></a></td>";
                     } else {
                         echo "<td>Delete not allowed</td>";
                     }
@@ -127,13 +129,14 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
 
                     // Display the edit form for each child
                     echo "<tr id='editForm_2".$row['child_id']."' style='display:none;'>
-                        <form onsubmit=\"return confirm('Do you really want to edit?');\" method='POST' action='../../Config/child-addnutritionModel.php'>   
-                        <input type='hidden' name='id' value='".$row['id']."'> 
+                        <form onsubmit=\"return confirm('Do you really want to edit?');\" method='POST' action='../../Config/child-addimmunizationModel.php'>    
                            <td><input type='hidden' name='child_id' value='".$row['child_id']."'></td>
-                           <td><input type='text' id='age' name='age' value='".$row['age']."'></td>
-                            <td><input type='date' id='date' name='date' value='".$row['date']."'></td>
-                            <td><input type='text' id='batchno' name='batchno' value='".$row['batchno']."'></td>
-                            <td colspan='2'><input class='small-child-btn' type='submit' value='Update' name='update'></td>
+                            <td><input type='text' id='edit_child_name' name='edit_child_name' value='".$row['age']."'></td>
+                           <td><input type='text' id='edit_child_name' name='edit_child_name' value='".$row['type_of_vaccine']."'></td>
+                           <td><input type='date' id='edit_birth_date' name='edit_birth_date' value='".$row['date']."'></td>
+                           <td><input type='text' id='edit_child_name' name='edit_child_name' value='".$row['batch_no']."'></td>
+                           <td><input type='text' id='edit_child_name' name='edit_child_name' value='".$row['adverse_effects']."'></td>
+                           <td colspan='2'><input class='small-child-btn' type='submit' value='Update' name='update'></td>
                         </form>
                     </td>
                 </tr>";

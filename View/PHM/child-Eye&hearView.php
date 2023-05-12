@@ -1,65 +1,66 @@
 <?php 
 session_start();
-include "../../Assets/Includes/header_pages.php";
-// include '../../Config/dbConnection.php';
-include "../../Assets/Includes/sidenavphm.php";
-
-// if (isset($_POST['submit'])) {
-//   insertChildInfo($_POST);
-// }
-
-// function insertChildInfo($data)
-// {
-//   global $con;
-//   $child_id = $data['child_id'];
-//   $child_name = $data['child_name'];
-//   $child_gender = $data['child_gender'];
-//   $phm_id = $data['phm_id'];
-//   $doc_id = $data['doc_id'];
-//   $guardian_id = $data['guardian_id'];
-//   $mom_email = $data['mom_email'];
-//   $mom_id = $data['mom_id'];
-//   $date_of_birth = $data['date_of_birth'];
-
-//   $sql = "INSERT INTO child_details (child_id, child_name, child_gender, phm_id, doc_id, guardian_id, mom_email, mom_id, date_of_birth) 
-//           VALUES ('$child_id','$child_name','$child_gender', '$phm_id', '$doc_id', '$guardian_id', '$mom_email', '$mom_id', '$date_of_birth')";
-
-//   if (mysqli_query($con, $sql)) {
-//     header("Location: child-cardMenuView.php?success=1");
-//   } else {
-//     echo "Error: " . $sql . "<br>" . mysqli_error($con);
-//   }
-// }
+if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) { 
+    include '../../Config/dbConnection.php';
+    include "../../Assets/Includes/header_pages.php";
+    include "../../Assets/Includes/sidenav2.php";
+    $Phm_id = $_SESSION['user_id'];
 ?>
-<!DOCTYPE html>
+
 <html lang="en">
 <Head>
-  <Link Href="Https://Fonts.Googleapis.Com/Css?Family=Quicksand:400,700" Rel="Stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-  <style><?php include "../../Assets/css/style-common.css";?></style>
+  <style><?php include "../../Assets/css/style-child.css";?></style>
+  <script src="../../Assets/js/functions.js"></script>
 </Head>
 <body>
-<div class = "acc-icons"><i class="material-icons" alt="edit">edit</i>
-<i class="material-icons" alt="delete">delete</i></div>
-<div class="acc-container">
-  <h2>Eyesight & Hearing Test</h2>
-  <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
-                        <div class="acc-title"><h3>Eyesight Test</h3></div>
-                        <div class="MotherGeneralDetails">
-                        <form method="POST">
-      <table class="acc-table">
-        <tr>
-          <th>Child ID</th> <td><div class="acc-input"><input type="text" id="child_id" name="child_id" required></div></td> </tr>
-          <tr><th>Age</th> <td><div class="acc-input"><select required>
+
+<div class="child-container">
+    <h2>Eyesight & Hearing Test </h2>
+    
+<!-- Add a record -->
+<div class="OneColumnSection">
+            <div class="MotherCardTableTitles"><h3>Eyesight Test</h3></div>
+            <div class="MotherGeneralDetails">
+        <form action="../../Config/child-Eye&hearViewModel.php" method="POST">
+        <table class="MotherCardTables">
+        <?php
+        if (isset($_GET['message'])) {
+            echo "<tr><td colspan='6'><p class='error3'>" . $_GET['message'] . "</p></td></tr>";
+        } elseif (isset($_GET['error'])) {
+            echo "<tr><td colspan='6'><p class='error-message'>" . $_GET['error'] . "</p></td></tr>";
+        }
+        ?>
+        <tr><input type="hidden" name="phm_id" value="<?php echo $Phm_id; ?>">
+            <th>Child ID</th>
+            <td><select id="child_id" name="child_id" required>
+                        <option value="">Select a child</option>
+                        <?php
+                        $ret = mysqli_query($con, "SELECT child_id FROM `child_details` WHERE phm_id = '$Phm_id'");
+                        while($row = mysqli_fetch_array($ret)) {
+                        ?>
+                        <option value="<?php echo htmlentities($row['child_id']);?>">
+                            <?php echo htmlentities($row['child_id']);?>
+                        </option>
+                        <?php
+                        }
+                        ?>
+                    </select></td>     
+
+    </tr>
+    <tr> 
+        <th>Age</th>
+        <td><select required>
                                                           <option value="age1">1st month after birth</option>
                                                           <option value="age2">2nd month after birth</option>
                                                           <option value="age3">6th month after birth</option>
                                                           <option value="age4">10th month after birth</option>
                                                           <option value="age5">12th month after birth</option>
                                                           <option value="" selected>Choose an option to proceed</option>
-                                                      </select></div></td></tr>
-          <tr> <th>Test</th><td><div class="acc-input"><select required>
+                                                      </select></td>
+    </tr>
+    <tr>
+        <th>Test</th>
+        <td><select required>
                                                           <option value="test1">light_direction</option>
                                                           <option value="test2">looks_at_face</option>
                                                           <option value="test3">smiles_responsively</option>
@@ -71,30 +72,56 @@ include "../../Assets/Includes/sidenavphm.php";
                                                           <option value="test9">reach_out_various_things</option>
                                                           <option value="test10">recognize_acquaintance</option>
                                                           <option value="" selected>Choose an option to proceed</option>
-                                                      </select></div></td></tr>
-          <tr> <th>Response</th><td><div class="acc-input"><select required>
+                                                      </select></td>
+    <tr>
+        <th>Response</th>
+        <td><select required>
                                                           <option value="response1">yes</option>
                                                           <option value="response2">no</option>
                                                           <option value="" selected>Choose an option to proceed</option>
-                                                      </select></div></td></tr>
-          <tr><th>Actions</th><td><button class = "acc-btn" type="submit" name="submit" value="Submit">Submit</button></td></tr>
-        </tr>
-        </table>
-        </form>
-                        </div>
-                    </div>
-</div>
-<div class = "acc-icons"><i class="material-icons" alt="edit">edit</i>
-<i class="material-icons" alt="delete">delete</i></div>
-<div class="acc-container">
-                    <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
-                        <div class="acc-title"><h3>Hearing Test</h3></div>
-                        <div class="MotherGeneralDetails">
-                        <form method="POST">
-      <table class="acc-table">
-        <tr>
-          <th>Child ID</th> <td><div class="acc-input"><input type="text" id="child_id" name="child_id" required></div></td> </tr>
-          <tr><th>Age</th> <td><div class="acc-input"><select required>
+                                                      </select></td>
+    </tr>
+    <tr>
+         <td colspan="2"><input type="submit" class="small-child-btn" value="submit" name="insert"></td>
+    </tr>
+    </table>
+    </form>
+    </div>
+    </div>
+
+    <!-- section two  -->
+    <div class="OneColumnSection">
+            <div class="MotherCardTableTitles"><h3>Hearing Test</h3></div>
+            <div class="MotherGeneralDetails">
+        <form action="../../Config/child-Eye&hearViewModel.php" method="POST">
+        <table class="MotherCardTables">
+        <?php
+        if (isset($_GET['message'])) {
+            echo "<tr><td colspan='6'><p class='error3'>" . $_GET['message'] . "</p></td></tr>";
+        } elseif (isset($_GET['error'])) {
+            echo "<tr><td colspan='6'><p class='error-message'>" . $_GET['error'] . "</p></td></tr>";
+        }
+        ?>
+        <tr><input type="hidden" name="phm_id" value="<?php echo $Phm_id; ?>">
+            <th>Child ID</th>
+            <td><select id="child_id" name="child_id" required>
+                        <option value="">Select a child</option>
+                        <?php
+                        $ret = mysqli_query($con, "SELECT child_id FROM `child_details` WHERE phm_id = '$Phm_id'");
+                        while($row = mysqli_fetch_array($ret)) {
+                        ?>
+                        <option value="<?php echo htmlentities($row['child_id']);?>">
+                            <?php echo htmlentities($row['child_id']);?>
+                        </option>
+                        <?php
+                        }
+                        ?>
+                    </select></td>     
+
+    </tr>
+    <tr> 
+        <th>Age</th>
+        <td><select required>
                                                           <option value="age6">Shortly after birth</option>
                                                           <option value="age7">1st month after birth</option>
                                                           <option value="age8">From month 4</option>
@@ -103,8 +130,11 @@ include "../../Assets/Includes/sidenavphm.php";
                                                           <option value="age11">By the 12th month</option>
                                                           <option value="age12">12th month after birth</option>
                                                           <option value="" selected>Choose an option to proceed</option>
-                                                      </select></div></td></tr>
-          <tr> <th>Test</th><td><div class="acc-input"><select required>
+                                                      </select></td>
+    </tr>
+    <tr>
+        <th>Test</th>
+        <td><select required>
                                                           <option value="test11">startle_and_blink</option>
                                                           <option value="test12">recognize_persistent_sounds</option>
                                                           <option value="test13">silent_when_hearing_sound</option>
@@ -117,18 +147,30 @@ include "../../Assets/Includes/sidenavphm.php";
                                                           <option value="test20">respond_to_words</option>
                                                           <option value="test21">pick_up_objects</option>
                                                           <option value="" selected>Choose an option to proceed</option>
-                                                      </select></div></td></tr>
-          <tr> <th>Respose</th><td><div class="acc-input"><select required>
+                                                      </select></td>
+    <tr>
+        <th>Response</th>
+        <td><select required>
                                                           <option value="response1">yes</option>
                                                           <option value="response2">no</option>
                                                           <option value="" selected>Choose an option to proceed</option>
-                                                      </select></div></td></tr>
-          <tr><th>Actions</th><td><button class = "acc-btn" type="submit" name="submit" value="Submit">Submit</button></td></tr>
-        </tr>
-        </table>
-        </form>
-                        </div>
+                                                      </select></td>
+    </tr>
+    <tr>
+         <td colspan="2"><input type="submit" class="small-child-btn" value="submit" name="insert2"></td>
+    </tr>
+    </table>
+    </form>
+    </div>
+    </div>
+
+    <!-- section three  -->
+
   </body>
 </html>
 
-
+<?php } else {
+   header("Location: ../../mainLogin.php");
+    exit();
+}
+?>

@@ -19,4 +19,5 @@
         "records" => $row['note_records']
     );
     echo json_encode($noteDetails);
+    
 ?>
