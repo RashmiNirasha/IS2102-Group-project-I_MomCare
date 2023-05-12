@@ -9,7 +9,7 @@ ob_start();
 include '../../Config/dbConnection.php';
 
 // Prepare the query
-$query = "SELECT DATE(start) as date, COUNT(*) as count FROM mom_appointments WHERE doc_id = '" . $_GET['doc_id'] . "' GROUP BY DATE(start)";
+$query = "SELECT DATE(start) as date, COUNT(*) as count FROM mom_appointments WHERE mom_id = '" . $_GET['mom_id'] . "' GROUP BY DATE(start)";
 
 // Execute the query
 $result = mysqli_query($con, $query);

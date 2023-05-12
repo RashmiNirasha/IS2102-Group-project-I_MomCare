@@ -18,9 +18,7 @@
 </head>
 <body>
 <button class="goBackBtn" onclick="history.back()">Go back</button>
-
     <div class="mainCalendarDiv">
-        
         <div class="calendarLeft">
             <div id='calendar'></div> 
         </div>
@@ -28,22 +26,25 @@
             <div class="calendarRightHeader">
                 <h1>Appointments</h1>
             </div>
-            <div class="calendarRightContent">
+            <div class="calendarRightContent-2">
                 <?php
-                    $clickedDate = isset($_GET['date']) ? $_GET['date'] : '';
-                    $mom_id = $_SESSION['id'];
-                    $query = "SELECT * FROM appointments a INNER JOIN mom m ON a.mom_id = m.mom_id WHERE a.mom_id = '$mom_id'";
+                $clickedDate = isset($_GET['date']) ? $_GET['date'] : '';
+                $mom_id = $_SESSION['id'];
+                $query = "SELECT ma.*, md.mom_fname, md.mom_lname, md.mom_age
+                        FROM mom_appointments ma
+                        JOIN mother_details md ON ma.mom_id = md.mom_id
+                        WHERE ma.mom_id = '$mom_id'";
 
                     if ($clickedDate !== '') {
-                        $query .= " AND ma.app_date = '$clickedDate'";
+                        $query .= " AND ma.start = '$clickedDate'";
                     }
                     $result = mysqli_query($con, $query);
                     while ($row = mysqli_fetch_assoc($result)) {
                         $mom_id = $row['mom_id'];
                         $app_id = $row['app_id'];
-                        $title = $row['topic'];
-                        $start = $row['app_date'];
-                        $location = $row['app_location'];
+                        $title = $row['title'];
+                        $start = $row['start'];
+                        $location = $row['location'];
                         $mom_fname = $row['mom_fname'];
                         $mom_lname = $row['mom_lname'];
                         $mom_age = $row['mom_age'];
@@ -77,22 +78,87 @@
                     }
                     ?>
             </div>
+            <div class="mom-addAppointments">
+                <input type="button" value="Add Appointment" onclick="addAppPopupFunction()">
+            </div>
         </div>
     </div>
     <div id="appViewPopup" class="appViewPopup">
-    <div class="appViewPopup-content">
-        <span class="appViewPopup-close">&times;</span>
-        <div class="app-profileImage"><img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic"></div>
-        <div id="appointmentDetails"></div>
-        <div class="app-viewMotherCard">
-            <input type="button" value="Mother Card" onclick="">
-            <input type="button" value="Reports" onclick="">
-            <input type="button" value="Children" onclick="">
+        <div class="appViewPopup-content">
+            <span class="appViewPopup-close">&times;</span>
+            <div class="app-profileImage"><img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic"></div>
+            <div id="appointmentDetails"></div>
+            <div class="app-viewMotherCard">
+                <input type="button" value="Mother Card" onclick="">
+                <input type="button" value="Reports" onclick="">
+                <input type="button" value="Children" onclick="">
+            </div>
         </div>
     </div>
+    <div class="appAddPopup" id="appAddPopup">
+        <div class="appAddPopup-content">
+            <span class="appViewPopup-close" onclick="closePopup()">&times;</span>
+            <div class="appAddPopup-header">
+                <h1>Add Appointment</h1>
+            </div>
+            <div class="appAdd-form">
+                <div>
+                    <form action="" method="GET">
+                        <table>
+                            <tr>
+                                <td><label for="toc_type_selection">Who do you want to channel?</label></td>
+                                <td>
+                                    <input type="radio" name="doc_type" id="VOG" value="vog" onchange="updateDocName()">
+                                    <label for="VOG">VOG</label>
+                                    <input type="radio" name="doc_type" id="Pediatrician" value="ped" onchange="updateDocName()">
+                                    <label for="Pediatrician">Pediatrician</label>
+                                    <input type="radio" name="doc_type" id="PHM" value="phm" onchange="updateDocName()">
+                                    <label for="PHM">PHM</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="docName">Select a Doctor</label></td>
+                                <td>
+                                    <select name="docName" id="docName" name="id">
+                                        <option value="" disabled selected>Select a Professional</option>
+                                    </select>   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="appDate">Date</label></td>
+                                <td><input type="date" name="appDate" id="appDate"></td>
+                            </tr>
+                        </table>
+                        <div class="docTypeSubmit">
+                            <input type="button" value="Cancel" onclick="closePopup()">
+                            <input type="submit" name="SubmitApp" value="Submit">
+                        </div>
+                    </form>
+                    <?php
+    include '../../Config/dbConnection.php';
+    if (isset($_GET['SubmitApp'])) {
+                            $doc_id = $_GET['docName'];
+                            $date = $_GET['appDate'];
+                            $user_role = $_GET['doc_type'];
+                            $mom_id = $_SESSION['id'];
+
+                            switch ($user_role) {
+                                case 'vog':
+                                case 'ped':
+                                    $query = "INSERT INTO mom_appointments (mom_id, doc_id, start) VALUES ('$mom_id', '$doc_id', '$date')";
+                                    $result = mysqli_query($con, $query);
+                                    break;
+                                case 'phm':
+                                    $query = "INSERT INTO mom_appointments (mom_id, phm_id, start, title, location) VALUES ('$mom_id', '$doc_id', '$date', '$user_role', 'Home')";
+                                    $result = mysqli_query($con, $query);
+                                    break;
+                            }
+                        } 
+                    ?>
+                </div>
+            </div>
+        </div>
     </div>
-
-
 </body>
 </html>
 <?php 

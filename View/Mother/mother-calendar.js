@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         right: "dayGridMonth,timeGridWeek,timeGridDay",
       },
       events: {
-        url: 'mother-calendarView.php?mom_id=<?php echo $_GET["mom_id"];?>',
+        url: 'mother-getAppointmentDetails.php?mom_id=<?php echo $_SESSION["id"];?>',
         method: 'POST',
         format: 'json',
         failure: function() {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function getAppointments(date) {
       const xhr = new XMLHttpRequest();
-      const mom_id = '<?php echo $_GET["mom_id"]; ?>';
+      const mom_id = '<?php echo $_SESSION["id"]; ?>';
       xhr.open('GET', 'mother-calendarView.php?date=' + date + '&mom_id=' + mom_id, true);
       xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     calendar.render();
     });
   
-    //popup function-------------------
+    //view popup function-------------------
   
     function appViewPopupFunction(appointmentDetails) {
       document.getElementById("appointmentDetails").innerHTML = appointmentDetails;
@@ -104,6 +104,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
   });
+
+  //ADD APPOINTMENT POPUP FUNCTION
+
+  function addAppPopupFunction() {
+    var popup = document.getElementById("appAddPopup");
+    popup.style.display = "block";
+}
+
+function closePopup() {
+  var popup = document.getElementById("appAddPopup");
+  popup.style.display = "none";
+}
+
+
+function updateDocName() {
+    const docType = document.querySelector('input[name="doc_type"]:checked').value;
+    const docNameSelect = document.querySelector('#docName');
+
+    fetch('mother-getDoctor.php?doc_type=' + docType)
+    .then(response => response.json())
+        .then(data => {
+            docNameSelect.innerHTML = '';
+            data.forEach(item => {
+                const option = document.createElement('option');
+                option.value = item.id;
+                option.textContent = item.name;
+                docNameSelect.appendChild(option);
+                console.log(item);
+            });
+        });
+}
+
   
   
     

@@ -17,11 +17,7 @@
     <script><?php include 'ped-calendar.js' ?></script>
 </head>
 <body>
-
-<div class="top-button" >
-<a href="ped-dashboardView.php"><button class="goBackBtn">Go back</button></a>
-</div>
-
+<button class="goBackBtn" onclick="history.back()">Go back</button>
     <div class="mainCalendarDiv">
         <div class="calendarLeft">
             <div id='calendar'></div> 

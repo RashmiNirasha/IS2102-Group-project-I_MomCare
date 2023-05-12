@@ -32,28 +32,6 @@ h1{
     color: #111832;
 }
 
-/* Back Button */
-
-.goBackBtn {
-    width: 100px;
-    height: 30px;
-    margin-top: 100px;
-    border-style: none;
-    border-radius: 25px;
-    color: #ffffff;
-    background-color: #029EE4;
-    cursor: pointer;
-    margin-left: 30px;
-    margin-right: 15%;
-    margin-bottom: 20px;
-    position: fixed;
-}
-
-.goBackBtn:hover {
-    background-color: #ff0000;
-
-}
-
 /* Dashboard Cards */
 
 .content .heading .material-icons{
