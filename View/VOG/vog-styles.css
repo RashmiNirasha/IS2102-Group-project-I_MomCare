@@ -1,0 +1,336 @@
+:root{
+    --primary-color: #ffffff
+    --primary-background-color: #029ce4;
+}
+
+
+.goBackBtn:hover {
+    background-color: #ff0000;
+
+}
+
+.goBackBtn {
+    width: 100px;
+    height: 30px;
+    border-style: none;
+    border-radius: 25px;
+    color: #ffffff;
+    background-color: #029EE4;
+    cursor: pointer;
+    top: 100px;
+    left: 30px;
+    position: fixed;
+}
+
+.mainInnerContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 120px 15% 30px 15%;
+    height: 550px;
+    border-radius: 10px;
+    padding: 10px;
+    border-top: #029ce4 5px solid;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    /* background-color: #029ce4; */
+}
+
+.instructionForm {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    /* background-color: burlywood; */
+}
+
+.AddInstructionHeader h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    /* background-color: #029ce4; */
+}
+
+.AddInstructionBody {
+    /* background-color: chocolate; */
+}
+
+.AddInstructionBody table {
+    width: 100%;
+    border-collapse: collapse;
+    /* background-color: #5ce402; */
+}
+
+.AddInstructionBody table td {
+    padding-bottom: 10px;
+
+}
+
+.AddInstructionBody table td:first-child {
+    padding-left: 10px;
+}
+
+.AddInstructionBody table select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.AddInstructionBody table input[type=text] {
+    width: calc(100% - 11px);
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.AddInstructionBody textarea {
+    width: calc(100% - 11px);
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.AddInstructionBtn button {
+    float: right;
+    background-color: #029ce4;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.AddInstructionBtn button:hover {
+    background-color: #f1f1f1;
+    border: #029ce4 1px solid;
+    color: black;
+}
+
+.AddInstructionBody button:hover {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.innerContainerLeft {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px;
+    /* background-color: #029ce4; */
+}
+
+.innerContainerRight {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 20px;
+    /* background-color: #029ce4; */
+}
+
+.instructionTable{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 100%;
+
+    /* background-color: #029ce4; */
+}
+
+
+#required:after {
+    content: "*";
+    color: red;
+}
+
+.instructionBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #e9e6e6;
+    border-style: solid;
+    border-color: #f2f2f2;
+    border-width: 1px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.instructionBar:hover {
+    background-color: #029ce41f;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #029ce449;
+}
+
+.barContentMain {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 70px);
+    /* background-color: rgb(63, 0, 121); */
+}
+
+.InstructionImgDiv {
+    /* background-color: tomato; */
+    height: 50px;
+    width: 70px;
+
+}
+
+.InstructionImgDiv img{
+    position: absolute;
+    height: 43px;
+    width: 43px;
+    margin: 5px;
+    border-radius: 50px;
+}
+
+.contentHeader {
+    /* background-color: burlywood; */
+}
+
+.contentHeader h3 {
+    margin: 0px;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    
+}
+
+.barContentInner {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* background-color: rgb(255, 96, 157); */
+}
+
+.barContentMetaSec1 {
+    display: flex;
+    width: 40%;
+    font-size: 10px;
+    margin: 0px;
+    /* background-color: #029ce4; */
+}
+
+.barContentMetaSec1 ul, .barContentMetaSec2 ul  {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 5px;
+    padding-top: 1px;
+    padding-bottom: 5px;
+}
+
+.barContentMetaSec2 {
+    display: flex;
+justify-self: flex-end;
+    flex-direction: column;
+    width: 40%;
+    font-size: 10px;
+    /* background-color: #029ce4; */
+}
+
+/* ----------------------- add instruction popup ---------- */
+
+.instructionBarPopup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.instructionBarPopup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+    border-top: #029ce4 solid 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.instructionBarPopup-body {
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+}
+
+.instructionBarPopup-body h3{
+    margin: 0px;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.instructionBarPopup-body p {
+    margin: 0px;
+    width: 100%;
+    background-color: #f2f2f2;
+    border: #ccc solid 1px;
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.instructionBarPopup-body ul {
+    list-style-type: none;
+    margin: 0;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 20px;
+    padding-top: 1px;
+    padding-bottom: 5px;
+}
+
+.instructionBarPopup-body div{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;    
+}
+
+.instructionBarPopup-close {
+    margin-top: -15px;
+    float: right;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.instructionBarPopup-close:hover,
+.instructionBarPopup-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.instructionBarPopup-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.instructionBarPopup-footer button {
+    background-color: #029ce4;
+    color: white;
+    padding: 8px 18px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.instructionBarPopup-footer button:hover {
+    background-color: #1b9bff;
+}

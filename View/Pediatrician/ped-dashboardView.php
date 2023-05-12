@@ -2,7 +2,7 @@
 session_start();
 
 include "../../Config/dbConnection.php";
-if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) { 
+if (isset($_SESSION['email']) && isset($_SESSION['id'])) { 
     include "../../Assets/Includes/header_pages.php";
     ?>
 
