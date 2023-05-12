@@ -1,8 +1,8 @@
 <?php 
-include('mother-header.php');
-require_once '../../Config/dbConnection.php';
     session_start();
-    if (isset($_SESSION['mom_id'])){
+    include '../../Config/dbConnection.php';
+    if(isset($_SESSION['email']) and isset($_SESSION['id'])){ 
+        include '../../Assets/Includes/header_pages.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -80,45 +80,30 @@ require_once '../../Config/dbConnection.php';
                     }
                 }
 
-                // $output =  ' <div class="app-card">
-                //                     <div class="dr-pro-pic">
-                //                         <img src="../../Assets/Images/download.png" alt="">
-                //                     </div>
-                //                     <div class="details">';
-                //                     $output .= "<h5> $doc_name </h5><br>";
-                //                     $output .= "<p>MBBS $doc_workplace </p>";
-                //             $output .=      '</div>
-                //                     <div class="app-buttons">
-                //                         <a href="mother-viewAppointments.php">
-                //                             <button class="app-view">View</button>
-                //                         </a>
-                //                         <a href="http://">
-                //                             <button class="app-delete">Delete</button>
-                //                         </a>
-                //                     </div>
-                //                 </div> ';
-                //             echo "$output";
+                $output =  ' <div class="app-card">
+                                    <div class="dr-pro-pic">
+                                        <img src="../../Assets/Images/download.png" alt="">
+                                    </div>
+                                    <div class="details">';
+                                    $output .= "<h5> $doc_name </h5><br>";
+                                    $output .= "<p>MBBS $doc_workplace </p>";
+                            $output .=      '</div>
+                                    <div class="app-buttons">
+                                        <a href="mother-viewAppointments.php">
+                                            <button class="app-view">View</button>
+                                        </a>
+                                        <a href="http://">
+                                            <button class="app-delete">Delete</button>
+                                        </a>
+                                    </div>
+                                </div> ';
+                            echo "$output";
             ?>
-        </div>
-
-        <!-- Logout -->
-        <div class="logout">
-            <span></span>
-            <a href="../../Config/logout.php">
-                <button>
-                    <div class="logout-btn-items">
-                        <span class="material-icons-outlined">logout</span>
-                        <h4>Logout</h4>
-                    </div>
-                </button>
-            </a>   
         </div>
     </div>
 </body>
 </html>
-<?php
-    }
-    else{
-        header("Location: ../../index.php");
-    }
+<?php } else {
+    header("Location: ../../mainLogin.php");
+    exit();}
 ?>

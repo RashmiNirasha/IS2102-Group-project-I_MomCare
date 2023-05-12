@@ -41,6 +41,10 @@ $doc_id=$row['doc_id'];
         --><button class="card" onclick="window.location.href='vog-myPatients.php'">
                 <div class="card-content-left"><span class="material-symbols-outlined">patient_list</span></div>
                 <div class="card-content-right"><p>My Patients</p></div>
+            </button><!-- gap remover 
+        --><button class="card" onclick="window.location.href='vog-addInstructions.php'">
+                <div class="card-content-left"><span class="material-symbols-outlined">feed</span></div>
+                <div class="card-content-right"><p>Add Instructions</p></div>
             </button>
         </div> 
     </div>

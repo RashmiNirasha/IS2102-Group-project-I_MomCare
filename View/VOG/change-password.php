@@ -27,6 +27,7 @@ if (isset($_POST['current_password']) && isset($_POST['new_password']) && isset(
             }else if($_SESSION['ped']){
                 header("location: ../../View/pediatritian/ped-profile.php?passwordchanged=1");
             }
+
         } else {
             echo "Error changing password: " . mysqli_error($con);
         }

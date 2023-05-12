@@ -22,16 +22,32 @@
     <!-- <link rel="stylesheet" href="../../Assets/css/mother-stylesheet.css"> -->
     <style><?php include "../../Assets/css/style-common.css" ?></style>
 
+    <script>
+        // Update profile
+        function editMotherProfile(){
+            var confirmUpdate = confirm("Are you sure you want to edit your profile?");
+            if (confirmUpdate == true){
+                document.getElementById("UpdateMotherProfile").style.display = "block";
+            }
+        }
+        function momUpdatePopup_close(){
+            document.getElementById("UpdateMotherProfile").style.display = "none";
+        }
+        // Password change
+        
+
+    </script>
 </head>
 <body>
     <?php 
-    include('mother-header.php');
+    //include('mother-header.php');
     ?>
     <div class="profile-content-mainDiv">
+    <button class="goBackBtn" onclick="history.back()">Go back</button>
         <div class="profile-content">
             <div class="profile-content-innerDiv">
                 <div class="profile-pic">
-                    <img src="../../Assets/Images/mother/Profile pic_mom.png" alt="Profile pic_mom">
+                    <img src="<?php  echo $mother_propic?>" alt="Profile pic_mom">
                     <div class="profile-child-data">
                         <hr>
                         <h3>Children Details</h3>
@@ -100,9 +116,66 @@
             </div>
         </div>
         <div class="profile-buttons">
-            <a href="mother-profileUpdate.php"><button class="edit" style="background:#24D4B9;">Edit Profile</button></a>
+            <button class="edit" style="background:#24D4B9;" onclick="editMotherProfile()">Edit Profile</button>
             <a href="mother-passwordReset.php"><button class="change" style="background:#EA2727;">Change Password</button></a>
             <a href="mother-card.php"><button class="view" style="background:#029EE4;">View Mother Card</button></a>
+        </div>
+    </div>
+
+    <div class="UpdateMotherProfile" id="UpdateMotherProfile" style="display:none;">
+        <div class="updateProfileInnerDiv">
+            <span class="momUpdatePopup-close" onclick="momUpdatePopup_close()">&times;</span>
+            <h2>Update Profile</h2>
+            <form action="" method="POST" enctype="multipart/form-data">
+                <table>
+                    <tr>
+                        <td><label for='mom_id' class="contactAdmin">Mother ID</label></td>
+                        <td><input type='text' name='mom_id' id='mom_id' value="<?php  echo $mother_id?>" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><label for='mom_fullname' class="contactAdmin">Name</label></td>
+                        <td><input type='text' name='mom_fullname' id='mom_fullname' value="<?php  echo $mother_fname. " " .$mother_mname. " " .$mother_lname ;?>" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><label for='mom_dob' class="contactAdmin">Date of Birth</label></td>
+                        <td><input type='date' name='mom_dob' id='mom_dob' value="<?php  echo $mother_dob?>" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><label for='mom_email' class="contactAdmin">Email</label></td>
+                        <td><input type='email' name='mom_email' id='mom_email' value="<?php  echo $mother_email?>" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><label for='mom_mobile'>Mobile</label></td>
+                        <td><input type='text' name='mom_mobile' id='mom_mobile' value="<?php  echo $mother_mobile?>" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for='mom_landline'>FixedLine</label></td>
+                        <td><input type='text' name='mom_landline' id='mom_landline' value="<?php  echo $mother_landline?>" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for='mom_address'>Address</label></td>
+                        <td><input type='text' name='mom_address' id='mom_address' value="<?php  echo $mother_address?>" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for='mom_propic'>Profile Image</label></td>
+                        <td><input type='file' name='mom_propic' id='mom_propic' value="<?php  echo $mother_propic?>"></td>
+                    </tr>
+                    <tr>
+                        <td><label for='guardian_name'>Guardian Name</label></td>
+                        <td><input type='text' name='guardian_name' id='guardian_name' value="<?php  echo $guardian_name?>" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for='guardian_mobile'>Guardian Mobile</label></td>
+                        <td><input type='text' name='guardian_mobile' id='guardian_mobile' value="<?php  echo $guardian_mobile?>" required></td>
+                    </tr>
+        
+                </table>
+                <div class="MotherProfilePopupBtn">
+                    <label for="contactAdmin" class="contactAdminLable">Contact Admin</label>
+                    <button type="cancel" name='cancel_update' id="cancel-update" onclick="momUpdatePopup_close()">Cancel</button>
+                    <button type='submit' name='mother-profile-update-btn' id='mother-profile-update-btn'>Update</button>
+                </div>
+            </form>
         </div>
     </div>
 </body>

@@ -25,34 +25,11 @@ body{
 h1{
     font-style: normal;
     font-weight: 500;
-    font-size: 48px;
+    font-size: 36px;
     line-height: 56px;
-    padding-left: 20px;
+    padding-left: 40px;
 
     color: #111832;
-}
-
-/* Back Button */
-
-.goBackBtn {
-    width: 100px;
-    height: 30px;
-    margin-top: -60px;
-    border-style: none;
-    border-radius: 25px;
-    color: #ffffff;
-    font-family: RobotoRegular;
-    background-color: #029EE4;
-    cursor: pointer;
-    margin-left: 30px;
-    margin-right: 15%;
-    margin-bottom: 20px;
-    position: fixed;
-}
-
-.goBackBtn:hover {
-    background-color: #ff0000;
-
 }
 
 /* Dashboard Cards */
@@ -659,6 +636,7 @@ input::file-selector-button {
     align-items: center;
     margin-left: 35%;
     width: 400px;
+
     height: 400px;
     
     background: #f4f5f6;
@@ -782,4 +760,202 @@ input::file-selector-button {
     text-align: center;
 
     color: #000000;
+}
+
+/* Fetal groth calculator */
+
+.FG-calc-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 40px;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 10px;
+    border-radius: 10px;
+    padding-top: 30px;
+    border-top: #029ce4 solid 5px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+    background-color: #ededed;
+}
+.FG-calc-main p{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+
+
+    color: #000000;
+}
+input[type="submit"], input[type="reset"] {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #029ee4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="text"], input[type="date"] {
+    margin-left: 10px;
+    width: 55%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.FG-calc-main .MotherCardTableTitles {
+    display: flex;
+    flex-direction: row;
+}
+.FG-calc-main .OneColumnSection{
+    margin-left: 50px;
+}
+.MotherCardTableTitles span{
+    width: 820px;
+}
+.FG-calc-main .grid-2{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.FG-calc-main .grid-2 p{
+    margin-left: 10px;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/* ------------- vog profile update popup ------------- */
+
+.UpdateMotherProfile {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.updateProfileInnerDiv {
+    position: relative;
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.updateProfileInnerDiv table {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    /* background-color: #007bff; */
+}
+
+.updateProfileInnerDiv input {
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    padding: 5px;
+    margin-left: -10px;
+}
+
+.updateProfileInnerDiv #mom_id, #mom_fullname, #mom_email, #mom_dob {
+    border-style: none;
+    cursor: default;
+    color: #6e6e6e;
+}
+
+.contactAdmin:after {
+    content: ' *';
+    color: red;
+}
+
+.updateProfileInnerDiv #mom_id:focus, #mom_name:focus, #mom_email:focus, #mom_dob:focus {
+    outline: none;
+}
+
+.contactAdminLable {
+    /* background-color: #029ce4; */
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.contactAdminLable:before {
+    content: "* ";
+    color: red;
+}
+
+.momUpdatePopup-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.momUpdatePopup-close:hover, .momUpdatePopup-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.MotherProfilePopupBtn {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.MotherProfilePopupBtn label:nth-child(1) {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.MotherProfilePopupBtn button[type=submit] {
+    justify-self: right;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.MotherProfilePopupBtn button[type=submit]:hover {
+    background-color: #0069d9;
+}
+
+.MotherProfilePopupBtn button[type=cancel] {
+    justify-self: right;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.MotherProfilePopupBtn button[type=cancel]:hover {
+    background-color: #ec0000;
 }
