@@ -25,9 +25,9 @@ body{
 h1{
     font-style: normal;
     font-weight: 500;
-    font-size: 48px;
+    font-size: 36px;
     line-height: 56px;
-    padding-left: 20px;
+    padding-left: 40px;
 
     color: #111832;
 }
@@ -37,11 +37,10 @@ h1{
 .goBackBtn {
     width: 100px;
     height: 30px;
-    margin-top: -60px;
+    margin-top: 100px;
     border-style: none;
     border-radius: 25px;
     color: #ffffff;
-    font-family: RobotoRegular;
     background-color: #029EE4;
     cursor: pointer;
     margin-left: 30px;
@@ -659,6 +658,7 @@ input::file-selector-button {
     align-items: center;
     margin-left: 35%;
     width: 400px;
+    
     height: 400px;
     
     background: #f4f5f6;
@@ -782,4 +782,54 @@ input::file-selector-button {
     text-align: center;
 
     color: #000000;
+}
+
+/* Fetal groth calculator */
+
+.FG-calc-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 120px;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 10px;
+    border-radius: 10px;
+    padding-top: 30px;
+    border-top: #029ce4 solid 5px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+    background-color: #ededed;
+}
+.FG-calc-main p{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+
+
+    color: #000000;
+}
+input[type="submit"], input[type="reset"] {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #029ee4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="text"], input[type="date"] {
+    margin-left: 10px;
+    width: 55%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.MotherCardTableTitles span{
+    width: 50px;
 }
