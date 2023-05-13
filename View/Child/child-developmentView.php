@@ -134,7 +134,7 @@ include "../../Assets/Includes/sidenav.php";?>
             </select></tr>
 
             </table>
-      <input type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
+      <input class="childDevSubmitBtn" type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
       </form></div></div>
 
 <!---------------------------------------------------- 4 months section------------------------------------------->
@@ -297,7 +297,7 @@ include "../../Assets/Includes/sidenav.php";?>
               <option value="no">No</option>
             </select></tr>
       </table>
-      <input type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
+      <input class="childDevSubmitBtn" type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
       </form>
     </div>
 </div>
@@ -504,7 +504,7 @@ include "../../Assets/Includes/sidenav.php";?>
               <option value="no">No</option>
             </select></tr>
       </table>
-      <input type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
+      <input class="childDevSubmitBtn" type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
       </form>
     </div>
 </div>
@@ -690,7 +690,7 @@ include "../../Assets/Includes/sidenav.php";?>
               <option value="no">No</option>
             </select></tr>
       </table>
-      <input type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
+      <input class="childDevSubmitBtn" type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
       </form>
     </div>
 </div>
@@ -876,7 +876,7 @@ include "../../Assets/Includes/sidenav.php";?>
               <option value="no">No</option>
             </select></tr>
       </table>
-      <input type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
+      <input class="childDevSubmitBtn" type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
       </form>
     </div>
 </div>

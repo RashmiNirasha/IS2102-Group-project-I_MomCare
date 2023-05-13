@@ -14,6 +14,8 @@ include("../../Config/dbConnection.php") ?>
 <style><?php include "../../Assets/css/Style-child.css";?></style>
 </head>
 <body>
+<button class="goBackBtn" onclick="history.back()">Go back</button>
+
 
 <div class="top-button" >
 <a href="child-childDashboard.php?child_id=<?php echo $_GET['child_id']; ?>"><button class="goBackBtn">Go back</button></a>

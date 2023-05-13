@@ -1452,6 +1452,7 @@ h1 {
 }
 
 .ChildCardMain-titleOuter {
+    margin-top: 20px;
     background-color: #24D4B9;
     display: flex;
     height: 50px;
@@ -1634,9 +1635,13 @@ input[type="file" i] {
 /*----------------------- mothers page styles --------------*/
 
 .main-mother {
-    margin-top: 180px;
+    margin-top: 120px;
     justify-content: space-between;
     /* background-color: tomato; */
+}
+
+.medicalNotesViewTitlwe {
+    margin: 0px 15% 2% 15%;
 }
 
 .mom-filter {
@@ -4021,7 +4026,6 @@ a {
   }
   
   .common_list_content table {
-    margin-top: 20px;
     margin-left:15%;
     margin-right:15%;
     font-size: 0.9rem;
@@ -4029,8 +4033,11 @@ a {
     table-layout: fixed;
     word-wrap: normal;
     border-color: #029EE4;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
     border-style: solid;
+    border-width: 1px;
+    background-color: #029ce44b;
+    border-top: #029ce4 20px solid;
   }
   
   .common_list_content table th {
@@ -4042,6 +4049,8 @@ a {
   
   .common_list_content table td {
     padding: 0.3rem;
+    background-color: #f2f2f2;
+    border-color: #029ce471;
   }
   .viewBtn{
     padding: 0.2rem 1rem;
@@ -4625,12 +4634,11 @@ a {
   }
 
   .child-container2{
-    margin-top: 10px;
     margin-bottom: 5%;
     background: #fff;
     border-radius: 6px;
-    padding: 10px 60px 10px 40px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px 40px 10px 40px;
+    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.25);
   }
 
   .child-container3{

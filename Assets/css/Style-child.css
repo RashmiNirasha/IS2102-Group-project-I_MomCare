@@ -19,6 +19,24 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.goBackBtn:hover {
+  background-color: #ff0000;
+
+}
+
+.goBackBtn {
+  width: 100px;
+  height: 30px;
+  border-style: none;
+  border-radius: 0px 25px 25px 0;
+  color: #ffffff;
+  background-color: #029EE4;
+  cursor: pointer;
+  top: 120px;
+  left: 0px;
+  position: fixed;
+}
 	
 .child-container-2 {
     margin-bottom: 20px;
@@ -182,9 +200,9 @@ body {
       cursor: pointer;
     }
    
-    input[type="submit"]:hover , input[type="reset"]:hover , #showDataBtn2:hover , #showDataBtn:hover , #showDataBtn3:hover {
+    /* input[type="submit"]:hover , input[type="reset"]:hover , #showDataBtn2:hover , #showDataBtn:hover , #showDataBtn3:hover {
       background-color: #0e106e;
-    }
+    } */
 
 
 /* child-cards css */
@@ -229,9 +247,9 @@ body {
   }
 
   .child-container{
-    margin-top: 6%;
-    margin-left: 20%;
-    margin-right: 4%;
+    margin-top: 120px;
+    margin-left: 15%;
+    margin-right: 15%;
     margin-bottom: 5%;
     background: #fff;
     border-radius: 6px;
@@ -376,26 +394,6 @@ body {
     border-radius: 3px;
   }
 
-  .goBackBtn {
-    width: 100px;
-    height: 30px;
-    margin-top: 100px;
-    border-style: none;
-    border-radius: 25px;
-    color: #ffffff;
-    background-color: #029EE4;
-    cursor: pointer;
-    margin-left: 30px;
-    margin-right: 15%;
-    margin-bottom: 20px;
-    position: fixed;
-}
-
-.goBackBtn:hover {
-    background-color: #ff0000;
-
-}
-
 .formSubmitBtn {
   float: right;
     width: 100px;
@@ -412,8 +410,8 @@ body {
 
 .formSubmitBtn:hover {
     background-color: #ff0000;
-
 }
+
 
 .container{
   margin-top: 08%;
@@ -503,7 +501,7 @@ padding-top: 6px;
 display: inline-block;
 margin-top: 12px;
 }
-.right-side .button input[type="submit"]{
+/* .right-side .button input[type="submit"]{
 color: #fff;
 font-size: 18px;
 outline: none;
@@ -513,9 +511,27 @@ border-radius: 6px;
 background: #3e2093;
 cursor: pointer;
 transition: all 0.3s ease;
-}
-.button input[type="submit"]:hover{
+} */
+/* .button input[type="submit"]:hover{
 background: #5029bc;
+} */
+
+.childDevSubmitBtn {
+  float: right;
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+    border-style: none;
+    border-radius: 25px;
+    color: #ffffff;
+    background-color: #029EE4;
+    cursor: pointer;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.childDevSubmitBtn:hover {
+    background-color: #ff0000;
 }
 
 .radioSet{

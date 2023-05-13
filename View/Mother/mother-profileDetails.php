@@ -66,7 +66,6 @@
                         <h3>Children Details</h3>
                         <div class="child-details-section">
                             <table>
-                                <tr>
                                     <?php
                                         $sql = "SELECT child_name,child_id FROM child_details WHERE mom_id = '$mom_id'";
                                         $result = mysqli_query($con, $sql);
@@ -74,15 +73,16 @@
                                             while ($row = mysqli_fetch_assoc($result)) {
                                                 $child_id = $row['child_id'];
                                                 $child_name = $row['child_name'];
-                                                echo "<td><label for='child-name'>$child_name</label></td>";
-                                                echo "<td><a href='../../View/child/child-childDashboard.php?child_id=$child_id'><input type='button' value='View' name='view-btn'></a></td>";
+                                                echo '<tr>
+                                                        <td><label for="child-name">'.$child_name.'</label></td>
+                                                        <td><a href="../../View/child/child-childDashboard.php?child_id='.$child_id.'"><input type="button" value="View" name="view-btn"></a></td>
+                                                    </tr>';
                                             }
                                         }
 
                                     ?>
                                     <!-- <td><label for="child-name">Child name</label></td>
                                     <td><a href="#"><input type="button" value="View" name="view-btn"></a></td> -->
-                                </tr>
                             </table>
                         </div>
                     </div>

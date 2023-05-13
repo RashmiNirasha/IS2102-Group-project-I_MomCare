@@ -16,6 +16,9 @@
         <a href="child-childDashboard.php?child_id=<?php echo $_GET['child_id']; ?>"><button class="goBackBtn">Go back</button></a>
     </div>
     <!-- <div class="child-container2"> -->
+        <div class="medicalNotesViewTitlwe">
+            <h1>Medical Notes</h1>
+        </div>
         <div class="common_list_content">
             <?php 
             if (isset($_GET['child_id'])) {
