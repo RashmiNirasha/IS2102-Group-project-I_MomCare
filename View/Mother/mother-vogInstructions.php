@@ -40,12 +40,12 @@
                         while ($row2 = mysqli_fetch_assoc($result2)) {
                             $doc_name = $row2['doc_name'];
                             $doc_workplace = $row2['doc_workplace'];
-                            // $doc_photo = $row2['doc_photo'];
+                            $doc_photo = $row2['doc_profile_pic'];
 
                             $output = ' <div class="app-card">
-                                <div class="dr-pro-pic">
-                                    <img src="../../Assets/Images/download.png" alt="">
-                                </div>
+                                <div class="dr-pro-pic">';
+                                $output .= '<img src="' . $doc_photo  . '" alt="">';
+                                $output.='</div>
                                 <div class="details">';
                                     $output .= "<h5> Dr. $doc_name </h5><br>";
                                     $output .= "<p> $doc_workplace </p>";

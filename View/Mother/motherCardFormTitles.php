@@ -81,7 +81,7 @@ include "../../Assets/Includes/header_pages.php";
           <a href="motherCardPage3.php"><h3>Weight Gain Chart</h3></a>
         </div>
         <div class="CardTitles">
-          <a href="motherCardPage3.php"><h3>Birth and emergency preparedness plan</h3></a>
+          <a href="motherCardPage3.php"><h3>Emergency preparedness plan</h3></a>
         </div>
         <div class="CardTitles">
           <a href="motherCardPage3.php"><h3>Attendance at antenatal classes</h3></a>
@@ -95,7 +95,7 @@ include "../../Assets/Includes/header_pages.php";
         <div class="CardTitles">
           <a href="motherCardPage3.php"><h3>Referrals</h3></a>
         </div>
-        <div class="CardTitles">
+        <!-- <div class="CardTitles">
           <a href="#"><h3>Hospital Clinic Care</h3></a>
         </div>
         <div class="CardTitles">
@@ -109,7 +109,7 @@ include "../../Assets/Includes/header_pages.php";
         </div>
         <div class="CardTitles">
           <a href="#"><h3>Emergency Contact</h3></a>
-        </div>
+        </div> -->
     </div>
   </body>
 </html>

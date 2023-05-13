@@ -15,9 +15,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style><?php include "../../Assets/css/style-common.css" ?></style>
 </head>
 <body>
+    <?php 
+        $sql = "SELECT * FROM mcard_weight_gain WHERE mom_id = '$mom_id'";
+        $result = mysqli_query($con,$sql);
+        $resultCheck = mysqli_num_rows($result);
+        if ($resultCheck > 0){
+            $week = array();
+            $weight = array();
+            $difference = array();
+
+            while ($row = mysqli_fetch_assoc($result)){
+                $week[] = $row['poa_weeks'];
+                $weight[] = $row['weight'];
+                $difference[] = $row['weight_gain'];
+            }
+        }
+    ?>
     <div class="MotherCardMainDiv">
         <div class="SectionNameDiv">
             <h3>Section A</h3>
@@ -44,7 +61,11 @@
                                         </tr>
                                         <tr>
                                             <th>Weight Gain</th>
-                                            <td><label for="weight_gain"></label></td>
+                                            <td>
+                                                <label for="weight_gain"><?php 
+                                                ?>
+                                                </label>
+                                            </td>
                                         </tr>
                                         <tr>
                                         <td><input type="submit" value="Calculate_WG"></td>
@@ -56,24 +77,21 @@
                                 <div class="grid-3" id="chart">
                                     <h3>CHARTS</h3>
                                     <div class="boxchart"><canvas id="myChart"></canvas>
-                                    <button id="showDataBtn">Age-BMI</button>
-                                    <button id="showDataBtn2">Age-Height</button>
-                                    <button id="showDataBtn3">Age-Weight</button>
+                                    <button id="showDataBtn">View Weight Gain Chart</button>
                                     </div>
                                 </div>
 
                                 <script>
                                     //set up block 
-                                    const age = <?php echo json_encode($age); ?>;
-                                    const height = <?php echo json_encode($height); ?>;
+                                    const week = <?php echo json_encode($week); ?>;
                                     const weight = <?php echo json_encode($weight); ?>;
-                                    const bmi = <?php echo json_encode($bmi); ?>;
+                                    const weight_gain = <?php echo json_encode($difference); ?>;
 
                                     const data= {
-                                        labels: <?php echo json_encode($age); ?>, // Modify labels to use age values from the table
+                                        labels: <?php echo json_encode($week); ?>, // Modify labels to use age values from the table
                                         datasets: [{
-                                            label: 'height',
-                                            data: height,
+                                            label: 'weight_gain',
+                                            data: weight_gain,
                                             backgroundColor: ['rgba(153, 102, 255, 0.5)'],
                                             fill: true ,
                                             borderColor: ['rgba(255, 99, 132, 1)'],
@@ -87,9 +105,9 @@
                                         responsive: true,
                                         scales: {
                                         x: {
-                                            title: { display: true, text: 'Age'}},
+                                            title: { display: true, text: 'Weeks'}},
                                         y: {
-                                            title: {display: true, text: 'Height (cm)'},
+                                            title: {display: true, text: 'Weight Gain'},
                                             beginAtZero: true
                                         }
                                         }
@@ -99,23 +117,9 @@
                                     const myChart = new Chart(document.getElementById('myChart'), config);
 
                                     document.getElementById('showDataBtn').addEventListener('click', function() {
-                                    myChart.data.datasets[0].data = bmi;
-                                    myChart.data.datasets[0].label = 'Body Mass Index';
-                                    myChart.options.scales.y.title.text = 'BMI';
-                                    myChart.update();
-                                    });
-
-                                    document.getElementById('showDataBtn2').addEventListener('click', function() {
-                                    myChart.data.datasets[0].data = height;
-                                    myChart.data.datasets[0].label = 'height (cm)';
-                                    myChart.options.scales.y.title.text = 'Height (cm)';
-                                    myChart.update();
-                                    });
-
-                                    document.getElementById('showDataBtn3').addEventListener('click', function() {
-                                    myChart.data.datasets[0].data = weight;
-                                    myChart.data.datasets[0].label = 'weight (kg)';
-                                    myChart.options.scales.y.title.text = 'Weight (kg)';
+                                    myChart.data.datasets[0].data = weight_gain;
+                                    myChart.data.datasets[0].label = 'Weight Gain';
+                                    myChart.options.scales.y.title.text = 'Weight Gain';
                                     myChart.update();
                                     });
 

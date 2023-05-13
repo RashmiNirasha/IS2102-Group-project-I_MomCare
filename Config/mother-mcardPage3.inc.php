@@ -97,7 +97,15 @@
 
         // Print the weight differences
         foreach ($weightDifference as $week => $difference) {
-            echo "Week $week: Weight difference: $difference<br>";
+            $sql = "UPDATE mcard_weight_gain SET weight_gain = '$difference' WHERE poa_weeks = '$week'";
+            $result = mysqli_query($con, $sql);
+
+            if ($result) {
+                echo "Weight gain calculated successfully";
+            } else {
+                echo "Error: " . mysqli_error($con);
+            }
+            
         }
 
     }

@@ -22,7 +22,7 @@
             $new_password_hash = md5($new_password);
             $sql = "UPDATE user_tbl SET password = '$new_password_hash' WHERE user_id = '$mom_id'";
             if (mysqli_query($con, $sql)) {
-                header("location: ../../View/Mother/mother-profileDetails.php?passwordchanged=1");
+                header("location: ../View/Mother/mother-profileDetails.php?Password changed successfully!");
 
             } else {
                 echo "Error changing password: " . mysqli_error($con);
