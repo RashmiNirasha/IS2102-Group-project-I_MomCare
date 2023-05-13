@@ -39,7 +39,7 @@
                         <div class="end">
                             <div class="logInOtherLinks">
                                 <div class="forgot-psw">
-                                    <a href="View/Co-ForgotPassword.php">Forgot password?</a>
+                                    <a href="Co-ForgotPassword.php">Forgot password?</a>
                                 </div>
                                 <div class="createAcc">
                                     <a href="View/mother/mother-registrationView.php">Create an account</a>

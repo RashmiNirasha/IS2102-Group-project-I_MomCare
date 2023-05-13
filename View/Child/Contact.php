@@ -17,6 +17,19 @@
 <body>
   <div class="container">
     <div class="content">
+    <?php // include success message 
+    if(isset($_SESSION['success']) && !empty($_SESSION['success'])) {?>
+      <div class="success-message"><?php echo $_SESSION['success']; ?></div>
+    <?php 
+    unset($_SESSION['success']);
+    } ?>
+    <?php // include error message
+    if(isset($_SESSION['error']) && !empty($_SESSION['error'])) {?>
+      <div class="error-message"><?php echo $_SESSION['error']; ?></div>
+    <?php
+    unset($_SESSION['error']);
+    } ?>
+
       <div class="left-side">
         <div class="address details">
           <i class="fas fa-map-marker-alt"></i>
@@ -42,7 +55,7 @@
         <div class="topic-text">Send us a message</div>
         <p>If you have any questions or problems regarding the site or any personal inquiries , Please reach out to us .</p>
 
-      <form action="../../Config/admin-contact.php" method="POST">
+      <form action="../../Config/phm-contact.php" method="POST">
         <div class="input-box">
           <input type="text" name="name" placeholder="Enter your name" required>
         </div>
