@@ -2,7 +2,7 @@
     require_once 'dbConnection.php';
 
     $doc_id = $_GET['doc_id'];
-    $sql = "SELECT * FROM appointment_details where doc_id = '$doc_id'";
+    $sql = "SELECT * FROM appointment_details1 where doc_id = '$doc_id'";
     $result = $con->query($sql);
 
     if($result->num_rows > 0)

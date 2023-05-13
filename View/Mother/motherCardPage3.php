@@ -32,6 +32,96 @@
                             </div>
                             <div class="WeightGainChar">
                                 <!-- add chart code here -->
+                                <form action="../../Config/mother-mcardPage3.inc.php" method="post">
+                                    <table class="MotherCardTables">
+                                        <tr>
+                                            <th>POA Weeks</th>
+                                            <td><input type="text" id="poa_weeks" name="poa_weeks"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Weight</th>
+                                            <td><input type="text" id="weight" name="weight"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Weight Gain</th>
+                                            <td><label for="weight_gain"></label></td>
+                                        </tr>
+                                        <tr>
+                                        <td><input type="submit" value="Calculate_WG"></td>
+                                        <td><input type="reset" value="Reset"></td>
+                                        </tr>
+                                    </table>
+                                    <input type="hidden" id="mom_id" name="mom_id" value="<?php echo $mom_id; ?>">
+                                </form>
+                                <div class="grid-3" id="chart">
+                                    <h3>CHARTS</h3>
+                                    <div class="boxchart"><canvas id="myChart"></canvas>
+                                    <button id="showDataBtn">Age-BMI</button>
+                                    <button id="showDataBtn2">Age-Height</button>
+                                    <button id="showDataBtn3">Age-Weight</button>
+                                    </div>
+                                </div>
+
+                                <script>
+                                    //set up block 
+                                    const age = <?php echo json_encode($age); ?>;
+                                    const height = <?php echo json_encode($height); ?>;
+                                    const weight = <?php echo json_encode($weight); ?>;
+                                    const bmi = <?php echo json_encode($bmi); ?>;
+
+                                    const data= {
+                                        labels: <?php echo json_encode($age); ?>, // Modify labels to use age values from the table
+                                        datasets: [{
+                                            label: 'height',
+                                            data: height,
+                                            backgroundColor: ['rgba(153, 102, 255, 0.5)'],
+                                            fill: true ,
+                                            borderColor: ['rgba(255, 99, 132, 1)'],
+                                            borderWidth: 1}]
+                                        };
+
+                                    const config = {
+                                    type: 'line',
+                                    data: data,
+                                    options: {
+                                        responsive: true,
+                                        scales: {
+                                        x: {
+                                            title: { display: true, text: 'Age'}},
+                                        y: {
+                                            title: {display: true, text: 'Height (cm)'},
+                                            beginAtZero: true
+                                        }
+                                        }
+                                    }
+                                    };
+
+                                    const myChart = new Chart(document.getElementById('myChart'), config);
+
+                                    document.getElementById('showDataBtn').addEventListener('click', function() {
+                                    myChart.data.datasets[0].data = bmi;
+                                    myChart.data.datasets[0].label = 'Body Mass Index';
+                                    myChart.options.scales.y.title.text = 'BMI';
+                                    myChart.update();
+                                    });
+
+                                    document.getElementById('showDataBtn2').addEventListener('click', function() {
+                                    myChart.data.datasets[0].data = height;
+                                    myChart.data.datasets[0].label = 'height (cm)';
+                                    myChart.options.scales.y.title.text = 'Height (cm)';
+                                    myChart.update();
+                                    });
+
+                                    document.getElementById('showDataBtn3').addEventListener('click', function() {
+                                    myChart.data.datasets[0].data = weight;
+                                    myChart.data.datasets[0].label = 'weight (kg)';
+                                    myChart.options.scales.y.title.text = 'Weight (kg)';
+                                    myChart.update();
+                                    });
+
+                                </script>
+
+
                             </div>
                         </div>
                         <div class="TwoColumnSec2">

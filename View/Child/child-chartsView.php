@@ -117,7 +117,7 @@ $sql = "SELECT * FROM child_bmi_values WHERE child_id = '$child_id' ORDER BY
                 echo "Your Child is obese.";
               }
             ?></p>
-</div>
+  </div>
 
     <div class="grid-3" id="chart">
         <h3>CHARTS</h3>
@@ -126,9 +126,9 @@ $sql = "SELECT * FROM child_bmi_values WHERE child_id = '$child_id' ORDER BY
           <button id="showDataBtn2">Age-Height</button>
           <button id="showDataBtn3">Age-Weight</button>
         </div>
-            </div>
-  </div>
-  </div>
+            <!-- </div> -->
+    </div>
+  <!-- </div> -->
 </div>
 </div>
 </div>
