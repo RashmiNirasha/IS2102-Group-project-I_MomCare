@@ -95,10 +95,12 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
     </div>
     <div class="MotherGeneralDetails">
         <table class="MotherCardTables" id="myTable">
+            
             <?php
+            
             $oneMonthAgo = date('Y-m-d', strtotime('-1 month'));
 
-            $query = "SELECT * FROM `child_immunization_table` WHERE `child_immunization_table`.phm_id = '$Phm_id' ORDER BY `child_immunization_table`.date DESC ";
+            $query = "SELECT * FROM `child_immunization_table` WHERE `child_immunization_table`.phm_id = '$Phm_id' ORDER BY `child_immunization_table`.date DESC limit 10";
             $ret = mysqli_query($con, $query);
 
             if (mysqli_num_rows($ret) > 0) {
@@ -107,6 +109,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
                 while ($row = mysqli_fetch_assoc($ret)) {
                     $child_id = $row["child_id"];
                     $date = $row["date"];
+                    $id = $row["id"];
                    
                     $canDelete = (strtotime($date) >= strtotime($oneMonthAgo));
 
@@ -117,10 +120,10 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
                     <td>" . $row["date"] . "</td>
                     <td>" . $row["batch_no"] . "</td>
                     <td>" . $row["adverse_effects"] . "</td>
-                    <td><a href='javascript:void(0);' onclick=\"showEditForm('" . $row['child_id'] . "')\"><button class='small-child-btn'>edit</button></a></td>";
+                    <td><a href='javascript:void(0);' onclick=\"showEditForm('" . $row['id'] . "')\"><button class='small-child-btn'>edit</button></a></td>";
 
                     if ($canDelete) {
-                        echo "<td><a href='../../Config/child-addimmunizationModel.php?delete=" . $row['child_id'] . "' onclick=\"return confirm('Do you really want to delete this record?')\"><button class='small-child-btn'>delete</button></a></td>";
+                        echo "<td><a href='../../Config/child-addimmunizationModel.php?delete=" . $row['id'] . "' onclick=\"return confirm('Do you really want to delete this record?')\"><button class='small-child-btn'>delete</button></a></td>";
                     } else {
                         echo "<td>Delete not allowed</td>";
                     }
@@ -128,14 +131,15 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
                     echo "</tr>";
 
                     // Display the edit form for each child
-                    echo "<tr id='editForm_2".$row['child_id']."' style='display:none;'>
-                        <form onsubmit=\"return confirm('Do you really want to edit?');\" method='POST' action='../../Config/child-addimmunizationModel.php'>    
+                    echo "<tr id='editForm_2".$row['id']."' style='display:none;'>
+                        <form onsubmit=\"return confirm('Do you really want to edit?');\" method='POST' action='../../Config/child-addimmunizationModel.php'>
+                           <input type='hidden' name='id' value='".$row['id']."'>
                            <td><input type='hidden' name='child_id' value='".$row['child_id']."'></td>
-                            <td><input type='text' id='edit_child_name' name='edit_child_name' value='".$row['age']."'></td>
-                           <td><input type='text' id='edit_child_name' name='edit_child_name' value='".$row['type_of_vaccine']."'></td>
-                           <td><input type='date' id='edit_birth_date' name='edit_birth_date' value='".$row['date']."'></td>
-                           <td><input type='text' id='edit_child_name' name='edit_child_name' value='".$row['batch_no']."'></td>
-                           <td><input type='text' id='edit_child_name' name='edit_child_name' value='".$row['adverse_effects']."'></td>
+                            <td><input type='text' id='edit_child_name' name='age' value='".$row['age']."'></td>
+                           <td><input type='text' id='edit_child_name' name='vaccine' value='".$row['type_of_vaccine']."'></td>
+                           <td><input type='date' id='edit_birth_date' name='date' value='".$row['date']."'></td>
+                           <td><input type='text' id='edit_child_name' name='batch_no' value='".$row['batch_no']."'></td>
+                           <td><input type='text' id='edit_child_name' name='adverse' value='".$row['adverse_effects']."'></td>
                            <td colspan='2'><input class='small-child-btn' type='submit' value='Update' name='update'></td>
                         </form>
                     </td>
@@ -148,6 +152,17 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
 </table>
 </div>
 </div>
+
+<script>
+    function showEditForm(id) {
+        var x = document.getElementById("editForm_2"+id);
+        if (x.style.display === "none") {
+            x.style.display = "table-row";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
 
 <?php } else {
    header("Location: ../../mainLogin.php");

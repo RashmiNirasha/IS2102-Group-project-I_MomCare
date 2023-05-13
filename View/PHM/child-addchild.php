@@ -137,7 +137,7 @@
                     <td>" . $row["child_name"] . "</td>
                     <td>" . $row["birth_date"] . "</td>
                     <td>" . $row["child_gender"] . "</td>
-                    <td><a href='../../Config/child-addchildModel.php?view=" . $row['child_id'] . "'><button class='small-child-btn'>view</button></a></td>
+                    <td><a href='../Child/Child-fullChildCard.php?child_id=" . $row['child_id'] . "'><button class='small-child-btn'>view</button></a></td>
                     <td><a href='javascript:void(0);' onclick=\"showEditForm('" . $row['child_id'] . "')\"><button class='small-child-btn'>edit</button></a></td>";
 
                     if ($canDelete) {

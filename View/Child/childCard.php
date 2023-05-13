@@ -16,7 +16,7 @@ $child_id = mysqli_real_escape_string($con, $_GET['child_id']);
                 <tr>  
                     <td>'.$row["age"].'</td>  
                     <td>'.$row["date"].'</td>  
-                    <td>'.$row["batch_no"].'</td>
+                    <td>'.$row["batchno"].'</td>
                 </tr>';  
             }
         }

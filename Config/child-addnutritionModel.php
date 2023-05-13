@@ -34,46 +34,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-//update function
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
-    $id = $_POST['id'];
-    $child_id = $_POST['child_id'];
-    $child_age = $_POST['age'];
-    $date = $_POST['date'];
-    $batch_no = $_POST['batch_no'];
-    $record_type = $_POST['record_type'];
-
-   $sql = "UPDATE child_cvitamin_view SET child_id = '$child_id', age = '$child_age', date = '$date', batchno = '$batch_no' WHERE id = '$id'";
-    $result = mysqli_query($con, $sql);
-
-    if ($result) {
-        // Redirect back to the child profile page with a success message
-        header("Location: ../View/PHM/child-addnutrition.php?message=Child record updated successfully");
-        exit();
-    } else {
-        // Redirect back to the child profile page with an error message
-        header("Location: ../View/PHM/child-addnutrition.php?error=Failed to update child record");
-        exit();
-    }
-
-}
-
 //delete function
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete'])) {
-    $recordId = $_POST['id'];
-    $sql = "DELETE FROM child_cvitamin_view WHERE id = '$recordId'";
-    $result = mysqli_query($con, $sql);
+if (isset($_GET['delete']) && !empty($_GET['delete'])) {
+    $id = $_GET['delete'];
 
+    $query = "DELETE FROM child_cvitamin_view WHERE id = '$id'";
+    $result = mysqli_query($con, $query);
+
+    // Check if the deletion was successful
     if ($result) {
-        // Redirect back to the child profile page with a success message
         header("Location: ../View/PHM/child-addnutrition.php?message=Child record deleted successfully");
         exit();
     } else {
-        // Redirect back to the child profile page with an error message
+        // Deletion failed, redirect back to the child list page with an error message
         header("Location: ../View/PHM/child-addnutrition.php?error=Failed to delete child record");
         exit();
     }
-
-    
 }
+
 ?>

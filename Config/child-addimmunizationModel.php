@@ -26,16 +26,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //update function
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     $id = $_POST['id'];
-    $child_id = $_POST['child_id'];
-    $child_age = $_POST['age'];
+    $age = $_POST['age'];
+    $type_of_vaccine = $_POST['vaccine'];
     $date = $_POST['date'];
     $batch_no = $_POST['batch_no'];
-    $vaccine = $_POST['vaccine'];
-    $adverse_effects= $_POST['adverse_effects'];
+    $adverse_effects = $_POST['adverse'];
 
-    $sql = "UPDATE child_immunization_table SET child_id = '$child_id', age = '$child_age', date = '$date', batch_no = '$batch_no', type_of_vaccine = '$vaccine', adverse_effects = '$adverse_effects' WHERE id = '$id'";
-    $result = mysqli_query($con, $sql);
-
+    // Prepare the update query
+    $query = "UPDATE `child_immunization_table` SET `age`='$age', `type_of_vaccine`='$type_of_vaccine', `date`='$date', `batch_no`='$batch_no', `adverse_effects`='$adverse_effects' WHERE `id`='$id'";
+    $result = mysqli_query($con, $query);
     if ($result) {
         // Redirect back to the child profile page with a success message
         header("Location: ../View/PHM/child-addimmunization.php?message=Vaccination record updated successfully");
@@ -50,9 +49,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
 
 //delete function
 if (isset($_GET['delete']) && !empty($_GET['delete'])) {
-    $child_id = $_GET['delete'];
+    $id = $_GET['delete'];
 
-    $query = "DELETE FROM child_immunization_table WHERE id = '$child_id'";
+    $query = "DELETE FROM child_immunization_table WHERE id = '$id'";
     $result = mysqli_query($con, $query);
 
     // Check if the deletion was successful

@@ -32,10 +32,3 @@ for (var i = 0; i < rows.length; i++) {
     }
 }
 }
-
-function deleteRecord(recordId) {
-    if (confirm('Are you sure you want to delete this record?')) {
-      // Redirect to the delete script with the record ID as a query parameter
-      window.location.href = '../../Config/child-addnutritionModel.php?id=' + recordId;
-    }
-  }

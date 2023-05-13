@@ -7,6 +7,7 @@
 <?php 
     include "../../Assets/Includes/header_pages.php"; 
     include "../../Config/mother-mcardPage1.inc.php";
+    $mom_id = $_SESSION['user_id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -359,7 +360,7 @@
             </div>
         </div>
         <div class="MotherCardButtonSet">
-        <a href="#"><button class="PrintBtn">Print</button></a>
+        <a href=""><button class="PrintBtn">Print</button></a>
         <a href="motherCardPage2.php"><button class="NextBtn">Next</button></a>
         </div>
     </div>

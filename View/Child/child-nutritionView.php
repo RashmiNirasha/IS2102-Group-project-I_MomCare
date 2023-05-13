@@ -34,7 +34,7 @@ include "../../Assets/Includes/sidenav.php";?>
                                        echo "<tr>
                                                <th>".$row["age"]."</th>
                                                <td>".$row["date"]."</td>
-                                               <td>".$row["batch_no"]."</td>
+                                               <td>".$row["batchno"]."</td>
                                              </tr>";
                                    }
                                    echo "</table>";

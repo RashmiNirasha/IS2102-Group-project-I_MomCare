@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["insert"])) {
     if ($row) {
         $guardian_id = $row['guardian_id'];
     } else {
-        $guardian_id = '';
+        $guardian_id = NULL;
     }
 
     do {

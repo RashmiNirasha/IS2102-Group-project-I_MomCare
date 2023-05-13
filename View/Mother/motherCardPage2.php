@@ -345,7 +345,7 @@
             </div>
         </div>
         <div class="MotherCardButtonSet">
-        <a href="#"><button class="PrintBtn">Print</button></a>
+        <a href="mothercard.php?mom_id=<?php echo $_SESSION['user_id']; ?>"><button class="PrintBtn">Print</button></a>
         <a href="motherCardPage1.php"><button class="BackBtn">Back</button></a>
         <a href="motherCardPage3.php"><button class="NextBtn">Next</button></a>
         </div>

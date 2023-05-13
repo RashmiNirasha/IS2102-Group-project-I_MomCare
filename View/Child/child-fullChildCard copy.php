@@ -14,6 +14,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style><?php include "../../Assets/css/style-common.css" ?></style>
+    <style>
+    .hidden {
+        display: none;
+    }
+</style>
 </head>
 <body>
     <div class="MotherCardMainDiv">
@@ -65,58 +70,73 @@
                         </div>
                     </div>
                     
-                    <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
-                        <div class="MotherCardTableTitles"><h3>General Details</h3></div>
-                        <div class="MotherGeneralDetails">
-                            <table class="MotherCardTables">
-                                <tr>
-                                    <th>Name of the Mother:</th>
-                                    <td><?php echo $mother_name?></td>
-                                </tr>
-                                <tr>
-                                    <th>Age:</th>
-                                    <td><?php echo $age ?></td>
-                                </tr>
-                                <tr>
-                                    <th>MOH area:</th>
-                                    <td> <?php echo $MOH_area ?></td>
-                                </tr>
-                                <tr>
-                                    <th>PHM area:</th>
-                                    <td><?php echo $PHM_area ?></td>
-                                </tr>
-                                <tr>
-                                    <th>Name of the Field Clinic:</th>
-                                    <td><?php echo $field_clinic ?></td>
-                                </tr>
-                                <tr>
-                                    <th>Grama Niladhari Division:</th>
-                                    <td><?php echo $GN_division ?></td>
-                                </tr>
-                                <tr>
-                                    <th>Name of the Hospital Clinic:</th>
-                                    <td><?php echo $hospital_clinic ?></td>
-                                </tr>
-                                <tr>
-                                    <th>Name of the Consultant Obstetrician:</th>
-                                    <td><?php echo $consultant_obstetrician ?></td>
-                                </tr>
-                                <tr>
-                                    <th>Identified anatal risks conditions and mobilities:</th>
-                                    <td><?php echo $identified_antatal_risks ?></td>
-                                </tr>
-                                <tr>
-                                    <th>Registration Number:</th>
-                                    <td><?php echo $registration_number ?></td>
-                                </tr>
-                                <tr>
-                                    <th>Registration Date:</th>
-                                    <td><?php echo $registration_date ?></td>
-                                </tr>
-                                
-                            </table>
-                        </div>
-                    </div>
+    <div class="OneColumnSection">
+    <div class="MotherCardTableTitles">
+        <h3>General Details</h3>
+    </div>
+    <div class="MotherGeneralDetails">
+        <table class="MotherCardTables">
+            <tr>
+                <th>Name of the Mother:</th>
+                <td><?php echo $mother_name ?></td>
+                <td class="edit-row hidden"><input type="text" name="mother_name" value="<?php echo $mother_name ?>"></td>
+            </tr>
+            <tr>
+                <th>Age : </th>
+                <td><?php echo $age ?></td>
+                <td class="edit-row hidden"><input type="text" name="mother_age" value="<?php echo $age ?>"></td>
+            </tr>
+            <tr>
+                <th>MOH area:</th>
+                <td><?php echo $MOH_area ?></td>
+                <td class="edit-row hidden"><input type="text" name="MOH_area" value="<?php echo $MOH_area ?>"></td>
+            </tr>
+            <tr>
+                <th>PHM_area:</th>
+                <td><?php echo $PHM_area ?></td>
+                <td class="edit-row hidden"><input type="text" name="PHM_area" value="<?php echo $PHM_area ?>"></td>
+            </tr>
+            <tr>
+                <th>Name of the Field Clinic:</th>
+                <td><?php echo $field_clinic ?></td>
+                <td class="edit-row hidden"><input type="text" name="field_clinic" value="<?php echo $field_clinic ?>"></td>
+            </tr>
+            <tr>
+                <th>Grama Niladhari Division:</th>
+                <td><?php echo $GN_division ?></td>
+                <td class="edit-row hidden"><input type="text" name="GN_division" value="<?php echo $GN_division ?>"></td>
+            </tr>
+            <tr>
+                <th>Name of the Hospital Clinic:</th>
+                <td><?php echo $hospital_clinic ?></td>
+                <td class="edit-row hidden"><input type="text" name="hospital_clinic" value="<?php echo $hospital_clinic ?>"></td>
+            </tr>
+            <tr>
+                <th>Name of the Consultant Obstetrician:</th>
+                <td><?php echo $consultant_obstetrician ?></td>
+                <td class="edit-row hidden"><input type="text" name="consultant_obstetrician" value="<?php echo $consultant_obstetrician ?>"></td>
+            </tr>
+            <tr>
+                <th>Identified antenatal risks conditions and mobilities:</th>
+                <td><?php echo $identified_antatal_risks ?></td>
+                <td class="edit-row hidden"><textarea name="identified_antatal_risks"><?php echo $identified_antatal_risks ?></textarea></td>
+            </tr>
+            <tr>
+                <th>Registration Number:</th>
+                <td><?php echo $registration_number ?></td>
+                <td class="edit-row hidden"><input type="text" name="registration_number" value="<?php echo $registration_number ?>"></td>
+            </tr>
+            <tr> 
+                <th>Registration Date:</th>
+                <td><?php echo $registration_date ?></td>
+                <td class="edit-row hidden"><input type="text" name="registration_date" value="<?php echo $registration_date ?>"></td>
+            </tr>
+            </table>
+        <button id="edit-button">Edit</button>
+        <button id="save-button" class="hidden">Save</button>
+    </div>
+</div>
+
 
                     <div class="TwoColumnSection"> <!--when a section have two tables, use this class-->
                         <div class="TwoColumnSec1">
@@ -319,6 +339,61 @@
         </div>
     </div>
 </body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var editButton = document.getElementById("edit-button");
+        var saveButton = document.getElementById("save-button");
+        var editRows = document.querySelectorAll(".edit-row");
+        var motherNameCell = document.getElementById("mother-name");
+        var editMotherNameInput = document.getElementById("edit-mother-name");
+
+        // Hide the edit rows initially
+        editRows.forEach(function(row) {
+            row.style.display = "none";
+        });
+
+        // Show the edit rows when the edit button is clicked
+        editButton.addEventListener("click", function() {
+            editRows.forEach(function(row) {
+                row.style.display = "table-cell";
+            });
+
+            // Toggle button visibility
+            editButton.classList.add("hidden");
+            saveButton.classList.remove("hidden");
+        });
+
+        // Handle save button click
+        saveButton.addEventListener("click", function() {
+            // Get the updated values
+            var updatedMotherName = editMotherNameInput.value;
+
+            // Send the data to the server-side script using AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "update_general_details.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Update the displayed value
+                    motherNameCell.textContent = updatedMotherName;
+
+                    // Hide the edit rows
+                    editRows.forEach(function(row) {
+                        row.style.display = "none";
+                    });
+
+                    // Toggle button visibility
+                    editButton.classList.remove("hidden");
+                    saveButton.classList.add("hidden");
+                }
+            };
+            var data = "mother_name=" + encodeURIComponent(updatedMotherName);
+            xhr.send(data);
+        });
+    });
+</script>
+
 </html>
 <?php } else {
     header("Location: ../../mainLogin.php");
