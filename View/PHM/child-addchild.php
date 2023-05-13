@@ -1,10 +1,10 @@
 <?php 
-session_start();
-if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) { 
-    include '../../Config/dbConnection.php';
-    include "../../Assets/Includes/header_pages.php";
-    include "../../Assets/Includes/sidenav2.php";
-    $Phm_id = $_SESSION['user_id'];
+    session_start();
+    if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) { 
+        include '../../Config/dbConnection.php';
+        include "../../Assets/Includes/header_pages.php";
+        include "../../Assets/Includes/sidenav2.php";
+        $Phm_id = $_SESSION['user_id'];
 ?>
 
 <!DOCTYPE html>
@@ -107,21 +107,19 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
                 <td><input type="date" id="registration_date" name="registration_date" placeholder="Registration Date" required></td>
             </tr>
         </table>
-        <input type="submit" value="insert" name="insert">
+        <input type="submit" value="Submit">
     </form>
 </div>
 
         </div>
-
         <!-- section two  -->
-    <div class="OneColumnSection">
-    <div class="MotherCardTableTitles"><h3>List of Children</h3></div>
-    <div class="MotherGeneralDetails">
-        <table class="MotherCardTables">
-            <?php
-            $oneMonthAgo = date('Y-m-d', strtotime('-1 month'));
-
-            $ret = mysqli_query($con, "SELECT * FROM `child_details` WHERE phm_id = '$Phm_id'");
+        <div class="OneColumnSection">
+            <div class="MotherCardTableTitles"><h3>List of Children</h3></div>
+            <div class="MotherGeneralDetails">
+                <table class="MotherCardTables">
+                    <?php
+                        $oneMonthAgo = date('Y-m-d', strtotime('-1 month'));
+                        $ret = mysqli_query($con, "SELECT * FROM `child_details` WHERE phm_id = '$Phm_id'");
 
             if (mysqli_num_rows($ret) > 0) {
                 echo "<tr><th>Child ID</th><th>Child Name</th><th>Birth Date</th><th>Gender</th><th>View Child Card</th><th>edit</th><th>delete</th></tr>";
@@ -132,7 +130,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
                     $child_gender = $row["child_gender"];
                     $registration_date = $row["registration_date"];
 
-                    $canDelete = (strtotime($registration_date) >= strtotime($oneMonthAgo));
+                                $canDelete = (strtotime($registration_date) >= strtotime($oneMonthAgo));
 
                     echo "<tr>
                     <td>" . $row["child_id"] . "</td>

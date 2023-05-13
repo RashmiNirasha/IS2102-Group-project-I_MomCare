@@ -165,6 +165,7 @@
                             echo "<h3>No instructions added yet!</h3>";
                         }
                     ?>
+                </div>
             </div>
         </div>
     </div>

@@ -1,6 +1,7 @@
 <?php 
-session_start();
-include '../../Config/dbConnection.php';
+    session_start();
+    include '../../Config/dbConnection.php';
+    if (isset($_SESSION['email'])){
 
 if (isset($_SESSION['email'])) {
     $doc_id = $_SESSION['id'];
@@ -64,3 +65,7 @@ if (isset($_SESSION['email'])) {
     }
 }
 ?>
+<?php }else{
+    header("Location: ../../mainLogin.php");
+    exit();
+} ?>

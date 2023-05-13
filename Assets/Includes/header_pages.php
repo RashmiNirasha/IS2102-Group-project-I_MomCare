@@ -117,7 +117,7 @@
                     $phm_result = mysqli_query($con, $phm_query);
                     $phm_row = mysqli_fetch_array($phm_result);
                     $_SESSION['phm_id'] = $phm_row['phm_id'];
-                    echo '<a href="../../View/PHM/phm-dashboard.html">Dashboard</a>';
+                    echo '<a href="../../View/PHM/phm-dashboard.php">Dashboard</a>';
                 } else if ($_SESSION['user_role'] == 'ped') {
                     echo '<a href="../../View/Pediatrician/ped-dashboardView.php">Dashboard</a>';
                 } else if ($_SESSION['user_role'] == 'vog') {

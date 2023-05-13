@@ -162,7 +162,7 @@
             </div>
         </div>
         <div class="vog-profile-buttons">
-            <button class="edit" style="background:#24D4B9;" onclick="editVogProfile()">Edit Profile</button>
+            <button class="edit" style="background:#029EE4;" onclick="editVogProfile()">Edit Profile</button>
             <button class="change" style="background:#EA2727;" onclick="vogPasswordChange()">Change Password</button>
         </div>
     </div>
@@ -225,28 +225,16 @@
                             <td><input type='text' name='vog-id' id='vog-id' value='<?php echo $doctor_id ?>' readonly></td>
                         </tr>
                         <tr>
-                            <td>Current Password:</td>
-                            <td>
-                                <input type="password" name="current_password" id="current_password" required>
-                                <!-- <input type="checkbox" id="toggle-current-password-visibility" onclick="togglePasswordVisibility('current_password')"> -->
-                                <!-- <label for="toggle-current-password-visibility">Show</label> -->
-                            </td>
+                            <td id="required">Current Password:</td>
+                            <td><input type="password" name="current_password" id="current_password" autofocus required></td>
                         </tr>
                         <tr>
-                            <td>New Password:</td>
-                            <td>
-                                <input type="password" name="new_password" id="new_password" required>
-                                <!-- <input type="checkbox" id="toggle-new-password-visibility" onclick="togglePasswordVisibility('new_password')"> -->
-                                <!-- <label for="toggle-new-password-visibility">Show</label> -->
-                            </td>
+                            <td id="required">New Password:</td>
+                            <td><input type="password" name="new_password" id="new_password" required></td>
                         </tr>
                         <tr>
-                            <td>Confirm New Password:</td>
-                            <td>
-                                <input type="password" name="confirm_new_password" id="confirm_new_password" required>
-                                <!-- <input type="checkbox" id="toggle-confirm-password-visibility" onclick="togglePasswordVisibility('confirm_new_password')"> -->
-                                <!-- <label for="toggle-confirm-password-visibility">Show</label> -->
-                            </td>
+                            <td id="required">Confirm New Password:</td>
+                            <td><input type="password" name="confirm_new_password" id="confirm_new_password" required></td>
                         </tr>
                     </table>
                 <div class="VogPasswordChangePopupBtn">

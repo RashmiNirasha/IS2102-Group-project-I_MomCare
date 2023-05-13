@@ -17,7 +17,6 @@ include "../../Config/dbConnection.php";
             <img src="../../Assets/images/common/Project Logo-01.png" alt="Logo">
         </div>
         <div class="RegisterMotherInnerDiv">
-            <!-- <h2>Register</h2> -->
             <form class="RegistrationMotherForm" id="RegistrationMotherForm" action="../../Config/mother-registrationModel.php" method="POST">
                 <div class="box-shadow">
                 <h3>Register</h3>

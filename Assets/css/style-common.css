@@ -137,6 +137,19 @@ body {
     vertical-align: middle;
 }
 
+.mainInnerContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 120px 15% 30px 15%;
+    height: 550px;
+    border-radius: 10px;
+    padding: 10px;
+    border-top: #029ce4 5px solid;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    /* background-color: #029ce4; */
+}
+
+
 /* --------------------- Mother registration page --------------------- */
 
 .RegisterMotherMainDiv {
@@ -177,11 +190,9 @@ body {
     width: 100px;
     height: 40px;
     border-radius: 10px;
-    border-style: solid;
-    border-width: 1px;
+    border: #029EE4 solid 1px;
     color: #ffffff;
     background-color: #029ee4;
-    border-color: #029ee4;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     margin-top: 20px;
@@ -194,9 +205,7 @@ body {
     font-size: 16px;
     padding: 10px;
     border-radius: 10px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #029EE4;
+    border: #029EE4 solid 1px;
     height: 150px;
 }
 
@@ -204,11 +213,9 @@ body {
     width: 100px;
     height: 40px;
     border-radius: 10px;
-    border-style: solid;
-    border-width: 1px;
+    border: #029EE4 solid 1px;
     color: #ffffff;
     background-color: #029ee4;
-    border-color: #029ee4;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     margin-top: 20px;
@@ -220,11 +227,9 @@ body {
     width: 100px;
     height: 40px;
     border-radius: 10px;
-    border-style: solid;
-    border-width: 1px;
+    border: #029EE4 solid 1px;
     color: #ffffff;
     background-color: #029ee4;
-    border-color: #029ee4;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     margin-top: 20px;
@@ -300,9 +305,7 @@ body {
     padding: 10px;
     height: 40px;
     border-radius: 10px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #029EE4;
+    border: #029EE4 solid 1px;
 }
 
 .box-shadow {
@@ -310,7 +313,7 @@ body {
     background-color: transparent;
     border-radius: 20px;
     /* box-shadow: 0px 0px 1000px -60px rgba(2, 136, 177, 0.918); */
-    box-shadow: 0px 20px 1000px 10px rgba(52, 189, 253, 0.521);
+    box-shadow: 0px 0px 70px 1px rgba(0, 0, 0, 0.3);
 }
 
 .RegistrationMotherForm table {
@@ -321,9 +324,6 @@ body {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 0px 0px 20px 20px;
-    border-style: solid;
-    border-width: 5px;
-    border-color: #029EE4;
 }
 
 .RegistrationMotherForm table td:nth-child(1) {
@@ -490,6 +490,11 @@ body {
     font-size: 50px;
     padding-right: 50px;
 
+}
+
+#required:after {
+    content: "*";
+    color: red;
 }
 
 .dashboard-header {
@@ -1804,12 +1809,12 @@ input[type="file" i] {
     width: 100px;
     height: 30px;
     border-style: none;
-    border-radius: 25px;
+    border-radius: 0px 25px 25px 0;
     color: #ffffff;
     background-color: #029EE4;
     cursor: pointer;
-    top: 100px;
-    left: 30px;
+    top: 120px;
+    left: 0px;
     position: fixed;
 }
 
@@ -3592,6 +3597,59 @@ a {
 .hr-table table>tbody>tr:nth-child(odd){
     background-color: #F7F7F7;
 }
+.containerMainHeader {
+    display: flex;
+    justify-content: center;
+    /* background-color: #007bff; */
+}
+
+.regViewTable {
+    /* background-color: #00ff0d; */
+    /* border: #029ce4 1px solid; */
+    /* border-radius: 10px */
+}
+
+.regViewTable table {
+    width: 100%; 
+    background-color: #029ce4;
+    border-collapse: separate;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.regViewTable table th {
+    padding: 10px 5px;
+    /* background-color: #029ce4; */
+}
+
+
+.regViewTable table td {
+    padding: 5px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.regViewTable select {
+    width: 70px;
+    height: 30px;
+    padding: 3.5px;
+    font-size: 11px;
+}
+
+.regViewTable button {
+    width: 70px;
+    height: 30px;
+    padding: 3.5px;
+    font-size: 11px;
+    background-color: #029ce4;
+    color: white;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.regViewTable table td:last-child{
+    display: flex;
+    justify-content: space-evenly;
+}
 
 .hr-table table {
     /* min-width: 90%;
@@ -4800,6 +4858,7 @@ a {
     border-radius: 5px;
     border-style: solid;
     border-width: 1px;
+    color: #f2f2f2;
     background-color: #029ce4;
     border-color: #029ce479;
     text-align: center;
@@ -5058,7 +5117,7 @@ a {
 .vog-profile-buttons {
     display: flex;
     float: right;
-    align-items:first baseline;
+    align-items: baseline;
     margin-top: 70px;
     width: fit-content;
     padding-top: 470px;
@@ -5075,16 +5134,6 @@ a {
     border-radius: 15px;
     border: none;
     cursor: pointer;
-    color: #F3F4F5;
-}
-
-
-.vog-profile-buttons button{
-    width: 150px;
-    height: 30px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
-    border: none;
     color: #F3F4F5;
 }
 

@@ -190,6 +190,12 @@ body {
 /* child-cards css */
 
 .child-sidenav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+  text-align: left;
+  gap: 10px;
     padding-top: 20px;
     height: 100%;
     width: 225px;
@@ -199,20 +205,22 @@ body {
     left: 0;
     background-color: #029ee4;
     overflow-x: hidden;
-    padding-top: 100px;
   }
   
   .child-sidenav a {
     color:rgb(246, 246, 246);
-    padding: 6px 6px 6px 32px;
+    padding: 10px 6px 10px 32px;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 15px;
     font-weight: bold;
     display: block;
+    border-radius: 20px 0px 0px 20px;
+    background-color: #5db5df;
   }
   
   .child-sidenav a:hover {
     color: #0e106e;
+    background-color: #f2f2f2;
   }
   
   @media screen and (max-height: 450px) {
@@ -221,13 +229,13 @@ body {
   }
 
   .child-container{
-    margin-top: 06%;
-    margin-left: 18%;
-    margin-right: 10%;
+    margin-top: 6%;
+    margin-left: 20%;
+    margin-right: 4%;
     margin-bottom: 5%;
     background: #fff;
     border-radius: 6px;
-    padding: 10px 60px 10px 40px;
+    padding: 10px 60px 35px 40px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
 
@@ -359,7 +367,7 @@ body {
   }
 
   select{
-    width: 82%;
+  width: 100%;
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -384,6 +392,25 @@ body {
 }
 
 .goBackBtn:hover {
+    background-color: #ff0000;
+
+}
+
+.formSubmitBtn {
+  float: right;
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+    border-style: none;
+    border-radius: 25px;
+    color: #ffffff;
+    background-color: #029EE4;
+    cursor: pointer;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.formSubmitBtn:hover {
     background-color: #ff0000;
 
 }
@@ -491,8 +518,17 @@ transition: all 0.3s ease;
 background: #5029bc;
 }
 
+.radioSet{
+  display: flex;
+  flex-direction: row;
+}
+
+.radioSet label {
+  margin-top: 1px;
+}
+
 .MotherCardTables input[type="text"]{
-    width: 80%;
+  width: calc(100% - 10px);
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -502,7 +538,7 @@ background: #5029bc;
     margin-left: 0px;
 }
 .MotherCardTables input[type="date"]{
-  width: 80%;
+  width: calc(100% - 10px);
   padding: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -517,7 +553,7 @@ background: #5029bc;
 }
 
 .MotherCardTables textarea {
-  width: 80%;
+  width: calc(100% - 10px);
   padding: 5px;
   margin-top: 5px;
   margin-bottom: 5px;

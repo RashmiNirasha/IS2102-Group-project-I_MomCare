@@ -48,9 +48,6 @@ $doc_id=$row['doc_id'];
             </button>
         </div> 
     </div>
-    <div class="log-out"> <!--logout button-->
-    <!-- <button onclick="window.location.href='../../Config/logout.php';" class="log-out-btn">Log out</button> -->
-    </div>
 </body>
 </html>
 <?php //include "../../Assets/Includes/footer_pages.php"; ?>
