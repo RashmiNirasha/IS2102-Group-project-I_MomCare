@@ -5,6 +5,7 @@
 <?php 
     include "../../Assets/Includes/header_pages.php";
     include "../../Config/mother-viewProfile.inc.php";
+    include "../../Config/mother-updateProfile.inc.php";
 ?><?php 
 
 
@@ -20,7 +21,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <!-- <link rel="stylesheet" href="../../Assets/css/mother-stylesheet.css"> -->
-    <style><?php include "../../Assets/css/style-common.css" ?></style>
+    <style><?php 
+        include "../../Assets/css/style-common.css";
+     ?>
+    </style>
 
     <script>
         // Update profile
@@ -34,6 +38,15 @@
             document.getElementById("UpdateMotherProfile").style.display = "none";
         }
         // Password change
+        function momPasswordChange(){
+            var confirmUpdate = confirm("Are you sure you want to change your password?");
+            if (confirmUpdate == true){
+                document.getElementById("momPasswordChange").style.display = "block";
+            }
+        }
+        function momPasswordChange_close(){
+            document.getElementById("momPasswordChange").style.display = "none";
+        }
         
 
     </script>
@@ -54,8 +67,21 @@
                         <div class="child-details-section">
                             <table>
                                 <tr>
-                                    <td><label for="child-name">Child name</label></td>
-                                    <td><a href="#"><input type="button" value="View" name="view-btn"></a></td>
+                                    <?php
+                                        $sql = "SELECT child_name,child_id FROM child_details WHERE mom_id = '$mom_id'";
+                                        $result = mysqli_query($con, $sql);
+                                        if ($result instanceof mysqli_result && mysqli_num_rows($result) > 0) {
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                $child_id = $row['child_id'];
+                                                $child_name = $row['child_name'];
+                                                echo "<td><label for='child-name'>$child_name</label></td>";
+                                                echo "<td><a href='../../View/child/child-childDashboard.php?child_id=$child_id'><input type='button' value='View' name='view-btn'></a></td>";
+                                            }
+                                        }
+
+                                    ?>
+                                    <!-- <td><label for="child-name">Child name</label></td>
+                                    <td><a href="#"><input type="button" value="View" name="view-btn"></a></td> -->
                                 </tr>
                             </table>
                         </div>
@@ -117,10 +143,12 @@
         </div>
         <div class="profile-buttons">
             <button class="edit" style="background:#24D4B9;" onclick="editMotherProfile()">Edit Profile</button>
-            <a href="mother-passwordReset.php"><button class="change" style="background:#EA2727;">Change Password</button></a>
-            <a href="mother-card.php"><button class="view" style="background:#029EE4;">View Mother Card</button></a>
+            <a><button class="change" style="background:#EA2727;" onclick="momPasswordChange()">Change Password</button></a>
+            <a href="motherCardFormTitles.php"><button class="view" style="background:#029EE4;">View Mother Card</button></a>
         </div>
     </div>
+
+    <!-- Mother Profile Update -->
 
     <div class="UpdateMotherProfile" id="UpdateMotherProfile" style="display:none;">
         <div class="updateProfileInnerDiv">
@@ -174,6 +202,39 @@
                     <label for="contactAdmin" class="contactAdminLable">Contact Admin</label>
                     <button type="cancel" name='cancel_update' id="cancel-update" onclick="momUpdatePopup_close()">Cancel</button>
                     <button type='submit' name='mother-profile-update-btn' id='mother-profile-update-btn'>Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mother Password Reset -->
+
+    <div class="momPasswordChange" id="momPasswordChange" style="display:none;">
+        <div class="momPasswordChangeInnerDiv">
+            <span class="momPasswordChange-close" onclick="momPasswordChange_close()">&times;</span>
+            <h2>Change Password</h2>
+            <form action="../../Config/mother-passwordReset.inc.php" method="POST">
+               <table>
+                    <tr>
+                        <td><label for='mom_id' class="contactAdmin">Mother ID</label></td>
+                        <td><input type='text' name='mom_id' id='mom_id' value="<?php  echo $mother_id?>" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>Current Password</td>
+                        <td><input type="password" name="current_password" id="current_password" required></td>
+                    </tr>
+                    <tr>
+                        <td>New Password</td>
+                        <td><input type="password" name="new_password" id="new_password" required></td>
+                    </tr>
+                    <tr>
+                        <td>Confirm Password</td>
+                        <td><input type="password" name="confirm_password" id="confirm_password" required></td>
+                    </tr>
+                </table>
+                <div class="momPasswordChangePopupBtn">
+                    <button type="cancel" name='cancel_password_change' id="cancel-password-change" onclick="momPasswordChange_close()">Cancel</button>
+                    <button type='submit' name='mom-password-change-btn' id='mom-password-change-btn'>Change</button>
                 </div>
             </form>
         </div>

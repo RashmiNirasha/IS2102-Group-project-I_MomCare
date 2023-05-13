@@ -32,7 +32,7 @@
                 <div class="MotherCardInnerDiv">
                     <div class="Section1">
                         <div class="MotherBasicDetails">
-                            <div class="MotherBasicDetails-Pic"><img src="..\..\Assets\images\mother\mother_Profile_Pic.png" alt="mother_Profile_Pic"></div>
+                            <div class="MotherBasicDetails-Pic"><img src="<?php  echo $mother_propic?>" alt="mother_Profile_Pic"></div>
                             <div class="MotherBasicDetails-Text">
                                 <table>
                                     <div class="MotherStatus"><b>Blue</b></div>

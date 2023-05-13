@@ -5,7 +5,8 @@
    {
 ?>
 <?php 
-include "mother-header.php";
+//include "mother-header.php";
+include "../../Assets/Includes/header_pages.php";
 ?>
 
 <!DOCTYPE html>
@@ -21,9 +22,9 @@ include "mother-header.php";
        <!-- topic and notifications -->
       <div class="heading">
         <h1>Mother Card Menu</h1>
-        <a href="#">
+        <!-- <a href="#">
           <span class="material-icons">notifications</span>
-        </a>
+        </a> -->
         </div>
 
 <!-------- Child Card Topic Section ----------->

@@ -5366,4 +5366,197 @@ a {
 
 .hide {
     display: none;
-  }
+}
+/* ------------- mother profile update popup ------------- */
+
+.UpdateMotherProfile {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.updateProfileInnerDiv #mom_id, #mom_fullname, #mom_email, #mom_dob {
+    border-style: none;
+    cursor: default;
+    color: #6e6e6e;
+}
+
+.contactAdmin:after {
+    content: ' *';
+    color: red;
+}
+
+.updateProfileInnerDiv #mom_id:focus, #mom_name:focus, #mom_email:focus, #mom_dob:focus {
+    outline: none;
+}
+
+.momUpdatePopup-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.momUpdatePopup-close:hover, .momUpdatePopup-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.MotherProfilePopupBtn {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.MotherProfilePopupBtn label:nth-child(1) {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.MotherProfilePopupBtn button[type=submit] {
+    justify-self: right;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.MotherProfilePopupBtn button[type=submit]:hover {
+    background-color: #0069d9;
+}
+
+.MotherProfilePopupBtn button[type=cancel] {
+    justify-self: right;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.MotherProfilePopupBtn button[type=cancel]:hover {
+    background-color: #ec0000;
+}
+
+/* ------------- Mother password change popup ------------- */
+
+.momPasswordChange {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.momPasswordChangeInnerDiv {
+    position: relative;
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.momPasswordChangeInnerDiv table {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    /* background-color: #007bff; */
+}
+
+.momPasswordChangeInnerDiv input {
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    padding: 5px;
+    margin-left: -10px;
+}
+
+.momPasswordChangeInnerDiv input[type=text]:first-child {
+    border-style: none;
+}
+
+.momPasswordChange-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.momPasswordChange-close:hover, .momPasswordChange-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.momPasswordChangePopupBtn {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.momPasswordChangePopupBtn button[type=submit] {
+    justify-self: right;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.momPasswordChangePopupBtn button[type=submit]:hover {
+    background-color: #0069d9;
+}
+
+.momPasswordChangePopupBtn button[type=cancel] {
+    justify-self: right;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.momPasswordChangePopupBtn button[type=cancel]:hover {
+    background-color: #ec0000;
+}
+

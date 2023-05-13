@@ -4,6 +4,17 @@
     //session_start();
     $mom_id = $_SESSION['mom_id'];
     
+    $sql = "SELECT mom_propic FROM mother_details WHERE mom_id = '$mom_id'";
+    $result = $con->query($sql);
+    if($result->num_rows > 0){
+        while($row=mysqli_fetch_assoc($result)){
+            $mother_propic = $row['mom_propic'];
+        }
+    }
+    else{
+        echo "0 results";
+    }
+
     $sql = "SELECT * FROM mcard_general WHERE mom_id = '$mom_id'";
     $result = $con->query($sql);
     if($result->num_rows > 0)
