@@ -58,8 +58,33 @@
         if (mysqli_num_rows($result) > 0) {
             echo "Data already exists";
         } else {
+            // Fetch the data from the table ordered by week in ascending order
+            $sql = "SELECT poa_weeks, weight FROM mcard_weight_gain ORDER BY poa_weeks ASC";
+            $result = mysqli_query($con, $sql);
+
+            // Initialize variables
+            $previousWeight = null;
+            $weightDifference = array();
+
+            // Iterate through the rows
+            while ($row = mysqli_fetch_assoc($result)) {
+                $week = $row['poa_weeks'];
+                $weight = $row['weight'];
+
+                if ($previousWeight !== null) {
+                    // Calculate the weight difference compared to the previous week
+                    $difference = $weight - $previousWeight;
+
+                    // Store the weight difference in an array
+                    $weightDifference[$week] = $difference;
+                }
+
+                // Set the current weight as the previous weight for the next iteration
+                $previousWeight = $weight;
+            }
+
             // Insert a new record
-            $sql = "INSERT INTO mcard_weight_gain (poa_weeks, weight, date_calculated, mom_id) VALUES ('$mom_poaweeks', '$mom_weight', NOW(), '$mom_id')";
+            $sql = "INSERT INTO mcard_weight_gain (poa_weeks, weight, weight_gain, date_calculated, mom_id) VALUES ('$mom_poaweeks', '$mom_weight', '$difference', NOW(), '$mom_id')";
         }   
 
         // Execute the query
@@ -70,42 +95,28 @@
             echo "Error: " . mysqli_error($con);
         }
 
-        // Fetch the data from the table ordered by week in ascending order
-        $sql = "SELECT poa_weeks, weight FROM mcard_weight_gain ORDER BY poa_weeks ASC";
+    }
+    //SFH Chart
+
+    if(isset($_POST['poa_week']) && isset($_POST['fundal_height'])) {
+        $mom_poaweek = $_POST["poa_week"];
+        $mom_fundalheight = $_POST["fundal_height"];
+        $mom_id = $_POST["mom_id"];
+
+        $sql = "SELECT * FROM mcard_sfh_chart WHERE poa_week = '$mom_poaweek' AND mom_id = '$mom_id'";
         $result = mysqli_query($con, $sql);
-
-        // Initialize variables
-        $previousWeight = null;
-        $weightDifference = array();
-
-        // Iterate through the rows
-        while ($row = mysqli_fetch_assoc($result)) {
-            $week = $row['poa_weeks'];
-            $weight = $row['weight'];
-
-            if ($previousWeight !== null) {
-                // Calculate the weight difference compared to the previous week
-                $difference = $weight - $previousWeight;
-
-                // Store the weight difference in an array
-                $weightDifference[$week] = $difference;
-            }
-
-            // Set the current weight as the previous weight for the next iteration
-            $previousWeight = $weight;
+        if (mysqli_num_rows($result) > 0) {
+            echo "Data already exists";
+        } else {
+            $sql = "INSERT INTO mcard_sfh_chart (poa_week, fundal_height, date_calculated, mom_id) VALUES ('$mom_poaweek', '$mom_fundalheight', NOW(), '$mom_id')";
+            // $result = mysqli_query($con, $sql);
         }
 
-        // Print the weight differences
-        foreach ($weightDifference as $week => $difference) {
-            $sql = "UPDATE mcard_weight_gain SET weight_gain = '$difference' WHERE poa_weeks = '$week'";
-            $result = mysqli_query($con, $sql);
-
-            if ($result) {
-                echo "Weight gain calculated successfully";
-            } else {
-                echo "Error: " . mysqli_error($con);
-            }
-            
+        if (mysqli_query($con, $sql)) {
+            header("Location: ../View/Mother/motherCardPage3.php");
+            exit();
+        } else {
+            echo "Error: " . mysqli_error($con);
         }
 
     }

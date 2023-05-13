@@ -5619,3 +5619,50 @@ a {
     background-color: #ec0000;
 }
 
+/* Weight hain chart */
+
+.WeightGainChar input[type=submit] {
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    background-color: #029ce4;
+    color: #fff;
+    font-size: 10px;
+    margin-top: 10px;
+    cursor: pointer;    
+}
+
+.WeightGainChar input[type=submit]:hover {
+    background-color: #0277b8;
+}
+
+.WeightGainChar input[type=reset]{
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ca2020;
+    color: #fff;
+    font-size: 10px;
+    margin-top: 10px;
+    cursor: pointer; 
+}
+
+.WeightGainChar input[type=reset]:hover {
+    background-color: #a71b1b;
+}
+
+.WeightGainChar #showDataBtn {
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    background-color: #029ce4;
+    color: #fff;
+    font-size: 10px;
+    margin-top: 10px;
+    cursor: pointer; 
+}
+
+

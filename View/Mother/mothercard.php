@@ -19,14 +19,14 @@ if (mysqli_num_rows($result) > 0){
 
 function dental(){
 include "../../Config/dbConnection.php";
-        // Get the dental report data for the specified child
+        // Get the dental report data for the specified mother
         $mom_id = mysqli_real_escape_string($con, $_GET['mom_id']);
 
         $sql = "SELECT * FROM mcard_dentalclinic WHERE mom_id = '$mom_id'";
         $result = mysqli_query($con, $sql); 
         $output = '';
     
-        // Display the dental report data for the specified child
+        // Display the dental report data for the specified mother
         if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
                 $output .= '

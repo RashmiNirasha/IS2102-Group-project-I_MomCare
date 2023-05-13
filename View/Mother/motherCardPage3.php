@@ -34,6 +34,19 @@
                 $difference[] = $row['weight_gain'];
             }
         }
+
+        $sql = "SELECT * FROM mcard_sfh_chart WHERE mom_id = '$mom_id'";
+        $result = mysqli_query($con,$sql);
+        $resultCheck = mysqli_num_rows($result);
+        if ($resultCheck > 0){
+            $week2 = array();
+            $fundal_height = array();
+
+            while ($row = mysqli_fetch_assoc($result)){
+                $week2[] = $row['poa_week'];
+                $fundal_height[] = $row['fundal_height'];
+            }
+        }
     ?>
     <div class="MotherCardMainDiv">
         <div class="SectionNameDiv">
@@ -59,25 +72,25 @@
                                             <th>Weight</th>
                                             <td><input type="text" id="weight" name="weight"></td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <th>Weight Gain</th>
                                             <td>
                                                 <label for="weight_gain"><?php 
                                                 ?>
                                                 </label>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                         <tr>
-                                        <td><input type="submit" value="Calculate_WG"></td>
+                                        <td><input type="submit" value="Submit"></td>
                                         <td><input type="reset" value="Reset"></td>
                                         </tr>
                                     </table>
                                     <input type="hidden" id="mom_id" name="mom_id" value="<?php echo $mom_id; ?>">
                                 </form>
                                 <div class="grid-3" id="chart">
-                                    <h3>CHARTS</h3>
-                                    <div class="boxchart"><canvas id="myChart"></canvas>
-                                    <button id="showDataBtn">View Weight Gain Chart</button>
+                                    <h3>Weight Gain Chart</h3>
+                                    <div class="boxchart"><canvas id="weightGainChart"></canvas>
+                                    <button id="showDataBtn">View Chart</button>
                                     </div>
                                 </div>
 
@@ -92,9 +105,9 @@
                                         datasets: [{
                                             label: 'weight_gain',
                                             data: weight_gain,
-                                            backgroundColor: ['rgba(153, 102, 255, 0.5)'],
+                                            backgroundColor: ['rgba(2, 156, 228, 0.12)'],
                                             fill: true ,
-                                            borderColor: ['rgba(255, 99, 132, 1)'],
+                                            borderColor: ['rgba(2, 158, 228, 1)'],
                                             borderWidth: 1}]
                                         };
 
@@ -114,13 +127,13 @@
                                     }
                                     };
 
-                                    const myChart = new Chart(document.getElementById('myChart'), config);
+                                    const weightGainChart = new Chart(document.getElementById('weightGainChart'), config);
 
                                     document.getElementById('showDataBtn').addEventListener('click', function() {
-                                    myChart.data.datasets[0].data = weight_gain;
-                                    myChart.data.datasets[0].label = 'Weight Gain';
-                                    myChart.options.scales.y.title.text = 'Weight Gain';
-                                    myChart.update();
+                                    weightGainChart.data.datasets[0].data = weight_gain;
+                                    weightGainChart.data.datasets[0].label = 'Weight Gain';
+                                    weightGainChart.options.scales.y.title.text = 'Weight Gain';
+                                    weightGainChart.update();
                                     });
 
                                 </script>
@@ -134,6 +147,75 @@
                             </div>
                             <div class="SFHchart">
                                 <!-- add chart code here -->
+
+                                <form action="../../Config/mother-mcardPage3.inc.php" method="post">
+                                    <table class="MotherCardTables">
+                                        <tr>
+                                            <th>POA Week</th>
+                                            <td><input type="text" id="poa_week" name="poa_week"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Fundal Height(cm)</th>
+                                            <td><input type="text" id="fundal_height" name="fundal_height"></td>
+                                        </tr>
+                                        <tr>
+                                        <td><input type="submit" value="Submit"></td>
+                                        <td><input type="reset" value="Reset"></td>
+                                        </tr>
+                                    </table>
+                                    <input type="hidden" id="mom_id" name="mom_id" value="<?php echo $mom_id; ?>">
+                                </form>
+
+                                <div class="grid-3" id="chart">
+                                    <h3>SFH Chart</h3>
+                                    <div class="boxchart"><canvas id="SFHChart"></canvas>
+                                    <button id="showDataBtn2">View Chart</button>
+                                    </div>
+                                </div>
+                                
+                                <script>
+                                    //set up block 
+                                    const week2 = <?php echo json_encode($week2); ?>;
+                                    const fundal_height = <?php echo json_encode($fundal_height); ?>;
+
+                                    const data= {
+                                        labels: <?php echo json_encode($week2); ?>, // Modify labels to use age values from the table
+                                        datasets: [{
+                                            label: 'fundal_height',
+                                            data: fundal_height,
+                                            backgroundColor: ['rgba(2, 156, 228, 0.12)'],
+                                            fill: true ,
+                                            borderColor: ['rgba(2, 158, 228, 1)'],
+                                            borderWidth: 1}]
+                                        };
+
+                                    const config = {
+                                    type: 'line',
+                                    data: data,
+                                    options: {
+                                        responsive: true,
+                                        scales: {
+                                        x: {
+                                            title: { display: true, text: 'Weeks'}},
+                                        y: {
+                                            title: {display: true, text: 'Fundal Height'},
+                                            beginAtZero: true
+                                        }
+                                        }
+                                    }
+                                    };
+
+                                    const SFHChart = new Chart(document.getElementById('SFHChart'), config);
+
+                                    document.getElementById('showDataBtn2').addEventListener('click', function() {
+                                    SFHChart.data.datasets[0].data = fundal_height;
+                                    SFHChart.data.datasets[0].label = 'Fundal Height';
+                                    SFHChart.options.scales.y.title.text = 'Fundal Height';
+                                    SFHChart.update();
+                                    });
+
+                                </script>
+
                             </div>
                         </div>
                     </div>
