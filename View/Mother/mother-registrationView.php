@@ -1,6 +1,8 @@
 <?php 
 include "../../Config/dbConnection.php";
 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +38,10 @@ include "../../Config/dbConnection.php";
                     <tr>
                         <td><label for="email">Email</label></td>
                         <td><input type="email" name="email" id="email" placeholder="Enter your email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="mom_nic">NIC</label></td>
+                        <td><input type="text" name="mom_nic" id="mom_nic" placeholder="Enter your NIC" ></td>
                     </tr>
                     <tr>
                         <td><label for="BOD">Date of Birth</label></td>

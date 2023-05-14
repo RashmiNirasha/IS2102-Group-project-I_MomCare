@@ -1,66 +1,39 @@
 <?php
 define("OTP_LEN", "8"); // password length
 include "dbConnection.php";
-include "../Assets/Includes/email.php";
 
-if (empty($_POST["fname"])) {
-    die("First Name is required");
-}
-// if (empty($_POST["mname"])) {
-//     die("Middle Name is required");
-// }
-if (empty($_POST["sname"])) {
-    die("Last Name is required");
-}
-if (empty($_POST["address"])) {
-    die("address is required");
-}
+$mom_fname= $_POST['fname'];
+$mom_mname= $_POST['mname'];
+$mom_sname= $_POST['sname'];
+$mom_address = $_POST['address'];
+$mom_dob = $_POST['BOD'];
+$mom_email = $_POST['email'];
+$mom_tele = $_POST['tele'];
+$PHM_id=$_POST['phm_id'];
+$mom_nic = $_POST['mom_nic'];
 
-if (empty($_POST["BOD"])) {
-    die("date of birth is required");
-}
-if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-    die("Valid email is required");
+//check nic validity
+if(!preg_match("/^[0-9]{9}[vVxX]$|^[0-9]{12}$/", $mom_nic)) {
+    echo "<script type='text/javascript'>alert('NIC number is invalid');window.location='../View/Mother/mother-registrationView.php';</script>";
 }
 
-if (empty($_POST["tele"])) {
-    die("Telephone number is required");
-}
+$t=time();
+$reg_date = date("Y-m-d",$t);
 
-if (empty($_POST["phm_id"])) {
-    die("phm id is required");
-}
-
-if(!preg_match("/^[0-9]{10}$/", $_POST["tele"])) {
-    die("Telephone number must be 10 digits");
-}
-
-$mom_fname= $_REQUEST['fname'];
-$mom_mname= $_REQUEST['mname'];
-$mom_sname= $_REQUEST['sname'];
-$mom_address = $_REQUEST['address'];
-$mom_dob = $_REQUEST['BOD'];
-$mom_email = $_REQUEST['email'];
-$mom_tele = $_REQUEST['tele'];
-$PHM_id=$_REQUEST['phm_id'];
+if ($mom_dob > $reg_date || strtotime($mom_dob) > strtotime("-16 years", time()) || strtotime($mom_dob) < strtotime("-100 years", time())) {
+    echo "<script type='text/javascript'>alert('Date of birth is invalid');window.location='../View/Mother/mother-registrationView.php';</script>";
+}  
 
 $query="SELECT * FROM registered_user_details WHERE email='$mom_email'";
 $result=mysqli_query($con,$query);
 $num=mysqli_num_rows($result);
 if($num==1){
-    echo "Email already taken";
+    echo "<script type='text/javascript'>alert('Email already exists');window.location='../View/Mother/mother-registrationView.php';</script>";
 }else{
 
+    
+
 $password_hash=bin2hex(random_bytes(8));
-
-// $alphabets = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
-// $count = strlen($alphabets) - 1;
-// $pass = "";
-//   for ($i=0; $i<OTP_LEN; $i++) { $pass .= $alphabets[rand(0, $count)]; }
-//     $password_hash = password_hash($pass, PASSWORD_DEFAULT);
-
-$t=time();
-$reg_date = date("Y-m-d",$t);
 
 //calculate age 
 $birthDate = $mom_dob;
@@ -74,8 +47,8 @@ $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[1], $birthDate[2], $birt
 //autogenerate values for mother id
 $mother_id = rand(1000,9999);
 
-$sql = "INSERT INTO registered_user_details(reg_user_id,first_name, middle_name, last_name, address, DOB, tele_number, age, email, reg_date, phm_id, password) 
-    VALUES ('$mother_id','$mom_fname','$mom_mname','$mom_sname','$mom_address','$mom_dob','$mom_tele','$age','$mom_email','$reg_date','$PHM_id','$password_hash')";     
+$sql = "INSERT INTO registered_user_details(reg_user_id,first_name, middle_name, last_name, address, DOB, tele_number, age, email, reg_date, phm_id, password,mom_nic) 
+    VALUES ('$mother_id','$mom_fname','$mom_mname','$mom_sname','$mom_address','$mom_dob','$mom_tele','$age','$mom_email','$reg_date','$PHM_id','$password_hash','$mom_nic')";     
    
         if(mysqli_query($con, $sql)){
             //give a message to the user that the registration is successful in the same page

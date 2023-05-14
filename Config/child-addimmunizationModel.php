@@ -9,6 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $batch_no = $_POST['batch_no'];
     $vaccine = $_POST['vaccine'];
     $adverse_effects= $_POST['adverse_effects'];
+
+    if ($date > date("Y-m-d")) {
+        echo "<script type='text/javascript'>alert('Date cannot be in the future'); window.location.href='../View/PHM/child-addimmunization.php?error=Date cannot be in the future';</script>";
+        exit();
+    }
   
     $insertQuery = "INSERT INTO `child_immunization_table` (phm_id, child_id, age, date, batch_no, type_of_vaccine, adverse_effects) 
     VALUES ('$phm_id', '$child_id', '$child_age', '$date', '$batch_no', '$vaccine', '$adverse_effects')";
@@ -31,6 +36,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     $date = $_POST['date'];
     $batch_no = $_POST['batch_no'];
     $adverse_effects = $_POST['adverse'];
+
+    if ($date > date("Y-m-d")) {
+        echo "<script type='text/javascript'>alert('Date cannot be in the future'); window.location.href='../View/PHM/child-addimmunization.php?error=Date cannot be in the future';</script>";
+        exit();
+    }
 
     // Prepare the update query
     $query = "UPDATE `child_immunization_table` SET `age`='$age', `type_of_vaccine`='$type_of_vaccine', `date`='$date', `batch_no`='$batch_no', `adverse_effects`='$adverse_effects' WHERE `id`='$id'";

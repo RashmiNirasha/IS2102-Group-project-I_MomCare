@@ -146,7 +146,7 @@ $sql = "SELECT * FROM child_bmi_values WHERE child_id = '$child_id' ORDER BY
       datasets: [{
         label: 'height',
         data: height,
-        backgroundColor: ['rgba(153, 102, 255, 0.5)'],
+        backgroundColor: ['rgba(255, 99, 132, 0.2)'],
         fill: true ,
         borderColor: ['rgba(255, 99, 132, 1)'],
         borderWidth: 1}]

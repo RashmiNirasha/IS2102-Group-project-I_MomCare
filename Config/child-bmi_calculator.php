@@ -8,6 +8,12 @@ if (isset($_POST['height']) && isset($_POST['weight'])) {
   $weight = $_POST["weight"];
   $child_id = $_POST["child_id"];
 
+  if ($height == 0 || $weight == 0 || $height > 200 || $weight > 100) {
+    echo "<script type='text/javascript'>alert('Invalid Height or weight error');window.location='../View/Child/child-chartsView.php?child_id=" . $child_id . "';</script>
+    ";
+    exit();
+  }
+
   // Calculate BMI value
   $bmi = $weight / ($height * $height)*10000;
 
@@ -24,7 +30,7 @@ if (isset($_POST['height']) && isset($_POST['weight'])) {
 
   // Execute the query
   if (mysqli_query($con, $sql)) {
-    header("Location: ../View/Child/child-chartsView.php?child_id=" . $child_id);
+    echo "<script type='text/javascript'>alert('Height and weight Successfullt added.');window.location='../View/Child/child-chartsView.php?child_id=" . $child_id . "';</script>";
     exit();
   } else {
     echo "Error: " . mysqli_error($con);

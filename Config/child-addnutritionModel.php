@@ -9,6 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $batch_no = $_POST['batch_no'];
     $record_type = $_POST['record_type'];
 
+    if ($date > date("Y-m-d")) {
+        echo "<script type='text/javascript'>alert('Date cannot be in the future'); window.location.href='../View/PHM/child-addnutrition.php?error=Date cannot be in the future';</script>";
+        exit();
+    }
+
     $time = time();
 
     if ($record_type === 'vitaminA') {
@@ -30,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: ../View/PHM/child-addnutrition.php?message=Child record added successfully");
     } else {
         // Insertion failed, handle the error appropriately
-        echo "Error inserting data: " . mysqli_error($con);
+        header("Location: ../View/PHM/child-addnutrition.php?message=Cannot add this record");
     }
 }
 

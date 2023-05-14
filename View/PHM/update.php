@@ -8,6 +8,11 @@ if (isset($_POST['update'])) {
     $date = $_POST['date'];
     $batchno = $_POST['batchno'];
 
+    if ($date > date("Y-m-d")) {
+        echo "<script type='text/javascript'>alert('Date cannot be in the future'); window.location.href='child-addnutrition.php?error=Date cannot be in the future';</script>";
+        exit();
+    }
+
     // Prepare the update query
     $query = "UPDATE `child_cvitamin_view` SET `age`='$age', `date`='$date', `batchno`='$batchno' WHERE `id`='$id' AND `child_id`='$child_id'";
 
@@ -16,7 +21,7 @@ if (isset($_POST['update'])) {
 
     if ($result) {
         // Update successful
-        header("Location: ../View/PHM/child-addnutrition.php?message=Child record updated successfully");
+        header("Location: child-addnutrition.php?message=Child record updated successfully");
         echo "Record updated successfully.";
     } else {
         // Update failed

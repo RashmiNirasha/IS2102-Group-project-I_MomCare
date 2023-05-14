@@ -18,7 +18,6 @@ $note_records = $row['note_records'];
 
 if (isset($_POST['submit'])) {
     $doc_id = $_POST['doctor_id'];
-    $mom_id = $_POST['mom_id'];
     $note_topic = $_POST['note_topic'];
     $note_date = $_POST['note_date'];
     $note_description = $_POST['note_description'];
@@ -28,7 +27,7 @@ if (isset($_POST['submit'])) {
 
     $result = mysqli_query($con, $sql);
     if($result){
-        header("Location: ped-viewNotesView.php");
+        header("Location: ped-childCardSearchView.php?update=success");
     }
     else{
         echo "Error: " . $sql . "<br>" . mysqli_error($con);

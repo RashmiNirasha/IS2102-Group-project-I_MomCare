@@ -51,6 +51,9 @@ if (isset($_POST['submit'])) {
                 <div class="ForgetPassFormDiv">
                     <form method="post" class="login-form" action="">
                         <h2>Reset Password</h2>
+                        <?php if(isset($_GET['error'])) { ?>
+                                <p class="error"><?php echo $_GET['error']; ?></p> 
+                        <?php } ?>
                         <fieldset>
                             <legend>&nbsp;Email Address:&nbsp;</legend>
                             <input type="email" name="email" id="email" placeholder="Enter your email">

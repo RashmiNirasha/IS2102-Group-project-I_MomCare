@@ -9,6 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["insert"])) {
     $status = $_POST['status'];
     $date = $_POST['date'];
 
+    if ($date > date("Y-m-d")) {
+        echo "<script type='text/javascript'>alert('Date cannot be in the future'); window.location.href='../View/PHM/child-adddental.php?error=Date cannot be in the future';</script>";
+        exit();
+    }
+
     $insertQuery = "INSERT INTO `child_dental_report` (phm_id, child_id, age, date, no_of_teeth, status) VALUES ('$phm_id', '$childId', '$age', '$date', '$noOfTeeth', '$status')";
 
     $result = mysqli_query($con, $insertQuery);
@@ -29,6 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update"])) {
     $noOfTeeth = $_POST['no_of_teeth'];
     $status = $_POST['status'];
     $date = $_POST['date'];
+
+    if ($date > date("Y-m-d")) {
+        echo "<script type='text/javascript'>alert('Date cannot be in the future'); window.location.href='../View/PHM/child-adddental.php?error=Date cannot be in the future';</script>";
+        exit();
+    }
 
     $sql = "UPDATE child_dental_report SET child_id = '$childId', age = '$age', date = '$date', no_of_teeth = '$noOfTeeth', status = '$status' WHERE id = '$id'";
     $result = mysqli_query($con, $sql);

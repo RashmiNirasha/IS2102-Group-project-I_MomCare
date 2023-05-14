@@ -42,11 +42,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["insert"])) {
     //check if the bithdate is valid
     $birth_date = date('Y-m-d', strtotime($birth_date));
     $registration_date = date('Y-m-d', strtotime($registration_date));
-    $today = date('Y-m-d');
-    if ($birth_date > $today) {
-        echo "Invalid birth date!";
+
+    if ($date > date("Y-m-d")) {
+        echo "<script type='text/javascript'>alert('Date cannot be in the future'); window.location.href='../View/PHM/child-addchild.php?error=Date cannot be in the future';</script>";
         exit();
     }
+
     if($registration_date > $today){
         echo "Invalid registration date!";
         exit();
