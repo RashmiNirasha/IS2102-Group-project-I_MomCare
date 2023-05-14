@@ -3,6 +3,13 @@
     if (isset($_SESSION['email'])){
         include "../../Assets/Includes/header_pages.php";
 ?>
+<?php 
+$sql="SELECT phm_name, phm_id FROM phm_details WHERE phm_email='".$_SESSION['email']."'";
+$result=mysqli_query($con,$sql);
+$row=mysqli_fetch_assoc($result);
+$phm_name=$row['phm_name'];
+$phm_id=$row['phm_id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,7 +79,7 @@
                 </div> 
                 </a>
 
-                <a href="phm-addchildprofile.php"><div class="p-card">
+                <a href="child-addchild.php"><div class="p-card">
                 <div class="a-icon-case">
                     <i class="material-icons" alt="records">library_books</i>
                 </div>
@@ -82,7 +89,7 @@
                 </div> 
                 </a>
 
-                <a href="phm-addmothercard.php"><div class="p-card">
+                <a href="../../View/PHM/phm-addChildRecords.php"><div class="p-card">
                 <div class="a-icon-case">
                      <i class="material-icons" alt="records">library_books</i> 
                 </div>
