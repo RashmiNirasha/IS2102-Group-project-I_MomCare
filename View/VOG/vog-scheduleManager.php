@@ -18,9 +18,7 @@
 </head>
 <body>
 <button class="goBackBtn" onclick="history.back()">Go back</button>
-
     <div class="mainCalendarDiv">
-        
         <div class="calendarLeft">
             <div id='calendar'></div> 
         </div>
@@ -83,17 +81,20 @@
         </div>
     </div>
     <div id="appViewPopup" class="appViewPopup">
-    <div class="appViewPopup-content">
-        <span class="appViewPopup-close">&times;</span>
-        <div class="app-profileImage"><img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic"></div>
-        <div id="appointmentDetails"></div>
-        <div class="app-viewMotherCard">
-            <input type="button" value="Mother Card" onclick="">
-            <input type="button" value="Reports" onclick="">
-            <input type="button" value="Children" onclick="">
+        <div class="appViewPopup-content">
+            <span class="appViewPopup-close">&times;</span>
+            <div class="app-profileImage"><img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic"></div>
+            <div id="appointmentDetails"></div>
+            <div class="app-viewMotherCard">
+                <input type="button" value="Mother Card" onclick="">
+                <input type="button" value="Reports" onclick="">
+                <input type="button" value="Children" onclick="">
+            </div>
         </div>
     </div>
-    </div>
+    <!-- <div class="appointmentSetting">
+        <input type="button" value="Setting">
+    </div> -->
 
 
 </body>

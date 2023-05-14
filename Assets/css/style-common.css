@@ -1640,6 +1640,10 @@ input[type="file" i] {
     /* background-color: tomato; */
 }
 
+.main-mother-div {
+    margin-top: 180px;
+}
+
 .medicalNotesViewTitlwe {
     margin: 0px 15% 2% 15%;
 }

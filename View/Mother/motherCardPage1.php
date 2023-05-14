@@ -5,9 +5,9 @@
    {
 ?>
 <?php 
+$mom_id = $_GET['mom_id'];
     include "../../Assets/Includes/header_pages.php"; 
-    include "../../Config/mother-mcardPage1.inc.php";
-    $mom_id = $_SESSION['user_id'];
+    include "../../Config/mother-mcardPage1.inc.php?mom_id= $mom_id";
 ?>
 <!DOCTYPE html>
 <html lang="en">

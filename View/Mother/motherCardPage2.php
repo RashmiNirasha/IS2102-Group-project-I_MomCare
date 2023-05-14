@@ -198,7 +198,9 @@
                                 </div>
                                 <div class="RespiratorySystem">
                                     <table class="MotherCardTables">
-                                        <tr><td><?php echo $mom_respiratory ?>
+                                        <tr>
+                                            <td><?php echo $mom_respiratory ?></td>
+                                        </tr>
                                     </table>
                                 </div>
                             </div>
@@ -303,30 +305,6 @@
                                             <th>Date</th>
                                             <th>Batch No</th>
                                         </tr>
-                                        <?php 
-                                            $sql = "SELECT * FROM mcard_tetanus WHERE mom_id = '$mom_id'";
-                                            $result = $con->query($sql);
-                                            if($result->num_rows > 0)
-                                            {
-                                                while($row=mysqli_fetch_assoc($result)){
-                                                    $mom_tetanus_dose = $row['dose'];
-                                                    $mom_tetanus_date = $row['date'];
-                                                    $mom_tetanus_batch = $row['batch_no'];
-
-                                                    $output = "
-                                                    <tr>
-                                                        <td>$mom_tetanus_dose</td>
-                                                        <td>$mom_tetanus_date</td>
-                                                        <td>$mom_tetanus_batch</td>
-                                                    </tr>";
-                                                    echo $output;
-                                                }
-                                            }
-                                            else{
-                                                echo "0 results";
-                                            }
-                                            
-                                        ?>
                                     </table>
                                 </div>
                             </div>

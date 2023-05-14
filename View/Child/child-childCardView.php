@@ -91,6 +91,7 @@ include "../../Assets/Includes/sidenav.php";?>
     <button class="next" type="submit" class="btn btn-primary">Generate Child Card</button></a>
     </div>
     </div>
+</div>
   </body>
 </html>
 <?php } else {

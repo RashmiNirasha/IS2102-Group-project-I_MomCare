@@ -93,8 +93,8 @@
     <script><?php include 'vog-tests.js' ?></script>
 </head>
 <body>
-<button class="goBackBtn-motherPage" onclick="history.back()">Go back</button>
-    <div class="main-mother">
+<button class="goBackBtn" onclick="history.back()">Go back</button>
+    <div class="main-mother-div">
         <div class="mom-intro">
             <div>
                 <img src="../../Assets/Images/mother/Profile_pic_mother.png" alt="mother-profile-pic">

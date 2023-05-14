@@ -16,7 +16,7 @@ if (isset($_SESSION['email'])){?>
 </head>
 <body>
 <button class="goBackBtn" onclick="history.back()">Go back</button>
-    <div class="main-mother">
+    <div class="main-mother-div">
         <div class="mom-filter">
             <h1>Find mother card</h1>
             <form action="" method="GET">
@@ -56,7 +56,7 @@ if (isset($_SESSION['email'])){?>
                                     </div>
                                 </div>
                                 <div class="momBarBtn">
-                                    <a href="#"><button class="momBarBtn-1">View Profile</button></a>
+                                    <a href="../Mother/mother-motherCardUpdate.php?mom_id='.$mom_id.'"><button class="momBarBtn-1">View Profile</button></a>
                                     <a href="vog-tests.php?mom_id='.$mom_id.'"><button class="momBarBtn-2">View Reports</button></a>
                                     <a href="#"><select name="momBarChildSelect" id="momBarChildSelect">
                                         <option value="child1">Child 1</option>

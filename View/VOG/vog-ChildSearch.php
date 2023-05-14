@@ -12,7 +12,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
 </head>
 <body>
     <button class="goBackBtn" onclick="history.back()">Go back</button>
-    <div class="main-mother">
+    <div class="main-mother-div">
         <div class="child-filter">
             <h1>Find Child </h1>
             <form action=" " method="POST">
