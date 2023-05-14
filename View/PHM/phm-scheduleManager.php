@@ -185,7 +185,7 @@
                     <?php
                         if (isset($_GET['SubmitApp'])) {
                             $id = $_GET['app_id'];
-                            $mom_id = $_GET['mom_id'];
+                            $mom_id = $_GET['mother_id'];
                             $title = $_GET['app_title'];
                             $loc = $_GET['app_location'];
                             $des = $_GET['app_description'];
@@ -200,7 +200,7 @@
                             //     case 'vog':
                             //     case 'ped':
                                     $query = "INSERT INTO phm_appointments (phm_id, p_app_id, mom_id, app_title, app_date, app_description, app_location) VALUES ('$phm_id','$id', '$mom_id', '$title', '$date', '$des', '$loc')";
-                                    
+                                    echo $query;
                                     $result = mysqli_query($con, $query);
                                 //     break;
                                 // case 'phm':

@@ -3293,6 +3293,13 @@ a {
     color: #05a9f5;
 }
 
+.ma-actions .material-icons {
+    font-size: 24px;
+    /* margin-left:7%; */
+    margin-top: 10%;
+    color: #05a9f5;
+}
+
 /* .ma-img-action {
     width: 45px;
     height:45px;
