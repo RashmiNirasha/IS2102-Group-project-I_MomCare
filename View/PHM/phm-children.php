@@ -31,13 +31,15 @@
         <div class="a-content">
             <div class="a-container-n">
                 <h1>List of Children</h1>
-                <form class="ma-searchbar" action="admin-searchdoctor.php" style="margin:auto;max-width:300px" method="get">
-                    <input type="text" placeholder="Search..." name="search">
-                    <button type="submit"><i class="material-icons">search</i></button>
-
-                 
-
-                </form>
+                <div class="au-msg">
+                <?php 
+                if (isset($_GET['status']) && $_GET['status']=='success'){
+                    echo "<p class='au-nor-message'>Record Deleted Successfully.</p>";
+                }elseif (isset($_GET['status']) && $_GET['status']=='not_success'){
+                    echo "<p class='au-imp-message'>Record Cannot Be Deleted.</p>";
+                } 
+                ?>
+                </div>
                 <div class="a-container-m">
                 <!-- <div class="a-dropdown"><div class="a-manage-icon"><i class="material-icons" alt="manage accounts">manage_accounts</i>
             </div>
@@ -49,6 +51,10 @@
             </div> -->
                 <a href = "phm-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
                 </div></div>
+                <form class="ma-searchbar" action="phm-searchchildren.php" style="margin-left:15%;max-width:300px" method="get">
+                    <input type="text" placeholder="Search..." name="search">
+                    <button type="submit"><i class="material-icons">search</i></button>
+                </form>
             <div class="ma-table">
             <table>
                 <tr>
@@ -88,7 +94,10 @@
                                         <div class="ma-img-action"><a href="phm-allocateped.php?child_id=';
                             $output .=$id;
                             $output .="'";
-                            $output .='"><div class = "ad-button">Allocate Pediatrician</div></a><a href = "#"><div class="ad-button">Mother Card</div></a></div>
+                            $output .='"><div class = "ad-button">Allocate Pediatrician</div></a><a href = "..\..\View\Child\childCardPage1.php?child_id=';
+                            $output .=$id;
+                            $output .="'";
+                            $output .='"><div class="ad-button">Child Card</div></a></div>
                                     </div>
                                 </td>';
                             '</tr>';

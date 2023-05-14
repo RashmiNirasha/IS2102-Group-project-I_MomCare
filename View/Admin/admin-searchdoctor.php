@@ -32,10 +32,15 @@
         <div class="a-content">
             <div class="a-container-n">
                 <h1>Manage Doctor Accounts</h1>
-                <form class="ma-searchbar" action="admin-searchdoctor.php" style="margin:auto;max-width:300px" method="get">
-                    <input type="text" placeholder="Search..." name="search">
-                    <button type="submit"><i class="material-icons">search</i></button>
-                </form>
+                <div class="au-msg">
+                <?php 
+                if (isset($_GET['status']) && $_GET['status']=='success'){
+                    echo "<p class='au-nor-message'>Record Deleted Successfully.</p>";
+                }elseif (isset($_GET['status']) && $_GET['status']=='not_success'){
+                    echo "<p class='au-imp-message'>Record Cannot Be Deleted.</p>";
+                } 
+                ?>
+            </div>
                 <div class="a-container-m">
                 <!-- <div class="a-dropdown"><div class="a-manage-icon"><i class="material-icons" alt="manage accounts">manage_accounts</i>
             </div>
@@ -47,6 +52,10 @@
             </div> -->
                 <a href = "admin-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
                 </div></div>
+                <form class="ma-searchbar" action="admin-searchdoctor.php" style="margin-left:15%;max-width:300px" method="get">
+                    <input type="text" placeholder="Search..." name="search">
+                    <button type="submit"><i class="material-icons">search</i></button>
+                </form>
             <div class="ma-table">
             <table>
                 <tr>

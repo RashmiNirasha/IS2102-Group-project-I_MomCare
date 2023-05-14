@@ -58,8 +58,8 @@
             <div class="au-doctor-form">
                 <form action="..\..\Config\admin-adddoctorprocess.php" method="post">
                     <div class="au-first-raw">
-                        <div class="au-doctor-id"><label>Doctor_ID</label>
-                        <input value = "<?php 
+                        <div class="au-doctor-id"><label>Doctor_ID</label name="docid">
+                        <input type="text" name="docid" value = "<?php 
                                                                     // Get user input date 
                                                                     //$registration_date = date('Ymd');
                                                                     // Generate unique ID number    

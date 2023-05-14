@@ -160,7 +160,12 @@
             $_SESSION['user_id'] = $row['user_id'];
             //choose the right dashboard page
             if ($_SESSION['user_role'] == 'phm') {
-                echo '<a href=""><img class="profile_pic" src="../../Assets/Images/phm/phm_proPic.png" alt="profile_pic"></a>';
+                $phmpp_query = "SELECT phm_profile_pic FROM phm_details WHERE phm_id = '" . $_SESSION['phm_id'] . "'";
+                $phmpp_result = mysqli_query($con, $phmpp_query);
+                $phmpp_row = mysqli_fetch_array($phmpp_result);
+                $phm_profile_picture = $phm_row['phm_profile_pic'];
+                echo '<a href="../../View/phm/phm-profile.php"><img class="profile_pic" src="'.$phm_profile_picture.'" alt="profile_pic"></a>';
+                // echo '<a href=""><img class="profile_pic" src="../../Assets/Images/phm/phm_proPic.png" alt="profile_pic"></a>';
             } else if ($_SESSION['user_role'] == 'ped') {
                 echo '<a href=""><img class="profile_pic" src="../../Assets/Images/ped/ped_proPic.png" alt="profile_pic"></a>';
             } else if ($_SESSION['user_role'] == 'vog') {

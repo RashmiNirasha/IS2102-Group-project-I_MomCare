@@ -2,7 +2,7 @@
     session_start();
     if (isset($_SESSION['email'])){
         include "../../Assets/Includes/header_pages.php";
-        include "../../Config/phm-allocatevogprocess.php";
+        include "../../Config/phm-searchvogprocess.php";
         $mom_id = $_GET['mom_id'];
 ?>
 <!DOCTYPE html>
@@ -57,8 +57,10 @@
             
         <?php
 
-        if ($vog_result->num_rows>0){
-            while($row = $vog_result->fetch_assoc()){
+        if ($noResult == "True"){
+            echo "<tr><td colspan='9' style='text-align:center'>No Result Found</td></tr>";
+        }else{
+            while($row = $s_result->fetch_assoc()){
                 $id = $row['doc_id'];
                 $name = $row['doc_name'];
                 $work = $row['doc_workplace'];
@@ -74,10 +76,12 @@
                     <p>';
                 $output .= $work;
                 $output .= '</p>
-                </div><a href="..\..\Config\phm-allocatevogSQLprocess.php?doc_id=';
+                </div><a href="..\..\Config\phm-searchvogSQLprocess.php?doc_id=';
                 $output .=$id;
                 $output .='&mom_id=';
                 $output .=$mom_id;
+                $output .='&search=';
+                $output .=$search;
                 $output .='"><button class="ad-btn">Allocate</button></a></div>';
             echo $output;
             }

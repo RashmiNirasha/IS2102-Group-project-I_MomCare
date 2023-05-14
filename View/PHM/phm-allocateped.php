@@ -2,7 +2,8 @@
     session_start();
     if (isset($_SESSION['email'])){
         include "../../Assets/Includes/header_pages.php";
-        include "../../Config/phm-allocatepedprocess.php"
+        include "../../Config/phm-allocatepedprocess.php";
+        $child_id = $_GET['child_id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,13 +47,18 @@
             <a href = "phm-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
             </div>
             </div>
+            <form class="ma-searchbar" action="phm-searchped.php" style="margin-left:15%;max-width:300px" method="get">
+                    <input type="text" placeholder="Search..." name="search">
+                    <input type="hidden" name="child_id" value="<?php echo $child_id?>" >
+                    <button type="submit"><i class="material-icons">search</i></button>
+                </form>
     <!-- <div class="ad-card-div"> -->
         <div class="ad-card-container">
             
         <?php
 
         if ($ped_result->num_rows>0){
-            $child_id = $_GET['child_id'];
+            // $child_id = $_GET['child_id'];
             while($row = $ped_result->fetch_assoc()){
                 $id = $row['doc_id'];
                 $name = $row['doc_name'];

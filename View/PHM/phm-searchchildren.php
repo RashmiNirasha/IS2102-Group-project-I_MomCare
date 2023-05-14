@@ -2,7 +2,8 @@
     session_start();
     if (isset($_SESSION['email'])){
         include "../../Assets/Includes/header_pages.php";
-        include "../../Config/phm-mothersprocess.php";
+        include "../../Config/phm-searchchildrenprocess.php";
+
 ?>
 
 
@@ -29,7 +30,7 @@
     <div class="a-container">
         <div class="a-content">
             <div class="a-container-n">
-                <h1>List of Mothers</h1>
+                <h1>List of Children</h1>
                 <div class="au-msg">
                 <?php 
                 if (isset($_GET['status']) && $_GET['status']=='success'){
@@ -50,62 +51,57 @@
             </div> -->
                 <a href = "phm-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
                 </div></div>
-                <form class="ma-searchbar" action="phm-searchmothers.php" style="margin-left:15%;max-width:300px" method="get">
+                <form class="ma-searchbar" action="phm-searchchildren.php" style="margin-left:15%;max-width:300px" method="get">
                     <input type="text" placeholder="Search..." name="search">
                     <button type="submit"><i class="material-icons">search</i></button>
                 </form>
             <div class="ma-table">
             <table>
                 <tr>
+                    <th>Child ID</th>
+                    <th>Child Name</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
                     <th>Mother ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Telephone</th>
-                    <th>Mobile</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <!-- <th>Age</th> -->
-                    <!-- <th>phm_id</th> -->
+                    <th>Mother Name</th>
+                    <th>Father Name</th>
                     <th>Action</th>
                 </tr>
 
                 <?php 
-                if ($result->num_rows>0){
-                    while($row = $result->fetch_assoc()){
-                        if ($_SESSION['phm_id'] == $row['phm_id']){
-                                    $id = $row['mom_id'];
-                                    $fname = $row['mom_fname'];
-                                    $lname = $row['mom_lname'];
-                                    $tel = $row['mom_landline'];
-                                    $mobile = $row['mom_mobile'];
-                                    $email = $row['mom_email'];
-                                    $address = $row['mom_address'];
-                                    //$age = $row['mom_age'];
-                                    //$phm_id = $row['phm_id'];
+                
+                if ($noResult == "True"){
+                    echo "<tr><td colspan='9' style='text-align:center'>No Result Found</td></tr>";
+                }else{
+                    while($row = $s_result->fetch_assoc()){
+                        // if ($_SESSION['phm_id'] == $row['phm_id']){
+                        $id = $row['child_id'];
+                        $name = $row['child_name'];
+                        $dob = $row['birth_date'];
+                        $gender = $row['child_gender'];
+                        $mom_id = $row['mom_id'];
+                        $mom_name = $row['mother_name'];
+                        $dad_name = $row['fathers_name'];
+                        //$guardian_id = $row['guardian_id'];
 
-                            $output = '<tr>';
-                            $output .= "<td>$id</td>";
-                            $output .= "<td>$fname</td>";
-                            $output .= "<td>$lname</td>";
-                            $output .= "<td>$tel</td>";
-                            $output .= "<td>$mobile</td>";
-                            $output .= "<td>$email</td>";
-                            $output .= "<td>$address</td>";
-                            //$output .= "<td>$age</td>";
-                            //$output .= "<td>$phm_id</td>";
-                            $output .= '<td><div class="ad-actions">
-                                        <div class="ma-img-action"><a href="phm-allocatevog.php?mom_id=';
+                $output = '<tr>';
+                $output .= "<td>$id</td>";
+                $output .= "<td>$name</td>";
+                $output .= "<td>$dob</td>";
+                $output .= "<td>$gender</td>";
+                $output .= "<td>$mom_id</td>";
+                $output .= "<td>$mom_name</td>";
+                $output .= "<td>$dad_name</td>";
+                // $output .= "<td>$guardian_id</td>";
+                $output .= '<td><div class="ad-actions">
+                                        <div class="ma-img-action"><a href="phm-allocateped.php?child_id=';
                             $output .=$id;
                             $output .="'";
-                            $output .='"><div class = "ad-button">Allocate VOG</div></a><a href = "..\..\View\Mother\motherCardPage1.php?mom_id=';
-                            $output .=$id;
-                            $output .="'";
-                            $output .='"><div class="ad-button">Mother Card</div></a></div>
+                            $output .='"><div class = "ad-button">Allocate Pediatrician</div></a><a href = "#"><div class="ad-button">Mother Card</div></a></div>
                                     </div>
                                 </td>';
                             '</tr>';
                             echo "$output";
-                        }
 
                     }
                 }

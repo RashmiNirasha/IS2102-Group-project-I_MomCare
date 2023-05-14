@@ -68,12 +68,12 @@ function is_array_empty($arr){
                     $insert_user_tbl = $con->query($sql_insert_user_tbl);
 
                     if ($insert_user_tbl){
-
+                        header("Location:..\View\Admin\admin-adddoctor.php?status=success&password=$password");
                     }else{
                         echo "Error: " .$sql_insert_user_tbl . "<br>" . mysqli_error($con);
                     }
 
-                    header("Location:..\View\Admin\admin-adddoctor.php?status=success&password=$password");
+                    // header("Location:..\View\Admin\admin-adddoctor.php?status=success&password=$password");
                 }else{
                     echo "Error: " .$sql_insert_doctor . "<br>" . mysqli_error($con);
                 }

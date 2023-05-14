@@ -2,7 +2,7 @@
     session_start();
     if (isset($_SESSION['email'])){
         include "../../Assets/Includes/header_pages.php";
-        include "../../Config/phm-mothersprocess.php";
+        include "../../Config/phm-searchmothersprocess.php";
 ?>
 
 
@@ -38,7 +38,7 @@
                     echo "<p class='au-imp-message'>Record Cannot Be Deleted.</p>";
                 } 
                 ?>
-                </div>
+            </div>
                 <div class="a-container-m">
                 <!-- <div class="a-dropdown"><div class="a-manage-icon"><i class="material-icons" alt="manage accounts">manage_accounts</i>
             </div>
@@ -70,8 +70,10 @@
                 </tr>
 
                 <?php 
-                if ($result->num_rows>0){
-                    while($row = $result->fetch_assoc()){
+                if ($noResult == "True"){
+                    echo "<tr><td colspan='9' style='text-align:center'>No Result Found</td></tr>";
+                }else{
+                    while($row = $s_result->fetch_assoc()){
                         if ($_SESSION['phm_id'] == $row['phm_id']){
                                     $id = $row['mom_id'];
                                     $fname = $row['mom_fname'];
@@ -97,16 +99,12 @@
                                         <div class="ma-img-action"><a href="phm-allocatevog.php?mom_id=';
                             $output .=$id;
                             $output .="'";
-                            $output .='"><div class = "ad-button">Allocate VOG</div></a><a href = "..\..\View\Mother\motherCardPage1.php?mom_id=';
-                            $output .=$id;
-                            $output .="'";
-                            $output .='"><div class="ad-button">Mother Card</div></a></div>
+                            $output .='"><div class = "ad-button">Allocate VOG</div></a><a href = "#"><div class="ad-button">Mother Card</div></a></div>
                                     </div>
                                 </td>';
                             '</tr>';
                             echo "$output";
                         }
-
                     }
                 }
                 ?>

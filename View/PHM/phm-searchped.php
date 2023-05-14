@@ -2,8 +2,8 @@
     session_start();
     if (isset($_SESSION['email'])){
         include "../../Assets/Includes/header_pages.php";
-        include "../../Config/phm-allocatevogprocess.php";
-        $mom_id = $_GET['mom_id'];
+        include "../../Config/phm-searchpedprocess.php";
+        $child_id = $_GET['child_id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,7 @@
     <div class="a-container">
         <div class="a-content">
             <div class="a-container-n">
-            <h1>Allocate VOGs</h1>
+            <h1>Allocate Pediatricians</h1>
 
             <div class='au-msg'> 
         <?php 
@@ -47,9 +47,9 @@
             <a href = "phm-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
             </div>
             </div>
-            <form class="ma-searchbar" action="phm-searchvog.php" style="margin-left:15%;max-width:300px" method="get">
+            <form class="ma-searchbar" action="phm-searchped.php" style="margin-left:15%;max-width:300px" method="get">
                     <input type="text" placeholder="Search..." name="search">
-                    <input type="hidden" name="mom_id" value="<?php echo $mom_id?>" >
+                    <input type="hidden" name="child_id" value="<?php echo $child_id?>" >
                     <button type="submit"><i class="material-icons">search</i></button>
                 </form>
     <!-- <div class="ad-card-div"> -->
@@ -57,8 +57,10 @@
             
         <?php
 
-        if ($vog_result->num_rows>0){
-            while($row = $vog_result->fetch_assoc()){
+    if ($noResult == "True"){
+        echo "<tr><td colspan='9' style='text-align:center'>No Result Found</td></tr>";
+    }else{
+            while($row = $s_result->fetch_assoc()){
                 $id = $row['doc_id'];
                 $name = $row['doc_name'];
                 $work = $row['doc_workplace'];
@@ -74,10 +76,12 @@
                     <p>';
                 $output .= $work;
                 $output .= '</p>
-                </div><a href="..\..\Config\phm-allocatevogSQLprocess.php?doc_id=';
+                </div><a href="..\..\Config\phm-searchpedSQLprocess.php?doc_id=';
                 $output .=$id;
-                $output .='&mom_id=';
-                $output .=$mom_id;
+                $output .='&child_id=';
+                $output .=$child_id;
+                $output .='&search=';
+                $output .=$search;
                 $output .='"><button class="ad-btn">Allocate</button></a></div>';
             echo $output;
             }
