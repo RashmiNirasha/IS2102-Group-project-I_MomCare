@@ -42,7 +42,7 @@
                 </div> 
                 </a>
 
-                <a href="#"><div class="p-card">
+                <a href="phm-scheduleManager.php?phm_id=<?php echo $phm_id ?>"><div class="p-card">
                 <div class="a-icon-case">
                     <i class="material-icons" alt="calendar icon">edit_calendar</i>
                 </div>
