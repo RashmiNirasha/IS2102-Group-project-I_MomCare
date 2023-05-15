@@ -3519,7 +3519,7 @@ a {
     padding-top: 35px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     padding-bottom: 25px;
 }
@@ -3530,7 +3530,7 @@ a {
     width: 250px;
     height: 150px;
     background-color: rgb(5, 169, 245);
-    margin: 20px 10px;
+    margin: 20px 31.5px;
     display: grid;
     align-items: center;
     justify-content: space-around;
