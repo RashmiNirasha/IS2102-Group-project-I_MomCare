@@ -190,9 +190,9 @@ body {
     /* input[type="submit"] , */
      input[type="reset"] , #showDataBtn2 , #showDataBtn , #showDataBtn3 {
       margin-top: 10px;
-      margin-bottom: 0;
+      margin-bottom: 2%;
       padding: 10px;
-      font-size: 16px;
+      font-size: 14px;
       background-color: #029ee4;
       color: white;
       border: none;
@@ -259,7 +259,7 @@ body {
 
   .child-container2{
     margin-top: 6%;
-    margin-left: 18%;
+    margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 5%;
     background: #fff;

@@ -98,8 +98,8 @@ $sql = "SELECT * FROM child_bmi_values WHERE child_id = '$child_id' ORDER BY
                         <td><input type="text" id="weight" name="weight"></td>
                         </tr>
                         <tr>
-                        <td><input type="submit" value="Calculate BMI"></td>
-                        <td><input type="reset" value="Reset"></td>
+                        <td><input class="childDevSubmitBtn" type="submit" value="Calculate BMI"></td>
+                        <td><input class="childDevSubmitBtn-1" type="reset" value="Reset"></td>
                         </tr>
                         </table>
                         <label for = "child_id" hidden ></label ><?php $child_id = $_GET['child_id']; ?>
