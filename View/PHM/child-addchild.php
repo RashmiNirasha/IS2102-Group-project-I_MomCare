@@ -102,10 +102,6 @@
                 <td><label for="allergies">Allergies:</label></td>
                 <td><input type="text" id="allergies" name="allergies" placeholder="Allergies" required></td>
             </tr>
-            <tr>
-                <td><label for="registration_date">Registration Date:</label></td>
-                <td><input type="date" id="registration_date" name="registration_date" placeholder="Registration Date" required></td>
-            </tr>
         </table>
         <input class='small-child-btn' type="submit" value="Submit" name="insert">
     </form>
