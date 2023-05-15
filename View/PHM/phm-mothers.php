@@ -97,9 +97,9 @@
                                         <div class="ma-img-action"><a href="phm-allocatevog.php?mom_id=';
                             $output .=$id;
                             $output .="'";
-                            $output .='"><div class = "ad-button">Allocate VOG</div></a><a href = "..\..\View\Mother\motherCardPage1.php?mom_id=';
+                            $output .='"><div class = "ad-button">Allocate VOG</div></a><a href = "..\..\View\Mother\mother-mCardPersonalD.php?mom_id=';
                             $output .=$id;
-                            $output .="'";
+                            // $output .="'";
                             $output .='"><div class="ad-button">Mother Card</div></a></div>
                                     </div>
                                 </td>';

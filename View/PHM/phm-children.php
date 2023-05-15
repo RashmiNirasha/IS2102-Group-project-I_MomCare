@@ -96,7 +96,7 @@
                             $output .="'";
                             $output .='"><div class = "ad-button">Allocate Pediatrician</div></a><a href = "..\..\View\Child\child-fullChildCard.php?child_id=';
                             $output .=$id;
-                            $output .="'";
+                            // $output .="'";
                             $output .='"><div class="ad-button">Child Card</div></a></div>
                                     </div>
                                 </td>';
