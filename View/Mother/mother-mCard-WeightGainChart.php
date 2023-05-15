@@ -73,6 +73,20 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                                     <button id="showDataBtn">View Chart</button>
                                     </div>
                                 </div>
+                                <script>
+                                    function validateForm() {
+                                        var field1 = document.getElementsByName('poa_weeks')[0].value;
+                                        var field2 = document.getElementsByName('weight')[0].value;
+
+                                        if (field1 === '' || field2 === '') {
+                                            alert('Please fill in all fields');
+                                            return false; // Prevent form submission
+                                        }
+
+                                        // Form is valid, allow submission
+                                        return true;
+                                    }
+                                </script>
 
                                 <script>
                                     //set up block 

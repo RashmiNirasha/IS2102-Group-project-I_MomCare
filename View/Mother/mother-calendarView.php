@@ -30,7 +30,7 @@
                 <?php
                 $clickedDate = isset($_POST['date']) ? $_POST['date'] : '';
                 $mom_id = $_SESSION['id'];
-                $query = "SELECT ma.*, md.mom_fname, md.mom_lname, md.mom_age
+                $query = "SELECT ma.*, md.mom_fname, md.mom_lname, md.mom_age, md.mom_propic
                         FROM mom_appointments ma
                         JOIN mother_details md ON ma.mom_id = md.mom_id
                         WHERE ma.mom_id = '$mom_id'";
@@ -48,6 +48,7 @@
                         $mom_fname = $row['mom_fname'];
                         $mom_lname = $row['mom_lname'];
                         $mom_age = $row['mom_age'];
+                        $mom_propic = $row['mom_propic'];
                         echo '
                             <div class="appointmentBar" onclick="appViewPopupFunction(\'' .
                             '<ul>' .
@@ -62,7 +63,7 @@
                             '</ul>' .
                             '\')">
                             <div class="appImgDiv">
-                                <img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic">
+                                <img src="'.$mom_propic.'" alt="mpther-profile-pic">
                             </div>
                             <ul>
                                 <li>Name: ' . $mom_fname . '' . $mom_lname . '</li>
@@ -170,7 +171,7 @@
                                     break;
                                     exit();
                                 case 'phm':
-                                    $query = "INSERT INTO mom_appointments (mom_id, phm_id, start, title, location) VALUES ('$mom_id', '$doc_id', '$date', '$user_role', 'Home')";
+                                    $query = "INSERT INTO mom_appointments (mom_id, phm_id, start, location) VALUES ('$mom_id', '$doc_id', '$date', 'Home')";
                                     $result = mysqli_query($con, $query);
                                     break;
                                     exit();
