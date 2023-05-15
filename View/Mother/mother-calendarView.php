@@ -140,7 +140,7 @@
                             </tr>
                             <tr>
                                 <td><label for="appDate">Date</label></td>
-                                <td><input type="date" name="appDate" id="appDate"></td>
+                                <td><input type="date" name="appDate" id="appDate"  min='<?php echo date('Y-m-d', strtotime('+3 days')); ?>'></td>
                             </tr>
                         </table>
                         <div class="docTypeSubmit">

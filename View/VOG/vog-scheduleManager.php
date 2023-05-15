@@ -137,14 +137,6 @@
                         <table>
                             <tr>
                                 <td>
-                                    <label for="set_date">Select Date: </label>
-                                </td>
-                                <td>
-                                    <input type="date" name="set_date" id="set_date" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
                                     <label for="set_app_limit">Set Appointment Limit: </label>
                                 </td>
                                 <td>
