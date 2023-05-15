@@ -52,7 +52,7 @@
 
     }
 
-    // Attendence Update
+    // Attendence Add
 
     if(isset($_POST['Attendence_submit'])){
         $mom_id = $_POST['mom_id'];
@@ -63,6 +63,15 @@
         $mom_antenatal_sign = $_POST['sign'];
 
         $sql = "INSERT mcard_attendance (mom_id, date, husband, wife, other, sign) VALUES ('$mom_id', '$mom_antenatal_date', '$mom_antenatal_husband', '$mom_antenatal_wife', '$mom_antenatal_other', '$mom_antenatal_sign')";
+        $result = mysqli_query($con, $sql);
+        if($result){
+            echo "<script>alert('Attendence Added Successfully')</script>";
+            header("Location: ../View/Mother/mother-mCard-Attendence.php?mom_id=$mom_id','_self'");
+        }
+        else{
+            echo "<script>alert('Attendence Add Failed')</script>";
+
+        }
 
     }
 
@@ -86,6 +95,7 @@
     else{
         echo "0 results";
     }
+    
 
     // Weight Gain calculator chart
 

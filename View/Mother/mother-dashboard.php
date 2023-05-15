@@ -33,7 +33,7 @@ include "../../Assets/Includes/header_pages.php";
                 <div class="card-content-left"><span class="material-symbols-outlined">pregnant_woman</span></div>
                 <div class="card-content-right"><p>Mother Card</p></div>
             </button><!--gap remover -->
-       <button class="card">
+       <button class="card" onclick="window.location.href='mother-timeline.php'">
                 <div class="card-content-left"><span class="material-symbols-outlined">Timeline</span></div>
                 <div class="card-content-right"><p>Timeline</p></div>
             </button><!--gap remover

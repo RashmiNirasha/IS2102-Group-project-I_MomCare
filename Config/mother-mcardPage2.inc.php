@@ -72,10 +72,10 @@
 
         if ($result) {
             echo "<script>alert('Clinic Care details updated successfully!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-clinicCare.php?mom_id=$mom_id','_self')</script>";
         } else {
             echo "<script>alert('Error in updating Clinic Care details!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-clinicCare.php?mom_id=$mom_id','_self')</script>";
         }
     }
 
@@ -104,10 +104,10 @@
 
         if ($result) {
             echo "<script>alert('Auscultation details updated successfully!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-AMhealth.php?mom_id=$mom_id','_self')</script>";
         } else {
             echo "<script>alert('Error in updating Auscultation details!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-AMhealth.php?mom_id=$mom_id','_self')</script>";
         }
     }
 
@@ -138,10 +138,10 @@
 
         if ($result) {
             echo "<script>alert('Dental Clinic details updated successfully!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-DentalCare.php?mom_id=$mom_id','_self')</script>";
         } else {
             echo "<script>alert('Error in updating Dental Clinic details!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-DentalCare.php?mom_id=$mom_id','_self')</script>";
         }
     }
 
@@ -176,10 +176,10 @@
         $result = $con->query($sql);
         if ($result) {
             echo "<script>alert('Respiratory details updated successfully!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-ResSystem.php?mom_id=$mom_id','_self')</script>";
         } else {
             echo "<script>alert('Error in updating Respiratory details!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-ResSystem.php?mom_id=$mom_id','_self')</script>";
         }
     }
 // breast Exam query --------------------------------------------------------------
@@ -191,10 +191,10 @@
         $result = $con->query($sql);
         if ($result) {
             echo "<script>alert('Breast details updated successfully!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-BreastExam.php?mom_id=$mom_id','_self')</script>";
         } else {
             echo "<script>alert('Error in updating Breast details!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-BreastExam.php?mom_id=$mom_id','_self')</script>";
         }
     } 
 
@@ -220,10 +220,10 @@
 
         if ($result) {
             echo "<script>alert('Investigations details updated successfully!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-Investigation.php?mom_id=$mom_id','_self')</script>";
         } else {
             echo "<script>alert('Error in updating Investigations details!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-Investigation.php?mom_id=$mom_id','_self')</script>";
         }
         
     }
@@ -260,10 +260,10 @@
 
         if ($result) {
             echo "<script>alert('Syphilis details updated successfully!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-SyphilisSceen.php?mom_id=$mom_id','_self')</script>";
         } else {
             echo "<script>alert('Error in updating Syphilis details!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-SyphilisSceen.php?mom_id=$mom_id','_self')</script>";
         }
         
     }
@@ -295,10 +295,10 @@
 
         if ($result) {
             echo "<script>alert('Tetanus details updated successfully!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-TetanusEx.php?mom_id=$mom_id','_self')</script>";
         } else {
             echo "<script>alert('Error in updating Tetanus details!')</script>";
-            echo "<script>window.open('mother-mcardPage2.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('mother-TetanusEx.php?mom_id=$mom_id','_self')</script>";
         }
     }
 ?>

@@ -16,11 +16,12 @@
     <a href="../../View/Mother/mother-mCard-Investigation.php?mom_id=<?php echo $_GET['mom_id']; ?>">Investigations</a>
     <a href="../../View/Mother/mother-mCard-SyphilisScreen.php?mom_id=<?php echo $_GET['mom_id']; ?>">Syphilis screeningtem</a>
     <a href="../../View/Mother/mother-mCard-TetanusEx.php?mom_id=<?php echo $_GET['mom_id']; ?>">Tetanus Toxoid Immunization</a>
-    <a href="../../View/Mother/mother-mCard-BPchart.php?mom_id=<?php echo $_GET['mom_id']; ?>">BP Chart</a>
+    <!-- <a href="../../View/Mother/mother-mCard-BPchart.php?mom_id=<?php echo $_GET['mom_id']; ?>">BP Chart</a> -->
     <a href="../../View/Mother/mother-mCard-WeightGainChart.php?mom_id=<?php echo $_GET['mom_id']; ?>">Weight Gain Chart</a>
     <a href="../../View/Mother/mother-mCard-SFHChart.php?mom_id=<?php echo $_GET['mom_id']; ?>">SFH Chart</a>
     <a href="../../View/Mother/mother-mCard-Emergency.php?mom_id=<?php echo $_GET['mom_id']; ?>">Birth and emergency preparedness plan</a>
     <a href="../../View/Mother/mother-mCard-Attendence.php?mom_id=<?php echo $_GET['mom_id']; ?>">Attendance at antenatal classes</a>
+    <a href="../../View/Mother/mother-mCard-BirthPlan.php?mom_id=<?php echo $_GET['mom_id']; ?>">Family Planning</a>
   </div>
 </div>
 
