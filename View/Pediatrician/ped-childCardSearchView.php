@@ -66,7 +66,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                                         </div>
                                     </div>
                                     <div class="momBarBtn">
-                                        <button type ="submit" name="enterweight" onclick="window.location.href=\'child-adddental?child_id=' . $childid . '\'">Dental & Vaccine Records</button>
+                                        <button type ="submit" name="enterweight" onclick="window.location.href=\'child-adddental?child_id=' . $childid . '\'">Child Records</button>
                                         <button type ="submit" name="enternotes" onclick="window.location.href=\'ped-addNotesView.php?childid=' . $childid . '\'">Records</button>
                                     </div>
                                 </div>';

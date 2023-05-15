@@ -3,7 +3,6 @@ session_start();
 if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) { 
     include '../../Config/dbConnection.php';
     include "../../Assets/Includes/header_pages.php";
-    include "../../Assets/Includes/sidenav3.php";
     $user_id = $_SESSION['user_id'];
     $child_id = $_GET['child_id'];
 
@@ -65,7 +64,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
 
 </Head>
 <body>
-    <div class="child-container">
+    <div class="child-container5">
         <h2>Dental Records </h2>
 
     <!-- Add a record -->
