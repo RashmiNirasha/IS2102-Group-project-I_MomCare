@@ -188,7 +188,7 @@ body {
     }
     
     /* input[type="submit"] , */
-     input[type="reset"] , #showDataBtn2 , #showDataBtn , #showDataBtn3 {
+   #showDataBtn2 , #showDataBtn , #showDataBtn3 {
       margin-top: 10px;
       margin-bottom: 2%;
       padding: 10px;
@@ -603,7 +603,6 @@ margin-top: 12px;
 }
 
 .childDevSubmitBtn-1{
-  float: left;
     width: 100px;
     height: 30px;
     margin-top: 15px;
