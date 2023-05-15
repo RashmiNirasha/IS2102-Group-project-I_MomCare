@@ -1712,7 +1712,7 @@ input[type="file" i] {
     background-color: #ffffff;
 }
 
-/* .dropdown-menu {
+.child-dropdown{
     width: auto;
     height: 30px;
     border-radius: 10px;
@@ -1722,7 +1722,7 @@ input[type="file" i] {
     padding-right: 20px;
     border-color: #029EE4;
     background-color: rgb(255, 255, 255);
-} */
+}
 
 .mom-search {
     width: 100%;

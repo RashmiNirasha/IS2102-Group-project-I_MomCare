@@ -57,7 +57,7 @@ include "../../Assets/Includes/header_pages.php";
                 <div class="card-content-left"><span class="material-symbols-outlined">child_care</span></div>
                 <div class="card-content-right">
                     <p>Children</p>
-                    <div class="dropdown-menu" id="myDropdown" style="display: none;">
+                    <div class="child-dropdown" id="myDropdown" style="display: none;">
                         <ul>
                         <?php
                             $sql = "SELECT child_name,child_id FROM child_details WHERE mom_id = '$mom_id'";

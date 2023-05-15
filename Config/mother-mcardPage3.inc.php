@@ -52,6 +52,22 @@
 
     }
 
+    // Attendence Update
+
+    if(isset($_POST['Attendence_submit'])){
+        $mom_id = $_POST['mom_id'];
+        $mom_antenatal_date = $_POST['date'];
+        $mom_antenatal_husband = $_POST['husband'];
+        $mom_antenatal_wife = $_POST['wife'];
+        $mom_antenatal_other = $_POST['other'];
+        $mom_antenatal_sign = $_POST['sign'];
+
+        $sql = "INSERT mcard_attendance (mom_id, date, husband, wife, other, sign) VALUES ('$mom_id', '$mom_antenatal_date', '$mom_antenatal_husband', '$mom_antenatal_wife', '$mom_antenatal_other', '$mom_antenatal_sign')";
+
+    }
+
+    // Birth Plan View
+
     $sql = "SELECT * FROM mcard_planning WHERE mom_id = '$mom_id'";
     $result = $con->query($sql);
     if($result->num_rows > 0)

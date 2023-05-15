@@ -54,9 +54,9 @@
     <div class="content">
         <div class="heading">
             <h1>Fetal Growth Calculator</h1>
-            <a href="#">
+            <!-- <a href="#">
                 <span class="material-icons">notifications</span>
-            </a>
+            </a> -->
         </div>
         <button class="goBackBtn" onclick="history.back()">Go back</button>
 
