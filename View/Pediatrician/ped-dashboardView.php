@@ -62,6 +62,7 @@ $doc_name=$row['doc_name'];
     </script>
 </head>
 <body>
+<<<<<<< Updated upstream
     <div class="ped-Dashboard">
         <div class="dashboard-header">
             <h1>Welcome to the Dashboard Dr. <?php echo $doc_name ?></h1>
@@ -89,6 +90,87 @@ $doc_name=$row['doc_name'];
             <div class="card-content-right"><p>Manage Shedule</p></div>    
     </div>
 </body>
+=======
+
+<div class="ped-Dashboard">
+    <div class="dashboard-header">
+        <h1>Welcome to the Dashboard Dr. <?php echo $doc_name ?></h1>
+        <!-- <div class="dropdown">
+            <a href="#" class="dropdown-toggle">
+                <span class="label label-pill label-danger count">0</span>
+                <span class="material-symbols-outlined" data-icon="notify">notifications</span>
+            </a>
+            <ul class="dropdown-menu hide">
+            </ul>
+        </div> -->
+    </div>
+</div>
+
+
+<!-- <script type = "text/javascript">
+    $(document).ready(function(){
+	
+	function load_unseen_notification(view = '')
+	{
+		$.ajax({
+			url:"ped-notification.php",
+			method:"POST",
+			data:{view:view},
+			dataType:"json",
+			success:function(data)
+			{
+			$('.dropdown-menu').html(data.notification);
+			// if(data.unseen_notification > 0){
+			$('.count').html(data.unseen_notification);
+			// }
+			}
+		});
+	}
+ 
+	load_unseen_notification();
+ 
+	$(document).on('click', '.dropdown-toggle', function(){
+	$('.count').html('');
+    if ($(".dropdown-menu").hasClass("hide"))
+    {
+        $(".dropdown-menu").removeClass("hide");
+
+    }else {
+        $(".dropdown-menu").addClass("hide");
+    }
+   
+	load_unseen_notification('yes');
+	});
+
+	setInterval(function(){ 
+		load_unseen_notification();; 
+	}, 5000);
+ 
+});
+</script> -->
+
+<div class="card-pack">
+    <!--gap remover-->
+    
+    <button class="card" onclick="window.location.href = 'ped-childCardSearchView.php';">
+                <div class="card-content-left"><span class="material-symbols-outlined">Child_care</span></div>
+                <div class="card-content-right"><p>Child Management</p></div>
+            </button><!--gap remover -->
+
+            <button class="card" onclick="window.location.href = 'ped-searchChild.php';">
+                <div class="card-content-left"><span class="material-symbols-outlined">List</span></div>
+                <div class="card-content-right"><p>View Child List</p></div>
+            </button><!--gap remover -->
+
+            <button class="card" onclick="window.location.href = 'ped-scheduleManager.php?doc_id=<?php echo $_SESSION['user_id']; ?>';">
+                <div class="card-content-left"><span class="material-symbols-outlined">note_add</span></div>
+                <div class="card-content-right"><p>Manage Shedule</p></div>
+
+        
+</div>
+       
+</header>
+>>>>>>> Stashed changes
 </html>
 
 <?php
