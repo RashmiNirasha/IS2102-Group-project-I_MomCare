@@ -51,38 +51,32 @@ include "../../Assets/Includes/header_pages.php";
                 <div class="card-content-left"><span class="material-symbols-outlined">calculate</span></div>
                 <div class="card-content-right"><p>Fetal Growth Calculator</p></div>
             </button>
-            </button><!--gap remover
-            --><button class="card" onclick="window.location.href='mother-listAppointments.php'">
-                <div class="card-content-left"><span class="material-symbols-outlined">acute</span></div>
-                <div class="card-content-right"><p>Appoinments</p></div>
             </button>
-            </button><!--gap remover
-            -->
            
             <button class="card" id="myButton">
-    <div class="card-content-left"><span class="material-symbols-outlined">child_care</span></div>
-    <div class="card-content-right">
-        <p>Children</p>
-        <div class="dropdown-menu" id="myDropdown" style="display: none;">
-            <ul>
-            <?php
-                $sql = "SELECT child_name,child_id FROM child_details WHERE mom_id = '$mom_id'";
-                $result = mysqli_query($con, $sql);
-                if ($result instanceof mysqli_result && mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $child_name = $row['child_name'];
-                        $child_id = $row['child_id'];
-            ?>
-                        <li>
-                            <?php
-                        echo "<a href='../child/child-childDashboard.php?child_id=" . urlencode($child_id) . "'>" . $child_name . "</a></li>";
-                            ?>
-            <?php
-                    }
-                } else {
-                    echo "<li>No data found</li>";
-                }
-            ?>
+                <div class="card-content-left"><span class="material-symbols-outlined">child_care</span></div>
+                <div class="card-content-right">
+                    <p>Children</p>
+                    <div class="dropdown-menu" id="myDropdown" style="display: none;">
+                        <ul>
+                        <?php
+                            $sql = "SELECT child_name,child_id FROM child_details WHERE mom_id = '$mom_id'";
+                            $result = mysqli_query($con, $sql);
+                            if ($result instanceof mysqli_result && mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $child_name = $row['child_name'];
+                                    $child_id = $row['child_id'];
+                        ?>
+                                    <li>
+                                        <?php
+                                    echo "<a href='../child/child-childDashboard.php?child_id=" . urlencode($child_id) . "'>" . $child_name . "</a></li>";
+                                        ?>
+                        <?php
+                                }
+                            } else {
+                                echo "<li>No data found</li>";
+                            }
+                        ?>
             </ul>
         </div>
     </div>

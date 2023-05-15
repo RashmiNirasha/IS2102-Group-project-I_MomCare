@@ -485,11 +485,13 @@ body {
 /* --------------------- dashboard vog --------------------- */
 
 .material-symbols-outlined[data-icon="notify"] {
-    color: #ff0000;
-    padding-top: 70px;
-    font-size: 50px;
-    padding-right: 50px;
+    color: #cf0000;
+    font-size: 25px;
+    margin: 0px 0px 0px 0px;
+}
 
+.material-symbols-outlined[data-icon="notify"]:hover {
+    color: #ff0000;
 }
 
 #required:after {
@@ -1040,6 +1042,38 @@ body {
     background-color: #D9D9D9;
     border-radius: 10px;
 } */
+
+.MotherCardTables input[type="file"] {
+    width: calc(100% - 10px);
+    height: 20px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-size: 12px;
+}
+
+.MotherCardTables input[type="text"] {
+    width: calc(100% - 10px);
+    height: 20px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-size: 12px;
+}
+
+.MotherCardTables textarea {
+    width: calc(100% - 10px);
+    height: 20px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-size: 12px;
+}
+
+.MotherCardTables input[type="date"] {
+    width: calc(100% - 10px);
+    height: 20px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-size: 12px;
+}
 
 .MotherCardButtonSet {
     display: flex;
@@ -1678,7 +1712,7 @@ input[type="file" i] {
     background-color: #ffffff;
 }
 
-.dropdown-menu {
+/* .dropdown-menu {
     width: auto;
     height: 30px;
     border-radius: 10px;
@@ -1688,7 +1722,7 @@ input[type="file" i] {
     padding-right: 20px;
     border-color: #029EE4;
     background-color: rgb(255, 255, 255);
-}
+} */
 
 .mom-search {
     width: 100%;
@@ -2477,17 +2511,15 @@ input[type="file" i] {
 }
 
 .editPopup {
+    display: block;
     position: fixed;
-    z-index: 1;
+    z-index: 15;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
-
-    
-
 }
 
 .editPopup form {
@@ -4084,13 +4116,15 @@ a {
   }
 .filter form button{
     border-color: #029ee4;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-left: 10px;
     padding: 0.2rem 1rem;
     background-color:#029ee4 ;
     color: white;
     cursor: pointer;
-    font-weight: bold;
+}
+.filter input[type=search]{
+    width: 100%;
 }
 
 .top-button:hover{
@@ -4646,9 +4680,11 @@ a {
 
   .child-container2{
     margin-bottom: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
     background: #fff;
     border-radius: 6px;
-    padding: 10px 40px 10px 40px;
+    padding: 20px 40px 20px 40px;
     box-shadow: 0 0px 30px rgba(0, 0, 0, 0.25);
   }
 
@@ -4656,11 +4692,11 @@ a {
 
     margin-left: 15%;
     margin-right: 15%;
-    margin-top: 10%;
+    margin-top: 120px;
     margin-bottom: 5%;
     background: #fff;
     border-radius: 6px;
-    padding: 10px 60px 10px 40px;
+    padding: 10px 60px 35px 40px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
 
@@ -4977,7 +5013,7 @@ a {
     margin-left: 15%;
     margin-right: 30px;
     width: 70%;
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     margin-top: 60px;
@@ -5388,55 +5424,6 @@ a {
     background-color: #ec0000;
 }
 
-/* notification section  */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    margin-right: 7%;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 160px;
-    padding: 8px 0;
-    margin: 2px 0 0;
-    font-size: 14px;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.dropdown-menu li {
-    padding: 8px 10px;
-    white-space: nowrap;
-    cursor: pointer;
-}
-
-.dropdown-menu li:hover {
-    background-color: #f5f5f5;
-}
-
-.dropdown-toggle {
-    display: inline-block;
-    font-size: 18px;
-    background-color: #fff;
-    cursor: pointer;
-    border: none;
-    
-}
-
-.dropdown-toggle:hover {
-    background-color: #f5f5f5;
-    border-radius: 10%;
-}
-
-.hide {
-    display: none;
-}
 /* ------------- mother profile update popup ------------- */
 
 .UpdateMotherProfile {

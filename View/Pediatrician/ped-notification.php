@@ -15,11 +15,9 @@ if(isset($_POST["view"])){
             $output .= '
                 <li>
                     <a href="ped-scheduleManager.php?doc_id='.$doc_id.'">
-                        Description: <strong>'.$row['title'].'</strong><br />
-                    </a>
+                    <strong>'.$row['title'].'</strong></a><br />
                 </li>
                 ';
-
         }
     }
     else{
@@ -34,4 +32,3 @@ if(isset($_POST["view"])){
     );
     echo json_encode($data);
 }
-?>

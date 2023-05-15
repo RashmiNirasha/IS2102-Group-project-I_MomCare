@@ -17,10 +17,10 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
     <a href="ped-dashboardView.php"><button class="goBackBtn">Go back</button></a>
         <div class="mom-filter">
         <h1>List of Children</h1>
-        <div class="filter">
+        <!-- <div class="filter"> -->
             <form action="" method="POST">
-                <input type="text" name="search" placeholder="Search by child name">
-                <button type="submit" name="submit-search">Search</button>
+                <input class="mom-search" type="search" name="search" placeholder="Search by child name">
+                <input type="submit" name="submit-search" value="Search">
             </form>
         </div>
         

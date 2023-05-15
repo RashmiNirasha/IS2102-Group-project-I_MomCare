@@ -135,12 +135,12 @@
                         </div>
                     </form>
                     <?php
-    include '../../Config/dbConnection.php';
-    if (isset($_GET['SubmitApp'])) {
+                        include '../../Config/dbConnection.php';
+                        if (isset($_GET['SubmitApp'])) {
                             $doc_id = $_GET['docName'];
                             $date = $_GET['appDate'];
                             $user_role = $_GET['doc_type'];
-                            $mom_id = $_SESSION['id'];
+                            $mom_id = $_SESSION['user_id'];
 
                             switch ($user_role) {
                                 case 'vog':

@@ -19,3 +19,8 @@
     <a href="../../View/Mother/mother-mCard-BPchart.php?mom_id=<?php echo $_GET['mom_id']; ?>">BP Chart</a>
   </div>
 </div>
+
+<script>
+  var mCardTltles = document.getElementsByClassName("mCard-Tltles");
+  
+</script>

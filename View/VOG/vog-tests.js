@@ -18,8 +18,7 @@ function confirmDelete() {
 
 function editPopupFunction(note_id) {
     var popup = document.getElementById("popup");
-    var form = document.createElement("form");
-    document.body.appendChild(form);
+    document.body.appendChild(popup);
     var cancelButton = form.querySelector("input[type='button'][value='Cancel']");
     cancelButton.addEventListener("click", function() {
         form.remove();

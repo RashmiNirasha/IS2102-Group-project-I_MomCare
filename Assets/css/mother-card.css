@@ -173,9 +173,9 @@
 .updatePopup-content {
     background-color: #fefefe;
     padding: 20px;
-    margin: 125px 0px 0px 350px;
+    margin: 15% auto;
     border: 1px solid #888;
-    width: 50%;
+    width: max-content;
     border-radius: 20px;
 }
 
@@ -185,7 +185,17 @@
     gap: 20px;
 }
 
-.updateFormTables table input[type=text], input[type=date] {
+.updateFormTables table {
+    border-collapse: collapse;
+    width: 100%;
+    /* border: #88888844 1px solid; */
+    border-radius: 20px;
+    padding: 10px;
+    font-family: RobotoRegular;
+    font-size: 13px;
+}
+
+.updateFormTables input[type=text], input[type=date] {
     border-radius: 5px;
     border: #88888844 1px solid;
     padding-left: 10px;
@@ -198,6 +208,11 @@
     text-align: left;
     font-weight: 600;
     font-size: 14px;
+    padding: 5px;
+}
+
+.updateFormTables td, th {
+    border-bottom: #88888818 1px solid;
 }
 
 .updateMcardTable-popup .close {
