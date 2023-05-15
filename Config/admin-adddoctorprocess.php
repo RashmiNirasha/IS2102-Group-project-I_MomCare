@@ -60,8 +60,8 @@ function is_array_empty($arr){
                 // print_r($insert);
                 if ($insert_doctor){
 
-                    $sql_insert_user_tbl = "INSERT INTO user_tbl (email, password, name, user_role, doc_id) VALUES 
-                    ('$email','$password', '$name', '$type', '$id')";
+                    $sql_insert_user_tbl = "INSERT INTO user_tbl (user_id, email, password, name, user_role, doc_id) VALUES 
+                    ('$id', '$email','$password', '$name', '$type', '$id')";
 
                     // echo $sql_insert;
 

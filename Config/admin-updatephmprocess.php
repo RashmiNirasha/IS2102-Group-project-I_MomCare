@@ -55,7 +55,7 @@ function is_array_empty($arr){
                 $update = $con->query($sql_update);
                 echo "$update";
                 if ($update){
-                    $sql_update_user_tbl = "UPDATE user_tbl SET email='$email', password='$password', name='$name' where phm_id='$id'";
+                    $sql_update_user_tbl = "UPDATE user_tbl SET email='$email', password='$password', name='$name' where user_id='$id'";
 
                     // echo $sql_insert;
 

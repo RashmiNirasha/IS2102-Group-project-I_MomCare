@@ -48,7 +48,7 @@
                     
                     $query = "SELECT pa.*, md.mom_fname, md.mom_lname, md.mom_age
                             FROM phm_appointments pa
-                            JOIN mother_details md ON pa.phm_id = md.phm_id
+                            JOIN mother_details md ON pa.mom_id = md.mom_id
                             WHERE pa.phm_id = '$phm_id'";
 
                     if ($clickedDate !== '') {
@@ -149,7 +149,7 @@
                         <td><select name="mother_id" required>
                         <option value="">Select a mother</option>
                         <?php
-                        $ret = mysqli_query($con, "SELECT mom_id FROM `mother_details`");
+                        $ret = mysqli_query($con, "SELECT mom_id FROM `mother_details` WHERE phm_id = '$phm_id'");
                         while($row = mysqli_fetch_array($ret)) {
                         ?>
                         <option value="<?php echo htmlentities($row['mom_id']);?>">
@@ -200,7 +200,7 @@
                             //     case 'vog':
                             //     case 'ped':
                                     $query = "INSERT INTO phm_appointments (phm_id, p_app_id, mom_id, app_title, app_date, app_description, app_location) VALUES ('$phm_id','$id', '$mom_id', '$title', '$date', '$des', '$loc')";
-                                    echo $query;
+                                    // echo $query;
                                     $result = mysqli_query($con, $query);
                                 //     break;
                                 // case 'phm':

@@ -12,8 +12,18 @@ if (isset($_GET['status'])){
         $delete_query .= "'";
 
         $delete_query_result = $con->query($delete_query);
+        
         if ($delete_query_result){
-            header("Location:../View/admin/admin-managemother.php?status=success");
+            $user_delete_query = "DELETE FROM user_tbl WHERE user_id='";
+            $user_delete_query .= $_GET['id'];
+            $user_delete_query .= "'";
+
+            $user_delete_query_result = $con->query($user_delete_query);
+            if ($user_delete_query_result){
+                header("Location:../View/admin/admin-managemother.php?status=success");
+            }else{
+                header("Location:../View/admin/admin-managemother.php?status=not_success");
+            }
         }else{
             header("Location:../View/admin/admin-managemother.php?status=not_success");
         }

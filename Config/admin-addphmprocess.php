@@ -55,8 +55,8 @@ if ($varCheck == true) {
         if ($result_phm) {
 
             // insert data to user table only if record added to phm table
-            $sql_user_tbl = "INSERT INTO user_tbl (email, password,  name, user_role) VALUES 
-                ('$email', '$password', '$name', 'phm')";
+            $sql_user_tbl = "INSERT INTO user_tbl (user_id, email, password,  name, user_role) VALUES 
+                ('$id', '$email', '$password', '$name', 'phm')";
             $result_user_tbl = mysqli_query($con, $sql_user_tbl);
 
             //redirect if the record added to both table successfully
