@@ -1,5 +1,40 @@
 @import url(https://fonts.googleapis.com/css?family=roboto);
 
+@font-face {
+    font-family: style-font-ForIndexPage;
+    src: url(Assets/Fonts/LucidaHandwritingStdRg.TTF);
+}
+
+@font-face {
+    font-family: style-font1;
+    src: url(../../Assets/fonts/LucidaHandwritingStdRg.TTF);
+}
+
+@font-face {
+    font-family: barlowBold;
+    src: url(../../Assets/fonts/Barlow-Bold.TTF);
+}
+
+@font-face {
+    font-family: barlowRegular;
+    src: url(../../Assets/fonts/Barlow-Regular.ttf);
+}
+
+@font-face {
+    font-family: RobotoMedium;
+    src: url(../../Assets/fonts/Roboto-Medium.ttf)
+}
+
+@font-face {
+    font-family: RobotoLight;
+    src: url(../../Assets/fonts/Roboto-Light.ttf)
+}
+
+@font-face {
+    font-family: RobotoRegular;
+    src: url(../../Assets/fonts/Roboto-Regular.ttf)
+}
+
 *{
     font-family: 'Roboto';
     margin: 0px;

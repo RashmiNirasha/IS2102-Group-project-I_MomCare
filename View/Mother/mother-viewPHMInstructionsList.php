@@ -38,12 +38,12 @@
                 while ($row2 = mysqli_fetch_assoc($result2)) {
                     $phm_name = $row2['phm_name'];
                     $phm_workplace = $row2['phm_workplace'];
-                    // $phm_photo = $row2['phm_photo'];
+                    $phm_photo = $row2['phm_profile_pic'];
                 }
             ?>
             <div class="app-card">
                     <div class="dr-pro-pic">
-                        <img src="../../Assets/Images/download.png" alt="">
+                        <img src="<?php echo $phm_photo ?>" alt="">
                     </div>
                     <div class="details">
                         <h5> Ms. <?php echo $phm_name ?> </h5><br>
