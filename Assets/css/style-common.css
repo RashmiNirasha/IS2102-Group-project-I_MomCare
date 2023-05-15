@@ -3327,6 +3327,7 @@ a {
     /* margin-left:7%; */
     margin-top: 10%;
     color: #05a9f5;
+    cursor: pointer;
 }
 
 .ma-actions .material-icons {
@@ -3334,6 +3335,7 @@ a {
     /* margin-left:7%; */
     margin-top: 10%;
     color: #05a9f5;
+    cursor: pointer;
 }
 
 /* .ma-img-action {
