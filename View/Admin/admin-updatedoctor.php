@@ -78,7 +78,14 @@ if (isset($_SESSION['email'])){
                         </div>
                         <div class="au-inputs">
                         <input type="text" name="name" value="<?php  echo $name?>">
-                        <input type="date" name="dob" min="1903-01-01" max="2001-10-31" value="<?php  echo $dob?>">
+                        <input type="date" name="dob" id="birthdate" value="<?php  echo $dob?>">
+                            <script>
+                                var today = new Date();
+                                var minDate = new Date(today.getFullYear() - 100, today.getMonth(), today.getDate()).toISOString().split('T')[0];
+                                var maxDate = new Date(today.getFullYear() - 20, today.getMonth(), today.getDate()).toISOString().split('T')[0];
+                                document.getElementById("birthdate").setAttribute("min", minDate);
+                                document.getElementById("birthdate").setAttribute("max", maxDate);
+                            </script>
                         <input type="tel" name="tel" value="<?php  echo $tel?>">
                         <input type="email" name="email" value="<?php  echo $email?>">
                         <input type="text" name="address" value="<?php  echo $address?>">
