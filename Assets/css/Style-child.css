@@ -187,7 +187,6 @@ body {
       border-radius: 5px;
     }
     
-    /* input[type="submit"] , */
    #showDataBtn2 , #showDataBtn , #showDataBtn3 {
       margin-top: 10px;
       margin-bottom: 2%;
@@ -200,13 +199,6 @@ body {
       cursor: pointer;
     }
    
-    /* input[type="submit"]:hover , input[type="reset"]:hover , #showDataBtn2:hover , #showDataBtn:hover , #showDataBtn3:hover {
-      background-color: #0e106e;
-    } */
-
-
-/* child-cards css */
-
 .child-sidenav {
   display: flex;
   flex-direction: column;
