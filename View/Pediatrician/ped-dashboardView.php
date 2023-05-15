@@ -62,35 +62,6 @@ $doc_name=$row['doc_name'];
     </script>
 </head>
 <body>
-<<<<<<< Updated upstream
-    <div class="ped-Dashboard">
-        <div class="dashboard-header">
-            <h1>Welcome to the Dashboard Dr. <?php echo $doc_name ?></h1>
-            <!-- <div class="dropdown">
-                <a href="#" class="dropdown-toggle">
-                    <span class="label label-pill label-danger count">0</span>
-                    <span class="material-symbols-outlined" data-icon="notify">notifications</span>
-                </a>
-                <ul class="dropdown-menu hide">
-                </ul>
-            </div> -->
-        </div>
-    </div>
-    <div class="card-pack">
-        <button class="card" onclick="window.location.href = 'ped-childCardSearchView.php';">
-            <div class="card-content-left"><span class="material-symbols-outlined">Child_care</span></div>
-            <div class="card-content-right"><p>Child Management</p></div>
-        </button><!--gap remover -->
-        <button class="card" onclick="window.location.href = 'ped-searchChild.php';">
-            <div class="card-content-left"><span class="material-symbols-outlined">List</span></div>
-            <div class="card-content-right"><p>View Child List</p></div>
-        </button><!--gap remover -->
-        <button class="card" onclick="window.location.href = 'ped-scheduleManager.php?doc_id=<?php echo $_SESSION['user_id']; ?>';">
-            <div class="card-content-left"><span class="material-symbols-outlined">note_add</span></div>
-            <div class="card-content-right"><p>Manage Shedule</p></div>    
-    </div>
-</body>
-=======
 
 <div class="ped-Dashboard">
     <div class="dashboard-header">
@@ -170,7 +141,6 @@ $doc_name=$row['doc_name'];
 </div>
        
 </header>
->>>>>>> Stashed changes
 </html>
 
 <?php
