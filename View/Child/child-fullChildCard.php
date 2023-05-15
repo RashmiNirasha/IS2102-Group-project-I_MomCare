@@ -315,7 +315,6 @@
         </div>
         <div class="MotherCardButtonSet">
         <a href="childCard.php?child_id=<?php echo $_GET['child_id']; ?>"><button class="PrintBtn">Print</button></a>
-        <a href="motherCardPage2.php"><button class="NextBtn">Next</button></a>
         </div>
     </div>
 </body>

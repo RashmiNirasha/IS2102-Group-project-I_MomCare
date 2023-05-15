@@ -2,6 +2,7 @@
 
 <div class="mother-sidenav">
   <div class="mCard-Tltles">
+    <a href="../../View/Mother/motherCardPage1.php?mom_id=<?php echo $_GET['mom_id']; ?>">Full Mother Card</a>
     <a href="../../View/Mother/mother-motherCardUpdate.php?mom_id=<?php echo $_GET['mom_id']; ?>">General Details</a>
     <a href="../../View/Mother/mother-mCardPersonalD.php?mom_id=<?php echo $_GET['mom_id']; ?>">Personal Information</a>
     <a href="../../View/Mother/mother-mCard-familyHistory.php?mom_id=<?php echo $_GET['mom_id']; ?>">Family History</a>

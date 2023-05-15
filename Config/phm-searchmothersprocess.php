@@ -4,9 +4,12 @@ require_once 'dbConnection.php';
   $noResult = "False";
   $search = $_GET["search"];
 
-  $sql = "SELECT mom_id, mom_fname, mom_lname, mom_landline, mom_mobile, mom_email, mom_address, mom_age, reg.phm_id as 'phm_id' 
-  FROM registered_user_details reg INNER JOIN mother_details mot ON reg.reg_user_id=mot.reg_user_id WHERE mom_lname LIKE '%$search%' 
-  OR mom_fname LIKE '%$search%' OR mom_id LIKE '%$search%' OR mom_address LIKE '%$search%'";
+  // "SELECT mom_id, mom_fname, mom_lname, mom_landline, mom_mobile, mom_email, mom_address, mom_age, reg.phm_id as 'phm_id' 
+  // FROM registered_user_details reg INNER JOIN mother_details mot ON reg.reg_user_id=mot.reg_user_id WHERE mom_lname LIKE '%$search%' 
+  // OR mom_fname LIKE '%$search%' OR mom_id LIKE '%$search%' OR mom_address LIKE '%$search%'";
+
+  $sql ="SELECT * FROM mother_details WHERE (mom_lname LIKE '%$search%' 
+  OR mom_fname LIKE '%$search%' OR mom_id LIKE '%$search%' OR mom_address LIKE '%$search%') AND phm_id='" . $_SESSION['phm_id'] . "'";
 
   $s_result = $con->query($sql);
   if (!($s_result->num_rows>0)){

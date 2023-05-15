@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'dbConnection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["insert"])) {
@@ -44,13 +45,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update"])) {
     $result = mysqli_query($con, $sql);
 
     if ($result) {
-        // Redirect back to the child profile page with a success message
-        header("Location: ../View/PHM/child-adddental.php?message=Child record updated successfully");
+        if($_SESSION_['user_role'] == 'phm')
+            header("Location: ../View/PHM/child-adddental.php?message=Child record updated successfully");
+        else
+            header("Location: ../View/Pediatrician/child-adddental.php?message=Child record updated successfully");
         exit();
     } else {
-        // Redirect back to the child profile page with an error message
-        header("Location: ../View/PHM/child-adddental.php?error=Failed to update child records");
-        exit();
+
+        if($_SESSION_['user_role'] == 'phm')
+            header("Location: ../View/PHM/child-adddental.php?error=Failed to update child records");
+        else{
+            header("Location: ../View/Pediatrician/child-adddental.php?error=Failed to update child records");
+            exit();
+        }
     }
 
 }

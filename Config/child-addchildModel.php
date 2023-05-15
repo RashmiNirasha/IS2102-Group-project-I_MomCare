@@ -33,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["insert"])) {
     $hospital_clinic = $_POST['hospital_clinic'];
     $consultant_obstetrician = $_POST['consultant_obstetrician'];
     $risks_conditions = $_POST['risks_conditions'];
-    $registration_date = $_POST['registration_date'];
     $blood_group = $_POST['blood_group'];
     $allergies = $_POST['allergies'];
 
@@ -41,18 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["insert"])) {
 
     //check if the bithdate is valid
     $birth_date = date('Y-m-d', strtotime($birth_date));
-    $registration_date = date('Y-m-d', strtotime($registration_date));
 
-    if ($date > date("Y-m-d")) {
+    if ($birth_date > date("Y-m-d")) {
         echo "<script type='text/javascript'>alert('Date cannot be in the future'); window.location.href='../View/PHM/child-addchild.php?error=Date cannot be in the future';</script>";
         exit();
     }
 
-    if($registration_date > $today){
-        echo "Invalid registration date!";
-        exit();
-    }
-
+    
     $sql = "SELECT * FROM `mother_details` WHERE mom_id = '$mom_id'";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result);
@@ -80,9 +74,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["insert"])) {
         $child_id = generateChildId();
     } while (childIdExists($child_id, $con));
 
-    $sql = "INSERT INTO `child_details`(`child_id`, `child_age`, `child_name`, `child_gender`, `phm_id`, `doc_id`, `guardian_id`, `mom_email`, `mom_id`, `birth_date`, `registration_date`, `mother_name`, `mothers_address`, `mother_age`, `fathers_name`, `fathers_age`, `MOH_area`, `PHM_area`, `field_clinic`, `GN_division`, `hospital_clinic`, `consultant_obstetrician`, `identified_antatal_risks`, `registration_number`, `blood_group`, `allergies`) 
-    VALUES ('$child_id', '$child_age', '$child_name', '$child_gender', '$phm_id', '', '$guardian_id', '$mother_email', '$mom_id', '$birth_date', '$registration_date', '$mother_name', '', '$mother_age', '', '', '$moh_area', '$phm_area', '$field_clinic', '$gn_division', '$hospital_clinic', '$consultant_obstetrician', '$risks_conditions', '$registration_number', '$blood_group', '$allergies')";
-
+    $sql = "INSERT INTO `child_details` (`child_id`, `child_age`, `child_name`, `child_gender`, `phm_id`, `doc_id`, `guardian_id`, `mom_email`, `mom_id`, `birth_date`, `registration_date`, `mother_name`, `mothers_address`, `mother_age`, `fathers_name`, `fathers_age`, `MOH_area`, `PHM_area`, `field_clinic`, `GN_division`, `hospital_clinic`, `consultant_obstetrician`, `identified_antatal_risks`, `registration_number`, `blood_group`, `allergies`) 
+VALUES ('$child_id', '$child_age', '$child_name', '$child_gender', '$phm_id', '', '$guardian_id', '$mother_email', '$mom_id', '$birth_date', CURDATE(), '$mother_name', '', '$mother_age', '', '', '$moh_area', '$phm_area', '$field_clinic', '$gn_division', '$hospital_clinic', '$consultant_obstetrician', '$risks_conditions', '$registration_number', '$blood_group', '$allergies')";
 
 
     $result = mysqli_query($con, $sql);

@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) { 
     include '../../Config/dbConnection.php';
     include "../../Assets/Includes/header_pages.php";
-    include "../../Assets/Includes/sidenav2.php";
+    include "../../Assets/Includes/sidenav3.php";
     $Phm_id = $_SESSION['user_id'];
 ?>
 

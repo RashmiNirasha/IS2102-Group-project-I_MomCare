@@ -102,10 +102,6 @@
                 <td><label for="allergies">Allergies:</label></td>
                 <td><input type="text" id="allergies" name="allergies" placeholder="Allergies" required></td>
             </tr>
-            <tr>
-                <td><label for="registration_date">Registration Date:</label></td>
-                <td><input type="date" id="registration_date" name="registration_date" placeholder="Registration Date" required></td>
-            </tr>
         </table>
         <input class='small-child-btn' type="submit" value="Submit" name="insert">
     </form>
@@ -123,7 +119,7 @@
                         
                         if (mysqli_num_rows($ret) > 0) {
                             echo "<table class='MotherCardTables'>";
-                            echo "<tr><th>Child ID</th><th>Child Name</th><th>Birth Date</th><th>Gender</th><th>View Child Card</th><th>Edit</th><th>Delete</th></tr>";
+                            echo "<tr><th>Child ID</th><th>Child Name</th><th>Birth Date</th><th>Gender</th><th>View Child Card</th><th>View Development Index</th><th>Edit</th><th>Delete</th></tr>";
                             while ($row = mysqli_fetch_assoc($ret)) {
                                 $child_id = $row["child_id"];
                                 $child_name = $row["child_name"];
@@ -139,6 +135,7 @@
                                 <td>" . $row["birth_date"] . "</td>
                                 <td>" . $row["child_gender"] . "</td>
                                 <td><a href='../Child/Child-fullChildCard.php?child_id=" . $row['child_id'] . "'><button class='small-child-btn'>view</button></a></td>
+                                <td><a href='../Child/child-developmentView.php?child_id=" . $row['child_id'] . "'><button class='small-child-btn'>view</button></a></td>
                                 <td><a href='javascript:void(0);' onclick=\"showEditForm('" . $row['child_id'] . "')\"><button class='small-child-btn'>edit</button></a></td>";
                         
                                 if ($canDelete) {

@@ -3,8 +3,34 @@ session_start();
 if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) { 
     include '../../Config/dbConnection.php';
     include "../../Assets/Includes/header_pages.php";
-    include "../../Assets/Includes/sidenav2.php";
-    $Phm_id = $_SESSION['user_id'];
+    include "../../Assets/Includes/sidenav3.php";
+    $user_id = $_SESSION['user_id'];
+    $child_id = $_GET['child_id'];
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["insert"])) {
+        $phm_id = $_POST['phm_id'];
+        $childId = $_POST['child_id'];
+        $age = $_POST['age'];
+        $noOfTeeth = $_POST['no_of_teeth'];
+        $status = $_POST['status'];
+        $date = $_POST['date'];
+    
+        if ($date > date("Y-m-d")) {
+            echo "<script type='text/javascript'>alert('Date cannot be in the future'); window.location.href='../View/PHM/child-adddental.php?error=Date cannot be in the future';</script>";
+            exit();
+        }
+    
+        $insertQuery = "INSERT INTO `child_dental_report` (phm_id, child_id, age, date, no_of_teeth, status) VALUES ('$phm_id', '$childId', '$age', '$date', '$noOfTeeth', '$status')";
+    
+        $result = mysqli_query($con, $insertQuery);
+        if ($result) {
+            // Insertion successful, perform any desired actions
+            header("Location: ../View/Pediatrician/child-adddental.php?child_id=$child_id ");
+        } else {
+            // Insertion failed, handle the error appropriately
+            echo "Error inserting data: " . mysqli_error($con);
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +49,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
     <div class="OneColumnSection">
             <div class="MotherCardTableTitles"><h3>Add Records</h3></div>
             <div class="MotherGeneralDetails">
-        <form action="../../Config/child-adddentalModel.php" method="POST">
+        <form action=" " method="POST">
         <table class="MotherCardTables">
         <?php
         if (isset($_GET['message'])) {
@@ -40,20 +66,8 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
             <th>Date</th>
             <th>Actions</th>
     </tr>
-    <tr> <input type="hidden" name="phm_id" value="<?php echo $Phm_id; ?>">
-    <td><select id="child_id" name="child_id" required>
-                        <option value="">Select a child</option>
-                        <?php
-                        $ret = mysqli_query($con, "SELECT child_id FROM `child_details` WHERE phm_id = '$Phm_id'");
-                        while($row = mysqli_fetch_array($ret)) {
-                        ?>
-                        <option value="<?php echo htmlentities($row['child_id']);?>">
-                            <?php echo htmlentities($row['child_id']);?>
-                        </option>
-                        <?php
-                        }
-                        ?>
-                    </select></td>         
+    <tr> <input type="hidden" name="phm_id" value="<?php echo $user_id; ?>">
+    <td><input type="text" id="child_id" name="child_id" value="<?php echo $child_id; ?>" readonly></td>         
             <td><input type="text" id="age" name="age" required></td>
             <td><input type="text" id="no_of_teeth" name="no_of_teeth" required></td>
             <td>
@@ -80,7 +94,8 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) {
         <table class="MotherCardTables" id="myTable">
             <?php
             $oneMonthAgo = date('Y-m-d', strtotime('-1 month'));
-            $query = "SELECT * FROM `child_dental_report` WHERE `child_dental_report`.phm_id = '$Phm_id' ORDER BY `child_dental_report`.date DESC ";
+
+            $query = "SELECT * FROM `child_dental_report` WHERE `child_id` = '$child_id' ORDER BY `date` DESC ";
             $ret = mysqli_query($con, $query);
 
             if (mysqli_num_rows($ret) > 0) {

@@ -40,21 +40,22 @@
         
         $sql = "UPDATE mcard_emergency_plan SET i_hospital1 = '$mom_ihospital1', i_hospital2 = '$mom_ihospital2', transport1 = '$mom_transport1', transport2 = '$mom_transport2', distance1 = '$mom_distance1', distance2 = '$mom_distance2', time1 = '$mom_eme_time1', time2 = '$mom_eme_time2' WHERE mom_id = '$mom_id'";
         $result = mysqli_query($con, $sql);
-        if($result){
+        if ($result) {
             echo "<script>alert('Emergency Plan Updated Successfully')</script>";
-            header("Location: ../View/Mother/mother-mCard-Emergency.php?mom_id=$mom_id','_self'");
-        }
-        else{
+            header("Location: ../View/Mother/mother-mCard-Emergency.php?mom_id=$mom_id");
+            exit();
+        } else {
             echo "<script>alert('Emergency Plan Update Failed')</script>";
-
+            // Handle the error, such as logging it or displaying an error message to the user
         }
+        
 
 
     }
 
     // Attendence Add
 
-    if(isset($_POST['Attendence_submit'])){
+    if (isset($_POST['Attendence_submit'])) {
         $mom_id = $_POST['mom_id'];
         $mom_antenatal_date = $_POST['date'];
         $mom_antenatal_husband = $_POST['husband'];
@@ -62,18 +63,26 @@
         $mom_antenatal_other = $_POST['other'];
         $mom_antenatal_sign = $_POST['sign'];
 
-        $sql = "INSERT mcard_attendance (mom_id, date, husband, wife, other, sign) VALUES ('$mom_id', '$mom_antenatal_date', '$mom_antenatal_husband', '$mom_antenatal_wife', '$mom_antenatal_other', '$mom_antenatal_sign')";
-        $result = mysqli_query($con, $sql);
-        if($result){
-            echo "<script>alert('Attendence Added Successfully')</script>";
-            header("Location: ../View/Mother/mother-mCard-Attendence.php?mom_id=$mom_id','_self'");
-        }
-        else{
-            echo "<script>alert('Attendence Add Failed')</script>";
+        // Get the current date
+        $currentDate = date('Y-m-d');
 
-        }
-
+        if ($mom_antenatal_date > $currentDate) {
+            echo "<script>alert('Input date is a future date')</script>";
+            header("Location: ../View/Mother/mother-mCard-Attendence.php?mom_id=$mom_id");
+        } else {
+            $sql = "INSERT INTO mcard_attendance (mom_id, date, husband, wife, other, sign) VALUES ('$mom_id', '$mom_antenatal_date', '$mom_antenatal_husband', '$mom_antenatal_wife', '$mom_antenatal_other', '$mom_antenatal_sign')";
+            $result = mysqli_query($con, $sql);
+            if ($result) {
+                echo "<script>alert('Attendance Added Successfully')</script>";
+                header("Location: ../View/Mother/mother-mCard-Attendence.php?mom_id=$mom_id");
+                exit();
+            } else {
+                echo "<script>alert('Attendance Add Failed')</script>";
+                header("Location: ../View/Mother/mother-mCard-Attendence.php?mom_id=$mom_id");
+            }   
+        }    
     }
+    
 
     // Birth Plan View
 

@@ -39,6 +39,8 @@
                             }elseif (isset($_GET['status']) && $_GET['status']=='success'){
                                 echo "<p class='au-nor-message'>Record Added Successfully.</p>";
                                 // echo "<script>setTimeout(\"location.href = 'admin-managedoctor.php';\",1500);</script>";
+                            }elseif (isset($_GET['status']) && $_GET['status']=='emailexists') {
+                                echo "<p class='au-imp-message'>Email already exists.</p>";
                             }
                         ?>
                     </div>
