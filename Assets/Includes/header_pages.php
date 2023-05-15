@@ -118,15 +118,15 @@
 .dropdown ul {
     display: flex;
     flex-direction: column;
-    width: 220px;
+    gap: 0px;
+    width: 200px;
     height: max-content;
-    margin-right: -20px;
+    border-radius: 0px 0px 15px 15px;
 }
 
 .dropdown-menu {
     position: fixed;
-    display: flex;
-    justify-content: left;
+    display: none;
     margin-top: 10px;
     right: 0px;
     font-size: 12px;
@@ -143,12 +143,12 @@
     margin-bottom: 0px;
     white-space: nowrap;
     cursor: pointer;
-    height: 60px;
 }
 
 .dropdown-menu li a {
     text-decoration: none;
-    margin-bottom: -12px;
+    width: 160px;
+    margin-bottom: 0px;
     color: #111c43;
     font-weight: bold;
     font-size: 14px;
@@ -157,6 +157,7 @@
 
 .dropdown-menu li:last-child {
     margin-right: 40px;
+    border-radius: 0px 0px 15px 15px;
 }
 
 .dropdown-menu li a:hover {
@@ -193,42 +194,39 @@
     font-weight: bold;
 }
 .hide {
-    display: none !important;
+    display: none;
 }
     </style>
-    <script type="text/javascript">
-        $(document).ready(function() {
-
-            function load_unseen_notification(view = '') {
-                $.ajax({
-                    url: "ped-notification.php",
-                    method: "POST",
-                    data: {
-                        view: view
-                    },
-                    dataType: "json",
-                    success: function(data) {
-                        $('.dropdown-menu').html(data.notification);
-                        // if (data.unseen_notification > 0) {
-                            $('.count').html(data.unseen_notification);
-                        // }
-                    }
-
-                });
-            }
-
-            load_unseen_notification();
+    <script type = "text/javascript">
+        $(document).ready(function(){
+        
+        function load_unseen_notification(view = ''){
+            $.ajax({
+                url:"../../notifications.php",
+                method:"POST",
+                data:{view:view},
+                dataType:"json",
+                success:function(data)
+                {
+                $('.dropdown-menu').html(data.notification);
+                // if(data.unseen_notification > 0){
+                $('.count').html(data.unseen_notification);
+                // }
+                }
+            });
+        }
+    
+        load_unseen_notification();
             $(document).on('click', '.dropdown-toggle', function() {
                 $('.count').html('');
                 $(".dropdown-menu").toggle();
                 load_unseen_notification('yes');
             });
-
-            setInterval(function() {
-                load_unseen_notification();;
+            setInterval(function(){ 
+                load_unseen_notification();; 
             }, 5000);
-            });
-        $(document).on('click', function(event) {
+        });
+                $(document).on('click', function(event) {
             if (!$(event.target).closest('.dropdown').length) {
                 $('.dropdown-menu').hide();
             }
@@ -291,12 +289,12 @@
                 }
                 ?>
                 <li class="notifyBtn">
-                    <div class="dropdown" id="dropdown">
+                    <div class="dropdown">
                         <a href="#" class="dropdown-toggle">
                             <span class="count">0</span>
                             <span class="material-symbols-outlined" data-icon="notify">notifications</span>
                         </a>
-                        <ul class="dropdown-menu hide"></ul>
+                        <ul class="dropdown-menu hide" style="display:none;"></ul>
                     </div>
                 </li>
                 <li><a href="../../Config/logout.php">Log out</a></li>

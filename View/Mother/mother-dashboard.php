@@ -52,7 +52,6 @@ include "../../Assets/Includes/header_pages.php";
                 <div class="card-content-right"><p>Fetal Growth Calculator</p></div>
             </button>
             </button>
-           
             <button class="card" id="myButton">
                 <div class="card-content-left"><span class="material-symbols-outlined">child_care</span></div>
                 <div class="card-content-right">
@@ -85,7 +84,7 @@ include "../../Assets/Includes/header_pages.php";
 
 <script>
 document.getElementById("myButton").addEventListener("click", function() {
-  var dropdown = document.getElementById("myDropdown");
+  var dropdown = document.getElementById("myDrop");
   if (dropdown.style.display === "none") {
     dropdown.style.display = "block";
   } else {

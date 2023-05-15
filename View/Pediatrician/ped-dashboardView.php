@@ -24,7 +24,7 @@ $doc_name=$row['doc_name'];
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <style><?php include "../../Assets/css/style-common.css" ?></style>
 
-    <script type = "text/javascript">
+    <!-- <script type = "text/javascript">
         $(document).ready(function(){
         
         function load_unseen_notification(view = ''){
@@ -59,7 +59,7 @@ $doc_name=$row['doc_name'];
             }, 5000);
         });
 
-    </script>
+    </script> -->
 </head>
 <body>
 

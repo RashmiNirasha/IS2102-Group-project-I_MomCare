@@ -502,21 +502,25 @@ body {
 .dashboard-header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    /* background-color: #00ff0d; */
+    justify-content: space-around;
+    background-color: #ffffff;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 0px 0px 100px 100px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.17);
+
 }
 
 .dashboard-header h1 {
     font-size: 30px;
     font-weight: bold;
     color: #202020;
-    margin-left: 5%;
-    margin-top: 100px;
+    margin-top: 90px;
     font-family: RobotoRegular;
     margin-bottom: 20px;
-    margin-right: 20px;
-    text-align: left;
-    background-color: rgb(255, 255, 255);
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: transparent;
 }
 
 .dashboard-vog {
@@ -529,9 +533,9 @@ body {
 .card-pack {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-flow: wrap;
-    column-gap: 10%;
+    column-gap: 13%;
     /* row-gap: -160px; */
     width: 80%;
     height: 80%;
