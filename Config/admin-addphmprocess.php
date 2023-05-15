@@ -34,7 +34,7 @@ if ($varCheck == true) {
         $password = md5($name);
 
         // Check whether the Doctor ID is already taken
-        $sql_check = "(SELECT count(phm_id) as 'phm' FROM phm_details WHERE phm_id='$id');";
+        $sql_check = "(SELECT count(phm_id) as 'phm' FROM phm_details WHERE phm_email='$email');";
         $check = $con->query($sql_check);
 
         if ($check->num_rows>0){
@@ -68,6 +68,8 @@ if ($varCheck == true) {
         } else {
             echo "Error: " . $sql_phm . "<br>" . mysqli_error($con);
         }
+    } else {
+        header("Location:..\View\Admin\admin-addphm.php?status=emailexists"); 
     }
 }
 }

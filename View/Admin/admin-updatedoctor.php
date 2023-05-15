@@ -80,14 +80,14 @@ if (isset($_SESSION['email'])){
                         <input type="text" name="name" value="<?php  echo $name?>">
                         <input type="date" name="dob" id="birthdate" value="<?php  echo $dob?>">
                             <script>
-                                var today = new Date();
-                                var minDate = new Date(today.getFullYear() - 100, today.getMonth(), today.getDate()).toISOString().split('T')[0];
-                                var maxDate = new Date(today.getFullYear() - 20, today.getMonth(), today.getDate()).toISOString().split('T')[0];
-                                document.getElementById("birthdate").setAttribute("min", minDate);
-                                document.getElementById("birthdate").setAttribute("max", maxDate);
+                            var today = new Date();
+                            var minDate = new Date(today.getFullYear() - 100, today.getMonth(), today.getDate()).toISOString().split('T')[0];
+                            var maxDate = new Date(today.getFullYear() - 20, today.getMonth(), today.getDate()).toISOString().split('T')[0];
+                            document.getElementById("birthdate").setAttribute("min", minDate);
+                            document.getElementById("birthdate").setAttribute("max", maxDate);
                             </script>
                         <input type="tel" name="tel" value="<?php  echo $tel?>">
-                        <input type="email" name="email" value="<?php  echo $email?>">
+                        <input type="email" name="email" value="<?php  echo $email?>" readonly>
                         <input type="text" name="address" value="<?php  echo $address?>">
                         <!-- <input type="number" min="20" max="120" name="age"> -->
                         <input type="text" name="work" value="<?php  echo $work?>">

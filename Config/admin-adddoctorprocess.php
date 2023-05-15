@@ -36,7 +36,7 @@ function is_array_empty($arr){
 
 
             //Check whether the Doctor ID is already taken
-            $sql_check = "(SELECT count(doc_id) as 'doc' FROM doctor_details WHERE doc_id='$id');";
+            $sql_check = "(SELECT count(doc_id) as 'doc' FROM doctor_details WHERE doc_email='$email');";
             $check = $con->query($sql_check);
 
             if ($check->num_rows>0){
@@ -77,8 +77,8 @@ function is_array_empty($arr){
                 }else{
                     echo "Error: " .$sql_insert_doctor . "<br>" . mysqli_error($con);
                 }
-            }elseif ($doc_idExists == 1){
-                header("Location:..\View\Admin\admin-adddoctor.php?status=errorIDTaken");
+            } else {
+                header("Location:..\View\Admin\admin-adddoctor.php?status=emailexists"); 
             }
             
         }
