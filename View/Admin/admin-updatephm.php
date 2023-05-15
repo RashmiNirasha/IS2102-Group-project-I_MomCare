@@ -82,7 +82,7 @@ if (isset($_SESSION['email'])){
                                 document.getElementById("birthdate").setAttribute("max", maxDate);
                             </script>
                         <input type="tel" name="tel" value="<?php  echo $tel?>">
-                        <input type="email" name="email" value="<?php  echo $email?>">
+                        <input type="email" name="email" value="<?php  echo $email?>" readonly>
                         <input type="text" name="address" value="<?php  echo $address?>">
                         <!-- <input type="number" min="20" max="120" name="age"> -->
                         <input type="text" name="work" value="<?php  echo $work?>">
