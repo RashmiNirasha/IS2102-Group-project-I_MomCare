@@ -28,7 +28,7 @@
             </div>
             <div class="calendarRightContent-2">
                 <?php
-                $clickedDate = isset($_GET['date']) ? $_GET['date'] : '';
+                $clickedDate = isset($_POST['date']) ? $_POST['date'] : '';
                 $mom_id = $_SESSION['id'];
                 $query = "SELECT ma.*, md.mom_fname, md.mom_lname, md.mom_age
                         FROM mom_appointments ma
@@ -103,7 +103,7 @@
             </div>
             <div class="appAdd-form">
                 <div>
-                    <form action="" method="GET">
+                    <form action="" method="POST">
                         <table>
                             <tr>
                                 <td><label for="toc_type_selection">Who do you want to channel?</label></td>
@@ -114,6 +114,19 @@
                                     <label for="Pediatrician">Pediatrician</label>
                                     <input type="radio" name="doc_type" id="PHM" value="phm" onchange="updateDocName()">
                                     <label for="PHM">PHM</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="appTitle">Title</label>
+                                </td>
+                                <td>
+                                    <select name="title" id="title">
+                                        <option value="" disabled selected>Select a Title</option>
+                                        <option value="Checkup">Checkup</option>
+                                        <option value="Vaccination">Vaccination</option>
+                                        <option value="Other">Other</option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr>
@@ -136,22 +149,31 @@
                     </form>
                     <?php
                         include '../../Config/dbConnection.php';
-                        if (isset($_GET['SubmitApp'])) {
-                            $doc_id = $_GET['docName'];
-                            $date = $_GET['appDate'];
-                            $user_role = $_GET['doc_type'];
+                        if (isset($_POST['SubmitApp'])) {
+                            $doc_id = $_POST['docName'];
+                            $date = $_POST['appDate'];
+                            $user_role = $_POST['doc_type'];
+                            $title = $_POST['title'];
                             $mom_id = $_SESSION['user_id'];
 
                             switch ($user_role) {
                                 case 'vog':
                                 case 'ped':
-                                    $query = "INSERT INTO mom_appointments (mom_id, doc_id, start) VALUES ('$mom_id', '$doc_id', '$date')";
+                                    $sql_loc = "SELECT doc_workplace FROM doctor_details WHERE doc_id = '$doc_id'";
+                                    $result_loc = mysqli_query($con, $sql_loc);
+                                    while ($row = mysqli_fetch_assoc($result_loc)) {
+                                        $location = $row['doc_workplace'];
+                                    } 
+
+                                    $query = "INSERT INTO mom_appointments (mom_id, doc_id, start, location, title) VALUES ('$mom_id', '$doc_id', '$date', '$location', '$title')";
                                     $result = mysqli_query($con, $query);
                                     break;
+                                    exit();
                                 case 'phm':
                                     $query = "INSERT INTO mom_appointments (mom_id, phm_id, start, title, location) VALUES ('$mom_id', '$doc_id', '$date', '$user_role', 'Home')";
                                     $result = mysqli_query($con, $query);
                                     break;
+                                    exit();
                             }
                         } 
                     ?>

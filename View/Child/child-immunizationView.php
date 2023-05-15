@@ -34,7 +34,7 @@ $child_name = $row['child_name'];
         </div>
         <!-- title section end -->
       <br/>
-      <div class="child-container2">
+      <div class="child-container4">
       <div class="OneColumnSection">
       <div class="MotherCardTableTitles">
       <h3>Vaccination Table </h3>

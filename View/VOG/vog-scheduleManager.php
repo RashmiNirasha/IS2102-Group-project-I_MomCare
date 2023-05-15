@@ -15,6 +15,35 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.6/index.global.min.js'></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script><?php include 'vog-calendar.js' ?></script>
+
+    <script>
+        function updateMcardTable() {
+            var popup = document.getElementById("calendarSettingsPopup");
+            popup.style.display = "block";
+        }
+        function closePopup() {
+            var popup = document.getElementById("calendarSettingsPopup");
+            popup.style.display = "none";
+        }
+    </script>
+
+    <?php
+        if(isset($_POST['appLimit_submit'])) {
+            if ($_POST['appLimit'] == '' || $_POST['appLimit'] < 5) {
+                echo '<script>alert("Please enter a valid appointment limit!")</script>';
+            } else {
+            $appLimit = $_POST['appLimit'];
+            $doc_id = $_SESSION['id'];
+            $query = "UPDATE doctor_details SET app_limit = '$appLimit' WHERE doc_id = '$doc_id'";
+            $result = mysqli_query($con, $query);
+            if ($result) {
+                echo '<script>alert("Appointment limit updated successfully!")</script>';
+            } else {
+                echo '<script>alert("Error updating appointment limit!")</script>';
+            }
+        }
+        }
+    ?>
 </head>
 <body>
 <button class="goBackBtn" onclick="history.back()">Go back</button>
@@ -92,10 +121,47 @@
             </div>
         </div>
     </div>
-    <!-- <div class="appointmentSetting">
-        <input type="button" value="Setting">
-    </div> -->
+    <div class="appointmentSetting">
+        <input type="button" value="Setting" onclick="updateMcardTable()">
+    </div>
 
+    <div class="calendarSettingsPopup" id="calendarSettingsPopup">
+        <div class="updatePopup-content">
+            <div class="updatePopup-header">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <h2>Set Appointment Limit</h2>
+            </div>
+            <div class="updatePopup-body">
+                <form action="#" method="POST">
+                    <div class="updateFormTables">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="set_date">Select Date: </label>
+                                </td>
+                                <td>
+                                    <input type="date" name="set_date" id="set_date" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="set_app_limit">Set Appointment Limit: </label>
+                                </td>
+                                <td>
+                                    <input type="number" name="set_app_limit" id="set_app_limit" placeholder="Set Appointment Limit" required>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <input type="hidden" name="mom_id" value="<?php echo $mom_id ?>">
+                    <div class="updateMcard_submit">
+                        <button type="reset">Reset</button>
+                        <button type="submit" name="appLimit_submit">Update</button>
+                    </div>
+                </form>
+            </div>      
+        </div>
+    </div>
 
 </body>
 </html>

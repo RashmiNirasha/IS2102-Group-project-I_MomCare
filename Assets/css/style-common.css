@@ -163,6 +163,17 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+#phm_id {
+    background-color: #ffffff;
+    border: 1px solid #029ee4;
+    color: #000;
+}
+
+#phm_id:hover {
+    background-color: #ffffff;
+    border: 1px solid #029ee4;
+}
+
 .RegisterMotherMainDiv h1 {
     display: flex;
     flex-direction: column;
@@ -1875,7 +1886,7 @@ input[type="file" i] {
 
 .goBackBtn {
     width: 100px;
-    height: 30px;
+    height: 35px;
     border-style: none;
     border-radius: 0px 25px 25px 0;
     color: #ffffff;
@@ -4220,6 +4231,144 @@ a {
 
 /* --------------------- Vog - schedule manager page ------------------------ */
 
+
+.appointmentSetting {
+    display: flex;
+    justify-content: flex-end;
+    /* background-color: #00ff0d; */
+}
+
+.calendarSettingsPopup {
+    display: none;
+    position: fixed;
+    z-index: 15;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.updatePopup-conten {
+    background-color: #fefefe;
+    padding: 20px;
+    margin: 15% auto;
+    border: 1px solid #888;
+    width: max-content;
+    border-radius: 20px;
+}
+
+.updateFormTables table {
+    border-collapse: collapse;
+    width: 100%;
+    /* border: #88888844 1px solid; */
+    border-radius: 20px;
+    padding: 10px;
+    font-family: RobotoRegular;
+    font-size: 13px;
+}
+
+.updatePopup-content {
+    background-color: #fefefe;
+    padding: 20px;
+    margin: 15% auto;
+    border: 1px solid #888;
+    width: max-content;
+    border-radius: 20px;
+}
+
+.updateFormTables input[type=text], input[type=date] {
+    border-radius: 5px;
+    border: #88888844 1px solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: RobotoRegular;
+    font-size: 13px;
+}
+
+.updateFormTables th {
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.updateFormTables td, th {
+    border-bottom: #88888818 1px solid;
+}
+
+.updatePopup-header .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    margin-top: -33px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.updateMcardTable-popup .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    margin-top: -33px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.updatePopup-header.close:hover,
+.updatePopup-header .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.updateMcard_submit {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.updateMcard_submit button[type=submit] {
+    width: 100px;
+    height: 30px;
+    border-style: none;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #d80000;
+    cursor: pointer;
+}
+
+.updateMcard_submit button[type=reset] {
+    width: 100px;
+    height: 30px;
+    border-style: none;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #029EE4;
+    cursor: pointer;
+}
+
+.updateMcard_submit button:hover {
+    background-color: #ff0000;
+}
+
+.appointmentSetting input {
+    height: 35px;
+    width: 110px;
+    border-radius: 15px 0px 0px 15px;
+    background-color: #029ce4;
+    border: none;
+    color: white;
+}
+
+.appointmentSetting input:hover {
+    background-color: #ff0000;
+    cursor: pointer;
+}
+
 .fc-toolbar {
     color: rgb(0, 0, 0);
     border-radius: 5px;
@@ -4709,6 +4858,14 @@ a {
     margin-bottom: 5%;
     margin-left: 15%;
     margin-right: 15%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px 40px 20px 40px;
+    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .child-container4{
+    margin-bottom: 5%;
     background: #fff;
     border-radius: 6px;
     padding: 20px 40px 20px 40px;

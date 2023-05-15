@@ -24,42 +24,6 @@ $doc_name=$row['doc_name'];
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <style><?php include "../../Assets/css/style-common.css" ?></style>
 
-    <!-- <script type = "text/javascript">
-        $(document).ready(function(){
-        
-        function load_unseen_notification(view = ''){
-            $.ajax({
-                url:"ped-notification.php",
-                method:"POST",
-                data:{view:view},
-                dataType:"json",
-                success:function(data)
-                {
-                $('.dropdown-menu').html(data.notification);
-                // if(data.unseen_notification > 0){
-                $('.count').html(data.unseen_notification);
-                // }
-                }
-            });
-        }
-    
-        load_unseen_notification();
-            $(document).on('click', '.dropdown-toggle', function(){
-            $('.count').html('');
-            if ($(".dropdown-menu").hasClass("hide"))
-            {
-                $(".dropdown-menu").removeClass("hide");
-            }else {
-                $(".dropdown-menu").addClass("hide");
-            }
-            load_unseen_notification('yes');
-            });
-            setInterval(function(){ 
-                load_unseen_notification();; 
-            }, 5000);
-        });
-
-    </script> -->
 </head>
 <body>
 
