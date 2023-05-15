@@ -74,7 +74,7 @@ $doc_name=$row['doc_name'];
     
     <button class="card" onclick="window.location.href = 'ped-childCardSearchView.php';">
                 <div class="card-content-left"><span class="material-symbols-outlined">Child_care</span></div>
-                <div class="card-content-right"><p>Child Management</p></div>
+                <div class="card-content-right"><p>Add Notes</p></div>
             </button><!--gap remover -->
 
             <button class="card" onclick="window.location.href = 'ped-searchChild.php';">
