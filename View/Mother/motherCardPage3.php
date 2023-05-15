@@ -369,7 +369,7 @@
         </div>
         <div class="MotherCardButtonSet">
         <a href="#"><button class="PrintBtn">Print</button></a>
-        <a href="motherCardPage2.php"><button class="BackBtn">Back</button></a>
+        <a href="motherCardPage2.php?mom_id=<?php echo $_GET['mom_id']; ?>"><button class="BackBtn">Back</button></a>
         </div>
     </div>
 </body>

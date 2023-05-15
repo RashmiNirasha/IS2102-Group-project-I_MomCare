@@ -32,4 +32,4 @@
     </div>
 </body>
 </html>
-<?php include "Assets/Includes/footer_index.php"; ?>
+<!-- <?php include "Assets/Includes/footer_index.php"; ?> -->

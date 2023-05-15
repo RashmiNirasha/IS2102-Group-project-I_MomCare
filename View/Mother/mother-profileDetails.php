@@ -144,7 +144,7 @@
         <div class="profile-buttons">
             <button class="edit" style="background:#24D4B9;" onclick="editMotherProfile()">Edit Profile</button>
             <a><button class="change" style="background:#EA2727;" onclick="momPasswordChange()">Change Password</button></a>
-            <a href="motherCardFormTitles.php"><button class="view" style="background:#029EE4;">View Mother Card</button></a>
+            <a href="mother-motherCardUpdate.php?mom_id=<?php echo $_SESSION['mom_id']; ?>"><button class="view" style="background:#029EE4;">View Mother Card</button></a>
         </div>
     </div>
 

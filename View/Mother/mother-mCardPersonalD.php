@@ -83,7 +83,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                             </tr>
                             <tr>
                                 <td>Age:</td>
-                                <td><input type="text" name="mom_age" value="<?php echo $mom_age ?>"></td>
+                                <td><input type="text" name="mom_age" value="<?php echo $mom_age ?>" readonly ></td>
                                 <td><input type="text" name="dad_age" value="<?php echo $dad_age ?>"></td>
                             </tr>
                             <tr>

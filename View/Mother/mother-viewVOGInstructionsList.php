@@ -29,6 +29,7 @@
 <body>
     <div class="content">
             <!-- topic and notifications -->
+            <button class="goBackBtn" onclick="history.back()">Go back</button>
 
             <?php
                 $doc_id = $_GET['doc_id'];

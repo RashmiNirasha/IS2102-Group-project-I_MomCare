@@ -25,7 +25,7 @@
             $mom_height = $row['mom_height'];
             $allergies = $row['allergies'];
             $mom_fullname = $row['mom_name'];
-            $mom_age = $row['mom_age'];
+            // $mom_age = $row['mom_age'];
             $moh_area = $row['moh_area'];
             $phm_area = $row['phm_area'];
             $clinic_name = $row['clinic_name'];
@@ -50,6 +50,25 @@
             $dad_occupation = $row['dad_occupation'];
             $mom_edu = $row['mom_edu'];
             $mom_occupation = $row['mom_occupation'];
+
+            $sql = "SELECT mom_DOB FROM mother_details WHERE mom_id = '$mom_id'";
+            $result = $con->query($sql);
+            if($result->num_rows > 0){
+                while($row=mysqli_fetch_assoc($result)){
+                    $birthday = $row['mom_DOB'];
+                }
+            }
+            else{
+                echo "0 results";
+            }
+
+            // Create DateTime objects for the current date and the birthdate
+            $currentDate = new DateTime();
+            $birthdate = new DateTime($birthday);
+
+            // Calculate the difference between the current date and the birthdate
+            $mom_age = $birthdate->diff($currentDate)->y;
+
         }
     }
     else
@@ -91,11 +110,11 @@
         $result = $con->query($sql);
         if($result){
             echo "<script>alert('Successfully Updated!')</script>";
-            echo "<script>window.open('mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('../View/Mother/mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
         }
         else{
             echo "<script>alert('Error while updating!')</script>";
-            echo "<script>window.open('mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('../View/Mother/mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
         }
     }
 
@@ -113,11 +132,11 @@
         $result = $con->query($sql);
         if($result){
             echo "<script>alert('Successfully Updated!')</script>";
-            echo "<script>window.open('mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('../View/Mother/mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
         }
         else{
             echo "<script>alert('Error while updating!')</script>";
-            echo "<script>window.open('mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('../View/Mother/mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
         }
     }
 
@@ -154,11 +173,11 @@
         $result = $con->query($sql);
         if($result){
             echo "<script>alert('Successfully Updated!')</script>";
-            echo "<script>window.open('mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('../View/Mother/mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
         }
         else{
             echo "<script>alert('Error while updating!')</script>";
-            echo "<script>window.open('mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
+            echo "<script>window.open('../View/Mother/mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
         }
     }
 
@@ -217,11 +236,11 @@
         $result = $con->query($sql);
         if($result){
             echo "<script>alert('Successfully Updated!')</script>";
-            echo "<script>window.open('mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
+            "<script>window.open('../View/Mother/mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
         }
         else{
             echo "<script>alert('Error while updating!')</script>";
-            echo "<script>window.open('mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
+            "<script>window.open('../View/Mother/mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
         }
     }
 
@@ -267,11 +286,11 @@
         $result = $con->query($sql);
         if($result){
             echo "<script>alert('Successfully Updated!')</script>";
-            echo "<script>window.open('mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
+            "<script>window.open('../View/Mother/mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
         }
         else{
             echo "<script>alert('Error while updating!')</script>";
-            echo "<script>window.open('mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
+            "<script>window.open('../View/Mother/mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
         }
     }
 
@@ -308,11 +327,11 @@
         $result = $con->query($sql);
         if($result){
             echo "<script>alert('Successfully Updated!')</script>";
-            echo "<script>window.open('mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
+            "<script>window.open('../View/Mother/mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
         }
         else{
             echo "<script>alert('Error while updating!')</script>";
-            echo "<script>window.open('mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
+            "<script>window.open('../View/Mother/mother-motherCardUpdate.php?mom_id=$mom_id','_self')</script>";
         }
     }
 

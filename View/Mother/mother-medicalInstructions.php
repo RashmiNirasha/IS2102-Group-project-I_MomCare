@@ -18,12 +18,13 @@
 </head>
 <body>
     <div class="content">
+    <button class="goBackBtn" onclick="history.back()">Go back</button>
         <!-- topic and notifications -->
         <div class="heading">
             <h1>Medical Instructions</h1>
-            <a href="http://">
+            <!-- <a href="http://">
                 <span class="material-icons">notifications</span>
-            </a>
+            </a> -->
         </div>
 
         <!-- medical instructions -->

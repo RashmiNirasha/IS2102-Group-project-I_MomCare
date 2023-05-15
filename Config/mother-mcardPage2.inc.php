@@ -182,7 +182,7 @@
             echo "<script>window.open('mother-ResSystem.php?mom_id=$mom_id','_self')</script>";
         }
     }
-// breast Exam query --------------------------------------------------------------
+    // breast Exam query --------------------------------------------------------------
 
     if(isset($_POST['BreastD_submit'])) {
         $mom_breast = $_POST['mom_breast'];
@@ -268,19 +268,19 @@
         
     }
 
-    $sql = "SELECT * FROM mcard_tetanus WHERE mom_id = '$mom_id'";
-    $result = $con->query($sql);
-    if($result->num_rows > 0)
-    {
-        while($row=mysqli_fetch_assoc($result)){
-            $mom_tetanus_dose = $row['dose'];
-            $mom_tetanus_date = $row['date'];
-            $mom_tetanus_batch = $row['batch_no'];
-        }
-    }
-    else{
-        echo "0 results";
-    }
+    // $sql = "SELECT * FROM mcard_tetanus WHERE mom_id = '$mom_id'";
+    // $result = $con->query($sql);
+    // if($result->num_rows > 0)
+    // {
+    //     while($row=mysqli_fetch_assoc($result)){
+    //         $mom_tetanus_dose = $row['dose'];
+    //         $mom_tetanus_date = $row['date'];
+    //         $mom_tetanus_batch = $row['batch_no'];
+    //     }
+    // }
+    // else{
+    //     echo "0 results";
+    // }
 
     // tetanus query --------------------------------------------------------------
 

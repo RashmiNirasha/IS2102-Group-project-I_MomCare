@@ -5,9 +5,9 @@
    {
 ?>
 <?php 
-$mom_id = $_GET['mom_id'];
+$mom_id = $_SESSION['mom_id'];
     include "../../Assets/Includes/header_pages.php"; 
-    include "../../Config/mother-mcardPage1.inc.php?mom_id= $mom_id";
+    include "../../Config/mother-mcardPage1.inc.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -184,7 +184,7 @@ $mom_id = $_GET['mom_id'];
                                 <table class="MotherCardTables">
                                     <tr>
                                         <td>Diabetes mellitus:</td>
-                                        <td><?php echo $diabetes1 ?></td>
+                                        <td><?php echo $diabetes ?></td>
                                     </tr>
                                     <tr>
                                         <td>Hypertension:</td>
@@ -360,8 +360,8 @@ $mom_id = $_GET['mom_id'];
             </div>
         </div>
         <div class="MotherCardButtonSet">
-        <a href=""><button class="PrintBtn">Print</button></a>
-        <a href="motherCardPage2.php"><button class="NextBtn">Next</button></a>
+        <!-- <a href=""><button class="PrintBtn">Print</button></a> -->
+        <a href="motherCardPage2.php?mom_id=<?php echo $_GET['mom_id']; ?>"><button class="NextBtn">Next</button></a>
         </div>
     </div>
 </body>

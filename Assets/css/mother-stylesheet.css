@@ -829,3 +829,21 @@ input[type="text"], input[type="date"] {
     font-weight: 400;
     font-size: 14px;
 }
+
+.goBackBtn:hover {
+    background-color: #ff0000;
+
+}
+
+.goBackBtn {
+    width: 100px;
+    height: 30px;
+    border-style: none;
+    border-radius: 0px 25px 25px 0;
+    color: #ffffff;
+    background-color: #029EE4;
+    cursor: pointer;
+    top: 120px;
+    left: 0px;
+    position: fixed;
+}
