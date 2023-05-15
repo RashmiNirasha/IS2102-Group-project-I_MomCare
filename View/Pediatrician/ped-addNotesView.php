@@ -79,10 +79,12 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
      ?>
      <input type="hidden" name="doctor_id" id="doctor_id" value='$doc_id'>
      <input type="hidden" name="child_id" id="child_id" value='<?php echo $_GET['childid']?>'>
-    <tr>
-        <td><label for="note_date">Choose Date</label></td>
-        <td><input type="date" name="note_date" id="note_date" ></td>
-    </tr>
+     <tr>
+     <tr>
+    <td><label for="note_date">Choose Date</label></td>
+    <td><input type="date" name="note_date" id="note_date" max="<?php echo date('Y-m-d', strtotime('+1 day')); ?>"></td>
+</tr>
+
     <tr>
         <td><label for="note_topic">Title</label></td>
         <td><input type="text" name="note_topic" id="note_topic" ></td>

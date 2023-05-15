@@ -1,8 +1,10 @@
 <?php
 session_start();
 include "../../Config/dbConnection.php";
-include "../../Assets/Includes/header_pages.php";
-if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
+if (isset($_SESSION['email']) && isset($_SESSION['user_id'])) { 
+    include "../../Assets/Includes/header_pages.php";
+    ?>
+
 <?php
 $id= $_GET['updateid'];
 
@@ -14,25 +16,22 @@ $doc_id = $row['doc_id'];
 $note_topic = $row['note_topic'];
 $note_date = $row['note_date'];
 $note_description = $row['note_description'];
-$note_records = $row['note_records'];
+$child_id = $row['child_id'];
 
 if (isset($_POST['submit'])) {
     $doc_id = $_POST['doctor_id'];
     $note_topic = $_POST['note_topic'];
     $note_date = $_POST['note_date'];
     $note_description = $_POST['note_description'];
-    $note_records = $_POST['note_records'];
-
-    $sql="UPDATE doctor_notes SET doc_id='$doc_id',note_topic='$note_topic', note_date='$note_date', note_description='$note_description', note_records='$note_records' WHERE note_id='$id'";
+  
+    $sql="UPDATE doctor_notes SET doc_id='$doc_id',note_topic='$note_topic', note_date='$note_date', note_description='$note_description' WHERE note_id='$id'";
 
     $result = mysqli_query($con, $sql);
     if($result){
-        header("Location: ped-childCardSearchView.php?update=success");
-    }
+          echo "<script>alert('Record Updated Successfully')</script>";    }
     else{
         echo "Error: " . $sql . "<br>" . mysqli_error($con);
     }
-
 }
 ?>
 
@@ -68,11 +67,7 @@ if (isset($_POST['submit'])) {
         <td><label for="note_description">Description</label></td>
         <td><textarea name="note_description" id="note_description"><?php echo $note_description;?></textarea></td>
     </tr>
-    <tr>
-        <td><label for="note_records">Select File to Upload</label></td>
-        <td><input type="file" name="note_records" id="note_records"/><span><?php //echo $note_records;?></span></td>
-    </tr>
-   
+
 </table>
 <button type="submit" name="submit">Update</button>
 

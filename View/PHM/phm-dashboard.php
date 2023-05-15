@@ -24,7 +24,7 @@ $phm_id=$row['phm_id'];
     <div class="a-container">
         <div class="a-content">
             <div class="a-container-n">
-            <h1>Welcome to the Dashboard Ms.<?php echo $phm_name ?></h1>
+            <h1>Welcome to the Dashboard Ms. <?php echo $phm_name ?></h1>
             <div class="a-container-m">
             <a href = "phm-notification.php"><i class="material-icons" alt="notification icon">notifications</i></a>
             </div>
