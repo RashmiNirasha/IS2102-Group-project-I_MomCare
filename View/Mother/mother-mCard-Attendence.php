@@ -80,7 +80,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                     </div>
         </div>
         <?php
-            if(($_SESSION['id']) == $mom_id){
+            if(($_SESSION['id']) != $mom_id){
                 $output ='<div class="updateMcardTable">
                 <button onclick="updateMcardTable()">Add</button>
                 </div>';

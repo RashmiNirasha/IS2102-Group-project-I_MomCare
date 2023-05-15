@@ -305,11 +305,34 @@
                                             <th>Date</th>
                                             <th>Batch No</th>
                                         </tr>
+                                        <?php
+                                            $sql = "SELECT * FROM mcard_tetanus WHERE mom_id = '$mom_id'";
+                                            $result = $con->query($sql);
+                                            if($result->num_rows > 0)
+                                            {
+                                                while($row=mysqli_fetch_assoc($result)){
+                                                    $mom_tetanus_dose = $row['dose'];
+                                                    $mom_tetanus_date = $row['date'];
+                                                    $mom_tetanus_batch = $row['batch_no'];
+
+                                                    $output ='
+                                                    <tr>
+                                                        <td>'.$mom_tetanus_dose.'</td>
+                                                        <td>'.$mom_tetanus_date.'</td>
+                                                        <td>'.$mom_tetanus_batch.'</td>
+                                                    ';
+                                                    echo $output;
+                                                }
+                                            }
+                                            else{
+                                                echo "0 results";
+                                            }
+                                        ?>
                                     </table>
                                 </div>
                             </div>
                     </div>
-                    <div class="OneColumnSection">
+                    <!-- <div class="OneColumnSection">
                         <div class="BP_Chart">
                             <div class="MotherCardTableTitles">
                                 <h3>BP Chart</h3>
@@ -318,14 +341,14 @@
                                 <img src="../Images/Chart.png" alt="BP Chart">
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
         <div class="MotherCardButtonSet">
         <a href="mothercard.php?mom_id=<?php echo $_SESSION['user_id']; ?>"><button class="PrintBtn">Print</button></a>
-        <a href="motherCardPage1.php"><button class="BackBtn">Back</button></a>
-        <a href="motherCardPage3.php"><button class="NextBtn">Next</button></a>
+        <a href="motherCardPage1.php?mom_id=<?php echo $_GET['mom_id']; ?>"><button class="BackBtn">Back</button></a>
+        <a href="motherCardPage3.php?mom_id=<?php echo $_GET['mom_id']; ?>"><button class="NextBtn">Next</button></a>
         </div>
     </div>
 </body>

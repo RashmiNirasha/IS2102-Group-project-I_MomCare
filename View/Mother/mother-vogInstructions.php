@@ -18,6 +18,7 @@
 </head>
 <body>
     <div class="content">
+    <button class="goBackBtn" onclick="history.back()">Go back</button>
             <!-- topic and notifications -->
             <div class="heading">
                 <h1>VOG Instructions</h1>

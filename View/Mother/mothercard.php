@@ -18,7 +18,7 @@ if (mysqli_num_rows($result) > 0){
 }
 
 function dental(){
-include "../../Config/dbConnection.php";
+    include "../../Config/dbConnection.php";
         // Get the dental report data for the specified mother
         $mom_id = mysqli_real_escape_string($con, $_GET['mom_id']);
 
@@ -40,7 +40,32 @@ include "../../Config/dbConnection.php";
             echo "<tr><td colspan='4'>No dental report data found.</td></tr>";
         }
         return $output;
-    }
+}
+
+function tetanus(){
+    include "../../Config/dbConnection.php";
+        // Get the tetanus report data for the specified mother
+        $mom_id = mysqli_real_escape_string($con, $_GET['mom_id']);
+
+        $sql = "SELECT * FROM mcard_tetanus WHERE mom_id = '$mom_id'";
+        $result = mysqli_query($con, $sql); 
+        $output = '';
+    
+        // Display the tetanus report data for the specified mother
+        if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+                $output .= '
+                <tr>  
+                    <td>'.$row["dose"].'</td>  
+                    <td>'.$row["date"].'</td>  
+                    <td>'.$row["batch_no"].'</td>
+                </tr>';
+            }
+        } else {
+            echo "<tr><td colspan='4'>No tetanus report data found.</td></tr>";
+        }
+        return $output;
+}
                
 include "../Child/tcpdf/tcpdf.php";
 
@@ -144,6 +169,19 @@ $content .= '<div>
                         </tr>  
                         ';    
 $content .= dental();
+$content .= '</table>';
+$content .= '</div>';
+
+$content .= '<div>
+                    <h3>Tetanus Record</h3>
+                    <table border="1" cellspacing="0" cellpadding="3" >
+                        <tr>  
+                        <th width="25%" >Dose </th>
+                        <th width="25%" >Vaccine Date</th>
+                        <th width="25%" >Batch No</th>     
+                        </tr>  
+                        ';
+$content .= tetanus();
 $content .= '</table>';
 $content .= '</div>';
 
