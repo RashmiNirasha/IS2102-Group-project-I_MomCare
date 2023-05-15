@@ -535,7 +535,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     flex-flow: wrap;
-    column-gap: 13%;
+    column-gap: 12%;
     /* row-gap: -160px; */
     width: 80%;
     height: 80%;

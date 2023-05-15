@@ -89,12 +89,8 @@ $phm_id=$row['phm_id'];
                     <h3>Maintain Pregnancy Records</h3>
                 </div>
                 </div> 
-<<<<<<< Updated upstream
                 </a> -->
 
-=======
-                </a>
->>>>>>> Stashed changes
             </div>
         </div>
     </div>

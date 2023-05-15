@@ -8,13 +8,14 @@ if (isset($_SESSION['email'])) {
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    $sql1 = "SELECT mom_id FROM mother_details WHERE mom_email='$email'";
+    $sql1 = "SELECT mom_id,phm_id FROM mother_details WHERE mom_email='$email'";
     $result1 = mysqli_query($con, $sql1);
     $row1 = mysqli_fetch_array($result1);
     $mom_id = $row1['mom_id'];
+    $phm_id = $row1['phm_id'];
 
-    $sql = "INSERT INTO phm_help_requests (mom_id, name, email, message, submission_date) 
-            VALUES ('$mom_id', '$name', '$email', '$message', NOW())";
+    $sql = "INSERT INTO phm_help_requests (mom_id, name, email, message, submission_date,phm_id) 
+            VALUES ('$mom_id', '$name', '$email', '$message', NOW()),$phm_id";
     $result = mysqli_query($con, $sql);
 
     if ($result) {

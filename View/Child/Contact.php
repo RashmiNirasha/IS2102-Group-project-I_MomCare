@@ -66,7 +66,7 @@
             <textarea name="message" placeholder="Enter your message" required></textarea>
         </div>
         <div class="button">
-          <input type="submit" value="Send Now" >
+          <input class="childDevSubmitBtn" type="submit" value="Send Now" >
         </div>
         
       </form>
