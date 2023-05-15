@@ -19,14 +19,6 @@ $phm_id=$row['phm_id'];
     <title>PHM Panel</title>
     <link rel="stylesheet" href="..\..\Assets\css\style-common.css" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-    <!-- <style>
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-    </style> -->
 </head>
 <body>
     <div class="a-container">
@@ -97,18 +89,14 @@ $phm_id=$row['phm_id'];
                     <h3>Maintain Pregnancy Records</h3>
                 </div>
                 </div> 
+<<<<<<< Updated upstream
                 </a> -->
 
+=======
+                </a>
+>>>>>>> Stashed changes
             </div>
         </div>
-
-        <!-- <div class="a-content-2">
-            <span></span>
-            <a href = "..\..\Config\admin-logout.php"><button>
-                <div class="a-btn-text"><h6>Log out</h6></div>
-                <i class="material-icons" alt="logout">logout</i>
-            </button></a>
-        </div> -->
     </div>
 </body>
 </html>

@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style><?php include '../../Assets/Css/style-common.css'; ?></style> 
-    <script><?php include './vog-search.js'; ?></script>
+    <script><?php include 'vog-search.js'; ?></script>
     <title>My Patients</title>
 </head>
 <body>
@@ -32,7 +32,6 @@
 </body>
 </html>
 
-<?php //include "../../Assets/Includes/footer_pages.php"; ?>
 <?php }else{
     header("Location: ../../mainLogin.php");
     exit();

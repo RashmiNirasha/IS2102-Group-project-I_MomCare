@@ -877,12 +877,15 @@ include "../../Assets/Includes/sidenav.php";?>
             </select></tr>
       </table>
       <input class="childDevSubmitBtn" type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
-      </form>
+       
+    </form>
+    <a href="child-developmentView2.php?child_id=<?php echo $_GET['child_id']; ?>">
+                            <button class="childDevSubmitBtn-1" type="submit" class="btn btn-primary">Page 2</button></a>
+      
     </div>
 </div>
                         
-                            <a href="child-developmentView2.php?child_id=<?php echo $_GET['child_id']; ?>">
-                            <button class="next" type="submit" class="btn btn-primary">Page 2</button></a></div>
+                            </div>
 
                         <script>
 

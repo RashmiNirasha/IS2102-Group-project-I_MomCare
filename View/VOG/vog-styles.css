@@ -13,12 +13,12 @@
     width: 100px;
     height: 30px;
     border-style: none;
-    border-radius: 25px;
+    border-radius: 0px 25px 25px 0;
     color: #ffffff;
     background-color: #029EE4;
     cursor: pointer;
-    top: 100px;
-    left: 30px;
+    top: 120px;
+    left: 0px;
     position: fixed;
 }
 

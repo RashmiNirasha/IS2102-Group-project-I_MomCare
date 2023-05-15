@@ -200,7 +200,7 @@ include "../../Assets/Includes/sidenav.php";?>
                 <option value="no">No</option>
                 </select></tr>
       </table>
-      <input type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
+      <input class="childDevSubmitBtn" type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
       </form>
     </div>
 </div>
@@ -346,7 +346,7 @@ include "../../Assets/Includes/sidenav.php";?>
             </select></tr>
 
       </table>
-      <input type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
+      <input class="childDevSubmitBtn" type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
       </form>
     </div>
 </div>
@@ -555,7 +555,7 @@ include "../../Assets/Includes/sidenav.php";?>
             </select></tr>
 
       </table>
-      <input type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
+      <input class="childDevSubmitBtn" type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
       </form>
     </div>
 </div>
@@ -827,7 +827,7 @@ include "../../Assets/Includes/sidenav.php";?>
             </select></tr>
 
       </table>
-      <input type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
+      <input class="childDevSubmitBtn" type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
       </form>
     </div>
 </div>
@@ -1077,14 +1077,16 @@ include "../../Assets/Includes/sidenav.php";?>
               <option value="no">No</option>
             </select></tr>
       </table>
-      <input type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
-      </form>
+      <input class="childDevSubmitBtn" type="submit" name="submit" onclick="return confirm('Are you sure you want to submit the form?')" />
+      
+    </form>
+    <a href="child-developmentView.php?child_id=<?php echo $_GET['child_id']; ?>">
+  <button class="childDevSubmitBtn-1" type="submit" class="btn btn-primary">Page 1</button>
+  </a>  
+      
     </div>
   </div>
-
-  <a href="child-developmentView.php?child_id=<?php echo $_GET['child_id']; ?>">
-  <button class="next" type="submit" class="btn btn-primary">Page 1</button>
-  </a></div>
+  </div>
 
                             <script>
 

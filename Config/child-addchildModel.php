@@ -105,12 +105,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["insert"])) {
 //update function
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update"])) {
     $child_id = $_POST['child_id'];
-    $edit_child_name = $_POST['edit_child_name'];
-    $edit_birth_date = $_POST['edit_birth_date'];
-    $edit_child_gender = $_POST['edit_child_gender'];
+    $edit_child_name = mysqli_real_escape_string($con, $_POST['edit_child_name']);
+    $edit_birth_date = mysqli_real_escape_string($con, $_POST['edit_birth_date']);
+    $edit_child_gender = mysqli_real_escape_string($con, $_POST['edit_child_gender']);
+    $edit_mother_id = mysqli_real_escape_string($con, $_POST['edit_mother_id']);
+    $edit_moh_area = mysqli_real_escape_string($con, $_POST['edit_moh_area']);
+    $edit_phm_area = mysqli_real_escape_string($con, $_POST['edit_phm_area']);
+    $edit_field_clinic = mysqli_real_escape_string($con, $_POST['edit_field_clinic']);
+    $edit_gn_division = mysqli_real_escape_string($con, $_POST['edit_gn_division']);
+    $edit_hospital_clinic = mysqli_real_escape_string($con, $_POST['edit_hospital_clinic']);
+    $edit_consultant_obstetrician = mysqli_real_escape_string($con, $_POST['edit_consultant_obstetrician']);
+    $edit_risks_conditions = mysqli_real_escape_string($con, $_POST['edit_risks_conditions']);
+    $edit_blood_group = mysqli_real_escape_string($con, $_POST['edit_blood_group']);
+    $edit_allergies = mysqli_real_escape_string($con, $_POST['edit_allergies']);
+    $edit_registration_date = mysqli_real_escape_string($con, $_POST['edit_registration_date']);
 
     // Perform the update query
-    $sql = "UPDATE child_details SET child_name = '$edit_child_name', birth_date = '$edit_birth_date', child_gender = '$edit_child_gender' WHERE child_id = '$child_id'";
+    $sql = "UPDATE child_details SET 
+                child_name = '$edit_child_name',
+                birth_date = '$edit_birth_date',
+                child_gender = '$edit_child_gender',
+                mom_id = '$edit_mother_id',
+                MOH_area = '$edit_moh_area',
+                PHM_area = '$edit_phm_area',
+                field_clinic = '$edit_field_clinic',
+                GN_division = '$edit_gn_division',
+                hospital_clinic = '$edit_hospital_clinic',
+                consultant_obstetrician = '$edit_consultant_obstetrician',
+                identified_antatal_risks = '$edit_risks_conditions',
+                blood_group = '$edit_blood_group',
+                allergies = '$edit_allergies',
+                registration_date = '$edit_registration_date'
+            WHERE child_id = '$child_id'";
+
     $result = mysqli_query($con, $sql);
 
     if ($result) {
@@ -118,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update"])) {
         header("Location: ../View/PHM/child-addchild.php?message=Child record updated successfully");
         exit();
     } else {
-        // Redirect back to the child profile page with an error message
+
         header("Location: ../View/PHM/child-addchild.php?error=Failed to update child records");
         exit();
     }
@@ -138,6 +165,8 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
         header("Location: ../View/PHM/child-addchild.php?message=Child record deleted successfully");
         exit();
     } else {
+        echo "Error : " . mysqli_error($con);
+
         // Deletion failed, redirect back to the child list page with an error message
         header("Location: ../View/PHM/child-addchild.php?error=Failed to delete child record");
         exit();

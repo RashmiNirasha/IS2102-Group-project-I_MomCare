@@ -38,13 +38,14 @@
 
     </script>
     <?php
-        if(isset($_POST['addInstruction'])){
+        if(isset($_POST['vog_instructions'])){
             $mom_id = $_POST['state'];
-            $title = $_POST['title'];
-            $description = $_POST['description'];
-            $role_id = $_SESSION['id'];
+            $topic = $_POST['topic'];
+            $instructions = $_POST['instruction'];
+            $doc_id = $_SESSION['user_id'];
+            $date = $_POST['date'];
 
-            $sql = "INSERT INTO instructions (mom_id, title, description, role_id) VALUES ('$mom_id', '$title', '$description', '$role_id')";
+            $sql = "INSERT INTO vog_instructions (mom_id, doc_id, topic,date,time, instruction) VALUES ('$mom_id', '$doc_id','$topic','$date',NOW(), '$instructions')";
             $result = mysqli_query($con, $sql);
 
             if($result){
@@ -56,7 +57,9 @@
     ?>
 </head>
 <body>
-<button class="goBackBtn" onclick="history.back()">Go back</button>
+        <a href="vog-dashboard.php"><button class="goBackBtn">Go back</button></a>
+
+    
     <div class="mainOuterContainer">
         <div class="mainInnerContainer">
             <div class="innerContainerLeft">
@@ -83,16 +86,20 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td><label for="date" id="required">Date</label></td>
+                                    <td><input type="date" name="date" id="date" placeholder="Enter date" required></td>
+                                </tr>
+                                <tr>
                                     <td><label for="title" id="required">Title</label></td>
-                                    <td><input type="text" name="title" id="title" placeholder="Enter title" required></td>
+                                    <td><input type="text" name="topic" id="topic" placeholder="Enter title" required></td>
                                 </tr>
                                 <tr>
                                     <td><label for="description" id="required">Description</label></td>
-                                    <td><textarea name="description" id="description" cols="30" rows="10" placeholder="Enter description" required></textarea></td>
+                                    <td><textarea name="instruction" id="instruction" cols="30" rows="10" placeholder="Enter description" required></textarea></td>
                                 </tr>
                             </table>
                             <div class="AddInstructionBtn">
-                                <button type="submit" name="addInstruction">Add Instruction</button>
+                                <button type="submit" name="vog_instructions">Add Instruction</button>
                             </div>
                         </div>
                     </form>
@@ -104,12 +111,12 @@
                 </div>
                 <div class="instructionTable">
                     <?php 
-                        $sql = "SELECT * FROM instructions";
+                        $sql = "SELECT * FROM vog_instructions";
                         $result = mysqli_query($con, $sql);
                         if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)){
-                            $title = $row['title'];
-                            $description = $row['description'];
+                            $title = $row['topic'];
+                            $description = $row['instruction'];
                             $date = $row['date'];
                             $time = $row['time'];
                             $mom_id = $row['mom_id'];
