@@ -94,7 +94,7 @@
                                         <div class="ma-img-action"><a href="phm-allocateped.php?child_id=';
                             $output .=$id;
                             $output .="'";
-                            $output .='"><div class = "ad-button">Allocate Pediatrician</div></a><a href = "..\..\View\Child\childCardPage1.php?child_id=';
+                            $output .='"><div class = "ad-button">Allocate Pediatrician</div></a><a href = "..\..\View\Child\child-fullChildCard.php?child_id=';
                             $output .=$id;
                             $output .="'";
                             $output .='"><div class="ad-button">Child Card</div></a></div>
