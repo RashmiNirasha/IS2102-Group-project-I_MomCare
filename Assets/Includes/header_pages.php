@@ -73,6 +73,8 @@
             color: #ffffff;
         }
 
+
+
         .topnav ul li:last-child {
             float: right !important;
         }
@@ -99,7 +101,6 @@
             border-width: 1px;
             stroke: #111C43;
         }
-<<<<<<< Updated upstream
 
 .hidden-link {
     display: none;
@@ -129,26 +130,6 @@
     margin-top: 10px;
     right: 0px;
     font-size: 12px;
-=======
-        .hidden-link {
-         display: none;
-         }
-         /* notification section  */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    margin-right: 7%;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 160px;
-    padding: 8px 0;
-    margin: 2px 0 0;
-    font-size: 14px;
->>>>>>> Stashed changes
     text-align: left;
     list-style: none;
     background-color: #fff;
@@ -156,7 +137,6 @@
     border-radius: 4px;
 }
 
-<<<<<<< Updated upstream
 
 .dropdown-menu li {
     width: 180px;
@@ -186,20 +166,6 @@
 .dropdown-toggle {
     width: 50px;
     height: 10px;
-=======
-.dropdown-menu li {
-    padding: 8px 10px;
-    white-space: nowrap;
-    cursor: pointer;
-}
-
-.dropdown-menu li:hover {
-    background-color: #f5f5f5;
-}
-
-.dropdown-toggle {
-    display: inline-block;
->>>>>>> Stashed changes
     font-size: 18px;
     background-color: #fff;
     cursor: pointer;
@@ -212,7 +178,6 @@
     border-radius: 10%;
 }
 
-<<<<<<< Updated upstream
 .count {
     display: flex;
     position: absolute;
@@ -229,10 +194,6 @@
 }
 .hide {
     display: none !important;
-=======
-.hide {
-    display: none;
->>>>>>> Stashed changes
 }
     </style>
     <script type="text/javascript">
@@ -340,7 +301,6 @@
                 </li>
                 <li><a href="../../Config/logout.php">Log out</a></li>
             </ul>
-<<<<<<< Updated upstream
             <?php
             if (isset($_SESSION['email'])) {
                 //get user role
@@ -359,7 +319,10 @@
                     echo '<a href="../../View/phm/phm-profile.php"><img class="profile_pic" src="' . $phm_profile_picture . '" alt="profile_pic"></a>';
                     // echo '<a href=""><img class="profile_pic" src="../../Assets/Images/phm/phm_proPic.png" alt="profile_pic"></a>';
                 } else if ($_SESSION['user_role'] == 'ped') {
-                    echo '<a href=""><img class="profile_pic" src="../../Assets/Images/ped/ped_proPic.png" alt="profile_pic"></a>';
+                    $doc_sql = "SELECT doc_profile_pic FROM doctor_details WHERE doc_id = '" . $_SESSION['user_id'] . "'";
+                    $doc_result = mysqli_query($con, $doc_sql);
+                    $doc_profile_pic = mysqli_fetch_array($doc_result);
+                    echo '<a href="../../View/Pediatrician/ped-profile.php"><img class="profile_pic" src="' . $doc_profile_pic['doc_profile_pic'] . '" alt="profile_pic_vog"></a>';
                 } else if ($_SESSION['user_role'] == 'vog') {
                     $doc_sql = "SELECT doc_profile_pic FROM doctor_details WHERE doc_id = '" . $_SESSION['user_id'] . "'";
                     $doc_result = mysqli_query($con, $doc_sql);
@@ -376,66 +339,9 @@
                 } else {
                     //echo 'Dashboard';
                 }
-=======
-           
-            </li>
-            <?php
-        if (isset($_SESSION['email'])) {
-            //get user role
-            include "../../Config/dbConnection.php";
-            $query = "SELECT * FROM user_tbl WHERE email = '" . $_SESSION['email'] . "'";
-            $result = mysqli_query($con, $query);
-            $row = mysqli_fetch_array($result);
-            $_SESSION['user_role'] = $row['user_role'];
-            //choose the right dashboard page
-            if ($_SESSION['user_role'] == 'mother') {
-                echo '<li><a href="../../View/Child/Contact.php">Contact</a></li>
-                ';
-              }
-            }
-            ?>
-           
-        </ul>
-        <?php
-        if (isset($_SESSION['email'])) {
-            //get user role
-            include "../../Config/dbConnection.php";
-            $query = "SELECT * FROM user_tbl WHERE email = '" . $_SESSION['email'] . "'";
-            $result = mysqli_query($con, $query);
-            $row = mysqli_fetch_array($result);
-            $_SESSION['user_role'] = $row['user_role'];
-            $_SESSION['user_id'] = $row['user_id'];
-            //choose the right dashboard page
-            if ($_SESSION['user_role'] == 'phm') {
-                $phmpp_query = "SELECT phm_profile_pic FROM phm_details WHERE phm_id = '" . $_SESSION['phm_id'] . "'";
-                $phmpp_result = mysqli_query($con, $phmpp_query);
-                $phmpp_row = mysqli_fetch_array($phmpp_result);
-                $phm_profile_picture = $phm_row['phm_profile_pic'];
-                echo '<a href="../../View/phm/phm-profile.php"><img class="profile_pic" src="'.$phm_profile_picture.'" alt="profile_pic"></a>';
-                // echo '<a href=""><img class="profile_pic" src="../../Assets/Images/phm/phm_proPic.png" alt="profile_pic"></a>';
-            } else if ($_SESSION['user_role'] == 'ped') {
-                $doc_sql = "SELECT doc_profile_pic FROM doctor_details WHERE doc_id = '" . $_SESSION['user_id'] . "'";
-                $doc_result = mysqli_query($con, $doc_sql);
-                $doc_profile_pic = mysqli_fetch_array($doc_result);
-                echo '<a href="../../View/pediatrician/ped-profile.php"><img class="profile_pic" src="'.$doc_profile_pic['doc_profile_pic'].'" alt="profile_pic_vog"></a>';          
-              } else if ($_SESSION['user_role'] == 'vog') {
-                $doc_sql = "SELECT doc_profile_pic FROM doctor_details WHERE doc_id = '" . $_SESSION['user_id'] . "'";
-                $doc_result = mysqli_query($con, $doc_sql);
-                $doc_profile_pic = mysqli_fetch_array($doc_result);
-                echo '<a href="../../View/Vog/vog-profile.php"><img class="profile_pic" src="'.$doc_profile_pic['doc_profile_pic'].'" alt="profile_pic_vog"></a>';
-            } else if ($_SESSION['user_role'] == 'admin') {
-                echo '<a href=""><img class="profile_pic" src="../../Assets/Images/admin/people.png" alt="profile_pic"></a>';
-            } else if ($_SESSION['user_role'] == 'mother') {
-                $mom_sql = "SELECT mom_propic FROM mother_details WHERE mom_email = '" . $_SESSION['email'] . "'";
-                $mom_result = mysqli_query($con, $mom_sql);
-                $mom_profile_pic = mysqli_fetch_array($mom_result);
-                echo '<a href="../../View/Mother/mother-profileDetails.php"><img class="profile_pic" src="'.$mom_profile_pic['mom_propic'].'" alt="profile_pic"></a>';
-                //echo '<a href="../../View/mother/mother-profileDetails.php"><img class="profile_pic" src="../../Assets/Images/mother/Profile_pic_mother.png" alt="profile_pic"></a>';
->>>>>>> Stashed changes
             } else {
                 echo '<a href="../../Login.php"><img class="profile_pic" src="../../Assets/images/common/login.png" alt="profile_pic"></a>';
             }
-        }
             ?>
             <!-- <img class="profile_pic" src="../../Assets/images/vog/doctor.png" alt="profile_pic"> -->
         </nav> <!-- top navigation bar -- end -->

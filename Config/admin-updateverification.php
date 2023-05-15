@@ -2,7 +2,6 @@
 session_start(); // start the session
 require_once 'dbConnection.php';
 include "../Assets/Includes/email.php";
-
 if (isset($_POST['verification-status']) && isset($_POST['reg_user_id'])) {
     $verificationStatus = mysqli_real_escape_string($con, $_POST['verification-status']);
     $userId = mysqli_real_escape_string($con, $_POST['reg_user_id']);
@@ -39,7 +38,8 @@ $password_hash = md5($password);
 
 $mom_id =   "M" .  $userId ;
 
-    $message = "Hi $mom_name! Your Account is now activated , Please log into the system and upon login please create a new password.</br>
+    $message = "Hi $mom_name! Your Account is now activated , Please log into the system and Upon login please create a new password.</br>
+    Please go to the profile section to update ypur password.</br>
     link http://localhost/momcare/mainLogin.php </br>
     your one time password is $password </br>
     Username: $mom_email";
