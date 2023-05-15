@@ -32,6 +32,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 			$row = mysqli_fetch_assoc($result);
 			$_SESSION['id'] = $row['user_id'];
 			$_SESSION['name'] = $row['name'];
+			$_SESSION['user_role'] = $row['user_role'];
 		
 			switch ($row['user_role']) {
 				case 'admin':

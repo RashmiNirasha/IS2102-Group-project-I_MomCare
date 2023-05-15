@@ -29,7 +29,7 @@ include "../../Assets/Includes/header_pages.php";
             <h1>Welcome to the Dashboard <?php echo "Ms ".$mom_name ?></h1>
         </div>
         <div class="card-pack"><!--gap remover
-        --><button class="card" onclick="window.location.href = 'motherCardFormTitles.php'">
+        --><button class="card" onclick="window.location.href = 'mother-motherCardUpdate.php?mom_id=<?php echo $mom_id ?>'">
                 <div class="card-content-left"><span class="material-symbols-outlined">pregnant_woman</span></div>
                 <div class="card-content-right"><p>Mother Card</p></div>
             </button><!--gap remover -->

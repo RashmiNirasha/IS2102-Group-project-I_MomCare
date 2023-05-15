@@ -5663,4 +5663,50 @@ a {
     cursor: pointer; 
 }
 
+/* SFH Chart */
+
+.SFHchart input[type=submit] {
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    background-color: #029ce4;
+    color: #fff;
+    font-size: 10px;
+    margin-top: 10px;
+    cursor: pointer;    
+}
+
+.SFHchart input[type=submit]:hover {
+    background-color: #0277b8;
+}
+
+.SFHchart input[type=reset]{
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ca2020;
+    color: #fff;
+    font-size: 10px;
+    margin-top: 10px;
+    cursor: pointer; 
+}
+
+.SFHchart input[type=reset]:hover {
+    background-color: #a71b1b;
+}
+
+.SFHchart #showDataBtn2 {
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    background-color: #029ce4;
+    color: #fff;
+    font-size: 10px;
+    margin-top: 10px;
+    cursor: pointer; 
+}
+
 

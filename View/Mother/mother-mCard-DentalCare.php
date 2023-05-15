@@ -53,9 +53,14 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                 </table>
             </div>
         </div>
-        <div class="updateMcardTable">
-            <button onclick="updateMcardTable()">Update</button>
-        </div>
+        <?php
+            if(($_SESSION['id']) != $mom_id){
+                $output ='<div class="updateMcardTable">
+                <button onclick="updateMcardTable()">Update</button>
+                </div>';
+                echo $output;
+            }
+        ?>
     </div>
     <div class="updateMcardTable-popup" id="updateMcardTable-popup">
         <div class="updatePopup-content">

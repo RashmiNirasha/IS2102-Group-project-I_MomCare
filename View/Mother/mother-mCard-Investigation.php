@@ -35,7 +35,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
     <!-- <button class="goBackBtn" onclick="history.back()">Go back</button> -->
     <div class="mom-container">
         <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
-            <div class="MotherCardTableTitles"><h3>Breast examination</h3></div>
+            <div class="MotherCardTableTitles"><h3>Clinical Investigations</h3></div>
             <div class="MotherGeneralDetails">
                 <table class="MotherCardTables">
                     <tr>
@@ -76,9 +76,14 @@ if (isset($_SESSION['email']) && isset($_SESSION['id'])) { ?>
                 </table>
             </div>
         </div>
-        <div class="updateMcardTable">
-            <button onclick="updateMcardTable()">Update</button>
-        </div>
+        <?php
+            if(($_SESSION['id']) != $mom_id){
+                $output ='<div class="updateMcardTable">
+                <button onclick="updateMcardTable()">Update</button>
+                </div>';
+                echo $output;
+            }
+        ?>
     </div>
     <div class="updateMcardTable-popup" id="updateMcardTable-popup">
         <div class="updatePopup-content">

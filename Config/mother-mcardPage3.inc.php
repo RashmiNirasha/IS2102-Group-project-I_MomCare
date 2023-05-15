@@ -2,7 +2,9 @@
     require_once 'dbConnection.php';
 
     //session_start();
-    $mom_id = $_SESSION['mom_id'];
+    $mom_id = $_GET['mom_id'] ? $_GET['mom_id'] : $_SESSION['mom_id'];
+
+    //Emergency view
     
     $sql = "SELECT * FROM mcard_emergency_plan WHERE mom_id = '$mom_id'";
     $result = $con->query($sql);
@@ -21,6 +23,33 @@
     }
     else{
         echo "0 results";
+    }
+
+    // Emergency Plan Update
+
+    if(isset($_POST['Emergency_submit'])) {
+        $mom_id = $_POST['mom_id'];
+        $mom_ihospital1 = $_POST['mom_ihospital1'];
+        $mom_ihospital2 = $_POST['mom_ihospital2'];
+        $mom_transport1 = $_POST['mom_transport1'];
+        $mom_transport2 = $_POST['mom_transport2'];
+        $mom_distance1 = $_POST['mom_distance1'];
+        $mom_distance2 = $_POST['mom_distance2'];
+        $mom_eme_time1 = $_POST['mom_eme_time1'];
+        $mom_eme_time2 = $_POST['mom_eme_time2'];
+        
+        $sql = "UPDATE mcard_emergency_plan SET i_hospital1 = '$mom_ihospital1', i_hospital2 = '$mom_ihospital2', transport1 = '$mom_transport1', transport2 = '$mom_transport2', distance1 = '$mom_distance1', distance2 = '$mom_distance2', time1 = '$mom_eme_time1', time2 = '$mom_eme_time2' WHERE mom_id = '$mom_id'";
+        $result = mysqli_query($con, $sql);
+        if($result){
+            echo "<script>alert('Emergency Plan Updated Successfully')</script>";
+            header("Location: ../View/Mother/mother-mCard-Emergency.php?mom_id=$mom_id','_self'");
+        }
+        else{
+            echo "<script>alert('Emergency Plan Update Failed')</script>";
+
+        }
+
+
     }
 
     $sql = "SELECT * FROM mcard_planning WHERE mom_id = '$mom_id'";
@@ -89,7 +118,7 @@
 
         // Execute the query
         if (mysqli_query($con, $sql)) {
-            header("Location: ../View/Mother/motherCardPage3.php");
+            header("Location: ../View/Mother/mother-mCard-WeightGainChart.php?mom_id=$mom_id","_self");
             exit();
         } else {
             echo "Error: " . mysqli_error($con);
@@ -113,7 +142,7 @@
         }
 
         if (mysqli_query($con, $sql)) {
-            header("Location: ../View/Mother/motherCardPage3.php");
+            header("Location: ../View/Mother/mother-mCard-SFHChart.php?mom_id=$mom_id","_self");
             exit();
         } else {
             echo "Error: " . mysqli_error($con);
