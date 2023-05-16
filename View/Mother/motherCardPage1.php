@@ -5,7 +5,7 @@
    {
 ?>
 <?php 
-$mom_id = $_SESSION['mom_id'];
+$mom_id = $_SESSION['id'];
     include "../../Assets/Includes/header_pages.php"; 
     include "../../Config/mother-mcardPage1.inc.php";
 ?>

@@ -160,6 +160,7 @@
                             switch ($user_role) {
                                 case 'vog':
                                 case 'ped':
+                                    
                                     $sql_loc = "SELECT doc_workplace FROM doctor_details WHERE doc_id = '$doc_id'";
                                     $result_loc = mysqli_query($con, $sql_loc);
                                     while ($row = mysqli_fetch_assoc($result_loc)) {

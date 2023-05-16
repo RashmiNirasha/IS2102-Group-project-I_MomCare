@@ -29,10 +29,10 @@
 
     <?php
         if(isset($_POST['appLimit_submit'])) {
-            if ($_POST['appLimit'] == '' || $_POST['appLimit'] < 5) {
+            if ($_POST['set_app_limit'] < 5) {
                 echo '<script>alert("Please enter a valid appointment limit!")</script>';
             } else {
-            $appLimit = $_POST['appLimit'];
+            $appLimit = $_POST['set_app_limit'];
             $doc_id = $_SESSION['id'];
             $query = "UPDATE doctor_details SET app_limit = '$appLimit' WHERE doc_id = '$doc_id'";
             $result = mysqli_query($con, $query);
@@ -115,9 +115,8 @@
             <div class="app-profileImage"><img src="../../Assets/images/mother/Profile_pic_mother.png" alt="mpther-profile-pic"></div>
             <div id="appointmentDetails"></div>
             <div class="app-viewMotherCard">
-                <input type="button" value="Mother Card" onclick="">
-                <input type="button" value="Reports" onclick="">
-                <input type="button" value="Children" onclick="">
+                <input type="button" value="Mother Card" onclick="window.location.href='../Mother/motherCardPage1.php?mom_id=<?php echo $mom_id ?>'">
+                <input type="button" value="Reports" onclick="window.location.href='vog-tests.php?mom_id=<?php echo $mom_id ?>'">
             </div>
         </div>
     </div>

@@ -517,7 +517,7 @@ body {
     background-color: #ffffff;
     margin-left: 15%;
     margin-right: 15%;
-    border-radius: 0px 0px 100px 100px;
+    border-radius: 0px 0px 180px 180px;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.17);
 
 }
@@ -4712,6 +4712,7 @@ a {
   
   .appViewPopup-content {
     position: absolute;
+    width: 300px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -4734,7 +4735,8 @@ a {
 
   .app-viewMotherCard {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 10px;
     width: 100%;
   }
 

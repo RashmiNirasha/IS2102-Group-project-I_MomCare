@@ -184,9 +184,8 @@
                 
             </div>
             <div class="instructionBarPopup-footer">
-                <button class="instructionBarPopup-footer-momCard-btn">Mother Card</button>
-                <button class="instructionBarPopup-footer-tests-btn">Test Records</button>
-                <button class="instructionBarPopup-footer-children-btn">Children</button>
+                <button class="instructionBarPopup-footer-momCard-btn" onclick="window.location.href='../Mother/motherCardPage1.php?mom_id=<?php echo $mom_id ?>'">Mother Card</button>
+                <button class="instructionBarPopup-footer-tests-btn" onclick="window.location.href='vog-tests.php?mom_id=<?php echo $mom_id ?>'">Test Records</button>
             </div>
         </div>
     </div>
