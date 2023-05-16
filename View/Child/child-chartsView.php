@@ -75,7 +75,7 @@ $sql = "SELECT * FROM child_bmi_values WHERE child_id = '$child_id' ORDER BY
     echo "No records matching your query were found.";
   }?>
 
-<div class="child-container">
+<div class="child-container5">
   <h2>BMI Calculator</h2>
   <div class="OneColumnSection"> <!--when a section has only one table, use this class-->
                         <div class="MotherCardTableTitles"><h3> BMI Test  </h3></div>

@@ -45,22 +45,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update"])) {
     $result = mysqli_query($con, $sql);
 
     if ($result) {
-        if($_SESSION_['user_role'] == 'phm')
             header("Location: ../View/PHM/child-adddental.php?message=Child record updated successfully");
-        else
-            header("Location: ../View/Pediatrician/child-adddental.php?message=Child record updated successfully");
-        exit();
     } else {
 
-        if($_SESSION_['user_role'] == 'phm')
             header("Location: ../View/PHM/child-adddental.php?error=Failed to update child records");
-        else{
-            header("Location: ../View/Pediatrician/child-adddental.php?error=Failed to update child records");
-            exit();
         }
     }
 
-}
+
 
 //delete function
 if (isset($_GET['delete']) && !empty($_GET['delete'])) {
@@ -69,12 +61,10 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
     $query = "DELETE FROM child_dental_report WHERE id = '$child_id'";
     $result = mysqli_query($con, $query);
 
-    // Check if the deletion was successful
     if ($result) {
         header("Location: ../View/PHM/child-adddental.php?message=Child record deleted successfully");
         exit();
     } else {
-        // Deletion failed, redirect back to the child list page with an error message
         header("Location: ../View/PHM/child-adddental.php?error=Failed to delete child record");
         exit();
     }

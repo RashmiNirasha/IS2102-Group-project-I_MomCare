@@ -187,8 +187,7 @@ body {
       border-radius: 5px;
     }
     
-    /* input[type="submit"] , */
-     input[type="reset"] , #showDataBtn2 , #showDataBtn , #showDataBtn3 {
+   #showDataBtn2 , #showDataBtn , #showDataBtn3 {
       margin-top: 10px;
       margin-bottom: 2%;
       padding: 10px;
@@ -200,13 +199,6 @@ body {
       cursor: pointer;
     }
    
-    /* input[type="submit"]:hover , input[type="reset"]:hover , #showDataBtn2:hover , #showDataBtn:hover , #showDataBtn3:hover {
-      background-color: #0e106e;
-    } */
-
-
-/* child-cards css */
-
 .child-sidenav {
   display: flex;
   flex-direction: column;
@@ -603,7 +595,6 @@ margin-top: 12px;
 }
 
 .childDevSubmitBtn-1{
-  float: left;
     width: 100px;
     height: 30px;
     margin-top: 15px;
@@ -615,4 +606,15 @@ margin-top: 12px;
     margin-left: 30px;
     margin-bottom: 20px;
 
+}
+
+.child-container5{
+  margin-top: 120px;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 5%;
+  background: #fff;
+  border-radius: 6px;
+  padding: 10px 60px 55px 40px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
